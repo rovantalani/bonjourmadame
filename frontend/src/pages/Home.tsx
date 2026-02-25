@@ -39,8 +39,9 @@ export default function Home() {
     return (
         <div className="home-container">
             <header className="home-header">
-                <h1>Welcome to Language Learning</h1>
-                <p className="subtitle">Choose a module to start your learning journey</p>
+                <img src="/logo_no_text.png" alt="Bonjour Madame logo" className="logo"/>
+                <h1>Bonjour Madame</h1>
+                <p className="subtitle">Ready to start your learning journey? Choose a module to start practicing!</p>
             </header>
 
             <div className="modules-grid">
@@ -64,21 +65,6 @@ export default function Home() {
                         </button>
                     </div>
                 ))}
-            </div>
-
-            <div className="stats-section">
-                <div className="stat-card">
-                    <h3>0</h3>
-                    <p>Words Learned</p>
-                </div>
-                <div className="stat-card">
-                    <h3>0</h3>
-                    <p>Lessons Completed</p>
-                </div>
-                <div className="stat-card">
-                    <h3>0</h3>
-                    <p>Day Streak</p>
-                </div>
             </div>
         </div>
     );
