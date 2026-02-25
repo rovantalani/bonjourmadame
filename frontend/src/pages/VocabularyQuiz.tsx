@@ -10,20 +10,9 @@ interface Word {
 
 export default function VocabularyQuiz() {
     const navigate = useNavigate();
-    // @ts-ignore
     const { moduleId } = useParams();
 
-    // TODO: Later, fetch these from your backend instead of having the dict here
-    const allWords: Word[] = [
-        { id: 1, english: 'the maid / housemaid', french: 'la bonne' },
-        { id: 2, english: 'this (thing) / this one', french: 'ceci' },
-        { id: 3, english: 'have just (done something)', french: 'viens de' },
-        { id: 5, english: 'over / across / above', french: 'par-dessus' },
-        { id: 6, english: 'an ungrateful person (male)', french: 'un ingrat' },
-        { id: 7, english: 'immediately / right away', french: 'sur-le-champ' },
-    ];
-
-
+    const [allWords, setAllWords] = useState<Word[]>([]);
     const [words, setWords] = useState<Word[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [userAnswer, setUserAnswer] = useState('');
@@ -34,10 +23,14 @@ export default function VocabularyQuiz() {
     const [quizComplete, setQuizComplete] = useState(false);
 
     useEffect(() => {
-        // Shuffle words for the quiz
-        const shuffled = [...allWords].sort(() => Math.random() - 0.5);
-        setWords(shuffled);
-    }, []);
+        fetch(`http://localhost:3001/api/vocabulary/${moduleId}`)
+            .then(res => res.json())
+            .then((data: Word[]) => {
+                setAllWords(data);
+                const shuffled = [...data].sort(() => Math.random() - 0.5);
+                setWords(shuffled);
+            });
+    }, [moduleId]);
 
     const currentWord = words[currentIndex];
 
