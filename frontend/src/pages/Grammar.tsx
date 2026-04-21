@@ -14,6 +14,13 @@ export default function Grammar() {
 
     const modules: GrammarModule[] = [
         {
+            id: 'helper-verbs',
+            title: 'Helper Verbs',
+            description: 'Master the 5 essential helper verbs in French',
+            icon: '👤',
+            color: '#7C3AED'
+        },
+        {
             id: 'regular-verbs',
             title: 'Regular Verbs',
             description: 'Learn conjugation patterns for regular verbs',
