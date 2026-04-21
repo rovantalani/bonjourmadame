@@ -29,6 +29,13 @@ export default function Home() {
             description: 'Master grammar rules through interactive lessons and quizzes',
             icon: '✏️',
             color: '#059669'
+        },
+        {
+            id: 'helper-verbs',
+            title: 'Helper Verbs',
+            description: 'Learn the 5 essential French verbs: être, avoir, faire, aller, venir',
+            icon: '🔑',
+            color: '#D97706'
         }
     ];
 

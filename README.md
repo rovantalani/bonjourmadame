@@ -10,6 +10,10 @@ npm run dev
 # Terminal 2 - Frontend
 cd frontend
 npm run dev
+
+# Or simply run both in root folder
+npm run dev
+
 ```
 
 
