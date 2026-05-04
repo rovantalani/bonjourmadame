@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { vocabularyData } from './data/vocabulary';
 
 dotenv.config();
 
@@ -10,18 +11,6 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
-
-// Vocabulary data
-const vocabularyData: Record<string, { id: number; english: string; french: string }[]> = {
-    'sherlock-holmes-ch1': [
-        { id: 1, english: 'the maid / housemaid', french: 'la bonne' },
-        { id: 2, english: 'this (thing) / this one', french: 'ceci' },
-        { id: 3, english: 'have just (done something)', french: 'viens de' },
-        { id: 5, english: 'over / across / above', french: 'par-dessus' },
-        { id: 6, english: 'an ungrateful person (male)', french: 'un ingrat' },
-        { id: 7, english: 'immediately / right away', french: 'sur-le-champ' },
-    ],
-};
 
 // Helper verbs data
 const helperVerbsData: Record<string, {
@@ -104,6 +93,18 @@ app.get('/api/health', (req: Request, res: Response) => {
 
 app.get('/api/hello', (req: Request, res: Response) => {
     res.json({ message: 'Hello from the backend!' });
+});
+
+app.get('/api/vocabulary-modules', (_req: Request, res: Response) => {
+    const moduleMeta: { id: string; title: string; description: string; icon: string; color: string; wordCount: number }[] = [
+        { id: 'sherlock-holmes-ch1', title: 'Sherlock Holmes — Ch. 1', description: 'Vocabulary from the first chapter', icon: '🔍', color: '#8B5CF6', wordCount: 0 },
+        { id: 'sherlock-holmes-ch2', title: 'Sherlock Holmes — Ch. 2', description: 'Mystery & deduction vocabulary', icon: '🕵️', color: '#6D28D9', wordCount: 0 },
+        { id: 'daily-life-advanced', title: 'Advanced Daily Life', description: 'Everyday French at an advanced level', icon: '🏠', color: '#059669', wordCount: 0 },
+        { id: 'emotions-psychology', title: 'Emotions & Psychology', description: 'Express feelings and mental states', icon: '💭', color: '#DC2626', wordCount: 0 },
+        { id: 'travel-culture', title: 'Travel & Culture', description: 'Navigate travel and cultural topics', icon: '✈️', color: '#2563EB', wordCount: 0 },
+    ];
+    const result = moduleMeta.map(m => ({ ...m, wordCount: (vocabularyData[m.id] ?? []).length }));
+    res.json(result);
 });
 
 app.get('/api/vocabulary/:moduleId', (req: Request, res: Response) => {
