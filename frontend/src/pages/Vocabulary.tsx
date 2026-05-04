@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Vocabulary.css';
 
 interface VocabularyModule {
@@ -12,17 +14,13 @@ interface VocabularyModule {
 
 export default function Vocabulary() {
     const navigate = useNavigate();
+    const [modules, setModules] = useState<VocabularyModule[]>([]);
 
-    const modules: VocabularyModule[] = [
-        {
-            id: 'sherlock-holmes-ch1',
-            title: 'Sherlock Holmes Chapter 1',
-            description: 'Learn vocabulary from the first chapter',
-            icon: '🔍',
-            color: '#8B5CF6',
-            wordCount: 20
-        }
-    ];
+    useEffect(() => {
+        axios.get<VocabularyModule[]>('http://localhost:3001/api/vocabulary-modules')
+            .then(res => setModules(res.data))
+            .catch(err => console.error('Failed to load vocabulary modules', err));
+    }, []);
 
     const handleModuleClick = (moduleId: string) => {
         navigate(`/vocabulary/${moduleId}`);
