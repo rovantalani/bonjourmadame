@@ -1,92 +1,89 @@
-# React + TypeScript + Vite
+# Bonjour Madame
 
-## Run Project 
+A French language learning web app with vocabulary quizzes, grammar lessons, and verb conjugation tables.
+
+## Features
+
+- **Vocabulary** — Thematic word modules (Sherlock Holmes, daily life, emotions, travel) with flashcard-style quizzes
+- **Grammar** — Interactive grammar lessons
+- **Helper Verbs** — Conjugation tables for *être*, *avoir*, *faire*, *aller*, *venir* across four tenses (présent, passé composé, imparfait, futur simple)
+
+## Tech Stack
+
+| Layer | Tech |
+|---|---|
+| Frontend | React 19, TypeScript, Vite, React Router |
+| Backend | Node.js, Express 5, TypeScript |
+| Dev tooling | Concurrently, ts-node-dev, ESLint |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install
 
 ```bash
-# Terminal 1 - Backend
-cd backend
-npm run dev
+# Install root dependencies
+npm install
 
-# Terminal 2 - Frontend
-cd frontend
-npm run dev
+# Install backend dependencies
+cd backend && npm install
 
-# Or simply run both in root folder
-npm run dev
-
+# Install frontend dependencies
+cd frontend && npm install
 ```
 
+### Run (development)
 
-
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# From the root — starts both backend and frontend concurrently
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Or run them separately:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Terminal 1 — backend (port 3001)
+cd backend && npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Terminal 2 — frontend (port 5173)
+cd frontend && npm run dev
 ```
+
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Project Structure
+
+```
+bonjourmadame/
+├── backend/
+│   └── src/
+│       ├── index.ts          # Express server & API routes
+│       ├── data/
+│       │   ├── vocabulary.ts # Vocabulary word data
+│       │   └── curriculum.ts # Curriculum structure
+│       └── types/
+│           └── vocabulary.ts # Shared type definitions
+└── frontend/
+    └── src/
+        ├── App.tsx           # Router setup
+        └── pages/
+            ├── Home.tsx
+            ├── Vocabulary.tsx
+            ├── VocabularyQuiz.tsx
+            ├── Grammar.tsx
+            ├── HelperVerbs.tsx
+            └── VerbConjugation.tsx
+```
+
+## API Endpoints
+
+| Method | Path | Description |
+|---|---|---|
+| GET | `/api/health` | Health check |
+| GET | `/api/vocabulary-modules` | List all vocabulary modules |
+| GET | `/api/vocabulary/:moduleId` | Words for a specific module |
+| GET | `/api/helper-verbs/:verbId` | Conjugation table for a verb |
