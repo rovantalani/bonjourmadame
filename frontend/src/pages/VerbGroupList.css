@@ -1,0 +1,147 @@
+.verb-group-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.verb-group-loading {
+    text-align: center;
+    padding: 4rem;
+    font-size: 1.25rem;
+    color: #6b7280;
+}
+
+.back-button {
+    background: white;
+    border: 2px solid #e5e7eb;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.back-button:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.verb-group-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.verb-group-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 1.5rem;
+}
+
+.verb-group-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.verb-group-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.verb-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 3px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.verb-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.verb-type-badge {
+    display: inline-block;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.verb-infinitive {
+    font-size: 1.75rem;
+    color: #1f2937;
+    margin: 0 0 0.25rem;
+}
+
+.verb-translation {
+    color: #6b7280;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem;
+}
+
+.verb-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.verb-learn-button,
+.verb-quiz-button {
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+}
+
+.verb-learn-button {
+    background: white;
+    border: 2px solid;
+}
+
+.verb-learn-button:hover {
+    opacity: 0.75;
+}
+
+.verb-quiz-button {
+    color: white;
+    border: none;
+}
+
+.verb-quiz-button:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .verb-group-container {
+        padding: 1rem;
+    }
+
+    .verb-group-header h1 {
+        font-size: 2rem;
+    }
+
+    .verb-group-grid {
+        grid-template-columns: 1fr;
+    }
+}
