@@ -23,39 +23,35 @@ export default function Phrases() {
     }, []);
 
     return (
-        <div className="phrases-container">
-            <button className="back-button" onClick={() => navigate('/')}>← Back to Home</button>
-
-            <header className="phrases-header">
+        <main className="page">
+            <header className="page-header">
                 <h1>Phrases</h1>
-                <p className="subtitle">Real French expressions for real situations</p>
+                <p className="subtitle">Real French for real situations</p>
             </header>
 
             <div className="phrases-grid">
                 {categories.map((cat) => (
                     <div
                         key={cat.id}
-                        className="phrase-category-card"
+                        className="phrase-card"
                         onClick={() => navigate(`/phrases/${cat.id}`)}
-                        style={{ borderColor: cat.color }}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => e.key === 'Enter' && navigate(`/phrases/${cat.id}`)}
+                        style={{ borderLeft: `3px solid ${cat.color}` }}
                     >
-                        <div className="phrase-category-icon" style={{ backgroundColor: cat.color }}>
-                            {cat.icon}
-                        </div>
-                        <h2>{cat.title}</h2>
-                        <p>{cat.description}</p>
-                        <div className="phrase-count">
-                            <span>{cat.phraseCount} phrases</span>
-                        </div>
-                        <button
-                            className="phrase-category-button"
-                            style={{ backgroundColor: cat.color }}
+                        <span
+                            className="phrase-card-icon-circle"
+                            style={{ backgroundColor: `${cat.color}1F` }}
                         >
-                            Study
-                        </button>
+                            <span className="phrase-card-icon">{cat.icon}</span>
+                        </span>
+                        <h2 className="phrase-card-title">{cat.title}</h2>
+                        <p className="phrase-card-desc">{cat.description}</p>
+                        <span className="phrase-card-count">{cat.phraseCount} phrases</span>
                     </div>
                 ))}
             </div>
-        </div>
+        </main>
     );
 }

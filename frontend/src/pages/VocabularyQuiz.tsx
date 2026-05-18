@@ -39,7 +39,7 @@ export default function VocabularyQuiz() {
             .toLowerCase()
             .trim()
             .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, ''); // Remove accents for comparison
+            .replace(/[̀-ͯ]/g, ''); // Remove accents for comparison
     };
 
     const handleSubmit = () => {
@@ -103,88 +103,101 @@ export default function VocabularyQuiz() {
     };
 
     if (!currentWord && !quizComplete) {
-        return <div className="quiz-loading">Loading...</div>;
+        return (
+            <main className="page">
+                <p className="vocq-loading">Loading…</p>
+            </main>
+        );
     }
 
+    /* ── Completion screen ── */
     if (quizComplete) {
         const totalWords = allWords.length;
         const accuracy = Math.round((correctCount / totalWords) * 100);
 
         return (
-            <div className="quiz-container">
-                <div className="quiz-complete">
-                    <div className="complete-icon">🎉</div>
-                    <h1>Quiz Complete!</h1>
-                    <div className="complete-stats">
-                        <div className="stat">
-                            <span className="stat-value">{correctCount}</span>
-                            <span className="stat-label">Correct Answers</span>
+            <main className="page">
+                <div className="vocq-complete card">
+                    <div className="vocq-complete-emoji">🎉</div>
+                    <h1 className="vocq-complete-title">Quiz Complete!</h1>
+
+                    <div className="vocq-stats-grid">
+                        <div className="vocq-stat">
+                            <span className="vocq-stat-value">{correctCount}</span>
+                            <span className="vocq-stat-label">Score</span>
                         </div>
-                        <div className="stat">
-                            <span className="stat-value">{totalWords}</span>
-                            <span className="stat-label">Total Words</span>
+                        <div className="vocq-stat">
+                            <span className="vocq-stat-value">{totalWords}</span>
+                            <span className="vocq-stat-label">Total</span>
                         </div>
-                        <div className="stat">
-                            <span className="stat-value">{accuracy}%</span>
-                            <span className="stat-label">Accuracy</span>
+                        <div className="vocq-stat">
+                            <span className="vocq-stat-value">{accuracy}%</span>
+                            <span className="vocq-stat-label">Accuracy</span>
                         </div>
                     </div>
-                    <div className="complete-actions">
-                        <button className="restart-button" onClick={handleRestart}>
+
+                    <div className="vocq-complete-actions">
+                        <button className="btn btn-primary" onClick={handleRestart}>
                             Try Again
                         </button>
-                        <button className="exit-button" onClick={handleExit}>
+                        <button className="btn btn-secondary" onClick={handleExit}>
                             Back to Vocabulary
                         </button>
                     </div>
                 </div>
-            </div>
+            </main>
         );
     }
 
+    /* ── Active quiz ── */
+    const progress = ((currentIndex + 1) / words.length) * 100;
+
     return (
-        <div className="quiz-container">
-            <div className="quiz-header">
-                <button className="exit-quiz-button" onClick={handleExit}>
-                    ✕ Exit Quiz
+        <main className="page">
+            {/* Top bar */}
+            <div className="vocq-top-bar">
+                <button className="btn btn-secondary vocq-exit-btn" onClick={handleExit}>
+                    ✕ Exit
                 </button>
-                <div className="quiz-progress">
-          <span>
-            {isReviewMode ? '🔄 Review Mode: ' : ''}
-              Word {currentIndex + 1} of {words.length}
-          </span>
-                    <div className="progress-bar">
-                        <div
-                            className="progress-fill"
-                            style={{ width: `${((currentIndex + 1) / words.length) * 100}%` }}
-                        />
-                    </div>
-                </div>
+                <span className="vocq-counter">
+                    {isReviewMode ? '🔄 Review — ' : ''}Word {currentIndex + 1} of {words.length}
+                </span>
             </div>
 
-            <div className="quiz-card">
-                <div className="word-display">
-                    <span className="word-label">Translate to French:</span>
-                    <h2 className="word-english">{currentWord.english}</h2>
+            {/* Progress bar */}
+            <div className="progress-track vocq-progress">
+                <div
+                    className="progress-fill"
+                    style={{ width: `${progress}%`, backgroundColor: 'var(--accent)' }}
+                />
+            </div>
+
+            {/* Question card */}
+            <div className="card vocq-card">
+                <div className="vocq-question-top">
+                    <p className="section-label vocq-word-label">Translate to French</p>
+                    <h2 className="vocq-word-english">{currentWord.english}</h2>
                 </div>
 
+                <hr className="vocq-divider" />
+
                 {!showAnswer ? (
-                    <div className="answer-section">
+                    <div className="vocq-answer-section">
                         <input
                             type="text"
-                            className="answer-input"
+                            className="field-input vocq-input"
                             value={userAnswer}
                             onChange={(e) => setUserAnswer(e.target.value)}
                             onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
-                            placeholder="Type your answer..."
+                            placeholder="Type your answer…"
                             autoFocus
                         />
-                        <div className="button-group">
-                            <button className="skip-button" onClick={handleSkip}>
+                        <div className="vocq-btn-row">
+                            <button className="btn btn-secondary" onClick={handleSkip}>
                                 Skip
                             </button>
                             <button
-                                className="submit-button"
+                                className="btn btn-primary"
                                 onClick={handleSubmit}
                                 disabled={!userAnswer.trim()}
                             >
@@ -193,34 +206,29 @@ export default function VocabularyQuiz() {
                         </div>
                     </div>
                 ) : (
-                    <div className="reveal-section">
-                        <div className="correct-answer">
-                            <span className="answer-label">Correct Answer:</span>
-                            <h3>{currentWord.french}</h3>
-                        </div>
+                    <div className="vocq-reveal-section">
+                        <p className="vocq-correct-answer">{currentWord.french}</p>
                         {userAnswer && (
-                            <div className="user-answer">
-                                <span className="answer-label">Your Answer:</span>
-                                <p className="wrong">{userAnswer}</p>
-                            </div>
+                            <p className="vocq-wrong-answer">{userAnswer}</p>
                         )}
-                        <button className="next-button" onClick={handleNext}>
+                        <button className="btn btn-primary" onClick={handleNext}>
                             Next Word →
                         </button>
                     </div>
                 )}
             </div>
 
-            <div className="quiz-stats">
-                <div className="stat-item correct">
+            {/* Stats bar */}
+            <div className="vocq-stats-bar">
+                <div className="vocq-stat-pill vocq-stat-correct">
                     <span>✓</span>
                     <span>{correctCount} Correct</span>
                 </div>
-                <div className="stat-item wrong">
+                <div className="vocq-stat-pill vocq-stat-wrong">
                     <span>✗</span>
                     <span>{wrongWords.length} To Review</span>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }

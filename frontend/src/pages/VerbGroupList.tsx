@@ -50,53 +50,74 @@ export default function VerbGroupList() {
     }, [moduleId, navigate]);
 
     if (loading) {
-        return <div className="verb-group-loading">Loading...</div>;
+        return (
+            <main className="page">
+                <p className="vgl-loading">Loading…</p>
+            </main>
+        );
     }
 
     if (error || !group) {
         return (
-            <div className="verb-group-container">
-                <button className="back-button" onClick={() => navigate('/grammar')}>
+            <main className="page">
+                <button className="back-btn" onClick={() => navigate('/grammar')}>
                     ← Back to Grammar
                 </button>
                 <p>Module not found.</p>
-            </div>
+            </main>
         );
     }
 
     return (
-        <div className="verb-group-container">
-            <button className="back-button" onClick={() => navigate('/grammar')}>
+        <main className="page">
+            <button className="back-btn" onClick={() => navigate('/grammar')}>
                 ← Back to Grammar
             </button>
 
-            <header className="verb-group-header">
-                <div className="verb-group-icon" style={{ backgroundColor: group.color }}>
+            <header className="vgl-header">
+                <div
+                    className="vgl-icon"
+                    style={{ backgroundColor: `${group.color}1F` }}
+                >
                     {group.icon}
                 </div>
                 <h1 style={{ color: group.color }}>{group.title}</h1>
-                <p className="subtitle">{group.description}</p>
+                <p className="vgl-subtitle">{group.description}</p>
             </header>
 
-            <div className="verb-group-grid">
+            <div className="verb-grid">
                 {group.verbs.map((verb) => (
-                    <div key={verb.id} className="verb-card" style={{ borderColor: verb.color }}>
-                        <span className="verb-type-badge" style={{ backgroundColor: verb.color }}>
+                    <div key={verb.id} className="verb-card">
+                        <span
+                            className="level-badge"
+                            style={{ backgroundColor: verb.color }}
+                        >
                             {verb.type}
                         </span>
                         <h2 className="verb-infinitive">{verb.infinitive}</h2>
                         <p className="verb-translation">{verb.translation}</p>
                         <div className="verb-actions">
                             <button
-                                className="verb-learn-button"
-                                style={{ borderColor: verb.color, color: verb.color }}
+                                className="btn"
+                                style={{
+                                    border: `1.5px solid ${verb.color}`,
+                                    color: verb.color,
+                                    background: 'var(--surface)',
+                                    padding: '0.45rem 0.9rem',
+                                    fontSize: '0.82rem',
+                                }}
                                 onClick={() => navigate(`/grammar/verbs/${verb.id}/learn`)}
                             >
                                 Learn
                             </button>
                             <button
-                                className="verb-quiz-button"
-                                style={{ backgroundColor: verb.color }}
+                                className="btn"
+                                style={{
+                                    backgroundColor: verb.color,
+                                    color: '#fff',
+                                    padding: '0.45rem 0.9rem',
+                                    fontSize: '0.82rem',
+                                }}
                                 onClick={() => navigate(`/grammar/verbs/${verb.id}/quiz`)}
                             >
                                 Quiz
@@ -105,6 +126,6 @@ export default function VerbGroupList() {
                     </div>
                 ))}
             </div>
-        </div>
+        </main>
     );
 }

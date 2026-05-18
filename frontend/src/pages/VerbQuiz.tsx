@@ -142,127 +142,132 @@ export default function VerbQuiz() {
     };
 
     if (!verb || (!current && !quizComplete)) {
-        return <div className="verb-quiz-loading">Loading...</div>;
+        return (
+            <main className="page">
+                <p className="vq-loading">Loading…</p>
+            </main>
+        );
     }
 
+    /* ── Completion screen ── */
     if (quizComplete) {
         const total = allQuestions.length;
         const accuracy = Math.round((correctCount / total) * 100);
         return (
-            <div className="verb-quiz-container">
-                <div className="quiz-complete">
-                    <div className="complete-icon">🎉</div>
-                    <h1>Quiz Complete!</h1>
-                    <p className="complete-verb" style={{ color: verb.color }}>
-                        {verb.infinitive} — {verb.translation}
+            <main className="page">
+                <div className="vq-complete card">
+                    <div className="vq-complete-emoji">🎉</div>
+                    <h1 className="vq-complete-title">Quiz Complete!</h1>
+                    <p className="vq-complete-verb" style={{ color: verb.color }}>
+                        <em>{verb.infinitive} — {verb.translation}</em>
                     </p>
-                    <div className="complete-stats">
-                        <div className="stat">
-                            <span className="stat-value">{correctCount}</span>
-                            <span className="stat-label">Correct</span>
+
+                    <div className="vq-stats-grid">
+                        <div className="vq-stat">
+                            <span className="vq-stat-value" style={{ color: verb.color }}>{correctCount}</span>
+                            <span className="vq-stat-label">Score</span>
                         </div>
-                        <div className="stat">
-                            <span className="stat-value">{total}</span>
-                            <span className="stat-label">Total</span>
+                        <div className="vq-stat">
+                            <span className="vq-stat-value" style={{ color: verb.color }}>{total}</span>
+                            <span className="vq-stat-label">Total</span>
                         </div>
-                        <div className="stat">
-                            <span className="stat-value">{accuracy}%</span>
-                            <span className="stat-label">Accuracy</span>
+                        <div className="vq-stat">
+                            <span className="vq-stat-value" style={{ color: verb.color }}>{accuracy}%</span>
+                            <span className="vq-stat-label">Accuracy</span>
                         </div>
                     </div>
-                    <div className="complete-actions">
+
+                    <div className="vq-complete-actions">
                         <button
-                            className="restart-button"
-                            style={{ backgroundColor: verb.color }}
+                            className="btn"
+                            style={{ backgroundColor: verb.color, color: '#fff' }}
                             onClick={handleRestart}
                         >
                             Try Again
                         </button>
-                        <button className="exit-button" onClick={handleExit}>
+                        <button className="btn btn-secondary" onClick={handleExit}>
                             Back to Verbs
                         </button>
                     </div>
                 </div>
-            </div>
+            </main>
         );
     }
 
+    /* ── Active quiz ── */
+    const progress = ((currentIndex + 1) / questions.length) * 100;
+
     return (
-        <div className="verb-quiz-container">
-            <div className="quiz-header">
-                <button className="exit-quiz-button" onClick={handleExit}>
-                    ✕ Exit Quiz
+        <main className="page">
+            {/* Top bar */}
+            <div className="vq-top-bar">
+                <button className="btn btn-secondary vq-exit-btn" onClick={handleExit}>
+                    ✕ Exit
                 </button>
-                <div className="quiz-progress">
-                    <span>
-                        {isReviewMode ? '🔄 Review Mode: ' : ''}
-                        Question {currentIndex + 1} of {questions.length}
+                <div className="vq-center-info">
+                    <span className="vq-verb-name" style={{ color: verb.color }}>
+                        {verb.infinitive}
                     </span>
-                    <div className="progress-bar">
-                        <div
-                            className="progress-fill"
-                            style={{
-                                width: `${((currentIndex + 1) / questions.length) * 100}%`,
-                                backgroundColor: verb.color,
-                            }}
-                        />
-                    </div>
+                    <span className="vq-verb-hint">{verb.translation}</span>
                 </div>
+                <span className="vq-counter">
+                    {isReviewMode && '🔄 '}Question {currentIndex + 1} of {questions.length}
+                </span>
             </div>
 
-            <div className="quiz-card">
-                <div className="word-display">
-                    <div className="verb-identity">
-                        <span className="verb-name" style={{ color: verb.color }}>{verb.infinitive}</span>
-                        <span className="verb-hint">{verb.translation}</span>
-                    </div>
-                    <div className="question-context">
-                        <span className="tense-label">{current.tenseLabel}</span>
-                        <h2 className="subject-label">{current.sujet}</h2>
-                    </div>
+            {/* Progress bar */}
+            <div className="progress-track vq-progress">
+                <div
+                    className="progress-fill"
+                    style={{ width: `${progress}%`, backgroundColor: verb.color }}
+                />
+            </div>
+
+            {/* Question card */}
+            <div className="card vq-card">
+                <div className="vq-question-top">
+                    <p className="section-label vq-tense-label">{current.tenseLabel}</p>
+                    <h2 className="vq-subject">{current.sujet}</h2>
                 </div>
 
+                <hr className="vq-divider" />
+
                 {!showAnswer ? (
-                    <div className="answer-section">
+                    <div className="vq-answer-section">
                         <input
                             type="text"
-                            className="answer-input"
+                            className="field-input vq-input"
+                            style={{ '--focus-color': verb.color } as React.CSSProperties}
                             value={userAnswer}
                             onChange={e => setUserAnswer(e.target.value)}
                             onKeyPress={e => e.key === 'Enter' && handleSubmit()}
-                            placeholder="Type the conjugation..."
+                            placeholder="Type the conjugation…"
                             autoFocus
                         />
-                        <div className="button-group">
-                            <button className="skip-button" onClick={handleSkip}>
+                        <div className="vq-btn-row">
+                            <button className="btn btn-secondary" onClick={handleSkip}>
                                 Skip
                             </button>
                             <button
-                                className="submit-button"
+                                className="btn"
+                                style={{ backgroundColor: verb.color, color: '#fff' }}
                                 onClick={handleSubmit}
                                 disabled={!userAnswer.trim()}
-                                style={{ backgroundColor: verb.color }}
                             >
                                 Submit
                             </button>
                         </div>
                     </div>
                 ) : (
-                    <div className="reveal-section">
-                        <div className="correct-answer">
-                            <span className="answer-label">Correct Answer:</span>
-                            <h3>{current.answer}</h3>
-                        </div>
+                    <div className="vq-reveal-section">
+                        <p className="vq-correct-answer">{current.answer}</p>
                         {userAnswer && (
-                            <div className="user-answer">
-                                <span className="answer-label">Your Answer:</span>
-                                <p className="wrong">{userAnswer}</p>
-                            </div>
+                            <p className="vq-wrong-answer">{userAnswer}</p>
                         )}
                         <button
-                            className="next-button"
+                            className="btn"
+                            style={{ backgroundColor: verb.color, color: '#fff' }}
                             onClick={handleNext}
-                            style={{ backgroundColor: verb.color }}
                         >
                             Next →
                         </button>
@@ -270,16 +275,17 @@ export default function VerbQuiz() {
                 )}
             </div>
 
-            <div className="quiz-stats">
-                <div className="stat-item correct">
+            {/* Stats bar */}
+            <div className="vq-stats-bar">
+                <div className="vq-stat-pill vq-stat-correct">
                     <span>✓</span>
                     <span>{correctCount} Correct</span>
                 </div>
-                <div className="stat-item wrong">
+                <div className="vq-stat-pill vq-stat-wrong">
                     <span>✗</span>
                     <span>{wrongQuestions.length} To Review</span>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }

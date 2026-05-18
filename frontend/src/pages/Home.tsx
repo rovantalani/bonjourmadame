@@ -1,85 +1,88 @@
-// import { useState } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 
-
-interface Module {
+interface SectionCard {
     id: string;
+    path: string;
+    color: string;
+    icon: string;
     title: string;
     description: string;
-    icon: string;
-    color: string;
+    meta: string;
 }
 
-export default function Home() {
+const SECTION_CARDS: SectionCard[] = [
+    {
+        id: 'vocabulary',
+        path: '/vocabulary',
+        color: '#4338CA',
+        icon: '📖',
+        title: 'Vocabulary',
+        description: 'Words, flashcards & quizzes across 20 curated modules',
+        meta: '20 modules · 400+ words',
+    },
+    {
+        id: 'grammar',
+        path: '/grammar',
+        color: '#059669',
+        icon: '✏️',
+        title: 'Grammar',
+        description: 'Conjugation tables and 10 structured grammar lessons',
+        meta: '10 lessons · 52 verbs',
+    },
+    {
+        id: 'phrases',
+        path: '/phrases',
+        color: '#0891B2',
+        icon: '💬',
+        title: 'Phrases',
+        description: '90 essential expressions for real conversations',
+        meta: '6 categories · 90 phrases',
+    },
+    {
+        id: 'helper-verbs',
+        path: '/helper-verbs',
+        color: '#D97706',
+        icon: '⚡',
+        title: 'Helper Verbs',
+        description: 'The 5 essential verbs: être, avoir, faire, aller, venir',
+        meta: '5 verbs · 4 tenses',
+    },
+];
 
+export default function Home() {
     const navigate = useNavigate();
 
-    const modules: Module[] = [
-        {
-            id: 'vocabulary',
-            title: 'Vocabulary',
-            description: 'Learn and practice new words with flashcards and exercises',
-            icon: '📚',
-            color: '#4F46E5'
-        },
-        {
-            id: 'grammar',
-            title: 'Grammar',
-            description: 'Master grammar rules through interactive lessons and quizzes',
-            icon: '✏️',
-            color: '#059669'
-        },
-        {
-            id: 'helper-verbs',
-            title: 'Helper Verbs',
-            description: 'Learn the 5 essential French verbs: être, avoir, faire, aller, venir',
-            icon: '🔑',
-            color: '#D97706'
-        },
-        {
-            id: 'phrases',
-            title: 'Phrases',
-            description: 'Real expressions for everyday conversations, restaurants, travel and more',
-            icon: '💬',
-            color: '#0891B2'
-        }
-    ];
-
-    const handleModuleClick = (moduleId: string) => {
-        navigate(`/${moduleId}`);
-    };
-
     return (
-        <div className="home-container">
-            <header className="home-header">
-                <img src="/logo_no_text.png" alt="Bonjour Madame logo" className="logo"/>
+        <main className="page">
+            <div className="home-hero">
+                <img src="/logo_no_text.png" alt="Bonjour Madame logo" className="home-logo" />
                 <h1>Bonjour Madame</h1>
-                <p className="subtitle">Ready to start your learning journey? Choose a module to start practicing!</p>
-            </header>
+                <p className="home-subtitle">Your personal French course</p>
+                <hr className="home-rule" />
+            </div>
 
-            <div className="modules-grid">
-                {modules.map((module) => (
-                    <div
-                        key={module.id}
-                        className="module-card"
-                        onClick={() => handleModuleClick(module.id)}
-                        style={{ borderColor: module.color }}
+            <div className="home-grid">
+                {SECTION_CARDS.map((card) => (
+                    <button
+                        key={card.id}
+                        className="home-section-card"
+                        onClick={() => navigate(card.path)}
+                        type="button"
                     >
-                        <div className="module-icon" style={{ backgroundColor: module.color }}>
-                            {module.icon}
+                        <span
+                            className="home-card-accent-bar"
+                            style={{ backgroundColor: card.color }}
+                        />
+                        <div className="home-card-body">
+                            <span className="home-card-icon">{card.icon}</span>
+                            <h2 className="home-card-title">{card.title}</h2>
+                            <p className="home-card-desc">{card.description}</p>
+                            <span className="home-card-meta">{card.meta}</span>
                         </div>
-                        <h2>{module.title}</h2>
-                        <p>{module.description}</p>
-                        <button
-                            className="module-button"
-                            style={{ backgroundColor: module.color }}
-                        >
-                            Start Learning
-                        </button>
-                    </div>
+                    </button>
                 ))}
             </div>
-        </div>
+        </main>
     );
 }
