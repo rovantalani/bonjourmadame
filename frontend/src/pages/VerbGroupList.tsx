@@ -60,8 +60,8 @@ export default function VerbGroupList() {
     if (error || !group) {
         return (
             <main className="page">
-                <button className="back-btn" onClick={() => navigate('/grammar')}>
-                    ← Back to Grammar
+                <button className="back-btn" onClick={() => navigate(-1)}>
+                    ← Back
                 </button>
                 <p>Module not found.</p>
             </main>
@@ -70,8 +70,8 @@ export default function VerbGroupList() {
 
     return (
         <main className="page">
-            <button className="back-btn" onClick={() => navigate('/grammar')}>
-                ← Back to Grammar
+            <button className="back-btn" onClick={() => navigate(-1)}>
+                ← Back
             </button>
 
             <header className="vgl-header">

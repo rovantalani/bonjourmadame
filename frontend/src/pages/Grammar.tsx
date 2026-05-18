@@ -24,6 +24,7 @@ const verbModules: VerbModule[] = [
     { id: 'helper-verbs', title: 'Helper Verbs', description: 'Master the 5 essential helper verbs in French', icon: '👤', color: '#7C3AED' },
     { id: 'regular-verbs', title: 'Regular Verbs', description: 'Learn conjugation patterns for regular verbs', icon: '📝', color: '#059669' },
     { id: 'irregular-verbs', title: 'Irregular Verbs', description: 'Master the most common irregular verb forms', icon: '⚡', color: '#DC2626' },
+    { id: 'advanced-irregular-verbs', title: 'Advanced Irregular Verbs', description: 'Complex irregular patterns for fluent-level mastery', icon: '🔥', color: '#BE185D' },
 ];
 
 export default function Grammar() {

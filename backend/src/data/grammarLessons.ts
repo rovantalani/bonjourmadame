@@ -509,4 +509,289 @@ export const grammarLessons: GrammarLesson[] = [
             },
         ],
     },
+    {
+        id: 'gerondif',
+        title: 'Le Gérondif',
+        level: 'B2',
+        description: 'Express simultaneous actions, manner, and condition using en + present participle',
+        icon: '🔀',
+        color: '#059669',
+        sections: [
+            {
+                title: 'Formation',
+                explanation: 'Take the nous form of the present tense, remove -ons, add -ant. Then place en before it. Only three irregular stems: étant (être), ayant (avoir), sachant (savoir).',
+                examples: [
+                    { french: 'parler → nous parlons → parlant → en parlant', english: 'while speaking' },
+                    { french: 'finir → nous finissons → finissant → en finissant', english: 'while finishing' },
+                    { french: 'prendre → nous prenons → prenant → en prenant', english: 'while taking' },
+                    { french: 'être → étant → en étant', english: 'while being (irregular)' },
+                    { french: 'savoir → sachant → en sachant', english: 'knowing / by knowing (irregular)' },
+                ],
+            },
+            {
+                title: 'Simultaneous Actions',
+                explanation: 'The gérondif expresses two actions happening at the same time. Both actions must share the same subject.',
+                examples: [
+                    { french: 'Elle chante en cuisinant.', english: 'She sings while cooking.' },
+                    { french: 'Il lit le journal en mangeant.', english: 'He reads the paper while eating.' },
+                    { french: 'Je travaille en écoutant de la musique.', english: 'I work while listening to music.' },
+                    { french: 'Il conduisait en téléphonant.', english: 'He was driving while on his phone.' },
+                ],
+            },
+            {
+                title: 'Manner or Means',
+                explanation: 'The gérondif expresses how something is achieved — the means by which the main action occurs.',
+                examples: [
+                    { french: 'Il a réussi en travaillant dur.', english: 'He succeeded by working hard.' },
+                    { french: 'J\'ai appris le français en regardant des films.', english: 'I learned French by watching films.' },
+                    { french: 'Elle s\'est blessée en tombant.', english: 'She hurt herself by falling.' },
+                    { french: 'On maigrit en mangeant moins.', english: 'You lose weight by eating less.' },
+                ],
+            },
+            {
+                title: 'Condition or Time',
+                explanation: 'The gérondif can express a condition (if) or a time reference (upon, when).',
+                examples: [
+                    { french: 'En faisant attention, tu éviteras les erreurs.', english: 'If you\'re careful, you\'ll avoid mistakes.' },
+                    { french: 'En arrivant, appelez-moi.', english: 'Upon arriving, call me.' },
+                    { french: 'En partant tôt, tu éviteras les embouteillages.', english: 'By leaving early, you\'ll avoid traffic.' },
+                ],
+            },
+            {
+                title: 'Gérondif vs Participe Présent',
+                explanation: 'The gérondif (en + -ant) is adverbial and modifies the verb. The participe présent (-ant alone) is adjectival and can modify a noun, or introduce a subordinate clause.',
+                examples: [
+                    { french: 'En souriant, il répondit. (gérondif — how he replied)', english: 'Smiling, he replied.' },
+                    { french: 'Un enfant souriant. (participe présent as adj)', english: 'A smiling child.' },
+                    { french: 'Sachant cela, elle n\'est pas venue. (participe présent — causal)', english: 'Knowing that, she didn\'t come.' },
+                    { french: 'Il est entré en courant. (gérondif)', english: 'He came in running.' },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'passive-voice',
+        title: 'La Voix Passive',
+        level: 'B2',
+        description: 'How to form the passive, when to use it, and elegant alternatives',
+        icon: '🔁',
+        color: '#0891B2',
+        sections: [
+            {
+                title: 'Formation',
+                explanation: 'Passive = subject + être (conjugated in the required tense) + past participle (agrees in gender/number with subject) + par/de + agent. The tense of être reflects the tense of the active sentence.',
+                examples: [
+                    { french: 'Le chat mange la souris. → La souris est mangée par le chat. (présent)', english: 'The mouse is eaten by the cat.' },
+                    { french: 'La police a arrêté le suspect. → Le suspect a été arrêté par la police. (passé composé)', english: 'The suspect was arrested by the police.' },
+                    { french: 'On construisait le pont. → Le pont était construit. (imparfait)', english: 'The bridge was being built.' },
+                    { french: 'Le jury condamnera l\'accusé. → L\'accusé sera condamné. (futur)', english: 'The accused will be condemned.' },
+                    { french: 'Ce roman a été écrit par Balzac en 1835.', english: 'This novel was written by Balzac in 1835.' },
+                ],
+            },
+            {
+                title: 'Par vs De',
+                explanation: 'Use par for physical, concrete, or one-time actions. Use de for states, feelings, habitual or descriptive situations.',
+                examples: [
+                    { french: 'La ville a été détruite par les bombes.', english: 'The city was destroyed by bombs. (par — physical action)' },
+                    { french: 'Il est respecté de tous ses collègues.', english: 'He is respected by all his colleagues. (de — state)' },
+                    { french: 'Elle est entourée de fleurs.', english: 'She is surrounded by flowers. (de — descriptive state)' },
+                    { french: 'Le président a été applaudi par la foule.', english: 'The president was applauded by the crowd. (par — concrete action)' },
+                ],
+            },
+            {
+                title: 'Passive Across Tenses',
+                explanation: 'Any tense of être can be used. The past participle always agrees with the subject.',
+                examples: [
+                    { french: 'Elle est invitée. (présent)', english: 'She is invited.' },
+                    { french: 'Elle a été invitée. (passé composé)', english: 'She was invited.' },
+                    { french: 'Elle sera invitée. (futur)', english: 'She will be invited.' },
+                    { french: 'Elle aurait été invitée. (conditionnel passé)', english: 'She would have been invited.' },
+                ],
+            },
+            {
+                title: 'Avoiding the Passive',
+                explanation: 'In spoken French, the passive is often avoided. Three common alternatives: on + active verb; a reflexive/pronominal construction; or simply restructuring.',
+                examples: [
+                    { french: 'On vous appellera demain.', english: 'You\'ll be called tomorrow. (on instead of passive)' },
+                    { french: 'Cela se fait facilement.', english: 'That is done easily. (pronominal)' },
+                    { french: 'Ce vin se boit frais.', english: 'This wine is drunk chilled. (pronominal)' },
+                    { french: 'Ce livre se vend bien.', english: 'This book sells well. (pronominal)' },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'reported-speech',
+        title: 'Le Discours Indirect',
+        level: 'B2',
+        description: 'Report what someone said, asked, or ordered — with the correct tense shifts',
+        icon: '💭',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Statements (que)',
+                explanation: 'Direct speech uses quotation marks. Indirect speech uses que. If the reporting verb is in the present, tenses stay the same. If reporting verb is in the past, tenses shift back.',
+                examples: [
+                    { french: 'Il dit : « Je suis fatigué. » → Il dit qu\'il est fatigué.', english: 'He says he is tired. (reporting verb présent — no shift)' },
+                    { french: 'Il a dit : « Je suis fatigué. » → Il a dit qu\'il était fatigué.', english: 'He said he was tired. (reporting verb past — shift)' },
+                    { french: 'Elle déclare : « J\'ai fini. » → Elle déclare qu\'elle a fini.', english: 'She declares that she has finished. (present reporting)' },
+                    { french: 'Elle a déclaré : « J\'ai fini. » → Elle a déclaré qu\'elle avait fini.', english: 'She declared that she had finished. (past reporting)' },
+                ],
+            },
+            {
+                title: 'Tense Shifts (reporting verb in past)',
+                explanation: 'When the reporting verb is past, tenses shift back one step.',
+                examples: [
+                    { french: 'présent → imparfait: « Il travaille. » → Il a dit qu\'il travaillait.', english: 'He said he was working.' },
+                    { french: 'passé composé → plus-que-parfait: « J\'ai mangé. » → Il a dit qu\'il avait mangé.', english: 'He said he had eaten.' },
+                    { french: 'futur simple → conditionnel présent: « Je viendrai. » → Il a dit qu\'il viendrait.', english: 'He said he would come.' },
+                    { french: 'imparfait stays imparfait: « Elle dormait. » → Il a dit qu\'elle dormait.', english: 'He said she was sleeping.' },
+                    { french: 'futur antérieur → conditionnel passé: « J\'aurai fini. » → Il a dit qu\'il aurait fini.', english: 'He said he would have finished.' },
+                    { french: 'conditionnel présent stays: « Je voudrais. » → Il a dit qu\'il voudrait.', english: 'He said he would like.' },
+                ],
+            },
+            {
+                title: 'Yes/No Questions (si)',
+                explanation: 'Yes/no questions in indirect speech use si (whether). Est-ce que is dropped.',
+                examples: [
+                    { french: 'Il a demandé : « Tu viens ? » → Il a demandé si elle venait.', english: 'He asked if she was coming.' },
+                    { french: 'Elle voulait savoir : « Est-ce qu\'il a réussi ? » → Elle voulait savoir s\'il avait réussi.', english: 'She wanted to know if he had succeeded.' },
+                    { french: 'Je me demande si c\'est vrai.', english: 'I wonder whether it\'s true.' },
+                ],
+            },
+            {
+                title: 'Wh- Questions',
+                explanation: 'Question words are kept. Qu\'est-ce que becomes ce que. Qu\'est-ce qui becomes ce qui. Inversion is dropped.',
+                examples: [
+                    { french: '« Où vas-tu ? » → Il a demandé où elle allait.', english: 'He asked where she was going.' },
+                    { french: '« Comment t\'appelles-tu ? » → Il a demandé comment elle s\'appelait.', english: 'He asked what her name was.' },
+                    { french: '« Qu\'est-ce que tu veux ? » → Il a demandé ce qu\'elle voulait.', english: 'He asked what she wanted.' },
+                    { french: '« Qu\'est-ce qui se passe ? » → Il a demandé ce qui se passait.', english: 'He asked what was happening.' },
+                ],
+            },
+            {
+                title: 'Commands (de + infinitive)',
+                explanation: 'Direct commands become de + infinitive in indirect speech.',
+                examples: [
+                    { french: '« Pars ! » → Elle lui a dit de partir.', english: 'She told him to leave.' },
+                    { french: '« Ne fais pas ça ! » → Il lui a dit de ne pas faire ça.', english: 'He told her not to do that.' },
+                    { french: '« Asseyez-vous ! » → Il nous a demandé de nous asseoir.', english: 'He asked us to sit down.' },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'conditionnel-passe',
+        title: 'Le Conditionnel Passé',
+        level: 'C1',
+        description: 'Express hypothetical past situations, reproach, regret, and unverified information',
+        icon: '⏳',
+        color: '#7C3AED',
+        sections: [
+            {
+                title: 'Formation',
+                explanation: 'Conditionnel passé = avoir or être in conditionnel présent + past participle. The same verbs that use être in the passé composé use être here. The participle agrees with the subject when être is used.',
+                examples: [
+                    { french: 'parler → j\'aurais parlé', english: 'I would have spoken' },
+                    { french: 'finir → elle aurait fini', english: 'she would have finished' },
+                    { french: 'partir → il serait parti', english: 'he would have left' },
+                    { french: 'venir → nous serions venus', english: 'we would have come' },
+                    { french: 'se lever → elle se serait levée', english: 'she would have got up' },
+                ],
+            },
+            {
+                title: 'Hypothetical Past (si + plus-que-parfait)',
+                explanation: 'Use conditionnel passé in the main clause when the condition clause uses the plus-que-parfait. This expresses a past situation that didn\'t happen.',
+                examples: [
+                    { french: 'Si j\'avais su, j\'aurais agi différemment.', english: 'If I had known, I would have acted differently.' },
+                    { french: 'Si elle était venue, nous aurions pu discuter.', english: 'If she had come, we could have talked.' },
+                    { french: 'Il ne serait pas parti s\'il avait eu le choix.', english: 'He wouldn\'t have left if he\'d had the choice.' },
+                    { french: 'Si tu m\'avais écouté, ça ne serait pas arrivé.', english: 'If you\'d listened to me, this wouldn\'t have happened.' },
+                ],
+            },
+            {
+                title: 'Regret and Reproach',
+                explanation: 'The conditionnel passé expresses what should or could have been done differently. Often used to express regret or blame.',
+                examples: [
+                    { french: 'Tu aurais pu m\'appeler !', english: 'You could have called me!' },
+                    { french: 'J\'aurais dû y penser.', english: 'I should have thought of that.' },
+                    { french: 'Il n\'aurait pas fallu dire ça.', english: 'You shouldn\'t have said that.' },
+                    { french: 'On aurait pu trouver une solution.', english: 'We could have found a solution.' },
+                ],
+            },
+            {
+                title: 'Unverified Reported Information',
+                explanation: 'Journalists use the conditionnel passé to report events they cannot confirm as fact — a key feature of formal French writing.',
+                examples: [
+                    { french: 'L\'accusé aurait menti lors de son témoignage.', english: 'The accused allegedly lied during his testimony.' },
+                    { french: 'Le président aurait démissionné.', english: 'The president is reported to have resigned.' },
+                    { french: 'Il y aurait eu plusieurs victimes.', english: 'There are said to have been several victims.' },
+                ],
+            },
+        ],
+    },
+    {
+        id: 'connecteurs-logiques',
+        title: 'Les Connecteurs Logiques',
+        level: 'C1',
+        description: 'Master the linking words that structure sophisticated French argument and writing',
+        icon: '🔗',
+        color: '#DC2626',
+        sections: [
+            {
+                title: 'Addition and Reinforcement',
+                explanation: 'Use these to add information, build on a point, or strengthen an argument.',
+                examples: [
+                    { french: 'De plus, il faut noter que les résultats sont concluants.', english: 'Furthermore, it should be noted that the results are conclusive.' },
+                    { french: 'En outre, cette approche présente plusieurs avantages.', english: 'Moreover, this approach has several advantages.' },
+                    { french: 'Qui plus est, le coût est négligeable.', english: 'What is more, the cost is negligible.' },
+                    { french: 'Par ailleurs, d\'autres facteurs entrent en jeu.', english: 'Besides, other factors come into play.' },
+                    { french: 'De surcroît, cette mesure bénéficierait à tous.', english: 'On top of that, this measure would benefit everyone.' },
+                ],
+            },
+            {
+                title: 'Opposition and Contrast',
+                explanation: 'Use these to introduce a contrasting idea. Register varies from informal (mais) to formal (néanmoins, cependant).',
+                examples: [
+                    { french: 'Il travaille dur ; néanmoins, il n\'avance pas.', english: 'He works hard; nevertheless, he makes no progress.' },
+                    { french: 'Cette solution est simple ; cependant, elle comporte des risques.', english: 'This solution is simple; however, it carries risks.' },
+                    { french: 'Je comprends votre point ; toutefois, je ne suis pas convaincu.', english: 'I understand your point; however, I am not convinced.' },
+                    { french: 'Or, il s\'avère que les données sont incomplètes.', english: 'Yet, it turns out that the data is incomplete.' },
+                    { french: 'Il prétend être innocent ; pour autant, les preuves l\'accablent.', english: 'He claims to be innocent; even so, the evidence against him is damning.' },
+                ],
+            },
+            {
+                title: 'Concession (+ subjunctive)',
+                explanation: 'Concession acknowledges the opposing view before returning to your own. Bien que and quoique require the subjunctive.',
+                examples: [
+                    { french: 'Bien qu\'il soit difficile de trancher, certains éléments sont clairs.', english: 'Although it is difficult to decide, some things are clear.' },
+                    { french: 'Quoique ce soit une bonne idée, elle est irréalisable.', english: 'Although it\'s a good idea, it\'s unworkable.' },
+                    { french: 'Malgré ses efforts, il n\'a pas réussi.', english: 'Despite his efforts, he did not succeed.' },
+                    { french: 'En dépit des obstacles, elle a persévéré.', english: 'In spite of the obstacles, she persevered.' },
+                    { french: 'Même si tu travailles dur, le succès n\'est pas garanti.', english: 'Even if you work hard, success is not guaranteed.' },
+                ],
+            },
+            {
+                title: 'Consequence and Result',
+                explanation: 'These connectors show that one thing follows logically from another.',
+                examples: [
+                    { french: 'Il a menti ; par conséquent, on ne lui fait plus confiance.', english: 'He lied; as a result, no one trusts him anymore.' },
+                    { french: 'Les prix ont augmenté, c\'est pourquoi les consommateurs hésitent.', english: 'Prices have risen, which is why consumers are hesitant.' },
+                    { french: 'Il pleuvait ; donc, le match a été annulé.', english: 'It was raining; therefore the match was cancelled.' },
+                    { french: 'Les données manquent, d\'où l\'impossibilité de conclure.', english: 'The data is missing, hence the impossibility of drawing conclusions.' },
+                    { french: 'Ainsi, on peut affirmer que la situation s\'est améliorée.', english: 'Thus, one can affirm that the situation has improved.' },
+                ],
+            },
+            {
+                title: 'Restriction and Condition (+ subjunctive)',
+                explanation: 'These introduce a condition or exception. À moins que, à condition que, and pourvu que all require the subjunctive.',
+                examples: [
+                    { french: 'Je viendrai à moins qu\'il ne pleuve.', english: 'I\'ll come unless it rains.' },
+                    { french: 'À condition que tu travailles, tu réussiras.', english: 'Provided that you work, you will succeed.' },
+                    { french: 'Pourvu qu\'il fasse beau, on ira se promener.', english: 'As long as the weather is nice, we\'ll go for a walk.' },
+                    { french: 'Je le ferai, sauf si tu m\'en empêches.', english: 'I\'ll do it, unless you stop me.' },
+                ],
+            },
+        ],
+    },
 ];

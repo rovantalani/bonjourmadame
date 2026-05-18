@@ -59,6 +59,18 @@ const LEVEL_GROUPS: LevelGroup[] = [
             'sherlock-holmes-ch2',
         ],
     },
+    {
+        key: 'C1C2',
+        label: 'C1 / C2 — Advanced',
+        ids: [
+            'idioms-expressions',
+            'faux-amis',
+            'literary-abstract',
+            'nuanced-adjectives',
+            'law-administration',
+            'human-condition',
+        ],
+    },
 ];
 
 export default function Vocabulary() {

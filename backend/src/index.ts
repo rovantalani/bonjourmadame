@@ -120,6 +120,12 @@ app.get('/api/vocabulary-modules', (_req: Request, res: Response) => {
         { id: 'shopping-money', title: 'Shopping & Money', description: 'Buy, sell and manage finances', icon: '🛍️', color: '#F43F5E', wordCount: 0 },
         { id: 'politics-society', title: 'Politics & Society', description: 'Advanced civic and social vocabulary', icon: '🏛️', color: '#475569', wordCount: 0 },
         { id: 'business-economy', title: 'Business & Economy', description: 'Professional and economic French', icon: '📈', color: '#78716C', wordCount: 0 },
+        { id: 'idioms-expressions',  title: 'Idioms & Expressions',  description: 'Figurative French that cannot be translated literally',         icon: '🎭', color: '#9333EA', wordCount: 0 },
+        { id: 'faux-amis',           title: 'Faux Amis',             description: 'False friends — words that look English but aren\'t',           icon: '⚠️', color: '#DC2626', wordCount: 0 },
+        { id: 'literary-abstract',   title: 'Literary & Abstract',   description: 'Vocabulary from literature and elevated discourse',              icon: '📜', color: '#6366F1', wordCount: 0 },
+        { id: 'nuanced-adjectives',  title: 'Nuanced Adjectives',    description: 'Precise adjectives for character and description',               icon: '🎯', color: '#0891B2', wordCount: 0 },
+        { id: 'law-administration',  title: 'Law & Administration',  description: 'Legal, judicial and administrative vocabulary',                  icon: '⚖️', color: '#475569', wordCount: 0 },
+        { id: 'human-condition',     title: 'The Human Condition',   description: 'Philosophy, ethics and the language of ideas',                  icon: '🧠', color: '#4F46E5', wordCount: 0 },
     ];
     const result = moduleMeta.map(m => ({ ...m, wordCount: (vocabularyData[m.id] ?? []).length }));
     res.json(result);
