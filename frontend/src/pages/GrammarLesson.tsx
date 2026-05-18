@@ -49,48 +49,77 @@ export default function GrammarLesson() {
             });
     }, [lessonId]);
 
-    if (loading) return <div className="lesson-loading">Loading...</div>;
+    if (loading) {
+        return (
+            <main className="page">
+                <p className="lesson-loading">Loading…</p>
+            </main>
+        );
+    }
 
     if (error || !lesson) {
         return (
-            <div className="lesson-container">
-                <button className="back-button" onClick={() => navigate('/grammar')}>← Back to Grammar</button>
+            <main className="page">
+                <button className="back-btn" onClick={() => navigate('/grammar')} type="button">
+                    ← Grammar
+                </button>
                 <p>Lesson not found.</p>
-            </div>
+            </main>
         );
     }
 
     return (
-        <div className="lesson-container">
-            <button className="back-button" onClick={() => navigate('/grammar')}>← Back to Grammar</button>
+        <main className="page">
+            <button className="back-btn" onClick={() => navigate('/grammar')} type="button">
+                ← Grammar
+            </button>
 
-            <header className="lesson-header">
-                <div className="lesson-icon" style={{ backgroundColor: lesson.color }}>{lesson.icon}</div>
+            <div className="lesson-header card">
+                <span
+                    className="lesson-icon-circle"
+                    style={{ backgroundColor: lesson.color }}
+                >
+                    <span className="lesson-icon-emoji">{lesson.icon}</span>
+                </span>
                 <div className="lesson-header-text">
-                    <span className="lesson-level-badge" style={{ backgroundColor: lesson.color }}>{lesson.level}</span>
+                    <span className="level-badge" style={{ backgroundColor: lesson.color }}>
+                        {lesson.level}
+                    </span>
                     <h1 style={{ color: lesson.color }}>{lesson.title}</h1>
                     <p className="lesson-description">{lesson.description}</p>
                 </div>
-            </header>
+            </div>
 
             <div className="lesson-sections">
                 {lesson.sections.map((section, idx) => (
-                    <div key={idx} className="lesson-section">
-                        <h2 className="section-title" style={{ borderColor: lesson.color }}>{section.title}</h2>
-                        <p className="section-explanation">{section.explanation}</p>
-                        <div className="section-examples">
+                    <div key={idx} className="lesson-section card">
+                        <h2
+                            className="lesson-section-title"
+                            style={{ borderBottomColor: lesson.color }}
+                        >
+                            {section.title}
+                        </h2>
+                        <p
+                            className="lesson-explanation"
+                            style={{ borderLeftColor: `${lesson.color}66` }}
+                        >
+                            {section.explanation}
+                        </p>
+                        <div className="lesson-examples">
                             {section.examples.map((ex, i) => (
-                                <div key={i} className="example-row">
-                                    <span className="example-french">{ex.french}</span>
-                                    <span className="example-divider">→</span>
-                                    <span className="example-english">{ex.english}</span>
-                                    {ex.note && <span className="example-note">{ex.note}</span>}
+                                <div key={i} className="ex-row">
+                                    <span className="ex-fr">{ex.french}</span>
+                                    <span className="ex-arrow">→</span>
+                                    <span className="ex-en">{ex.english}</span>
+                                    {ex.note && (
+                                        <span className="ex-note">{ex.note}</span>
+                                    )}
                                 </div>
                             ))}
                         </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </main>
     );
 }

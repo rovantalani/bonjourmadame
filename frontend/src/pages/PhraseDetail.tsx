@@ -43,40 +43,59 @@ export default function PhraseDetail() {
             });
     }, [categoryId]);
 
-    if (loading) return <div className="phrase-detail-loading">Loading...</div>;
+    if (loading) {
+        return (
+            <main className="page">
+                <p className="phrase-detail-loading">Loading…</p>
+            </main>
+        );
+    }
 
     if (error || !category) {
         return (
-            <div className="phrase-detail-container">
-                <button className="back-button" onClick={() => navigate('/phrases')}>← Back to Phrases</button>
+            <main className="page">
+                <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
+                    ← Phrases
+                </button>
                 <p>Category not found.</p>
-            </div>
+            </main>
         );
     }
 
     return (
-        <div className="phrase-detail-container">
-            <button className="back-button" onClick={() => navigate('/phrases')}>← Back to Phrases</button>
+        <main className="page">
+            <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
+                ← Phrases
+            </button>
 
-            <header className="phrase-detail-header">
-                <div className="phrase-detail-icon" style={{ backgroundColor: category.color }}>
-                    {category.icon}
-                </div>
+            <div className="phrase-detail-header card">
+                <span
+                    className="phrase-detail-icon-circle"
+                    style={{ backgroundColor: `${category.color}1F` }}
+                >
+                    <span className="phrase-detail-icon">{category.icon}</span>
+                </span>
                 <div className="phrase-detail-header-text">
                     <h1 style={{ color: category.color }}>{category.title}</h1>
                     <p className="phrase-detail-description">{category.description}</p>
                 </div>
-            </header>
+            </div>
 
             <div className="phrase-list">
                 {category.phrases.map((phrase) => (
-                    <div key={phrase.id} className="phrase-item" style={{ borderLeftColor: category.color }}>
-                        <p className="phrase-french">{phrase.french}</p>
-                        <p className="phrase-english">{phrase.english}</p>
-                        {phrase.note && <p className="phrase-note">{phrase.note}</p>}
+                    <div
+                        key={phrase.id}
+                        className="phrase-item"
+                        style={{ borderLeftColor: category.color }}
+                    >
+                        <p className="phrase-fr">{phrase.french}</p>
+                        <p className="phrase-en">{phrase.english}</p>
+                        {phrase.note && (
+                            <span className="phrase-note">{phrase.note}</span>
+                        )}
                     </div>
                 ))}
             </div>
-        </div>
+        </main>
     );
 }

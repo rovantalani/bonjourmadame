@@ -1,100 +1,80 @@
-.helper-verbs-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 100vh;
-}
-
-.helper-verbs-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.helper-verbs-header h1 {
-    font-size: 2.5rem;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
+/* ── Helper Verbs page ── */
 
 .helper-verbs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
 }
 
-.helper-verb-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    border: 3px solid transparent;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+/* Card */
+.hv-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
 }
 
-.helper-verb-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.hv-card:hover,
+.hv-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
-.helper-verb-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    margin: 0 auto 1.5rem;
+/* Colored top bar */
+.hv-card-bar {
+  height: 4px;
+  width: 100%;
 }
 
-.helper-verb-card h2 {
-    font-size: 1.75rem;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
+/* Card body */
+.hv-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.verb-translation {
-    display: block;
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 600;
-    margin-bottom: 1rem;
+/* Icon circle */
+.hv-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
 }
 
-.helper-verb-card p {
-    color: #6b7280;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+/* French verb title */
+.hv-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.helper-verb-button {
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
+/* Translation */
+.hv-translation {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-2);
 }
 
-.helper-verb-button:hover {
-    opacity: 0.9;
+/* Description */
+.hv-description {
+  font-size: 0.87rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-top: 0.25rem;
 }
 
-@media (max-width: 768px) {
-    .helper-verbs-header h1 {
-        font-size: 2rem;
-    }
-
-    .helper-verbs-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .helper-verbs-container {
-        padding: 1rem;
-    }
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .helper-verbs-grid {
+    grid-template-columns: 1fr;
+  }
 }

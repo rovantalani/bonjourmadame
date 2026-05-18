@@ -60,46 +60,46 @@ export default function HelperVerbs() {
         navigate(`/helper-verbs/${moduleId}`);
     };
 
-    const handleBack = () => {
-        navigate('/');
-    };
-
     return (
-        <div className="helper-verbs-container">
-            <button className="back-button" onClick={handleBack}>
-                ← Back to Home
-            </button>
-
-            <header className="helper-verbs-header">
+        <main className="page">
+            <div className="page-header">
                 <h1>Helper Verbs</h1>
-                <p className="subtitle">The 5 essential French verbs every learner must know</p>
-            </header>
+                <p className="subtitle">The 5 essential verbs every learner must master</p>
+            </div>
 
             <div className="helper-verbs-grid">
                 {modules.map((module) => (
                     <div
                         key={module.id}
-                        className="helper-verb-card"
+                        className="hv-card"
                         onClick={() => handleModuleClick(module.id)}
-                        style={{ borderColor: module.color }}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => e.key === 'Enter' && handleModuleClick(module.id)}
                     >
-                        <div className="helper-verb-icon" style={{ backgroundColor: module.color }}>
-                            {module.icon}
-                        </div>
-                        <h2>{module.title}</h2>
-                        <span className="verb-translation" style={{ color: module.color }}>
-                            {module.translation}
-                        </span>
-                        <p>{module.description}</p>
-                        <button
-                            className="helper-verb-button"
+                        <div
+                            className="hv-card-bar"
                             style={{ backgroundColor: module.color }}
-                        >
-                            Start Learning
-                        </button>
+                        />
+                        <div className="hv-card-body">
+                            <div
+                                className="hv-icon"
+                                style={{ backgroundColor: `${module.color}1F` }}
+                            >
+                                {module.icon}
+                            </div>
+                            <h2
+                                className="hv-title"
+                                style={{ color: module.color }}
+                            >
+                                {module.title}
+                            </h2>
+                            <span className="hv-translation">{module.translation}</span>
+                            <p className="hv-description">{module.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </main>
     );
 }

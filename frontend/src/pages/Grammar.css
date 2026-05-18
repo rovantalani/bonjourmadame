@@ -1,135 +1,127 @@
-.grammar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    min-height: 100vh;
-}
-
-.back-button {
-    background: white;
-    border: 2px solid #e5e7eb;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    color: #374151;
-}
-
-.back-button:hover {
-    background: #f9fafb;
-    border-color: #d1d5db;
-}
-
-.grammar-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.grammar-header h1 {
-    font-size: 2.5rem;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
-
+/* ── Shared section spacing ── */
 .grammar-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2.75rem;
 }
 
-.grammar-section-title {
-    font-size: 1.5rem;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 2px solid #e5e7eb;
-}
-
-.grammar-level-badge {
-    display: inline-block;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    padding: 0.15rem 0.55rem;
-    border-radius: 999px;
-    margin-bottom: 0.4rem;
-}
-
-.grammar-modules-grid {
+/* ── Verb conjugation grid (3 cols desktop) ── */
+.grammar-verb-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 0.75rem;
 }
 
-.grammar-module-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    border: 3px solid transparent;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* ── Verb card ── */
+.grammar-verb-card {
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    outline: none;
 }
 
-.grammar-module-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.grammar-verb-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
-.grammar-module-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+.grammar-verb-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.grammar-verb-icon-circle {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    margin: 0 auto 1.5rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
-.grammar-module-card h3 {
-    font-size: 1.5rem;
-    color: #1f2937;
-    margin-bottom: 0.75rem;
+.grammar-verb-icon {
+    font-size: 1.6rem;
+    line-height: 1;
 }
 
-.grammar-module-card p {
-    color: #6b7280;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+.grammar-verb-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-1);
+    margin-bottom: 0.35rem;
 }
 
-.grammar-module-button {
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+.grammar-verb-desc {
+    font-size: 0.85rem;
+    color: var(--text-2);
+    line-height: 1.55;
+}
+
+/* ── Grammar lessons grid ── */
+.grammar-lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 0.75rem;
+}
+
+/* ── Lesson card ── */
+.grammar-lesson-card {
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    outline: none;
+}
+
+.grammar-lesson-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.grammar-lesson-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.grammar-lesson-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+}
+
+.grammar-lesson-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.grammar-lesson-title {
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
+    color: var(--text-1);
+    margin-bottom: 0.3rem;
 }
 
-.grammar-module-button:hover {
-    opacity: 0.9;
+.grammar-lesson-desc {
+    font-size: 0.83rem;
+    color: var(--text-2);
+    line-height: 1.55;
 }
 
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .grammar-header h1 {
-        font-size: 2rem;
-    }
-
-    .grammar-modules-grid {
+/* ── Mobile ── */
+@media (max-width: 640px) {
+    .grammar-verb-grid {
         grid-template-columns: 1fr;
     }
 
-    .grammar-container {
-        padding: 1rem;
+    .grammar-lessons-grid {
+        grid-template-columns: 1fr;
     }
 }

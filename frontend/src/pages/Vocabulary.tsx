@@ -12,6 +12,55 @@ interface VocabularyModule {
     wordCount: number;
 }
 
+type LevelKey = 'A1' | 'A2B1' | 'B2C1';
+
+interface LevelGroup {
+    key: LevelKey;
+    label: string;
+    ids: string[];
+}
+
+const LEVEL_GROUPS: LevelGroup[] = [
+    {
+        key: 'A1',
+        label: 'A1 — Foundations',
+        ids: [
+            'greetings-basics',
+            'numbers-time',
+            'colors-descriptions',
+            'family-relationships',
+            'food-drinks',
+            'body-health',
+            'home-living',
+        ],
+    },
+    {
+        key: 'A2B1',
+        label: 'A2 / B1',
+        ids: [
+            'work-professions',
+            'weather-nature',
+            'sports-hobbies',
+            'school-education',
+            'shopping-money',
+            'technology-media',
+        ],
+    },
+    {
+        key: 'B2C1',
+        label: 'B2 / C1',
+        ids: [
+            'politics-society',
+            'business-economy',
+            'daily-life-advanced',
+            'emotions-psychology',
+            'travel-culture',
+            'sherlock-holmes-ch1',
+            'sherlock-holmes-ch2',
+        ],
+    },
+];
+
 export default function Vocabulary() {
     const navigate = useNavigate();
     const [modules, setModules] = useState<VocabularyModule[]>([]);
@@ -22,50 +71,47 @@ export default function Vocabulary() {
             .catch(err => console.error('Failed to load vocabulary modules', err));
     }, []);
 
-    const handleModuleClick = (moduleId: string) => {
-        navigate(`/vocabulary/${moduleId}`);
-    };
-
-    const handleBack = () => {
-        navigate('/');
-    };
+    const moduleMap = new Map(modules.map(m => [m.id, m]));
 
     return (
-        <div className="vocabulary-container">
-            <button className="back-button" onClick={handleBack}>
-                ← Back to Home
-            </button>
-
-            <header className="vocabulary-header">
+        <main className="page">
+            <header className="page-header">
                 <h1>Vocabulary</h1>
-                <p className="subtitle">Choose a chapter to practice</p>
+                <p className="subtitle">Choose a module to practise</p>
             </header>
 
-            <div className="vocabulary-modules-grid">
-                {modules.map((module) => (
-                    <div
-                        key={module.id}
-                        className="vocabulary-module-card"
-                        onClick={() => handleModuleClick(module.id)}
-                        style={{ borderColor: module.color }}
-                    >
-                        <div className="vocabulary-module-icon" style={{ backgroundColor: module.color }}>
-                            {module.icon}
+            {LEVEL_GROUPS.map((group) => {
+                const groupModules = group.ids
+                    .map(id => moduleMap.get(id))
+                    .filter((m): m is VocabularyModule => m !== undefined);
+
+                if (groupModules.length === 0) return null;
+
+                return (
+                    <section key={group.key} className="vocab-group">
+                        <p className="section-label">{group.label}</p>
+                        <div className="vocab-grid">
+                            {groupModules.map((module) => (
+                                <button
+                                    key={module.id}
+                                    className="vocab-card"
+                                    onClick={() => navigate(`/vocabulary/${module.id}`)}
+                                    type="button"
+                                >
+                                    <span
+                                        className="vocab-card-icon-circle"
+                                        style={{ backgroundColor: `${module.color}1F` }}
+                                    >
+                                        <span className="vocab-card-icon">{module.icon}</span>
+                                    </span>
+                                    <span className="vocab-card-title">{module.title}</span>
+                                    <span className="vocab-card-badge">{module.wordCount} words</span>
+                                </button>
+                            ))}
                         </div>
-                        <h2>{module.title}</h2>
-                        <p>{module.description}</p>
-                        <div className="word-count">
-                            <span>{module.wordCount} words</span>
-                        </div>
-                        <button
-                            className="vocabulary-module-button"
-                            style={{ backgroundColor: module.color }}
-                        >
-                            Start Quiz
-                        </button>
-                    </div>
-                ))}
-            </div>
-        </div>
+                    </section>
+                );
+            })}
+        </main>
     );
 }

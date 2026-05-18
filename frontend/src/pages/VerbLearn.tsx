@@ -46,72 +46,90 @@ export default function VerbLearn() {
     }, [verbId]);
 
     if (loading) {
-        return <div className="verb-learn-container"><p>Loading...</p></div>;
+        return (
+            <main className="page">
+                <p className="vl-loading">Loading…</p>
+            </main>
+        );
     }
 
     if (error || !verb) {
         return (
-            <div className="verb-learn-container">
-                <button className="back-button" onClick={() => navigate('/grammar')}>
+            <main className="page">
+                <button className="back-btn" onClick={() => navigate('/grammar')}>
                     ← Back to Grammar
                 </button>
                 <p>Verb not found.</p>
-            </div>
+            </main>
         );
     }
 
     const groupLabel = verb.groupId === 'regular-verbs' ? 'Regular Verbs' : 'Irregular Verbs';
 
     return (
-        <div className="verb-learn-container">
-            <div className="verb-learn-nav">
-                <button className="back-button" onClick={() => navigate(`/grammar/${verb.groupId}`)}>
+        <main className="page">
+            <div className="vl-nav">
+                <button
+                    className="back-btn"
+                    onClick={() => navigate(`/grammar/${verb.groupId}`)}
+                >
                     ← Back to {groupLabel}
                 </button>
                 <button
-                    className="take-quiz-button"
-                    style={{ backgroundColor: verb.color }}
+                    className="btn vl-quiz-btn"
+                    style={{ backgroundColor: verb.color, color: '#fff' }}
                     onClick={() => navigate(`/grammar/verbs/${verbId}/quiz`)}
                 >
                     Take Quiz →
                 </button>
             </div>
 
-            <header className="verb-learn-header">
-                <div className="verb-learn-title-row">
-                    <h1 style={{ color: verb.color }}>{verb.infinitive}</h1>
-                    <span className="verb-type-badge" style={{ backgroundColor: verb.color }}>
-                        {verb.type}
-                    </span>
-                </div>
-                <span className="verb-learn-translation">{verb.translation}</span>
-                <p className="subtitle">Conjugation table</p>
+            <header className="vl-header">
+                <h1 style={{ color: verb.color }}>{verb.infinitive}</h1>
+                <span
+                    className="level-badge"
+                    style={{ backgroundColor: verb.color }}
+                >
+                    {verb.type}
+                </span>
+                <span className="vl-translation">{verb.translation}</span>
             </header>
 
-            <div className="conjugation-table-wrapper">
-                <table className="conjugation-table">
-                    <thead>
-                        <tr style={{ backgroundColor: verb.color }}>
-                            <th>Sujet</th>
-                            <th>Présent</th>
-                            <th>Passé composé</th>
-                            <th>Imparfait</th>
-                            <th>Futur simple</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {verb.rows.map((row, i) => (
-                            <tr key={row.sujet} className={i % 2 === 0 ? 'row-even' : 'row-odd'}>
-                                <td className="sujet-cell" style={{ color: verb.color }}>{row.sujet}</td>
-                                <td>{row.present}</td>
-                                <td>{row.passeCompose}</td>
-                                <td>{row.imparfait}</td>
-                                <td>{row.futurSimple}</td>
+            <div className="card vl-table-card">
+                <div className="table-scroll">
+                    <table className="conj-table">
+                        <thead>
+                            <tr style={{ backgroundColor: verb.color }}>
+                                <th>—</th>
+                                <th>Présent</th>
+                                <th>Passé composé</th>
+                                <th>Imparfait</th>
+                                <th>Futur simple</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {verb.rows.map((row, i) => (
+                                <tr
+                                    key={row.sujet}
+                                    className={i % 2 === 0 ? 'row-even' : 'row-odd'}
+                                >
+                                    <td
+                                        className="sujet-cell"
+                                        style={{ color: verb.color }}
+                                    >
+                                        {row.sujet}
+                                    </td>
+                                    <td>{row.present}</td>
+                                    <td>{row.passeCompose}</td>
+                                    <td>{row.imparfait}</td>
+                                    <td>{row.futurSimple}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <p className="scroll-hint">Scroll to see all tenses →</p>
             </div>
-        </div>
+        </main>
     );
 }

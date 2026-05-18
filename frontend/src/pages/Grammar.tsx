@@ -37,32 +37,32 @@ export default function Grammar() {
     }, []);
 
     return (
-        <div className="grammar-container">
-            <button className="back-button" onClick={() => navigate('/')}>← Back to Home</button>
-
-            <header className="grammar-header">
+        <main className="page">
+            <header className="page-header">
                 <h1>Grammar</h1>
-                <p className="subtitle">Choose a topic to practice</p>
+                <p className="subtitle">Conjugation &amp; lessons</p>
             </header>
 
             <section className="grammar-section">
-                <h2 className="grammar-section-title">Verb Conjugation</h2>
-                <div className="grammar-modules-grid">
+                <p className="section-label">Conjugation</p>
+                <div className="grammar-verb-grid">
                     {verbModules.map((module) => (
                         <div
                             key={module.id}
-                            className="grammar-module-card"
+                            className="grammar-verb-card"
                             onClick={() => navigate(`/grammar/${module.id}`)}
-                            style={{ borderColor: module.color }}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => e.key === 'Enter' && navigate(`/grammar/${module.id}`)}
                         >
-                            <div className="grammar-module-icon" style={{ backgroundColor: module.color }}>
-                                {module.icon}
-                            </div>
-                            <h3>{module.title}</h3>
-                            <p>{module.description}</p>
-                            <button className="grammar-module-button" style={{ backgroundColor: module.color }}>
-                                Start Learning
-                            </button>
+                            <span
+                                className="grammar-verb-icon-circle"
+                                style={{ backgroundColor: `${module.color}1F` }}
+                            >
+                                <span className="grammar-verb-icon">{module.icon}</span>
+                            </span>
+                            <h2 className="grammar-verb-title">{module.title}</h2>
+                            <p className="grammar-verb-desc">{module.description}</p>
                         </div>
                     ))}
                 </div>
@@ -70,31 +70,33 @@ export default function Grammar() {
 
             {lessons.length > 0 && (
                 <section className="grammar-section">
-                    <h2 className="grammar-section-title">Grammar Lessons</h2>
-                    <div className="grammar-modules-grid">
+                    <p className="section-label">Grammar Lessons</p>
+                    <div className="grammar-lessons-grid">
                         {lessons.map((lesson) => (
                             <div
                                 key={lesson.id}
-                                className="grammar-module-card"
+                                className="grammar-lesson-card"
                                 onClick={() => navigate(`/grammar/lessons/${lesson.id}`)}
-                                style={{ borderColor: lesson.color }}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => e.key === 'Enter' && navigate(`/grammar/lessons/${lesson.id}`)}
                             >
-                                <div className="grammar-module-icon" style={{ backgroundColor: lesson.color }}>
-                                    {lesson.icon}
+                                <div className="grammar-lesson-top">
+                                    <span
+                                        className="level-badge"
+                                        style={{ backgroundColor: lesson.color }}
+                                    >
+                                        {lesson.level}
+                                    </span>
+                                    <span className="grammar-lesson-icon">{lesson.icon}</span>
                                 </div>
-                                <span className="grammar-level-badge" style={{ backgroundColor: lesson.color }}>
-                                    {lesson.level}
-                                </span>
-                                <h3>{lesson.title}</h3>
-                                <p>{lesson.description}</p>
-                                <button className="grammar-module-button" style={{ backgroundColor: lesson.color }}>
-                                    Study
-                                </button>
+                                <h2 className="grammar-lesson-title">{lesson.title}</h2>
+                                <p className="grammar-lesson-desc">{lesson.description}</p>
                             </div>
                         ))}
                     </div>
                 </section>
             )}
-        </div>
+        </main>
     );
 }

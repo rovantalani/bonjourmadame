@@ -45,61 +45,80 @@ export default function VerbConjugation() {
 
     if (loading) {
         return (
-            <div className="conjugation-container">
-                <p>Loading...</p>
-            </div>
+            <main className="page">
+                <p className="vc-loading">Loading…</p>
+            </main>
         );
     }
 
     if (error || !verb) {
         return (
-            <div className="conjugation-container">
-                <button className="back-button" onClick={() => navigate('/helper-verbs')}>
+            <main className="page">
+                <button className="back-btn" onClick={() => navigate('/helper-verbs')}>
                     ← Back to Helper Verbs
                 </button>
                 <p>Verb not found.</p>
-            </div>
+            </main>
         );
     }
 
     return (
-        <div className="conjugation-container">
-            <button className="back-button" onClick={() => navigate('/helper-verbs')}>
+        <main className="page">
+            <button className="back-btn" onClick={() => navigate('/helper-verbs')}>
                 ← Back to Helper Verbs
             </button>
 
-            <header className="conjugation-header">
-                <div className="conjugation-title-row">
-                    <h1 style={{ color: verb.color }}>{verb.title}</h1>
-                    <span className="conjugation-translation">{verb.translation}</span>
+            <header className="vc-header">
+                <div
+                    className="vc-icon"
+                    style={{ backgroundColor: `${verb.color}1F` }}
+                >
+                    <span style={{ fontSize: '2rem' }}>
+                        {/* Use first letter as fallback icon */}
+                        {verb.title.charAt(0)}
+                    </span>
                 </div>
-                <p className="subtitle">Conjugation table</p>
+                <h1 className="vc-title" style={{ color: verb.color }}>
+                    {verb.title}
+                </h1>
+                <span className="vc-translation">{verb.translation}</span>
             </header>
 
-            <div className="conjugation-table-wrapper">
-                <table className="conjugation-table">
-                    <thead>
-                        <tr style={{ backgroundColor: verb.color }}>
-                            <th>Sujet</th>
-                            <th>Présent</th>
-                            <th>Passé composé</th>
-                            <th>Imparfait</th>
-                            <th>Futur simple</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {verb.rows.map((row, i) => (
-                            <tr key={row.sujet} className={i % 2 === 0 ? 'row-even' : 'row-odd'}>
-                                <td className="sujet-cell" style={{ color: verb.color }}>{row.sujet}</td>
-                                <td>{row.present}</td>
-                                <td>{row.passeCompose}</td>
-                                <td>{row.imparfait}</td>
-                                <td>{row.futurSimple}</td>
+            <div className="card vc-table-card">
+                <div className="table-scroll">
+                    <table className="conj-table">
+                        <thead>
+                            <tr style={{ backgroundColor: verb.color }}>
+                                <th>—</th>
+                                <th>Présent</th>
+                                <th>Passé composé</th>
+                                <th>Imparfait</th>
+                                <th>Futur simple</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {verb.rows.map((row, i) => (
+                                <tr
+                                    key={row.sujet}
+                                    className={i % 2 === 0 ? 'row-even' : 'row-odd'}
+                                >
+                                    <td
+                                        className="sujet-cell"
+                                        style={{ color: verb.color }}
+                                    >
+                                        {row.sujet}
+                                    </td>
+                                    <td>{row.present}</td>
+                                    <td>{row.passeCompose}</td>
+                                    <td>{row.imparfait}</td>
+                                    <td>{row.futurSimple}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <p className="scroll-hint">Scroll to see all tenses →</p>
             </div>
-        </div>
+        </main>
     );
 }
