@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { vocabularyData } from './data/vocabulary';
+import { verbGroups, verbsData, verbById, verbGroupMap } from './data/verbs';
 
 dotenv.config();
 
@@ -125,6 +126,29 @@ app.get('/api/helper-verbs/:verbId', (req: Request, res: Response) => {
         return;
     }
     res.json(verb);
+});
+
+app.get('/api/verb-group/:groupId', (req: Request, res: Response) => {
+    const groupId = req.params['groupId'] as string;
+    const group = verbGroups[groupId];
+    if (!group) {
+        res.status(404).json({ error: 'Group not found' });
+        return;
+    }
+    const verbs = (verbsData[groupId] ?? []).map(({ id, infinitive, translation, type, color }) => ({
+        id, infinitive, translation, type, color,
+    }));
+    res.json({ ...group, verbs });
+});
+
+app.get('/api/conjugation/:verbId', (req: Request, res: Response) => {
+    const verbId = req.params['verbId'] as string;
+    const verb = verbById[verbId];
+    if (!verb) {
+        res.status(404).json({ error: 'Verb not found' });
+        return;
+    }
+    res.json({ ...verb, groupId: verbGroupMap[verbId] });
 });
 
 // Start server

@@ -1,0 +1,154 @@
+.verb-learn-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.verb-learn-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    background: white;
+    border: 2px solid #e5e7eb;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #374151;
+    font-family: inherit;
+}
+
+.back-button:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.take-quiz-button {
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    font-family: inherit;
+}
+
+.take-quiz-button:hover {
+    opacity: 0.85;
+}
+
+.verb-learn-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.verb-learn-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.verb-learn-title-row h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.verb-type-badge {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+}
+
+.verb-learn-translation {
+    display: block;
+    font-size: 1.25rem;
+    color: #6b7280;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+
+.conjugation-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.conjugation-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background: white;
+}
+
+.conjugation-table thead tr {
+    color: white;
+}
+
+.conjugation-table th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.conjugation-table td {
+    padding: 0.9rem 1.25rem;
+    color: #374151;
+}
+
+.row-even {
+    background-color: #f9fafb;
+}
+
+.row-odd {
+    background-color: #ffffff;
+}
+
+.conjugation-table tbody tr:hover {
+    background-color: #f0f4ff;
+    transition: background-color 0.15s ease;
+}
+
+.sujet-cell {
+    font-weight: 700;
+    min-width: 90px;
+}
+
+@media (max-width: 640px) {
+    .verb-learn-container {
+        padding: 1rem;
+    }
+
+    .verb-learn-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .verb-learn-title-row h1 {
+        font-size: 2rem;
+    }
+
+    .conjugation-table th,
+    .conjugation-table td {
+        padding: 0.7rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
