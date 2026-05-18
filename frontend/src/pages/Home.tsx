@@ -36,6 +36,13 @@ export default function Home() {
             description: 'Learn the 5 essential French verbs: être, avoir, faire, aller, venir',
             icon: '🔑',
             color: '#D97706'
+        },
+        {
+            id: 'phrases',
+            title: 'Phrases',
+            description: 'Real expressions for everyday conversations, restaurants, travel and more',
+            icon: '💬',
+            color: '#0891B2'
         }
     ];
 

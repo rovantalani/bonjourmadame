@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { vocabularyData } from './data/vocabulary';
 import { verbGroups, verbsData, verbById, verbGroupMap } from './data/verbs';
+import { grammarLessons } from './data/grammarLessons';
+import { phraseCategories } from './data/phrases';
 
 dotenv.config();
 
@@ -103,6 +105,21 @@ app.get('/api/vocabulary-modules', (_req: Request, res: Response) => {
         { id: 'daily-life-advanced', title: 'Advanced Daily Life', description: 'Everyday French at an advanced level', icon: '🏠', color: '#059669', wordCount: 0 },
         { id: 'emotions-psychology', title: 'Emotions & Psychology', description: 'Express feelings and mental states', icon: '💭', color: '#DC2626', wordCount: 0 },
         { id: 'travel-culture', title: 'Travel & Culture', description: 'Navigate travel and cultural topics', icon: '✈️', color: '#2563EB', wordCount: 0 },
+        { id: 'greetings-basics', title: 'Greetings & Essentials', description: 'Essential phrases to start any conversation', icon: '👋', color: '#F59E0B', wordCount: 0 },
+        { id: 'numbers-time', title: 'Numbers & Time', description: 'Tell the time and express when things happen', icon: '🕐', color: '#06B6D4', wordCount: 0 },
+        { id: 'colors-descriptions', title: 'Colors & Descriptions', description: 'Describe people, places and things', icon: '🎨', color: '#EC4899', wordCount: 0 },
+        { id: 'family-relationships', title: 'Family & Relationships', description: 'Talk about the people in your life', icon: '👨‍👩‍👧‍👦', color: '#10B981', wordCount: 0 },
+        { id: 'food-drinks', title: 'Food & Drinks', description: 'Eat, drink and order with confidence', icon: '🍷', color: '#EF4444', wordCount: 0 },
+        { id: 'body-health', title: 'Body & Health', description: 'Talk about your body and wellbeing', icon: '🏥', color: '#6366F1', wordCount: 0 },
+        { id: 'home-living', title: 'Home & Living', description: 'Vocabulary for your home and daily living', icon: '🏠', color: '#84CC16', wordCount: 0 },
+        { id: 'work-professions', title: 'Work & Professions', description: 'Navigate the workplace in French', icon: '💼', color: '#F97316', wordCount: 0 },
+        { id: 'weather-nature', title: 'Weather & Nature', description: 'Describe the world around you', icon: '🌿', color: '#14B8A6', wordCount: 0 },
+        { id: 'sports-hobbies', title: 'Sports & Hobbies', description: 'Talk about what you love doing', icon: '⚽', color: '#8B5CF6', wordCount: 0 },
+        { id: 'school-education', title: 'School & Education', description: 'Academic and learning vocabulary', icon: '📚', color: '#0EA5E9', wordCount: 0 },
+        { id: 'technology-media', title: 'Technology & Media', description: 'The digital world in French', icon: '💻', color: '#A855F7', wordCount: 0 },
+        { id: 'shopping-money', title: 'Shopping & Money', description: 'Buy, sell and manage finances', icon: '🛍️', color: '#F43F5E', wordCount: 0 },
+        { id: 'politics-society', title: 'Politics & Society', description: 'Advanced civic and social vocabulary', icon: '🏛️', color: '#475569', wordCount: 0 },
+        { id: 'business-economy', title: 'Business & Economy', description: 'Professional and economic French', icon: '📈', color: '#78716C', wordCount: 0 },
     ];
     const result = moduleMeta.map(m => ({ ...m, wordCount: (vocabularyData[m.id] ?? []).length }));
     res.json(result);
@@ -149,6 +166,36 @@ app.get('/api/conjugation/:verbId', (req: Request, res: Response) => {
         return;
     }
     res.json({ ...verb, groupId: verbGroupMap[verbId] });
+});
+
+app.get('/api/grammar-lessons', (_req: Request, res: Response) => {
+    res.json(grammarLessons.map(({ id, title, level, description, icon, color }) => ({
+        id, title, level, description, icon, color
+    })));
+});
+
+app.get('/api/grammar-lessons/:lessonId', (req: Request, res: Response) => {
+    const lesson = grammarLessons.find(l => l.id === req.params['lessonId']);
+    if (!lesson) {
+        res.status(404).json({ error: 'Lesson not found' });
+        return;
+    }
+    res.json(lesson);
+});
+
+app.get('/api/phrase-categories', (_req: Request, res: Response) => {
+    res.json(phraseCategories.map(({ id, title, description, icon, color, phrases }) => ({
+        id, title, description, icon, color, phraseCount: phrases.length
+    })));
+});
+
+app.get('/api/phrase-categories/:categoryId', (req: Request, res: Response) => {
+    const category = phraseCategories.find(c => c.id === req.params['categoryId']);
+    if (!category) {
+        res.status(404).json({ error: 'Category not found' });
+        return;
+    }
+    res.json(category);
 });
 
 // Start server

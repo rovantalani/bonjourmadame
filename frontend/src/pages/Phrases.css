@@ -1,4 +1,4 @@
-.grammar-container {
+.phrases-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
@@ -23,47 +23,24 @@
     border-color: #d1d5db;
 }
 
-.grammar-header {
+.phrases-header {
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.grammar-header h1 {
+.phrases-header h1 {
     font-size: 2.5rem;
     color: #1f2937;
     margin-bottom: 0.5rem;
 }
 
-.grammar-section {
-    margin-bottom: 3rem;
-}
-
-.grammar-section-title {
-    font-size: 1.5rem;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 2px solid #e5e7eb;
-}
-
-.grammar-level-badge {
-    display: inline-block;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    padding: 0.15rem 0.55rem;
-    border-radius: 999px;
-    margin-bottom: 0.4rem;
-}
-
-.grammar-modules-grid {
+.phrases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.grammar-module-card {
+.phrase-category-card {
     background: white;
     border-radius: 12px;
     padding: 2rem;
@@ -74,12 +51,12 @@
     text-align: center;
 }
 
-.grammar-module-card:hover {
+.phrase-category-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.grammar-module-icon {
+.phrase-category-icon {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -90,20 +67,30 @@
     margin: 0 auto 1.5rem;
 }
 
-.grammar-module-card h3 {
+.phrase-category-card h2 {
     font-size: 1.5rem;
     color: #1f2937;
     margin-bottom: 0.75rem;
 }
 
-.grammar-module-card p {
+.phrase-category-card p {
     color: #6b7280;
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.grammar-module-button {
+.phrase-count {
+    margin-bottom: 1.25rem;
+}
+
+.phrase-count span {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.phrase-category-button {
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -112,24 +99,23 @@
     font-weight: 600;
     cursor: pointer;
     transition: opacity 0.3s ease;
+    font-family: inherit;
 }
 
-.grammar-module-button:hover {
+.phrase-category-button:hover {
     opacity: 0.9;
 }
 
-
-/* Responsive design */
 @media (max-width: 768px) {
-    .grammar-header h1 {
+    .phrases-container {
+        padding: 1rem;
+    }
+
+    .phrases-header h1 {
         font-size: 2rem;
     }
 
-    .grammar-modules-grid {
+    .phrases-grid {
         grid-template-columns: 1fr;
-    }
-
-    .grammar-container {
-        padding: 1rem;
     }
 }
