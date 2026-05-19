@@ -17,7 +17,7 @@ export default function Phrases() {
     const [categories, setCategories] = useState<PhraseCategory[]>([]);
 
     useEffect(() => {
-        axios.get<PhraseCategory[]>('http://localhost:3001/api/phrase-categories')
+        axios.get<PhraseCategory[]>(`${import.meta.env.VITE_API_BASE}/api/phrase-categories`)
             .then(res => setCategories(res.data))
             .catch(err => console.error('Failed to load phrase categories', err));
     }, []);

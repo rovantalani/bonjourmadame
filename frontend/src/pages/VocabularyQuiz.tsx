@@ -43,7 +43,7 @@ export default function VocabularyQuiz() {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/vocabulary/${moduleId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/vocabulary/${moduleId}`)
             .then(res => res.json())
             .then((data: Word[]) => {
                 setAllWords(data);

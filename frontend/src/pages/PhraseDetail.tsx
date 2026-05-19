@@ -28,7 +28,7 @@ export default function PhraseDetail() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`http://localhost:3001/api/phrase-categories/${categoryId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/phrase-categories/${categoryId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();

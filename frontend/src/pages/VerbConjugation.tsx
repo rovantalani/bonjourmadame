@@ -28,7 +28,7 @@ export default function VerbConjugation() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`http://localhost:3001/api/helper-verbs/${verbId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/helper-verbs/${verbId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();

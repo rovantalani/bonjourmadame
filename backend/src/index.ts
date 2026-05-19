@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 import { vocabularyData } from './data/vocabulary';
 import { verbGroups, verbsData, verbById, verbGroupMap } from './data/verbs';
 import { grammarLessons } from './data/grammarLessons';
@@ -215,6 +216,15 @@ app.get('/api/reading/:moduleId', (req: Request, res: Response) => {
     const vocabulary = vocabularyData[moduleId] ?? [];
     res.json({ ...passage, vocabulary });
 });
+
+// Serve frontend in production
+if (process.env.NODE_ENV === 'production') {
+    const distPath = path.join(__dirname, '../../frontend/dist');
+    app.use(express.static(distPath));
+    app.get('*', (_req, res) => {
+        res.sendFile(path.join(distPath, 'index.html'));
+    });
+}
 
 // Start server
 app.listen(PORT, () => {

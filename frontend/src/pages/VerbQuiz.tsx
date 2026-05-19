@@ -68,7 +68,7 @@ export default function VerbQuiz() {
     const [quizComplete, setQuizComplete] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/conjugation/${verbId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/conjugation/${verbId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();

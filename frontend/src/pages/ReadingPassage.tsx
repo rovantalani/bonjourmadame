@@ -100,7 +100,7 @@ export default function ReadingPassage() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`http://localhost:3001/api/reading/${moduleId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/reading/${moduleId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
