@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { getModuleMastery } from '../utils/progress';
 import './Vocabulary.css';
 
 interface VocabularyModule {
@@ -136,16 +137,43 @@ export default function Vocabulary() {
                         <div className="vocab-grid">
                             {groupModules.map((module) => {
                                 const hasReading = READING_IDS.has(module.id);
+                                const { mastered, practiced } = getModuleMastery(module.id);
+                                const masteryPct = module.wordCount > 0
+                                    ? Math.round((mastered / module.wordCount) * 100)
+                                    : 0;
+
+                                const cardInner = (
+                                    <>
+                                        <span
+                                            className="vocab-card-icon-circle"
+                                            style={{ backgroundColor: `${module.color}1F` }}
+                                        >
+                                            <span className="vocab-card-icon">{module.icon}</span>
+                                        </span>
+                                        <span className="vocab-card-title">{module.title}</span>
+                                        <div className="vocab-card-footer">
+                                            <span className="vocab-card-badge">{module.wordCount} words</span>
+                                            {practiced > 0 && (
+                                                <span className="vocab-card-mastery" style={{ color: module.color }}>
+                                                    {mastered}/{module.wordCount} mastered
+                                                </span>
+                                            )}
+                                        </div>
+                                        {practiced > 0 && (
+                                            <div className="progress-track vocab-card-progress">
+                                                <div
+                                                    className="progress-fill"
+                                                    style={{ width: `${masteryPct}%`, backgroundColor: module.color }}
+                                                />
+                                            </div>
+                                        )}
+                                    </>
+                                );
+
                                 if (hasReading) {
                                     return (
                                         <div key={module.id} className="vocab-card vocab-card--reading">
-                                            <span
-                                                className="vocab-card-icon-circle"
-                                                style={{ backgroundColor: `${module.color}1F` }}
-                                            >
-                                                <span className="vocab-card-icon">{module.icon}</span>
-                                            </span>
-                                            <span className="vocab-card-title">{module.title}</span>
+                                            {cardInner}
                                             <div className="vocab-card-actions">
                                                 <button
                                                     className="vocab-card-action-btn"
@@ -173,14 +201,7 @@ export default function Vocabulary() {
                                         onClick={() => navigate(`/vocabulary/${module.id}`)}
                                         type="button"
                                     >
-                                        <span
-                                            className="vocab-card-icon-circle"
-                                            style={{ backgroundColor: `${module.color}1F` }}
-                                        >
-                                            <span className="vocab-card-icon">{module.icon}</span>
-                                        </span>
-                                        <span className="vocab-card-title">{module.title}</span>
-                                        <span className="vocab-card-badge">{module.wordCount} words</span>
+                                        {cardInner}
                                     </button>
                                 );
                             })}

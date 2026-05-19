@@ -153,6 +153,12 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--text-1);
+  margin-bottom: 0.5rem;
+}
+
+.vocq-complete-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-2);
   margin-bottom: 1.5rem;
 }
 
