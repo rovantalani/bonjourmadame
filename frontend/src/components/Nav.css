@@ -77,6 +77,23 @@
     font-weight: 600;
 }
 
+.theme-toggle {
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-2);
+    transition: border-color .15s ease, color .15s ease;
+    flex-shrink: 0;
+}
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 
 /* ════════════════════════════════
    BOTTOM NAV  (mobile)

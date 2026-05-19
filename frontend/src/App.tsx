@@ -13,6 +13,8 @@ import VerbLearn from './pages/VerbLearn';
 import VerbQuiz from './pages/VerbQuiz';
 import Phrases from './pages/Phrases';
 import PhraseDetail from './pages/PhraseDetail';
+import ReviewQueue from './pages/ReviewQueue';
+import ReadingPassage from './pages/ReadingPassage';
 
 function App() {
     return (
@@ -32,6 +34,8 @@ function App() {
                     <Route path="/helper-verbs/:verbId"          element={<VerbConjugation />} />
                     <Route path="/phrases"                       element={<Phrases />} />
                     <Route path="/phrases/:categoryId"           element={<PhraseDetail />} />
+                    <Route path="/review-queue"                  element={<ReviewQueue />} />
+                    <Route path="/reading/:moduleId"             element={<ReadingPassage />} />
                 </Routes>
             </div>
         </Router>

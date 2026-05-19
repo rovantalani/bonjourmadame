@@ -1,5 +1,7 @@
+import { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
+import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
 
 interface SectionCard {
     id: string;
@@ -52,6 +54,11 @@ const SECTION_CARDS: SectionCard[] = [
 
 export default function Home() {
     const navigate = useNavigate();
+    const [queueCount, setQueueCount] = useState(0);
+
+    useEffect(() => {
+        setQueueCount(totalQueuedCount(loadQueue()));
+    }, []);
 
     return (
         <main className="page">
@@ -61,6 +68,21 @@ export default function Home() {
                 <p className="home-subtitle">Your personal French course</p>
                 <hr className="home-rule" />
             </div>
+
+            {queueCount > 0 && (
+                <button
+                    className="home-review-banner"
+                    onClick={() => navigate('/review-queue')}
+                    type="button"
+                >
+                    <span className="home-review-icon">🔄</span>
+                    <div className="home-review-text">
+                        <strong>Review Queue</strong>
+                        <span>{queueCount} word{queueCount !== 1 ? 's' : ''} ready for review</span>
+                    </div>
+                    <span className="home-review-badge">{queueCount}</span>
+                </button>
+            )}
 
             <div className="home-grid">
                 {SECTION_CARDS.map((card) => (

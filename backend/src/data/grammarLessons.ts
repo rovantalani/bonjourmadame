@@ -10,6 +10,12 @@ export interface GrammarSection {
     examples: GrammarExample[];
 }
 
+export interface GrammarExercise {
+    sentence: string;
+    answer: string;
+    hint?: string;
+}
+
 export interface GrammarLesson {
     id: string;
     title: string;
@@ -18,6 +24,7 @@ export interface GrammarLesson {
     icon: string;
     color: string;
     sections: GrammarSection[];
+    exercises?: GrammarExercise[];
 }
 
 export const grammarLessons: GrammarLesson[] = [
@@ -60,6 +67,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'Il vient de la gare.', english: 'He\'s coming from the station.' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "Je voudrais ___ café, s'il vous plaît.", answer: 'un', hint: 'indefinite article, masculine singular' },
+            { sentence: "___ enfants aiment le chocolat.", answer: 'Les', hint: 'definite article, plural' },
+            { sentence: "Elle a ___ idée brillante.", answer: 'une', hint: 'indefinite article, feminine singular' },
+            { sentence: "Il va ___ cinéma ce soir.", answer: 'au', hint: 'à + le → contraction' },
+            { sentence: "Je parle ___ problème avec elle.", answer: 'du', hint: 'de + le → contraction' },
+            { sentence: "___ école est fermée aujourd'hui.", answer: "L'", hint: "definite article before a vowel" },
         ],
     },
     {
@@ -112,6 +127,14 @@ export const grammarLessons: GrammarLesson[] = [
                 ],
             },
         ],
+        exercises: [
+            { sentence: "C'est ___ voyage inoubliable.", answer: 'un', hint: 'indefinite article, masculine (voyage ends in -age)' },
+            { sentence: "___ liberté est un droit fondamental.", answer: 'La', hint: 'definite article, feminine (liberté ends in -té)' },
+            { sentence: "Il a acheté un journal. Les ___ sont sur la table.", answer: 'journaux', hint: '-al → -aux in the plural' },
+            { sentence: "Le ___ (desk) est en bois.", answer: 'bureau', hint: 'masculine noun ending in -eau' },
+            { sentence: "La ___ (decision) a été prise.", answer: 'décision', hint: 'feminine noun ending in -ion' },
+            { sentence: "Un bureau → des ___.", answer: 'bureaux', hint: '-eau nouns add -x in the plural' },
+        ],
     },
     {
         id: 'negation',
@@ -153,6 +176,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'C\'est important de ne pas oublier.', english: 'It\'s important not to forget.' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "Je ___ parle pas anglais.", answer: 'ne', hint: 'first part of ne…pas' },
+            { sentence: "Elle n'aime ___ le café.", answer: 'pas', hint: 'second part of ne…pas' },
+            { sentence: "Il ne fume ___.", answer: 'jamais', hint: 'ne…jamais = never' },
+            { sentence: "Je n'ai ___ dix euros.", answer: 'que', hint: 'ne…que = only' },
+            { sentence: "Essaie de ne ___ crier.", answer: 'pas', hint: 'negating an infinitive: ne pas before it' },
+            { sentence: "Il ne sait ___.", answer: 'rien', hint: 'ne…rien = nothing' },
         ],
     },
     {
@@ -207,6 +238,14 @@ export const grammarLessons: GrammarLesson[] = [
                 ],
             },
         ],
+        exercises: [
+            { sentence: "___ est-ce que tu parles français ?", answer: 'Est-ce que', hint: 'formal question opener, no inversion needed' },
+            { sentence: "Parles-___ français ?", answer: 'tu', hint: 'inversion: verb-subject pronoun' },
+            { sentence: "___ vas-tu ?", answer: 'Où', hint: 'question word for place' },
+            { sentence: "___ est-ce que tu arrives ?", answer: 'Quand', hint: 'question word for time' },
+            { sentence: "A-t-il ___ voiture ?", answer: 'une', hint: 'indefinite article, feminine' },
+            { sentence: "___ parles-tu ?", answer: 'Comment', hint: 'question word for manner/how' },
+        ],
     },
     {
         id: 'adjective-agreement',
@@ -251,6 +290,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'un livre nouveau', english: 'a new book (after, when it means \'brand-new\')' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "C'est une femme ___. (grand)", answer: 'grande', hint: 'add -e for feminine' },
+            { sentence: "Il est ___. (heureux, masculine)", answer: 'heureux', hint: '-eux stays for masculine' },
+            { sentence: "Elle est ___. (heureux, feminine)", answer: 'heureuse', hint: '-eux → -euse for feminine' },
+            { sentence: "C'est une ___ maison. (vieux, feminine, before noun)", answer: 'vieille', hint: 'beau/belle/vieux/vieille — age adjective before noun' },
+            { sentence: "Elle a une voiture ___. (rouge)", answer: 'rouge', hint: 'colour adjectives go after the noun, no agreement change' },
+            { sentence: "C'est un livre ___. (intéressant, masculine)", answer: 'intéressant', hint: 'regular adjective, masculine form' },
         ],
     },
     {
@@ -308,6 +355,14 @@ export const grammarLessons: GrammarLesson[] = [
                 ],
             },
         ],
+        exercises: [
+            { sentence: "Hier, j'___ parlé avec elle.", answer: 'ai', hint: 'avoir, passé composé, je' },
+            { sentence: "Il ___ allé au marché.", answer: 'est', hint: 'aller uses être in passé composé' },
+            { sentence: "Nous avons ___. (vendre)", answer: 'vendu', hint: '-RE verbs: past participle → -u' },
+            { sentence: "Elle s'est ___. (lever, feminine subject)", answer: 'levée', hint: 'reflexive verb with être; participle agrees with subject' },
+            { sentence: "Tu as ___ ce film ? (voir)", answer: 'vu', hint: 'voir → vu (irregular past participle)' },
+            { sentence: "Ils ont ___ la porte. (ouvrir)", answer: 'ouvert', hint: 'ouvrir → ouvert (irregular past participle)' },
+        ],
     },
     {
         id: 'imparfait',
@@ -357,6 +412,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'Elle aimait (imp.) la musique et elle a décidé (PC) d\'apprendre la guitare.', english: 'She loved music and she decided to learn guitar.' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "Quand j'étais petit, je ___ au foot tous les samedis.", answer: 'jouais', hint: 'imparfait, habitual action, jouer → nous jouons → joua-' },
+            { sentence: "Il ___ froid et la neige tombait.", answer: 'faisait', hint: 'imparfait, description, faire → nous faisons → faisa-' },
+            { sentence: "Elle ___ toujours le métro.", answer: 'prenait', hint: 'imparfait, habitual, prendre → nous prenons → prena-' },
+            { sentence: "Je lisais quand le téléphone ___ sonné.", answer: 'a', hint: 'passé composé for completed action (sonnner → a sonné)' },
+            { sentence: "J'___ peur. (imparfait de avoir)", answer: 'avais', hint: 'avoir → j\'avais (imparfait)' },
+            { sentence: "La ville ___ calme ce matin-là.", answer: 'était', hint: 'imparfait of être, description' },
         ],
     },
     {
@@ -412,6 +475,14 @@ export const grammarLessons: GrammarLesson[] = [
                 ],
             },
         ],
+        exercises: [
+            { sentence: "Je ___ lève à sept heures.", answer: 'me', hint: 'reflexive pronoun for je' },
+            { sentence: "Tu ___ laves les mains.", answer: 'te', hint: 'reflexive pronoun for tu' },
+            { sentence: "Nous ___ habillons vite.", answer: 'nous', hint: 'reflexive pronoun for nous' },
+            { sentence: "Elle s'est ___ tôt. (lever, feminine)", answer: 'levée', hint: 'reflexive + être; participle agrees with feminine subject' },
+            { sentence: "Ils ___ sont rencontrés à Paris.", answer: 'se', hint: 'reflexive pronoun for ils, before être in passé composé' },
+            { sentence: "Ils ___. (s\'aimer — they love each other)", answer: "s'aiment", hint: 'reciprocal use of reflexive verb' },
+        ],
     },
     {
         id: 'futur-conditionnel',
@@ -464,6 +535,14 @@ export const grammarLessons: GrammarLesson[] = [
                 ],
             },
         ],
+        exercises: [
+            { sentence: "Je t'___ demain. (appeler, futur)", answer: 'appellerai', hint: 'appeler → appellera- + -i (futur)' },
+            { sentence: "Il ___ beau demain. (faire, futur)", answer: 'fera', hint: 'irregular futur stem: fer-' },
+            { sentence: "Quand tu ___, je serai là. (arriver, futur)", answer: 'arriveras', hint: 'futur after quand' },
+            { sentence: "Je ___ un café, s'il vous plaît. (vouloir, conditionnel)", answer: 'voudrais', hint: 'irregular conditional stem: voudr-' },
+            { sentence: "Si j'avais de l'argent, je ___. (voyager, conditionnel)", answer: 'voyagerais', hint: 'conditionnel présent: voyager- + -ais' },
+            { sentence: "Nous ___ contents d'y aller. (être, conditionnel)", answer: 'serions', hint: 'irregular conditional stem: ser-' },
+        ],
     },
     {
         id: 'subjonctif',
@@ -507,6 +586,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'Penses-tu qu\'il ait raison ? (subjunctive)', english: 'Do you think he\'s right?' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "Il faut que tu ___. (venir, subjonctif)", answer: 'viennes', hint: 'subjonctif of venir: vienn-' },
+            { sentence: "Je veux qu'il ___. (partir, subjonctif)", answer: 'parte', hint: 'subjonctif of partir: part-' },
+            { sentence: "Je suis content que tu ___ là. (être, subjonctif)", answer: 'sois', hint: 'irregular subjonctif of être' },
+            { sentence: "Bien qu'il ___ difficile… (être, subjonctif)", answer: 'soit', hint: 'irregular subjonctif of être' },
+            { sentence: "Je ne pense pas qu'il ___ raison. (avoir, subjonctif)", answer: 'ait', hint: 'irregular subjonctif of avoir' },
+            { sentence: "Il est important que nous ___. (savoir, subjonctif)", answer: 'sachions', hint: 'irregular subjonctif of savoir: sach-' },
         ],
     },
     {
@@ -568,6 +655,14 @@ export const grammarLessons: GrammarLesson[] = [
                 ],
             },
         ],
+        exercises: [
+            { sentence: "Elle chante ___ cuisinant.", answer: 'en', hint: 'gérondif = en + participe présent' },
+            { sentence: "Il a réussi ___ travaillant dur.", answer: 'en', hint: 'gérondif expresses means' },
+            { sentence: "Nous finissons → ___ant (participe présent de finir)", answer: 'finissant', hint: 'remove -ons from nous form, add -ant' },
+            { sentence: "___ arrivant, appelez-moi.", answer: 'En', hint: 'gérondif at start of sentence' },
+            { sentence: "J'apprends le français ___ regardant des films.", answer: 'en', hint: 'gérondif expresses manner' },
+            { sentence: "être → étant → ___ étant (gérondif)", answer: 'en', hint: 'all gérondifs are formed with en' },
+        ],
     },
     {
         id: 'passive-voice',
@@ -618,6 +713,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'Ce livre se vend bien.', english: 'This book sells well. (pronominal)' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "La souris est ___ par le chat.", answer: 'mangée', hint: 'passive présent; participe agrees with la souris (feminine)' },
+            { sentence: "Le suspect a été arrêté ___ la police.", answer: 'par', hint: 'par for a concrete, one-time physical action' },
+            { sentence: "Il est respecté ___ tous ses collègues.", answer: 'de', hint: 'de for a state or habitual relationship' },
+            { sentence: "Elle est ___. (inviter, passive passé composé, feminine)", answer: 'invitée', hint: 'passive passé composé: a été + participe; feminine agreement' },
+            { sentence: "Ce vin ___ boit frais.", answer: 'se', hint: 'pronominal construction avoids the passive' },
+            { sentence: "___ vous appellera demain. (passive avoidance with on)", answer: 'On', hint: 'on + active verb instead of passive' },
         ],
     },
     {
@@ -679,6 +782,14 @@ export const grammarLessons: GrammarLesson[] = [
                 ],
             },
         ],
+        exercises: [
+            { sentence: "Il a dit qu'il ___. (travailler, imparfait, tense shift)", answer: 'travaillait', hint: 'présent → imparfait after past reporting verb' },
+            { sentence: "Il a dit qu'il ___ mangé. (avoir, conditionnel, tense shift from futur)", answer: 'avait', hint: 'passé composé → plus-que-parfait after past reporting verb' },
+            { sentence: "Il a demandé ___ elle venait.", answer: 'si', hint: 'indirect yes/no question uses si' },
+            { sentence: "Il a demandé où elle ___. (aller, imparfait)", answer: 'allait', hint: 'wh-question indirect speech, tense shifts back' },
+            { sentence: "Elle lui a dit de ___. (partir)", answer: 'partir', hint: 'indirect command: dire de + infinitif' },
+            { sentence: "Il a demandé ce qu'elle ___. (vouloir, imparfait)", answer: 'voulait', hint: "Qu'est-ce que → ce que; tense shifts back to imparfait" },
+        ],
     },
     {
         id: 'conditionnel-passe',
@@ -728,6 +839,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'Il y aurait eu plusieurs victimes.', english: 'There are said to have been several victims.' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "Si j'avais su, j'___ agi différemment. (avoir, conditionnel passé)", answer: 'aurais', hint: 'conditionnel passé: avoir au conditionnel + participe passé' },
+            { sentence: "Il ___ parti s'il avait eu le choix. (être, conditionnel passé)", answer: 'serait', hint: 'conditionnel passé with être: serait + parti' },
+            { sentence: "Tu ___ pu m'appeler ! (avoir, conditionnel passé)", answer: 'aurais', hint: 'expressing reproach: aurais + pu' },
+            { sentence: "J'___ dû y penser. (avoir, conditionnel passé)", answer: 'aurais', hint: 'devoir → dû; aurais dû = should have' },
+            { sentence: "Le président ___ démissionné. (reported info, conditionnel passé)", answer: 'aurait', hint: 'unverified reported information uses conditionnel passé' },
+            { sentence: "Elle ___ levée tôt. (se lever, conditionnel passé, feminine)", answer: 'se serait', hint: 'reflexive verb: se + serait + levée' },
         ],
     },
     {
@@ -792,6 +911,14 @@ export const grammarLessons: GrammarLesson[] = [
                     { french: 'Je le ferai, sauf si tu m\'en empêches.', english: 'I\'ll do it, unless you stop me.' },
                 ],
             },
+        ],
+        exercises: [
+            { sentence: "___ plus, cette méthode est très efficace.", answer: 'De', hint: 'De plus = furthermore (addition)' },
+            { sentence: "Il travaille dur ; ___, il n'avance pas.", answer: 'néanmoins', hint: 'opposition/contrast: nevertheless' },
+            { sentence: "Bien qu'il ___ difficile de trancher, certains éléments sont clairs. (être, subjonctif)", answer: 'soit', hint: 'bien que requires the subjunctive' },
+            { sentence: "Il a menti ; ___ conséquent, on ne lui fait plus confiance.", answer: 'par', hint: 'par conséquent = as a result' },
+            { sentence: "Je viendrai à ___ qu'il ne pleuve.", answer: 'moins', hint: 'à moins que = unless' },
+            { sentence: "___ ses efforts, il n'a pas réussi.", answer: 'Malgré', hint: 'malgré + noun = despite' },
         ],
     },
 ];

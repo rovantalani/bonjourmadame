@@ -1,0 +1,79 @@
+.rq-header {
+    margin-bottom: 1.75rem;
+}
+
+.rq-start-btn {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.9rem 1.4rem;
+    font-size: 1rem;
+    margin: 0 auto 2rem;
+}
+
+.rq-module-card {
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--r-lg);
+}
+
+.rq-module-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.rq-module-count {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    margin-top: 0.2rem;
+}
+
+.rq-clear-btn {
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    padding: 0.4rem 0.85rem;
+}
+
+.rq-word-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rq-word-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0.75rem;
+    background: var(--surface-2);
+    border-radius: var(--r-md);
+    font-size: 0.9rem;
+}
+
+.rq-word-english {
+    color: var(--text-1);
+    font-weight: 500;
+}
+
+.rq-word-french {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.rq-back-btn {
+    display: block;
+    margin: 2rem auto 0;
+}
+
+@media (max-width: 640px) {
+    .rq-word-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}

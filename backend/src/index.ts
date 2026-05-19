@@ -5,6 +5,7 @@ import { vocabularyData } from './data/vocabulary';
 import { verbGroups, verbsData, verbById, verbGroupMap } from './data/verbs';
 import { grammarLessons } from './data/grammarLessons';
 import { phraseCategories } from './data/phrases';
+import { readingPassages } from './data/readingPassages';
 
 dotenv.config();
 
@@ -202,6 +203,17 @@ app.get('/api/phrase-categories/:categoryId', (req: Request, res: Response) => {
         return;
     }
     res.json(category);
+});
+
+app.get('/api/reading/:moduleId', (req: Request, res: Response) => {
+    const moduleId = req.params['moduleId'] as string;
+    const passage = readingPassages.find(p => p.moduleId === moduleId);
+    if (!passage) {
+        res.status(404).json({ error: 'Reading passage not found' });
+        return;
+    }
+    const vocabulary = vocabularyData[moduleId] ?? [];
+    res.json({ ...passage, vocabulary });
 });
 
 // Start server

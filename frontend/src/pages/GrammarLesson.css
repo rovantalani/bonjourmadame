@@ -133,6 +133,119 @@
     font-style: normal;
 }
 
+/* ── Exercise panel ── */
+.ex-panel {
+    margin-top: 2rem;
+    padding: 1.75rem;
+}
+
+.ex-panel-heading {
+    margin-bottom: 1.25rem;
+}
+
+.ex-score {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 1.25rem;
+}
+
+.ex-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ex-item {
+    background: var(--surface-2);
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 1rem 1.15rem;
+    transition: border-color .2s ease;
+}
+
+.ex-item--correct {
+    border-color: var(--success);
+    background: var(--success-light);
+}
+
+.ex-item--wrong {
+    border-color: var(--error);
+    background: var(--error-light);
+}
+
+.ex-sentence {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-1);
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+}
+
+.ex-input-row {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.ex-input {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.85rem;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+}
+
+.ex-item--correct .ex-input {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.ex-item--wrong .ex-input {
+    border-color: var(--error);
+    color: var(--error);
+}
+
+.ex-hint-btn {
+    flex-shrink: 0;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-md);
+    color: var(--text-2);
+    transition: border-color .18s ease;
+    font-family: var(--font);
+}
+
+.ex-hint-btn:hover {
+    border-color: var(--text-3);
+}
+
+.ex-hint-text {
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-2);
+    font-style: italic;
+}
+
+.ex-correct-reveal {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--error);
+}
+
+.ex-correct-reveal strong {
+    font-weight: 700;
+}
+
+.ex-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
 /* ── Mobile ── */
 @media (max-width: 640px) {
     .lesson-header {
