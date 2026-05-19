@@ -72,6 +72,87 @@
   margin-top: 0.25rem;
 }
 
+.hv-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.hv-section-note {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  margin-top: -0.25rem;
+}
+
+/* Verb group list cards */
+.hv-group-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.hv-group-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  outline: none;
+}
+
+.hv-group-card:hover,
+.hv-group-card:focus-visible {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.hv-group-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hv-group-icon {
+  font-size: 1.4rem;
+}
+
+.hv-group-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.hv-group-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-1);
+  margin: 0 0 0.2rem;
+}
+
+.hv-group-desc {
+  font-size: 0.83rem;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hv-group-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* ── Mobile ── */
 @media (max-width: 640px) {
   .helper-verbs-grid {

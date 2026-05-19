@@ -14,6 +14,12 @@ interface GrammarSection {
     examples: GrammarExample[];
 }
 
+interface GrammarExercise {
+    sentence: string;
+    answer: string;
+    hint?: string;
+}
+
 interface GrammarLessonData {
     id: string;
     title: string;
@@ -22,6 +28,17 @@ interface GrammarLessonData {
     icon: string;
     color: string;
     sections: GrammarSection[];
+    exercises?: GrammarExercise[];
+}
+
+type ExerciseState = 'idle' | 'checked';
+
+function normalizeAnswer(str: string): string {
+    return str
+        .toLowerCase()
+        .trim()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '');
 }
 
 export default function GrammarLesson() {
@@ -30,6 +47,10 @@ export default function GrammarLesson() {
     const [lesson, setLesson] = useState<GrammarLessonData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+
+    const [inputs, setInputs] = useState<string[]>([]);
+    const [exerciseState, setExerciseState] = useState<ExerciseState>('idle');
+    const [shownHints, setShownHints] = useState<boolean[]>([]);
 
     useEffect(() => {
         setLoading(true);
@@ -41,6 +62,9 @@ export default function GrammarLesson() {
             })
             .then((data: GrammarLessonData) => {
                 setLesson(data);
+                setInputs(new Array(data.exercises?.length ?? 0).fill(''));
+                setShownHints(new Array(data.exercises?.length ?? 0).fill(false));
+                setExerciseState('idle');
                 setLoading(false);
             })
             .catch(() => {
@@ -48,6 +72,24 @@ export default function GrammarLesson() {
                 setLoading(false);
             });
     }, [lessonId]);
+
+    function handleInputChange(index: number, value: string) {
+        setInputs(prev => prev.map((v, i) => (i === index ? value : v)));
+    }
+
+    function handleCheckAnswers() {
+        setExerciseState('checked');
+    }
+
+    function handleTryAgain() {
+        setInputs(new Array(lesson?.exercises?.length ?? 0).fill(''));
+        setShownHints(new Array(lesson?.exercises?.length ?? 0).fill(false));
+        setExerciseState('idle');
+    }
+
+    function handleShowHint(index: number) {
+        setShownHints(prev => prev.map((v, i) => (i === index ? true : v)));
+    }
 
     if (loading) {
         return (
@@ -67,6 +109,12 @@ export default function GrammarLesson() {
             </main>
         );
     }
+
+    const exercises = lesson.exercises ?? [];
+    const checkedResults = exerciseState === 'checked'
+        ? exercises.map((ex, i) => normalizeAnswer(inputs[i]) === normalizeAnswer(ex.answer))
+        : [];
+    const score = checkedResults.filter(Boolean).length;
 
     return (
         <main className="page">
@@ -120,6 +168,85 @@ export default function GrammarLesson() {
                     </div>
                 ))}
             </div>
+
+            {exercises.length > 0 && (
+                <div className="ex-panel card">
+                    <p className="section-label ex-panel-heading">Exercises</p>
+
+                    {exerciseState === 'checked' && (
+                        <p className="ex-score">
+                            {score} / {exercises.length} correct
+                        </p>
+                    )}
+
+                    <div className="ex-list">
+                        {exercises.map((ex, i) => {
+                            const isCorrect = exerciseState === 'checked' && checkedResults[i];
+                            const isWrong = exerciseState === 'checked' && !checkedResults[i];
+                            return (
+                                <div
+                                    key={i}
+                                    className={
+                                        'ex-item' +
+                                        (isCorrect ? ' ex-item--correct' : '') +
+                                        (isWrong ? ' ex-item--wrong' : '')
+                                    }
+                                >
+                                    <p className="ex-sentence">{ex.sentence}</p>
+                                    <div className="ex-input-row">
+                                        <input
+                                            type="text"
+                                            className="field-input ex-input"
+                                            value={inputs[i]}
+                                            onChange={e => handleInputChange(i, e.target.value)}
+                                            disabled={exerciseState === 'checked'}
+                                            placeholder="___"
+                                            aria-label={`Answer for exercise ${i + 1}`}
+                                        />
+                                        {ex.hint && exerciseState === 'idle' && !shownHints[i] && (
+                                            <button
+                                                type="button"
+                                                className="ex-hint-btn"
+                                                onClick={() => handleShowHint(i)}
+                                            >
+                                                Hint
+                                            </button>
+                                        )}
+                                    </div>
+                                    {shownHints[i] && exerciseState === 'idle' && (
+                                        <p className="ex-hint-text">{ex.hint}</p>
+                                    )}
+                                    {isWrong && (
+                                        <p className="ex-correct-reveal">
+                                            Correct: <strong>{ex.answer}</strong>
+                                        </p>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div className="ex-actions">
+                        {exerciseState === 'idle' ? (
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                onClick={handleCheckAnswers}
+                            >
+                                Check Answers
+                            </button>
+                        ) : (
+                            <button
+                                type="button"
+                                className="btn btn-secondary"
+                                onClick={handleTryAgain}
+                            >
+                                Try Again
+                            </button>
+                        )}
+                    </div>
+                </div>
+            )}
         </main>
     );
 }

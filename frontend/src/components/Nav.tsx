@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTheme } from '../hooks/useTheme';
 import './Nav.css';
 
 const NAV_ITEMS = [
@@ -20,6 +21,7 @@ function useActiveItem() {
 export default function Nav() {
     const navigate   = useNavigate();
     const isActive   = useActiveItem();
+    const { dark, toggle } = useTheme();
 
     return (
         <>
@@ -42,6 +44,9 @@ export default function Nav() {
                             </button>
                         ))}
                     </div>
+                    <button className="theme-toggle" onClick={toggle} aria-label="Toggle dark mode">
+                        {dark ? '☀' : '☽'}
+                    </button>
                 </div>
             </nav>
 

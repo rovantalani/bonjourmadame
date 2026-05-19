@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { addWrongWords, loadShufflePref, saveShufflePref } from '../utils/wordQueue';
 import './VocabularyQuiz.css';
 
 interface Word {
@@ -21,14 +22,17 @@ export default function VocabularyQuiz() {
     const [correctCount, setCorrectCount] = useState(0);
     const [isReviewMode, setIsReviewMode] = useState(false);
     const [quizComplete, setQuizComplete] = useState(false);
+    const [shuffle, setShuffle] = useState<boolean>(loadShufflePref);
+
+    const firstRoundWrong = useRef<Word[]>([]);
 
     useEffect(() => {
         fetch(`http://localhost:3001/api/vocabulary/${moduleId}`)
             .then(res => res.json())
             .then((data: Word[]) => {
                 setAllWords(data);
-                const shuffled = [...data].sort(() => Math.random() - 0.5);
-                setWords(shuffled);
+                const ordered = shuffle ? [...data].sort(() => Math.random() - 0.5) : data;
+                setWords(ordered);
             });
     }, [moduleId]);
 
@@ -39,7 +43,7 @@ export default function VocabularyQuiz() {
             .toLowerCase()
             .trim()
             .normalize('NFD')
-            .replace(/[̀-ͯ]/g, ''); // Remove accents for comparison
+            .replace(/[̀-ͯ]/g, '');
     };
 
     const handleSubmit = () => {
@@ -72,23 +76,42 @@ export default function VocabularyQuiz() {
         if (currentIndex < words.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
-            // First round complete
             if (wrongWords.length > 0 && !isReviewMode) {
-                // Start review mode with wrong words
+                firstRoundWrong.current = wrongWords;
                 setIsReviewMode(true);
                 setWords(wrongWords);
                 setCurrentIndex(0);
                 setWrongWords([]);
             } else {
-                // Quiz complete
+                if (!isReviewMode && wrongWords.length === 0) {
+                    firstRoundWrong.current = wrongWords;
+                }
+                if (firstRoundWrong.current.length > 0 && moduleId) {
+                    addWrongWords(moduleId, firstRoundWrong.current);
+                }
                 setQuizComplete(true);
             }
         }
     };
 
+    const handleToggleShuffle = () => {
+        const next = !shuffle;
+        setShuffle(next);
+        saveShufflePref(next);
+        const ordered = next ? [...allWords].sort(() => Math.random() - 0.5) : allWords;
+        setWords(ordered);
+        setCurrentIndex(0);
+        setUserAnswer('');
+        setShowAnswer(false);
+        setWrongWords([]);
+        setCorrectCount(0);
+        setIsReviewMode(false);
+        firstRoundWrong.current = [];
+    };
+
     const handleRestart = () => {
-        const shuffled = [...allWords].sort(() => Math.random() - 0.5);
-        setWords(shuffled);
+        const ordered = shuffle ? [...allWords].sort(() => Math.random() - 0.5) : allWords;
+        setWords(ordered);
         setCurrentIndex(0);
         setUserAnswer('');
         setShowAnswer(false);
@@ -96,6 +119,7 @@ export default function VocabularyQuiz() {
         setCorrectCount(0);
         setIsReviewMode(false);
         setQuizComplete(false);
+        firstRoundWrong.current = [];
     };
 
     const handleExit = () => {
@@ -162,6 +186,13 @@ export default function VocabularyQuiz() {
                 <span className="vocq-counter">
                     {isReviewMode ? '🔄 Review — ' : ''}Word {currentIndex + 1} of {words.length}
                 </span>
+                <button
+                    className={`btn vocq-shuffle-btn ${shuffle ? 'btn-primary' : 'btn-secondary'}`}
+                    onClick={handleToggleShuffle}
+                    title={shuffle ? 'Shuffled — click for In Order' : 'In Order — click to Shuffle'}
+                >
+                    {shuffle ? '⇄ Shuffled' : '↕ In Order'}
+                </button>
             </div>
 
             {/* Progress bar */}
