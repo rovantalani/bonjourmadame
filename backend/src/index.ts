@@ -221,7 +221,7 @@ app.get('/api/reading/:moduleId', (req: Request, res: Response) => {
 if (process.env.NODE_ENV === 'production') {
     const distPath = path.join(__dirname, '../../frontend/dist');
     app.use(express.static(distPath));
-    app.get('*', (_req, res) => {
+    app.get(/.*/, (_req, res) => {
         res.sendFile(path.join(distPath, 'index.html'));
     });
 }
