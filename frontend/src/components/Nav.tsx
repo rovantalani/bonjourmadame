@@ -44,6 +44,12 @@ export default function Nav() {
                             </button>
                         ))}
                     </div>
+                    <button
+                        className={`top-nav-link ${isActive('/stats') ? 'active' : ''}`}
+                        onClick={() => navigate('/stats')}
+                    >
+                        Stats
+                    </button>
                     <button className="theme-toggle" onClick={toggle} aria-label="Toggle dark mode">
                         {dark ? '☀' : '☽'}
                     </button>

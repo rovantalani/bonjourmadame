@@ -15,6 +15,7 @@ import Phrases from './pages/Phrases';
 import PhraseDetail from './pages/PhraseDetail';
 import ReviewQueue from './pages/ReviewQueue';
 import ReadingPassage from './pages/ReadingPassage';
+import Stats from './pages/Stats';
 
 function App() {
     return (
@@ -36,6 +37,7 @@ function App() {
                     <Route path="/phrases/:categoryId"           element={<PhraseDetail />} />
                     <Route path="/review-queue"                  element={<ReviewQueue />} />
                     <Route path="/reading/:moduleId"             element={<ReadingPassage />} />
+                    <Route path="/stats"                         element={<Stats />} />
                 </Routes>
             </div>
         </Router>

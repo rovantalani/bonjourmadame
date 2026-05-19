@@ -8,6 +8,7 @@ import {
     type WordQueue,
     type QueuedWord,
 } from '../utils/wordQueue';
+import { isAnswerCorrect } from '../utils/answerValidator';
 import './ReviewQueue.css';
 
 interface ReviewSession {
@@ -19,14 +20,6 @@ interface ReviewSession {
     done: boolean;
 }
 
-function normalizeString(str: string): string {
-    return str
-        .toLowerCase()
-        .trim()
-        .normalize('NFD')
-        .replace(/[̀-ͯ]/g, '');
-}
-
 export default function ReviewQueue() {
     const navigate = useNavigate();
     const [queue, setQueue] = useState<WordQueue>({});
@@ -35,6 +28,21 @@ export default function ReviewQueue() {
     useEffect(() => {
         setQueue(loadQueue());
     }, []);
+
+    // Allow Enter to advance past the reveal screen without re-clicking
+    useEffect(() => {
+        if (!session?.showAnswer) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key !== 'Enter') return;
+            setSession(s => {
+                if (!s) return s;
+                if (s.currentIndex >= s.words.length - 1) return { ...s, done: true };
+                return { ...s, currentIndex: s.currentIndex + 1, userAnswer: '', showAnswer: false };
+            });
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [session?.showAnswer]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const totalCount = totalQueuedCount(queue);
 
@@ -162,7 +170,7 @@ export default function ReviewQueue() {
 
     const handleSubmit = () => {
         if (!session.userAnswer.trim()) return;
-        const isCorrect = normalizeString(session.userAnswer) === normalizeString(current.french);
+        const isCorrect = isAnswerCorrect(session.userAnswer, current.french);
 
         if (isCorrect) {
             removeCorrectWord(current.moduleId, current.id);

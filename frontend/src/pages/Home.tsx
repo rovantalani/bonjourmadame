@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
+import { loadStreak, loadDailyProgress, loadDailyGoal } from '../utils/progress';
 
 interface SectionCard {
     id: string;
@@ -55,9 +56,15 @@ const SECTION_CARDS: SectionCard[] = [
 export default function Home() {
     const navigate = useNavigate();
     const [queueCount, setQueueCount] = useState(0);
+    const [streak, setStreak] = useState(0);
+    const [wordsToday, setWordsToday] = useState(0);
+    const [dailyGoal, setDailyGoal] = useState(10);
 
     useEffect(() => {
         setQueueCount(totalQueuedCount(loadQueue()));
+        setStreak(loadStreak().currentStreak);
+        setWordsToday(loadDailyProgress().wordsStudied);
+        setDailyGoal(loadDailyGoal());
     }, []);
 
     return (
@@ -67,6 +74,27 @@ export default function Home() {
                 <h1>Bonjour Madame</h1>
                 <p className="home-subtitle">Your personal French course</p>
                 <hr className="home-rule" />
+                <div className="home-status-row">
+                    <button className="home-streak-pill" onClick={() => navigate('/stats')} type="button">
+                        <span className="home-streak-fire">&#x1F525;</span>
+                        <span className="home-streak-num">{streak}</span>
+                        <span className="home-streak-label">day streak</span>
+                    </button>
+                    <div className="home-daily-goal">
+                        <div className="home-daily-label">
+                            <span>{wordsToday} / {dailyGoal} words today</span>
+                        </div>
+                        <div className="progress-track home-daily-bar">
+                            <div
+                                className="progress-fill"
+                                style={{
+                                    width: `${Math.min(100, (wordsToday / dailyGoal) * 100)}%`,
+                                    backgroundColor: wordsToday >= dailyGoal ? 'var(--success)' : 'var(--accent)',
+                                }}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {queueCount > 0 && (

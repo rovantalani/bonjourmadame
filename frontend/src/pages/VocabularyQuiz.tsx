@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { addWrongWords, loadShufflePref, saveShufflePref } from '../utils/wordQueue';
+import { recordAnswer, recordSession, loadMastery } from '../utils/progress';
+import { isAnswerCorrect } from '../utils/answerValidator';
 import './VocabularyQuiz.css';
 
 interface Word {
@@ -23,33 +25,46 @@ export default function VocabularyQuiz() {
     const [isReviewMode, setIsReviewMode] = useState(false);
     const [quizComplete, setQuizComplete] = useState(false);
     const [shuffle, setShuffle] = useState<boolean>(loadShufflePref);
+    const [allMastered, setAllMastered] = useState(false);
 
     const firstRoundWrong = useRef<Word[]>([]);
+
+    // Allow Enter to advance past the reveal screen without re-clicking
+    useEffect(() => {
+        if (!showAnswer) return;
+        const onKey = (e: KeyboardEvent) => { if (e.key === 'Enter') handleNext(); };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [showAnswer]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    const getUnmastered = (data: Word[]) => {
+        const mastery = loadMastery();
+        return data.filter(w => (mastery[`${moduleId}:${w.id}`]?.level ?? 0) < 3);
+    };
 
     useEffect(() => {
         fetch(`http://localhost:3001/api/vocabulary/${moduleId}`)
             .then(res => res.json())
             .then((data: Word[]) => {
                 setAllWords(data);
-                const ordered = shuffle ? [...data].sort(() => Math.random() - 0.5) : data;
-                setWords(ordered);
+                const unmastered = getUnmastered(data);
+                if (unmastered.length === 0) {
+                    setAllMastered(true);
+                } else {
+                    const ordered = shuffle ? [...unmastered].sort(() => Math.random() - 0.5) : unmastered;
+                    setWords(ordered);
+                }
             });
-    }, [moduleId]);
+    }, [moduleId]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const currentWord = words[currentIndex];
-
-    const normalizeString = (str: string): string => {
-        return str
-            .toLowerCase()
-            .trim()
-            .normalize('NFD')
-            .replace(/[̀-ͯ]/g, '');
-    };
 
     const handleSubmit = () => {
         if (!userAnswer.trim()) return;
 
-        const isCorrect = normalizeString(userAnswer) === normalizeString(currentWord.french);
+        const isCorrect = isAnswerCorrect(userAnswer, currentWord.french);
+
+        recordAnswer(moduleId!, currentWord.id, isCorrect);
 
         if (isCorrect) {
             setCorrectCount(correctCount + 1);
@@ -63,6 +78,7 @@ export default function VocabularyQuiz() {
     };
 
     const handleSkip = () => {
+        recordAnswer(moduleId!, currentWord.id, false);
         setShowAnswer(true);
         if (!wrongWords.find(w => w.id === currentWord.id)) {
             setWrongWords([...wrongWords, currentWord]);
@@ -89,6 +105,7 @@ export default function VocabularyQuiz() {
                 if (firstRoundWrong.current.length > 0 && moduleId) {
                     addWrongWords(moduleId, firstRoundWrong.current);
                 }
+                recordSession(moduleId!, isReviewMode ? 'review' : 'vocabulary', correctCount, allWords.length);
                 setQuizComplete(true);
             }
         }
@@ -98,7 +115,9 @@ export default function VocabularyQuiz() {
         const next = !shuffle;
         setShuffle(next);
         saveShufflePref(next);
-        const ordered = next ? [...allWords].sort(() => Math.random() - 0.5) : allWords;
+        const unmastered = getUnmastered(allWords);
+        const base = unmastered.length > 0 ? unmastered : allWords;
+        const ordered = next ? [...base].sort(() => Math.random() - 0.5) : base;
         setWords(ordered);
         setCurrentIndex(0);
         setUserAnswer('');
@@ -110,6 +129,26 @@ export default function VocabularyQuiz() {
     };
 
     const handleRestart = () => {
+        const unmastered = getUnmastered(allWords);
+        if (unmastered.length === 0) {
+            setAllMastered(true);
+            setQuizComplete(false);
+            return;
+        }
+        const ordered = shuffle ? [...unmastered].sort(() => Math.random() - 0.5) : unmastered;
+        setWords(ordered);
+        setCurrentIndex(0);
+        setUserAnswer('');
+        setShowAnswer(false);
+        setWrongWords([]);
+        setCorrectCount(0);
+        setIsReviewMode(false);
+        setQuizComplete(false);
+        firstRoundWrong.current = [];
+    };
+
+    const handlePracticeAll = () => {
+        setAllMastered(false);
         const ordered = shuffle ? [...allWords].sort(() => Math.random() - 0.5) : allWords;
         setWords(ordered);
         setCurrentIndex(0);
@@ -125,6 +164,26 @@ export default function VocabularyQuiz() {
     const handleExit = () => {
         navigate('/vocabulary');
     };
+
+    if (allMastered) {
+        return (
+            <main className="page">
+                <div className="vocq-complete card">
+                    <div className="vocq-complete-emoji">⭐</div>
+                    <h1 className="vocq-complete-title">All Mastered!</h1>
+                    <p className="vocq-complete-subtitle">You've mastered every word in this module.</p>
+                    <div className="vocq-complete-actions">
+                        <button className="btn btn-primary" onClick={handlePracticeAll}>
+                            Practice All Anyway
+                        </button>
+                        <button className="btn btn-secondary" onClick={handleExit}>
+                            Back to Vocabulary
+                        </button>
+                    </div>
+                </div>
+            </main>
+        );
+    }
 
     if (!currentWord && !quizComplete) {
         return (
