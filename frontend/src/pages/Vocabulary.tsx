@@ -82,7 +82,7 @@ export default function Vocabulary() {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-        axios.get<VocabularyModule[]>('http://localhost:3001/api/vocabulary-modules')
+        axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/vocabulary-modules`)
             .then(res => setModules(res.data))
             .catch(err => console.error('Failed to load vocabulary modules', err));
     }, []);

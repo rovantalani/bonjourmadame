@@ -32,7 +32,7 @@ export default function Grammar() {
     const [lessons, setLessons] = useState<GrammarLessonMeta[]>([]);
 
     useEffect(() => {
-        axios.get<GrammarLessonMeta[]>('http://localhost:3001/api/grammar-lessons')
+        axios.get<GrammarLessonMeta[]>(`${import.meta.env.VITE_API_BASE}/api/grammar-lessons`)
             .then(res => setLessons(res.data))
             .catch(err => console.error('Failed to load grammar lessons', err));
     }, []);

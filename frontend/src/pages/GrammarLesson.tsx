@@ -55,7 +55,7 @@ export default function GrammarLesson() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`http://localhost:3001/api/grammar-lessons/${lessonId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/grammar-lessons/${lessonId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();

@@ -34,7 +34,7 @@ export default function VerbGroupList() {
         }
         setLoading(true);
         setError(false);
-        fetch(`http://localhost:3001/api/verb-group/${moduleId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/verb-group/${moduleId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
