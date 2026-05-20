@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
-import { loadStreak, loadDailyProgress, loadDailyGoal } from '../utils/progress';
+import { loadStreak, loadDailyProgress, loadDailyGoal, fetchProgressFromApi } from '../utils/progress';
+import { useAuth } from '../context/AuthContext';
+import ProgressImportBanner from '../components/ProgressImportBanner';
 
 interface SectionCard {
     id: string;
@@ -55,6 +57,7 @@ const SECTION_CARDS: SectionCard[] = [
 
 export default function Home() {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const [queueCount, setQueueCount] = useState(0);
     const [streak, setStreak] = useState(0);
     const [wordsToday, setWordsToday] = useState(0);
@@ -62,13 +65,27 @@ export default function Home() {
 
     useEffect(() => {
         setQueueCount(totalQueuedCount(loadQueue()));
-        setStreak(loadStreak().currentStreak);
-        setWordsToday(loadDailyProgress().wordsStudied);
         setDailyGoal(loadDailyGoal());
-    }, []);
+
+        if (user) {
+            fetchProgressFromApi().then(api => {
+                if (!api) return;
+                setStreak(api.stats.currentStreak);
+                const today = new Date().toISOString().slice(0, 10);
+                const wordsStudied = api.sessions
+                    .filter(s => s.date.startsWith(today))
+                    .reduce((sum, s) => sum + s.total, 0);
+                setWordsToday(wordsStudied);
+            });
+        } else {
+            setStreak(loadStreak().currentStreak);
+            setWordsToday(loadDailyProgress().wordsStudied);
+        }
+    }, [user]);
 
     return (
         <main className="page">
+            <ProgressImportBanner />
             <div className="home-hero">
                 <img src="/logo_no_text.png" alt="Bonjour Madame logo" className="home-logo" />
                 <h1>Bonjour Madame</h1>

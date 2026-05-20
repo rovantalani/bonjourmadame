@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { addWrongWords, loadShufflePref, saveShufflePref } from '../utils/wordQueue';
-import { recordAnswer, recordSession, loadMastery } from '../utils/progress';
+import { recordAnswer, recordSession, loadMastery, syncAnswerToApi, syncSessionToApi } from '../utils/progress';
+import { useAuth } from '../context/AuthContext';
 import { isAnswerCorrect } from '../utils/answerValidator';
 import './VocabularyQuiz.css';
 
@@ -14,6 +15,7 @@ interface Word {
 export default function VocabularyQuiz() {
     const navigate = useNavigate();
     const { moduleId } = useParams();
+    const { user } = useAuth();
 
     const [allWords, setAllWords] = useState<Word[]>([]);
     const [words, setWords] = useState<Word[]>([]);
@@ -64,7 +66,8 @@ export default function VocabularyQuiz() {
 
         const isCorrect = isAnswerCorrect(userAnswer, currentWord.french);
 
-        recordAnswer(moduleId!, currentWord.id, isCorrect);
+        const mastery = recordAnswer(moduleId!, currentWord.id, isCorrect);
+        if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, isCorrect, mastery.level);
 
         if (isCorrect) {
             setCorrectCount(correctCount + 1);
@@ -78,7 +81,8 @@ export default function VocabularyQuiz() {
     };
 
     const handleSkip = () => {
-        recordAnswer(moduleId!, currentWord.id, false);
+        const mastery = recordAnswer(moduleId!, currentWord.id, false);
+        if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, false, mastery.level);
         setShowAnswer(true);
         if (!wrongWords.find(w => w.id === currentWord.id)) {
             setWrongWords([...wrongWords, currentWord]);
@@ -105,7 +109,9 @@ export default function VocabularyQuiz() {
                 if (firstRoundWrong.current.length > 0 && moduleId) {
                     addWrongWords(moduleId, firstRoundWrong.current);
                 }
-                recordSession(moduleId!, isReviewMode ? 'review' : 'vocabulary', correctCount, allWords.length);
+                const sessionType = isReviewMode ? 'review' : 'vocabulary';
+                recordSession(moduleId!, sessionType, correctCount, allWords.length);
+                if (user) syncSessionToApi(moduleId!, sessionType, correctCount, allWords.length);
                 setQuizComplete(true);
             }
         }
