@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import path from 'path';
 import { vocabularyData } from './data/vocabulary';
@@ -7,6 +8,8 @@ import { verbGroups, verbsData, verbById, verbGroupMap } from './data/verbs';
 import { grammarLessons } from './data/grammarLessons';
 import { phraseCategories } from './data/phrases';
 import { readingPassages } from './data/readingPassages';
+import { migrate } from './db/migrate';
+import authRouter from './routes/auth';
 
 dotenv.config();
 
@@ -14,8 +17,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
+app.use(cookieParser());
+
+// Auth routes
+app.use('/api/auth', authRouter);
 
 // Helper verbs data
 const helperVerbsData: Record<string, {
@@ -227,6 +234,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Start server
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+async function start() {
+    if (process.env.DATABASE_URL) {
+        await migrate();
+    } else {
+        console.warn('DATABASE_URL not set — skipping DB migration, auth routes will not work');
+    }
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on http://localhost:${PORT}`);
+    });
+}
+
+start().catch(console.error);
