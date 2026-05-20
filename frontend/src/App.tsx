@@ -1,7 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import type { ReactNode } from 'react';
 import './App.css';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import Nav from './components/Nav';
+import GuestBanner from './components/GuestBanner';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -20,12 +22,23 @@ import ReviewQueue from './pages/ReviewQueue';
 import ReadingPassage from './pages/ReadingPassage';
 import Stats from './pages/Stats';
 
+function AuthGate({ children }: { children: ReactNode }) {
+    const { user, isGuest, loading } = useAuth();
+    const location = useLocation();
+    if (loading) return null;
+    const isPublic = location.pathname === '/login' || location.pathname === '/register';
+    if (!user && !isGuest && !isPublic) return <Navigate to="/login" replace />;
+    return <>{children}</>;
+}
+
 function App() {
     return (
         <Router>
             <AuthProvider>
+            <AuthGate>
             <div className="App">
                 <Nav />
+                <GuestBanner />
                 <Routes>
                     <Route path="/"                              element={<Home />} />
                     <Route path="/vocabulary"                    element={<Vocabulary />} />
@@ -46,6 +59,7 @@ function App() {
                     <Route path="/register"                      element={<Register />} />
                 </Routes>
             </div>
+            </AuthGate>
             </AuthProvider>
         </Router>
     );
