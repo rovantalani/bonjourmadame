@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { AuthProvider } from './context/AuthContext';
 import Nav from './components/Nav';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import Grammar from './pages/Grammar';
 import GrammarLesson from './pages/GrammarLesson';
 import Vocabulary from './pages/Vocabulary';
@@ -20,6 +23,7 @@ import Stats from './pages/Stats';
 function App() {
     return (
         <Router>
+            <AuthProvider>
             <div className="App">
                 <Nav />
                 <Routes>
@@ -38,8 +42,11 @@ function App() {
                     <Route path="/review-queue"                  element={<ReviewQueue />} />
                     <Route path="/reading/:moduleId"             element={<ReadingPassage />} />
                     <Route path="/stats"                         element={<Stats />} />
+                    <Route path="/login"                         element={<Login />} />
+                    <Route path="/register"                      element={<Register />} />
                 </Routes>
             </div>
+            </AuthProvider>
         </Router>
     );
 }
