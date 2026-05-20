@@ -5,10 +5,12 @@ import {
     loadDailyGoal,
     saveDailyGoal,
     computeStats,
+    fetchProgressFromApi,
     type AggregateStats,
     type StreakData,
     type DailyProgress,
 } from '../utils/progress';
+import { useAuth } from '../context/AuthContext';
 import './Stats.css';
 
 function formatModuleId(id: string): string {
@@ -23,6 +25,7 @@ function formatDate(iso: string): string {
 }
 
 export default function Stats() {
+    const { user } = useAuth();
     const [streak, setStreak] = useState<StreakData>({ currentStreak: 0, longestStreak: 0, lastActivityDate: null });
     const [daily, setDaily] = useState<DailyProgress>({ date: '', wordsStudied: 0 });
     const [goal, setGoal] = useState(10);
@@ -36,13 +39,54 @@ export default function Stats() {
     });
 
     useEffect(() => {
-        setStreak(loadStreak());
-        setDaily(loadDailyProgress());
         const g = loadDailyGoal();
         setGoal(g);
         setGoalInput(String(g));
-        setStats(computeStats());
-    }, []);
+
+        if (user) {
+            fetchProgressFromApi().then(api => {
+                if (!api) return;
+
+                setStreak({
+                    currentStreak:    api.stats.currentStreak,
+                    longestStreak:    api.stats.longestStreak,
+                    lastActivityDate: api.stats.lastActivityDate,
+                });
+
+                const today = new Date().toISOString().slice(0, 10);
+                const wordsToday = api.sessions
+                    .filter(s => s.date.startsWith(today))
+                    .reduce((sum, s) => sum + s.total, 0);
+                setDaily({ date: today, wordsStudied: wordsToday });
+
+                let totalCorrect = 0, totalWrong = 0, totalMastered = 0;
+                const moduleStats: AggregateStats['moduleStats'] = {};
+                for (const [key, entry] of Object.entries(api.mastery)) {
+                    const mId = key.split(':')[0];
+                    totalCorrect += entry.correct;
+                    totalWrong   += entry.wrong;
+                    if (entry.level >= 4) totalMastered++;
+                    if (!moduleStats[mId]) moduleStats[mId] = { correct: 0, wrong: 0, mastered: 0, practiced: 0 };
+                    moduleStats[mId].correct   += entry.correct;
+                    moduleStats[mId].wrong     += entry.wrong;
+                    moduleStats[mId].practiced += 1;
+                    if (entry.level >= 4) moduleStats[mId].mastered += 1;
+                }
+                const total = totalCorrect + totalWrong;
+                setStats({
+                    totalPracticed:  Object.keys(api.mastery).length,
+                    totalMastered,
+                    overallAccuracy: total > 0 ? Math.round((totalCorrect / total) * 100) : 0,
+                    moduleStats,
+                    recentSessions:  api.sessions.slice(0, 10),
+                });
+            });
+        } else {
+            setStreak(loadStreak());
+            setDaily(loadDailyProgress());
+            setStats(computeStats());
+        }
+    }, [user]);
 
     function handleGoalBlur() {
         const n = parseInt(goalInput, 10);

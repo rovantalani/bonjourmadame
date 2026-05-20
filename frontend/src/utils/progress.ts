@@ -209,3 +209,57 @@ export function resetAllProgress(): void {
         localStorage.removeItem(k)
     );
 }
+
+// ── API sync (authenticated users only) ──────────────────────────────────────
+
+import axios from 'axios';
+
+const API = import.meta.env.VITE_API_BASE;
+
+export interface ApiProgress {
+    mastery: Record<string, WordMastery>;
+    stats: {
+        currentStreak: number;
+        longestStreak: number;
+        lastActivityDate: string | null;
+        totalWordsMastered: number;
+    };
+    sessions: QuizSession[];
+}
+
+export async function syncAnswerToApi(
+    word_id: string,
+    module_id: string,
+    correct: boolean,
+    mastery_level: number,
+): Promise<void> {
+    try {
+        await axios.post(`${API}/api/progress/word`,
+            { word_id, module_id, correct, mastery_level },
+            { withCredentials: true },
+        );
+    } catch { /* silent — localStorage remains source of truth */ }
+}
+
+export async function syncSessionToApi(
+    module_id: string,
+    session_type: string,
+    score: number,
+    total: number,
+): Promise<void> {
+    try {
+        await axios.post(`${API}/api/progress/session`,
+            { module_id, session_type, score, total },
+            { withCredentials: true },
+        );
+    } catch { /* silent */ }
+}
+
+export async function fetchProgressFromApi(): Promise<ApiProgress | null> {
+    try {
+        const res = await axios.get<ApiProgress>(`${API}/api/progress`, { withCredentials: true });
+        return res.data;
+    } catch {
+        return null;
+    }
+}
