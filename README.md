@@ -87,3 +87,5 @@ bonjourmadame/
 | GET | `/api/vocabulary-modules` | List all vocabulary modules |
 | GET | `/api/vocabulary/:moduleId` | Words for a specific module |
 | GET | `/api/helper-verbs/:verbId` | Conjugation table for a verb |
+| GET | `/api/verb-group/:groupId` | All verbs in a regular/irregular group |
+| GET | `/api/conjugation/:verbId` | Full conjugation for one verb |
