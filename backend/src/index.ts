@@ -10,6 +10,7 @@ import { phraseCategories } from './data/phrases';
 import { readingPassages } from './data/readingPassages';
 import { migrate } from './db/migrate';
 import authRouter from './routes/auth';
+import progressRouter from './routes/progress';
 
 dotenv.config();
 
@@ -23,6 +24,9 @@ app.use(cookieParser());
 
 // Auth routes
 app.use('/api/auth', authRouter);
+
+// Progress routes
+app.use('/api/progress', progressRouter);
 
 // Helper verbs data
 const helperVerbsData: Record<string, {
