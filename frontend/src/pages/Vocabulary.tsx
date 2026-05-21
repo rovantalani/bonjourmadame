@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { getModuleMastery } from '../utils/progress';
+import { useT } from '../utils/i18n';
 import './Vocabulary.css';
 
 interface VocabularyModule {
@@ -78,6 +79,7 @@ const READING_IDS = new Set(['sherlock-holmes-ch1', 'sherlock-holmes-ch2']);
 
 export default function Vocabulary() {
     const navigate = useNavigate();
+    const t = useT();
     const [modules, setModules] = useState<VocabularyModule[]>([]);
     const [search, setSearch] = useState('');
 
@@ -93,8 +95,8 @@ export default function Vocabulary() {
     return (
         <main className="page">
             <header className="page-header">
-                <h1>Vocabulary</h1>
-                <p className="subtitle">Choose a module to practise</p>
+                <h1>{t.vocabulary.title}</h1>
+                <p className="subtitle">{t.vocabulary.subtitle}</p>
             </header>
 
             <div className="vocab-search-wrapper">
@@ -102,7 +104,7 @@ export default function Vocabulary() {
                 <input
                     className="field-input vocab-search-input"
                     type="search"
-                    placeholder="Search modules…"
+                    placeholder={t.vocabulary.searchPlaceholder}
                     value={search}
                     onChange={e => setSearch(e.target.value)}
                     aria-label="Search vocabulary modules"
@@ -133,7 +135,7 @@ export default function Vocabulary() {
 
                 return (
                     <section key={group.key} className="vocab-group">
-                        <p className="section-label">{group.label}</p>
+                        <p className="section-label">{t.vocabulary.levelGroups[group.key]}</p>
                         <div className="vocab-grid">
                             {groupModules.map((module) => {
                                 const hasReading = READING_IDS.has(module.id);
@@ -152,10 +154,10 @@ export default function Vocabulary() {
                                         </span>
                                         <span className="vocab-card-title">{module.title}</span>
                                         <div className="vocab-card-footer">
-                                            <span className="vocab-card-badge">{module.wordCount} words</span>
+                                            <span className="vocab-card-badge">{t.vocabulary.words(module.wordCount)}</span>
                                             {practiced > 0 && (
                                                 <span className="vocab-card-mastery" style={{ color: module.color }}>
-                                                    {mastered}/{module.wordCount} mastered
+                                                    {t.vocabulary.mastered(mastered, module.wordCount)}
                                                 </span>
                                             )}
                                         </div>
@@ -180,7 +182,7 @@ export default function Vocabulary() {
                                                     onClick={() => navigate(`/vocabulary/${module.id}`)}
                                                     type="button"
                                                 >
-                                                    Quiz
+                                                    {t.vocabulary.quiz}
                                                 </button>
                                                 <button
                                                     className="vocab-card-action-btn vocab-card-action-btn--read"
@@ -188,7 +190,7 @@ export default function Vocabulary() {
                                                     type="button"
                                                     style={{ borderColor: module.color, color: module.color }}
                                                 >
-                                                    Read
+                                                    {t.vocabulary.read}
                                                 </button>
                                             </div>
                                         </div>

@@ -13,6 +13,7 @@ import { isAnswerCorrect } from '../utils/answerValidator';
 import { fetchDueWordsFromApi, syncAnswerToApi, type DueWord } from '../utils/progress';
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import { useAuth } from '../context/AuthContext';
+import { useT } from '../utils/i18n';
 import './ReviewQueue.css';
 
 const API = import.meta.env.VITE_API_BASE;
@@ -67,6 +68,7 @@ async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
 export default function ReviewQueue() {
     const navigate = useNavigate();
     const { user } = useAuth();
+    const t = useT();
     const [queue, setQueue] = useState<WordQueue>({});
     const [session, setSession] = useState<ReviewSession | null>(null);
     const [loading, setLoading] = useState(false);
@@ -136,8 +138,8 @@ export default function ReviewQueue() {
         return (
             <main className="page">
                 <div className="rq-header page-header">
-                    <h1>Review Queue</h1>
-                    <p className="subtitle">Loading due words…</p>
+                    <h1>{t.reviewQueue.title}</h1>
+                    <p className="subtitle">{t.reviewQueue.loading}</p>
                 </div>
             </main>
         );
@@ -149,14 +151,14 @@ export default function ReviewQueue() {
             return (
                 <main className="page">
                     <div className="rq-header page-header">
-                        <h1>Review Queue</h1>
-                        <p className="subtitle">No words due for review — keep practising to build your schedule.</p>
+                        <h1>{t.reviewQueue.title}</h1>
+                        <p className="subtitle">{t.reviewQueue.noDue}</p>
                     </div>
                     <button
                         className="btn btn-secondary rq-back-btn"
                         onClick={() => navigate('/vocabulary')}
                     >
-                        Go to Vocabulary
+                        {t.reviewQueue.goToVocabulary}
                     </button>
                 </main>
             );
@@ -165,17 +167,17 @@ export default function ReviewQueue() {
         return (
             <main className="page">
                 <div className="rq-header page-header">
-                    <h1>Review Queue</h1>
+                    <h1>{t.reviewQueue.title}</h1>
                     <p className="subtitle">
                         {totalCount === 0
-                            ? 'No words queued — complete a vocabulary quiz to add words here.'
-                            : `${totalCount} word${totalCount !== 1 ? 's' : ''} waiting for review`}
+                            ? t.reviewQueue.noQueue
+                            : t.reviewQueue.waiting(totalCount)}
                     </p>
                 </div>
 
                 {totalCount > 0 && (
                     <button className="btn btn-primary rq-start-btn" onClick={startReview}>
-                        Start Review ({totalCount} words)
+                        {t.reviewQueue.startReview(totalCount)}
                     </button>
                 )}
 
@@ -211,7 +213,7 @@ export default function ReviewQueue() {
                         className="btn btn-secondary rq-back-btn"
                         onClick={() => navigate('/vocabulary')}
                     >
-                        Go to Vocabulary
+                        {t.reviewQueue.goToVocabulary}
                     </button>
                 )}
             </main>
@@ -223,31 +225,31 @@ export default function ReviewQueue() {
             <main className="page">
                 <div className="vocq-complete card">
                     <div className="vocq-complete-emoji">✅</div>
-                    <h1 className="vocq-complete-title">Review Complete!</h1>
+                    <h1 className="vocq-complete-title">{t.reviewQueue.complete}</h1>
                     <div className="vocq-stats-grid">
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{session.correctCount}</span>
-                            <span className="vocq-stat-label">Correct</span>
+                            <span className="vocq-stat-label">{t.quiz.correct}</span>
                         </div>
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{session.words.length}</span>
-                            <span className="vocq-stat-label">Total</span>
+                            <span className="vocq-stat-label">{t.quiz.total}</span>
                         </div>
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">
                                 {Math.round((session.correctCount / session.words.length) * 100)}%
                             </span>
-                            <span className="vocq-stat-label">Accuracy</span>
+                            <span className="vocq-stat-label">{t.quiz.accuracy}</span>
                         </div>
                     </div>
                     <div className="vocq-complete-actions">
                         {!user && totalQueuedCount(loadQueue()) > 0 && (
                             <button className="btn btn-primary" onClick={() => { setQueue(loadQueue()); setSession(null); }}>
-                                Review Remaining
+                                {t.reviewQueue.reviewRemaining}
                             </button>
                         )}
                         <button className="btn btn-secondary" onClick={() => navigate('/')}>
-                            Home
+                            {t.reviewQueue.home}
                         </button>
                     </div>
                 </div>
@@ -316,10 +318,10 @@ export default function ReviewQueue() {
                     className="btn btn-secondary vocq-exit-btn"
                     onClick={() => { if (!user) setQueue(loadQueue()); setSession(null); }}
                 >
-                    ✕ Exit
+                    {t.quiz.exit}
                 </button>
                 <span className="vocq-counter">
-                    Word {session.currentIndex + 1} of {session.words.length}
+                    {t.quiz.reviewCounter(session.currentIndex + 1, session.words.length)}
                 </span>
             </div>
 
@@ -333,7 +335,7 @@ export default function ReviewQueue() {
             <div className="card vocq-card">
                 <div className="vocq-question-top">
                     <p className="section-label vocq-word-label">
-                        {quizDir === 'fr-en' ? 'Translate to English' : 'Translate to French'}
+                        {quizDir === 'fr-en' ? t.quiz.translateToEnglish : t.quiz.translateToFrench}
                     </p>
                     <h2 className="vocq-word-english">
                         {quizDir === 'fr-en' ? current.french : current.english}
@@ -350,19 +352,19 @@ export default function ReviewQueue() {
                             value={session.userAnswer}
                             onChange={e => setSession(s => s && ({ ...s, userAnswer: e.target.value }))}
                             onKeyPress={e => e.key === 'Enter' && handleSubmit()}
-                            placeholder="Type your answer…"
+                            placeholder={t.quiz.placeholder}
                             autoFocus
                         />
                         <div className="vocq-btn-row">
                             <button className="btn btn-secondary" onClick={handleSkip}>
-                                Skip
+                                {t.quiz.skip}
                             </button>
                             <button
                                 className="btn btn-primary"
                                 onClick={handleSubmit}
                                 disabled={!session.userAnswer.trim()}
                             >
-                                Submit
+                                {t.quiz.submit}
                             </button>
                         </div>
                     </div>
@@ -375,7 +377,7 @@ export default function ReviewQueue() {
                             <p className="vocq-wrong-answer">{session.userAnswer}</p>
                         )}
                         <button className="btn btn-primary" onClick={handleNext}>
-                            Next Word →
+                            {t.quiz.nextWord}
                         </button>
                     </div>
                 )}
@@ -384,7 +386,7 @@ export default function ReviewQueue() {
             <div className="vocq-stats-bar">
                 <div className="vocq-stat-pill vocq-stat-correct">
                     <span>✓</span>
-                    <span>{session.correctCount} Correct</span>
+                    <span>{session.correctCount} {t.quiz.correct}</span>
                 </div>
             </div>
         </main>

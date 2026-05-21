@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useT } from '../utils/i18n';
 import './Phrases.css';
 
 interface PhraseCategory {
@@ -14,6 +15,7 @@ interface PhraseCategory {
 
 export default function Phrases() {
     const navigate = useNavigate();
+    const t = useT();
     const [categories, setCategories] = useState<PhraseCategory[]>([]);
 
     useEffect(() => {
@@ -25,8 +27,8 @@ export default function Phrases() {
     return (
         <main className="page">
             <header className="page-header">
-                <h1>Phrases</h1>
-                <p className="subtitle">Real French for real situations</p>
+                <h1>{t.phrases.title}</h1>
+                <p className="subtitle">{t.phrases.subtitle}</p>
             </header>
 
             <div className="phrases-grid">
@@ -48,7 +50,7 @@ export default function Phrases() {
                         </span>
                         <h2 className="phrase-card-title">{cat.title}</h2>
                         <p className="phrase-card-desc">{cat.description}</p>
-                        <span className="phrase-card-count">{cat.phraseCount} phrases</span>
+                        <span className="phrase-card-count">{t.phrases.phraseCount(cat.phraseCount)}</span>
                     </div>
                 ))}
             </div>

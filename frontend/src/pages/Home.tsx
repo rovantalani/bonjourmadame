@@ -7,59 +7,20 @@ import { useAuth } from '../context/AuthContext';
 import ProgressImportBanner from '../components/ProgressImportBanner';
 import { COURSES } from '../data/courses';
 import { getActiveCourse, getNextStep, getCourseProgress } from '../utils/courseProgress';
-
-interface SectionCard {
-    id: string;
-    path: string;
-    color: string;
-    icon: string;
-    title: string;
-    description: string;
-    meta: string;
-}
-
-const SECTION_CARDS: SectionCard[] = [
-    {
-        id: 'vocabulary',
-        path: '/vocabulary',
-        color: '#4338CA',
-        icon: '📖',
-        title: 'Vocabulary',
-        description: 'Words, flashcards & quizzes across 20 curated modules',
-        meta: '20 modules · 400+ words',
-    },
-    {
-        id: 'grammar',
-        path: '/grammar',
-        color: '#059669',
-        icon: '✏️',
-        title: 'Grammar',
-        description: 'Conjugation tables and 10 structured grammar lessons',
-        meta: '10 lessons · 52 verbs',
-    },
-    {
-        id: 'phrases',
-        path: '/phrases',
-        color: '#0891B2',
-        icon: '💬',
-        title: 'Phrases',
-        description: '90 essential expressions for real conversations',
-        meta: '6 categories · 90 phrases',
-    },
-    {
-        id: 'helper-verbs',
-        path: '/helper-verbs',
-        color: '#D97706',
-        icon: '⚡',
-        title: 'Helper Verbs',
-        description: 'The 5 essential verbs: être, avoir, faire, aller, venir',
-        meta: '5 verbs · 4 tenses',
-    },
-];
+import { useT } from '../utils/i18n';
 
 export default function Home() {
     const navigate = useNavigate();
     const { user } = useAuth();
+    const t = useT();
+
+    const SECTION_CARDS = [
+        { id: 'vocabulary',   path: '/vocabulary',   color: '#4338CA', icon: '📖', ...t.home.sections.vocabulary  },
+        { id: 'grammar',      path: '/grammar',      color: '#059669', icon: '✏️', ...t.home.sections.grammar     },
+        { id: 'phrases',      path: '/phrases',      color: '#0891B2', icon: '💬', ...t.home.sections.phrases     },
+        { id: 'helper-verbs', path: '/helper-verbs', color: '#D97706', icon: '⚡', ...t.home.sections.helperVerbs },
+    ];
+
     const [queueCount, setQueueCount] = useState(0);
     const [dueCount, setDueCount] = useState(0);
     const [streak, setStreak] = useState(0);
@@ -98,17 +59,17 @@ export default function Home() {
             <div className="home-hero">
                 <img src="/logo_no_text.png" alt="Bonjour Madame logo" className="home-logo" />
                 <h1>Bonjour Madame</h1>
-                <p className="home-subtitle">Your personal French course</p>
+                <p className="home-subtitle">{t.home.subtitle}</p>
                 <hr className="home-rule" />
                 <div className="home-status-row">
                     <button className="home-streak-pill" onClick={() => navigate('/stats')} type="button">
                         <span className="home-streak-fire">&#x1F525;</span>
                         <span className="home-streak-num">{streak}</span>
-                        <span className="home-streak-label">day streak</span>
+                        <span className="home-streak-label">{t.home.dayStreak}</span>
                     </button>
                     <div className="home-daily-goal">
                         <div className="home-daily-label">
-                            <span>{wordsToday} / {dailyGoal} words today</span>
+                            <span>{t.home.wordsToday(wordsToday, dailyGoal)}</span>
                         </div>
                         <div className="progress-track home-daily-bar">
                             <div
@@ -131,10 +92,10 @@ export default function Home() {
                 >
                     <span className="home-review-icon">🔄</span>
                     <div className="home-review-text">
-                        <strong>Review Queue</strong>
+                        <strong>{t.home.reviewQueue}</strong>
                         {user
-                            ? <span>{dueCount} word{dueCount !== 1 ? 's' : ''} due for review</span>
-                            : <span>{queueCount} word{queueCount !== 1 ? 's' : ''} ready for review</span>
+                            ? <span>{t.home.wordsDue(dueCount)}</span>
+                            : <span>{t.home.wordsReady(queueCount)}</span>
                         }
                     </div>
                     <span className="home-review-badge">{user ? dueCount : queueCount}</span>
@@ -155,7 +116,7 @@ export default function Home() {
                     </span>
                     <div className="home-course-text">
                         <strong>{activeCourse.title}</strong>
-                        <span>{nextStep ? nextStep.title : 'Course complete!'}</span>
+                        <span>{nextStep ? nextStep.title : t.home.courseComplete}</span>
                     </div>
                     <div className="home-course-right">
                         {courseProgress && (

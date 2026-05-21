@@ -5,6 +5,7 @@ import { recordAnswer, recordSession, loadMastery, syncAnswerToApi, syncSessionT
 import { useAuth } from '../context/AuthContext';
 import { isAnswerCorrect } from '../utils/answerValidator';
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
+import { useT } from '../utils/i18n';
 import './VocabularyQuiz.css';
 
 interface Word {
@@ -30,6 +31,7 @@ export default function VocabularyQuiz() {
     const [shuffle, setShuffle] = useState<boolean>(loadShufflePref);
     const [allMastered, setAllMastered] = useState(false);
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
+    const t = useT();
 
     const firstRoundWrong = useRef<Word[]>([]);
 
@@ -179,14 +181,14 @@ export default function VocabularyQuiz() {
             <main className="page">
                 <div className="vocq-complete card">
                     <div className="vocq-complete-emoji">⭐</div>
-                    <h1 className="vocq-complete-title">All Mastered!</h1>
-                    <p className="vocq-complete-subtitle">You've mastered every word in this module.</p>
+                    <h1 className="vocq-complete-title">{t.quiz.allMastered}</h1>
+                    <p className="vocq-complete-subtitle">{t.quiz.allMasteredSubtitle}</p>
                     <div className="vocq-complete-actions">
                         <button className="btn btn-primary" onClick={handlePracticeAll}>
-                            Practice All Anyway
+                            {t.quiz.practiceAll}
                         </button>
                         <button className="btn btn-secondary" onClick={handleExit}>
-                            Back to Vocabulary
+                            {t.quiz.backToVocabulary}
                         </button>
                     </div>
                 </div>
@@ -197,7 +199,7 @@ export default function VocabularyQuiz() {
     if (!currentWord && !quizComplete) {
         return (
             <main className="page">
-                <p className="vocq-loading">Loading…</p>
+                <p className="vocq-loading">{t.quiz.loading}</p>
             </main>
         );
     }
@@ -211,29 +213,29 @@ export default function VocabularyQuiz() {
             <main className="page">
                 <div className="vocq-complete card">
                     <div className="vocq-complete-emoji">🎉</div>
-                    <h1 className="vocq-complete-title">Quiz Complete!</h1>
+                    <h1 className="vocq-complete-title">{t.quiz.complete}</h1>
 
                     <div className="vocq-stats-grid">
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{correctCount}</span>
-                            <span className="vocq-stat-label">Score</span>
+                            <span className="vocq-stat-label">{t.quiz.score}</span>
                         </div>
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{totalWords}</span>
-                            <span className="vocq-stat-label">Total</span>
+                            <span className="vocq-stat-label">{t.quiz.total}</span>
                         </div>
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{accuracy}%</span>
-                            <span className="vocq-stat-label">Accuracy</span>
+                            <span className="vocq-stat-label">{t.quiz.accuracy}</span>
                         </div>
                     </div>
 
                     <div className="vocq-complete-actions">
                         <button className="btn btn-primary" onClick={handleRestart}>
-                            Try Again
+                            {t.quiz.tryAgain}
                         </button>
                         <button className="btn btn-secondary" onClick={handleExit}>
-                            Back to Vocabulary
+                            {t.quiz.backToVocabulary}
                         </button>
                     </div>
                 </div>
@@ -249,17 +251,17 @@ export default function VocabularyQuiz() {
             {/* Top bar */}
             <div className="vocq-top-bar">
                 <button className="btn btn-secondary vocq-exit-btn" onClick={handleExit}>
-                    ✕ Exit
+                    {t.quiz.exit}
                 </button>
                 <span className="vocq-counter">
-                    {isReviewMode ? '🔄 Review — ' : ''}Word {currentIndex + 1} of {words.length}
+                    {isReviewMode ? `${t.quiz.reviewPrefix} — ` : ''}{t.quiz.wordCounter(currentIndex + 1, words.length)}
                 </span>
                 <button
                     className={`btn vocq-shuffle-btn ${shuffle ? 'btn-primary' : 'btn-secondary'}`}
                     onClick={handleToggleShuffle}
-                    title={shuffle ? 'Shuffled — click for In Order' : 'In Order — click to Shuffle'}
+                    title={shuffle ? t.quiz.shuffledTitle : t.quiz.inOrderTitle}
                 >
-                    {shuffle ? '⇄ Shuffled' : '↕ In Order'}
+                    {shuffle ? t.quiz.shuffled : t.quiz.inOrder}
                 </button>
             </div>
 
@@ -275,7 +277,7 @@ export default function VocabularyQuiz() {
             <div className="card vocq-card">
                 <div className="vocq-question-top">
                     <p className="section-label vocq-word-label">
-                        {quizDir === 'fr-en' ? 'Translate to English' : 'Translate to French'}
+                        {quizDir === 'fr-en' ? t.quiz.translateToEnglish : t.quiz.translateToFrench}
                     </p>
                     <h2 className="vocq-word-english">
                         {quizDir === 'fr-en' ? currentWord.french : currentWord.english}
@@ -292,19 +294,19 @@ export default function VocabularyQuiz() {
                             value={userAnswer}
                             onChange={(e) => setUserAnswer(e.target.value)}
                             onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
-                            placeholder="Type your answer…"
+                            placeholder={t.quiz.placeholder}
                             autoFocus
                         />
                         <div className="vocq-btn-row">
                             <button className="btn btn-secondary" onClick={handleSkip}>
-                                Skip
+                                {t.quiz.skip}
                             </button>
                             <button
                                 className="btn btn-primary"
                                 onClick={handleSubmit}
                                 disabled={!userAnswer.trim()}
                             >
-                                Submit
+                                {t.quiz.submit}
                             </button>
                         </div>
                     </div>
@@ -317,7 +319,7 @@ export default function VocabularyQuiz() {
                             <p className="vocq-wrong-answer">{userAnswer}</p>
                         )}
                         <button className="btn btn-primary" onClick={handleNext}>
-                            Next Word →
+                            {t.quiz.nextWord}
                         </button>
                     </div>
                 )}
@@ -327,11 +329,11 @@ export default function VocabularyQuiz() {
             <div className="vocq-stats-bar">
                 <div className="vocq-stat-pill vocq-stat-correct">
                     <span>✓</span>
-                    <span>{correctCount} Correct</span>
+                    <span>{correctCount} {t.quiz.correct}</span>
                 </div>
                 <div className="vocq-stat-pill vocq-stat-wrong">
                     <span>✗</span>
-                    <span>{wrongWords.length} To Review</span>
+                    <span>{wrongWords.length} {t.quiz.toReview}</span>
                 </div>
             </div>
         </main>

@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { COURSES } from '../data/courses';
 import { getCourseProgress, getActiveCourse, setActiveCourse } from '../utils/courseProgress';
+import { useT } from '../utils/i18n';
 import './Courses.css';
 
 export default function Courses() {
     const navigate = useNavigate();
+    const t = useT();
     const activeCourse = getActiveCourse();
 
     const handleStart = (level: string) => {
@@ -15,8 +17,8 @@ export default function Courses() {
     return (
         <main className="page">
             <div className="page-header">
-                <h1>Courses</h1>
-                <p className="subtitle">Choose your level and follow a structured path from A1 to C2.</p>
+                <h1>{t.courses.title}</h1>
+                <p className="subtitle">{t.courses.subtitle}</p>
             </div>
 
             <div className="courses-grid">
@@ -38,7 +40,7 @@ export default function Courses() {
                                 >
                                     {course.level}
                                 </span>
-                                {isActive && <span className="courses-active-tag">Active</span>}
+                                {isActive && <span className="courses-active-tag">{t.courses.active}</span>}
                             </div>
 
                             <h2 className="courses-card-title">{course.title}</h2>
@@ -46,7 +48,7 @@ export default function Courses() {
 
                             <div className="courses-card-footer">
                                 <span className="courses-step-count">
-                                    {progress.completed + progress.visited} / {progress.total} steps
+                                    {t.courses.steps(progress.completed + progress.visited, progress.total)}
                                 </span>
                                 <div className="progress-track courses-bar">
                                     <div
@@ -63,7 +65,7 @@ export default function Courses() {
                                 className="btn btn-primary courses-cta"
                                 style={{ backgroundColor: course.color }}
                             >
-                                {isActive ? 'Continue' : progress.pct > 0 ? 'Resume' : 'Start'}
+                                {isActive ? t.courses.continue : progress.pct > 0 ? t.courses.resume : t.courses.start}
                             </span>
                         </button>
                     );

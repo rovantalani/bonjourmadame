@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useT } from '../utils/i18n';
 import './Grammar.css';
 
 interface VerbModule {
@@ -20,16 +21,25 @@ interface GrammarLessonMeta {
     color: string;
 }
 
-const verbModules: VerbModule[] = [
-    { id: 'helper-verbs', title: 'Helper Verbs', description: 'Master the 5 essential helper verbs in French', icon: '👤', color: '#7C3AED' },
-    { id: 'regular-verbs', title: 'Regular Verbs', description: 'Learn conjugation patterns for regular verbs', icon: '📝', color: '#059669' },
-    { id: 'irregular-verbs', title: 'Irregular Verbs', description: 'Master the most common irregular verb forms', icon: '⚡', color: '#DC2626' },
-    { id: 'advanced-irregular-verbs', title: 'Advanced Irregular Verbs', description: 'Complex irregular patterns for fluent-level mastery', icon: '🔥', color: '#BE185D' },
+const VERB_MODULE_STATIC = [
+    { id: 'helper-verbs',            key: 'helperVerbs'            as const, icon: '👤', color: '#7C3AED' },
+    { id: 'regular-verbs',           key: 'regularVerbs'           as const, icon: '📝', color: '#059669' },
+    { id: 'irregular-verbs',         key: 'irregularVerbs'         as const, icon: '⚡', color: '#DC2626' },
+    { id: 'advanced-irregular-verbs',key: 'advancedIrregularVerbs' as const, icon: '🔥', color: '#BE185D' },
 ];
 
 export default function Grammar() {
     const navigate = useNavigate();
+    const t = useT();
     const [lessons, setLessons] = useState<GrammarLessonMeta[]>([]);
+
+    const verbModules: VerbModule[] = VERB_MODULE_STATIC.map(m => ({
+        id:          m.id,
+        icon:        m.icon,
+        color:       m.color,
+        title:       t.grammar.verbModules[m.key].title,
+        description: t.grammar.verbModules[m.key].description,
+    }));
 
     useEffect(() => {
         axios.get<GrammarLessonMeta[]>(`${import.meta.env.VITE_API_BASE}/api/grammar-lessons`)
@@ -40,12 +50,12 @@ export default function Grammar() {
     return (
         <main className="page">
             <header className="page-header">
-                <h1>Grammar</h1>
-                <p className="subtitle">Conjugation &amp; lessons</p>
+                <h1>{t.grammar.title}</h1>
+                <p className="subtitle">{t.grammar.subtitle}</p>
             </header>
 
             <section className="grammar-section">
-                <p className="section-label">Conjugation</p>
+                <p className="section-label">{t.grammar.conjugation}</p>
                 <div className="grammar-verb-grid">
                     {verbModules.map((module) => (
                         <div
@@ -71,7 +81,7 @@ export default function Grammar() {
 
             {lessons.length > 0 && (
                 <section className="grammar-section">
-                    <p className="section-label">Grammar Lessons</p>
+                    <p className="section-label">{t.grammar.grammarLessons}</p>
                     <div className="grammar-lessons-grid">
                         {lessons.map((lesson) => (
                             <div

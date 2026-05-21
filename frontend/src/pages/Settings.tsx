@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { loadDailyGoal, saveDailyGoal } from '../utils/progress';
 import { loadLearningMode, saveLearningMode, type LearningMode } from '../utils/settings';
+import { useT } from '../utils/i18n';
 import './Settings.css';
 
 export default function Settings() {
     const navigate                        = useNavigate();
     const { user, isGuest, logout, changePassword, deleteAccount } = useAuth();
+    const t = useT();
 
     // Preferences
     const [goal, setGoal]                 = useState(10);
@@ -100,12 +102,12 @@ export default function Settings() {
 
             {/* ── Preferences ── */}
             <section className="settings-section card">
-                <h2 className="settings-section-title">Preferences</h2>
+                <h2 className="settings-section-title">{t.settings.preferences}</h2>
 
                 <div className="settings-row">
                     <div className="settings-row-label">
-                        <span className="settings-label">Daily goal</span>
-                        <span className="settings-hint">Words to study per day</span>
+                        <span className="settings-label">{t.settings.dailyGoal}</span>
+                        <span className="settings-hint">{t.settings.dailyGoalHint}</span>
                     </div>
                     <input
                         type="number"
@@ -121,21 +123,21 @@ export default function Settings() {
 
                 <div className="settings-row settings-row--col">
                     <div className="settings-row-label">
-                        <span className="settings-label">Learning language</span>
-                        <span className="settings-hint">Takes effect at the start of your next quiz</span>
+                        <span className="settings-label">{t.settings.learningLanguage}</span>
+                        <span className="settings-hint">{t.settings.learningLanguageHint}</span>
                     </div>
                     <div className="settings-toggle-group">
                         <button
                             className={`settings-toggle-btn ${mode === 'learn-french' ? 'active' : ''}`}
                             onClick={() => handleModeChange('learn-french')}
                         >
-                            🇫🇷 Learn French
+                            {t.settings.learnFrench}
                         </button>
                         <button
                             className={`settings-toggle-btn ${mode === 'learn-english' ? 'active' : ''}`}
                             onClick={() => handleModeChange('learn-english')}
                         >
-                            🇬🇧 Learn English
+                            {t.settings.learnEnglish}
                         </button>
                     </div>
                 </div>
@@ -144,11 +146,11 @@ export default function Settings() {
             {/* ── Account (auth users) ── */}
             {user && (
                 <section className="settings-section card">
-                    <h2 className="settings-section-title">Account</h2>
+                    <h2 className="settings-section-title">{t.settings.account}</h2>
 
                     <div className="settings-row">
                         <div className="settings-row-label">
-                            <span className="settings-label">Email</span>
+                            <span className="settings-label">{t.settings.email}</span>
                             <span className="settings-hint">{user.email}</span>
                         </div>
                     </div>
@@ -157,21 +159,21 @@ export default function Settings() {
                     {!showPwForm ? (
                         <div className="settings-row">
                             <div className="settings-row-label">
-                                <span className="settings-label">Password</span>
-                                {pwSuccess && <span className="settings-success">Password updated.</span>}
+                                <span className="settings-label">{t.settings.password}</span>
+                                {pwSuccess && <span className="settings-success">{t.settings.passwordUpdated}</span>}
                             </div>
                             <button className="btn btn-secondary" onClick={() => { setShowPwForm(true); setPwSuccess(false); }}>
-                                Change password
+                                {t.settings.changePassword}
                             </button>
                         </div>
                     ) : (
                         <form className="settings-pw-form" onSubmit={handleChangePassword}>
-                            <p className="settings-pw-form-title">Change password</p>
+                            <p className="settings-pw-form-title">{t.settings.changePassword}</p>
                             {pwError && <p className="settings-error">{pwError}</p>}
                             <input
                                 type="password"
                                 className="field-input"
-                                placeholder="Current password"
+                                placeholder={t.settings.currentPw}
                                 value={currentPw}
                                 onChange={e => setCurrentPw(e.target.value)}
                                 required
@@ -180,7 +182,7 @@ export default function Settings() {
                             <input
                                 type="password"
                                 className="field-input"
-                                placeholder="New password (min 8 chars)"
+                                placeholder={t.settings.newPw}
                                 value={newPw}
                                 onChange={e => setNewPw(e.target.value)}
                                 required
@@ -188,17 +190,17 @@ export default function Settings() {
                             <input
                                 type="password"
                                 className="field-input"
-                                placeholder="Confirm new password"
+                                placeholder={t.settings.confirmPw}
                                 value={confirmPw}
                                 onChange={e => setConfirmPw(e.target.value)}
                                 required
                             />
                             <div className="settings-pw-actions">
                                 <button type="button" className="btn btn-secondary" onClick={() => { setShowPwForm(false); setPwError(''); }}>
-                                    Cancel
+                                    {t.settings.cancelBtn}
                                 </button>
                                 <button type="submit" className="btn btn-primary" disabled={pwLoading}>
-                                    {pwLoading ? 'Saving…' : 'Update password'}
+                                    {pwLoading ? t.settings.saving : t.settings.updateBtn}
                                 </button>
                             </div>
                         </form>
@@ -207,32 +209,32 @@ export default function Settings() {
                     {/* Logout */}
                     <div className="settings-row">
                         <div className="settings-row-label">
-                            <span className="settings-label">Session</span>
+                            <span className="settings-label">{t.settings.session}</span>
                         </div>
                         <button className="btn btn-secondary" onClick={handleLogout}>
-                            Log out
+                            {t.settings.logOut}
                         </button>
                     </div>
 
                     {/* Delete account */}
                     <div className="settings-row settings-row--danger">
                         <div className="settings-row-label">
-                            <span className="settings-label settings-label--danger">Delete account</span>
-                            <span className="settings-hint">Permanently removes all your data</span>
+                            <span className="settings-label settings-label--danger">{t.settings.deleteAccount}</span>
+                            <span className="settings-hint">{t.settings.deleteAccountHint}</span>
                         </div>
                         {!confirmDelete ? (
                             <button className="btn settings-danger-btn" onClick={() => setConfirmDelete(true)}>
-                                Delete account
+                                {t.settings.deleteAccount}
                             </button>
                         ) : (
                             <div className="settings-confirm-delete">
-                                <p className="settings-confirm-msg">Are you sure? This cannot be undone.</p>
+                                <p className="settings-confirm-msg">{t.settings.confirmDeleteMsg}</p>
                                 <div className="settings-confirm-actions">
                                     <button className="btn btn-secondary" onClick={() => setConfirmDelete(false)} disabled={deleteLoading}>
-                                        Cancel
+                                        {t.settings.cancelBtn}
                                     </button>
                                     <button className="btn settings-danger-btn" onClick={handleDeleteAccount} disabled={deleteLoading}>
-                                        {deleteLoading ? 'Deleting…' : 'Yes, delete'}
+                                        {deleteLoading ? t.settings.deleting : t.settings.yesDelete}
                                     </button>
                                 </div>
                             </div>
@@ -244,16 +246,16 @@ export default function Settings() {
             {/* ── Guest prompt ── */}
             {isGuest && (
                 <section className="settings-section card">
-                    <h2 className="settings-section-title">Account</h2>
+                    <h2 className="settings-section-title">{t.settings.account}</h2>
                     <p className="settings-guest-msg">
-                        You're using Bonjour Madame as a guest. Create an account to sync your progress across devices.
+                        {t.settings.guestMsg}
                     </p>
                     <div className="settings-guest-actions">
                         <button className="btn btn-primary" onClick={() => navigate('/register')}>
-                            Create account
+                            {t.settings.createAccount}
                         </button>
                         <button className="btn btn-secondary" onClick={() => navigate('/login')}>
-                            Log in
+                            {t.settings.logIn}
                         </button>
                     </div>
                 </section>

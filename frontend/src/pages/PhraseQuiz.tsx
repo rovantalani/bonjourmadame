@@ -4,6 +4,7 @@ import { recordAnswer, syncAnswerToApi, syncSessionToApi, recordSession } from '
 import { useAuth } from '../context/AuthContext';
 import { isAnswerCorrect } from '../utils/answerValidator';
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
+import { useT } from '../utils/i18n';
 import './VocabularyQuiz.css';
 
 interface Phrase {
@@ -37,6 +38,7 @@ export default function PhraseQuiz() {
     const [quizComplete, setQuizComplete]     = useState(false);
     const [loading, setLoading]               = useState(true);
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
+    const t = useT();
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_API_BASE}/api/phrase-categories/${categoryId}`)
@@ -98,7 +100,7 @@ export default function PhraseQuiz() {
     };
 
     if (loading) {
-        return <main className="page"><p className="vocq-loading">Loading…</p></main>;
+        return <main className="page"><p className="vocq-loading">{t.quiz.loading}</p></main>;
     }
 
     if (quizComplete) {
@@ -107,24 +109,24 @@ export default function PhraseQuiz() {
             <main className="page">
                 <div className="vocq-complete card">
                     <div className="vocq-complete-emoji">🎉</div>
-                    <h1 className="vocq-complete-title">Quiz Complete!</h1>
+                    <h1 className="vocq-complete-title">{t.quiz.complete}</h1>
                     <div className="vocq-stats-grid">
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{correctCount}</span>
-                            <span className="vocq-stat-label">Correct</span>
+                            <span className="vocq-stat-label">{t.quiz.correct}</span>
                         </div>
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{phrases.length}</span>
-                            <span className="vocq-stat-label">Total</span>
+                            <span className="vocq-stat-label">{t.quiz.total}</span>
                         </div>
                         <div className="vocq-stat">
                             <span className="vocq-stat-value">{accuracy}%</span>
-                            <span className="vocq-stat-label">Accuracy</span>
+                            <span className="vocq-stat-label">{t.quiz.accuracy}</span>
                         </div>
                     </div>
                     <div className="vocq-complete-actions">
                         <button className="btn btn-primary" onClick={() => navigate(`/phrases/${categoryId}`)}>
-                            Back to Phrases
+                            {t.quiz.backToPhrases}
                         </button>
                     </div>
                 </div>
@@ -144,10 +146,10 @@ export default function PhraseQuiz() {
                     className="btn btn-secondary vocq-exit-btn"
                     onClick={() => navigate(`/phrases/${categoryId}`)}
                 >
-                    ✕ Exit
+                    {t.quiz.exit}
                 </button>
                 <span className="vocq-counter">
-                    Phrase {currentIndex + 1} of {phrases.length}
+                    {t.quiz.phraseCounter(currentIndex + 1, phrases.length)}
                 </span>
                 <span style={{ width: '80px' }} />
             </div>
@@ -162,7 +164,7 @@ export default function PhraseQuiz() {
             <div className="card vocq-card">
                 <div className="vocq-question-top">
                     <p className="section-label vocq-word-label">
-                        {quizDir === 'fr-en' ? 'Translate to English' : 'Translate to French'}
+                        {quizDir === 'fr-en' ? t.quiz.translateToEnglish : t.quiz.translateToFrench}
                     </p>
                     <h2 className="vocq-word-english">
                         {quizDir === 'fr-en' ? current.french : current.english}
@@ -180,17 +182,17 @@ export default function PhraseQuiz() {
                             value={userAnswer}
                             onChange={e => setUserAnswer(e.target.value)}
                             onKeyPress={e => e.key === 'Enter' && handleSubmit()}
-                            placeholder="Type your answer…"
+                            placeholder={t.quiz.placeholder}
                             autoFocus
                         />
                         <div className="vocq-btn-row">
-                            <button className="btn btn-secondary" onClick={handleSkip}>Skip</button>
+                            <button className="btn btn-secondary" onClick={handleSkip}>{t.quiz.skip}</button>
                             <button
                                 className="btn btn-primary"
                                 onClick={handleSubmit}
                                 disabled={!userAnswer.trim()}
                             >
-                                Submit
+                                {t.quiz.submit}
                             </button>
                         </div>
                     </div>
@@ -201,7 +203,7 @@ export default function PhraseQuiz() {
                         </p>
                         {userAnswer && <p className="vocq-wrong-answer">{userAnswer}</p>}
                         <button className="btn btn-primary" onClick={handleNext}>
-                            Next →
+                            {t.quiz.next}
                         </button>
                     </div>
                 )}
@@ -210,11 +212,11 @@ export default function PhraseQuiz() {
             <div className="vocq-stats-bar">
                 <div className="vocq-stat-pill vocq-stat-correct">
                     <span>✓</span>
-                    <span>{correctCount} Correct</span>
+                    <span>{correctCount} {t.quiz.correct}</span>
                 </div>
                 <div className="vocq-stat-pill vocq-stat-wrong">
                     <span>✗</span>
-                    <span>{wrongCount} Wrong</span>
+                    <span>{wrongCount} {t.quiz.wrong}</span>
                 </div>
             </div>
         </main>

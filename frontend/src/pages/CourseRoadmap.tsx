@@ -9,15 +9,8 @@ import {
     type StepStatus,
 } from '../utils/courseProgress';
 import type { StepType } from '../data/courses';
+import { useT } from '../utils/i18n';
 import './CourseRoadmap.css';
-
-const TYPE_LABELS: Record<StepType, string> = {
-    vocabulary: 'Vocabulary',
-    grammar:    'Grammar',
-    verbs:      'Verbs',
-    phrases:    'Phrases',
-    reading:    'Reading',
-};
 
 const TYPE_COLORS: Record<StepType, string> = {
     vocabulary: '#4338CA',
@@ -40,9 +33,10 @@ function StatusIcon({ status }: { status: StepStatus }) {
 export default function CourseRoadmap() {
     const { level } = useParams<{ level: string }>();
     const navigate  = useNavigate();
+    const t = useT();
 
     const course = COURSES.find(c => c.level.toLowerCase() === level?.toLowerCase());
-    if (!course) return <main className="page"><p>Course not found.</p></main>;
+    if (!course) return <main className="page"><p>{t.roadmap.notFound}</p></main>;
 
     const progress   = getCourseProgress(course);
     const isActive   = getActiveCourse() === course.level;
@@ -55,7 +49,7 @@ export default function CourseRoadmap() {
     return (
         <main className="page">
             <button className="btn btn-secondary cr-back-btn" onClick={() => navigate('/courses')}>
-                ← All Courses
+                {t.roadmap.back}
             </button>
 
             <div className="cr-header">
@@ -73,7 +67,7 @@ export default function CourseRoadmap() {
 
             <div className="cr-progress-row">
                 <span className="cr-progress-label">
-                    {progress.completed + progress.visited} / {progress.total} steps
+                    {t.roadmap.steps(progress.completed + progress.visited, progress.total)}
                 </span>
                 {!isActive && (
                     <button
@@ -81,7 +75,7 @@ export default function CourseRoadmap() {
                         style={{ backgroundColor: course.color }}
                         onClick={() => setActiveCourse(course.level)}
                     >
-                        Set as Active Course
+                        {t.roadmap.setActive}
                     </button>
                 )}
             </div>
@@ -114,7 +108,7 @@ export default function CourseRoadmap() {
                                         className="cr-step-type"
                                         style={{ color: TYPE_COLORS[step.type] }}
                                     >
-                                        {TYPE_LABELS[step.type]}
+                                        {t.roadmap.types[step.type]}
                                     </span>
                                 </div>
 

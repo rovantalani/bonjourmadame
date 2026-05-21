@@ -11,6 +11,7 @@ import {
     type DailyProgress,
 } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
+import { useT } from '../utils/i18n';
 import './Stats.css';
 
 function formatModuleId(id: string): string {
@@ -20,12 +21,13 @@ function formatModuleId(id: string): string {
         .join(' ');
 }
 
-function formatDate(iso: string): string {
-    return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+function formatDate(iso: string, locale: string): string {
+    return new Date(iso).toLocaleDateString(locale, { month: 'short', day: 'numeric' });
 }
 
 export default function Stats() {
     const { user } = useAuth();
+    const t = useT();
     const [streak, setStreak] = useState<StreakData>({ currentStreak: 0, longestStreak: 0, lastActivityDate: null });
     const [daily, setDaily] = useState<DailyProgress>({ date: '', wordsStudied: 0 });
     const [goal, setGoal] = useState(10);
@@ -110,8 +112,8 @@ export default function Stats() {
     return (
         <main className="page">
             <div className="page-header">
-                <h1>Progress</h1>
-                <p className="subtitle">Your learning at a glance</p>
+                <h1>{t.stats.title}</h1>
+                <p className="subtitle">{t.stats.subtitle}</p>
             </div>
 
             <div className="stats-top-row">
@@ -119,34 +121,34 @@ export default function Stats() {
                     <span className="stats-stat-value">
                         {streak.currentStreak > 0 ? streak.currentStreak : '—'}
                     </span>
-                    <span className="stats-stat-label">day streak</span>
+                    <span className="stats-stat-label">{t.stats.dayStreak}</span>
                 </div>
                 <div className="card stats-stat-card">
                     <span className="stats-stat-value">
                         {streak.longestStreak > 0 ? streak.longestStreak : '—'}
                     </span>
-                    <span className="stats-stat-label">best streak</span>
+                    <span className="stats-stat-label">{t.stats.bestStreak}</span>
                 </div>
                 <div className="card stats-stat-card">
                     <span className="stats-stat-value">{stats.totalMastered}</span>
-                    <span className="stats-stat-label">words mastered</span>
+                    <span className="stats-stat-label">{t.stats.wordsMastered}</span>
                 </div>
                 <div className="card stats-stat-card">
                     <span className="stats-stat-value">
                         {stats.totalPracticed > 0 ? `${stats.overallAccuracy}%` : '—'}
                     </span>
-                    <span className="stats-stat-label">accuracy</span>
+                    <span className="stats-stat-label">{t.stats.accuracy}</span>
                 </div>
             </div>
 
             <div className="card stats-section">
-                <h2 className="stats-section-heading">Today</h2>
+                <h2 className="stats-section-heading">{t.stats.today}</h2>
                 <div className="stats-goal-row">
                     <span className="stats-goal-label">
-                        {daily.wordsStudied} / {goal} words today
+                        {t.stats.wordsToday(daily.wordsStudied, goal)}
                     </span>
                     <div className="stats-goal-edit">
-                        <span className="stats-goal-edit-label">Goal:</span>
+                        <span className="stats-goal-edit-label">{t.stats.goal}</span>
                         <input
                             className="stats-goal-input"
                             type="number"
@@ -155,7 +157,7 @@ export default function Stats() {
                             onChange={e => setGoalInput(e.target.value)}
                             onBlur={handleGoalBlur}
                             onKeyDown={handleGoalKeyDown}
-                            aria-label="Daily goal"
+                            aria-label={t.stats.dailyGoalLabel}
                         />
                     </div>
                 </div>
@@ -169,7 +171,7 @@ export default function Stats() {
 
             {sortedModules.length > 0 && (
                 <div className="card stats-section">
-                    <h2 className="stats-section-heading">Module Activity</h2>
+                    <h2 className="stats-section-heading">{t.stats.moduleActivity}</h2>
                     <ul className="stats-module-list">
                         {sortedModules.map(([moduleId, ms]) => {
                             const pct = ms.practiced > 0
@@ -180,7 +182,7 @@ export default function Stats() {
                                     <div className="stats-module-info">
                                         <span className="stats-module-name">{formatModuleId(moduleId)}</span>
                                         <span className="stats-module-meta">
-                                            {ms.mastered} mastered · {ms.practiced} practiced
+                                            {t.stats.masteredPracticed(ms.mastered, ms.practiced)}
                                         </span>
                                     </div>
                                     <div className="progress-track stats-module-track">
@@ -197,9 +199,9 @@ export default function Stats() {
             )}
 
             <div className="card stats-section">
-                <h2 className="stats-section-heading">Recent Quizzes</h2>
+                <h2 className="stats-section-heading">{t.stats.recentQuizzes}</h2>
                 {stats.recentSessions.length === 0 ? (
-                    <p className="stats-empty">No quizzes completed yet. Start a vocabulary quiz!</p>
+                    <p className="stats-empty">{t.stats.noQuizzes}</p>
                 ) : (
                     <ul className="stats-session-list">
                         {stats.recentSessions.map((s, i) => {
@@ -215,7 +217,7 @@ export default function Stats() {
                                         <span className={`stats-session-acc ${acc >= 70 ? 'stats-acc-good' : 'stats-acc-low'}`}>
                                             {acc}%
                                         </span>
-                                        <span className="stats-session-date">{formatDate(s.date)}</span>
+                                        <span className="stats-session-date">{formatDate(s.date, t.stats.dateLocale)}</span>
                                     </div>
                                 </li>
                             );

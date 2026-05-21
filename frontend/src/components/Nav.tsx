@@ -1,14 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
+import { useT } from '../utils/i18n';
 import './Nav.css';
-
-const NAV_ITEMS = [
-    { path: '/',             label: 'Home',       icon: '⌂'  },
-    { path: '/courses',      label: 'Courses',    icon: '🎓' },
-    { path: '/vocabulary',   label: 'Vocabulary', icon: '📖' },
-    { path: '/grammar',      label: 'Grammar',    icon: '✏️'  },
-    { path: '/phrases',      label: 'Phrases',    icon: '💬' },
-];
 
 function useActiveItem() {
     const { pathname } = useLocation();
@@ -22,6 +15,15 @@ export default function Nav() {
     const navigate   = useNavigate();
     const isActive   = useActiveItem();
     const { dark, toggle } = useTheme();
+    const t = useT();
+
+    const NAV_ITEMS = [
+        { path: '/',             label: t.nav.home,       icon: '⌂'  },
+        { path: '/courses',      label: t.nav.courses,    icon: '🎓' },
+        { path: '/vocabulary',   label: t.nav.vocabulary, icon: '📖' },
+        { path: '/grammar',      label: t.nav.grammar,    icon: '✏️'  },
+        { path: '/phrases',      label: t.nav.phrases,    icon: '💬' },
+    ];
 
     return (
         <>
@@ -48,7 +50,7 @@ export default function Nav() {
                         className={`top-nav-link ${isActive('/stats') ? 'active' : ''}`}
                         onClick={() => navigate('/stats')}
                     >
-                        Stats
+                        {t.nav.stats}
                     </button>
                     <button
                         className={`top-nav-link ${isActive('/settings') ? 'active' : ''}`}
