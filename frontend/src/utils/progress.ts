@@ -255,6 +255,22 @@ export async function syncSessionToApi(
     } catch { /* silent */ }
 }
 
+export interface DueWord {
+    wordId:       string;  // "{moduleId}:{numericId}"
+    moduleId:     string;
+    srsBox:       number;
+    masteryLevel: number;
+}
+
+export async function fetchDueWordsFromApi(): Promise<DueWord[]> {
+    try {
+        const res = await axios.get<DueWord[]>(`${API}/api/progress/due`, { withCredentials: true });
+        return res.data;
+    } catch {
+        return [];
+    }
+}
+
 export async function fetchProgressFromApi(): Promise<ApiProgress | null> {
     try {
         const res = await axios.get<ApiProgress>(`${API}/api/progress`, { withCredentials: true });

@@ -5,6 +5,8 @@ import { requireAuth, AuthRequest } from '../middleware/auth';
 const router = Router();
 router.use(requireAuth);
 
+const SRS_INTERVALS_DAYS = [0, 1, 2, 4, 7, 14]; // index = box (1–5)
+
 // ── POST /api/progress/word ───────────────────────────────────────────────────
 
 router.post('/word', async (req: AuthRequest, res: Response): Promise<void> => {
@@ -16,15 +18,25 @@ router.post('/word', async (req: AuthRequest, res: Response): Promise<void> => {
         return;
     }
 
+    const existingRow = await pool.query<{ srs_box: number }>(
+        `SELECT srs_box FROM word_mastery WHERE user_id = $1 AND word_id = $2`,
+        [req.userId, word_id]
+    );
+    const currentBox: number = existingRow.rows[0]?.srs_box ?? 1;
+    const newBox = correct ? Math.min(currentBox + 1, 5) : 1;
+    const intervalDays = SRS_INTERVALS_DAYS[newBox];
+
     await pool.query(`
-        INSERT INTO word_mastery (user_id, word_id, module_id, mastery_level, correct_count, wrong_count, last_seen_at)
-        VALUES ($1, $2, $3, $4, $5, $6, NOW())
+        INSERT INTO word_mastery (user_id, word_id, module_id, mastery_level, correct_count, wrong_count, last_seen_at, srs_box, next_review_at)
+        VALUES ($1, $2, $3, $4, $5, $6, NOW(), $7, NOW() + ($8 || ' days')::INTERVAL)
         ON CONFLICT (user_id, word_id) DO UPDATE SET
-            mastery_level = $4,
-            correct_count = word_mastery.correct_count + $5,
-            wrong_count   = word_mastery.wrong_count   + $6,
-            last_seen_at  = NOW()
-    `, [req.userId, word_id, module_id, mastery_level, correct ? 1 : 0, correct ? 0 : 1]);
+            mastery_level  = $4,
+            correct_count  = word_mastery.correct_count + $5,
+            wrong_count    = word_mastery.wrong_count   + $6,
+            last_seen_at   = NOW(),
+            srs_box        = $7,
+            next_review_at = NOW() + ($8 || ' days')::INTERVAL
+    `, [req.userId, word_id, module_id, mastery_level, correct ? 1 : 0, correct ? 0 : 1, newBox, intervalDays]);
 
     // Recompute total_words_mastered
     const { rows } = await pool.query<{ count: string }>(
@@ -164,10 +176,21 @@ router.get('/', async (req: AuthRequest, res: Response): Promise<void> => {
 });
 
 // ── GET /api/progress/due ─────────────────────────────────────────────────────
-// Stub for Phase 5 SRS — returns empty array
 
-router.get('/due', (_req: AuthRequest, res: Response): void => {
-    res.json([]);
+router.get('/due', async (req: AuthRequest, res: Response): Promise<void> => {
+    const { rows } = await pool.query<{ word_id: string; module_id: string; srs_box: number; mastery_level: number }>(
+        `SELECT word_id, module_id, srs_box, mastery_level
+         FROM word_mastery
+         WHERE user_id = $1 AND next_review_at <= NOW()
+         ORDER BY next_review_at ASC`,
+        [req.userId]
+    );
+    res.json(rows.map(r => ({
+        wordId:       r.word_id,
+        moduleId:     r.module_id,
+        srsBox:       r.srs_box,
+        masteryLevel: r.mastery_level,
+    })));
 });
 
 export default router;

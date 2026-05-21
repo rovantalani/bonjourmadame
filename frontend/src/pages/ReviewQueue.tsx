@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import {
     loadQueue,
     saveQueue,
@@ -9,10 +10,19 @@ import {
     type QueuedWord,
 } from '../utils/wordQueue';
 import { isAnswerCorrect } from '../utils/answerValidator';
+import { fetchDueWordsFromApi, syncAnswerToApi, type DueWord } from '../utils/progress';
+import { useAuth } from '../context/AuthContext';
 import './ReviewQueue.css';
 
+const API = import.meta.env.VITE_API_BASE;
+
+interface ReviewWord extends QueuedWord {
+    moduleId: string;
+    masteryLevel?: number;
+}
+
 interface ReviewSession {
-    words: (QueuedWord & { moduleId: string })[];
+    words: ReviewWord[];
     currentIndex: number;
     userAnswer: string;
     showAnswer: boolean;
@@ -20,16 +30,68 @@ interface ReviewSession {
     done: boolean;
 }
 
+async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
+    const byModule: Record<string, DueWord[]> = {};
+    for (const d of dueList) {
+        (byModule[d.moduleId] ??= []).push(d);
+    }
+
+    const results: ReviewWord[] = [];
+    await Promise.all(
+        Object.entries(byModule).map(async ([moduleId, dues]) => {
+            try {
+                const res = await axios.get<{ id: number; english: string; french: string }[]>(
+                    `${API}/api/vocabulary/${moduleId}`,
+                    { withCredentials: true },
+                );
+                for (const due of dues) {
+                    const numericId = parseInt(due.wordId.split(':')[1], 10);
+                    const word = res.data.find(w => w.id === numericId);
+                    if (word) {
+                        results.push({
+                            id:           word.id,
+                            english:      word.english,
+                            french:       word.french,
+                            moduleId,
+                            masteryLevel: due.masteryLevel,
+                        });
+                    }
+                }
+            } catch { /* skip module on error */ }
+        })
+    );
+    return results;
+}
+
 export default function ReviewQueue() {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const [queue, setQueue] = useState<WordQueue>({});
     const [session, setSession] = useState<ReviewSession | null>(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setQueue(loadQueue());
-    }, []);
+        if (user) {
+            setLoading(true);
+            fetchDueWordsFromApi().then(due => {
+                loadDueWords(due).then(words => {
+                    setSession(words.length > 0 ? {
+                        words: [...words].sort(() => Math.random() - 0.5),
+                        currentIndex: 0,
+                        userAnswer: '',
+                        showAnswer: false,
+                        correctCount: 0,
+                        done: false,
+                    } : null);
+                    setLoading(false);
+                });
+            });
+        } else {
+            setQueue(loadQueue());
+        }
+    }, [user]);
 
-    // Allow Enter to advance past the reveal screen without re-clicking
+    // Allow Enter to advance past the reveal screen
     useEffect(() => {
         if (!session?.showAnswer) return;
         const onKey = (e: KeyboardEvent) => {
@@ -44,18 +106,15 @@ export default function ReviewQueue() {
         return () => window.removeEventListener('keydown', onKey);
     }, [session?.showAnswer]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const totalCount = totalQueuedCount(queue);
+    const totalCount = user ? (session?.words.length ?? 0) : totalQueuedCount(queue);
 
     const startReview = () => {
-        const flat: (QueuedWord & { moduleId: string })[] = [];
+        const flat: ReviewWord[] = [];
         for (const [moduleId, words] of Object.entries(queue)) {
-            for (const w of words) {
-                flat.push({ ...w, moduleId });
-            }
+            for (const w of words) flat.push({ ...w, moduleId });
         }
-        const shuffled = [...flat].sort(() => Math.random() - 0.5);
         setSession({
-            words: shuffled,
+            words: [...flat].sort(() => Math.random() - 0.5),
             currentIndex: 0,
             userAnswer: '',
             showAnswer: false,
@@ -71,7 +130,36 @@ export default function ReviewQueue() {
         setQueue(updated);
     };
 
+    if (loading) {
+        return (
+            <main className="page">
+                <div className="rq-header page-header">
+                    <h1>Review Queue</h1>
+                    <p className="subtitle">Loading due words…</p>
+                </div>
+            </main>
+        );
+    }
+
+    // Pre-review screen
     if (!session) {
+        if (user) {
+            return (
+                <main className="page">
+                    <div className="rq-header page-header">
+                        <h1>Review Queue</h1>
+                        <p className="subtitle">No words due for review — keep practising to build your schedule.</p>
+                    </div>
+                    <button
+                        className="btn btn-secondary rq-back-btn"
+                        onClick={() => navigate('/vocabulary')}
+                    >
+                        Go to Vocabulary
+                    </button>
+                </main>
+            );
+        }
+
         return (
             <main className="page">
                 <div className="rq-header page-header">
@@ -151,7 +239,7 @@ export default function ReviewQueue() {
                         </div>
                     </div>
                     <div className="vocq-complete-actions">
-                        {totalQueuedCount(loadQueue()) > 0 && (
+                        {!user && totalQueuedCount(loadQueue()) > 0 && (
                             <button className="btn btn-primary" onClick={() => { setQueue(loadQueue()); setSession(null); }}>
                                 Review Remaining
                             </button>
@@ -172,8 +260,15 @@ export default function ReviewQueue() {
         if (!session.userAnswer.trim()) return;
         const isCorrect = isAnswerCorrect(session.userAnswer, current.french);
 
-        if (isCorrect) {
+        if (user) {
+            const currentLevel = current.masteryLevel ?? 0;
+            const newLevel = isCorrect ? Math.min(5, currentLevel + 1) : Math.max(0, currentLevel - 1);
+            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, isCorrect, newLevel);
+        } else if (isCorrect) {
             removeCorrectWord(current.moduleId, current.id);
+        }
+
+        if (isCorrect) {
             if (session.currentIndex >= session.words.length - 1) {
                 setSession(s => s && ({ ...s, correctCount: s.correctCount + 1, done: true }));
             } else {
@@ -191,6 +286,10 @@ export default function ReviewQueue() {
     };
 
     const handleSkip = () => {
+        if (user) {
+            const currentLevel = current.masteryLevel ?? 0;
+            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, false, Math.max(0, currentLevel - 1));
+        }
         setSession(s => s && ({ ...s, showAnswer: true }));
     };
 
@@ -212,7 +311,7 @@ export default function ReviewQueue() {
             <div className="vocq-top-bar">
                 <button
                     className="btn btn-secondary vocq-exit-btn"
-                    onClick={() => { setQueue(loadQueue()); setSession(null); }}
+                    onClick={() => { if (!user) setQueue(loadQueue()); setSession(null); }}
                 >
                     ✕ Exit
                 </button>

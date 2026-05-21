@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
-import { loadStreak, loadDailyProgress, loadDailyGoal, fetchProgressFromApi } from '../utils/progress';
+import { loadStreak, loadDailyProgress, loadDailyGoal, fetchProgressFromApi, fetchDueWordsFromApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
 import ProgressImportBanner from '../components/ProgressImportBanner';
 
@@ -59,12 +59,12 @@ export default function Home() {
     const navigate = useNavigate();
     const { user } = useAuth();
     const [queueCount, setQueueCount] = useState(0);
+    const [dueCount, setDueCount] = useState(0);
     const [streak, setStreak] = useState(0);
     const [wordsToday, setWordsToday] = useState(0);
     const [dailyGoal, setDailyGoal] = useState(10);
 
     useEffect(() => {
-        setQueueCount(totalQueuedCount(loadQueue()));
         setDailyGoal(loadDailyGoal());
 
         if (user) {
@@ -77,7 +77,9 @@ export default function Home() {
                     .reduce((sum, s) => sum + s.total, 0);
                 setWordsToday(wordsStudied);
             });
+            fetchDueWordsFromApi().then(due => setDueCount(due.length));
         } else {
+            setQueueCount(totalQueuedCount(loadQueue()));
             setStreak(loadStreak().currentStreak);
             setWordsToday(loadDailyProgress().wordsStudied);
         }
@@ -114,7 +116,7 @@ export default function Home() {
                 </div>
             </div>
 
-            {queueCount > 0 && (
+            {(user ? dueCount : queueCount) > 0 && (
                 <button
                     className="home-review-banner"
                     onClick={() => navigate('/review-queue')}
@@ -123,9 +125,12 @@ export default function Home() {
                     <span className="home-review-icon">🔄</span>
                     <div className="home-review-text">
                         <strong>Review Queue</strong>
-                        <span>{queueCount} word{queueCount !== 1 ? 's' : ''} ready for review</span>
+                        {user
+                            ? <span>{dueCount} word{dueCount !== 1 ? 's' : ''} due for review</span>
+                            : <span>{queueCount} word{queueCount !== 1 ? 's' : ''} ready for review</span>
+                        }
                     </div>
-                    <span className="home-review-badge">{queueCount}</span>
+                    <span className="home-review-badge">{user ? dueCount : queueCount}</span>
                 </button>
             )}
 
