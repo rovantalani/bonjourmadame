@@ -11,6 +11,7 @@ export function loadLearningMode(): LearningMode | null {
 
 export function saveLearningMode(mode: LearningMode): void {
     localStorage.setItem(MODE_KEY, mode);
+    window.dispatchEvent(new Event('learningModeChanged'));
 }
 
 export function loadQuizDirection(): QuizDirection {

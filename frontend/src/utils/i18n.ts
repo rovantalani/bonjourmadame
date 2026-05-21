@@ -1,4 +1,5 @@
-import { loadLearningMode } from './settings';
+import { useState, useEffect } from 'react';
+import { loadLearningMode, type LearningMode } from './settings';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -273,7 +274,7 @@ const FR: Translations = {
         types: { vocabulary: 'Vocabulaire', grammar: 'Grammaire', verbs: 'Verbes', phrases: 'Expressions', reading: 'Lecture' },
     },
     phrases: {
-        title: 'Expressions', subtitle: 'Expressions françaises pour de vraies situations',
+        title: 'Expressions', subtitle: 'Des expressions pour toutes les situations',
         phraseCount: (n) => `${n} expression${n > 1 ? 's' : ''}`,
     },
     grammar: {
@@ -350,5 +351,13 @@ const FR: Translations = {
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 
 export function useT(): Translations {
-    return loadLearningMode() === 'learn-english' ? FR : EN;
+    const [mode, setMode] = useState<LearningMode | null>(loadLearningMode);
+
+    useEffect(() => {
+        const handler = () => setMode(loadLearningMode());
+        window.addEventListener('learningModeChanged', handler);
+        return () => window.removeEventListener('learningModeChanged', handler);
+    }, []);
+
+    return mode === 'learn-english' ? FR : EN;
 }
