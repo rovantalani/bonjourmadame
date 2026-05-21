@@ -64,9 +64,18 @@ export default function PhraseDetail() {
 
     return (
         <main className="page">
-            <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
-                ← Phrases
-            </button>
+            <div className="phrase-detail-nav">
+                <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
+                    ← Phrases
+                </button>
+                <button
+                    className="btn btn-primary"
+                    onClick={() => navigate(`/phrases/${categoryId}/quiz`)}
+                    type="button"
+                >
+                    Start Quiz
+                </button>
+            </div>
 
             <div className="phrase-detail-header card">
                 <span
