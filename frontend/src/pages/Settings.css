@@ -1,0 +1,189 @@
+.settings-section {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+
+.settings-section-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 1.25rem;
+}
+
+/* ── Row layout ── */
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.settings-row:first-of-type {
+    padding-top: 0;
+}
+
+.settings-row--col {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.settings-row--danger {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.settings-row-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.settings-label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-1);
+}
+
+.settings-label--danger {
+    color: var(--error);
+}
+
+.settings-hint {
+    font-size: 0.8rem;
+    color: var(--text-3);
+}
+
+.settings-success {
+    font-size: 0.8rem;
+    color: var(--success);
+    font-weight: 600;
+}
+
+.settings-error {
+    font-size: 0.82rem;
+    color: var(--error);
+    margin: 0 0 0.75rem;
+}
+
+/* ── Goal input ── */
+.settings-goal-input {
+    width: 80px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ── Quiz direction toggle ── */
+.settings-toggle-group {
+    display: flex;
+    gap: 0;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-top: 0.5rem;
+}
+
+.settings-toggle-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--surface);
+    color: var(--text-2);
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.settings-toggle-btn:not(:last-child) {
+    border-right: 1px solid var(--border);
+}
+
+.settings-toggle-btn.active {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ── Change password form ── */
+.settings-pw-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-pw-form-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-1);
+    margin: 0 0 0.2rem;
+}
+
+.settings-pw-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* ── Danger zone ── */
+.settings-danger-btn {
+    background: var(--error);
+    color: #fff;
+    border: none;
+}
+
+.settings-danger-btn:hover {
+    background: #b91c1c;
+}
+
+.settings-confirm-delete {
+    width: 100%;
+}
+
+.settings-confirm-msg {
+    font-size: 0.85rem;
+    color: var(--error);
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+}
+
+.settings-confirm-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* ── Guest section ── */
+.settings-guest-msg {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.settings-guest-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+    .settings-section {
+        padding: 1.25rem;
+    }
+
+    .settings-pw-actions,
+    .settings-confirm-actions,
+    .settings-guest-actions {
+        flex-direction: column;
+    }
+}

@@ -24,6 +24,7 @@ import ReadingPassage from './pages/ReadingPassage';
 import Stats from './pages/Stats';
 import Courses from './pages/Courses';
 import CourseRoadmap from './pages/CourseRoadmap';
+import Settings from './pages/Settings';
 
 function AuthGate({ children }: { children: ReactNode }) {
     const { user, isGuest, loading } = useAuth();
@@ -61,6 +62,7 @@ function App() {
                     <Route path="/courses"                       element={<Courses />} />
                     <Route path="/courses/:level"               element={<CourseRoadmap />} />
                     <Route path="/stats"                         element={<Stats />} />
+                    <Route path="/settings"                      element={<Settings />} />
                     <Route path="/login"                         element={<Login />} />
                     <Route path="/register"                      element={<Register />} />
                 </Routes>

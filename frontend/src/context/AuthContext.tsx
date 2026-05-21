@@ -16,6 +16,8 @@ interface AuthContextValue {
     register: (email: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
     continueAsGuest: () => void;
+    changePassword: (currentPassword: string, newPassword: string) => Promise<void>;
+    deleteAccount: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -58,8 +60,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         localStorage.setItem('guestMode', 'true');
     }
 
+    async function changePassword(currentPassword: string, newPassword: string) {
+        await axios.post(`${API}/api/auth/change-password`, { currentPassword, newPassword }, { withCredentials: true });
+    }
+
+    async function deleteAccount() {
+        await axios.delete(`${API}/api/auth/account`, { withCredentials: true });
+        setUser(null);
+        setIsGuest(false);
+        localStorage.removeItem('guestMode');
+    }
+
     return (
-        <AuthContext.Provider value={{ user, isGuest, loading, login, register, logout, continueAsGuest }}>
+        <AuthContext.Provider value={{ user, isGuest, loading, login, register, logout, continueAsGuest, changePassword, deleteAccount }}>
             {children}
         </AuthContext.Provider>
     );

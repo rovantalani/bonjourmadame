@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { pool } from '../db/client';
+import { requireAuth, type AuthRequest } from '../middleware/auth';
 
 const router = Router();
 
@@ -104,6 +105,39 @@ router.get('/me', async (req: Request, res: Response): Promise<void> => {
     }
 
     res.json({ id: user.id, email: user.email });
+});
+
+router.post('/change-password', requireAuth, async (req: AuthRequest, res: Response): Promise<void> => {
+    const { currentPassword, newPassword } = req.body as { currentPassword?: string; newPassword?: string };
+
+    if (!currentPassword || !newPassword) {
+        res.status(400).json({ error: 'Current and new passwords are required' });
+        return;
+    }
+    if (newPassword.length < 8) {
+        res.status(400).json({ error: 'New password must be at least 8 characters' });
+        return;
+    }
+
+    const result = await pool.query<{ password_hash: string }>(
+        'SELECT password_hash FROM users WHERE id = $1',
+        [req.userId]
+    );
+    const user = result.rows[0];
+    if (!user || !(await bcrypt.compare(currentPassword, user.password_hash))) {
+        res.status(401).json({ error: 'Current password is incorrect' });
+        return;
+    }
+
+    const newHash = await bcrypt.hash(newPassword, 12);
+    await pool.query('UPDATE users SET password_hash = $1 WHERE id = $2', [newHash, req.userId]);
+    res.json({ ok: true });
+});
+
+router.delete('/account', requireAuth, async (req: AuthRequest, res: Response): Promise<void> => {
+    await pool.query('DELETE FROM users WHERE id = $1', [req.userId]);
+    res.clearCookie('token', { httpOnly: true, sameSite: 'strict', secure: process.env.NODE_ENV === 'production' });
+    res.json({ ok: true });
 });
 
 export default router;
