@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { recordAnswer, syncAnswerToApi, syncSessionToApi, recordSession } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
 import { isAnswerCorrect } from '../utils/answerValidator';
+import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import './VocabularyQuiz.css';
 
 interface Phrase {
@@ -35,6 +36,7 @@ export default function PhraseQuiz() {
     const [wrongCount, setWrongCount]         = useState(0);
     const [quizComplete, setQuizComplete]     = useState(false);
     const [loading, setLoading]               = useState(true);
+    const [quizDir] = useState<QuizDirection>(loadQuizDirection);
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_API_BASE}/api/phrase-categories/${categoryId}`)
@@ -60,7 +62,8 @@ export default function PhraseQuiz() {
     const handleSubmit = () => {
         if (!userAnswer.trim()) return;
         const current   = phrases[currentIndex];
-        const isCorrect = isAnswerCorrect(userAnswer, current.french);
+        const target = quizDir === 'fr-en' ? current.english : current.french;
+        const isCorrect = isAnswerCorrect(userAnswer, target);
         const mastery   = recordAnswer(moduleKey, current.id, isCorrect);
         if (user) syncAnswerToApi(`${moduleKey}:${current.id}`, moduleKey, isCorrect, mastery.level);
 
@@ -158,8 +161,12 @@ export default function PhraseQuiz() {
 
             <div className="card vocq-card">
                 <div className="vocq-question-top">
-                    <p className="section-label vocq-word-label">Translate to French</p>
-                    <h2 className="vocq-word-english">{current.english}</h2>
+                    <p className="section-label vocq-word-label">
+                        {quizDir === 'fr-en' ? 'Translate to English' : 'Translate to French'}
+                    </p>
+                    <h2 className="vocq-word-english">
+                        {quizDir === 'fr-en' ? current.french : current.english}
+                    </h2>
                     {current.note && <p style={{ fontSize: '0.82rem', color: 'var(--text-3)', marginTop: '0.4rem' }}>{current.note}</p>}
                 </div>
 
@@ -189,7 +196,9 @@ export default function PhraseQuiz() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
-                        <p className="vocq-correct-answer">{current.french}</p>
+                        <p className="vocq-correct-answer">
+                            {quizDir === 'fr-en' ? current.english : current.french}
+                        </p>
                         {userAnswer && <p className="vocq-wrong-answer">{userAnswer}</p>}
                         <button className="btn btn-primary" onClick={handleNext}>
                             Next →

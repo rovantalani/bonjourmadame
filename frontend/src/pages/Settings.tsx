@@ -2,20 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { loadDailyGoal, saveDailyGoal } from '../utils/progress';
+import { loadQuizDirection, saveQuizDirection, type QuizDirection } from '../utils/settings';
 import './Settings.css';
-
-const QUIZ_DIR_KEY = 'quizDirection';
-
-export type QuizDirection = 'en-fr' | 'fr-en';
-
-export function loadQuizDirection(): QuizDirection {
-    const val = localStorage.getItem(QUIZ_DIR_KEY);
-    return val === 'fr-en' ? 'fr-en' : 'en-fr';
-}
-
-export function saveQuizDirection(dir: QuizDirection): void {
-    localStorage.setItem(QUIZ_DIR_KEY, dir);
-}
 
 export default function Settings() {
     const navigate                        = useNavigate();

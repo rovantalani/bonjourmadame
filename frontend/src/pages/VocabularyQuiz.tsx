@@ -4,6 +4,7 @@ import { addWrongWords, loadShufflePref, saveShufflePref } from '../utils/wordQu
 import { recordAnswer, recordSession, loadMastery, syncAnswerToApi, syncSessionToApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
 import { isAnswerCorrect } from '../utils/answerValidator';
+import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import './VocabularyQuiz.css';
 
 interface Word {
@@ -28,6 +29,7 @@ export default function VocabularyQuiz() {
     const [quizComplete, setQuizComplete] = useState(false);
     const [shuffle, setShuffle] = useState<boolean>(loadShufflePref);
     const [allMastered, setAllMastered] = useState(false);
+    const [quizDir] = useState<QuizDirection>(loadQuizDirection);
 
     const firstRoundWrong = useRef<Word[]>([]);
 
@@ -64,7 +66,8 @@ export default function VocabularyQuiz() {
     const handleSubmit = () => {
         if (!userAnswer.trim()) return;
 
-        const isCorrect = isAnswerCorrect(userAnswer, currentWord.french);
+        const target = quizDir === 'fr-en' ? currentWord.english : currentWord.french;
+        const isCorrect = isAnswerCorrect(userAnswer, target);
 
         const mastery = recordAnswer(moduleId!, currentWord.id, isCorrect);
         if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, isCorrect, mastery.level);
@@ -271,8 +274,12 @@ export default function VocabularyQuiz() {
             {/* Question card */}
             <div className="card vocq-card">
                 <div className="vocq-question-top">
-                    <p className="section-label vocq-word-label">Translate to French</p>
-                    <h2 className="vocq-word-english">{currentWord.english}</h2>
+                    <p className="section-label vocq-word-label">
+                        {quizDir === 'fr-en' ? 'Translate to English' : 'Translate to French'}
+                    </p>
+                    <h2 className="vocq-word-english">
+                        {quizDir === 'fr-en' ? currentWord.french : currentWord.english}
+                    </h2>
                 </div>
 
                 <hr className="vocq-divider" />
@@ -303,7 +310,9 @@ export default function VocabularyQuiz() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
-                        <p className="vocq-correct-answer">{currentWord.french}</p>
+                        <p className="vocq-correct-answer">
+                            {quizDir === 'fr-en' ? currentWord.english : currentWord.french}
+                        </p>
                         {userAnswer && (
                             <p className="vocq-wrong-answer">{userAnswer}</p>
                         )}

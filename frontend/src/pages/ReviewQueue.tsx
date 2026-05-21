@@ -11,6 +11,7 @@ import {
 } from '../utils/wordQueue';
 import { isAnswerCorrect } from '../utils/answerValidator';
 import { fetchDueWordsFromApi, syncAnswerToApi, type DueWord } from '../utils/progress';
+import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import { useAuth } from '../context/AuthContext';
 import './ReviewQueue.css';
 
@@ -69,6 +70,7 @@ export default function ReviewQueue() {
     const [queue, setQueue] = useState<WordQueue>({});
     const [session, setSession] = useState<ReviewSession | null>(null);
     const [loading, setLoading] = useState(false);
+    const [quizDir] = useState<QuizDirection>(loadQuizDirection);
 
     useEffect(() => {
         if (user) {
@@ -258,7 +260,8 @@ export default function ReviewQueue() {
 
     const handleSubmit = () => {
         if (!session.userAnswer.trim()) return;
-        const isCorrect = isAnswerCorrect(session.userAnswer, current.french);
+        const target = quizDir === 'fr-en' ? current.english : current.french;
+        const isCorrect = isAnswerCorrect(session.userAnswer, target);
 
         if (user) {
             const currentLevel = current.masteryLevel ?? 0;
@@ -329,8 +332,12 @@ export default function ReviewQueue() {
 
             <div className="card vocq-card">
                 <div className="vocq-question-top">
-                    <p className="section-label vocq-word-label">Translate to French</p>
-                    <h2 className="vocq-word-english">{current.english}</h2>
+                    <p className="section-label vocq-word-label">
+                        {quizDir === 'fr-en' ? 'Translate to English' : 'Translate to French'}
+                    </p>
+                    <h2 className="vocq-word-english">
+                        {quizDir === 'fr-en' ? current.french : current.english}
+                    </h2>
                 </div>
 
                 <hr className="vocq-divider" />
@@ -361,7 +368,9 @@ export default function ReviewQueue() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
-                        <p className="vocq-correct-answer">{current.french}</p>
+                        <p className="vocq-correct-answer">
+                            {quizDir === 'fr-en' ? current.english : current.french}
+                        </p>
                         {session.userAnswer && (
                             <p className="vocq-wrong-answer">{session.userAnswer}</p>
                         )}
