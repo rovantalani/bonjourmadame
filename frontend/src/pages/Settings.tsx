@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { loadDailyGoal, saveDailyGoal } from '../utils/progress';
-import { loadQuizDirection, saveQuizDirection, type QuizDirection } from '../utils/settings';
+import { loadLearningMode, saveLearningMode, type LearningMode } from '../utils/settings';
 import './Settings.css';
 
 export default function Settings() {
@@ -12,7 +12,7 @@ export default function Settings() {
     // Preferences
     const [goal, setGoal]                 = useState(10);
     const [goalInput, setGoalInput]       = useState('10');
-    const [quizDir, setQuizDir]           = useState<QuizDirection>('en-fr');
+    const [mode, setMode]                 = useState<LearningMode>(() => loadLearningMode() ?? 'learn-french');
 
     // Change password form
     const [showPwForm, setShowPwForm]     = useState(false);
@@ -31,7 +31,6 @@ export default function Settings() {
         const g = loadDailyGoal();
         setGoal(g);
         setGoalInput(String(g));
-        setQuizDir(loadQuizDirection());
     }, []);
 
     function commitGoal() {
@@ -44,9 +43,9 @@ export default function Settings() {
         }
     }
 
-    function handleQuizDirChange(dir: QuizDirection) {
-        setQuizDir(dir);
-        saveQuizDirection(dir);
+    function handleModeChange(m: LearningMode) {
+        setMode(m);
+        saveLearningMode(m);
     }
 
     async function handleChangePassword(e: React.FormEvent) {
@@ -122,21 +121,21 @@ export default function Settings() {
 
                 <div className="settings-row settings-row--col">
                     <div className="settings-row-label">
-                        <span className="settings-label">Quiz direction</span>
-                        <span className="settings-hint">Which language you translate from</span>
+                        <span className="settings-label">Learning language</span>
+                        <span className="settings-hint">Takes effect at the start of your next quiz</span>
                     </div>
                     <div className="settings-toggle-group">
                         <button
-                            className={`settings-toggle-btn ${quizDir === 'en-fr' ? 'active' : ''}`}
-                            onClick={() => handleQuizDirChange('en-fr')}
+                            className={`settings-toggle-btn ${mode === 'learn-french' ? 'active' : ''}`}
+                            onClick={() => handleModeChange('learn-french')}
                         >
-                            English → French
+                            🇫🇷 Learn French
                         </button>
                         <button
-                            className={`settings-toggle-btn ${quizDir === 'fr-en' ? 'active' : ''}`}
-                            onClick={() => handleQuizDirChange('fr-en')}
+                            className={`settings-toggle-btn ${mode === 'learn-english' ? 'active' : ''}`}
+                            onClick={() => handleModeChange('learn-english')}
                         >
-                            French → English
+                            🇬🇧 Learn English
                         </button>
                     </div>
                 </div>
