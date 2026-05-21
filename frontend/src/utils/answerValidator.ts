@@ -20,7 +20,7 @@ function normalize(str: string): string {
 }
 
 /**
- * Returns all acceptable normalized forms for a French answer string.
+ * Returns all acceptable normalized forms for one (slash-free) answer segment.
  *
  * Handles:
  *   enchanté(e)       → ["enchante", "enchantee"]
@@ -29,10 +29,11 @@ function normalize(str: string): string {
  *   un(e) ami(e)      → ["un ami", "une amie"]
  *   cadet(te)         → ["cadet", "cadette"]
  *   se plaindre (de)  → ["se plaindre", "se plaindre de"]
+ *   an ungrateful person (male) → ["an ungrateful person", "an ungrateful person male"]
  *   bonjour           → ["bonjour"]
  */
-function getAcceptableAnswers(french: string): string[] {
-    const cleaned = french.replace(/[.?!,;:…]+$/, '').trim();
+function processSegment(segment: string): string[] {
+    const cleaned = segment.replace(/[.?!,;:…]+$/, '').trim();
 
     let base = '';
     let fem = '';
@@ -88,6 +89,25 @@ function getAcceptableAnswers(french: string): string[] {
     return [...results];
 }
 
-export function isAnswerCorrect(userAnswer: string, french: string): boolean {
-    return getAcceptableAnswers(french).includes(normalize(userAnswer));
+/**
+ * Returns all acceptable normalized forms for an answer string.
+ *
+ * Splits on ' / ' first so that slash-separated alternatives are each accepted:
+ *   the maid / housemaid           → ["the maid", "housemaid"]
+ *   to mope / to brood / to languish → ["to mope", "to brood", "to languish"]
+ *   to complain / to gripe (about) → ["to complain", "to gripe", "to gripe about"]
+ */
+function getAcceptableAnswers(answer: string): string[] {
+    const segments = answer.split(' / ');
+    const results = new Set<string>();
+    for (const segment of segments) {
+        for (const form of processSegment(segment)) {
+            results.add(form);
+        }
+    }
+    return [...results];
+}
+
+export function isAnswerCorrect(userAnswer: string, answer: string): boolean {
+    return getAcceptableAnswers(answer).includes(normalize(userAnswer));
 }
