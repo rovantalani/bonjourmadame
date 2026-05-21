@@ -1,3 +1,11 @@
+/* ── Top nav row ── */
+.phrase-detail-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
 /* ── Loading state ── */
 .phrase-detail-loading {
     text-align: center;
