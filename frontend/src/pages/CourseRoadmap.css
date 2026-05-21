@@ -1,0 +1,180 @@
+.cr-back-btn {
+    margin-bottom: 1.5rem;
+}
+
+.cr-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cr-level-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: var(--r-md);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.cr-header-text h1 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-1);
+    margin-bottom: 0.25rem;
+}
+
+.cr-progress-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+.cr-progress-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-2);
+}
+
+.cr-set-active-btn {
+    font-size: 0.82rem;
+    padding: 0.45rem 1rem;
+    color: #fff;
+}
+
+.cr-progress-bar {
+    height: 8px;
+    margin-bottom: 2.5rem;
+}
+
+/* ── Step list ── */
+.cr-steps {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.cr-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cr-connector {
+    position: absolute;
+    left: 1.35rem;
+    top: 3.2rem;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+
+.cr-step--complete .cr-connector,
+.cr-step--visited  .cr-connector {
+    background: var(--border);
+}
+
+.cr-step-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .13s ease;
+}
+
+.cr-step-btn:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateX(3px);
+}
+
+.cr-step--complete .cr-step-btn {
+    background: var(--success-light);
+    border-color: var(--success);
+}
+
+/* ── Status icons ── */
+.cr-status-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 2px solid currentColor;
+}
+
+.cr-status-complete {
+    color: var(--success);
+    background: var(--success-light);
+}
+
+.cr-status-visited {
+    color: var(--accent);
+    background: var(--accent-light);
+}
+
+.cr-status-not-started {
+    color: var(--text-3);
+    background: var(--surface-2);
+}
+
+/* ── Step body ── */
+.cr-step-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.cr-step-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-1);
+}
+
+.cr-step-type {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cr-step-arrow {
+    font-size: 1.3rem;
+    color: var(--text-3);
+    font-weight: 300;
+}
+
+@media (max-width: 480px) {
+    .cr-header {
+        gap: 0.8rem;
+    }
+    .cr-header-text h1 {
+        font-size: 1.4rem;
+    }
+}

@@ -135,6 +135,78 @@
     text-align: center;
 }
 
+/* ── Continue Course banner ── */
+.home-course-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.75rem;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color .18s ease, box-shadow .18s ease, transform .13s ease;
+}
+
+.home-course-banner:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.home-course-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: var(--r-md);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.home-course-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.home-course-text strong {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-1);
+}
+
+.home-course-text span {
+    font-size: 0.8rem;
+    color: var(--text-2);
+}
+
+.home-course-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.home-course-pct {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-3);
+}
+
+.home-course-arrow {
+    font-size: 1.3rem;
+    color: var(--text-3);
+    font-weight: 300;
+}
+
 /* ── Section grid ── */
 .home-grid {
     display: grid;

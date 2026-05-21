@@ -4,10 +4,10 @@ import './Nav.css';
 
 const NAV_ITEMS = [
     { path: '/',             label: 'Home',       icon: '⌂'  },
+    { path: '/courses',      label: 'Courses',    icon: '🎓' },
     { path: '/vocabulary',   label: 'Vocabulary', icon: '📖' },
     { path: '/grammar',      label: 'Grammar',    icon: '✏️'  },
     { path: '/phrases',      label: 'Phrases',    icon: '💬' },
-    { path: '/helper-verbs', label: 'Verbs',      icon: '⚡' },
 ];
 
 function useActiveItem() {

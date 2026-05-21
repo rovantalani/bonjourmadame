@@ -5,6 +5,8 @@ import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
 import { loadStreak, loadDailyProgress, loadDailyGoal, fetchProgressFromApi, fetchDueWordsFromApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
 import ProgressImportBanner from '../components/ProgressImportBanner';
+import { COURSES } from '../data/courses';
+import { getActiveCourse, getNextStep, getCourseProgress } from '../utils/courseProgress';
 
 interface SectionCard {
     id: string;
@@ -85,6 +87,11 @@ export default function Home() {
         }
     }, [user]);
 
+    const activeCourseLevel = getActiveCourse();
+    const activeCourse      = COURSES.find(c => c.level === activeCourseLevel) ?? null;
+    const nextStep          = activeCourse ? getNextStep(activeCourse) : null;
+    const courseProgress    = activeCourse ? getCourseProgress(activeCourse) : null;
+
     return (
         <main className="page">
             <ProgressImportBanner />
@@ -131,6 +138,31 @@ export default function Home() {
                         }
                     </div>
                     <span className="home-review-badge">{user ? dueCount : queueCount}</span>
+                </button>
+            )}
+
+            {activeCourse && (
+                <button
+                    className="home-course-banner card"
+                    onClick={() => navigate(nextStep ? nextStep.path : `/courses/${activeCourse.level.toLowerCase()}`)}
+                    type="button"
+                >
+                    <span
+                        className="home-course-badge"
+                        style={{ backgroundColor: activeCourse.color }}
+                    >
+                        {activeCourse.level}
+                    </span>
+                    <div className="home-course-text">
+                        <strong>{activeCourse.title}</strong>
+                        <span>{nextStep ? nextStep.title : 'Course complete!'}</span>
+                    </div>
+                    <div className="home-course-right">
+                        {courseProgress && (
+                            <span className="home-course-pct">{courseProgress.pct}%</span>
+                        )}
+                        <span className="home-course-arrow">›</span>
+                    </div>
                 </button>
             )}
 
