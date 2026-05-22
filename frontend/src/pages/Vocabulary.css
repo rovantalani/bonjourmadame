@@ -167,6 +167,24 @@
     background: transparent;
 }
 
+/* ── Card top row (icon + status) ── */
+.vocab-card-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.vocab-step-status {
+    font-size: 1rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.vocab-step-status--complete  { color: var(--success); }
+.vocab-step-status--visited   { color: var(--accent); }
+.vocab-step-status--not-started { color: var(--text-3); }
+
 /* ── Mobile ── */
 @media (max-width: 640px) {
     .vocab-grid {

@@ -18,11 +18,10 @@ export default function Nav() {
     const t = useT();
 
     const NAV_ITEMS = [
-        { path: '/',             label: t.nav.home,       icon: '⌂'  },
-        { path: '/courses',      label: t.nav.courses,    icon: '🎓' },
-        { path: '/vocabulary',   label: t.nav.vocabulary, icon: '📖' },
-        { path: '/grammar',      label: t.nav.grammar,    icon: '✏️'  },
-        { path: '/phrases',      label: t.nav.phrases,    icon: '💬' },
+        { path: '/courses',    label: t.nav.courses,    icon: '🎓' },
+        { path: '/vocabulary', label: t.nav.vocabulary, icon: '📖' },
+        { path: '/verbs',      label: t.nav.verbs,      icon: '✏️'  },
+        { path: '/lectures',   label: t.nav.lectures,   icon: '📚' },
     ];
 
     return (
@@ -36,7 +35,7 @@ export default function Nav() {
                     </button>
 
                     <div className="top-nav-links">
-                        {NAV_ITEMS.slice(1).map(item => (
+                        {NAV_ITEMS.map(item => (
                             <button
                                 key={item.path}
                                 className={`top-nav-link ${isActive(item.path) ? 'active' : ''}`}
