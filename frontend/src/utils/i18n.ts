@@ -119,6 +119,41 @@ interface Translations {
         guestMsg: string; createAccount: string; logIn: string;
     };
     guest: { banner: string; createAccount: string };
+    helperVerbs: {
+        pageSubtitle: string;
+        helperSection: string;
+        helperNote: string;
+        conjugationSection: string;
+        conjugationNote: string;
+        verbCount: (n: number) => string;
+        etre:  { description: string };
+        avoir: { description: string };
+        faire: { description: string };
+        aller: { description: string };
+        venir: { description: string };
+        regularVerbs:           { title: string; description: string };
+        irregularVerbs:         { title: string; description: string };
+        advancedIrregularVerbs: { title: string; description: string };
+    };
+    grammarLesson: {
+        back: string;
+        exercises: string;
+        checkAnswers: string;
+        tryAgain: string;
+        hint: string;
+        notFound: string;
+    };
+    verbConjugation: {
+        back: string;
+        notFound: string;
+        columns: readonly [string, string, string, string];
+    };
+    verbGroupList: {
+        back: string;
+        learn: string;
+        quiz: string;
+        notFound: string;
+    };
 }
 
 // ─── English ──────────────────────────────────────────────────────────────────
@@ -247,6 +282,41 @@ const EN: Translations = {
         createAccount: 'Create account', logIn: 'Log in',
     },
     guest: { banner: "Guest mode — progress won't sync across devices.", createAccount: ' Create a free account' },
+    helperVerbs: {
+        pageSubtitle: 'Conjugation tables, quizzes and practice',
+        helperSection: 'Helper Verbs',
+        helperNote: 'The 5 essential verbs that power every French sentence',
+        conjugationSection: 'Conjugation Practice',
+        conjugationNote: 'Learn and quiz yourself on all verb tenses',
+        verbCount: (n) => `${n} verbs`,
+        etre:  { description: 'The most essential French verb — used in everyday speech and as an auxiliary for compound tenses' },
+        avoir: { description: 'The primary auxiliary verb used to form the passé composé and other compound tenses' },
+        faire: { description: 'One of the most versatile French verbs — used in weather, idioms, and countless expressions' },
+        aller: { description: 'Used for movement and to form the futur proche (near future) with aller + infinitive' },
+        venir: { description: 'Used for arrival and to form the passé récent (just happened) with venir de + infinitive' },
+        regularVerbs:           { title: 'Regular Verbs',            description: 'Conjugation patterns for -ER, -IR, and -RE verbs' },
+        irregularVerbs:         { title: 'Irregular Verbs',          description: 'The most common irregular verbs every learner needs' },
+        advancedIrregularVerbs: { title: 'Advanced Irregular Verbs', description: 'Complex patterns for fluent-level mastery' },
+    },
+    grammarLesson: {
+        back: '← Grammar',
+        exercises: 'Exercises',
+        checkAnswers: 'Check Answers',
+        tryAgain: 'Try Again',
+        hint: 'Hint',
+        notFound: 'Lesson not found.',
+    },
+    verbConjugation: {
+        back: '← Back to Helper Verbs',
+        notFound: 'Verb not found.',
+        columns: ['Présent', 'Passé composé', 'Imparfait', 'Futur simple'] as const,
+    },
+    verbGroupList: {
+        back: '← Back',
+        learn: 'Learn',
+        quiz: 'Quiz',
+        notFound: 'Module not found.',
+    },
 };
 
 // ─── French ───────────────────────────────────────────────────────────────────
@@ -375,6 +445,41 @@ const FR: Translations = {
         createAccount: 'Créer un compte', logIn: 'Se connecter',
     },
     guest: { banner: 'Mode invité — votre progression ne sera pas synchronisée.', createAccount: ' Créer un compte gratuit' },
+    helperVerbs: {
+        pageSubtitle: 'Tables de conjugaison, quiz et pratique',
+        helperSection: 'Verbes essentiels',
+        helperNote: 'Les 5 verbes qui structurent toutes les phrases françaises',
+        conjugationSection: 'Pratique de la conjugaison',
+        conjugationNote: 'Apprenez et testez-vous sur tous les temps',
+        verbCount: (n) => `${n} verbe${n > 1 ? 's' : ''}`,
+        etre:  { description: "Le verbe français le plus essentiel — utilisé dans le discours quotidien et comme auxiliaire pour les temps composés" },
+        avoir: { description: "Le principal verbe auxiliaire utilisé pour former le passé composé et d'autres temps composés" },
+        faire: { description: "L'un des verbes français les plus polyvalents — utilisé pour la météo, les idiomes et d'innombrables expressions" },
+        aller: { description: "Utilisé pour le mouvement et pour former le futur proche (aller + infinitif)" },
+        venir: { description: "Utilisé pour l'arrivée et pour former le passé récent (venir de + infinitif)" },
+        regularVerbs:           { title: 'Verbes réguliers',          description: 'Modèles de conjugaison pour les verbes en -ER, -IR et -RE' },
+        irregularVerbs:         { title: 'Verbes irréguliers',        description: 'Les verbes irréguliers les plus courants dont tout apprenant a besoin' },
+        advancedIrregularVerbs: { title: 'Verbes irréguliers avancés',description: 'Structures complexes pour une maîtrise avancée' },
+    },
+    grammarLesson: {
+        back: '← Grammaire',
+        exercises: 'Exercices',
+        checkAnswers: 'Vérifier les réponses',
+        tryAgain: 'Réessayer',
+        hint: 'Indice',
+        notFound: 'Leçon introuvable.',
+    },
+    verbConjugation: {
+        back: '← Retour aux verbes essentiels',
+        notFound: 'Verbe introuvable.',
+        columns: ['Présent', 'Passé composé', 'Imparfait', 'Futur simple'] as const,
+    },
+    verbGroupList: {
+        back: '← Retour',
+        learn: 'Apprendre',
+        quiz: 'Quiz',
+        notFound: 'Module introuvable.',
+    },
 };
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────

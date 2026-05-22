@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 import './Grammar.css';
 
 interface VerbModule {
@@ -42,7 +43,8 @@ export default function Grammar() {
     }));
 
     useEffect(() => {
-        axios.get<GrammarLessonMeta[]>(`${import.meta.env.VITE_API_BASE}/api/grammar-lessons`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        axios.get<GrammarLessonMeta[]>(`${import.meta.env.VITE_API_BASE}/api/grammar-lessons${langParam}`)
             .then(res => setLessons(res.data))
             .catch(err => console.error('Failed to load grammar lessons', err));
     }, []);
