@@ -41,7 +41,7 @@ export default function Vocabulary() {
         setCourseLevel(level);
     };
 
-    const handleNavigate = (step: CourseStep, path: string) => {
+    const handleNavigate = (_step: CourseStep, path: string) => {
         navigate(path);
     };
 
