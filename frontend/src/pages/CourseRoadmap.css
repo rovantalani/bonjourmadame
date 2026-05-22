@@ -170,6 +170,21 @@
     font-weight: 300;
 }
 
+/* ── Unit grouping ── */
+.cr-unit {
+    margin-bottom: 2rem;
+}
+
+.cr-unit-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    padding: 0 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
 @media (max-width: 480px) {
     .cr-header {
         gap: 0.8rem;
