@@ -7,6 +7,13 @@ interface Translations {
     nav: {
         home: string; courses: string; vocabulary: string;
         grammar: string; phrases: string; stats: string;
+        verbs: string; lectures: string;
+    };
+    verbs: {
+        title: string; subtitle: string; empty: string;
+    };
+    lectures: {
+        title: string; subtitle: string; empty: string;
     };
     home: {
         subtitle: string;
@@ -120,6 +127,17 @@ const EN: Translations = {
     nav: {
         home: 'Home', courses: 'Courses', vocabulary: 'Vocabulary',
         grammar: 'Grammar', phrases: 'Phrases', stats: 'Stats',
+        verbs: 'Verbs', lectures: 'Lectures',
+    },
+    verbs: {
+        title: 'Verbs',
+        subtitle: 'Conjugation tables and verb practice',
+        empty: 'No verb exercises in this course.',
+    },
+    lectures: {
+        title: 'Lectures',
+        subtitle: 'Grammar lessons, phrases & reading',
+        empty: 'No lessons in this course.',
     },
     home: {
         subtitle: 'Your personal French course',
@@ -237,6 +255,17 @@ const FR: Translations = {
     nav: {
         home: 'Accueil', courses: 'Cours', vocabulary: 'Vocabulaire',
         grammar: 'Grammaire', phrases: 'Expressions', stats: 'Progrès',
+        verbs: 'Verbes', lectures: 'Leçons',
+    },
+    verbs: {
+        title: 'Verbes',
+        subtitle: 'Tables de conjugaison et pratique',
+        empty: 'Aucun exercice de verbes dans ce cours.',
+    },
+    lectures: {
+        title: 'Leçons',
+        subtitle: 'Grammaire, expressions et lecture',
+        empty: 'Aucune leçon dans ce cours.',
     },
     home: {
         subtitle: 'Votre cours d\'anglais personnel',

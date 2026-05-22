@@ -26,6 +26,8 @@ import ReadingPassage from './pages/ReadingPassage';
 import Stats from './pages/Stats';
 import Courses from './pages/Courses';
 import CourseRoadmap from './pages/CourseRoadmap';
+import Verbs from './pages/Verbs';
+import Lectures from './pages/Lectures';
 import Settings from './pages/Settings';
 
 const PUBLIC_ROUTES = ['/login', '/register', '/welcome'];
@@ -72,6 +74,8 @@ function AppShell() {
                     <Route path="/reading/:moduleId"                element={<ReadingPassage />} />
                     <Route path="/courses"                          element={<Courses />} />
                     <Route path="/courses/:level"                   element={<CourseRoadmap />} />
+                    <Route path="/verbs"                            element={<Verbs />} />
+                    <Route path="/lectures"                         element={<Lectures />} />
                     <Route path="/stats"                            element={<Stats />} />
                     <Route path="/settings"                         element={<Settings />} />
                     <Route path="/login"                            element={<Login />} />

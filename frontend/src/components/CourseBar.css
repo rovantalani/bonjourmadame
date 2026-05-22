@@ -1,0 +1,26 @@
+.course-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.course-bar-pill {
+    padding: 0.35rem 1rem;
+    border-radius: var(--r-pill);
+    border: 2px solid;
+    font-size: 0.82rem;
+    font-weight: 700;
+    background: transparent;
+    cursor: pointer;
+    transition: opacity .15s ease, transform .12s ease;
+    letter-spacing: 0.04em;
+}
+
+.course-bar-pill:hover {
+    opacity: 0.75;
+}
+
+.course-bar-pill:active {
+    transform: scale(.96);
+}

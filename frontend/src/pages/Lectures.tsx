@@ -1,0 +1,89 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { COURSES } from '../data/courses';
+import type { StepType } from '../data/courses';
+import { getActiveCourse, setActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
+import CourseBar from '../components/CourseBar';
+import { useT } from '../utils/i18n';
+import './Lectures.css';
+
+const TYPE_COLOR: Record<StepType, string> = {
+    grammar:    '#059669',
+    phrases:    '#0891B2',
+    reading:    '#7C3AED',
+    vocabulary: '#4338CA',
+    verbs:      '#D97706',
+};
+
+const TYPE_ICON: Record<StepType, string> = {
+    grammar:    '✏️',
+    phrases:    '💬',
+    reading:    '📖',
+    vocabulary: '📚',
+    verbs:      '🔤',
+};
+
+export default function Lectures() {
+    const navigate = useNavigate();
+    const t = useT();
+    const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
+
+    const activeCourse = COURSES.find(c => c.level === courseLevel);
+    const lectureSteps = activeCourse?.steps.filter(
+        s => s.type === 'grammar' || s.type === 'phrases' || s.type === 'reading'
+    ) ?? [];
+
+    const handleCourseChange = (level: string) => {
+        setActiveCourse(level);
+        setCourseLevel(level);
+    };
+
+    return (
+        <main className="page">
+            <header className="page-header">
+                <h1>{t.lectures.title}</h1>
+                <p className="subtitle">{t.lectures.subtitle}</p>
+            </header>
+
+            <CourseBar activeLevel={courseLevel} onChange={handleCourseChange} />
+
+            {lectureSteps.length === 0 ? (
+                <p className="lectures-empty">{t.lectures.empty}</p>
+            ) : (
+                <div className="lectures-list">
+                    {lectureSteps.map(step => {
+                        const status = getStepStatus(step);
+                        const color = TYPE_COLOR[step.type];
+                        const icon  = TYPE_ICON[step.type];
+                        const typeLabel = t.roadmap.types[step.type];
+
+                        return (
+                            <button
+                                key={step.id}
+                                className="lecture-card"
+                                style={{ borderLeftColor: color }}
+                                onClick={() => { markStepVisited(step.id); navigate(step.path); }}
+                                type="button"
+                            >
+                                <span className="lecture-icon">{icon}</span>
+
+                                <div className="lecture-body">
+                                    <span className="lecture-title">{step.title}</span>
+                                    <span className="lecture-type" style={{ color }}>
+                                        {typeLabel}
+                                    </span>
+                                </div>
+
+                                <span className={`lecture-status lecture-status--${status}`}>
+                                    {status === 'complete' ? '✓' : status === 'visited' ? '◑' : '○'}
+                                </span>
+
+                                <span className="lecture-arrow">›</span>
+                            </button>
+                        );
+                    })}
+                </div>
+            )}
+        </main>
+    );
+}
