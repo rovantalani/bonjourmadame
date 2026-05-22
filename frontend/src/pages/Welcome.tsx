@@ -32,7 +32,7 @@ export default function Welcome() {
                 <button className="welcome-card" onClick={() => pick('learn-english')}>
                     <span className="welcome-flag">🇬🇧</span>
                     <span className="welcome-card-primary">Learn English</span>
-                    <span className="welcome-card-secondary">Apprendre l'anglais</span>
+                    <span className="welcome-card-secondary">Apprendre l'anglais depuis le français</span>
                 </button>
             </div>
         </main>

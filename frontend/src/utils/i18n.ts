@@ -154,6 +154,11 @@ interface Translations {
         quiz: string;
         notFound: string;
     };
+    phraseDetail: {
+        back: string;
+        startQuiz: string;
+        notFound: string;
+    };
 }
 
 // ─── English ──────────────────────────────────────────────────────────────────
@@ -317,6 +322,11 @@ const EN: Translations = {
         quiz: 'Quiz',
         notFound: 'Module not found.',
     },
+    phraseDetail: {
+        back: '← Phrases',
+        startQuiz: 'Start Quiz',
+        notFound: 'Category not found.',
+    },
 };
 
 // ─── French ───────────────────────────────────────────────────────────────────
@@ -346,10 +356,10 @@ const FR: Translations = {
         wordsReady: (n) => `${n} mot${n > 1 ? 's' : ''} prêt${n > 1 ? 's' : ''} à réviser`,
         courseComplete: 'Cours terminé !',
         sections: {
-            vocabulary:  { title: 'Vocabulaire',      description: 'Mots, flashcards et quiz pour 20 modules sélectionnés',              meta: '20 modules · 400+ mots'          },
-            grammar:     { title: 'Grammaire',         description: 'Tables de conjugaison et 10 leçons de grammaire structurées',        meta: '10 leçons · 52 verbes'           },
+            vocabulary:  { title: 'Vocabulaire',      description: 'Vocabulaire anglais — quiz et flashcards pour 20 modules',           meta: '20 modules · 400+ mots'          },
+            grammar:     { title: 'Grammaire',         description: 'Leçons de grammaire anglaise expliquées en français',               meta: '8 leçons · 5 verbes'             },
             phrases:     { title: 'Expressions',       description: '90 expressions essentielles pour de vraies conversations',           meta: '6 catégories · 90 expressions'   },
-            helperVerbs: { title: 'Verbes essentiels', description: 'Les 5 verbes essentiels : être, avoir, faire, aller, venir',         meta: '5 verbes · 4 temps'              },
+            helperVerbs: { title: 'Verbes essentiels', description: 'Les 5 verbes anglais essentiels : to be, to have, to do…',          meta: '5 verbes · 4 temps'              },
         },
     },
     vocabulary: {
@@ -479,6 +489,11 @@ const FR: Translations = {
         learn: 'Apprendre',
         quiz: 'Quiz',
         notFound: 'Module introuvable.',
+    },
+    phraseDetail: {
+        back: '← Expressions',
+        startQuiz: 'Commencer le quiz',
+        notFound: 'Catégorie introuvable.',
     },
 };
 

@@ -1,3 +1,31 @@
+/* ── English mode onboarding banner ── */
+.home-en-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: #F0FDF4;
+    border: 1.5px solid #22C55E;
+    border-radius: var(--r-lg);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #166534;
+}
+
+.home-en-banner-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #166534;
+    font-size: 1rem;
+    padding: 0 0.25rem;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.home-en-banner-close:hover { opacity: 1; }
+
 /* ── Hero ── */
 .home-hero {
     display: flex;
