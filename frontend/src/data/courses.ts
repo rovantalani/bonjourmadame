@@ -16,6 +16,104 @@ export interface Course {
     steps: CourseStep[];
 }
 
+export const COURSES_EN: Course[] = [
+    {
+        level: 'A1',
+        title: 'Les Bases',
+        description: 'Construisez votre premier vocabulaire anglais et maîtrisez les règles de grammaire essentielles.',
+        color: '#4338CA',
+        steps: [
+            { id: 'a1en-greetings',      title: 'Salutations & Essentiels',   type: 'vocabulary', contentId: 'greetings-basics',      path: '/vocabulary/greetings-basics'          },
+            { id: 'a1en-numbers',        title: 'Chiffres & Temps',            type: 'vocabulary', contentId: 'numbers-time',           path: '/vocabulary/numbers-time'              },
+            { id: 'a1en-articles',       title: 'Les Articles en Anglais',     type: 'grammar',    contentId: 'en-articles',            path: '/grammar/lessons/en-articles'          },
+            { id: 'a1en-colors',         title: 'Couleurs & Descriptions',     type: 'vocabulary', contentId: 'colors-descriptions',    path: '/vocabulary/colors-descriptions'       },
+            { id: 'a1en-family',         title: 'Famille & Relations',         type: 'vocabulary', contentId: 'family-relationships',   path: '/vocabulary/family-relationships'      },
+            { id: 'a1en-present',        title: 'Le Présent Simple et Continu',type: 'grammar',    contentId: 'en-present-simple',      path: '/grammar/lessons/en-present-simple'    },
+            { id: 'a1en-tobe',           title: 'Verbe : to be',               type: 'verbs',      contentId: 'to-be',                  path: '/helper-verbs/to-be'                   },
+            { id: 'a1en-food',           title: 'Nourriture & Boissons',       type: 'vocabulary', contentId: 'food-drinks',            path: '/vocabulary/food-drinks'               },
+            { id: 'a1en-body',           title: 'Corps & Santé',               type: 'vocabulary', contentId: 'body-health',            path: '/vocabulary/body-health'               },
+            { id: 'a1en-tohave',         title: 'Verbe : to have',             type: 'verbs',      contentId: 'to-have',                path: '/helper-verbs/to-have'                 },
+        ],
+    },
+    {
+        level: 'A2',
+        title: "L'Anglais du Quotidien",
+        description: 'Élargissez votre vocabulaire et maîtrisez les temps du passé et du futur.',
+        color: '#059669',
+        steps: [
+            { id: 'a2en-home',           title: 'Maison & Vie quotidienne',    type: 'vocabulary', contentId: 'home-living',            path: '/vocabulary/home-living'               },
+            { id: 'a2en-work',           title: 'Travail & Professions',       type: 'vocabulary', contentId: 'work-professions',       path: '/vocabulary/work-professions'          },
+            { id: 'a2en-weather',        title: 'Météo & Nature',              type: 'vocabulary', contentId: 'weather-nature',         path: '/vocabulary/weather-nature'            },
+            { id: 'a2en-past',           title: 'Les Temps du Passé',          type: 'grammar',    contentId: 'en-past-tenses',         path: '/grammar/lessons/en-past-tenses'       },
+            { id: 'a2en-sports',         title: 'Sports & Loisirs',            type: 'vocabulary', contentId: 'sports-hobbies',         path: '/vocabulary/sports-hobbies'            },
+            { id: 'a2en-shopping',       title: 'Shopping & Argent',           type: 'vocabulary', contentId: 'shopping-money',         path: '/vocabulary/shopping-money'            },
+            { id: 'a2en-future',         title: 'Le Futur en Anglais',         type: 'grammar',    contentId: 'en-future',              path: '/grammar/lessons/en-future'            },
+            { id: 'a2en-todo',           title: 'Verbe : to do',               type: 'verbs',      contentId: 'to-do',                  path: '/helper-verbs/to-do'                   },
+            { id: 'a2en-phrases-conv',   title: 'Conversation quotidienne',    type: 'phrases',    contentId: 'everyday-conversation',  path: '/phrases/everyday-conversation'        },
+            { id: 'a2en-phrases-rest',   title: 'Au restaurant',               type: 'phrases',    contentId: 'at-the-restaurant',      path: '/phrases/at-the-restaurant'            },
+        ],
+    },
+    {
+        level: 'B1',
+        title: 'Construction de la Fluidité',
+        description: 'Maîtrisez les prépositions, les verbes à particule et enrichissez votre vocabulaire.',
+        color: '#0891B2',
+        steps: [
+            { id: 'b1en-tech',           title: 'Technologie & Médias',        type: 'vocabulary', contentId: 'technology-media',       path: '/vocabulary/technology-media'          },
+            { id: 'b1en-daily-adv',      title: 'Vie quotidienne avancée',     type: 'vocabulary', contentId: 'daily-life-advanced',    path: '/vocabulary/daily-life-advanced'       },
+            { id: 'b1en-prepositions',   title: 'Les Prépositions Anglaises',  type: 'grammar',    contentId: 'en-prepositions',        path: '/grammar/lessons/en-prepositions'      },
+            { id: 'b1en-emotions',       title: 'Émotions & Psychologie',      type: 'vocabulary', contentId: 'emotions-psychology',    path: '/vocabulary/emotions-psychology'       },
+            { id: 'b1en-phrasal',        title: 'Les Verbes à Particule',      type: 'grammar',    contentId: 'en-phrasal-verbs',       path: '/grammar/lessons/en-phrasal-verbs'     },
+            { id: 'b1en-togo',           title: 'Verbe : to go',               type: 'verbs',      contentId: 'to-go',                  path: '/helper-verbs/to-go'                   },
+            { id: 'b1en-tocome',         title: 'Verbe : to come',             type: 'verbs',      contentId: 'to-come',                path: '/helper-verbs/to-come'                 },
+            { id: 'b1en-phrases-around', title: 'Se déplacer',                 type: 'phrases',    contentId: 'getting-around',         path: '/phrases/getting-around'               },
+            { id: 'b1en-phrases-opin',   title: 'Exprimer ses opinions',       type: 'phrases',    contentId: 'expressing-opinions',    path: '/phrases/expressing-opinions'          },
+            { id: 'b1en-irregular',      title: 'Verbes irréguliers',          type: 'verbs',      contentId: 'irregular-verbs',        path: '/grammar/irregular-verbs'              },
+        ],
+    },
+    {
+        level: 'B2',
+        title: 'Intermédiaire',
+        description: 'Vocabulaire avancé, faux amis, et grammaire de précision.',
+        color: '#D97706',
+        steps: [
+            { id: 'b2en-travel',         title: 'Voyage & Culture',            type: 'vocabulary', contentId: 'travel-culture',         path: '/vocabulary/travel-culture'            },
+            { id: 'b2en-politics',       title: 'Politique & Société',         type: 'vocabulary', contentId: 'politics-society',       path: '/vocabulary/politics-society'          },
+            { id: 'b2en-business',       title: 'Affaires & Économie',         type: 'vocabulary', contentId: 'business-economy',       path: '/vocabulary/business-economy'          },
+            { id: 'b2en-false-friends',  title: 'Les Faux Amis',               type: 'grammar',    contentId: 'en-false-friends',       path: '/grammar/lessons/en-false-friends'     },
+            { id: 'b2en-word-order',     title: "L'Ordre des Mots",            type: 'grammar',    contentId: 'en-word-order',          path: '/grammar/lessons/en-word-order'        },
+            { id: 'b2en-phrases-pro',    title: 'Français professionnel',      type: 'phrases',    contentId: 'work-professional',      path: '/phrases/work-professional'            },
+            { id: 'b2en-phrases-emo',    title: 'Émotions & Réactions',        type: 'phrases',    contentId: 'emotions-reactions',     path: '/phrases/emotions-reactions'           },
+            { id: 'b2en-regular',        title: 'Verbes réguliers',            type: 'verbs',      contentId: 'regular-verbs',          path: '/grammar/regular-verbs'                },
+        ],
+    },
+    {
+        level: 'C1',
+        title: 'Avancé',
+        description: 'Idiomes, langue formelle, vocabulaire littéraire et expressions avancées.',
+        color: '#7C3AED',
+        steps: [
+            { id: 'c1en-idioms',         title: 'Idiomes & Expressions',       type: 'vocabulary', contentId: 'idioms-expressions',     path: '/vocabulary/idioms-expressions'        },
+            { id: 'c1en-faux-amis',      title: 'Faux Amis',                   type: 'vocabulary', contentId: 'faux-amis',              path: '/vocabulary/faux-amis'                 },
+            { id: 'c1en-literary',       title: 'Littéraire & Abstrait',       type: 'vocabulary', contentId: 'literary-abstract',      path: '/vocabulary/literary-abstract'         },
+            { id: 'c1en-formal',         title: 'Argumentation formelle',      type: 'phrases',    contentId: 'formal-argumentation',   path: '/phrases/formal-argumentation'         },
+            { id: 'c1en-law',            title: 'Droit & Administration',      type: 'vocabulary', contentId: 'law-administration',     path: '/vocabulary/law-administration'        },
+            { id: 'c1en-proverbs',       title: 'Proverbes & Expressions',     type: 'phrases',    contentId: 'proverbs-sayings',       path: '/phrases/proverbs-sayings'             },
+        ],
+    },
+    {
+        level: 'C2',
+        title: 'Maîtrise',
+        description: 'Le registre le plus élevé : vocabulaire nuancé et concepts philosophiques.',
+        color: '#DC2626',
+        steps: [
+            { id: 'c2en-nuanced',        title: 'Adjectifs nuancés',           type: 'vocabulary', contentId: 'nuanced-adjectives',     path: '/vocabulary/nuanced-adjectives'        },
+            { id: 'c2en-human',          title: 'La Condition humaine',        type: 'vocabulary', contentId: 'human-condition',        path: '/vocabulary/human-condition'           },
+            { id: 'c2en-school',         title: 'École & Éducation',           type: 'vocabulary', contentId: 'school-education',       path: '/vocabulary/school-education'          },
+        ],
+    },
+];
+
 export const COURSES: Course[] = [
     {
         level: 'A1',

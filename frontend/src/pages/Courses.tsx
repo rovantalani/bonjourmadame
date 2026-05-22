@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { COURSES } from '../data/courses';
 import { getCourseProgress, getActiveCourse, setActiveCourse } from '../utils/courseProgress';
+import { useCourses } from '../utils/modeHelpers';
 import { useT } from '../utils/i18n';
 import './Courses.css';
 
 export default function Courses() {
     const navigate = useNavigate();
     const t = useT();
+    const courses = useCourses();
     const activeCourse = getActiveCourse();
 
     const handleStart = (level: string) => {
@@ -22,7 +23,7 @@ export default function Courses() {
             </div>
 
             <div className="courses-grid">
-                {COURSES.map(course => {
+                {courses.map(course => {
                     const progress = getCourseProgress(course);
                     const isActive = activeCourse === course.level;
 

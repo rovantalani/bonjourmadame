@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useT } from '../utils/i18n';
 import './PhraseDetail.css';
 
 interface Phrase {
@@ -21,6 +22,7 @@ interface PhraseCategoryData {
 export default function PhraseDetail() {
     const { categoryId } = useParams<{ categoryId: string }>();
     const navigate = useNavigate();
+    const t = useT();
     const [category, setCategory] = useState<PhraseCategoryData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -55,9 +57,9 @@ export default function PhraseDetail() {
         return (
             <main className="page">
                 <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
-                    ← Phrases
+                    {t.phraseDetail.back}
                 </button>
-                <p>Category not found.</p>
+                <p>{t.phraseDetail.notFound}</p>
             </main>
         );
     }
@@ -66,14 +68,14 @@ export default function PhraseDetail() {
         <main className="page">
             <div className="phrase-detail-nav">
                 <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
-                    ← Phrases
+                    {t.phraseDetail.back}
                 </button>
                 <button
                     className="btn btn-primary"
                     onClick={() => navigate(`/phrases/${categoryId}/quiz`)}
                     type="button"
                 >
-                    Start Quiz
+                    {t.phraseDetail.startQuiz}
                 </button>
             </div>
 

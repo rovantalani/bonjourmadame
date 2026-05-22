@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 import './GrammarLesson.css';
 
 interface GrammarExample {
@@ -44,6 +46,7 @@ function normalizeAnswer(str: string): string {
 export default function GrammarLesson() {
     const { lessonId } = useParams<{ lessonId: string }>();
     const navigate = useNavigate();
+    const t = useT();
     const [lesson, setLesson] = useState<GrammarLessonData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -55,7 +58,8 @@ export default function GrammarLesson() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/grammar-lessons/${lessonId}`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        fetch(`${import.meta.env.VITE_API_BASE}/api/grammar-lessons/${lessonId}${langParam}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -103,9 +107,9 @@ export default function GrammarLesson() {
         return (
             <main className="page">
                 <button className="back-btn" onClick={() => navigate('/grammar')} type="button">
-                    ← Grammar
+                    {t.grammarLesson.back}
                 </button>
-                <p>Lesson not found.</p>
+                <p>{t.grammarLesson.notFound}</p>
             </main>
         );
     }
@@ -119,7 +123,7 @@ export default function GrammarLesson() {
     return (
         <main className="page">
             <button className="back-btn" onClick={() => navigate('/grammar')} type="button">
-                ← Grammar
+                {t.grammarLesson.back}
             </button>
 
             <div className="lesson-header card">
@@ -171,7 +175,7 @@ export default function GrammarLesson() {
 
             {exercises.length > 0 && (
                 <div className="ex-panel card">
-                    <p className="section-label ex-panel-heading">Exercises</p>
+                    <p className="section-label ex-panel-heading">{t.grammarLesson.exercises}</p>
 
                     {exerciseState === 'checked' && (
                         <p className="ex-score">
@@ -209,7 +213,7 @@ export default function GrammarLesson() {
                                                 className="ex-hint-btn"
                                                 onClick={() => handleShowHint(i)}
                                             >
-                                                Hint
+                                                {t.grammarLesson.hint}
                                             </button>
                                         )}
                                     </div>
@@ -233,7 +237,7 @@ export default function GrammarLesson() {
                                 className="btn btn-primary"
                                 onClick={handleCheckAnswers}
                             >
-                                Check Answers
+                                {t.grammarLesson.checkAnswers}
                             </button>
                         ) : (
                             <button
@@ -241,7 +245,7 @@ export default function GrammarLesson() {
                                 className="btn btn-secondary"
                                 onClick={handleTryAgain}
                             >
-                                Try Again
+                                {t.grammarLesson.tryAgain}
                             </button>
                         )}
                     </div>

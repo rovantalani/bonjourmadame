@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 import './Phrases.css';
 
 interface PhraseCategory {
@@ -19,7 +20,8 @@ export default function Phrases() {
     const [categories, setCategories] = useState<PhraseCategory[]>([]);
 
     useEffect(() => {
-        axios.get<PhraseCategory[]>(`${import.meta.env.VITE_API_BASE}/api/phrase-categories`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        axios.get<PhraseCategory[]>(`${import.meta.env.VITE_API_BASE}/api/phrase-categories${langParam}`)
             .then(res => setCategories(res.data))
             .catch(err => console.error('Failed to load phrase categories', err));
     }, []);

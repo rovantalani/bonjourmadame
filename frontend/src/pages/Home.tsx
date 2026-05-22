@@ -5,9 +5,10 @@ import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
 import { loadStreak, loadDailyProgress, loadDailyGoal, fetchProgressFromApi, fetchDueWordsFromApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
 import ProgressImportBanner from '../components/ProgressImportBanner';
-import { COURSES } from '../data/courses';
 import { getActiveCourse, getNextStep, getCourseProgress } from '../utils/courseProgress';
+import { useCourses } from '../utils/modeHelpers';
 import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -20,6 +21,11 @@ export default function Home() {
         { id: 'phrases',      path: '/phrases',      color: '#0891B2', icon: '💬', ...t.home.sections.phrases     },
         { id: 'helper-verbs', path: '/helper-verbs', color: '#D97706', icon: '⚡', ...t.home.sections.helperVerbs },
     ];
+
+    const isEnglishMode = loadLearningMode() === 'learn-english';
+    const [showENBanner, setShowENBanner] = useState(() => {
+        return isEnglishMode && localStorage.getItem('onboardingShownEN') !== 'true';
+    });
 
     const [queueCount, setQueueCount] = useState(0);
     const [dueCount, setDueCount] = useState(0);
@@ -48,14 +54,28 @@ export default function Home() {
         }
     }, [user]);
 
+    const courses           = useCourses();
     const activeCourseLevel = getActiveCourse();
-    const activeCourse      = COURSES.find(c => c.level === activeCourseLevel) ?? null;
+    const activeCourse      = courses.find(c => c.level === activeCourseLevel) ?? null;
     const nextStep          = activeCourse ? getNextStep(activeCourse) : null;
     const courseProgress    = activeCourse ? getCourseProgress(activeCourse) : null;
 
     return (
         <main className="page">
             <ProgressImportBanner />
+            {showENBanner && (
+                <div className="home-en-banner">
+                    <span>🇬🇧 Vous apprenez l'anglais. Votre interface est en français.</span>
+                    <button
+                        type="button"
+                        className="home-en-banner-close"
+                        onClick={() => { localStorage.setItem('onboardingShownEN', 'true'); setShowENBanner(false); }}
+                        aria-label="Fermer"
+                    >
+                        ✕
+                    </button>
+                </div>
+            )}
             <div className="home-hero">
                 <img src="/logo_no_text.png" alt="Bonjour Madame logo" className="home-logo" />
                 <h1>Bonjour Madame</h1>
