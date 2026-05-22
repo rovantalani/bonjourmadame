@@ -137,6 +137,67 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        id: 'telling-time',
+        title: 'Telling the Time',
+        level: 'A1',
+        description: 'Ask and say what time it is — hours, half-hours, and quarter-hours',
+        icon: '🕐',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Asking and Saying the Time',
+                explanation: 'Use "Quelle heure est-il ?" or "Il est quelle heure ?" to ask the time. Answer with "Il est… heure(s)."',
+                examples: [
+                    { french: 'Quelle heure est-il ?',       english: 'What time is it?' },
+                    { french: 'Il est quelle heure ?',        english: 'What time is it? (informal)' },
+                    { french: 'Il est trois heures.',         english: 'It\'s three o\'clock.' },
+                    { french: 'Il est midi.',                 english: 'It\'s noon.' },
+                    { french: 'Il est minuit.',               english: 'It\'s midnight.' },
+                ],
+            },
+            {
+                title: 'Quarter and Half Hours',
+                explanation: 'Add "et quart" (quarter past), "et demie" (half past), or "moins le quart" (quarter to) after the hour.',
+                examples: [
+                    { french: 'Il est deux heures et quart.',      english: 'It\'s quarter past two.' },
+                    { french: 'Il est cinq heures et demie.',      english: 'It\'s half past five.' },
+                    { french: 'Il est huit heures moins le quart.', english: 'It\'s quarter to eight.' },
+                    { french: 'Il est onze heures moins dix.',     english: 'It\'s ten to eleven.' },
+                    { french: 'Il est une heure et quart.',        english: 'It\'s quarter past one.', note: 'Note: une heure, not un heure' },
+                ],
+            },
+            {
+                title: 'Morning, Afternoon and Evening',
+                explanation: 'Add "du matin", "de l\'après-midi", or "du soir" to specify AM or PM. French also uses 24-hour time in official contexts.',
+                examples: [
+                    { french: 'Il est neuf heures du matin.',          english: 'It\'s nine in the morning.' },
+                    { french: 'Il est trois heures de l\'après-midi.', english: 'It\'s three in the afternoon.' },
+                    { french: 'Il est huit heures du soir.',            english: 'It\'s eight in the evening.' },
+                    { french: 'Le train part à quatorze heures.',       english: 'The train leaves at 14:00 (2pm).', note: '24-hour clock used for timetables' },
+                ],
+            },
+            {
+                title: 'Useful Time Expressions',
+                explanation: 'A few extra expressions for talking about time.',
+                examples: [
+                    { french: 'À quelle heure… ?',           english: 'At what time…?' },
+                    { french: 'vers deux heures',             english: 'around two o\'clock' },
+                    { french: 'Il est trois heures pile.',    english: 'It\'s exactly three o\'clock.' },
+                    { french: 'à l\'heure',                  english: 'on time' },
+                    { french: 'en retard / en avance',        english: 'late / early' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Il est ___ heures et quart. (9)', answer: 'neuf',   hint: 'spell out the number in French' },
+            { sentence: 'Il est deux heures et ___.',       answer: 'demie', hint: 'half past' },
+            { sentence: '___ heure est-il ?',               answer: 'Quelle', hint: 'asking the time' },
+            { sentence: 'Il est minuit ___ cinq.',          answer: 'et',    hint: 'five past midnight — use et before small minutes' },
+            { sentence: 'Il est onze heures ___ le quart.', answer: 'moins', hint: 'quarter to eleven' },
+            { sentence: 'Le rendez-vous est ___ quinze heures. (at)', answer: 'à', hint: 'preposition for "at a time"' },
+        ],
+    },
+    {
         id: 'negation',
         title: 'Negation',
         level: 'A1',
