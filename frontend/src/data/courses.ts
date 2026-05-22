@@ -1,11 +1,17 @@
 export type StepType = 'vocabulary' | 'grammar' | 'verbs' | 'phrases' | 'reading';
 
+export interface CourseUnit {
+    number: number;
+    title: string;
+}
+
 export interface CourseStep {
     id: string;
     title: string;
     type: StepType;
     contentId: string;
     path: string;
+    unit?: number;
 }
 
 export interface Course {
@@ -13,6 +19,7 @@ export interface Course {
     title: string;
     description: string;
     color: string;
+    units?: CourseUnit[];
     steps: CourseStep[];
 }
 
@@ -120,20 +127,17 @@ export const COURSES: Course[] = [
         title: 'Foundations',
         description: 'Build your first French vocabulary and master essential grammar rules.',
         color: '#4338CA',
+        units: [
+            { number: 1, title: 'Unit 1 — First Contact' },
+        ],
         steps: [
-            { id: 'a1-greetings',  title: 'Greetings & Basics',      type: 'vocabulary', contentId: 'greetings-basics',      path: '/vocabulary/greetings-basics' },
-            { id: 'a1-numbers',    title: 'Numbers & Time',           type: 'vocabulary', contentId: 'numbers-time',           path: '/vocabulary/numbers-time' },
-            { id: 'a1-articles',   title: 'Articles',                 type: 'grammar',    contentId: 'articles',               path: '/grammar/lessons/articles' },
-            { id: 'a1-colors',     title: 'Colors & Descriptions',    type: 'vocabulary', contentId: 'colors-descriptions',    path: '/vocabulary/colors-descriptions' },
-            { id: 'a1-body',       title: 'Body & Health',            type: 'vocabulary', contentId: 'body-health',            path: '/vocabulary/body-health' },
-            { id: 'a1-noun-gender',title: 'Noun Gender',              type: 'grammar',    contentId: 'noun-gender',            path: '/grammar/lessons/noun-gender' },
-            { id: 'a1-family',     title: 'Family & Relationships',   type: 'vocabulary', contentId: 'family-relationships',   path: '/vocabulary/family-relationships' },
-            { id: 'a1-food',       title: 'Food & Drinks',            type: 'vocabulary', contentId: 'food-drinks',            path: '/vocabulary/food-drinks' },
-            { id: 'a1-etre',       title: 'Verb: être',               type: 'verbs',      contentId: 'etre',                   path: '/helper-verbs/etre' },
-            { id: 'a1-avoir',      title: 'Verb: avoir',              type: 'verbs',      contentId: 'avoir',                  path: '/helper-verbs/avoir' },
-            { id: 'a1-negation',   title: 'Negation',                 type: 'grammar',    contentId: 'negation',               path: '/grammar/lessons/negation' },
-            { id: 'a1-questions',  title: 'Asking Questions',         type: 'grammar',    contentId: 'questions',              path: '/grammar/lessons/questions' },
-            { id: 'a1-home',       title: 'Home & Living',            type: 'vocabulary', contentId: 'home-living',            path: '/vocabulary/home-living' },
+            { id: 'a1-greetings',      title: 'Greetings & Basics',      type: 'vocabulary', contentId: 'greetings-basics',      path: '/vocabulary/greetings-basics',      unit: 1 },
+            { id: 'a1-articles',       title: 'Articles',                 type: 'grammar',    contentId: 'articles',               path: '/grammar/lessons/articles',          unit: 1 },
+            { id: 'a1-noun-gender',    title: 'Noun Gender',              type: 'grammar',    contentId: 'noun-gender',            path: '/grammar/lessons/noun-gender',       unit: 1 },
+            { id: 'a1-intro-yourself', title: 'Introducing Yourself',     type: 'phrases',    contentId: 'introducing-yourself',   path: '/phrases/introducing-yourself',      unit: 1 },
+            { id: 'a1-numbers',        title: 'Numbers & Time',           type: 'vocabulary', contentId: 'numbers-time',           path: '/vocabulary/numbers-time',           unit: 1 },
+            { id: 'a1-telling-time',   title: 'Telling the Time',         type: 'grammar',    contentId: 'telling-time',           path: '/grammar/lessons/telling-time',      unit: 1 },
+            { id: 'a1-classroom',      title: 'Classroom Survival',       type: 'phrases',    contentId: 'classroom-survival',     path: '/phrases/classroom-survival',        unit: 1 },
         ],
     },
     {

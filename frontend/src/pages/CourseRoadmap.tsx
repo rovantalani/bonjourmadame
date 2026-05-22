@@ -8,7 +8,7 @@ import {
     markStepVisited,
     type StepStatus,
 } from '../utils/courseProgress';
-import type { StepType } from '../data/courses';
+import type { CourseStep, StepType } from '../data/courses';
 import { useT } from '../utils/i18n';
 import './CourseRoadmap.css';
 
@@ -39,13 +39,38 @@ export default function CourseRoadmap() {
     const course = courses.find(c => c.level.toLowerCase() === level?.toLowerCase());
     if (!course) return <main className="page"><p>{t.roadmap.notFound}</p></main>;
 
-    const progress   = getCourseProgress(course);
-    const isActive   = getActiveCourse() === course.level;
+    const progress = getCourseProgress(course);
+    const isActive = getActiveCourse() === course.level;
 
     const handleStepClick = (path: string, stepId: string) => {
         markStepVisited(stepId);
         navigate(path);
     };
+
+    const renderStepItem = (step: CourseStep, isLast: boolean) => {
+        const status = getStepStatus(step);
+        return (
+            <li key={step.id} className={`cr-step cr-step--${status}`}>
+                {!isLast && <span className="cr-connector" />}
+                <button
+                    className="cr-step-btn"
+                    onClick={() => handleStepClick(step.path, step.id)}
+                    type="button"
+                >
+                    <StatusIcon status={status} />
+                    <div className="cr-step-body">
+                        <span className="cr-step-title">{step.title}</span>
+                        <span className="cr-step-type" style={{ color: TYPE_COLORS[step.type] }}>
+                            {t.roadmap.types[step.type]}
+                        </span>
+                    </div>
+                    <span className="cr-step-arrow">›</span>
+                </button>
+            </li>
+        );
+    };
+
+    const hasUnits = course.units && course.units.length > 0 && course.steps.some(s => s.unit != null);
 
     return (
         <main className="page">
@@ -54,10 +79,7 @@ export default function CourseRoadmap() {
             </button>
 
             <div className="cr-header">
-                <span
-                    className="cr-level-badge"
-                    style={{ backgroundColor: course.color }}
-                >
+                <span className="cr-level-badge" style={{ backgroundColor: course.color }}>
                     {course.level}
                 </span>
                 <div className="cr-header-text">
@@ -82,43 +104,26 @@ export default function CourseRoadmap() {
             </div>
 
             <div className="progress-track cr-progress-bar">
-                <div
-                    className="progress-fill"
-                    style={{ width: `${progress.pct}%`, backgroundColor: course.color }}
-                />
+                <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
             </div>
 
-            <ol className="cr-steps">
-                {course.steps.map((step, i) => {
-                    const status = getStepStatus(step);
+            {hasUnits ? (
+                course.units!.map(unit => {
+                    const unitSteps = course.steps.filter(s => s.unit === unit.number);
                     return (
-                        <li key={step.id} className={`cr-step cr-step--${status}`}>
-                            {i < course.steps.length - 1 && (
-                                <span className="cr-connector" />
-                            )}
-                            <button
-                                className="cr-step-btn"
-                                onClick={() => handleStepClick(step.path, step.id)}
-                                type="button"
-                            >
-                                <StatusIcon status={status} />
-
-                                <div className="cr-step-body">
-                                    <span className="cr-step-title">{step.title}</span>
-                                    <span
-                                        className="cr-step-type"
-                                        style={{ color: TYPE_COLORS[step.type] }}
-                                    >
-                                        {t.roadmap.types[step.type]}
-                                    </span>
-                                </div>
-
-                                <span className="cr-step-arrow">›</span>
-                            </button>
-                        </li>
+                        <div key={unit.number} className="cr-unit">
+                            <p className="cr-unit-title">{unit.title}</p>
+                            <ol className="cr-steps">
+                                {unitSteps.map((step, i) => renderStepItem(step, i === unitSteps.length - 1))}
+                            </ol>
+                        </div>
                     );
-                })}
-            </ol>
+                })
+            ) : (
+                <ol className="cr-steps">
+                    {course.steps.map((step, i) => renderStepItem(step, i === course.steps.length - 1))}
+                </ol>
+            )}
         </main>
     );
 }
