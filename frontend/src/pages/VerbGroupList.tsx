@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 import './VerbGroupList.css';
 
 interface VerbSummary {
@@ -22,6 +24,7 @@ interface VerbGroupData {
 export default function VerbGroupList() {
     const { moduleId } = useParams<{ moduleId: string }>();
     const navigate = useNavigate();
+    const t = useT();
 
     const [group, setGroup] = useState<VerbGroupData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -34,7 +37,8 @@ export default function VerbGroupList() {
         }
         setLoading(true);
         setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/verb-group/${moduleId}`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        fetch(`${import.meta.env.VITE_API_BASE}/api/verb-group/${moduleId}${langParam}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -61,9 +65,9 @@ export default function VerbGroupList() {
         return (
             <main className="page">
                 <button className="back-btn" onClick={() => navigate(-1)}>
-                    ← Back
+                    {t.verbGroupList.back}
                 </button>
-                <p>Module not found.</p>
+                <p>{t.verbGroupList.notFound}</p>
             </main>
         );
     }
@@ -71,7 +75,7 @@ export default function VerbGroupList() {
     return (
         <main className="page">
             <button className="back-btn" onClick={() => navigate(-1)}>
-                ← Back
+                {t.verbGroupList.back}
             </button>
 
             <header className="vgl-header">
@@ -108,7 +112,7 @@ export default function VerbGroupList() {
                                 }}
                                 onClick={() => navigate(`/grammar/verbs/${verb.id}/learn`)}
                             >
-                                Learn
+                                {t.verbGroupList.learn}
                             </button>
                             <button
                                 className="btn"
@@ -120,7 +124,7 @@ export default function VerbGroupList() {
                                 }}
                                 onClick={() => navigate(`/grammar/verbs/${verb.id}/quiz`)}
                             >
-                                Quiz
+                                {t.verbGroupList.quiz}
                             </button>
                         </div>
                     </div>

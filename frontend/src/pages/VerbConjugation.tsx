@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 import './VerbConjugation.css';
 
 interface ConjugationRow {
@@ -14,12 +16,14 @@ interface VerbData {
     title: string;
     translation: string;
     color: string;
+    columns?: readonly [string, string, string, string];
     rows: ConjugationRow[];
 }
 
 export default function VerbConjugation() {
     const { verbId } = useParams<{ verbId: string }>();
     const navigate = useNavigate();
+    const t = useT();
 
     const [verb, setVerb] = useState<VerbData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -28,7 +32,8 @@ export default function VerbConjugation() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/helper-verbs/${verbId}`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        fetch(`${import.meta.env.VITE_API_BASE}/api/helper-verbs/${verbId}${langParam}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -55,9 +60,9 @@ export default function VerbConjugation() {
         return (
             <main className="page">
                 <button className="back-btn" onClick={() => navigate('/helper-verbs')}>
-                    ← Back to Helper Verbs
+                    {t.verbConjugation.back}
                 </button>
-                <p>Verb not found.</p>
+                <p>{t.verbConjugation.notFound}</p>
             </main>
         );
     }
@@ -65,7 +70,7 @@ export default function VerbConjugation() {
     return (
         <main className="page">
             <button className="back-btn" onClick={() => navigate('/helper-verbs')}>
-                ← Back to Helper Verbs
+                {t.verbConjugation.back}
             </button>
 
             <header className="vc-header">
@@ -90,10 +95,7 @@ export default function VerbConjugation() {
                         <thead>
                             <tr style={{ backgroundColor: verb.color }}>
                                 <th>—</th>
-                                <th>Présent</th>
-                                <th>Passé composé</th>
-                                <th>Imparfait</th>
-                                <th>Futur simple</th>
+                                {(verb.columns ?? t.verbConjugation.columns).map(col => <th key={col}>{col}</th>)}
                             </tr>
                         </thead>
                         <tbody>

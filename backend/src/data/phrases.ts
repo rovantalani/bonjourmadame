@@ -8,7 +8,9 @@ export interface Phrase {
 export interface PhraseCategory {
     id: string;
     title: string;
+    titleFR: string;
     description: string;
+    descriptionFR: string;
     icon: string;
     color: string;
     phrases: Phrase[];
@@ -18,7 +20,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'everyday-conversation',
         title: 'Everyday Conversation',
+        titleFR: 'Conversation quotidienne',
         description: 'Essential phrases for daily interactions',
+        descriptionFR: 'Expressions essentielles pour les interactions du quotidien',
         icon: '💬',
         color: '#2563EB',
         phrases: [
@@ -42,7 +46,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'at-the-restaurant',
         title: 'At the Restaurant',
+        titleFR: 'Au restaurant',
         description: 'Order confidently and navigate dining out',
+        descriptionFR: 'Commandez avec assurance et naviguez dans un restaurant',
         icon: '🍽️',
         color: '#EA580C',
         phrases: [
@@ -66,7 +72,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'getting-around',
         title: 'Getting Around',
+        titleFR: 'Se déplacer',
         description: 'Navigate transport and ask for directions',
+        descriptionFR: 'Transports et demander son chemin',
         icon: '🗺️',
         color: '#059669',
         phrases: [
@@ -90,7 +98,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'expressing-opinions',
         title: 'Expressing Opinions',
+        titleFR: 'Exprimer ses opinions',
         description: 'Share your views, agree, and disagree in French',
+        descriptionFR: 'Partagez vos idées, approuvez et désapprouvez',
         icon: '💭',
         color: '#7C3AED',
         phrases: [
@@ -114,7 +124,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'work-professional',
         title: 'Professional French',
+        titleFR: 'Français professionnel',
         description: 'Language for the workplace and formal contexts',
+        descriptionFR: 'Vocabulaire pour le lieu de travail et les contextes formels',
         icon: '💼',
         color: '#D97706',
         phrases: [
@@ -138,7 +150,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'emotions-reactions',
         title: 'Emotions & Reactions',
+        titleFR: 'Émotions & Réactions',
         description: 'Express how you feel with authenticity',
+        descriptionFR: 'Exprimez ce que vous ressentez avec authenticité',
         icon: '❤️',
         color: '#DC2626',
         phrases: [
@@ -162,7 +176,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'proverbs-sayings',
         title: 'Proverbs & Sayings',
+        titleFR: 'Proverbes & Expressions',
         description: 'Classic French proverbs every educated speaker knows',
+        descriptionFR: 'Proverbes français classiques que tout locuteur cultivé connaît',
         icon: '📜',
         color: '#6366F1',
         phrases: [
@@ -186,7 +202,9 @@ export const phraseCategories: PhraseCategory[] = [
     {
         id: 'formal-argumentation',
         title: 'Formal Argumentation',
+        titleFR: 'Argumentation formelle',
         description: 'The language of essays, debates and intellectual discourse',
+        descriptionFR: 'Le langage des dissertations, débats et discours intellectuels',
         icon: '🎓',
         color: '#1A1A2E',
         phrases: [

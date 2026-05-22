@@ -18,7 +18,9 @@ export interface VerbEntry {
 export interface VerbGroup {
     id: string;
     title: string;
+    titleFR: string;
     description: string;
+    descriptionFR: string;
     icon: string;
     color: string;
 }
@@ -27,21 +29,27 @@ export const verbGroups: Record<string, VerbGroup> = {
     'regular-verbs': {
         id: 'regular-verbs',
         title: 'Regular Verbs',
+        titleFR: 'Verbes réguliers',
         description: 'Conjugation patterns for regular -ER, -IR, and -RE verbs',
+        descriptionFR: 'Modèles de conjugaison pour les verbes réguliers en -ER, -IR et -RE',
         icon: '📝',
         color: '#059669',
     },
     'irregular-verbs': {
         id: 'irregular-verbs',
         title: 'Irregular Verbs',
+        titleFR: 'Verbes irréguliers',
         description: 'Master the most common irregular verb forms',
+        descriptionFR: 'Maîtrisez les formes irrégulières les plus courantes',
         icon: '⚡',
         color: '#DC2626',
     },
     'advanced-irregular-verbs': {
         id: 'advanced-irregular-verbs',
         title: 'Advanced Irregular Verbs',
+        titleFR: 'Verbes irréguliers avancés',
         description: 'Complex irregular patterns for fluent-level mastery',
+        descriptionFR: 'Structures irrégulières complexes pour un niveau courant',
         icon: '🔥',
         color: '#BE185D',
     },

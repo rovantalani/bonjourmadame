@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { getModuleMastery } from '../utils/progress';
 import { getActiveCourse, setActiveCourse, getStepStatus } from '../utils/courseProgress';
-import { COURSES } from '../data/courses';
+import { useCourses } from '../utils/modeHelpers';
 import type { CourseStep } from '../data/courses';
 import CourseBar from '../components/CourseBar';
 import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 import './Vocabulary.css';
 
 interface VocabularyModule {
@@ -23,16 +24,18 @@ const READING_IDS = new Set(['sherlock-holmes-ch1', 'sherlock-holmes-ch2']);
 export default function Vocabulary() {
     const navigate = useNavigate();
     const t = useT();
+    const courses = useCourses();
     const [modules, setModules] = useState<VocabularyModule[]>([]);
     const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
 
     useEffect(() => {
-        axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/vocabulary-modules`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/vocabulary-modules${langParam}`)
             .then(res => setModules(res.data))
             .catch(err => console.error('Failed to load vocabulary modules', err));
     }, []);
 
-    const activeCourse = COURSES.find(c => c.level === courseLevel);
+    const activeCourse = courses.find(c => c.level === courseLevel);
     const vocabSteps = activeCourse?.steps.filter(s => s.type === 'vocabulary') ?? [];
     const moduleMap = new Map(modules.map(m => [m.id, m]));
 
