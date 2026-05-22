@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { COURSES } from '../data/courses';
+import { useCourses } from '../utils/modeHelpers';
 import type { StepType } from '../data/courses';
 import { getActiveCourse, setActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
 import CourseBar from '../components/CourseBar';
@@ -26,9 +26,10 @@ const TYPE_ICON: Record<StepType, string> = {
 export default function Lectures() {
     const navigate = useNavigate();
     const t = useT();
+    const courses = useCourses();
     const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
 
-    const activeCourse = COURSES.find(c => c.level === courseLevel);
+    const activeCourse = courses.find(c => c.level === courseLevel);
     const lectureSteps = activeCourse?.steps.filter(
         s => s.type === 'grammar' || s.type === 'phrases' || s.type === 'reading'
     ) ?? [];

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { COURSES } from '../data/courses';
+import { useCourses } from '../utils/modeHelpers';
 import { getActiveCourse, setActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
 import CourseBar from '../components/CourseBar';
 import { useT } from '../utils/i18n';
@@ -20,9 +20,10 @@ const VERB_ICONS: Record<string, string> = {
 export default function Verbs() {
     const navigate = useNavigate();
     const t = useT();
+    const courses = useCourses();
     const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
 
-    const activeCourse = COURSES.find(c => c.level === courseLevel);
+    const activeCourse = courses.find(c => c.level === courseLevel);
     const verbSteps = activeCourse?.steps.filter(s => s.type === 'verbs') ?? [];
 
     const handleCourseChange = (level: string) => {

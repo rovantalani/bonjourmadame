@@ -5,8 +5,8 @@ import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
 import { loadStreak, loadDailyProgress, loadDailyGoal, fetchProgressFromApi, fetchDueWordsFromApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
 import ProgressImportBanner from '../components/ProgressImportBanner';
-import { COURSES } from '../data/courses';
 import { getActiveCourse, getNextStep, getCourseProgress } from '../utils/courseProgress';
+import { useCourses } from '../utils/modeHelpers';
 import { useT } from '../utils/i18n';
 
 export default function Home() {
@@ -48,8 +48,9 @@ export default function Home() {
         }
     }, [user]);
 
+    const courses           = useCourses();
     const activeCourseLevel = getActiveCourse();
-    const activeCourse      = COURSES.find(c => c.level === activeCourseLevel) ?? null;
+    const activeCourse      = courses.find(c => c.level === activeCourseLevel) ?? null;
     const nextStep          = activeCourse ? getNextStep(activeCourse) : null;
     const courseProgress    = activeCourse ? getCourseProgress(activeCourse) : null;
 

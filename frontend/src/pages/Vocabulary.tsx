@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { getModuleMastery } from '../utils/progress';
 import { getActiveCourse, setActiveCourse, getStepStatus } from '../utils/courseProgress';
-import { COURSES } from '../data/courses';
+import { useCourses } from '../utils/modeHelpers';
 import type { CourseStep } from '../data/courses';
 import CourseBar from '../components/CourseBar';
 import { useT } from '../utils/i18n';
@@ -24,6 +24,7 @@ const READING_IDS = new Set(['sherlock-holmes-ch1', 'sherlock-holmes-ch2']);
 export default function Vocabulary() {
     const navigate = useNavigate();
     const t = useT();
+    const courses = useCourses();
     const [modules, setModules] = useState<VocabularyModule[]>([]);
     const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
 
@@ -34,7 +35,7 @@ export default function Vocabulary() {
             .catch(err => console.error('Failed to load vocabulary modules', err));
     }, []);
 
-    const activeCourse = COURSES.find(c => c.level === courseLevel);
+    const activeCourse = courses.find(c => c.level === courseLevel);
     const vocabSteps = activeCourse?.steps.filter(s => s.type === 'vocabulary') ?? [];
     const moduleMap = new Map(modules.map(m => [m.id, m]));
 

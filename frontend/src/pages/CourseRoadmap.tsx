@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { COURSES } from '../data/courses';
+import { useCourses } from '../utils/modeHelpers';
 import {
     getStepStatus,
     getCourseProgress,
@@ -34,8 +34,9 @@ export default function CourseRoadmap() {
     const { level } = useParams<{ level: string }>();
     const navigate  = useNavigate();
     const t = useT();
+    const courses = useCourses();
 
-    const course = COURSES.find(c => c.level.toLowerCase() === level?.toLowerCase());
+    const course = courses.find(c => c.level.toLowerCase() === level?.toLowerCase());
     if (!course) return <main className="page"><p>{t.roadmap.notFound}</p></main>;
 
     const progress   = getCourseProgress(course);
