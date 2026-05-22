@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../utils/i18n';
+import { loadLearningMode } from '../utils/settings';
 import './VerbConjugation.css';
 
 interface ConjugationRow {
@@ -15,6 +16,7 @@ interface VerbData {
     title: string;
     translation: string;
     color: string;
+    columns?: readonly [string, string, string, string];
     rows: ConjugationRow[];
 }
 
@@ -30,7 +32,8 @@ export default function VerbConjugation() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/helper-verbs/${verbId}`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        fetch(`${import.meta.env.VITE_API_BASE}/api/helper-verbs/${verbId}${langParam}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -92,7 +95,7 @@ export default function VerbConjugation() {
                         <thead>
                             <tr style={{ backgroundColor: verb.color }}>
                                 <th>—</th>
-                                {t.verbConjugation.columns.map(col => <th key={col}>{col}</th>)}
+                                {(verb.columns ?? t.verbConjugation.columns).map(col => <th key={col}>{col}</th>)}
                             </tr>
                         </thead>
                         <tbody>

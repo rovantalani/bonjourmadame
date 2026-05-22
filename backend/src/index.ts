@@ -6,6 +6,8 @@ import path from 'path';
 import { vocabularyData } from './data/vocabulary';
 import { verbGroups, verbsData, verbById, verbGroupMap } from './data/verbs';
 import { grammarLessons } from './data/grammarLessons';
+import { grammarLessonsEN } from './data/grammarLessonsEN';
+import { helperVerbsDataEN, verbGroupsEN, verbsDataEN } from './data/verbsEN';
 import { phraseCategories } from './data/phrases';
 import { readingPassages } from './data/readingPassages';
 import { migrate } from './db/migrate';
@@ -164,7 +166,8 @@ app.get('/api/vocabulary/:moduleId', (req: Request, res: Response) => {
 
 app.get('/api/helper-verbs/:verbId', (req: Request, res: Response) => {
     const verbId = req.params['verbId'] as string;
-    const verb = helperVerbsData[verbId];
+    const langFR = req.query['lang'] === 'fr';
+    const verb = langFR ? helperVerbsDataEN[verbId] : helperVerbsData[verbId];
     if (!verb) {
         res.status(404).json({ error: 'Verb not found' });
         return;
@@ -174,13 +177,15 @@ app.get('/api/helper-verbs/:verbId', (req: Request, res: Response) => {
 
 app.get('/api/verb-group/:groupId', (req: Request, res: Response) => {
     const groupId = req.params['groupId'] as string;
-    const group = verbGroups[groupId];
+    const langFR = req.query['lang'] === 'fr';
+    const groups = langFR ? verbGroupsEN : verbGroups;
+    const data   = langFR ? verbsDataEN  : verbsData;
+    const group = groups[groupId];
     if (!group) {
         res.status(404).json({ error: 'Group not found' });
         return;
     }
-    const langFR = req.query['lang'] === 'fr';
-    const verbs = (verbsData[groupId] ?? []).map(({ id, infinitive, translation, type, color }) => ({
+    const verbs = (data[groupId] ?? []).map(({ id, infinitive, translation, type, color }) => ({
         id, infinitive, translation, type, color,
     }));
     res.json({
@@ -201,14 +206,16 @@ app.get('/api/conjugation/:verbId', (req: Request, res: Response) => {
     res.json({ ...verb, groupId: verbGroupMap[verbId] });
 });
 
-app.get('/api/grammar-lessons', (_req: Request, res: Response) => {
-    res.json(grammarLessons.map(({ id, title, level, description, icon, color }) => ({
+app.get('/api/grammar-lessons', (req: Request, res: Response) => {
+    const lessons = req.query['lang'] === 'fr' ? grammarLessonsEN : grammarLessons;
+    res.json(lessons.map(({ id, title, level, description, icon, color }) => ({
         id, title, level, description, icon, color
     })));
 });
 
 app.get('/api/grammar-lessons/:lessonId', (req: Request, res: Response) => {
-    const lesson = grammarLessons.find(l => l.id === req.params['lessonId']);
+    const lessons = req.query['lang'] === 'fr' ? grammarLessonsEN : grammarLessons;
+    const lesson = lessons.find(l => l.id === req.params['lessonId']);
     if (!lesson) {
         res.status(404).json({ error: 'Lesson not found' });
         return;
