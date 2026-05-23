@@ -7,6 +7,17 @@ export interface ReadingPassage {
 
 export const readingPassages: ReadingPassage[] = [
     {
+        moduleId: 'a1-au-cafe',
+        title: 'Au Café de la Paix',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Marie et Thomas entrent dans un café. Il y a une table libre près de la fenêtre. Le serveur arrive. « Bonjour ! Vous désirez ? » demande-t-il. Marie répond : « Je voudrais un café au lait, s\'il vous plaît. » Thomas dit : « Et moi, je prends un chocolat chaud. »',
+            'Le serveur apporte les boissons. Thomas goûte son chocolat chaud. « C\'est délicieux ! » dit-il. Marie regarde la carte. « Vous avez des croissants ? » demande-t-elle. « Oui, bien sûr, » répond le serveur. « Alors un croissant pour moi, s\'il vous plaît. »',
+            'Ils parlent pendant une heure. Dehors, il pleut. À l\'intérieur, il fait chaud et c\'est très agréable. Marie aime beaucoup ce café. Elle habite dans le quartier et elle vient ici chaque semaine.',
+            'À la fin, Thomas appelle le serveur. « L\'addition, s\'il vous plaît. » Le serveur apporte l\'addition. « C\'est douze euros, monsieur. » « Service compris ? » demande Thomas. « Oui, monsieur. » Ils paient et quittent le café. « À bientôt ! » dit le serveur.',
+        ],
+    },
+    {
         moduleId: 'sherlock-holmes-ch1',
         title: 'L\'Arrivée à Baker Street',
         source: 'Une étude en rouge, A. Conan Doyle (adapté)',
