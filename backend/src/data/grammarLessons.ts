@@ -396,6 +396,55 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        id: 'demonstrative-adjectives',
+        title: 'Demonstrative Adjectives',
+        level: 'A1',
+        description: 'Point to specific things using ce, cet, cette, ces — this, that, these, those',
+        icon: '👉',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'The Four Forms',
+                explanation: 'French has one set of demonstrative adjectives for both "this/that" and "these/those". The form depends on the gender and number of the noun: ce (masc. sing.), cet (masc. sing. before vowel/silent h), cette (fem. sing.), ces (all plurals).',
+                examples: [
+                    { french: 'ce livre',          english: 'this / that book',        note: 'masc. singular — starts with a consonant' },
+                    { french: 'cet hôtel',         english: 'this / that hotel',       note: 'masc. singular — starts with h (silent)' },
+                    { french: 'cet avion',         english: 'this / that plane',       note: 'masc. singular — starts with a vowel' },
+                    { french: 'cette maison',      english: 'this / that house',       note: 'fem. singular' },
+                    { french: 'ces enfants',       english: 'these / those children',  note: 'plural — same for masc. and fem.' },
+                ],
+            },
+            {
+                title: 'When to Use cet',
+                explanation: 'Use cet (not ce) before any masculine singular noun that starts with a vowel (a, e, i, o, u) or a silent h. This avoids the clash of two vowel sounds. The feminine form cette is used before all feminine nouns regardless of their first letter.',
+                examples: [
+                    { french: 'ce restaurant — cet hôtel',    english: 'this restaurant — this hotel',    note: 'restaurant starts with r (consonant) → ce; hôtel starts with h (silent) → cet' },
+                    { french: 'ce bus — cet aéroport',        english: 'this bus — this airport',         note: 'bus → ce; aéroport starts with vowel → cet' },
+                    { french: 'cette pharmacie',              english: 'this pharmacy',                    note: 'fem. → always cette, never cet' },
+                    { french: 'cette école',                  english: 'this school',                     note: 'fem. — even before a vowel, it stays cette' },
+                ],
+            },
+            {
+                title: 'Using -ci and -là for Precision',
+                explanation: 'Add -ci (here) or -là (there) after the noun to distinguish between "this one here" and "that one there". This is optional but useful in shops or when pointing.',
+                examples: [
+                    { french: 'ce livre-ci',    english: 'this book (here)',        note: '-ci = near the speaker' },
+                    { french: 'ce livre-là',    english: 'that book (over there)',  note: '-là = farther away' },
+                    { french: 'Je prends cette veste-ci.',   english: 'I\'ll take this jacket (this one here).' },
+                    { french: 'Cet hôtel-là est trop cher.', english: 'That hotel (over there) is too expensive.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Je voudrais ___ billet, s\'il vous plaît. (this ticket — masc. consonant)',    answer: 'ce',    hint: 'billet is masc. and starts with b (consonant) → ce' },
+            { sentence: '___ arrêt est loin ? (this stop — masc. starts with vowel)',                   answer: 'Cet',   hint: 'arrêt is masc. and starts with a vowel → cet' },
+            { sentence: 'Je n\'aime pas ___ rue. (this street — fem.)',                                 answer: 'cette', hint: 'rue is feminine → cette' },
+            { sentence: '___ hôpital est à gauche. (this hospital — starts with silent h)',             answer: 'Cet',   hint: 'hôpital is masc. with silent h → cet' },
+            { sentence: '___ chaussures sont trop petites. (these shoes — plural)',                     answer: 'Ces',   hint: 'plural → always ces' },
+            { sentence: 'Tu prends ___ veste-ci ou ___ manteau-là ? (this jacket / that coat)',         answer: 'cette / ce', hint: 'veste is fem. → cette; manteau is masc. consonant → ce' },
+        ],
+    },
+    {
         id: 'negation',
         title: 'Negation',
         level: 'A1',
