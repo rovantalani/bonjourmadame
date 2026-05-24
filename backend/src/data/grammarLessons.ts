@@ -346,6 +346,56 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        id: 'present-tense-er',
+        title: 'Present Tense: -ER Verbs',
+        level: 'A1',
+        description: 'Conjugate regular -ER verbs in the present tense — the most common verb pattern in French',
+        icon: '🔄',
+        color: '#0891B2',
+        sections: [
+            {
+                title: 'The -ER Paradigm',
+                explanation: 'To conjugate a regular -ER verb, drop the -er ending and add: -e, -es, -e, -ons, -ez, -ent. These endings are the same for all regular -ER verbs.',
+                examples: [
+                    { french: 'parler → je parle, tu parles, il/elle parle', english: 'to speak → I speak, you speak, he/she speaks' },
+                    { french: 'nous parlons, vous parlez, ils/elles parlent', english: 'we speak, you speak, they speak', note: 'The -ent ending is silent' },
+                    { french: 'aimer → j\'aime, tu aimes, il aime', english: 'to like/love → I like, you like, he likes' },
+                    { french: 'travailler → nous travaillons, vous travaillez', english: 'to work → we work, you work' },
+                ],
+            },
+            {
+                title: 'Common -ER Verbs',
+                explanation: 'Most French verbs are -ER verbs. Here are the most useful ones at A1 level.',
+                examples: [
+                    { french: 'parler — to speak', english: 'Je parle français. — I speak French.' },
+                    { french: 'aimer — to like / to love', english: 'Elle aime le chocolat. — She likes chocolate.' },
+                    { french: 'habiter — to live (somewhere)', english: 'Nous habitons à Paris. — We live in Paris.' },
+                    { french: 'travailler — to work', english: 'Il travaille beaucoup. — He works a lot.' },
+                    { french: 'manger — to eat', english: 'Vous mangez bien. — You eat well.' },
+                    { french: 'écouter — to listen', english: 'Ils écoutent la radio. — They listen to the radio.' },
+                ],
+            },
+            {
+                title: 'Spelling-change Verbs',
+                explanation: 'Two subtypes have a spelling change in the nous form only: -ger verbs add an e before -ons (nous mangeons), and -cer verbs change c to ç before -ons (nous commençons). All other forms are regular.',
+                examples: [
+                    { french: 'manger: je mange, nous mangeons', english: 'to eat: I eat, we eat', note: '-ger verbs: add e before -ons to keep the soft g sound' },
+                    { french: 'commencer: je commence, nous commençons', english: 'to start: I start, we start', note: '-cer verbs: c → ç before -ons to keep the soft c sound' },
+                    { french: 'voyager: nous voyageons', english: 'to travel: we travel' },
+                    { french: 'lancer: nous lançons', english: 'to throw: we throw' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Elle ___ le français à l\'université. (parler)',                answer: 'parle',       hint: '3rd person singular: drop -er, add -e' },
+            { sentence: 'Nous ___ dans le 11e arrondissement. (habiter)',                answer: 'habitons',    hint: '1st person plural: drop -er, add -ons' },
+            { sentence: 'Vous ___ la musique classique ? (aimer)',                       answer: 'aimez',       hint: '2nd person plural: drop -er, add -ez' },
+            { sentence: 'Ils ___ ensemble dans un bureau. (travailler)',                 answer: 'travaillent', hint: '3rd person plural: drop -er, add -ent (silent)' },
+            { sentence: 'Nous ___ au restaurant ce soir. (manger — spelling change)',    answer: 'mangeons',    hint: '-ger verb: add e before -ons → mangeons' },
+            { sentence: 'Nous ___ à apprendre le français. (commencer — spelling change)', answer: 'commençons', hint: '-cer verb: c → ç before -ons → commençons' },
+        ],
+    },
+    {
         id: 'negation',
         title: 'Negation',
         level: 'A1',

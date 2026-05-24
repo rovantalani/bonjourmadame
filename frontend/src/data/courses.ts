@@ -130,6 +130,7 @@ export const COURSES: Course[] = [
         units: [
             { number: 1, title: 'Unit 1 — First Contact' },
             { number: 2, title: 'Unit 2 — My World' },
+            { number: 3, title: 'Unit 3 — Everyday Life' },
         ],
         steps: [
             { id: 'a1-greetings',      title: 'Greetings & Basics',      type: 'vocabulary', contentId: 'greetings-basics',      path: '/vocabulary/greetings-basics',           unit: 1 },
@@ -146,6 +147,13 @@ export const COURSES: Course[] = [
             { id: 'a1-colors',         title: 'Colors & Descriptions',    type: 'vocabulary', contentId: 'colors-descriptions',    path: '/vocabulary/colors-descriptions',          unit: 2 },
             { id: 'a1-adjectives',     title: 'Adjective Agreement',      type: 'grammar',    contentId: 'adjective-basics',       path: '/grammar/lessons/adjective-basics',        unit: 2 },
             { id: 'a1-home-phrases',   title: 'Describing Your Home',     type: 'phrases',    contentId: 'describing-your-home',   path: '/phrases/describing-your-home',           unit: 2 },
+            { id: 'a1-food',           title: 'Food & Drinks',            type: 'vocabulary', contentId: 'food-drinks',             path: '/vocabulary/food-drinks',                 unit: 3 },
+            { id: 'a1-cafe-phrases',   title: 'At the Café',              type: 'phrases',    contentId: 'at-the-cafe',            path: '/phrases/at-the-cafe',                    unit: 3 },
+            { id: 'a1-etre',           title: 'Verb: être',               type: 'verbs',      contentId: 'etre',                   path: '/helper-verbs/etre',                      unit: 3 },
+            { id: 'a1-avoir',          title: 'Verb: avoir',              type: 'verbs',      contentId: 'avoir',                  path: '/helper-verbs/avoir',                     unit: 3 },
+            { id: 'a1-present-er',     title: 'Present Tense: -ER Verbs', type: 'grammar',    contentId: 'present-tense-er',       path: '/grammar/lessons/present-tense-er',       unit: 3 },
+            { id: 'a1-clothing',       title: 'Clothing & Accessories',   type: 'vocabulary', contentId: 'clothing-accessories',   path: '/vocabulary/clothing-accessories',         unit: 3 },
+            { id: 'a1-cafe-reading',   title: 'Reading: Au Café',         type: 'reading',    contentId: 'a1-au-cafe',             path: '/reading/a1-au-cafe',                     unit: 3 },
         ],
     },
     {
