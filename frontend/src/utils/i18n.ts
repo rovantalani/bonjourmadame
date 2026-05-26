@@ -13,7 +13,7 @@ interface Translations {
         title: string; subtitle: string; empty: string;
     };
     lectures: {
-        title: string; subtitle: string; empty: string;
+        title: string; subtitle: string; empty: string; all: string;
     };
     home: {
         subtitle: string;
@@ -178,6 +178,7 @@ const EN: Translations = {
         title: 'Lectures',
         subtitle: 'Grammar lessons, phrases & reading',
         empty: 'No lessons in this course.',
+        all: 'All',
     },
     home: {
         subtitle: 'Your personal French course',
@@ -346,6 +347,7 @@ const FR: Translations = {
         title: 'Leçons',
         subtitle: 'Grammaire, expressions et lecture',
         empty: 'Aucune leçon dans ce cours.',
+        all: 'Tout',
     },
     home: {
         subtitle: 'Votre cours d\'anglais personnel',
