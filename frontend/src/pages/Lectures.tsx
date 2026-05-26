@@ -23,21 +23,33 @@ const TYPE_ICON: Record<StepType, string> = {
     verbs:      '🔤',
 };
 
+type LectureFilter = 'all' | 'grammar' | 'phrases' | 'reading';
+
+const FILTERS: LectureFilter[] = ['all', 'grammar', 'phrases', 'reading'];
+
 export default function Lectures() {
     const navigate = useNavigate();
     const t = useT();
     const courses = useCourses();
     const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
+    const [filter, setFilter] = useState<LectureFilter>('all');
 
     const activeCourse = courses.find(c => c.level === courseLevel);
-    const lectureSteps = activeCourse?.steps.filter(
+    const allLectureSteps = activeCourse?.steps.filter(
         s => s.type === 'grammar' || s.type === 'phrases' || s.type === 'reading'
     ) ?? [];
+    const lectureSteps = filter === 'all'
+        ? allLectureSteps
+        : allLectureSteps.filter(s => s.type === filter);
 
     const handleCourseChange = (level: string) => {
         setActiveCourse(level);
         setCourseLevel(level);
+        setFilter('all');
     };
+
+    const filterLabel = (f: LectureFilter) =>
+        f === 'all' ? t.lectures.all : t.roadmap.types[f];
 
     return (
         <main className="page">
@@ -47,6 +59,21 @@ export default function Lectures() {
             </header>
 
             <CourseBar activeLevel={courseLevel} onChange={handleCourseChange} />
+
+            <div className="lectures-filters" role="group" aria-label="Filter lectures">
+                {FILTERS.map(f => (
+                    <button
+                        key={f}
+                        type="button"
+                        className={`lectures-filter-pill${filter === f ? ' lectures-filter-pill--active' : ''}`}
+                        style={filter === f && f !== 'all' ? { backgroundColor: TYPE_COLOR[f], borderColor: TYPE_COLOR[f] } : undefined}
+                        onClick={() => setFilter(f)}
+                    >
+                        {f !== 'all' && <span>{TYPE_ICON[f]}</span>}
+                        {filterLabel(f)}
+                    </button>
+                ))}
+            </div>
 
             {lectureSteps.length === 0 ? (
                 <p className="lectures-empty">{t.lectures.empty}</p>
