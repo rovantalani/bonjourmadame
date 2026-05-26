@@ -445,6 +445,66 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        id: 'present-tense-ir-re',
+        title: 'Present Tense: -IR and -RE Verbs',
+        level: 'A1',
+        description: 'Conjugate regular -IR and -RE verbs — the two other main verb families in French',
+        icon: '🔁',
+        color: '#059669',
+        sections: [
+            {
+                title: 'Regular -IR Verbs',
+                explanation: 'To conjugate a regular -IR verb, drop the -ir ending and add: -is, -is, -it, -issons, -issez, -issent. Note the -iss- inserted in the plural forms.',
+                examples: [
+                    { french: 'finir → je finis, tu finis, il/elle finit', english: 'to finish → I finish, you finish, he/she finishes' },
+                    { french: 'nous finissons, vous finissez, ils/elles finissent', english: 'we finish, you finish, they finish', note: '-iss- appears in all plural forms' },
+                    { french: 'choisir → je choisis, tu choisis, il choisit', english: 'to choose → I choose, you choose, he chooses' },
+                    { french: 'nous choisissons, vous choisissez, ils choisissent', english: 'we choose, you choose, they choose' },
+                ],
+            },
+            {
+                title: 'Common -IR Verbs',
+                explanation: 'These are the most useful regular -IR verbs at A1 level.',
+                examples: [
+                    { french: 'finir — to finish', english: 'Je finis mon travail. — I finish my work.' },
+                    { french: 'choisir — to choose', english: 'Elle choisit une robe rouge. — She chooses a red dress.' },
+                    { french: 'remplir — to fill', english: 'Il remplit le verre d\'eau. — He fills the glass with water.' },
+                    { french: 'réussir — to succeed / to pass', english: 'Nous réussissons l\'examen. — We pass the exam.' },
+                    { french: 'grandir — to grow up', english: 'Les enfants grandissent vite. — Children grow up fast.' },
+                ],
+            },
+            {
+                title: 'Regular -RE Verbs',
+                explanation: 'To conjugate a regular -RE verb, drop the -re ending and add: -s, -s, — (nothing), -ons, -ez, -ent. The il/elle/on form has no ending added.',
+                examples: [
+                    { french: 'vendre → je vends, tu vends, il/elle vend', english: 'to sell → I sell, you sell, he/she sells', note: 'il/elle form: drop -re, add nothing' },
+                    { french: 'nous vendons, vous vendez, ils/elles vendent', english: 'we sell, you sell, they sell' },
+                    { french: 'attendre → j\'attends, tu attends, il attend', english: 'to wait → I wait, you wait, he waits' },
+                    { french: 'nous attendons, vous attendez, ils attendent', english: 'we wait, you wait, they wait' },
+                ],
+            },
+            {
+                title: 'Common -RE Verbs',
+                explanation: 'These are the most useful regular -RE verbs at A1 level.',
+                examples: [
+                    { french: 'vendre — to sell', english: 'Il vend des légumes au marché. — He sells vegetables at the market.' },
+                    { french: 'attendre — to wait (for)', english: 'J\'attends le bus. — I\'m waiting for the bus.', note: 'No preposition needed in French: attendre qqch directly' },
+                    { french: 'répondre — to answer', english: 'Elle répond à la question. — She answers the question.' },
+                    { french: 'entendre — to hear', english: 'Nous entendons la musique. — We can hear the music.' },
+                    { french: 'perdre — to lose', english: 'Tu perds toujours tes clés ! — You always lose your keys!' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Elle ___ son café avant de partir. (finir)',                      answer: 'finit',      hint: '-IR: 3rd person singular → drop -ir, add -it' },
+            { sentence: 'Nous ___ un film ce soir. (choisir)',                             answer: 'choisissons', hint: '-IR plural: drop -ir, add -issons' },
+            { sentence: 'Ils ___ leurs affaires sur le marché. (vendre)',                  answer: 'vendent',    hint: '-RE plural: drop -re, add -ent' },
+            { sentence: 'J\'___ le bus depuis vingt minutes. (attendre)',                  answer: 'attends',    hint: '-RE 1st person singular: drop -re, add -s' },
+            { sentence: 'Vous ___ bien à l\'école ? (réussir)',                            answer: 'réussissez', hint: '-IR 2nd person plural: drop -ir, add -issez' },
+            { sentence: 'Il ___ toujours ses clés. (perdre)',                              answer: 'perd',       hint: '-RE 3rd person singular: drop -re, add nothing' },
+        ],
+    },
+    {
         id: 'negation',
         title: 'Negation',
         level: 'A1',
