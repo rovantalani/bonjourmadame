@@ -29,6 +29,36 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        moduleId: 'a1-la-famille-martin',
+        title: 'La Famille Martin',
+        source: 'Texte original',
+        paragraphs: [
+            'Je m\'appelle Marie Martin. J\'ai trente-cinq ans et j\'habite à Lyon avec ma famille. Mon mari s\'appelle Thomas. Il a trente-huit ans. Il est médecin. Il travaille à l\'hôpital tous les jours. C\'est un homme très gentil.',
+            'Nous avons deux enfants. Notre fils s\'appelle Léo. Il a huit ans. Il aime le football et les jeux vidéo. Notre fille s\'appelle Emma. Elle a cinq ans. Elle aime dessiner et chanter. Les enfants vont à l\'école près de chez nous.',
+            'Notre appartement est grand et confortable. Il y a quatre chambres, un salon, une cuisine et une salle de bain. Nous avons aussi un petit jardin. Le week-end, nous aimons manger ensemble et faire des promenades dans le parc. Ma famille est ma grande joie !',
+        ],
+    },
+    {
+        moduleId: 'a1-une-journee-typique',
+        title: 'Une Journée Typique',
+        source: 'Texte original',
+        paragraphs: [
+            'Je m\'appelle Lucas. J\'ai onze ans et je vais au collège. Ma journée typique commence à sept heures. Je me lève, je prends une douche et je m\'habille. Ensuite, je mange mon petit-déjeuner : du pain avec du beurre et un verre de jus d\'orange.',
+            'À huit heures, je prends le bus pour aller à l\'école. Les cours commencent à huit heures et demie. J\'ai cours de français, de maths et d\'anglais le matin. À midi, je mange à la cantine avec mes amis. L\'après-midi, j\'ai cours de sport et de sciences.',
+            'À cinq heures, je rentre à la maison. Je fais mes devoirs pendant une heure. Après, je joue avec mon chien ou je regarde la télévision. À sept heures et demie, nous dînons en famille. Je me couche à neuf heures et demie. C\'est ma journée normale !',
+        ],
+    },
+    {
+        moduleId: 'a1-au-marche',
+        title: 'Au Marché',
+        source: 'Texte original',
+        paragraphs: [
+            'Le samedi matin, Sophie va au marché. Il y a beaucoup de légumes, de fruits et de fromages. Sophie parle avec le marchand de légumes.',
+            '— Bonjour ! Je voudrais des tomates, s\'il vous plaît. C\'est combien ?\n— Bonjour madame ! Les tomates, c\'est deux euros le kilo. Vous en voulez combien ?\n— Un kilo, s\'il vous plaît. Et les carottes ?\n— Un euro cinquante le kilo, madame.\n— Très bien. Je prends aussi un kilo de carottes. Ça fait combien en tout ?\n— Ça fait trois euros cinquante, s\'il vous plaît.',
+            'Sophie donne quatre euros au marchand. Il lui rend cinquante centimes de monnaie. — Merci, au revoir ! dit Sophie. — Bonne journée, madame ! répond le marchand. Sophie continue sa promenade au marché. Elle achète aussi du pain et des pommes. Elle adore le marché du samedi !',
+        ],
+    },
+    {
         moduleId: 'sherlock-holmes-ch2',
         title: 'L\'Enquête Commence',
         source: 'Une étude en rouge, A. Conan Doyle (adapté)',
