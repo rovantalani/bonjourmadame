@@ -1314,6 +1314,152 @@ export const grammarLessons: GrammarLesson[] = [
             { sentence: "Ils ont ___ la porte. (ouvrir)", answer: 'ouvert', hint: 'ouvrir → ouvert (irregular past participle)' },
         ],
     },
+    {
+        id: 'imperative-mood',
+        title: 'The Imperative Mood',
+        level: 'A2',
+        description: 'Give commands, instructions, and advice — essential for recipes, directions, and polite requests',
+        icon: '📢',
+        color: '#EA580C',
+        sections: [
+            {
+                title: 'Forming the Imperative (tu / vous / nous)',
+                explanation: 'The imperative uses the present-tense verb form without a subject pronoun. For -ER verbs (and aller), drop the final -s from the tu form: tu parles → Parle ! For -IR and -RE verbs, the tu form keeps the -s: tu finis → Finis ! The vous and nous forms are identical to the present tense. Negation wraps the verb: ne + verb + pas.',
+                examples: [
+                    { french: 'Parle ! / Parlez ! / Parlons !', english: 'Speak! (tu / vous / nous)' },
+                    { french: 'Finis tes devoirs !', english: 'Finish your homework!' },
+                    { french: 'Attendez, s\'il vous plaît.', english: 'Wait, please.' },
+                    { french: 'Ne parle pas si vite !', english: 'Don\'t speak so fast!' },
+                    { french: 'Allons-y !', english: 'Let\'s go!' },
+                ],
+            },
+            {
+                title: 'Irregular Imperatives',
+                explanation: 'Four verbs have entirely irregular imperative forms: être → sois / soyez / soyons; avoir → aie / ayez / ayons; savoir → sache / sachez / sachons; vouloir → veuille / veuillez (veuillez is common in formal writing meaning "please"). All other verbs follow the regular pattern.',
+                examples: [
+                    { french: 'Sois patient !', english: 'Be patient!' },
+                    { french: 'Soyez les bienvenus !', english: 'Welcome! (formal)' },
+                    { french: 'N\'aie pas peur.', english: 'Don\'t be afraid.' },
+                    { french: 'Veuillez patienter.', english: 'Please hold / Please wait. (formal)' },
+                ],
+            },
+            {
+                title: 'Reflexive Verbs & Pronouns in the Imperative',
+                explanation: 'With reflexive verbs in the affirmative imperative, the reflexive pronoun follows the verb joined by a hyphen. Te becomes toi: Lève-toi ! In the negative, the pronoun stays before the verb: Ne te lève pas. Object pronouns also follow the verb in affirmative commands: Dis-le-moi.',
+                examples: [
+                    { french: 'Lève-toi ! / Ne te lève pas.', english: 'Get up! / Don\'t get up.' },
+                    { french: 'Dépêchez-vous !', english: 'Hurry up!' },
+                    { french: 'Dis-le-moi.', english: 'Tell it to me.' },
+                    { french: 'Ne le faites pas maintenant.', english: 'Don\'t do it now.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: '___ tes devoirs avant de regarder la télé. (faire, tu)', answer: 'Fais', hint: 'faire → fais (irregular -ER-style tu form); drop the -s' },
+            { sentence: 'Ne ___ pas dans le couloir. (courir, vous)', answer: 'courez', hint: 'negative imperative: ne + present-tense form (vous) + pas' },
+            { sentence: '___ courageux ! (être, tu)', answer: 'Sois', hint: 'être is irregular: sois / soyez / soyons' },
+            { sentence: 'N\'___ pas peur. (avoir, tu)', answer: 'aie', hint: 'avoir is irregular in imperative: aie / ayez / ayons' },
+            { sentence: '___ -toi ! (dépêcher, tu)', answer: 'Dépêche', hint: 'reflexive: dépêcher → Dépêche + -toi (te → toi after verb)' },
+            { sentence: 'Ne ___ pas la porte. (ouvrir, vous)', answer: 'ouvrez', hint: 'negative imperative vous: ne + ouvrez + pas' },
+        ],
+    },
+    {
+        id: 'conditionnel-intro',
+        title: 'Polite Conditionals',
+        level: 'A2',
+        description: 'Use je voudrais, ce serait, and il faudrait for polite requests and everyday hypothetical statements',
+        icon: '🤝',
+        color: '#7C3AED',
+        sections: [
+            {
+                title: 'Je voudrais — the polite request',
+                explanation: 'The conditionnel présent is formed with the futur stem (same as futur simple) + imparfait endings: -ais, -ais, -ait, -ions, -iez, -aient. The most essential A2 use is vouloir → voudr- to make polite requests. Je veux can sound blunt; je voudrais is softer and expected in shops, restaurants, and formal situations.',
+                examples: [
+                    { french: 'Je voudrais un café, s\'il vous plaît.', english: 'I would like a coffee, please.' },
+                    { french: 'Tu voudrais venir avec nous ?', english: 'Would you like to come with us?' },
+                    { french: 'Je voudrais réserver une table pour ce soir.', english: 'I\'d like to book a table for tonight.' },
+                    { french: 'Vous voudriez autre chose ?', english: 'Would you like anything else?' },
+                ],
+            },
+            {
+                title: 'Ce serait / Ça serait — it would be',
+                explanation: 'être → ser- + conditional endings. Ce serait / ça serait means "it/that would be". Use it to react to suggestions, make polite assessments, or soften statements. It is extremely high-frequency in everyday conversation.',
+                examples: [
+                    { french: 'Ce serait super !', english: 'That would be great!' },
+                    { french: 'Ce serait dommage de rater ça.', english: 'It would be a shame to miss that.' },
+                    { french: 'Ce serait plus simple de prendre le bus.', english: 'It would be simpler to take the bus.' },
+                    { french: 'Ça serait bien qu\'on se voie bientôt.', english: 'It would be nice if we could see each other soon.' },
+                ],
+            },
+            {
+                title: 'Il faudrait & on pourrait — suggestions',
+                explanation: 'falloir → faudr- gives il faudrait (one should / it would be necessary to). pouvoir → pourr- gives on pourrait (we could / one could) and pourriez-vous (could you — very polite). These are the go-to forms for giving advice or making polite suggestions.',
+                examples: [
+                    { french: 'Il faudrait partir maintenant.', english: 'We should leave now.' },
+                    { french: 'Il faudrait appeler avant de venir.', english: 'You should call before coming.' },
+                    { french: 'On pourrait essayer ce restaurant.', english: 'We could try this restaurant.' },
+                    { french: 'Pourriez-vous parler plus lentement ?', english: 'Could you speak more slowly?' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Je ___ un verre d\'eau, s\'il vous plaît. (vouloir)', answer: 'voudrais', hint: 'vouloir → voudr- + -ais (je form)' },
+            { sentence: '___ super de partir en vacances ensemble ! (être — ce)', answer: 'Ce serait', hint: 'être → ser- + -ait; ce serait = it/that would be' },
+            { sentence: 'Il ___ appeler avant de venir. (falloir)', answer: 'faudrait', hint: 'falloir → faudr- + -ait; only used with il' },
+            { sentence: 'On ___ prendre le métro plutôt que le bus. (pouvoir)', answer: 'pourrait', hint: 'pouvoir → pourr- + -ait (on = 3rd singular)' },
+            { sentence: '___ -vous nous aider, s\'il vous plaît ? (pouvoir)', answer: 'Pourriez', hint: 'pourr- + -iez (vous form) = could you…?' },
+            { sentence: '___ dommage de ne pas y aller. (être — ce)', answer: 'Ce serait', hint: 'ce serait = that would be; ser- + -ait' },
+        ],
+    },
+    {
+        id: 'adverbs-ment',
+        title: 'Adverbs — Formation & Placement',
+        level: 'A2',
+        description: 'Form adverbs from adjectives using -ment and place them correctly in simple and compound tenses',
+        icon: '⚡',
+        color: '#059669',
+        sections: [
+            {
+                title: 'Forming Adverbs from Adjectives',
+                explanation: 'Most French adverbs of manner are formed by adding -ment to the feminine form of an adjective: lent → lente → lentement. If the masculine adjective already ends in a vowel, add -ment directly: facile → facilement. Adjectives ending in -ant give -amment; adjectives ending in -ent give -emment (both pronounced [-amɑ̃]).',
+                examples: [
+                    { french: 'lent → lente → lentement', english: 'slow → slowly' },
+                    { french: 'heureux → heureuse → heureusement', english: 'happy → happily / fortunately' },
+                    { french: 'facile → facilement', english: 'easy → easily (ends in vowel)' },
+                    { french: 'courant → couramment', english: 'fluent → fluently (-ant → -amment)' },
+                    { french: 'évident → évidemment', english: 'obvious → obviously (-ent → -emment)' },
+                ],
+            },
+            {
+                title: 'Common Irregular Adverbs',
+                explanation: 'Several very frequent adverbs are not formed by -ment and must be memorised: bien (well), mal (badly), vite (quickly), tôt (early), tard (late). These are among the most used words in French and appear in both formal and informal speech.',
+                examples: [
+                    { french: 'Il parle bien français.', english: 'He speaks French well.' },
+                    { french: 'Elle a mal dormi.', english: 'She slept badly.' },
+                    { french: 'Vas-y vite !', english: 'Go quickly!' },
+                    { french: 'Il se lève tôt.', english: 'He gets up early.' },
+                ],
+            },
+            {
+                title: 'Placement Rules',
+                explanation: 'In simple tenses, adverbs of manner follow the conjugated verb directly: Elle parle lentement. In compound tenses (passé composé), short frequent adverbs (bien, mal, vite, souvent, déjà, encore, toujours) go between the auxiliary and the past participle. Longer -ment adverbs typically follow the past participle.',
+                examples: [
+                    { french: 'Elle parle lentement.', english: 'She speaks slowly. (after verb, simple tense)' },
+                    { french: 'Il a bien travaillé.', english: 'He worked well. (bien between aux. and p.p.)' },
+                    { french: 'Elle a vite compris.', english: 'She understood quickly. (short adverb before p.p.)' },
+                    { french: 'Il a répondu poliment.', english: 'He answered politely. (long adverb after p.p.)' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Elle parle ___. (lent → adverbe)', answer: 'lentement', hint: 'lent → lente → lentement' },
+            { sentence: 'Il joue ___. (heureux → adverbe)', answer: 'heureusement', hint: 'heureux → heureuse → heureusement' },
+            { sentence: 'Il parle le français ___. (courant → adverbe)', answer: 'couramment', hint: '-ant → -amment: courant → couramment' },
+            { sentence: 'C\'est ___ la bonne réponse. (évident → adverbe)', answer: 'évidemment', hint: '-ent → -emment: évident → évidemment' },
+            { sentence: 'Elle a ___ répondu. (bien — place correctly in passé composé)', answer: 'bien', hint: 'bien goes between a and répondu in the passé composé' },
+            { sentence: 'Il a travaillé ___. (sérieux → adverbe)', answer: 'sérieusement', hint: 'sérieux → sérieuse → sérieusement; long adverb follows p.p.' },
+        ],
+    },
     // ─── B1 Grammar Lessons ──────────────────────────────────────────────────
     {
         id: 'plus-que-parfait',
