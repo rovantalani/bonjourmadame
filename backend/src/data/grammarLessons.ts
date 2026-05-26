@@ -1869,6 +1869,324 @@ export const grammarLessons: GrammarLesson[] = [
             { sentence: "Nous ___ contents d'y aller. (être, conditionnel)", answer: 'serions', hint: 'irregular conditional stem: ser-' },
         ],
     },
+    // ─── B2 Grammar Lessons ──────────────────────────────────────────────────
+    {
+        id: 'subjunctive-advanced',
+        title: 'Subjonctif Avancé',
+        level: 'B2',
+        description: 'Advanced subjunctive — conjunctions, avoiding with infinitive, and literary uses',
+        icon: '🌀',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Conjunctions Always Triggering the Subjunctive',
+                explanation: 'These conjunctions always require the subjunctive — memorise the list.',
+                examples: [
+                    { french: 'bien que / quoique (+ subj.)', english: 'although' },
+                    { french: 'à moins que (+ subj.)', english: 'unless' },
+                    { french: 'pour que / afin que (+ subj.)', english: 'so that / in order that' },
+                    { french: 'avant que (+ subj.)', english: 'before' },
+                    { french: 'de peur que / de crainte que (+ subj.)', english: 'for fear that' },
+                    { french: 'jusqu\'à ce que (+ subj.)', english: 'until' },
+                ],
+            },
+            {
+                title: 'Subjunctive vs Infinitive',
+                explanation: 'When both clauses share the same subject, use an infinitive construction instead of que + subjunctive.',
+                examples: [
+                    { french: 'Je pars avant qu\'il arrive. (different subjects)', english: 'I\'m leaving before he arrives.' },
+                    { french: 'Je pars avant d\'arriver à destination. (same subject)', english: 'I\'m leaving before reaching my destination.' },
+                    { french: 'Il veut que tu réussisses. (different)', english: 'He wants you to succeed.' },
+                    { french: 'Il veut réussir. (same subject)', english: 'He wants to succeed.' },
+                ],
+            },
+            {
+                title: 'Subjunctive After Superlatives and Restrictive Expressions',
+                explanation: 'The subjunctive is used after superlatives and le seul, le premier, le dernier when expressing a subjective opinion.',
+                examples: [
+                    { french: 'C\'est le meilleur film que j\'aie jamais vu.', english: 'It\'s the best film I\'ve ever seen.' },
+                    { french: 'C\'est la seule solution qui soit acceptable.', english: 'It\'s the only solution that is acceptable.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Bien qu\'il ___ (être) fatigué, il a continué.', answer: 'soit', hint: 'bien que always triggers subjunctive' },
+            { sentence: 'Je partirai à moins qu\'il ___ (pleuvoir).', answer: 'pleuve', hint: 'à moins que → subjunctive; pleuvoir → pleuve' },
+            { sentence: 'Appelle-moi avant qu\'elle ___ (arriver).', answer: 'arrive', hint: 'avant que → subjunctive' },
+            { sentence: 'Il travaille pour que ses enfants ___ (pouvoir) étudier.', answer: 'puissent', hint: 'pour que → subjunctive; pouvoir → puissent' },
+            { sentence: 'C\'est la chose la plus étrange que j\' ___ (voir) de ma vie.', answer: 'aie vue', hint: 'superlative → subjunctive; past subjunctive of voir; agreement with la chose' },
+            { sentence: 'Je veux ___ (partir) avant la foule. (same subject → infinitive)', answer: 'partir', hint: 'same subject → use infinitive, not que + subj.' },
+        ],
+    },
+    {
+        id: 'si-clauses-type2-3',
+        title: 'Si : Hypothèses et Regrets',
+        level: 'B2',
+        description: 'Type 2 (unlikely) and Type 3 (impossible/past regret) si-clauses',
+        icon: '🔀',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Type 2 — Unlikely Hypothesis (Present/Future)',
+                explanation: 'Si + imparfait → conditionnel présent. For things that are unlikely, hypothetical, or contrary to present reality.',
+                examples: [
+                    { french: 'Si j\'avais le temps, je voyagerais plus.', english: 'If I had the time (but I don\'t), I would travel more.' },
+                    { french: 'Si elle était riche, elle achèterait une maison.', english: 'If she were rich, she would buy a house.' },
+                    { french: 'Si nous partions maintenant, nous arriverions à temps.', english: 'If we left now, we would arrive in time.' },
+                ],
+            },
+            {
+                title: 'Type 3 — Past Regret (Impossible Condition)',
+                explanation: 'Si + plus-que-parfait → conditionnel passé. For things that didn\'t happen — regrets, counterfactuals.',
+                examples: [
+                    { french: 'Si j\'avais étudié, j\'aurais réussi.', english: 'If I had studied, I would have passed.' },
+                    { french: 'Si elle était venue, elle aurait vu ça.', english: 'If she had come, she would have seen that.' },
+                    { french: 'Si tu n\'avais pas attendu, tu n\'aurais pas manqué le train.', english: 'If you hadn\'t waited, you wouldn\'t have missed the train.' },
+                ],
+            },
+            {
+                title: 'Mixed Si-Clauses',
+                explanation: 'A past condition can produce a present result, or a present condition can produce a past-regret-style result.',
+                examples: [
+                    { french: 'Si j\'avais accepté ce poste, je serais riche aujourd\'hui.', english: 'If I had taken that job, I would be rich today.' },
+                    { french: 'Si tu étais plus prudent, tu n\'aurais pas perdu tes clés hier.', english: 'If you were more careful, you wouldn\'t have lost your keys yesterday.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Si j\'avais le temps, je ___ (lire) plus. (type 2)', answer: 'lirais', hint: 'si + imparfait → conditionnel présent' },
+            { sentence: 'Si elle ___ (être) médecin, elle gagnerait mieux sa vie. (type 2)', answer: 'était', hint: 'si-clause takes imparfait' },
+            { sentence: 'Si nous ___ (partir) plus tôt, nous n\'aurions pas raté l\'avion. (type 3)', answer: 'étions partis', hint: 'si + plus-que-parfait; partir uses être' },
+            { sentence: 'Il n\'aurait pas échoué s\'il ___ (travailler) davantage. (type 3)', answer: 'avait travaillé', hint: 'plus-que-parfait: avait + past participle' },
+            { sentence: 'Si tu avais pris le train, tu ___ (arriver) à l\'heure. (type 3)', answer: 'serais arrivé(e)', hint: 'conditionnel passé; arriver uses être' },
+            { sentence: 'Si j\'avais accepté cet emploi, je ___ (être) directeur aujourd\'hui. (mixed)', answer: 'serais', hint: 'past condition → present result: conditionnel présent' },
+        ],
+    },
+    {
+        id: 'emphasis-cleft-sentences',
+        title: 'L\'Emphase et la Mise en Relief',
+        level: 'B2',
+        description: 'Cleft sentences, stressed pronouns, and other emphasis structures',
+        icon: '🔦',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'C\'est…qui / C\'est…que',
+                explanation: 'The most common cleft structure. Use qui when emphasising a subject, que when emphasising an object or time/place.',
+                examples: [
+                    { french: 'C\'est Marie qui a appelé. (subject focus)', english: 'It was Marie who called.' },
+                    { french: 'C\'est lui que j\'admire. (object focus)', english: 'It\'s him (that) I admire.' },
+                    { french: 'C\'est hier que j\'ai appris la nouvelle.', english: 'It was yesterday that I heard the news.' },
+                ],
+            },
+            {
+                title: 'Stressed Pronouns and Ne…que',
+                explanation: 'Stressed pronouns (moi, toi, lui, elle, nous, vous, eux, elles) add emphasis. Ne…que means "only" and focuses on the restricted element.',
+                examples: [
+                    { french: 'Moi, je comprends. / Lui, il ne comprend pas.', english: 'I understand. / He doesn\'t.' },
+                    { french: 'C\'est moi qui ai fait ça.', english: 'It was me who did that.' },
+                    { french: 'Je ne travaille que le matin.', english: 'I only work in the morning.' },
+                ],
+            },
+            {
+                title: 'Tout, Même, Seul for Emphasis',
+                explanation: 'These words add intensity or contrast.',
+                examples: [
+                    { french: 'Tout le monde sait ça.', english: 'Everyone knows that.' },
+                    { french: 'C\'est exactement la même chose.', english: 'It\'s exactly the same thing.' },
+                    { french: 'Il est venu seul.', english: 'He came alone / by himself.' },
+                    { french: 'Elle a tout compris.', english: 'She understood everything.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: '___ Marie ___ a gagné le prix. (cleft — subject)', answer: "C'est…qui", hint: "c'est + subject + qui" },
+            { sentence: '___ lui ___ j\'ai choisi. (cleft — object)', answer: "C'est…que", hint: "c'est + object + que" },
+            { sentence: 'Je ne bois ___ de l\'eau. (only)', answer: 'que', hint: 'ne…que = only' },
+            { sentence: '___ lui, il ne travaille jamais. (stressed pronoun + contrast)', answer: 'Lui', hint: 'stressed pronoun at front for contrast' },
+            { sentence: 'C\'est ___ qui avons décidé. (we — stressed)', answer: 'nous', hint: "c'est nous qui… (not c'est on qui)" },
+            { sentence: '___ hier ___ il est arrivé. (time focus)', answer: "C'est…que", hint: 'time/place emphasis → que' },
+        ],
+    },
+    {
+        id: 'concession-opposition',
+        title: 'La Concession et l\'Opposition',
+        level: 'B2',
+        description: 'Structures for acknowledging a point while arguing against it',
+        icon: '⚔️',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Concession with Subjunctive',
+                explanation: 'Bien que and quoique require the subjunctive. Même si takes the indicative.',
+                examples: [
+                    { french: 'Bien que ce soit difficile, je continuerai.', english: 'Although it\'s difficult, I will continue.' },
+                    { french: 'Quoiqu\'il soit fatigué, il travaille.', english: 'Although he\'s tired, he works.' },
+                    { french: 'Même si je suis fatigué, je continuerai.', english: 'Even if I\'m tired, I will continue.' },
+                ],
+            },
+            {
+                title: 'Conjunctions and Adverbs of Opposition',
+                explanation: 'These link ideas with a contrasting or concessive relationship.',
+                examples: [
+                    { french: 'cependant / néanmoins / pourtant', english: 'however / nevertheless / yet' },
+                    { french: 'en revanche / par contre', english: 'on the other hand / by contrast' },
+                    { french: 'malgré + noun', english: 'despite (+ noun)' },
+                    { french: 'certes…mais', english: 'admittedly…but' },
+                ],
+            },
+            {
+                title: 'Avoir Beau + Infinitif',
+                explanation: 'Avoir beau + infinitive expresses a futile effort — "no matter how much one does X, it doesn\'t change Y".',
+                examples: [
+                    { french: 'Il a beau travailler, il ne réussit pas.', english: 'No matter how hard he works, he doesn\'t succeed.' },
+                    { french: 'J\'ai beau lui expliquer, il ne comprend pas.', english: 'However much I explain, he doesn\'t understand.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Bien qu\'il ___ (pleuvoir), nous sommes sortis.', answer: 'pleuve', hint: 'bien que → subjunctive' },
+            { sentence: 'Même si c\'est cher, ___ (acheter)- le ! (imperative)', answer: 'achète', hint: 'même si → indicative; imperative in result' },
+            { sentence: 'Il est parti. ___, il a laissé un message. (however)', answer: 'Cependant / Néanmoins / Pourtant', hint: 'any of the three opposition adverbs work' },
+            { sentence: '___ ses efforts, il n\'a pas réussi. (despite + noun)', answer: 'Malgré', hint: 'malgré + noun (no verb)' },
+            { sentence: '___ ce soit vrai, je reste sceptique. (admittedly…but structure)', answer: 'Certes', hint: 'certes…mais: certes introduces the concession' },
+            { sentence: 'Elle a ___ chercher, elle n\'a pas trouvé. (however much she searched)', answer: 'beau', hint: 'avoir beau + infinitif = futile effort' },
+        ],
+    },
+    {
+        id: 'nominalisation',
+        title: 'La Nominalisation',
+        level: 'B2',
+        description: 'Converting verbs and adjectives into nouns for formal written register',
+        icon: '📝',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Why Nominalisation?',
+                explanation: 'Formal French (journalism, academic writing, official reports) prefers noun-heavy phrases over verb-heavy ones. This creates a more abstract, authoritative tone.',
+                examples: [
+                    { french: 'Informal: Les gens consomment trop de sucre.', english: 'People consume too much sugar.' },
+                    { french: 'Formal: La consommation excessive de sucre est préoccupante.', english: 'Excessive sugar consumption is concerning.' },
+                ],
+            },
+            {
+                title: 'Common Nominalisation Suffixes',
+                explanation: 'Verbs and adjectives become nouns via these suffixes.',
+                examples: [
+                    { french: '-tion / -sion : améliorer → l\'amélioration', english: 'to improve → improvement' },
+                    { french: '-ment : développer → le développement', english: 'to develop → development' },
+                    { french: '-age : former → la formation', english: 'to train → training' },
+                    { french: '-ure : couvrir → la couverture', english: 'to cover → coverage' },
+                    { french: '-ance / -ence : croître → la croissance', english: 'to grow → growth' },
+                ],
+            },
+            {
+                title: 'Nominalisation in Practice',
+                explanation: 'Rewrite by: (1) nominalising the main verb; (2) making the subject a complement; (3) using être or a formal verb.',
+                examples: [
+                    { french: 'Le gouvernement a décidé → La décision du gouvernement', english: 'The government decided → The government\'s decision' },
+                    { french: 'Les prix augmentent → La hausse des prix', english: 'Prices are rising → The rise in prices' },
+                    { french: 'Les étudiants protestent → La protestation des étudiants', english: 'Students are protesting → The student protest' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Nominaliser : produire → ___', answer: 'la production', hint: '-tion suffix' },
+            { sentence: 'Nominaliser : investir → ___', answer: "l'investissement", hint: '-ment suffix' },
+            { sentence: 'Reformuler en registre formel : Les entreprises embauchent.', answer: "Le recrutement des entreprises / L'embauche par les entreprises est en hausse.", hint: 'nominalise the verb embaucher → le recrutement / l\'embauche' },
+            { sentence: 'Nominaliser : croître → ___', answer: 'la croissance', hint: '-ance suffix (irregular)' },
+            { sentence: 'Reformuler : La pollution augmente. → ___ de la pollution est préoccupant(e).', answer: "L'augmentation / La hausse", hint: 'augmenter → l\'augmentation / la hausse' },
+            { sentence: 'Nominaliser : réformer → ___', answer: 'la réforme', hint: 'irregular: réforme (not réformation)' },
+        ],
+    },
+    {
+        id: 'infinitive-constructions',
+        title: 'Les Constructions Infinitives',
+        level: 'B2',
+        description: 'après avoir/être, avant de, sans, pour, au lieu de — complex action sequences',
+        icon: '⛓️',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Après Avoir / Après Être + Past Participle',
+                explanation: 'Use après avoir/être + past participle to express an action completed before the main clause. The subject of both clauses must be the same.',
+                examples: [
+                    { french: 'Après avoir mangé, il est sorti.', english: 'After eating (having eaten), he went out.' },
+                    { french: 'Après être arrivée, elle a appelé.', english: 'After arriving, she called.' },
+                    { french: 'Après s\'être lavé les mains, il a cuisiné.', english: 'After washing his hands, he cooked.' },
+                ],
+            },
+            {
+                title: 'Avant de, Sans, Pour, Au Lieu de + Infinitive',
+                explanation: 'These prepositions are followed by the infinitive (present). Same-subject rule applies.',
+                examples: [
+                    { french: 'Il est parti sans dire au revoir.', english: 'He left without saying goodbye.' },
+                    { french: 'Elle travaille pour subvenir à ses besoins.', english: 'She works to support herself.' },
+                    { french: 'Au lieu de te plaindre, agis !', english: 'Instead of complaining, do something!' },
+                    { french: 'Avant de signer, lisez le contrat.', english: 'Before signing, read the contract.' },
+                ],
+            },
+            {
+                title: 'The Same-Subject Rule',
+                explanation: 'All these infinitive constructions require the same subject in both clauses. If subjects differ, use a full subordinate clause.',
+                examples: [
+                    { french: 'Avant de partir, il a fermé la porte. (same subject ✓)', english: 'Before leaving, he locked the door.' },
+                    { french: 'Avant qu\'elle parte, il a fermé la porte. (different subjects ✓)', english: 'Before she left, he locked the door.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: '___ avoir fini, il est allé se coucher.', answer: 'Après', hint: 'après avoir + past participle' },
+            { sentence: 'Elle est rentrée ___ être passée à la pharmacie.', answer: 'après', hint: 'après être + past participle; passer uses avoir but here reflexive context' },
+            { sentence: 'Il est parti ___ prévenir personne. (without)', answer: 'sans', hint: 'sans + infinitive' },
+            { sentence: 'Tu dois lire ___ de signer. (before)', answer: 'avant', hint: 'avant de + infinitive' },
+            { sentence: '___ de faire ça, pourquoi ne pas essayer autrement ? (instead of)', answer: 'Au lieu', hint: 'au lieu de + infinitive' },
+            { sentence: 'Il travaille dur ___ réaliser son rêve. (in order to)', answer: 'pour', hint: 'pour + infinitive = in order to' },
+        ],
+    },
+    {
+        id: 'subjunctive-vs-indicative',
+        title: 'Subjonctif ou Indicatif ?',
+        level: 'B2',
+        description: 'Verbs that change meaning depending on whether they take the subjunctive or indicative',
+        icon: '⚖️',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Croire que, Penser que, Trouver que',
+                explanation: 'In affirmative sentences → indicative (certainty). In negative or interrogative → subjunctive (doubt introduced).',
+                examples: [
+                    { french: 'Je crois qu\'il a raison. (affirmative → indicatif)', english: 'I think he\'s right.' },
+                    { french: 'Je ne crois pas qu\'il ait raison. (negative → subjonctif)', english: 'I don\'t think he\'s right.' },
+                    { french: 'Croyez-vous qu\'il soit venu ? (interrogative → subjonctif)', english: 'Do you think he came?' },
+                ],
+            },
+            {
+                title: 'Espérer que',
+                explanation: 'Espérer que takes the indicative — even though it expresses hope (which is subjective). This is an exception to the expectation.',
+                examples: [
+                    { french: 'J\'espère qu\'il viendra. (indicatif futur — NOT subjonctif)', english: 'I hope he will come.' },
+                    { french: 'J\'espère qu\'elle est arrivée. (indicatif passé composé)', english: 'I hope she has arrived.' },
+                ],
+            },
+            {
+                title: 'Il semble que vs Il me semble que',
+                explanation: 'Il semble que → subjunctive (impersonal, uncertain). Il me semble que → indicative (personal, felt as certain).',
+                examples: [
+                    { french: 'Il semble qu\'il soit parti. (subjonctif)', english: 'It seems (that) he has left.' },
+                    { french: 'Il me semble qu\'il est parti. (indicatif)', english: 'It seems to me (that) he has left.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'Je crois qu\'il ___ (venir) demain. (affirmative)', answer: 'viendra', hint: 'affirmative croire → indicatif futur' },
+            { sentence: 'Je ne pense pas qu\'il ___ (avoir) raison. (negative)', answer: 'ait', hint: 'negative penser → subjonctif' },
+            { sentence: 'J\'espère qu\'elle ___ (réussir). (futur)', answer: 'réussira', hint: 'espérer que → always indicatif' },
+            { sentence: 'Il semble qu\'il ___ (être) malade. (impersonal)', answer: 'soit', hint: 'il semble que (impersonal) → subjonctif' },
+            { sentence: 'Il me semble qu\'elle ___ (comprendre). (personal)', answer: 'comprend', hint: 'il me semble que → indicatif' },
+            { sentence: 'Pensez-vous qu\'il ___ (partir) ? (interrogative)', answer: 'soit parti', hint: 'interrogative penser → subjonctif; past subjunctive' },
+        ],
+    },
     {
         id: 'subjonctif',
         title: 'The Subjunctive',
