@@ -12,6 +12,7 @@ export interface CourseStep {
     contentId: string;
     path: string;
     unit?: number;
+    comingSoon?: boolean;
 }
 
 export interface Course {

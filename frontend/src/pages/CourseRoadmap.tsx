@@ -49,6 +49,20 @@ export default function CourseRoadmap() {
 
     const renderStepItem = (step: CourseStep, isLast: boolean) => {
         const status = getStepStatus(step);
+        if (step.comingSoon) {
+            return (
+                <li key={step.id} className="cr-step cr-step--coming-soon">
+                    {!isLast && <span className="cr-connector" />}
+                    <div className="cr-step-btn cr-step-btn--disabled">
+                        <span className="cr-status-icon cr-status-not-started">○</span>
+                        <div className="cr-step-body">
+                            <span className="cr-step-title">{step.title}</span>
+                            <span className="cr-step-type cr-coming-soon-label">Coming soon</span>
+                        </div>
+                    </div>
+                </li>
+            );
+        }
         return (
             <li key={step.id} className={`cr-step cr-step--${status}`}>
                 {!isLast && <span className="cr-connector" />}

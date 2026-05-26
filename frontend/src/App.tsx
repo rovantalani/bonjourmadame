@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { loadLearningMode } from './utils/settings';
 import Nav from './components/Nav';
 import GuestBanner from './components/GuestBanner';
+import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -88,11 +89,13 @@ function AppShell() {
 
 function App() {
     return (
-        <Router>
-            <AuthProvider>
-                <AppShell />
-            </AuthProvider>
-        </Router>
+        <ErrorBoundary>
+            <Router>
+                <AuthProvider>
+                    <AppShell />
+                </AuthProvider>
+            </Router>
+        </ErrorBoundary>
     );
 }
 

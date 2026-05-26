@@ -1,7 +1,12 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useTheme } from '../hooks/useTheme';
 import { useT } from '../utils/i18n';
+import { useAuth } from '../context/AuthContext';
 import './Nav.css';
+
+const API = import.meta.env.VITE_API_BASE;
 
 function useActiveItem() {
     const { pathname } = useLocation();
@@ -16,11 +21,22 @@ export default function Nav() {
     const isActive   = useActiveItem();
     const { dark, toggle } = useTheme();
     const t = useT();
+    const { user } = useAuth();
+    const [dueCount, setDueCount] = useState(0);
+
+    useEffect(() => {
+        if (!user) { setDueCount(0); return; }
+        axios.get<unknown[]>(`${API}/api/progress/due`, { withCredentials: true })
+            .then(res => setDueCount(res.data.length))
+            .catch(() => {});
+    }, [user]);
 
     const NAV_ITEMS = [
         { path: '/courses',    label: t.nav.courses,    icon: '🎓' },
         { path: '/vocabulary', label: t.nav.vocabulary, icon: '📖' },
         { path: '/verbs',      label: t.nav.verbs,      icon: '✏️'  },
+        { path: '/grammar',    label: t.nav.grammar,    icon: '📝' },
+        { path: '/phrases',    label: t.nav.phrases,    icon: '💬' },
         { path: '/lectures',   label: t.nav.lectures,   icon: '📚' },
     ];
 
@@ -45,6 +61,13 @@ export default function Nav() {
                             </button>
                         ))}
                     </div>
+                    <button
+                        className={`top-nav-link top-nav-review ${isActive('/review-queue') ? 'active' : ''}`}
+                        onClick={() => navigate('/review-queue')}
+                        aria-label="Review Queue"
+                    >
+                        🔁 Review{dueCount > 0 && <span className="nav-badge">{dueCount}</span>}
+                    </button>
                     <button
                         className={`top-nav-link ${isActive('/stats') ? 'active' : ''}`}
                         onClick={() => navigate('/stats')}
