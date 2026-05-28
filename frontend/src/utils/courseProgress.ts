@@ -61,6 +61,7 @@ export function getActiveCourse(): string | null {
 
 export function setActiveCourse(level: string): void {
     localStorage.setItem(ACTIVE_COURSE_KEY, level);
+    window.dispatchEvent(new CustomEvent('activeCourseChanged', { detail: level }));
 }
 
 export function getNextStep(course: Course): CourseStep | null {

@@ -7,7 +7,7 @@ interface Translations {
     nav: {
         home: string; courses: string; vocabulary: string;
         grammar: string; phrases: string; stats: string;
-        verbs: string; lectures: string;
+        verbs: string; lectures: string; overview: string;
     };
     verbs: {
         title: string; subtitle: string; empty: string;
@@ -167,7 +167,7 @@ const EN: Translations = {
     nav: {
         home: 'Home', courses: 'Courses', vocabulary: 'Vocabulary',
         grammar: 'Grammar', phrases: 'Phrases', stats: 'Stats',
-        verbs: 'Verbs', lectures: 'Lectures',
+        verbs: 'Verbs', lectures: 'Lectures', overview: 'Overview',
     },
     verbs: {
         title: 'Verbs',
@@ -336,7 +336,7 @@ const FR: Translations = {
     nav: {
         home: 'Accueil', courses: 'Cours', vocabulary: 'Vocabulaire',
         grammar: 'Grammaire', phrases: 'Expressions', stats: 'Progrès',
-        verbs: 'Verbes', lectures: 'Leçons',
+        verbs: 'Verbes', lectures: 'Leçons', overview: 'Aperçu',
     },
     verbs: {
         title: 'Verbes',

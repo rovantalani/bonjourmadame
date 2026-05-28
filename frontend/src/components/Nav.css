@@ -55,6 +55,12 @@
     gap: 0.25rem;
 }
 
+.top-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .top-nav-link {
     background: none;
     border: none;
@@ -63,6 +69,7 @@
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-2);
+    cursor: pointer;
     transition: background .15s ease, color .15s ease;
 }
 
@@ -96,6 +103,144 @@
 
 
 /* ════════════════════════════════
+   LEVEL INDICATOR + DROPDOWN
+════════════════════════════════ */
+.level-indicator {
+    position: relative;
+}
+
+.level-indicator-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1.5px solid;
+    border-radius: var(--r-pill);
+    padding: 0.3rem 0.65rem 0.3rem 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity .15s ease;
+    white-space: nowrap;
+}
+.level-indicator-btn:hover {
+    opacity: 0.85;
+}
+
+.level-indicator-badge {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.level-indicator-chevron {
+    font-size: 0.6rem;
+    line-height: 1;
+    opacity: 0.7;
+}
+
+/* Dropdown panel */
+.level-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 220px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-md);
+    z-index: 200;
+    overflow: hidden;
+}
+
+.level-dropdown-heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    padding: 0.75rem 1rem 0.4rem;
+    margin: 0;
+}
+
+.level-dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0.4rem;
+}
+
+.level-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    background: none;
+    border: none;
+    border-radius: var(--r-md);
+    padding: 0.5rem 0.6rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background .12s ease;
+}
+.level-dropdown-item:hover {
+    background: var(--surface-2);
+}
+.level-dropdown-item--active {
+    background: var(--surface-2);
+}
+
+.level-dropdown-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    padding: 0.15rem 0.4rem;
+    border-radius: var(--r-sm);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
+.level-dropdown-title {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-1);
+    flex: 1;
+}
+
+.level-dropdown-check {
+    font-size: 0.82rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.level-dropdown-footer {
+    border-top: 1px solid var(--border);
+    padding: 0.5rem 0.4rem;
+    margin-top: 0.25rem;
+}
+
+.level-dropdown-browse {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    border-radius: var(--r-md);
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    cursor: pointer;
+    transition: background .12s ease;
+}
+.level-dropdown-browse:hover {
+    background: var(--accent-light);
+}
+
+
+/* ════════════════════════════════
    BOTTOM NAV  (mobile)
 ════════════════════════════════ */
 .bottom-nav {
@@ -105,6 +250,13 @@
 @media (max-width: 768px) {
     .top-nav-links { display: none; }
     .nav-brand-name { display: none; }
+    .top-nav-right .top-nav-link { display: none; }
+    .top-nav-right .theme-toggle { display: none; }
+
+    /* Keep level indicator visible in top bar on mobile */
+    .top-nav-right {
+        gap: 0.25rem;
+    }
 
     .bottom-nav {
         display: flex;
@@ -151,5 +303,11 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
+    }
+
+    /* Level dropdown opens upward from top-nav on mobile */
+    .top-nav-right .level-dropdown {
+        top: calc(100% + 0.5rem);
+        right: 0;
     }
 }

@@ -74,10 +74,6 @@ export default function CourseRoadmap() {
 
     return (
         <main className="page">
-            <button className="btn btn-secondary cr-back-btn" onClick={() => navigate('/courses')}>
-                {t.roadmap.back}
-            </button>
-
             <div className="cr-header">
                 <span className="cr-level-badge" style={{ backgroundColor: course.color }}>
                     {course.level}

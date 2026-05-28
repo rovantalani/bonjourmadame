@@ -59,7 +59,7 @@ export default function VerbConjugation() {
     if (error || !verb) {
         return (
             <main className="page">
-                <button className="back-btn" onClick={() => navigate('/helper-verbs')}>
+                <button className="back-btn" onClick={() => navigate(-1)}>
                     {t.verbConjugation.back}
                 </button>
                 <p>{t.verbConjugation.notFound}</p>
@@ -69,7 +69,7 @@ export default function VerbConjugation() {
 
     return (
         <main className="page">
-            <button className="back-btn" onClick={() => navigate('/helper-verbs')}>
+            <button className="back-btn" onClick={() => navigate(-1)}>
                 {t.verbConjugation.back}
             </button>
 

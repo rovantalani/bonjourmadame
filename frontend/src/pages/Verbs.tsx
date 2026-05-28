@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
-import { getActiveCourse, setActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
-import CourseBar from '../components/CourseBar';
+import { getActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
 import { useT } from '../utils/i18n';
 import './Verbs.css';
 
@@ -23,13 +22,14 @@ export default function Verbs() {
     const courses = useCourses();
     const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
 
+    useEffect(() => {
+        const handler = (e: Event) => setCourseLevel((e as CustomEvent<string>).detail);
+        window.addEventListener('activeCourseChanged', handler);
+        return () => window.removeEventListener('activeCourseChanged', handler);
+    }, []);
+
     const activeCourse = courses.find(c => c.level === courseLevel);
     const verbSteps = activeCourse?.steps.filter(s => s.type === 'verbs') ?? [];
-
-    const handleCourseChange = (level: string) => {
-        setActiveCourse(level);
-        setCourseLevel(level);
-    };
 
     return (
         <main className="page">
@@ -37,8 +37,6 @@ export default function Verbs() {
                 <h1>{t.verbs.title}</h1>
                 <p className="subtitle">{t.verbs.subtitle}</p>
             </header>
-
-            <CourseBar activeLevel={courseLevel} onChange={handleCourseChange} />
 
             {verbSteps.length === 0 ? (
                 <p className="verbs-empty">{t.verbs.empty}</p>

@@ -40,6 +40,44 @@
   margin: 0;
 }
 
+/* Search */
+.vgl-search-row {
+  margin-bottom: 1.5rem;
+}
+
+.vgl-search {
+  width: 100%;
+  max-width: 360px;
+}
+
+.vgl-no-results {
+  text-align: center;
+  color: var(--text-3);
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+
+/* Type sections */
+.vgl-type-section {
+  margin-bottom: 2rem;
+}
+
+.vgl-type-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.vgl-type-badge {
+  font-size: 0.78rem;
+}
+
+.vgl-type-count {
+  font-size: 0.82rem;
+  color: var(--text-3);
+}
+
 /* Verb grid */
 .verb-grid {
   display: grid;
