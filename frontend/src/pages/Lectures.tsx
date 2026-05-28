@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
 import type { StepType } from '../data/courses';
-import { getActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
+import { getStepStatus, markStepVisited } from '../utils/courseProgress';
 import { useT } from '../utils/i18n';
 import './Lectures.css';
 
@@ -27,22 +27,13 @@ type LectureFilter = 'all' | 'grammar' | 'phrases' | 'reading';
 const FILTERS: LectureFilter[] = ['all', 'grammar', 'phrases', 'reading'];
 
 export default function Lectures() {
+    const { level } = useParams<{ level: string }>();
     const navigate = useNavigate();
     const t = useT();
     const courses = useCourses();
-    const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
     const [filter, setFilter] = useState<LectureFilter>('all');
 
-    useEffect(() => {
-        const handler = (e: Event) => {
-            setCourseLevel((e as CustomEvent<string>).detail);
-            setFilter('all');
-        };
-        window.addEventListener('activeCourseChanged', handler);
-        return () => window.removeEventListener('activeCourseChanged', handler);
-    }, []);
-
-    const activeCourse = courses.find(c => c.level === courseLevel);
+    const activeCourse = courses.find(c => c.level.toLowerCase() === (level ?? ''));
     const allLectureSteps = activeCourse?.steps.filter(
         s => s.type === 'grammar' || s.type === 'phrases' || s.type === 'reading'
     ) ?? [];
@@ -90,7 +81,7 @@ export default function Lectures() {
                                 key={step.id}
                                 className="lecture-card"
                                 style={{ borderLeftColor: color }}
-                                onClick={() => { markStepVisited(step.id); navigate(step.path); }}
+                                onClick={() => { markStepVisited(step.id); navigate(`/courses/${level}${step.path}`); }}
                                 type="button"
                             >
                                 <span className="lecture-icon">{icon}</span>

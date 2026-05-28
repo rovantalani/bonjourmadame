@@ -9,16 +9,13 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
-import Grammar from './pages/Grammar';
 import GrammarLesson from './pages/GrammarLesson';
 import Vocabulary from './pages/Vocabulary';
 import VocabularyQuiz from './pages/VocabularyQuiz';
-import HelperVerbs from './pages/HelperVerbs';
 import VerbConjugation from './pages/VerbConjugation';
 import VerbGroupList from './pages/VerbGroupList';
 import VerbLearn from './pages/VerbLearn';
 import VerbQuiz from './pages/VerbQuiz';
-import Phrases from './pages/Phrases';
 import PhraseDetail from './pages/PhraseDetail';
 import PhraseQuiz from './pages/PhraseQuiz';
 import ReviewQueue from './pages/ReviewQueue';
@@ -56,30 +53,27 @@ function AppShell() {
                 {!isWelcome && <Nav />}
                 {!isWelcome && <GuestBanner />}
                 <Routes>
-                    <Route path="/welcome"                          element={<Welcome />} />
-                    <Route path="/"                                 element={<Home />} />
-                    <Route path="/vocabulary"                       element={<Vocabulary />} />
-                    <Route path="/vocabulary/:moduleId"             element={<VocabularyQuiz />} />
-                    <Route path="/grammar"                          element={<Grammar />} />
-                    <Route path="/grammar/lessons/:lessonId"        element={<GrammarLesson />} />
-                    <Route path="/grammar/verbs/:verbId/learn"      element={<VerbLearn />} />
-                    <Route path="/grammar/verbs/:verbId/quiz"       element={<VerbQuiz />} />
-                    <Route path="/grammar/:moduleId"                element={<VerbGroupList />} />
-                    <Route path="/helper-verbs"                     element={<HelperVerbs />} />
-                    <Route path="/helper-verbs/:verbId"             element={<VerbConjugation />} />
-                    <Route path="/phrases"                          element={<Phrases />} />
-                    <Route path="/phrases/:categoryId"              element={<PhraseDetail />} />
-                    <Route path="/phrases/:categoryId/quiz"         element={<PhraseQuiz />} />
-                    <Route path="/review-queue"                     element={<ReviewQueue />} />
-                    <Route path="/reading/:moduleId"                element={<ReadingPassage />} />
-                    <Route path="/courses"                          element={<Courses />} />
-                    <Route path="/courses/:level"                   element={<CourseRoadmap />} />
-                    <Route path="/verbs"                            element={<Verbs />} />
-                    <Route path="/lectures"                         element={<Lectures />} />
-                    <Route path="/stats"                            element={<Stats />} />
-                    <Route path="/settings"                         element={<Settings />} />
-                    <Route path="/login"                            element={<Login />} />
-                    <Route path="/register"                         element={<Register />} />
+                    <Route path="/welcome"                                          element={<Welcome />} />
+                    <Route path="/"                                                 element={<Home />} />
+                    <Route path="/courses"                                          element={<Courses />} />
+                    <Route path="/courses/:level"                                   element={<CourseRoadmap />} />
+                    <Route path="/courses/:level/vocabulary"                        element={<Vocabulary />} />
+                    <Route path="/courses/:level/vocabulary/:moduleId"              element={<VocabularyQuiz />} />
+                    <Route path="/courses/:level/verbs"                             element={<Verbs />} />
+                    <Route path="/courses/:level/verbs/:moduleId"                   element={<VerbGroupList />} />
+                    <Route path="/courses/:level/verbs/:verbId/learn"               element={<VerbLearn />} />
+                    <Route path="/courses/:level/verbs/:verbId/quiz"                element={<VerbQuiz />} />
+                    <Route path="/courses/:level/verbs/:verbId/table"               element={<VerbConjugation />} />
+                    <Route path="/courses/:level/lectures"                          element={<Lectures />} />
+                    <Route path="/courses/:level/lectures/grammar/:lessonId"        element={<GrammarLesson />} />
+                    <Route path="/courses/:level/lectures/phrases/:categoryId"      element={<PhraseDetail />} />
+                    <Route path="/courses/:level/lectures/phrases/:categoryId/quiz" element={<PhraseQuiz />} />
+                    <Route path="/courses/:level/lectures/reading/:moduleId"        element={<ReadingPassage />} />
+                    <Route path="/review-queue"                                     element={<ReviewQueue />} />
+                    <Route path="/stats"                                            element={<Stats />} />
+                    <Route path="/settings"                                         element={<Settings />} />
+                    <Route path="/login"                                            element={<Login />} />
+                    <Route path="/register"                                         element={<Register />} />
                 </Routes>
             </div>
         </AuthGate>

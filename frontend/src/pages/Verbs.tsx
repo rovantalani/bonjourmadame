@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
-import { getActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
+import { getStepStatus, markStepVisited } from '../utils/courseProgress';
 import { useT } from '../utils/i18n';
 import './Verbs.css';
 
@@ -17,18 +16,12 @@ const VERB_ICONS: Record<string, string> = {
 };
 
 export default function Verbs() {
+    const { level } = useParams<{ level: string }>();
     const navigate = useNavigate();
     const t = useT();
     const courses = useCourses();
-    const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
 
-    useEffect(() => {
-        const handler = (e: Event) => setCourseLevel((e as CustomEvent<string>).detail);
-        window.addEventListener('activeCourseChanged', handler);
-        return () => window.removeEventListener('activeCourseChanged', handler);
-    }, []);
-
-    const activeCourse = courses.find(c => c.level === courseLevel);
+    const activeCourse = courses.find(c => c.level.toLowerCase() === (level ?? ''));
     const verbSteps = activeCourse?.steps.filter(s => s.type === 'verbs') ?? [];
 
     return (
@@ -50,7 +43,7 @@ export default function Verbs() {
                             <button
                                 key={step.id}
                                 className="verbs-card"
-                                onClick={() => { markStepVisited(step.id); navigate(step.path); }}
+                                onClick={() => { markStepVisited(step.id); navigate(`/courses/${level}${step.path}`); }}
                                 type="button"
                             >
                                 <div className="verbs-card-header">

@@ -25,7 +25,7 @@ interface PhraseCategoryData {
 
 export default function PhraseQuiz() {
     const navigate                = useNavigate();
-    const { categoryId }          = useParams<{ categoryId: string }>();
+    const { level, categoryId }   = useParams<{ level: string; categoryId: string }>();
     const { user }                = useAuth();
 
     const [phrases, setPhrases]   = useState<Phrase[]>([]);
@@ -125,7 +125,7 @@ export default function PhraseQuiz() {
                         </div>
                     </div>
                     <div className="vocq-complete-actions">
-                        <button className="btn btn-primary" onClick={() => navigate(`/phrases/${categoryId}`)}>
+                        <button className="btn btn-primary" onClick={() => navigate(`/courses/${level}/lectures/phrases/${categoryId}`)}>
                             {t.quiz.backToPhrases}
                         </button>
                     </div>
@@ -144,7 +144,7 @@ export default function PhraseQuiz() {
             <div className="vocq-top-bar">
                 <button
                     className="btn btn-secondary vocq-exit-btn"
-                    onClick={() => navigate(`/phrases/${categoryId}`)}
+                    onClick={() => navigate(`/courses/${level}/lectures/phrases/${categoryId}`)}
                 >
                     {t.quiz.exit}
                 </button>

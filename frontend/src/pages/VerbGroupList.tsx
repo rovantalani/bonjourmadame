@@ -43,7 +43,7 @@ function groupByType(verbs: VerbSummary[]): { type: string; verbs: VerbSummary[]
 }
 
 export default function VerbGroupList() {
-    const { moduleId } = useParams<{ moduleId: string }>();
+    const { level, moduleId } = useParams<{ level: string; moduleId: string }>();
     const navigate = useNavigate();
     const t = useT();
 
@@ -53,10 +53,6 @@ export default function VerbGroupList() {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-        if (moduleId === 'helper-verbs') {
-            navigate('/helper-verbs', { replace: true });
-            return;
-        }
         setLoading(true);
         setError(false);
         const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
@@ -168,7 +164,7 @@ export default function VerbGroupList() {
                                                 padding: '0.45rem 0.9rem',
                                                 fontSize: '0.82rem',
                                             }}
-                                            onClick={() => navigate(`/grammar/verbs/${verb.id}/learn`)}
+                                            onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/learn`)}
                                         >
                                             {t.verbGroupList.learn}
                                         </button>
@@ -180,7 +176,7 @@ export default function VerbGroupList() {
                                                 padding: '0.45rem 0.9rem',
                                                 fontSize: '0.82rem',
                                             }}
-                                            onClick={() => navigate(`/grammar/verbs/${verb.id}/quiz`)}
+                                            onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/quiz`)}
                                         >
                                             {t.verbGroupList.quiz}
                                         </button>

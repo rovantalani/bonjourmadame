@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { getModuleMastery } from '../utils/progress';
-import { getActiveCourse, getStepStatus } from '../utils/courseProgress';
+import { getStepStatus } from '../utils/courseProgress';
 import { useCourses } from '../utils/modeHelpers';
-import type { CourseStep } from '../data/courses';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
 import './Vocabulary.css';
@@ -21,11 +20,11 @@ interface VocabularyModule {
 const READING_IDS = new Set(['sherlock-holmes-ch1', 'sherlock-holmes-ch2']);
 
 export default function Vocabulary() {
+    const { level } = useParams<{ level: string }>();
     const navigate = useNavigate();
     const t = useT();
     const courses = useCourses();
     const [modules, setModules] = useState<VocabularyModule[]>([]);
-    const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
 
     useEffect(() => {
         const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
@@ -34,19 +33,9 @@ export default function Vocabulary() {
             .catch(err => console.error('Failed to load vocabulary modules', err));
     }, []);
 
-    useEffect(() => {
-        const handler = (e: Event) => setCourseLevel((e as CustomEvent<string>).detail);
-        window.addEventListener('activeCourseChanged', handler);
-        return () => window.removeEventListener('activeCourseChanged', handler);
-    }, []);
-
-    const activeCourse = courses.find(c => c.level === courseLevel);
+    const activeCourse = courses.find(c => c.level.toLowerCase() === (level ?? ''));
     const vocabSteps = activeCourse?.steps.filter(s => s.type === 'vocabulary') ?? [];
     const moduleMap = new Map(modules.map(m => [m.id, m]));
-
-    const handleNavigate = (_step: CourseStep, path: string) => {
-        navigate(path);
-    };
 
     return (
         <main className="page">
@@ -110,14 +99,14 @@ export default function Vocabulary() {
                                     <div className="vocab-card-actions">
                                         <button
                                             className="vocab-card-action-btn"
-                                            onClick={() => handleNavigate(step, `/vocabulary/${module.id}`)}
+                                            onClick={() => navigate(`/courses/${level}/vocabulary/${module.id}`)}
                                             type="button"
                                         >
                                             {t.vocabulary.quiz}
                                         </button>
                                         <button
                                             className="vocab-card-action-btn vocab-card-action-btn--read"
-                                            onClick={() => handleNavigate(step, `/reading/${module.id}`)}
+                                            onClick={() => navigate(`/courses/${level}/lectures/reading/${module.id}`)}
                                             type="button"
                                             style={{ borderColor: module.color, color: module.color }}
                                         >
@@ -131,7 +120,7 @@ export default function Vocabulary() {
                             <button
                                 key={module.id}
                                 className="vocab-card"
-                                onClick={() => handleNavigate(step, `/vocabulary/${module.id}`)}
+                                onClick={() => navigate(`/courses/${level}/vocabulary/${module.id}`)}
                                 type="button"
                             >
                                 {cardInner}

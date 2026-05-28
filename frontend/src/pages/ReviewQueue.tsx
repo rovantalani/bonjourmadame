@@ -156,7 +156,7 @@ export default function ReviewQueue() {
                     </div>
                     <button
                         className="btn btn-secondary rq-back-btn"
-                        onClick={() => navigate('/vocabulary')}
+                        onClick={() => navigate(-1)}
                     >
                         {t.reviewQueue.goToVocabulary}
                     </button>
@@ -211,7 +211,7 @@ export default function ReviewQueue() {
                 {totalCount === 0 && (
                     <button
                         className="btn btn-secondary rq-back-btn"
-                        onClick={() => navigate('/vocabulary')}
+                        onClick={() => navigate(-1)}
                     >
                         {t.reviewQueue.goToVocabulary}
                     </button>

@@ -20,7 +20,7 @@ interface PhraseCategoryData {
 }
 
 export default function PhraseDetail() {
-    const { categoryId } = useParams<{ categoryId: string }>();
+    const { level, categoryId } = useParams<{ level: string; categoryId: string }>();
     const navigate = useNavigate();
     const t = useT();
     const [category, setCategory] = useState<PhraseCategoryData | null>(null);
@@ -56,7 +56,7 @@ export default function PhraseDetail() {
     if (error || !category) {
         return (
             <main className="page">
-                <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
+                <button className="back-btn" onClick={() => navigate(`/courses/${level}/lectures`)} type="button">
                     {t.phraseDetail.back}
                 </button>
                 <p>{t.phraseDetail.notFound}</p>
@@ -67,12 +67,12 @@ export default function PhraseDetail() {
     return (
         <main className="page">
             <div className="phrase-detail-nav">
-                <button className="back-btn" onClick={() => navigate('/phrases')} type="button">
+                <button className="back-btn" onClick={() => navigate(`/courses/${level}/lectures`)} type="button">
                     {t.phraseDetail.back}
                 </button>
                 <button
                     className="btn btn-primary"
-                    onClick={() => navigate(`/phrases/${categoryId}/quiz`)}
+                    onClick={() => navigate(`/courses/${level}/lectures/phrases/${categoryId}/quiz`)}
                     type="button"
                 >
                     {t.phraseDetail.startQuiz}
