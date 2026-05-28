@@ -1,6 +1,9 @@
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { useT } from '../utils/i18n';
+import { useCourses } from '../utils/modeHelpers';
+import { getActiveCourse, setActiveCourse } from '../utils/courseProgress';
 import './Nav.css';
 
 function useActiveItem() {
@@ -11,14 +14,101 @@ function useActiveItem() {
     };
 }
 
+function LevelIndicator({ activeLevel }: { activeLevel: string }) {
+    const courses = useCourses();
+    const navigate = useNavigate();
+    const t = useT();
+    const [open, setOpen] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!open) return;
+        const handler = (e: MouseEvent) => {
+            if (ref.current && !ref.current.contains(e.target as Node)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handler);
+        return () => document.removeEventListener('mousedown', handler);
+    }, [open]);
+
+    const activeCourse = courses.find(c => c.level === activeLevel);
+    const color = activeCourse?.color ?? 'var(--accent)';
+
+    return (
+        <div className="level-indicator" ref={ref}>
+            <button
+                className="level-indicator-btn"
+                style={{
+                    backgroundColor: `${color}1A`,
+                    color: color,
+                    borderColor: `${color}40`,
+                }}
+                onClick={() => setOpen(o => !o)}
+                aria-label="Change course level"
+            >
+                <span className="level-indicator-badge">{activeLevel}</span>
+                <span className="level-indicator-chevron">{open ? '▴' : '▾'}</span>
+            </button>
+
+            {open && (
+                <div className="level-dropdown">
+                    <p className="level-dropdown-heading">{t.nav.courses}</p>
+                    <ul className="level-dropdown-list">
+                        {courses.map(c => (
+                            <li key={c.level}>
+                                <button
+                                    className={`level-dropdown-item${c.level === activeLevel ? ' level-dropdown-item--active' : ''}`}
+                                    onClick={() => {
+                                        setActiveCourse(c.level);
+                                        navigate(`/courses/${c.level.toLowerCase()}`);
+                                        setOpen(false);
+                                    }}
+                                >
+                                    <span
+                                        className="level-dropdown-badge"
+                                        style={{ backgroundColor: c.color }}
+                                    >
+                                        {c.level}
+                                    </span>
+                                    <span className="level-dropdown-title">{c.title}</span>
+                                    {c.level === activeLevel && (
+                                        <span className="level-dropdown-check" style={{ color: c.color }}>✓</span>
+                                    )}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="level-dropdown-footer">
+                        <button
+                            className="level-dropdown-browse"
+                            onClick={() => { navigate('/courses'); setOpen(false); }}
+                        >
+                            Browse all courses →
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
+
 export default function Nav() {
     const navigate   = useNavigate();
     const isActive   = useActiveItem();
     const { dark, toggle } = useTheme();
     const t = useT();
+    const [activeLevel, setActiveLevel] = useState(() => getActiveCourse() ?? 'A1');
+
+    useEffect(() => {
+        const handler = (e: Event) => setActiveLevel((e as CustomEvent<string>).detail);
+        window.addEventListener('activeCourseChanged', handler);
+        return () => window.removeEventListener('activeCourseChanged', handler);
+    }, []);
+
+    const roadmapPath = `/courses/${activeLevel.toLowerCase()}`;
 
     const NAV_ITEMS = [
-        { path: '/courses',    label: t.nav.courses,    icon: '🎓' },
         { path: '/vocabulary', label: t.nav.vocabulary, icon: '📖' },
         { path: '/verbs',      label: t.nav.verbs,      icon: '✏️'  },
         { path: '/lectures',   label: t.nav.lectures,   icon: '📚' },
@@ -35,6 +125,12 @@ export default function Nav() {
                     </button>
 
                     <div className="top-nav-links">
+                        <button
+                            className={`top-nav-link ${isActive('/courses') ? 'active' : ''}`}
+                            onClick={() => navigate(roadmapPath)}
+                        >
+                            {t.nav.overview}
+                        </button>
                         {NAV_ITEMS.map(item => (
                             <button
                                 key={item.path}
@@ -45,27 +141,38 @@ export default function Nav() {
                             </button>
                         ))}
                     </div>
-                    <button
-                        className={`top-nav-link ${isActive('/stats') ? 'active' : ''}`}
-                        onClick={() => navigate('/stats')}
-                    >
-                        {t.nav.stats}
-                    </button>
-                    <button
-                        className={`top-nav-link ${isActive('/settings') ? 'active' : ''}`}
-                        onClick={() => navigate('/settings')}
-                        aria-label="Settings"
-                    >
-                        ⚙
-                    </button>
-                    <button className="theme-toggle" onClick={toggle} aria-label="Toggle dark mode">
-                        {dark ? '☀' : '☽'}
-                    </button>
+
+                    <div className="top-nav-right">
+                        <LevelIndicator activeLevel={activeLevel} />
+                        <button
+                            className={`top-nav-link ${isActive('/stats') ? 'active' : ''}`}
+                            onClick={() => navigate('/stats')}
+                        >
+                            {t.nav.stats}
+                        </button>
+                        <button
+                            className={`top-nav-link ${isActive('/settings') ? 'active' : ''}`}
+                            onClick={() => navigate('/settings')}
+                            aria-label="Settings"
+                        >
+                            ⚙
+                        </button>
+                        <button className="theme-toggle" onClick={toggle} aria-label="Toggle dark mode">
+                            {dark ? '☀' : '☽'}
+                        </button>
+                    </div>
                 </div>
             </nav>
 
             {/* ── Mobile bottom tab bar ── */}
             <nav className="bottom-nav">
+                <button
+                    className={`bottom-nav-item ${isActive('/courses') ? 'active' : ''}`}
+                    onClick={() => navigate(roadmapPath)}
+                >
+                    <span className="bottom-nav-icon">🗺️</span>
+                    <span className="bottom-nav-label">{t.nav.overview}</span>
+                </button>
                 {NAV_ITEMS.map(item => (
                     <button
                         key={item.path}

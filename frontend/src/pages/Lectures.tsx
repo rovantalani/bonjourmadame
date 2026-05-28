@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
 import type { StepType } from '../data/courses';
-import { getActiveCourse, setActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
-import CourseBar from '../components/CourseBar';
+import { getActiveCourse, getStepStatus, markStepVisited } from '../utils/courseProgress';
 import { useT } from '../utils/i18n';
 import './Lectures.css';
 
@@ -34,6 +33,15 @@ export default function Lectures() {
     const [courseLevel, setCourseLevel] = useState(() => getActiveCourse() ?? 'A1');
     const [filter, setFilter] = useState<LectureFilter>('all');
 
+    useEffect(() => {
+        const handler = (e: Event) => {
+            setCourseLevel((e as CustomEvent<string>).detail);
+            setFilter('all');
+        };
+        window.addEventListener('activeCourseChanged', handler);
+        return () => window.removeEventListener('activeCourseChanged', handler);
+    }, []);
+
     const activeCourse = courses.find(c => c.level === courseLevel);
     const allLectureSteps = activeCourse?.steps.filter(
         s => s.type === 'grammar' || s.type === 'phrases' || s.type === 'reading'
@@ -41,12 +49,6 @@ export default function Lectures() {
     const lectureSteps = filter === 'all'
         ? allLectureSteps
         : allLectureSteps.filter(s => s.type === filter);
-
-    const handleCourseChange = (level: string) => {
-        setActiveCourse(level);
-        setCourseLevel(level);
-        setFilter('all');
-    };
 
     const filterLabel = (f: LectureFilter) =>
         f === 'all' ? t.lectures.all : t.roadmap.types[f];
@@ -57,8 +59,6 @@ export default function Lectures() {
                 <h1>{t.lectures.title}</h1>
                 <p className="subtitle">{t.lectures.subtitle}</p>
             </header>
-
-            <CourseBar activeLevel={courseLevel} onChange={handleCourseChange} />
 
             <div className="lectures-filters" role="group" aria-label="Filter lectures">
                 {FILTERS.map(f => (

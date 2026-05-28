@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
 import './HelperVerbs.css';
@@ -32,13 +32,20 @@ const VERB_GROUP_IDS_EN = [
 
 export default function HelperVerbs() {
     const navigate = useNavigate();
+    const location = useLocation();
     const t = useT();
     const isEN = loadLearningMode() === 'learn-english';
     const helperVerbIds = isEN ? HELPER_VERB_IDS_EN : HELPER_VERB_IDS_FR;
     const verbGroupIds  = isEN ? VERB_GROUP_IDS_EN  : VERB_GROUP_IDS_FR;
+    const canGoBack = location.key !== 'default';
 
     return (
         <main className="page">
+            {canGoBack && (
+                <button className="back-btn" onClick={() => navigate(-1)}>
+                    ← Back
+                </button>
+            )}
             <header className="page-header">
                 <h1>{t.verbs.title}</h1>
                 <p className="subtitle">{t.helperVerbs.pageSubtitle}</p>

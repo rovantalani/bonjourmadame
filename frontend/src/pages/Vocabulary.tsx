@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { getModuleMastery } from '../utils/progress';
-import { getActiveCourse, setActiveCourse, getStepStatus } from '../utils/courseProgress';
+import { getActiveCourse, getStepStatus } from '../utils/courseProgress';
 import { useCourses } from '../utils/modeHelpers';
 import type { CourseStep } from '../data/courses';
-import CourseBar from '../components/CourseBar';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
 import './Vocabulary.css';
@@ -35,14 +34,15 @@ export default function Vocabulary() {
             .catch(err => console.error('Failed to load vocabulary modules', err));
     }, []);
 
+    useEffect(() => {
+        const handler = (e: Event) => setCourseLevel((e as CustomEvent<string>).detail);
+        window.addEventListener('activeCourseChanged', handler);
+        return () => window.removeEventListener('activeCourseChanged', handler);
+    }, []);
+
     const activeCourse = courses.find(c => c.level === courseLevel);
     const vocabSteps = activeCourse?.steps.filter(s => s.type === 'vocabulary') ?? [];
     const moduleMap = new Map(modules.map(m => [m.id, m]));
-
-    const handleCourseChange = (level: string) => {
-        setActiveCourse(level);
-        setCourseLevel(level);
-    };
 
     const handleNavigate = (_step: CourseStep, path: string) => {
         navigate(path);
@@ -54,8 +54,6 @@ export default function Vocabulary() {
                 <h1>{t.vocabulary.title}</h1>
                 <p className="subtitle">{t.vocabulary.subtitle}</p>
             </header>
-
-            <CourseBar activeLevel={courseLevel} onChange={handleCourseChange} />
 
             {vocabSteps.length === 0 ? (
                 <p style={{ color: 'var(--text-3)', marginTop: '1rem' }}>No vocabulary in this course.</p>
