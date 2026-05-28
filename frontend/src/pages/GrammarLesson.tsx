@@ -106,7 +106,7 @@ export default function GrammarLesson() {
     if (error || !lesson) {
         return (
             <main className="page">
-                <button className="back-btn" onClick={() => navigate('/grammar')} type="button">
+                <button className="back-btn" onClick={() => navigate(-1)} type="button">
                     {t.grammarLesson.back}
                 </button>
                 <p>{t.grammarLesson.notFound}</p>
@@ -122,7 +122,7 @@ export default function GrammarLesson() {
 
     return (
         <main className="page">
-            <button className="back-btn" onClick={() => navigate('/grammar')} type="button">
+            <button className="back-btn" onClick={() => navigate(-1)} type="button">
                 {t.grammarLesson.back}
             </button>
 

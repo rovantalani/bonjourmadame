@@ -16,7 +16,7 @@ interface Word {
 
 export default function VocabularyQuiz() {
     const navigate = useNavigate();
-    const { moduleId } = useParams();
+    const { level, moduleId } = useParams<{ level: string; moduleId: string }>();
     const { user } = useAuth();
 
     const [allWords, setAllWords] = useState<Word[]>([]);
@@ -173,7 +173,7 @@ export default function VocabularyQuiz() {
     };
 
     const handleExit = () => {
-        navigate('/vocabulary');
+        navigate(`/courses/${level}/vocabulary`);
     };
 
     if (allMastered) {

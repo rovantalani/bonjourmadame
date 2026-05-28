@@ -15,13 +15,6 @@ export default function Home() {
     const { user } = useAuth();
     const t = useT();
 
-    const SECTION_CARDS = [
-        { id: 'vocabulary',   path: '/vocabulary',   color: '#4338CA', icon: '📖', ...t.home.sections.vocabulary  },
-        { id: 'grammar',      path: '/grammar',      color: '#059669', icon: '✏️', ...t.home.sections.grammar     },
-        { id: 'phrases',      path: '/phrases',      color: '#0891B2', icon: '💬', ...t.home.sections.phrases     },
-        { id: 'helper-verbs', path: '/helper-verbs', color: '#D97706', icon: '⚡', ...t.home.sections.helperVerbs },
-    ];
-
     const isEnglishMode = loadLearningMode() === 'learn-english';
     const [showENBanner, setShowENBanner] = useState(() => {
         return isEnglishMode && localStorage.getItem('onboardingShownEN') !== 'true';
@@ -59,6 +52,13 @@ export default function Home() {
     const activeCourse      = courses.find(c => c.level === activeCourseLevel) ?? null;
     const nextStep          = activeCourse ? getNextStep(activeCourse) : null;
     const courseProgress    = activeCourse ? getCourseProgress(activeCourse) : null;
+    const activeLevel       = activeCourseLevel?.toLowerCase() ?? 'a1';
+
+    const SECTION_CARDS = [
+        { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: '#4338CA', icon: '📖', ...t.home.sections.vocabulary  },
+        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: '#059669', icon: '✏️', ...t.home.sections.grammar     },
+        { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: '#D97706', icon: '⚡', ...t.home.sections.helperVerbs },
+    ];
 
     return (
         <main className="page">
@@ -125,7 +125,7 @@ export default function Home() {
             {activeCourse && (
                 <button
                     className="home-course-banner card"
-                    onClick={() => navigate(nextStep ? nextStep.path : `/courses/${activeCourse.level.toLowerCase()}`)}
+                    onClick={() => navigate(`/courses/${activeCourse.level.toLowerCase()}${nextStep ? nextStep.path : ''}`)}
                     type="button"
                 >
                     <span

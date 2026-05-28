@@ -36,7 +36,7 @@ function normalize(s: string): string {
 }
 
 export default function VerbQuiz() {
-    const { verbId } = useParams<{ verbId: string }>();
+    const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
     const isENUI = loadLearningMode() === 'learn-english';
 
@@ -79,7 +79,7 @@ export default function VerbQuiz() {
         }
     }, [tenseIndex, reviewStep, submitted]);
 
-    const handleExit = () => navigate(`/grammar/${verb?.groupId ?? 'regular-verbs'}`);
+    const handleExit = () => navigate(`/courses/${level}/verbs/${verb?.groupId ?? 'regular-verbs'}`);
 
     // Current tense index (0-3) regardless of phase
     const activeTenseIdx = phase === 'review' ? reviewQueue[reviewStep] : tenseIndex;

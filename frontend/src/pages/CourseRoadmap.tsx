@@ -44,7 +44,7 @@ export default function CourseRoadmap() {
 
     const handleStepClick = (path: string, stepId: string) => {
         markStepVisited(stepId);
-        navigate(path);
+        navigate(`/courses/${level}${path}`);
     };
 
     const renderStepItem = (step: CourseStep, isLast: boolean) => {

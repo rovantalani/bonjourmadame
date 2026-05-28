@@ -20,7 +20,7 @@ interface VerbData {
 }
 
 export default function VerbLearn() {
-    const { verbId } = useParams<{ verbId: string }>();
+    const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
 
     const [verb, setVerb] = useState<VerbData | null>(null);
@@ -56,8 +56,8 @@ export default function VerbLearn() {
     if (error || !verb) {
         return (
             <main className="page">
-                <button className="back-btn" onClick={() => navigate('/grammar')}>
-                    ← Back to Grammar
+                <button className="back-btn" onClick={() => navigate(-1)}>
+                    ← Back
                 </button>
                 <p>Verb not found.</p>
             </main>
@@ -71,14 +71,14 @@ export default function VerbLearn() {
             <div className="vl-nav">
                 <button
                     className="back-btn"
-                    onClick={() => navigate(`/grammar/${verb.groupId}`)}
+                    onClick={() => navigate(`/courses/${level}/verbs/${verb.groupId}`)}
                 >
                     ← Back to {groupLabel}
                 </button>
                 <button
                     className="btn vl-quiz-btn"
                     style={{ backgroundColor: verb.color, color: '#fff' }}
-                    onClick={() => navigate(`/grammar/verbs/${verbId}/quiz`)}
+                    onClick={() => navigate(`/courses/${level}/verbs/${verbId}/quiz`)}
                 >
                     Take Quiz →
                 </button>

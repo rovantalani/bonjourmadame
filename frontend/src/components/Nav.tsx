@@ -95,6 +95,7 @@ function LevelIndicator({ activeLevel }: { activeLevel: string }) {
 
 export default function Nav() {
     const navigate   = useNavigate();
+    const { pathname } = useLocation();
     const isActive   = useActiveItem();
     const { dark, toggle } = useTheme();
     const t = useT();
@@ -106,12 +107,13 @@ export default function Nav() {
         return () => window.removeEventListener('activeCourseChanged', handler);
     }, []);
 
-    const roadmapPath = `/courses/${activeLevel.toLowerCase()}`;
+    const level = activeLevel.toLowerCase();
+    const roadmapPath = `/courses/${level}`;
 
     const NAV_ITEMS = [
-        { path: '/vocabulary', label: t.nav.vocabulary, icon: '📖' },
-        { path: '/verbs',      label: t.nav.verbs,      icon: '✏️'  },
-        { path: '/lectures',   label: t.nav.lectures,   icon: '📚' },
+        { path: `/courses/${level}/vocabulary`, segment: 'vocabulary', label: t.nav.vocabulary, icon: '📖' },
+        { path: `/courses/${level}/verbs`,      segment: 'verbs',      label: t.nav.verbs,      icon: '✏️'  },
+        { path: `/courses/${level}/lectures`,   segment: 'lectures',   label: t.nav.lectures,   icon: '📚' },
     ];
 
     return (
@@ -126,15 +128,15 @@ export default function Nav() {
 
                     <div className="top-nav-links">
                         <button
-                            className={`top-nav-link ${isActive('/courses') ? 'active' : ''}`}
+                            className={`top-nav-link ${pathname === roadmapPath ? 'active' : ''}`}
                             onClick={() => navigate(roadmapPath)}
                         >
                             {t.nav.overview}
                         </button>
                         {NAV_ITEMS.map(item => (
                             <button
-                                key={item.path}
-                                className={`top-nav-link ${isActive(item.path) ? 'active' : ''}`}
+                                key={item.segment}
+                                className={`top-nav-link ${pathname.includes('/' + item.segment) ? 'active' : ''}`}
                                 onClick={() => navigate(item.path)}
                             >
                                 {item.label}
@@ -167,7 +169,7 @@ export default function Nav() {
             {/* ── Mobile bottom tab bar ── */}
             <nav className="bottom-nav">
                 <button
-                    className={`bottom-nav-item ${isActive('/courses') ? 'active' : ''}`}
+                    className={`bottom-nav-item ${pathname === roadmapPath ? 'active' : ''}`}
                     onClick={() => navigate(roadmapPath)}
                 >
                     <span className="bottom-nav-icon">🗺️</span>
@@ -175,8 +177,8 @@ export default function Nav() {
                 </button>
                 {NAV_ITEMS.map(item => (
                     <button
-                        key={item.path}
-                        className={`bottom-nav-item ${isActive(item.path) ? 'active' : ''}`}
+                        key={item.segment}
+                        className={`bottom-nav-item ${pathname.includes('/' + item.segment) ? 'active' : ''}`}
                         onClick={() => navigate(item.path)}
                     >
                         <span className="bottom-nav-icon">{item.icon}</span>
