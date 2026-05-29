@@ -35,6 +35,13 @@ function normalize(s: string): string {
     return s.toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
+function displaySujet(sujet: string, form: string): string {
+    if (sujet.toLowerCase() === 'je' && /^[aeiouhyàâäéèêëîïôùûüœæ']/i.test(form.trim())) {
+        return "j'";
+    }
+    return sujet;
+}
+
 export default function VerbQuiz() {
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
@@ -286,7 +293,7 @@ export default function VerbQuiz() {
                                         className="vq-sujet"
                                         style={{ color: verb.color }}
                                     >
-                                        {row.sujet}
+                                        {displaySujet(row.sujet, row[currentTense.key])}
                                     </td>
                                     <td className="vq-answer-cell">
                                         {isPrefill ? (
