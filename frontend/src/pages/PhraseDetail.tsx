@@ -104,7 +104,10 @@ export default function PhraseDetail() {
                             <p className="phrase-fr">{phrase.french}</p>
                             <SpeakerButton text={phrase.french} lang="fr-FR" />
                         </div>
-                        <p className="phrase-en">{phrase.english}</p>
+                        <div className="phrase-fr-row">
+                            <p className="phrase-en">{phrase.english}</p>
+                            <SpeakerButton text={phrase.english} lang="en-US" />
+                        </div>
                         {phrase.note && (
                             <span className="phrase-note">{phrase.note}</span>
                         )}
