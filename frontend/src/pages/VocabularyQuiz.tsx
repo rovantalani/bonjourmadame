@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import { isAnswerCorrect } from '../utils/answerValidator';
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import { useT } from '../utils/i18n';
+import SpeakerButton from '../components/SpeakerButton';
 import './VocabularyQuiz.css';
 
 interface Word {
@@ -279,9 +280,15 @@ export default function VocabularyQuiz() {
                     <p className="section-label vocq-word-label">
                         {quizDir === 'fr-en' ? t.quiz.translateToEnglish : t.quiz.translateToFrench}
                     </p>
-                    <h2 className="vocq-word-english">
-                        {quizDir === 'fr-en' ? currentWord.french : currentWord.english}
-                    </h2>
+                    <div className="vocq-word-row">
+                        <h2 className="vocq-word-english">
+                            {quizDir === 'fr-en' ? currentWord.french : currentWord.english}
+                        </h2>
+                        <SpeakerButton
+                            text={quizDir === 'fr-en' ? currentWord.french : currentWord.english}
+                            lang={quizDir === 'fr-en' ? 'fr-FR' : 'en-US'}
+                        />
+                    </div>
                 </div>
 
                 <hr className="vocq-divider" />
@@ -312,9 +319,15 @@ export default function VocabularyQuiz() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
-                        <p className="vocq-correct-answer">
-                            {quizDir === 'fr-en' ? currentWord.english : currentWord.french}
-                        </p>
+                        <div className="vocq-word-row">
+                            <p className="vocq-correct-answer">
+                                {quizDir === 'fr-en' ? currentWord.english : currentWord.french}
+                            </p>
+                            <SpeakerButton
+                                text={quizDir === 'fr-en' ? currentWord.english : currentWord.french}
+                                lang={quizDir === 'fr-en' ? 'en-US' : 'fr-FR'}
+                            />
+                        </div>
                         {userAnswer && (
                             <p className="vocq-wrong-answer">{userAnswer}</p>
                         )}

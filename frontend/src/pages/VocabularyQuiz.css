@@ -56,11 +56,18 @@
   margin-bottom: 0.5rem;
 }
 
+.vocq-word-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+}
+
 .vocq-word-english {
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-1);
-  margin: 0.75rem 0 0;
+  margin: 0;
 }
 
 .vocq-divider {

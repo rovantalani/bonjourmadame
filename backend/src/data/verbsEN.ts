@@ -144,3 +144,11 @@ export const verbsDataEN: Record<string, VerbEntry[]> = {
         { id: 'run',   infinitive: 'run',   translation: 'courir',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'run',   passeCompose: 'ran',     imparfait: 'am running',  futurSimple: 'will run'   }, { sujet: 'he/she/it', present: 'runs',   passeCompose: 'ran',     imparfait: 'is running',  futurSimple: 'will run'   }] },
     ],
 };
+
+export const verbByIdEN: Record<string, VerbEntry> = Object.fromEntries(
+    Object.values(verbsDataEN).flat().map(v => [v.id, v])
+);
+
+export const verbGroupMapEN: Record<string, string> = Object.fromEntries(
+    Object.entries(verbsDataEN).flatMap(([groupId, verbs]) => verbs.map(v => [v.id, groupId]))
+);

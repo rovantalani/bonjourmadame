@@ -1,0 +1,29 @@
+.speaker-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.speaker-btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.speaker-btn:hover {
+  background: var(--surface-2, var(--surface));
+  color: var(--accent);
+}
+
+.speaker-btn--active {
+  color: var(--accent);
+}
