@@ -24,6 +24,8 @@ interface VerbData {
 export default function VerbLearn() {
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
+    const isENMode = loadLearningMode() === 'learn-english';
+    const speakLang = isENMode ? 'en-US' : 'fr-FR';
 
     const [verb, setVerb] = useState<VerbData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -90,7 +92,7 @@ export default function VerbLearn() {
             <header className="vl-header">
                 <div className="vl-infinitive-row">
                     <h1 style={{ color: verb.color }}>{verb.infinitive}</h1>
-                    <SpeakerButton text={verb.infinitive} lang="fr-FR" />
+                    <SpeakerButton text={verb.infinitive} lang={speakLang} />
                 </div>
                 <span
                     className="level-badge"
@@ -116,8 +118,6 @@ export default function VerbLearn() {
                         </thead>
                         <tbody>
                             {verb.rows.map((row, i) => {
-                                const isENMode = loadLearningMode() === 'learn-english';
-                                const speakLang = isENMode ? 'en-US' : 'fr-FR';
                                 const speakText = `${row.sujet} ${row.present}`;
                                 return (
                                     <tr
