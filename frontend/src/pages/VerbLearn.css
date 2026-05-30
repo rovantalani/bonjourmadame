@@ -25,6 +25,12 @@
 }
 
 /* Header: centered, stacked */
+.vl-infinitive-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .vl-header {
   text-align: center;
   margin-bottom: 2rem;

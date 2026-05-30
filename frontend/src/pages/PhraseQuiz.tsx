@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { isAnswerCorrect } from '../utils/answerValidator';
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import { useT } from '../utils/i18n';
+import SpeakerButton from '../components/SpeakerButton';
 import './VocabularyQuiz.css';
 
 interface Phrase {
@@ -166,9 +167,15 @@ export default function PhraseQuiz() {
                     <p className="section-label vocq-word-label">
                         {quizDir === 'fr-en' ? t.quiz.translateToEnglish : t.quiz.translateToFrench}
                     </p>
-                    <h2 className="vocq-word-english">
-                        {quizDir === 'fr-en' ? current.french : current.english}
-                    </h2>
+                    <div className="vocq-word-row">
+                        <h2 className="vocq-word-english">
+                            {quizDir === 'fr-en' ? current.french : current.english}
+                        </h2>
+                        <SpeakerButton
+                            text={quizDir === 'fr-en' ? current.french : current.english}
+                            lang={quizDir === 'fr-en' ? 'fr-FR' : 'en-US'}
+                        />
+                    </div>
                     {current.note && <p style={{ fontSize: '0.82rem', color: 'var(--text-3)', marginTop: '0.4rem' }}>{current.note}</p>}
                 </div>
 
@@ -198,9 +205,15 @@ export default function PhraseQuiz() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
-                        <p className="vocq-correct-answer">
-                            {quizDir === 'fr-en' ? current.english : current.french}
-                        </p>
+                        <div className="vocq-word-row">
+                            <p className="vocq-correct-answer">
+                                {quizDir === 'fr-en' ? current.english : current.french}
+                            </p>
+                            <SpeakerButton
+                                text={quizDir === 'fr-en' ? current.english : current.french}
+                                lang={quizDir === 'fr-en' ? 'en-US' : 'fr-FR'}
+                            />
+                        </div>
                         {userAnswer && <p className="vocq-wrong-answer">{userAnswer}</p>}
                         <button className="btn btn-primary" onClick={handleNext}>
                             {t.quiz.next}

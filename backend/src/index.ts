@@ -7,7 +7,7 @@ import { vocabularyData } from './data/vocabulary';
 import { verbGroups, verbsData, verbById, verbGroupMap } from './data/verbs';
 import { grammarLessons } from './data/grammarLessons';
 import { grammarLessonsEN } from './data/grammarLessonsEN';
-import { helperVerbsDataEN, verbGroupsEN, verbsDataEN } from './data/verbsEN';
+import { helperVerbsDataEN, verbGroupsEN, verbsDataEN, verbByIdEN, verbGroupMapEN } from './data/verbsEN';
 import { phraseCategories } from './data/phrases';
 import { readingPassages } from './data/readingPassages';
 import { migrate } from './db/migrate';
@@ -235,12 +235,14 @@ app.get('/api/verb-group/:groupId', (req: Request, res: Response) => {
 
 app.get('/api/conjugation/:verbId', (req: Request, res: Response) => {
     const verbId = req.params['verbId'] as string;
-    const verb = verbById[verbId];
+    const langFR = req.query['lang'] === 'fr';
+    const verb = langFR ? verbByIdEN[verbId] : verbById[verbId];
+    const groupId = langFR ? verbGroupMapEN[verbId] : verbGroupMap[verbId];
     if (!verb) {
         res.status(404).json({ error: 'Verb not found' });
         return;
     }
-    res.json({ ...verb, groupId: verbGroupMap[verbId] });
+    res.json({ ...verb, groupId });
 });
 
 app.get('/api/grammar-lessons', (req: Request, res: Response) => {

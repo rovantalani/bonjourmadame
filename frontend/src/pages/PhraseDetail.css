@@ -74,11 +74,18 @@
     transform: translateX(3px);
 }
 
+.phrase-fr-row {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0 0 0.2rem;
+}
+
 .phrase-fr {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-1);
-    margin: 0 0 0.2rem;
+    margin: 0;
 }
 
 .phrase-en {

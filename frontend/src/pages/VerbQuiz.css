@@ -30,6 +30,12 @@
   text-align: center;
 }
 
+.vq-verb-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .vq-verb-name {
   font-size: 1.05rem;
   font-weight: 700;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../utils/i18n';
+import SpeakerButton from '../components/SpeakerButton';
 import './PhraseDetail.css';
 
 interface Phrase {
@@ -99,7 +100,10 @@ export default function PhraseDetail() {
                         className="phrase-item"
                         style={{ borderLeftColor: category.color }}
                     >
-                        <p className="phrase-fr">{phrase.french}</p>
+                        <div className="phrase-fr-row">
+                            <p className="phrase-fr">{phrase.french}</p>
+                            <SpeakerButton text={phrase.french} lang="fr-FR" />
+                        </div>
                         <p className="phrase-en">{phrase.english}</p>
                         {phrase.note && (
                             <span className="phrase-note">{phrase.note}</span>

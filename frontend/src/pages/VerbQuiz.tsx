@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { loadLearningMode } from '../utils/settings';
+import SpeakerButton from '../components/SpeakerButton';
 import './VerbQuiz.css';
 
 interface ConjugationRow {
@@ -238,9 +239,12 @@ export default function VerbQuiz() {
                     ✕ {isENUI ? 'Quitter' : 'Exit'}
                 </button>
                 <div className="vq-center-info">
-                    <span className="vq-verb-name" style={{ color: verb.color }}>
-                        {verb.infinitive}
-                    </span>
+                    <div className="vq-verb-name-row">
+                        <span className="vq-verb-name" style={{ color: verb.color }}>
+                            {verb.infinitive}
+                        </span>
+                        <SpeakerButton text={verb.infinitive} lang="fr-FR" />
+                    </div>
                     <span className="vq-verb-hint">{verb.translation}</span>
                 </div>
                 <span className="vq-counter">

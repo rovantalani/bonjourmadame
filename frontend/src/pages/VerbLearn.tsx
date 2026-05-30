@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import SpeakerButton from '../components/SpeakerButton';
+import { loadLearningMode } from '../utils/settings';
 import './VerbLearn.css';
 
 interface ConjugationRow {
@@ -30,7 +32,8 @@ export default function VerbLearn() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/conjugation/${verbId}`)
+        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        fetch(`${import.meta.env.VITE_API_BASE}/api/conjugation/${verbId}${langParam}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -85,7 +88,10 @@ export default function VerbLearn() {
             </div>
 
             <header className="vl-header">
-                <h1 style={{ color: verb.color }}>{verb.infinitive}</h1>
+                <div className="vl-infinitive-row">
+                    <h1 style={{ color: verb.color }}>{verb.infinitive}</h1>
+                    <SpeakerButton text={verb.infinitive} lang="fr-FR" />
+                </div>
                 <span
                     className="level-badge"
                     style={{ backgroundColor: verb.color }}
