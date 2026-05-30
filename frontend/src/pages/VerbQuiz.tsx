@@ -243,7 +243,7 @@ export default function VerbQuiz() {
                         <span className="vq-verb-name" style={{ color: verb.color }}>
                             {verb.infinitive}
                         </span>
-                        <SpeakerButton text={verb.infinitive} lang="fr-FR" />
+                        <SpeakerButton text={verb.infinitive} lang={isENUI ? 'en-US' : 'fr-FR'} />
                     </div>
                     <span className="vq-verb-hint">{verb.translation}</span>
                 </div>

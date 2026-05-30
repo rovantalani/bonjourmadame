@@ -197,7 +197,7 @@ export default function Nav() {
                     onClick={() => navigate('/settings')}
                 >
                     <span className="bottom-nav-icon">⚙️</span>
-                    <span className="bottom-nav-label">Settings</span>
+                    <span className="bottom-nav-label">{t.settings.title}</span>
                 </button>
             </nav>
         </>
