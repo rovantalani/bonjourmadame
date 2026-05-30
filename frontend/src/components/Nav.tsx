@@ -185,6 +185,20 @@ export default function Nav() {
                         <span className="bottom-nav-label">{item.label}</span>
                     </button>
                 ))}
+                <button
+                    className={`bottom-nav-item ${isActive('/stats') ? 'active' : ''}`}
+                    onClick={() => navigate('/stats')}
+                >
+                    <span className="bottom-nav-icon">📊</span>
+                    <span className="bottom-nav-label">{t.nav.stats}</span>
+                </button>
+                <button
+                    className={`bottom-nav-item ${isActive('/settings') ? 'active' : ''}`}
+                    onClick={() => navigate('/settings')}
+                >
+                    <span className="bottom-nav-icon">⚙️</span>
+                    <span className="bottom-nav-label">Settings</span>
+                </button>
             </nav>
         </>
     );

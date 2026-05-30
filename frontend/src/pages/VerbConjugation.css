@@ -29,6 +29,12 @@
   margin-bottom: 0.25rem;
 }
 
+.vc-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .vc-title {
   font-size: 2rem;
   font-weight: 700;
@@ -124,4 +130,10 @@
   .scroll-hint {
     display: block;
   }
+}
+
+.vc-speaker-cell {
+  padding: 0 0.25rem;
+  vertical-align: middle;
+  white-space: nowrap;
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
+import SpeakerButton from '../components/SpeakerButton';
 import './GrammarLesson.css';
 
 interface GrammarExample {
@@ -47,6 +48,7 @@ export default function GrammarLesson() {
     const { lessonId } = useParams<{ lessonId: string }>();
     const navigate = useNavigate();
     const t = useT();
+    const isENMode = loadLearningMode() === 'learn-english';
     const [lesson, setLesson] = useState<GrammarLessonData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -160,7 +162,13 @@ export default function GrammarLesson() {
                         <div className="lesson-examples">
                             {section.examples.map((ex, i) => (
                                 <div key={i} className="ex-row">
-                                    <span className="ex-fr">{ex.french}</span>
+                                    <span className="ex-fr-wrap">
+                                        <span className="ex-fr">{ex.french}</span>
+                                        <SpeakerButton
+                                            text={ex.french}
+                                            lang={isENMode ? 'en-US' : 'fr-FR'}
+                                        />
+                                    </span>
                                     <span className="ex-arrow">→</span>
                                     <span className="ex-en">{ex.english}</span>
                                     {ex.note && (

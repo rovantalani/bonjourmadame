@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
+import SpeakerButton from '../components/SpeakerButton';
 import './VerbConjugation.css';
 
 interface ConjugationRow {
@@ -24,6 +25,7 @@ export default function VerbConjugation() {
     const { verbId } = useParams<{ verbId: string }>();
     const navigate = useNavigate();
     const t = useT();
+    const isENMode = loadLearningMode() === 'learn-english';
 
     const [verb, setVerb] = useState<VerbData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -79,13 +81,18 @@ export default function VerbConjugation() {
                     style={{ backgroundColor: `${verb.color}1F` }}
                 >
                     <span style={{ fontSize: '2rem' }}>
-                        {/* Use first letter as fallback icon */}
                         {verb.title.charAt(0)}
                     </span>
                 </div>
-                <h1 className="vc-title" style={{ color: verb.color }}>
-                    {verb.title}
-                </h1>
+                <div className="vc-title-row">
+                    <h1 className="vc-title" style={{ color: verb.color }}>
+                        {verb.title}
+                    </h1>
+                    <SpeakerButton
+                        text={verb.title}
+                        lang={isENMode ? 'en-US' : 'fr-FR'}
+                    />
+                </div>
                 <span className="vc-translation">{verb.translation}</span>
             </header>
 
@@ -96,26 +103,36 @@ export default function VerbConjugation() {
                             <tr style={{ backgroundColor: verb.color }}>
                                 <th>—</th>
                                 {(verb.columns ?? t.verbConjugation.columns).map(col => <th key={col}>{col}</th>)}
+                                <th>🔊</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {verb.rows.map((row, i) => (
-                                <tr
-                                    key={row.sujet}
-                                    className={i % 2 === 0 ? 'row-even' : 'row-odd'}
-                                >
-                                    <td
-                                        className="sujet-cell"
-                                        style={{ color: verb.color }}
+                            {verb.rows.map((row, i) => {
+                                const speakText = `${row.sujet} ${row.present}`;
+                                return (
+                                    <tr
+                                        key={row.sujet}
+                                        className={i % 2 === 0 ? 'row-even' : 'row-odd'}
                                     >
-                                        {row.sujet}
-                                    </td>
-                                    <td>{row.present}</td>
-                                    <td>{row.passeCompose}</td>
-                                    <td>{row.imparfait}</td>
-                                    <td>{row.futurSimple}</td>
-                                </tr>
-                            ))}
+                                        <td
+                                            className="sujet-cell"
+                                            style={{ color: verb.color }}
+                                        >
+                                            {row.sujet}
+                                        </td>
+                                        <td>{row.present}</td>
+                                        <td>{row.passeCompose}</td>
+                                        <td>{row.imparfait}</td>
+                                        <td>{row.futurSimple}</td>
+                                        <td className="vc-speaker-cell">
+                                            <SpeakerButton
+                                                text={speakText}
+                                                lang={isENMode ? 'en-US' : 'fr-FR'}
+                                            />
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>

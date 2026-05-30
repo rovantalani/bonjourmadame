@@ -111,26 +111,35 @@ export default function VerbLearn() {
                                 <th>Passé composé</th>
                                 <th>Imparfait</th>
                                 <th>Futur simple</th>
+                                <th>🔊</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {verb.rows.map((row, i) => (
-                                <tr
-                                    key={row.sujet}
-                                    className={i % 2 === 0 ? 'row-even' : 'row-odd'}
-                                >
-                                    <td
-                                        className="sujet-cell"
-                                        style={{ color: verb.color }}
+                            {verb.rows.map((row, i) => {
+                                const isENMode = loadLearningMode() === 'learn-english';
+                                const speakLang = isENMode ? 'en-US' : 'fr-FR';
+                                const speakText = `${row.sujet} ${row.present}`;
+                                return (
+                                    <tr
+                                        key={row.sujet}
+                                        className={i % 2 === 0 ? 'row-even' : 'row-odd'}
                                     >
-                                        {row.sujet}
-                                    </td>
-                                    <td>{row.present}</td>
-                                    <td>{row.passeCompose}</td>
-                                    <td>{row.imparfait}</td>
-                                    <td>{row.futurSimple}</td>
-                                </tr>
-                            ))}
+                                        <td
+                                            className="sujet-cell"
+                                            style={{ color: verb.color }}
+                                        >
+                                            {row.sujet}
+                                        </td>
+                                        <td>{row.present}</td>
+                                        <td>{row.passeCompose}</td>
+                                        <td>{row.imparfait}</td>
+                                        <td>{row.futurSimple}</td>
+                                        <td className="vl-speaker-cell">
+                                            <SpeakerButton text={speakText} lang={speakLang} />
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>
