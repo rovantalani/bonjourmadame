@@ -104,6 +104,7 @@ interface Translations {
         complete: string; reviewRemaining: string; home: string;
     };
     settings: {
+        title: string;
         preferences: string;
         learningLanguage: string; learningLanguageHint: string;
         learnFrench: string; learnEnglish: string;
@@ -272,6 +273,7 @@ const EN: Translations = {
         complete: 'Review Complete!', reviewRemaining: 'Review Remaining', home: 'Home',
     },
     settings: {
+        title: 'Settings',
         preferences: 'Preferences',
         learningLanguage: 'Learning language', learningLanguageHint: 'Takes effect at the start of your next quiz',
         learnFrench: '🇫🇷 Learn French', learnEnglish: '🇬🇧 Learn English',
@@ -441,6 +443,7 @@ const FR: Translations = {
         complete: 'Révision terminée !', reviewRemaining: 'Réviser le reste', home: 'Accueil',
     },
     settings: {
+        title: 'Paramètres',
         preferences: 'Préférences',
         learningLanguage: 'Langue apprise', learningLanguageHint: 'Prend effet au prochain quiz',
         learnFrench: '🇫🇷 Apprendre le français', learnEnglish: '🇬🇧 Apprendre l\'anglais',

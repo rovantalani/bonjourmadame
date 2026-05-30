@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import SpeakerButton from '../components/SpeakerButton';
 import './ReadingPassage.css';
 
 interface VocabularyWord {
@@ -192,7 +193,10 @@ export default function ReadingPassage() {
                                         </button>
                                         {isOpen && (
                                             <span className="rp-tooltip" role="tooltip">
-                                                <strong className="rp-tooltip-fr">{tok.vocab.french}</strong>
+                                                <span className="rp-tooltip-fr-row">
+                                                    <strong className="rp-tooltip-fr">{tok.vocab.french}</strong>
+                                                    <SpeakerButton text={tok.vocab.french} lang="fr-FR" />
+                                                </span>
                                                 <span className="rp-tooltip-en">{tok.vocab.english}</span>
                                             </span>
                                         )}
@@ -210,6 +214,7 @@ export default function ReadingPassage() {
                     {data.vocabulary.map(w => (
                         <li key={w.id} className="rp-vocab-item">
                             <span className="rp-vocab-item-fr">{w.french}</span>
+                            <SpeakerButton text={w.french} lang="fr-FR" />
                             <span className="rp-vocab-item-en">{w.english}</span>
                         </li>
                     ))}

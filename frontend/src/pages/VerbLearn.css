@@ -145,3 +145,10 @@
     display: block;
   }
 }
+
+
+.vl-speaker-cell {
+  padding: 0 0.25rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}

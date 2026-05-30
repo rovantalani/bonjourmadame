@@ -95,10 +95,16 @@
 .ex-row {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     gap: 0.5rem 0.75rem;
     padding: 0.6rem 0;
     border-bottom: 1px solid var(--border-light);
+}
+
+.ex-fr-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .ex-row:last-child {

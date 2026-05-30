@@ -251,9 +251,8 @@
     .top-nav-links { display: none; }
     .nav-brand-name { display: none; }
     .top-nav-right .top-nav-link { display: none; }
-    .top-nav-right .theme-toggle { display: none; }
 
-    /* Keep level indicator visible in top bar on mobile */
+    /* Keep level indicator and theme toggle visible in top bar on mobile */
     .top-nav-right {
         gap: 0.25rem;
     }
@@ -277,10 +276,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 0.2rem;
+        gap: 0.15rem;
         background: none;
         border: none;
-        padding: 0.4rem 0.25rem;
+        padding: 0.35rem 0.15rem;
         color: var(--text-3);
         transition: color .15s ease;
         min-width: 0;
@@ -291,14 +290,14 @@
     }
 
     .bottom-nav-icon {
-        font-size: 1.35rem;
+        font-size: 1.2rem;
         line-height: 1;
     }
 
     .bottom-nav-label {
-        font-size: 0.65rem;
+        font-size: 0.58rem;
         font-weight: 600;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

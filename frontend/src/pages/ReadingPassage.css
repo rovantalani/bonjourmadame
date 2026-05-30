@@ -90,7 +90,13 @@
     flex-direction: column;
     gap: 0.15rem;
     z-index: 100;
-    pointer-events: none;
+    pointer-events: auto;
+}
+
+.rp-tooltip-fr-row {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
 }
 
 .rp-tooltip::after {
@@ -129,8 +135,8 @@
 
 .rp-vocab-item {
     display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.9rem;
     padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--border-light);

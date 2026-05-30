@@ -98,7 +98,7 @@ export default function Settings() {
 
     return (
         <main className="page">
-            <h1 className="page-header">Settings</h1>
+            <h1 className="page-header">{t.settings.title}</h1>
 
             {/* ── Preferences ── */}
             <section className="settings-section card">
