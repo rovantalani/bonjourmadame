@@ -31,6 +31,86 @@ export const readingPassagesEN: ReadingPassage[] = [
             'The people in Greenford are very friendly. My neighbours say hello in the street. On Saturdays, we go to the market. We buy fresh bread, fruit and vegetables. I think Greenford is a great place to live.',
         ],
     },
+    {
+        moduleId: 'a1en-my-family',
+        title: 'My Family',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'Hello! My name is Emma. I am ten years old. I live with my family in a small house. We have a cat. Her name is Daisy. She is black and white. I love her very much.',
+            'My father\'s name is John. He is a doctor. He works in a big hospital. My mother\'s name is Anna. She is a teacher. She teaches music. They are very kind.',
+            'I have one brother and one sister. My brother is fifteen. He likes football. My sister is six. She is very small. We play together every day. I am happy with my family.',
+        ],
+    },
+    {
+        moduleId: 'a1en-my-day',
+        title: 'My Day',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'I get up at seven o\'clock every morning. First, I wash my face and brush my teeth. Then I get dressed. I have breakfast with my family. I eat bread and drink milk.',
+            'I go to school at eight o\'clock. I walk with my friend Leo. We have lessons all morning. I like English and art. At lunchtime, I eat in the school canteen. The food is good.',
+            'In the afternoon, I go home. I do my homework. Then I play outside or watch television. At seven o\'clock, we have dinner. I go to bed at nine o\'clock. I am very tired!',
+        ],
+    },
+    {
+        moduleId: 'a1en-the-park',
+        title: 'A Day at the Park',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'It is Saturday. The sun is shining. My family goes to the park. The park is near our house. It is big and green. There are many trees and flowers.',
+            'My brother and I play football on the grass. My sister rides her bike. My mother and father sit on a bench. They drink coffee and talk. A dog runs near us. It is very happy.',
+            'At lunchtime, we have a picnic. We eat sandwiches and fruit. We drink water. After lunch, we feed the ducks at the lake. Then we walk home. It is a wonderful day.',
+        ],
+    },
+    {
+        moduleId: 'a1en-my-pet',
+        title: 'My Pet',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'I have a dog. His name is Rex. He is brown and white. He is two years old. He is very big and strong. I love him a lot.',
+            'Every morning, I give Rex his food. He eats quickly. Then we go for a walk in the park. Rex likes to run and play with a ball. He is very fast.',
+            'In the evening, Rex sleeps near my bed. He is a good dog. He is my best friend. When I am sad, he stays with me. I am very happy to have a pet.',
+        ],
+    },
+    {
+        moduleId: 'a1en-birthday-party',
+        title: 'My Birthday Party',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'Today is my birthday. I am nine years old. My mother makes a big cake. The cake is chocolate. It has nine candles. I am very excited.',
+            'My friends come to my house at three o\'clock. They bring presents for me. We play games in the garden. We eat cake and ice cream. Everything is delicious.',
+            'In the evening, my friends go home. I open my presents. I get a new book, a ball and a toy car. I say thank you to everyone. It is a wonderful day.',
+        ],
+    },
+    {
+        moduleId: 'a1en-at-the-zoo',
+        title: 'A Visit to the Zoo',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'On Sunday, my family goes to the zoo. The zoo is very big. There are many animals. I am very happy because I love animals.',
+            'First, we see the lions. They are big and yellow. Then we see the elephants. They are grey and very strong. The monkeys are funny. They jump and play in the trees.',
+            'At lunchtime, we eat sandwiches near the birds. The birds have many colours: red, blue and green. In the afternoon, we go home. I am tired but very happy.',
+        ],
+    },
+    {
+        moduleId: 'a1en-a-rainy-day',
+        title: 'A Rainy Day',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'It is raining today. The sky is grey. I cannot play outside. I am a little sad. But I have a good idea.',
+            'I stay at home with my sister. We play games. We draw pictures with our pencils. My mother makes hot chocolate for us. It is warm and sweet.',
+            'In the afternoon, we watch a film together. It is a film about a little fish. We laugh a lot. The rain stops in the evening. A rainy day can be fun too!',
+        ],
+    },
+    {
+        moduleId: 'a1en-my-school',
+        title: 'My School',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'My school is in the centre of my town. It is a big building with a red door. There are many classrooms. My classroom is on the first floor.',
+            'I have lessons from nine o\'clock to four o\'clock. My favourite subject is art because I like to paint. I also like sport. We play games in the gym.',
+            'My teacher is called Mr Brown. He is kind and funny. My friends are in my class. At break time, we play in the playground. I like my school very much.',
+        ],
+    },
     /* ─────────────────────────── A2 ─────────────────────────── */
     {
         moduleId: 'a2en-weekend-trip',
@@ -54,6 +134,94 @@ export const readingPassagesEN: ReadingPassage[] = [
             'Two days later, Ms Park called Sophie to offer her the job. Sophie said yes immediately. She started the following Monday. It was a new beginning, and she felt ready for the challenge.',
         ],
     },
+    {
+        moduleId: 'a2en-shopping-trip',
+        title: 'A Shopping Trip',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'Last Saturday, Maria went shopping in the city centre with her friend Nadia. They wanted to buy some new clothes for the summer. The shops were busy because there was a big sale, and many things were cheaper than usual.',
+            'First, they went to a clothes shop. Maria tried on three dresses. The blue one was too big, and the red one was too expensive. In the end, she chose a green dress that fitted her perfectly. Nadia bought a pair of jeans and a white T-shirt.',
+            'After shopping, they were hungry, so they went to a small café. They ordered sandwiches and fresh orange juice. They talked about their plans for the holidays. Maria wanted to visit her grandparents by the sea.',
+            'In the afternoon, they took the bus home. Maria was tired but happy. "That was a great day," she said. "Yes," Nadia replied, "but I spent too much money!" They both laughed and agreed to go again next month.',
+        ],
+    },
+    {
+        moduleId: 'a2en-holiday-plans',
+        title: 'Planning a Holiday',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'Tom and his wife Sarah were planning their summer holiday. They both worked hard all year, so they wanted to relax in a quiet place. Last year, they went to a busy city, but this time they decided to do something different.',
+            'They looked at many websites and read about different countries. Sarah wanted to go to the mountains because she loved walking and fresh air. Tom preferred the beach because he wanted to swim and read books in the sun.',
+            'In the end, they found the perfect solution. They chose a small village near the coast, with mountains close by. There was a beautiful beach, and there were also good walking paths in the hills. The hotel had excellent reviews and a nice swimming pool.',
+            'They booked the flights and the hotel for two weeks in July. Sarah started making a list of things to pack. Tom downloaded some new books to read. They were both very excited. It was going to be their best holiday yet.',
+        ],
+    },
+    {
+        moduleId: 'a2en-new-flatmate',
+        title: 'A New Flatmate',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'When Daniel moved to a new city for university, he needed somewhere to live. The rooms in the student halls were very expensive, so he decided to share a flat with other students. He found an advert online for a room in a flat near the campus.',
+            'He sent a message and arranged to visit the flat. It was on the third floor of an old building. The room was small but bright, with a big window. The kitchen was clean, and there was a comfortable living room. Two other students already lived there.',
+            'Daniel met his future flatmates, Pablo and Yuki. Pablo was from Spain and studied engineering. Yuki was from Japan and studied art. They were both friendly and welcoming. They showed him around and explained the rules of the flat.',
+            'Daniel decided to take the room. He moved in the following week. At first, he felt a little shy, but soon he became good friends with Pablo and Yuki. They cooked dinner together and helped each other with their studies. He was glad he had chosen to share a flat.',
+        ],
+    },
+    {
+        moduleId: 'a2en-lost-in-town',
+        title: 'Lost in a New Town',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'When Lena arrived in Edinburgh for the first time, she felt both excited and a little worried. She had a map on her phone, but the battery died just as she left the station. She needed to find her hotel, but she did not know which way to go.',
+            'She decided to ask for help. A friendly old man was sitting on a bench, reading a newspaper. "Excuse me," she said. "Could you tell me the way to Queen Street?" The man smiled and explained that she had to go straight on and then turn left at the second traffic light.',
+            'Lena thanked him and followed his directions. However, after ten minutes, she still could not find the street. She asked a young woman in a shop, who kindly walked with her to the corner and pointed to the hotel just across the road.',
+            'Finally, Lena reached her hotel. She was tired but relieved. That evening, she realised that getting lost was not so bad after all. She had met two kind strangers and seen parts of the city she would never have discovered on her own.',
+        ],
+    },
+    {
+        moduleId: 'a2en-cooking-dinner',
+        title: 'Cooking Dinner for Friends',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'Last Friday, Marco invited three friends to his flat for dinner. He wanted to cook a traditional Italian meal because his grandmother had taught him many recipes when he was a child. He decided to make pasta with tomato sauce and a fresh salad.',
+            'In the afternoon, he went to the supermarket to buy the ingredients. He bought tomatoes, garlic, onions, fresh basil and a good piece of cheese. He also chose a bottle of red wine to share with his guests. Everything was ready by five o\'clock.',
+            'Cooking was not as easy as he expected. The sauce needed more salt, and he almost burned the garlic. Luckily, he tasted the food several times and managed to fix his mistakes. When his friends arrived at eight, the flat smelled wonderful.',
+            'His friends loved the meal. They ate everything and asked for the recipe. "You should open a restaurant!" one of them joked. Marco was very proud. Cooking for the people he loved made him feel happy, and the evening was a great success.',
+        ],
+    },
+    {
+        moduleId: 'a2en-the-concert',
+        title: 'The Concert',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'Amelia loved music more than anything. When she heard that her favourite band was coming to her city, she could hardly believe it. She bought two tickets immediately, one for herself and one for her brother, Jack.',
+            'On the day of the concert, they arrived early to get a good place near the stage. The stadium was enormous, and thousands of people were already there. The atmosphere was electric, and everyone was talking excitedly about the show.',
+            'When the band finally came on stage, the crowd cheered loudly. Amelia knew every song and sang along with all her heart. The lights, the music and the energy of the crowd made it an unforgettable experience. Jack, who was not a big fan at first, enjoyed it too.',
+            'After the concert, they walked home through the busy streets, still humming the songs. "Thank you for taking me," Jack said. Amelia smiled. It had been one of the best nights of her life, and she knew she would remember it for a long time.',
+        ],
+    },
+    {
+        moduleId: 'a2en-moving-house',
+        title: 'Moving House',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'The Robinson family had lived in the same small flat for ten years. As the children grew older, the flat started to feel too small. After a long search, the parents finally found a bigger house with a garden in a quiet neighbourhood.',
+            'Moving day was very busy. They packed all their belongings into dozens of boxes. The removal van arrived early in the morning, and everyone helped to carry the furniture. The children were sad to leave their old home, but also excited about the new one.',
+            'When they arrived at the new house, there was a lot to do. They had to unpack the boxes, clean the rooms and decide where to put everything. It took several days before the house began to feel like home.',
+            'A week later, the new neighbours came to say hello and brought a homemade cake. The children made friends with the family next door. Slowly but surely, the empty house was filled with laughter and memories. The Robinsons knew they had made the right decision.',
+        ],
+    },
+    {
+        moduleId: 'a2en-summer-job',
+        title: 'My First Summer Job',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'During the summer holidays, when I was seventeen, I decided to get my first job. I wanted to earn some money and gain a little experience. After asking in several places, I found work as a waiter in a small café by the sea.',
+            'At first, the job was difficult. I had to remember many orders, carry heavy trays and stay polite even when customers were rude. On my very first day, I dropped a glass of orange juice and felt terribly embarrassed. My manager, however, was patient and encouraging.',
+            'As the weeks passed, I became much more confident. I learned how to talk to customers, work quickly under pressure and cooperate with my colleagues. The other waiters were friendly, and we often laughed together during our breaks. The time passed quickly.',
+            'By the end of the summer, I had saved enough money to buy a new bicycle. More importantly, I had learned the value of hard work and teamwork. That first job taught me lessons that no classroom could, and I will always remember it with pride.',
+        ],
+    },
     /* ─────────────────────────── B1 ─────────────────────────── */
     {
         moduleId: 'b1en-social-media',
@@ -75,6 +243,94 @@ export const readingPassagesEN: ReadingPassage[] = [
             'One of the most successful approaches has been investing in public transport. Cities that have expanded their metro systems or introduced electric bus networks have seen significant reductions in traffic and air pollution. Copenhagen, for example, has built an impressive cycle lane network that allows a large proportion of residents to travel by bike every day, even in winter.',
             'Green spaces are another priority. Research shows that access to parks and gardens reduces stress, encourages physical activity and supports urban biodiversity. Some cities have gone further, planting trees on rooftops and along motorways to absorb carbon dioxide and lower temperatures during heatwaves.',
             'Renewable energy is also transforming city infrastructure. Solar panels are now installed on schools, sports centres and public buildings in many European cities. Some neighbourhoods have even become energy-neutral, producing as much electricity as they consume. These examples show that sustainable urban development is not just possible — it is already happening.',
+        ],
+    },
+    {
+        moduleId: 'b1en-remote-work',
+        title: 'The Rise of Remote Work',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'Only a few years ago, most people travelled to an office every day to do their jobs. Today, however, millions of employees around the world work from home, at least part of the time. This change, which began slowly, became much faster during the global pandemic, when offices were forced to close.',
+            'There are many advantages to remote work. Employees save time and money because they do not have to travel. They can also have a better balance between their work and their personal lives. Many people say they feel less stressed and more productive when they work in the comfort of their own homes.',
+            'However, remote work also has its problems. Some people feel lonely because they miss their colleagues and the social side of the office. Others find it difficult to concentrate at home, especially if they have children or live in a small flat. It can also be hard to switch off and stop working at the end of the day.',
+            'Most experts believe that the future will be "hybrid". This means that employees will spend some days in the office and some days at home. In this way, companies hope to combine the benefits of both worlds: the flexibility of remote work and the teamwork of the traditional office.',
+        ],
+    },
+    {
+        moduleId: 'b1en-healthy-living',
+        title: 'Living a Healthier Life',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'In modern society, more and more people are interested in living a healthier life. With busy schedules and a lot of stress, it is not always easy to look after ourselves. However, small changes in our daily habits can make a big difference to how we feel.',
+            'A balanced diet is one of the most important factors. Experts recommend eating plenty of fruit and vegetables and reducing the amount of sugar and processed food we eat. Drinking enough water is also essential, although many people forget to do this during a busy day at work.',
+            'Physical exercise is just as important as a good diet. You do not have to spend hours at the gym to stay fit. A daily walk, a bike ride or a short workout at home can improve both your body and your mood. Regular exercise also helps people sleep better at night.',
+            'Finally, mental health should not be ignored. Taking time to relax, spending time with friends and family, and getting enough sleep are all vital for our wellbeing. A healthy life is not about being perfect; it is about finding a balance that works for you and keeping it up over time.',
+        ],
+    },
+    {
+        moduleId: 'b1en-trip-to-remember',
+        title: 'A Trip to Remember',
+        source: 'Original text — Level B1',
+        paragraphs: [
+            'Two years ago, I took a trip that I will never forget. My best friend and I decided to travel around Scotland for two weeks. We did not have much money, so we travelled by bus and stayed in small, cheap hostels. We wanted to see the famous landscapes and meet local people.',
+            'The journey was not always easy. On the second day, it rained heavily, and we got completely soaked while walking in the hills. One night, we missed the last bus and had to wait for two hours in a tiny village. But somehow, these difficult moments became the funniest memories of the whole trip.',
+            'The highlight was our visit to the Isle of Skye. The scenery was breathtaking: dramatic mountains, deep blue lakes and ancient castles. We met a local farmer who invited us for tea and told us amazing stories about the island. His kindness made the experience even more special.',
+            'When I returned home, I felt different. The trip had taught me to be more independent and to appreciate the simple things in life. I realised that the best travel experiences are not always the most comfortable ones. Sometimes, the unexpected moments are the ones we treasure most.',
+        ],
+    },
+    {
+        moduleId: 'b1en-volunteering',
+        title: 'Why People Volunteer',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'Every year, millions of people around the world give their time and energy to help others without being paid. They work in hospitals, schools, animal shelters and community centres. But why do so many people choose to volunteer when they could be relaxing or earning money instead?',
+            'For many volunteers, the main reason is the desire to make a positive difference. They want to help people who are less fortunate and to improve their local communities. Helping others gives them a strong sense of purpose and satisfaction that they cannot always find in their daily jobs.',
+            'Volunteering also brings personal benefits. It is a great way to meet new people and make friends who share similar values. Young people, in particular, can gain useful skills and experience that help them in their future careers. Studies even show that volunteers often feel happier and healthier than those who do not volunteer.',
+            'Of course, volunteering requires time and commitment, which not everyone can give. However, even a few hours a month can have a real impact. As one experienced volunteer said: "You start by thinking you are helping others, but in the end, you discover that you are helping yourself just as much."',
+        ],
+    },
+    {
+        moduleId: 'b1en-learning-language',
+        title: 'The Benefits of Learning a Language',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'Learning a foreign language is one of the most rewarding things a person can do, yet many people give up after only a few lessons. They often believe that they are "not good at languages" or that they are too old to learn. In reality, anyone can learn a new language with patience, practice and the right approach.',
+            'The benefits go far beyond being able to order food on holiday. Research has shown that speaking more than one language improves memory and concentration, and may even delay the effects of ageing on the brain. Bilingual people are often better at solving problems and focusing on important information.',
+            'A foreign language also opens a door to another culture. When you understand the words people use, you begin to understand how they think, what makes them laugh and what they value. Travelling becomes a richer experience, and you can make friends in places you never expected.',
+            'Of course, learning a language takes time and effort. The secret is to practise a little every day rather than a lot once a week, and not to be afraid of making mistakes. Mistakes are a natural part of learning. With regular practice and a positive attitude, fluency is within everyone\'s reach.',
+        ],
+    },
+    {
+        moduleId: 'b1en-future-of-food',
+        title: 'The Future of Food',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'The way we produce and eat food is changing rapidly. With a growing world population and increasing concern about the environment, scientists and farmers are looking for new ways to feed everyone without damaging the planet. Some of their ideas would have seemed like science fiction only a few decades ago.',
+            'One major trend is the rise of plant-based diets. More and more people are choosing to eat less meat, either for health reasons or to reduce their impact on the environment. In response, companies have created plant-based products that look and taste remarkably like real meat, attracting customers who are not even vegetarian.',
+            'Technology is also transforming agriculture. Vertical farms, where crops are grown in tall buildings under artificial light, can produce food in the middle of cities using very little water. Some scientists are even developing meat grown in laboratories, which could one day reduce the need to raise and kill animals.',
+            'Not everyone welcomes these changes, and some people worry that food is becoming too artificial. Nevertheless, with the challenges of climate change and a rising population, rethinking the way we eat seems unavoidable. The meals on our plates in fifty years\' time may be very different from those we know today.',
+        ],
+    },
+    {
+        moduleId: 'b1en-city-vs-country',
+        title: 'City Life or Country Life?',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'One of the great choices many people face is whether to live in a busy city or in the quiet countryside. Both options have clear advantages and disadvantages, and the right answer often depends on a person\'s age, job and personality.',
+            'Cities offer energy and opportunity. There are more jobs, better public transport and an endless choice of restaurants, shops and cultural events. Young people, in particular, are often attracted by the excitement and the chance to meet others from many different backgrounds. However, city life can also be expensive, noisy and stressful.',
+            'The countryside, on the other hand, offers peace and space. People can enjoy fresh air, beautiful scenery and a slower pace of life. Houses are usually cheaper and bigger, and communities are often closer. The disadvantages include fewer jobs, longer journeys and, sometimes, a feeling of isolation, especially in winter.',
+            'In recent years, the rise of remote work has begun to blur the boundary between the two. Some people now choose to live in the countryside while working for city companies from home. Whether this trend will continue remains to be seen, but it shows that the old choice between city and country is no longer quite so simple.',
+        ],
+    },
+    {
+        moduleId: 'b1en-power-of-music',
+        title: 'The Power of Music',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'Music is part of every human culture, and it has been for thousands of years. From ancient drums to modern pop songs, people have always used music to express their feelings, celebrate important events and bring communities together. But why does music have such a powerful effect on us?',
+            'Scientists have discovered that listening to music affects the brain in remarkable ways. A favourite song can release chemicals that make us feel happy, reduce stress and even ease physical pain. This is one reason why hospitals sometimes use music to help patients relax before an operation.',
+            'Music also has a strong connection to memory. A single song can instantly take us back to a particular moment in our lives — a holiday, a friendship or a first dance. This powerful link is now being used to help people with memory illnesses, who can often remember songs from their youth even when they have forgotten much else.',
+            'Beyond its effects on individuals, music brings people together. Concerts, festivals and choirs create a strong sense of belonging, allowing strangers to share an experience and feel part of something bigger than themselves. In a divided world, music remains one of the few languages that almost everyone can understand.',
         ],
     },
     /* ─────────────────────────── B2 ─────────────────────────── */
@@ -103,6 +359,102 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
 
+    {
+        moduleId: 'b2en-ai-everyday',
+        title: 'Artificial Intelligence in Everyday Life',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'Artificial intelligence, once the stuff of science fiction, has quietly become part of our everyday routines. When we ask a virtual assistant about the weather, receive film recommendations from a streaming service, or unlock our phones with our faces, we are relying on technologies that would have seemed almost magical only a generation ago.',
+            'The benefits of this revolution are considerable. AI systems can analyse vast amounts of data far more quickly than any human, helping doctors to detect diseases earlier, enabling scientists to model the climate, and allowing businesses to operate more efficiently. For ordinary users, AI offers convenience, personalisation and access to information on an unprecedented scale.',
+            'Yet these advances raise serious questions. As algorithms make more of the decisions that shape our lives — from the news we see to the loans we are offered — concerns about fairness, privacy and accountability have grown. If a machine makes a mistake, or reflects the biases hidden in its data, who is responsible? And how much of our personal information are we willing to surrender for the sake of convenience?',
+            'Perhaps the most pressing question concerns the future of work. While AI is likely to create new industries and opportunities, it may also automate millions of existing jobs, from driving to accountancy. Societies will need to think carefully about how to retrain workers and share the benefits of this technology fairly.',
+            'Ultimately, artificial intelligence is neither a miracle nor a menace, but a powerful tool whose effects depend on how we choose to use it. The challenge for our generation is to harness its enormous potential while remaining alert to its risks — to ensure that the technology serves humanity, rather than the other way around.',
+        ],
+    },
+    {
+        moduleId: 'b2en-work-life-balance',
+        title: 'Rethinking Work-Life Balance',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'For decades, the idea of "work-life balance" has dominated conversations about how we should organise our lives. The phrase suggests a simple division: work on one side, life on the other, with the goal of keeping the two in equilibrium. Recently, however, many people have begun to question whether this way of thinking still makes sense.',
+            'One problem is that the boundary between work and personal life has become increasingly blurred. With smartphones and laptops, employees can be reached at any hour, and the expectation to respond quickly can follow them home. For many, work no longer stops when they leave the office; it seeps into evenings, weekends and even holidays.',
+            'Some experts argue that we should abandon the idea of "balance" altogether and speak instead of "integration". Rather than trying to keep work and life rigidly separate, they suggest, we should look for ways to blend them more harmoniously — working flexibly when it suits us, and making space for personal priorities during the working day.',
+            'Others worry that this approach simply allows work to invade every corner of our existence. They point to the rising rates of burnout and stress, and call for stronger boundaries: the right to disconnect, shorter working weeks, and a culture that values rest as much as productivity. Some countries have even passed laws protecting employees from out-of-hours emails.',
+            'There is no single answer that suits everyone, for the ideal arrangement depends on individual circumstances and values. What is clear, however, is that the traditional model is under strain. As technology continues to reshape the way we work, finding a sustainable relationship between our jobs and the rest of our lives will remain one of the central challenges of modern society.',
+        ],
+    },
+    {
+        moduleId: 'b2en-misinformation',
+        title: 'The Challenge of Misinformation',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'We live in an age of unprecedented access to information. With a few taps on a screen, we can read the news from across the globe, consult experts and share our opinions with millions. Yet this same connectivity has given rise to one of the defining problems of our time: the rapid spread of false and misleading information.',
+            'Misinformation is not a new phenomenon, but social media has transformed its scale and speed. A false claim can now travel around the world in minutes, shared by well-meaning people who have no idea that it is untrue. Studies suggest that sensational and emotional stories spread faster than accurate ones, precisely because they provoke strong reactions.',
+            'The consequences can be severe. False information about health, for instance, can discourage people from seeking proper treatment, while political misinformation can undermine trust in democratic institutions. When citizens can no longer agree on basic facts, meaningful public debate becomes almost impossible, and society grows more divided.',
+            'Tackling this problem is far from straightforward. Technology companies have introduced fact-checking labels and removed some false content, but critics argue that they have not done enough, and that heavy-handed censorship raises its own dangers. Governments, too, must tread carefully, for the line between fighting misinformation and restricting free speech is a delicate one.',
+            'Perhaps the most powerful defence is education. By teaching people to think critically, to check their sources and to be sceptical of information that seems designed to provoke outrage, we can build a society that is more resistant to manipulation. In the end, the responsibility lies not only with platforms and governments, but with each of us.',
+        ],
+    },
+    {
+        moduleId: 'b2en-urban-nature',
+        title: 'Bringing Nature Back to Cities',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'For most of human history, cities and nature were seen as opposites. The city was a place of concrete, commerce and crowds; nature was something that existed beyond its walls, in the countryside. Today, however, urban planners and citizens alike are increasingly convinced that the two can, and must, be reconciled.',
+            'The reasons are both practical and profound. As more than half of the world\'s population now lives in urban areas, the quality of city life has become a matter of enormous importance. Research has repeatedly shown that access to green spaces reduces stress, encourages physical activity and even improves mental health. Trees and plants also clean the air, lower temperatures and help cities cope with heavy rainfall.',
+            'Around the world, innovative projects are putting these ideas into practice. Some cities have transformed disused railway lines into elevated parks, while others have planted "urban forests" or installed gardens on the roofs of buildings. A few ambitious schemes have even covered entire tower blocks in vegetation, creating green oases in the heart of dense neighbourhoods.',
+            'Such projects are not without their critics. Some argue that the money would be better spent on housing or public transport, while others worry that "greening" can drive up property prices and force out poorer residents — a phenomenon sometimes called "green gentrification". These concerns deserve serious attention if the benefits of urban nature are to be shared by all.',
+            'Nevertheless, the direction of travel seems clear. As the climate crisis intensifies and cities continue to grow, bringing nature back into the urban environment is no longer a luxury but a necessity. The cities of the future, it seems, may be greener, cooler and altogether more pleasant places to live.',
+        ],
+    },
+    {
+        moduleId: 'b2en-space-exploration',
+        title: 'The New Age of Space Exploration',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'For much of the twentieth century, space exploration was the exclusive domain of a handful of powerful governments, locked in a fierce competition for prestige. Today, the landscape has changed dramatically. Private companies, backed by ambitious entrepreneurs, have entered the field, transforming the economics and the ambitions of space travel.',
+            'The most visible consequence has been a sharp fall in the cost of reaching orbit. Reusable rockets, once considered impossible, now return safely to Earth to be used again, dramatically reducing the price of each launch. This has opened space to a far wider range of activities, from satellite networks providing global internet access to the early stages of space tourism.',
+            'Alongside these commercial ventures, the old dream of human exploration has been revived. Space agencies are once again planning missions to the Moon, this time with the goal of establishing a permanent presence, and they speak seriously of sending astronauts to Mars within a few decades. Such missions would represent the greatest journeys in human history.',
+            'Yet this new age raises difficult questions. Who owns the resources of the Moon or the asteroids? Should vast sums be spent on space while urgent problems remain unsolved on Earth? And how can we prevent the orbit around our planet from filling with dangerous debris? As humanity reaches further into the cosmos, these issues will demand thoughtful answers.',
+            'Whatever the challenges, the renewed enthusiasm for exploration reflects something deep in human nature: the desire to push beyond known limits and to discover what lies beyond the horizon. The coming decades may well determine whether humanity becomes, for the first time, a truly spacefaring species.',
+        ],
+    },
+    {
+        moduleId: 'b2en-future-of-money',
+        title: 'The Changing Face of Money',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'Money is one of humanity\'s oldest and most powerful inventions, yet the form it takes is constantly evolving. From shells and precious metals to paper notes and plastic cards, each generation has reshaped the way we store and exchange value. Today, we may be living through the most significant transformation of all: the gradual disappearance of physical cash.',
+            'In many countries, coins and banknotes are used less and less. A growing number of transactions are carried out instantly with a smartphone or a contactless card. For consumers, this offers obvious convenience, while for businesses it can mean lower costs and greater security. In some societies, it is now possible to go for weeks without ever touching physical money.',
+            'At the same time, entirely new forms of money have emerged. Cryptocurrencies, which exist only in digital form and are controlled by no single government, have attracted both enthusiastic supporters and fierce critics. Some see them as the future of finance; others warn that they are unstable, frequently used for crime, and harmful to the environment because of the energy they consume.',
+            'These developments bring real risks alongside their benefits. A cashless society could exclude elderly or poorer people who lack access to technology, and it gives banks and companies an unprecedented record of our spending habits. The question of who controls our financial data, and how it is used, is becoming increasingly urgent.',
+            'It is impossible to say exactly what money will look like in fifty years. What seems certain, however, is that the comfortable familiarity of notes and coins is fading. As money becomes ever more digital, societies will need to ensure that the systems they build are fair, secure and open to all.',
+        ],
+    },
+    {
+        moduleId: 'b2en-overtourism',
+        title: 'The Problem of Overtourism',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'Travel has never been easier or cheaper than it is today. Budget airlines, online booking and social media have inspired millions of people to explore the world. Yet this explosion in tourism, while bringing undeniable benefits, has created a serious problem in many of the world\'s most beautiful destinations: a phenomenon now widely known as "overtourism".',
+            'The effects can be seen in famous cities and natural wonders alike. Historic streets become so crowded that residents struggle to go about their daily lives. House prices rise as flats are converted into holiday rentals, forcing local people out of their own neighbourhoods. Fragile landscapes and ancient monuments suffer damage that may take centuries to repair, if it can be repaired at all.',
+            'For the communities affected, the situation is deeply complicated. Tourism brings vital income and employment, and few places would wish to lose it entirely. Yet when visitor numbers grow beyond a certain point, the costs begin to outweigh the benefits, and the very qualities that attracted tourists in the first place start to disappear.',
+            'In response, some destinations have begun to take action. A number of cities have introduced tourist taxes, limited the number of visitors to popular sites, or restricted the growth of holiday rentals. Others are working to attract visitors to less famous areas, spreading the benefits more evenly and relieving pressure on the most crowded places.',
+            'Ultimately, the challenge is to find a form of tourism that is sustainable for both visitors and hosts. This will require a change of attitude from travellers, who must learn to explore more responsibly, as well as careful planning by governments. Done well, tourism can enrich the world; done badly, it risks destroying the very treasures it seeks to celebrate.',
+        ],
+    },
+    {
+        moduleId: 'b2en-genetic-ethics',
+        title: 'The Ethics of Genetic Engineering',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'Few areas of science advance as rapidly, or raise as many difficult questions, as genetics. In recent years, powerful new tools have given researchers the ability to edit the genetic code of living things with remarkable precision. The potential applications, from curing inherited diseases to increasing food production, are extraordinary — and so are the ethical dilemmas they create.',
+            'The medical possibilities are perhaps the most exciting. Scientists hope that gene editing could one day eliminate devastating conditions that have caused suffering for generations. By correcting a single faulty gene, it may become possible to treat illnesses that were previously considered incurable, transforming countless lives in the process.',
+            'Yet the same technology raises profound concerns. If we can edit genes to prevent disease, where do we draw the line? Should parents be allowed to choose the height, appearance or intelligence of their children? Critics warn of a future in which genetic advantages can be bought, deepening the divide between rich and poor and reviving dangerous ideas about "improving" the human race.',
+            'There is also the question of unintended consequences. The natural world is the product of billions of years of evolution, and our understanding of it, however advanced, remains incomplete. Changes that seem beneficial today could have unexpected effects on future generations or on the wider environment — effects that, once introduced, might be impossible to reverse.',
+            'For these reasons, many scientists themselves are calling for caution and clear international rules. The challenge for society is not simply what we are able to do, but what we ought to do. As our power over the very building blocks of life continues to grow, the wisdom with which we use that power will matter more than ever.',
+        ],
+    },
     /* ─────────────────────────── C1 ─────────────────────────── */
     {
         moduleId: 'c1en-europe',
