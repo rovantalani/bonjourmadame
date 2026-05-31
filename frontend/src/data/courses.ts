@@ -70,6 +70,9 @@ export const COURSES_EN: Course[] = [
             { id: 'a1en-phrases-class',   title: 'Phrases de classe',             type: 'phrases',    contentId: 'classroom-survival',      path: '/lectures/phrases/classroom-survival', unit: 3 },
             { id: 'a1en-reading-school',  title: 'Lecture : First Day at School', type: 'reading',    contentId: 'a1en-first-day',          path: '/lectures/reading/a1en-first-day',     unit: 3 },
             { id: 'a1en-reading-city',    title: 'Lecture : My City',             type: 'reading',    contentId: 'a1en-my-city',            path: '/lectures/reading/a1en-my-city',       unit: 3 },
+            { id: 'a1en-reading-family',  title: 'Lecture : My Family',           type: 'reading',    contentId: 'a1en-my-family',          path: '/lectures/reading/a1en-my-family',     unit: 3 },
+            { id: 'a1en-reading-day',     title: 'Lecture : My Day',              type: 'reading',    contentId: 'a1en-my-day',             path: '/lectures/reading/a1en-my-day',        unit: 3 },
+            { id: 'a1en-reading-park',    title: 'Lecture : A Day at the Park',   type: 'reading',    contentId: 'a1en-the-park',           path: '/lectures/reading/a1en-the-park',      unit: 3 },
         ],
     },
     {
@@ -116,6 +119,9 @@ export const COURSES_EN: Course[] = [
             { id: 'a2en-phrases-postcard',title: 'Écrire une carte postale',     type: 'phrases',    contentId: 'writing-a-postcard',      path: '/lectures/phrases/writing-a-postcard', unit: 3 },
             { id: 'a2en-phrases-health',  title: 'Parler de sa santé',           type: 'phrases',    contentId: 'talking-about-health',    path: '/lectures/phrases/talking-about-health', unit: 3 },
             { id: 'a2en-reading-job',     title: "Lecture : Sophie's Interview", type: 'reading',    contentId: 'a2en-job-interview',      path: '/lectures/reading/a2en-job-interview', unit: 3 },
+            { id: 'a2en-reading-shopping', title: 'Lecture : A Shopping Trip',    type: 'reading',    contentId: 'a2en-shopping-trip',      path: '/lectures/reading/a2en-shopping-trip', unit: 3 },
+            { id: 'a2en-reading-holiday', title: 'Lecture : Planning a Holiday',  type: 'reading',    contentId: 'a2en-holiday-plans',      path: '/lectures/reading/a2en-holiday-plans', unit: 3 },
+            { id: 'a2en-reading-flatmate',title: 'Lecture : A New Flatmate',      type: 'reading',    contentId: 'a2en-new-flatmate',       path: '/lectures/reading/a2en-new-flatmate',  unit: 3 },
         ],
     },
     {
@@ -147,6 +153,10 @@ export const COURSES_EN: Course[] = [
             { id: 'b1en-tocome',          title: 'Verbe : to come',              type: 'verbs',      contentId: 'to-come',                 path: '/verbs/to-come/table',                 unit: 2 },
             { id: 'b1en-irregular',       title: 'Verbes irréguliers',           type: 'verbs',      contentId: 'irregular-verbs',         path: '/verbs/irregular-verbs',               unit: 2 },
             { id: 'b1en-reading-green',   title: 'Lecture : Building a Greener City', type: 'reading', contentId: 'b1en-green-city',      path: '/lectures/reading/b1en-green-city',    unit: 2 },
+            { id: 'b1en-reading-remote',  title: 'Lecture : The Rise of Remote Work', type: 'reading', contentId: 'b1en-remote-work',     path: '/lectures/reading/b1en-remote-work',   unit: 2 },
+            { id: 'b1en-reading-health',  title: 'Lecture : Living a Healthier Life', type: 'reading', contentId: 'b1en-healthy-living',  path: '/lectures/reading/b1en-healthy-living', unit: 3 },
+            { id: 'b1en-reading-trip',    title: 'Lecture : A Trip to Remember',  type: 'reading',    contentId: 'b1en-trip-to-remember',   path: '/lectures/reading/b1en-trip-to-remember', unit: 3 },
+            { id: 'b1en-reading-volunteer', title: 'Lecture : Why People Volunteer', type: 'reading', contentId: 'b1en-volunteering',     path: '/lectures/reading/b1en-volunteering',  unit: 3 },
             // Unit 3 — Fluence & Expression
             { id: 'b1en-daily-adv',       title: 'Vie quotidienne avancée',      type: 'vocabulary', contentId: 'daily-life-advanced',     path: '/vocabulary/daily-life-advanced',      unit: 3 },
             { id: 'b1en-health-life',     title: 'Santé & Mode de vie',          type: 'vocabulary', contentId: 'health-lifestyle',        path: '/vocabulary/health-lifestyle',         unit: 3 },
@@ -194,6 +204,10 @@ export const COURSES_EN: Course[] = [
             { id: 'b2en-phrases-debate',  title: 'Débattre & Persuader',         type: 'phrases',    contentId: 'debating-persuading',     path: '/lectures/phrases/debating-persuading', unit: 3 },
             { id: 'b2en-phrases-society', title: 'Parler de société',            type: 'phrases',    contentId: 'discussing-society',      path: '/lectures/phrases/discussing-society', unit: 3 },
             { id: 'b2en-reading-culture', title: 'Lecture : Cultural Identity',  type: 'reading',    contentId: 'b2en-cultural-identity',  path: '/lectures/reading/b2en-cultural-identity', unit: 3 },
+            { id: 'b2en-reading-ai',      title: 'Lecture : AI in Everyday Life', type: 'reading',   contentId: 'b2en-ai-everyday',        path: '/lectures/reading/b2en-ai-everyday',   unit: 2 },
+            { id: 'b2en-reading-worklife',title: 'Lecture : Work-Life Balance',  type: 'reading',    contentId: 'b2en-work-life-balance',  path: '/lectures/reading/b2en-work-life-balance', unit: 2 },
+            { id: 'b2en-reading-misinfo', title: 'Lecture : Misinformation',     type: 'reading',    contentId: 'b2en-misinformation',     path: '/lectures/reading/b2en-misinformation', unit: 3 },
+            { id: 'b2en-reading-urban',   title: 'Lecture : Nature in Cities',   type: 'reading',    contentId: 'b2en-urban-nature',       path: '/lectures/reading/b2en-urban-nature',  unit: 3 },
         ],
     },
     {

@@ -31,6 +31,36 @@ export const readingPassagesEN: ReadingPassage[] = [
             'The people in Greenford are very friendly. My neighbours say hello in the street. On Saturdays, we go to the market. We buy fresh bread, fruit and vegetables. I think Greenford is a great place to live.',
         ],
     },
+    {
+        moduleId: 'a1en-my-family',
+        title: 'My Family',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'Hello! My name is Emma. I am ten years old. I live with my family in a small house. We have a cat. Her name is Daisy. She is black and white. I love her very much.',
+            'My father\'s name is John. He is a doctor. He works in a big hospital. My mother\'s name is Anna. She is a teacher. She teaches music. They are very kind.',
+            'I have one brother and one sister. My brother is fifteen. He likes football. My sister is six. She is very small. We play together every day. I am happy with my family.',
+        ],
+    },
+    {
+        moduleId: 'a1en-my-day',
+        title: 'My Day',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'I get up at seven o\'clock every morning. First, I wash my face and brush my teeth. Then I get dressed. I have breakfast with my family. I eat bread and drink milk.',
+            'I go to school at eight o\'clock. I walk with my friend Leo. We have lessons all morning. I like English and art. At lunchtime, I eat in the school canteen. The food is good.',
+            'In the afternoon, I go home. I do my homework. Then I play outside or watch television. At seven o\'clock, we have dinner. I go to bed at nine o\'clock. I am very tired!',
+        ],
+    },
+    {
+        moduleId: 'a1en-the-park',
+        title: 'A Day at the Park',
+        source: 'Original text — Level A1',
+        paragraphs: [
+            'It is Saturday. The sun is shining. My family goes to the park. The park is near our house. It is big and green. There are many trees and flowers.',
+            'My brother and I play football on the grass. My sister rides her bike. My mother and father sit on a bench. They drink coffee and talk. A dog runs near us. It is very happy.',
+            'At lunchtime, we have a picnic. We eat sandwiches and fruit. We drink water. After lunch, we feed the ducks at the lake. Then we walk home. It is a wonderful day.',
+        ],
+    },
     /* ─────────────────────────── A2 ─────────────────────────── */
     {
         moduleId: 'a2en-weekend-trip',
@@ -54,6 +84,39 @@ export const readingPassagesEN: ReadingPassage[] = [
             'Two days later, Ms Park called Sophie to offer her the job. Sophie said yes immediately. She started the following Monday. It was a new beginning, and she felt ready for the challenge.',
         ],
     },
+    {
+        moduleId: 'a2en-shopping-trip',
+        title: 'A Shopping Trip',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'Last Saturday, Maria went shopping in the city centre with her friend Nadia. They wanted to buy some new clothes for the summer. The shops were busy because there was a big sale, and many things were cheaper than usual.',
+            'First, they went to a clothes shop. Maria tried on three dresses. The blue one was too big, and the red one was too expensive. In the end, she chose a green dress that fitted her perfectly. Nadia bought a pair of jeans and a white T-shirt.',
+            'After shopping, they were hungry, so they went to a small café. They ordered sandwiches and fresh orange juice. They talked about their plans for the holidays. Maria wanted to visit her grandparents by the sea.',
+            'In the afternoon, they took the bus home. Maria was tired but happy. "That was a great day," she said. "Yes," Nadia replied, "but I spent too much money!" They both laughed and agreed to go again next month.',
+        ],
+    },
+    {
+        moduleId: 'a2en-holiday-plans',
+        title: 'Planning a Holiday',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'Tom and his wife Sarah were planning their summer holiday. They both worked hard all year, so they wanted to relax in a quiet place. Last year, they went to a busy city, but this time they decided to do something different.',
+            'They looked at many websites and read about different countries. Sarah wanted to go to the mountains because she loved walking and fresh air. Tom preferred the beach because he wanted to swim and read books in the sun.',
+            'In the end, they found the perfect solution. They chose a small village near the coast, with mountains close by. There was a beautiful beach, and there were also good walking paths in the hills. The hotel had excellent reviews and a nice swimming pool.',
+            'They booked the flights and the hotel for two weeks in July. Sarah started making a list of things to pack. Tom downloaded some new books to read. They were both very excited. It was going to be their best holiday yet.',
+        ],
+    },
+    {
+        moduleId: 'a2en-new-flatmate',
+        title: 'A New Flatmate',
+        source: 'Original text — Level A2',
+        paragraphs: [
+            'When Daniel moved to a new city for university, he needed somewhere to live. The rooms in the student halls were very expensive, so he decided to share a flat with other students. He found an advert online for a room in a flat near the campus.',
+            'He sent a message and arranged to visit the flat. It was on the third floor of an old building. The room was small but bright, with a big window. The kitchen was clean, and there was a comfortable living room. Two other students already lived there.',
+            'Daniel met his future flatmates, Pablo and Yuki. Pablo was from Spain and studied engineering. Yuki was from Japan and studied art. They were both friendly and welcoming. They showed him around and explained the rules of the flat.',
+            'Daniel decided to take the room. He moved in the following week. At first, he felt a little shy, but soon he became good friends with Pablo and Yuki. They cooked dinner together and helped each other with their studies. He was glad he had chosen to share a flat.',
+        ],
+    },
     /* ─────────────────────────── B1 ─────────────────────────── */
     {
         moduleId: 'b1en-social-media',
@@ -75,6 +138,50 @@ export const readingPassagesEN: ReadingPassage[] = [
             'One of the most successful approaches has been investing in public transport. Cities that have expanded their metro systems or introduced electric bus networks have seen significant reductions in traffic and air pollution. Copenhagen, for example, has built an impressive cycle lane network that allows a large proportion of residents to travel by bike every day, even in winter.',
             'Green spaces are another priority. Research shows that access to parks and gardens reduces stress, encourages physical activity and supports urban biodiversity. Some cities have gone further, planting trees on rooftops and along motorways to absorb carbon dioxide and lower temperatures during heatwaves.',
             'Renewable energy is also transforming city infrastructure. Solar panels are now installed on schools, sports centres and public buildings in many European cities. Some neighbourhoods have even become energy-neutral, producing as much electricity as they consume. These examples show that sustainable urban development is not just possible — it is already happening.',
+        ],
+    },
+    {
+        moduleId: 'b1en-remote-work',
+        title: 'The Rise of Remote Work',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'Only a few years ago, most people travelled to an office every day to do their jobs. Today, however, millions of employees around the world work from home, at least part of the time. This change, which began slowly, became much faster during the global pandemic, when offices were forced to close.',
+            'There are many advantages to remote work. Employees save time and money because they do not have to travel. They can also have a better balance between their work and their personal lives. Many people say they feel less stressed and more productive when they work in the comfort of their own homes.',
+            'However, remote work also has its problems. Some people feel lonely because they miss their colleagues and the social side of the office. Others find it difficult to concentrate at home, especially if they have children or live in a small flat. It can also be hard to switch off and stop working at the end of the day.',
+            'Most experts believe that the future will be "hybrid". This means that employees will spend some days in the office and some days at home. In this way, companies hope to combine the benefits of both worlds: the flexibility of remote work and the teamwork of the traditional office.',
+        ],
+    },
+    {
+        moduleId: 'b1en-healthy-living',
+        title: 'Living a Healthier Life',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'In modern society, more and more people are interested in living a healthier life. With busy schedules and a lot of stress, it is not always easy to look after ourselves. However, small changes in our daily habits can make a big difference to how we feel.',
+            'A balanced diet is one of the most important factors. Experts recommend eating plenty of fruit and vegetables and reducing the amount of sugar and processed food we eat. Drinking enough water is also essential, although many people forget to do this during a busy day at work.',
+            'Physical exercise is just as important as a good diet. You do not have to spend hours at the gym to stay fit. A daily walk, a bike ride or a short workout at home can improve both your body and your mood. Regular exercise also helps people sleep better at night.',
+            'Finally, mental health should not be ignored. Taking time to relax, spending time with friends and family, and getting enough sleep are all vital for our wellbeing. A healthy life is not about being perfect; it is about finding a balance that works for you and keeping it up over time.',
+        ],
+    },
+    {
+        moduleId: 'b1en-trip-to-remember',
+        title: 'A Trip to Remember',
+        source: 'Original text — Level B1',
+        paragraphs: [
+            'Two years ago, I took a trip that I will never forget. My best friend and I decided to travel around Scotland for two weeks. We did not have much money, so we travelled by bus and stayed in small, cheap hostels. We wanted to see the famous landscapes and meet local people.',
+            'The journey was not always easy. On the second day, it rained heavily, and we got completely soaked while walking in the hills. One night, we missed the last bus and had to wait for two hours in a tiny village. But somehow, these difficult moments became the funniest memories of the whole trip.',
+            'The highlight was our visit to the Isle of Skye. The scenery was breathtaking: dramatic mountains, deep blue lakes and ancient castles. We met a local farmer who invited us for tea and told us amazing stories about the island. His kindness made the experience even more special.',
+            'When I returned home, I felt different. The trip had taught me to be more independent and to appreciate the simple things in life. I realised that the best travel experiences are not always the most comfortable ones. Sometimes, the unexpected moments are the ones we treasure most.',
+        ],
+    },
+    {
+        moduleId: 'b1en-volunteering',
+        title: 'Why People Volunteer',
+        source: 'Original article — Level B1',
+        paragraphs: [
+            'Every year, millions of people around the world give their time and energy to help others without being paid. They work in hospitals, schools, animal shelters and community centres. But why do so many people choose to volunteer when they could be relaxing or earning money instead?',
+            'For many volunteers, the main reason is the desire to make a positive difference. They want to help people who are less fortunate and to improve their local communities. Helping others gives them a strong sense of purpose and satisfaction that they cannot always find in their daily jobs.',
+            'Volunteering also brings personal benefits. It is a great way to meet new people and make friends who share similar values. Young people, in particular, can gain useful skills and experience that help them in their future careers. Studies even show that volunteers often feel happier and healthier than those who do not volunteer.',
+            'Of course, volunteering requires time and commitment, which not everyone can give. However, even a few hours a month can have a real impact. As one experienced volunteer said: "You start by thinking you are helping others, but in the end, you discover that you are helping yourself just as much."',
         ],
     },
     /* ─────────────────────────── B2 ─────────────────────────── */
@@ -103,6 +210,54 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
 
+    {
+        moduleId: 'b2en-ai-everyday',
+        title: 'Artificial Intelligence in Everyday Life',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'Artificial intelligence, once the stuff of science fiction, has quietly become part of our everyday routines. When we ask a virtual assistant about the weather, receive film recommendations from a streaming service, or unlock our phones with our faces, we are relying on technologies that would have seemed almost magical only a generation ago.',
+            'The benefits of this revolution are considerable. AI systems can analyse vast amounts of data far more quickly than any human, helping doctors to detect diseases earlier, enabling scientists to model the climate, and allowing businesses to operate more efficiently. For ordinary users, AI offers convenience, personalisation and access to information on an unprecedented scale.',
+            'Yet these advances raise serious questions. As algorithms make more of the decisions that shape our lives — from the news we see to the loans we are offered — concerns about fairness, privacy and accountability have grown. If a machine makes a mistake, or reflects the biases hidden in its data, who is responsible? And how much of our personal information are we willing to surrender for the sake of convenience?',
+            'Perhaps the most pressing question concerns the future of work. While AI is likely to create new industries and opportunities, it may also automate millions of existing jobs, from driving to accountancy. Societies will need to think carefully about how to retrain workers and share the benefits of this technology fairly.',
+            'Ultimately, artificial intelligence is neither a miracle nor a menace, but a powerful tool whose effects depend on how we choose to use it. The challenge for our generation is to harness its enormous potential while remaining alert to its risks — to ensure that the technology serves humanity, rather than the other way around.',
+        ],
+    },
+    {
+        moduleId: 'b2en-work-life-balance',
+        title: 'Rethinking Work-Life Balance',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'For decades, the idea of "work-life balance" has dominated conversations about how we should organise our lives. The phrase suggests a simple division: work on one side, life on the other, with the goal of keeping the two in equilibrium. Recently, however, many people have begun to question whether this way of thinking still makes sense.',
+            'One problem is that the boundary between work and personal life has become increasingly blurred. With smartphones and laptops, employees can be reached at any hour, and the expectation to respond quickly can follow them home. For many, work no longer stops when they leave the office; it seeps into evenings, weekends and even holidays.',
+            'Some experts argue that we should abandon the idea of "balance" altogether and speak instead of "integration". Rather than trying to keep work and life rigidly separate, they suggest, we should look for ways to blend them more harmoniously — working flexibly when it suits us, and making space for personal priorities during the working day.',
+            'Others worry that this approach simply allows work to invade every corner of our existence. They point to the rising rates of burnout and stress, and call for stronger boundaries: the right to disconnect, shorter working weeks, and a culture that values rest as much as productivity. Some countries have even passed laws protecting employees from out-of-hours emails.',
+            'There is no single answer that suits everyone, for the ideal arrangement depends on individual circumstances and values. What is clear, however, is that the traditional model is under strain. As technology continues to reshape the way we work, finding a sustainable relationship between our jobs and the rest of our lives will remain one of the central challenges of modern society.',
+        ],
+    },
+    {
+        moduleId: 'b2en-misinformation',
+        title: 'The Challenge of Misinformation',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'We live in an age of unprecedented access to information. With a few taps on a screen, we can read the news from across the globe, consult experts and share our opinions with millions. Yet this same connectivity has given rise to one of the defining problems of our time: the rapid spread of false and misleading information.',
+            'Misinformation is not a new phenomenon, but social media has transformed its scale and speed. A false claim can now travel around the world in minutes, shared by well-meaning people who have no idea that it is untrue. Studies suggest that sensational and emotional stories spread faster than accurate ones, precisely because they provoke strong reactions.',
+            'The consequences can be severe. False information about health, for instance, can discourage people from seeking proper treatment, while political misinformation can undermine trust in democratic institutions. When citizens can no longer agree on basic facts, meaningful public debate becomes almost impossible, and society grows more divided.',
+            'Tackling this problem is far from straightforward. Technology companies have introduced fact-checking labels and removed some false content, but critics argue that they have not done enough, and that heavy-handed censorship raises its own dangers. Governments, too, must tread carefully, for the line between fighting misinformation and restricting free speech is a delicate one.',
+            'Perhaps the most powerful defence is education. By teaching people to think critically, to check their sources and to be sceptical of information that seems designed to provoke outrage, we can build a society that is more resistant to manipulation. In the end, the responsibility lies not only with platforms and governments, but with each of us.',
+        ],
+    },
+    {
+        moduleId: 'b2en-urban-nature',
+        title: 'Bringing Nature Back to Cities',
+        source: 'Original article — Level B2',
+        paragraphs: [
+            'For most of human history, cities and nature were seen as opposites. The city was a place of concrete, commerce and crowds; nature was something that existed beyond its walls, in the countryside. Today, however, urban planners and citizens alike are increasingly convinced that the two can, and must, be reconciled.',
+            'The reasons are both practical and profound. As more than half of the world\'s population now lives in urban areas, the quality of city life has become a matter of enormous importance. Research has repeatedly shown that access to green spaces reduces stress, encourages physical activity and even improves mental health. Trees and plants also clean the air, lower temperatures and help cities cope with heavy rainfall.',
+            'Around the world, innovative projects are putting these ideas into practice. Some cities have transformed disused railway lines into elevated parks, while others have planted "urban forests" or installed gardens on the roofs of buildings. A few ambitious schemes have even covered entire tower blocks in vegetation, creating green oases in the heart of dense neighbourhoods.',
+            'Such projects are not without their critics. Some argue that the money would be better spent on housing or public transport, while others worry that "greening" can drive up property prices and force out poorer residents — a phenomenon sometimes called "green gentrification". These concerns deserve serious attention if the benefits of urban nature are to be shared by all.',
+            'Nevertheless, the direction of travel seems clear. As the climate crisis intensifies and cities continue to grow, bringing nature back into the urban environment is no longer a luxury but a necessity. The cities of the future, it seems, may be greener, cooler and altogether more pleasant places to live.',
+        ],
+    },
     /* ─────────────────────────── C1 ─────────────────────────── */
     {
         moduleId: 'c1en-europe',
