@@ -6,6 +6,13 @@ export interface ConjugationRow {
     futurSimple: string;
 }
 
+export interface HelperVerbFR {
+    title: string;
+    translation: string;
+    color: string;
+    rows: ConjugationRow[];
+}
+
 export interface VerbEntry {
     id: string;
     infinitive: string;
@@ -1022,6 +1029,74 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
     ],
+};
+
+export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
+    etre: {
+        title: 'Être',
+        translation: 'to be',
+        color: '#2563EB',
+        rows: [
+            { sujet: 'je',        present: 'suis',   passeCompose: 'ai été',      imparfait: 'étais',   futurSimple: 'serai'  },
+            { sujet: 'tu',        present: 'es',     passeCompose: 'as été',      imparfait: 'étais',   futurSimple: 'seras'  },
+            { sujet: 'il/elle',   present: 'est',    passeCompose: 'a été',       imparfait: 'était',   futurSimple: 'sera'   },
+            { sujet: 'nous',      present: 'sommes', passeCompose: 'avons été',   imparfait: 'étions',  futurSimple: 'serons' },
+            { sujet: 'vous',      present: 'êtes',   passeCompose: 'avez été',    imparfait: 'étiez',   futurSimple: 'serez'  },
+            { sujet: 'ils/elles', present: 'sont',   passeCompose: 'ont été',     imparfait: 'étaient', futurSimple: 'seront' },
+        ],
+    },
+    avoir: {
+        title: 'Avoir',
+        translation: 'to have',
+        color: '#16A34A',
+        rows: [
+            { sujet: 'je',        present: 'ai',    passeCompose: 'ai eu',     imparfait: 'avais',   futurSimple: 'aurai'  },
+            { sujet: 'tu',        present: 'as',    passeCompose: 'as eu',     imparfait: 'avais',   futurSimple: 'auras'  },
+            { sujet: 'il/elle',   present: 'a',     passeCompose: 'a eu',      imparfait: 'avait',   futurSimple: 'aura'   },
+            { sujet: 'nous',      present: 'avons', passeCompose: 'avons eu',  imparfait: 'avions',  futurSimple: 'aurons' },
+            { sujet: 'vous',      present: 'avez',  passeCompose: 'avez eu',   imparfait: 'aviez',   futurSimple: 'aurez'  },
+            { sujet: 'ils/elles', present: 'ont',   passeCompose: 'ont eu',    imparfait: 'avaient', futurSimple: 'auront' },
+        ],
+    },
+    faire: {
+        title: 'Faire',
+        translation: 'to do / make',
+        color: '#EA580C',
+        rows: [
+            { sujet: 'je',        present: 'fais',   passeCompose: 'ai fait',    imparfait: 'faisais',   futurSimple: 'ferai'  },
+            { sujet: 'tu',        present: 'fais',   passeCompose: 'as fait',    imparfait: 'faisais',   futurSimple: 'feras'  },
+            { sujet: 'il/elle',   present: 'fait',   passeCompose: 'a fait',     imparfait: 'faisait',   futurSimple: 'fera'   },
+            { sujet: 'nous',      present: 'faisons',passeCompose: 'avons fait', imparfait: 'faisions',  futurSimple: 'ferons' },
+            { sujet: 'vous',      present: 'faites', passeCompose: 'avez fait',  imparfait: 'faisiez',   futurSimple: 'ferez'  },
+            { sujet: 'ils/elles', present: 'font',   passeCompose: 'ont fait',   imparfait: 'faisaient', futurSimple: 'feront' },
+        ],
+    },
+    aller: {
+        title: 'Aller',
+        translation: 'to go',
+        color: '#7C3AED',
+        rows: [
+            { sujet: 'je',        present: 'vais',  passeCompose: 'suis allé(e)',    imparfait: 'allais',  futurSimple: 'irai'  },
+            { sujet: 'tu',        present: 'vas',   passeCompose: 'es allé(e)',      imparfait: 'allais',  futurSimple: 'iras'  },
+            { sujet: 'il/elle',   present: 'va',    passeCompose: 'est allé(e)',     imparfait: 'allait',  futurSimple: 'ira'   },
+            { sujet: 'nous',      present: 'allons',passeCompose: 'sommes allé(e)s', imparfait: 'allions', futurSimple: 'irons' },
+            { sujet: 'vous',      present: 'allez', passeCompose: 'êtes allé(e)s',  imparfait: 'alliez',  futurSimple: 'irez'  },
+            { sujet: 'ils/elles', present: 'vont',  passeCompose: 'sont allé(e)s',  imparfait: 'allaient',futurSimple: 'iront' },
+        ],
+    },
+    venir: {
+        title: 'Venir',
+        translation: 'to come',
+        color: '#DC2626',
+        rows: [
+            { sujet: 'je',        present: 'viens',   passeCompose: 'suis venu(e)',    imparfait: 'venais',  futurSimple: 'viendrai'  },
+            { sujet: 'tu',        present: 'viens',   passeCompose: 'es venu(e)',      imparfait: 'venais',  futurSimple: 'viendras'  },
+            { sujet: 'il/elle',   present: 'vient',   passeCompose: 'est venu(e)',     imparfait: 'venait',  futurSimple: 'viendra'   },
+            { sujet: 'nous',      present: 'venons',  passeCompose: 'sommes venu(e)s', imparfait: 'venions', futurSimple: 'viendrons' },
+            { sujet: 'vous',      present: 'venez',   passeCompose: 'êtes venu(e)s',  imparfait: 'veniez',  futurSimple: 'viendrez'  },
+            { sujet: 'ils/elles', present: 'viennent',passeCompose: 'sont venu(e)s',  imparfait: 'venaient',futurSimple: 'viendront' },
+        ],
+    },
 };
 
 export const verbById: Record<string, VerbEntry> = Object.fromEntries(
