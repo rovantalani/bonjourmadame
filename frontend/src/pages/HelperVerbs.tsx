@@ -19,16 +19,6 @@ const HELPER_VERB_IDS_EN = [
     { id: 'to-come', title: 'To Come', translation: 'venir',  icon: '🏠', color: '#DC2626', key: 'venir' as const },
 ];
 
-const VERB_GROUP_IDS_FR = [
-    { id: 'regular-verbs',            key: 'regularVerbs'           as const, icon: '📝', color: '#059669', count: 34 },
-    { id: 'irregular-verbs',          key: 'irregularVerbs'         as const, icon: '⚡', color: '#DC2626', count: 18 },
-    { id: 'advanced-irregular-verbs', key: 'advancedIrregularVerbs' as const, icon: '🔥', color: '#BE185D', count: 12 },
-];
-
-const VERB_GROUP_IDS_EN = [
-    { id: 'regular-verbs',   key: 'regularVerbs'   as const, icon: '📝', color: '#059669', count: 15 },
-    { id: 'irregular-verbs', key: 'irregularVerbs' as const, icon: '⚡', color: '#DC2626', count: 20 },
-];
 
 export default function HelperVerbs() {
     const navigate = useNavigate();
@@ -36,7 +26,6 @@ export default function HelperVerbs() {
     const t = useT();
     const isEN = loadLearningMode() === 'learn-english';
     const helperVerbIds = isEN ? HELPER_VERB_IDS_EN : HELPER_VERB_IDS_FR;
-    const verbGroupIds  = isEN ? VERB_GROUP_IDS_EN  : VERB_GROUP_IDS_FR;
     const canGoBack = location.key !== 'default';
 
     return (
@@ -78,31 +67,6 @@ export default function HelperVerbs() {
                 </div>
             </section>
 
-            <section className="hv-section">
-                <p className="section-label">{t.helperVerbs.conjugationSection}</p>
-                <p className="hv-section-note">{t.helperVerbs.conjugationNote}</p>
-                <div className="hv-group-grid">
-                    {verbGroupIds.map((g) => (
-                        <div
-                            key={g.id}
-                            className="hv-group-card"
-                            onClick={() => navigate(`/grammar/${g.id}`)}
-                            role="button"
-                            tabIndex={0}
-                            onKeyDown={(e) => e.key === 'Enter' && navigate(`/grammar/${g.id}`)}
-                        >
-                            <span className="hv-group-icon-circle" style={{ backgroundColor: `${g.color}1F` }}>
-                                <span className="hv-group-icon">{g.icon}</span>
-                            </span>
-                            <div className="hv-group-info">
-                                <h2 className="hv-group-title">{t.helperVerbs[g.key].title}</h2>
-                                <p className="hv-group-desc">{t.helperVerbs[g.key].description}</p>
-                            </div>
-                            <span className="hv-group-count" style={{ color: g.color }}>{t.helperVerbs.verbCount(g.count)}</span>
-                        </div>
-                    ))}
-                </div>
-            </section>
         </main>
     );
 }
