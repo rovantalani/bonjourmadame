@@ -10,6 +10,7 @@ import { grammarLessonsEN } from './data/grammarLessonsEN';
 import { helperVerbsDataEN, verbGroupsEN, verbsDataEN, verbByIdEN, verbGroupMapEN } from './data/verbsEN';
 import { phraseCategories } from './data/phrases';
 import { readingPassages } from './data/readingPassages';
+import { readingPassagesEN } from './data/readingPassagesEN';
 import { migrate } from './db/migrate';
 import authRouter from './routes/auth';
 import progressRouter from './routes/progress';
@@ -283,7 +284,11 @@ app.get('/api/phrase-categories/:categoryId', (req: Request, res: Response) => {
 
 app.get('/api/reading/:moduleId', (req: Request, res: Response) => {
     const moduleId = req.params['moduleId'] as string;
-    const passage = readingPassages.find(p => p.moduleId === moduleId);
+    // French (default) and English-learning passages live in separate files;
+    // module IDs are globally unique, so a single lookup across both works.
+    const passage =
+        readingPassages.find(p => p.moduleId === moduleId) ??
+        readingPassagesEN.find(p => p.moduleId === moduleId);
     if (!passage) {
         res.status(404).json({ error: 'Reading passage not found' });
         return;
