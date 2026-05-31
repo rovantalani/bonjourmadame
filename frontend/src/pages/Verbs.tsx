@@ -51,6 +51,7 @@ export default function Verbs() {
 
     const [groups, setGroups] = useState<VerbGroupData[]>([]);
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         const langParam = isEN ? '?lang=fr' : '';
@@ -66,6 +67,11 @@ export default function Verbs() {
         });
     }, [isEN]);
 
+    const q = search.toLowerCase();
+    const filteredHelpers = q
+        ? helperVerbs.filter(v => v.title.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q))
+        : helperVerbs;
+
     return (
         <main className="page">
             <header className="page-header">
@@ -73,7 +79,18 @@ export default function Verbs() {
                 <p className="subtitle">{t.verbs.subtitle}</p>
             </header>
 
+            <div className="verbs-search-row">
+                <input
+                    type="search"
+                    className="field-input verbs-search"
+                    placeholder={isEN ? 'Search verbs…' : 'Rechercher un verbe…'}
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                />
+            </div>
+
             {/* Helper Verbs */}
+            {filteredHelpers.length > 0 && (
             <section className="verbs-section">
                 <h2 className="verbs-section-title">{isEN ? 'Auxiliary Verbs' : 'Verbes essentiels'}</h2>
                 <p className="verbs-section-desc">
@@ -82,7 +99,7 @@ export default function Verbs() {
                         : 'Les 5 verbes fondamentaux du français'}
                 </p>
                 <div className="verbs-helper-grid">
-                    {helperVerbs.map(v => (
+                    {filteredHelpers.map(v => (
                         <button
                             key={v.id}
                             className="verbs-helper-card"
@@ -99,12 +116,20 @@ export default function Verbs() {
                     ))}
                 </div>
             </section>
+            )}
 
             {/* Verb Groups */}
             {loading ? (
                 <p className="verbs-loading">Loading…</p>
             ) : (
-                groups.map(group => (
+                groups.map(group => {
+                    const filteredVerbs = q
+                        ? group.verbs.filter(
+                            v => v.infinitive.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q)
+                        )
+                        : group.verbs;
+                    if (filteredVerbs.length === 0) return null;
+                    return (
                     <section key={group.id} className="verbs-section">
                         <div className="verbs-group-header">
                             <span className="verbs-group-icon" style={{ backgroundColor: `${group.color}1F` }}>
@@ -116,7 +141,7 @@ export default function Verbs() {
                             </div>
                         </div>
                         <div className="verb-grid">
-                            {group.verbs.map(verb => (
+                            {filteredVerbs.map(verb => (
                                 <div key={verb.id} className="verb-card">
                                     <span
                                         className="level-badge"
@@ -157,7 +182,8 @@ export default function Verbs() {
                             ))}
                         </div>
                     </section>
-                ))
+                    );
+                })
             )}
         </main>
     );

@@ -1,3 +1,12 @@
+.verbs-search-row {
+    margin-bottom: 1.5rem;
+}
+
+.verbs-search {
+    width: 100%;
+    max-width: 380px;
+}
+
 .verbs-loading {
     color: var(--text-3);
     margin-top: 1rem;
