@@ -172,6 +172,80 @@ app.get('/api/conjugation/:verbId', (req: Request, res: Response) => {
     res.json({ ...verb, groupId });
 });
 
+app.get('/api/tenses-for-level/:level', (_req: Request, res: Response) => {
+    const level = (_req.params['level'] as string).toLowerCase();
+    const TENSES_BY_LEVEL: Record<string, { key: string; label: string; labelFR: string; quizzable: boolean }[]> = {
+        a1: [
+            { key: 'present',      label: 'Présent',       labelFR: 'Présent',       quizzable: true },
+            { key: 'passeCompose', label: 'Passé composé', labelFR: 'Passé composé', quizzable: true },
+        ],
+        a2: [
+            { key: 'present',      label: 'Présent',       labelFR: 'Présent',       quizzable: true },
+            { key: 'passeCompose', label: 'Passé composé', labelFR: 'Passé composé', quizzable: true },
+            { key: 'imparfait',    label: 'Imparfait',     labelFR: 'Imparfait',     quizzable: true },
+            { key: 'futurSimple',  label: 'Futur simple',  labelFR: 'Futur simple',  quizzable: true },
+        ],
+        b1: [
+            { key: 'present',              label: 'Présent',               labelFR: 'Présent',               quizzable: true },
+            { key: 'passeCompose',         label: 'Passé composé',         labelFR: 'Passé composé',         quizzable: true },
+            { key: 'imparfait',            label: 'Imparfait',             labelFR: 'Imparfait',             quizzable: true },
+            { key: 'futurSimple',          label: 'Futur simple',          labelFR: 'Futur simple',          quizzable: true },
+            { key: 'conditionnelPresent',  label: 'Conditionnel présent',  labelFR: 'Conditionnel présent',  quizzable: true },
+            { key: 'subjonctifPresent',    label: 'Subjonctif présent',    labelFR: 'Subjonctif présent',    quizzable: true },
+            { key: 'plusQueParfait',       label: 'Plus-que-parfait',      labelFR: 'Plus-que-parfait',      quizzable: true },
+        ],
+        b2: [
+            { key: 'present',              label: 'Présent',               labelFR: 'Présent',               quizzable: true },
+            { key: 'passeCompose',         label: 'Passé composé',         labelFR: 'Passé composé',         quizzable: true },
+            { key: 'imparfait',            label: 'Imparfait',             labelFR: 'Imparfait',             quizzable: true },
+            { key: 'futurSimple',          label: 'Futur simple',          labelFR: 'Futur simple',          quizzable: true },
+            { key: 'conditionnelPresent',  label: 'Conditionnel présent',  labelFR: 'Conditionnel présent',  quizzable: true },
+            { key: 'subjonctifPresent',    label: 'Subjonctif présent',    labelFR: 'Subjonctif présent',    quizzable: true },
+            { key: 'plusQueParfait',       label: 'Plus-que-parfait',      labelFR: 'Plus-que-parfait',      quizzable: true },
+            { key: 'futurAnterieur',       label: 'Futur antérieur',       labelFR: 'Futur antérieur',       quizzable: true },
+            { key: 'conditionnelPasse',    label: 'Conditionnel passé',    labelFR: 'Conditionnel passé',    quizzable: true },
+            { key: 'subjonctifPasse',      label: 'Subjonctif passé',      labelFR: 'Subjonctif passé',      quizzable: true },
+        ],
+        c1: [
+            { key: 'present',                    label: 'Présent',                     labelFR: 'Présent',                     quizzable: true },
+            { key: 'passeCompose',               label: 'Passé composé',               labelFR: 'Passé composé',               quizzable: true },
+            { key: 'imparfait',                  label: 'Imparfait',                   labelFR: 'Imparfait',                   quizzable: true },
+            { key: 'futurSimple',                label: 'Futur simple',                labelFR: 'Futur simple',                quizzable: true },
+            { key: 'conditionnelPresent',        label: 'Conditionnel présent',        labelFR: 'Conditionnel présent',        quizzable: true },
+            { key: 'subjonctifPresent',          label: 'Subjonctif présent',          labelFR: 'Subjonctif présent',          quizzable: true },
+            { key: 'plusQueParfait',             label: 'Plus-que-parfait',            labelFR: 'Plus-que-parfait',            quizzable: true },
+            { key: 'futurAnterieur',             label: 'Futur antérieur',             labelFR: 'Futur antérieur',             quizzable: true },
+            { key: 'conditionnelPasse',          label: 'Conditionnel passé',          labelFR: 'Conditionnel passé',          quizzable: true },
+            { key: 'subjonctifPasse',            label: 'Subjonctif passé',            labelFR: 'Subjonctif passé',            quizzable: true },
+            { key: 'passeSimple',                label: 'Passé simple',                labelFR: 'Passé simple',                quizzable: true },
+            { key: 'subjonctifImparfait',        label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait',        quizzable: true },
+            { key: 'subjonctifPlusQueParfait',   label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait', quizzable: true },
+        ],
+        c2: [
+            { key: 'present',                    label: 'Présent',                     labelFR: 'Présent',                     quizzable: true },
+            { key: 'passeCompose',               label: 'Passé composé',               labelFR: 'Passé composé',               quizzable: true },
+            { key: 'imparfait',                  label: 'Imparfait',                   labelFR: 'Imparfait',                   quizzable: true },
+            { key: 'futurSimple',                label: 'Futur simple',                labelFR: 'Futur simple',                quizzable: true },
+            { key: 'conditionnelPresent',        label: 'Conditionnel présent',        labelFR: 'Conditionnel présent',        quizzable: true },
+            { key: 'subjonctifPresent',          label: 'Subjonctif présent',          labelFR: 'Subjonctif présent',          quizzable: true },
+            { key: 'plusQueParfait',             label: 'Plus-que-parfait',            labelFR: 'Plus-que-parfait',            quizzable: true },
+            { key: 'futurAnterieur',             label: 'Futur antérieur',             labelFR: 'Futur antérieur',             quizzable: true },
+            { key: 'conditionnelPasse',          label: 'Conditionnel passé',          labelFR: 'Conditionnel passé',          quizzable: true },
+            { key: 'subjonctifPasse',            label: 'Subjonctif passé',            labelFR: 'Subjonctif passé',            quizzable: true },
+            { key: 'passeSimple',                label: 'Passé simple',                labelFR: 'Passé simple',                quizzable: true },
+            { key: 'subjonctifImparfait',        label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait',        quizzable: true },
+            { key: 'subjonctifPlusQueParfait',   label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait', quizzable: true },
+            { key: 'passeAnterieur',             label: 'Passé antérieur',             labelFR: 'Passé antérieur',             quizzable: false },
+        ],
+    };
+    const tenses = TENSES_BY_LEVEL[level];
+    if (!tenses) {
+        res.status(404).json({ error: 'Unknown level' });
+        return;
+    }
+    res.json(tenses);
+});
+
 app.get('/api/grammar-lessons', (req: Request, res: Response) => {
     const lessons = req.query['lang'] === 'fr' ? grammarLessonsEN : grammarLessons;
     res.json(lessons.map(({ id, title, level, description, icon, color }) => ({

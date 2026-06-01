@@ -10,6 +10,16 @@ interface ConjugationRow {
     passeCompose: string;
     imparfait: string;
     futurSimple: string;
+    conditionnelPresent?: string;
+    subjonctifPresent?: string;
+    plusQueParfait?: string;
+    futurAnterieur?: string;
+    conditionnelPasse?: string;
+    subjonctifPasse?: string;
+    passeSimple?: string;
+    subjonctifImparfait?: string;
+    subjonctifPlusQueParfait?: string;
+    passeAnterieur?: string;
 }
 
 interface VerbData {
@@ -21,16 +31,108 @@ interface VerbData {
     rows: ConjugationRow[];
 }
 
-type TenseKey = 'present' | 'passeCompose' | 'imparfait' | 'futurSimple';
+type TenseKey = keyof Omit<ConjugationRow, 'sujet'>;
 type Phase = 'quiz' | 'review' | 'complete';
 type CellResult = 'correct' | 'wrong';
 
-const TENSES: { key: TenseKey; label: string; labelFR: string }[] = [
-    { key: 'present',      label: 'Présent',        labelFR: 'Présent'        },
-    { key: 'passeCompose', label: 'Passé composé',   labelFR: 'Passé composé'  },
-    { key: 'imparfait',    label: 'Imparfait',       labelFR: 'Imparfait'      },
-    { key: 'futurSimple',  label: 'Futur simple',    labelFR: 'Futur simple'   },
-];
+interface TenseDef {
+    key: TenseKey;
+    label: string;
+    labelFR: string;
+}
+
+const CEFR_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+
+// All tenses cumulative per level (quizzable only — passeAnterieur excluded)
+const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
+    a1: [
+        { key: 'present',      label: 'Présent',       labelFR: 'Présent'       },
+        { key: 'passeCompose', label: 'Passé composé', labelFR: 'Passé composé' },
+    ],
+    a2: [
+        { key: 'present',      label: 'Présent',       labelFR: 'Présent'       },
+        { key: 'passeCompose', label: 'Passé composé', labelFR: 'Passé composé' },
+        { key: 'imparfait',    label: 'Imparfait',     labelFR: 'Imparfait'     },
+        { key: 'futurSimple',  label: 'Futur simple',  labelFR: 'Futur simple'  },
+    ],
+    b1: [
+        { key: 'present',             label: 'Présent',              labelFR: 'Présent'              },
+        { key: 'passeCompose',        label: 'Passé composé',        labelFR: 'Passé composé'        },
+        { key: 'imparfait',           label: 'Imparfait',            labelFR: 'Imparfait'            },
+        { key: 'futurSimple',         label: 'Futur simple',         labelFR: 'Futur simple'         },
+        { key: 'conditionnelPresent', label: 'Conditionnel présent', labelFR: 'Conditionnel présent' },
+        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   labelFR: 'Subjonctif présent'   },
+        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     labelFR: 'Plus-que-parfait'     },
+    ],
+    b2: [
+        { key: 'present',             label: 'Présent',              labelFR: 'Présent'              },
+        { key: 'passeCompose',        label: 'Passé composé',        labelFR: 'Passé composé'        },
+        { key: 'imparfait',           label: 'Imparfait',            labelFR: 'Imparfait'            },
+        { key: 'futurSimple',         label: 'Futur simple',         labelFR: 'Futur simple'         },
+        { key: 'conditionnelPresent', label: 'Conditionnel présent', labelFR: 'Conditionnel présent' },
+        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   labelFR: 'Subjonctif présent'   },
+        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     labelFR: 'Plus-que-parfait'     },
+        { key: 'futurAnterieur',      label: 'Futur antérieur',      labelFR: 'Futur antérieur'      },
+        { key: 'conditionnelPasse',   label: 'Conditionnel passé',   labelFR: 'Conditionnel passé'   },
+        { key: 'subjonctifPasse',     label: 'Subjonctif passé',     labelFR: 'Subjonctif passé'     },
+    ],
+    c1: [
+        { key: 'present',                  label: 'Présent',                     labelFR: 'Présent'                     },
+        { key: 'passeCompose',             label: 'Passé composé',               labelFR: 'Passé composé'               },
+        { key: 'imparfait',                label: 'Imparfait',                   labelFR: 'Imparfait'                   },
+        { key: 'futurSimple',              label: 'Futur simple',                labelFR: 'Futur simple'                },
+        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        labelFR: 'Conditionnel présent'        },
+        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          labelFR: 'Subjonctif présent'          },
+        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            labelFR: 'Plus-que-parfait'            },
+        { key: 'futurAnterieur',           label: 'Futur antérieur',             labelFR: 'Futur antérieur'             },
+        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          labelFR: 'Conditionnel passé'          },
+        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            labelFR: 'Subjonctif passé'            },
+        { key: 'passeSimple',              label: 'Passé simple',                labelFR: 'Passé simple'                },
+        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait'        },
+        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait' },
+    ],
+    c2: [
+        { key: 'present',                  label: 'Présent',                     labelFR: 'Présent'                     },
+        { key: 'passeCompose',             label: 'Passé composé',               labelFR: 'Passé composé'               },
+        { key: 'imparfait',                label: 'Imparfait',                   labelFR: 'Imparfait'                   },
+        { key: 'futurSimple',              label: 'Futur simple',                labelFR: 'Futur simple'                },
+        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        labelFR: 'Conditionnel présent'        },
+        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          labelFR: 'Subjonctif présent'          },
+        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            labelFR: 'Plus-que-parfait'            },
+        { key: 'futurAnterieur',           label: 'Futur antérieur',             labelFR: 'Futur antérieur'             },
+        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          labelFR: 'Conditionnel passé'          },
+        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            labelFR: 'Subjonctif passé'            },
+        { key: 'passeSimple',              label: 'Passé simple',                labelFR: 'Passé simple'                },
+        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait'        },
+        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait' },
+        // passeAnterieur excluded — recognition only, not quizzed
+    ],
+};
+
+// Only the NEW tenses introduced at each level (for review verb quizzes)
+const NEW_TENSES_FOR_LEVEL: Record<string, TenseDef[]> = {
+    a1: TENSES_BY_LEVEL.a1,
+    a2: [
+        { key: 'imparfait',   label: 'Imparfait',    labelFR: 'Imparfait'    },
+        { key: 'futurSimple', label: 'Futur simple', labelFR: 'Futur simple' },
+    ],
+    b1: [
+        { key: 'conditionnelPresent', label: 'Conditionnel présent', labelFR: 'Conditionnel présent' },
+        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   labelFR: 'Subjonctif présent'   },
+        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     labelFR: 'Plus-que-parfait'     },
+    ],
+    b2: [
+        { key: 'futurAnterieur',    label: 'Futur antérieur',    labelFR: 'Futur antérieur'    },
+        { key: 'conditionnelPasse', label: 'Conditionnel passé', labelFR: 'Conditionnel passé' },
+        { key: 'subjonctifPasse',   label: 'Subjonctif passé',   labelFR: 'Subjonctif passé'   },
+    ],
+    c1: [
+        { key: 'passeSimple',              label: 'Passé simple',                labelFR: 'Passé simple'                },
+        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait'        },
+        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait' },
+    ],
+    c2: [],
+};
 
 function normalize(s: string): string {
     return s.toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -50,21 +152,16 @@ export default function VerbQuiz() {
 
     const [verb, setVerb] = useState<VerbData | null>(null);
 
-    // Phase & tense tracking
     const [phase, setPhase] = useState<Phase>('quiz');
     const [tenseIndex, setTenseIndex] = useState(0);
     const [reviewQueue, setReviewQueue] = useState<number[]>([]);
     const [reviewStep, setReviewStep] = useState(0);
 
-    // Per-tense input / feedback state
     const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
     const [cellResults, setCellResults] = useState<Record<string, CellResult>>({});
 
-    // Accumulated misses across the quiz phase
     const [wrongByTense, setWrongByTense] = useState<Record<number, string[]>>({});
-
-    // Stats (quiz phase only)
     const [correctCount, setCorrectCount] = useState(0);
 
     const firstInputRef = useRef<HTMLInputElement>(null);
@@ -80,32 +177,48 @@ export default function VerbQuiz() {
             .catch(() => {});
     }, [verbId]);
 
-    // Focus first input when tense changes
     useEffect(() => {
         if (!submitted) {
             setTimeout(() => firstInputRef.current?.focus(), 50);
         }
     }, [tenseIndex, reviewStep, submitted]);
 
-    const handleExit = () => navigate(`/courses/${level}/verbs/${verb?.groupId ?? 'regular-verbs'}`);
+    if (!verb) {
+        return (
+            <main className="page">
+                <p className="vq-loading">Loading…</p>
+            </main>
+        );
+    }
 
-    // Current tense index (0-3) regardless of phase
+    const levelKey = (level ?? 'a2').toLowerCase();
+    const verbLevel = verb.groupId.toLowerCase();
+    const verbLevelIdx = CEFR_ORDER.indexOf(verbLevel);
+    const currentLevelIdx = CEFR_ORDER.indexOf(levelKey);
+    const isReviewVerb = verbLevelIdx >= 0 && currentLevelIdx > verbLevelIdx;
+
+    // Which tenses to quiz: if review verb → only new tenses for this level; if new verb → all cumulative tenses
+    const TENSES = isReviewVerb
+        ? (NEW_TENSES_FOR_LEVEL[levelKey] ?? TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2'])
+        : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
+
+    const handleExit = () => navigate(`/courses/${level}/verbs`);
+
     const activeTenseIdx = phase === 'review' ? reviewQueue[reviewStep] : tenseIndex;
     const currentTense = TENSES[activeTenseIdx];
 
     const handleSubmit = () => {
-        if (!verb || submitted) return;
+        if (!verb || submitted || !currentTense) return;
 
         const results: Record<string, CellResult> = {};
         const wrongSubjects: string[] = [];
         let correct = 0;
 
         for (const row of verb.rows) {
-            // In review mode, skip rows that were correct in the quiz (pre-filled)
             if (phase === 'review' && !wrongByTense[activeTenseIdx]?.includes(row.sujet)) {
                 continue;
             }
-            const expected = row[currentTense.key];
+            const expected = (row[currentTense.key] as string | undefined) ?? '';
             const userAnswer = userAnswers[row.sujet] ?? '';
             const isCorrect = normalize(userAnswer) === normalize(expected);
             results[row.sujet] = isCorrect ? 'correct' : 'wrong';
@@ -130,10 +243,9 @@ export default function VerbQuiz() {
         setCellResults({});
 
         if (phase === 'quiz') {
-            if (tenseIndex < 3) {
+            if (tenseIndex < TENSES.length - 1) {
                 setTenseIndex(prev => prev + 1);
             } else {
-                // All 4 tenses done — build review queue from accumulated misses
                 const queue = Object.keys(wrongByTense).map(Number).sort((a, b) => a - b);
                 if (queue.length > 0) {
                     setReviewQueue(queue);
@@ -164,17 +276,9 @@ export default function VerbQuiz() {
         setCorrectCount(0);
     };
 
-    if (!verb) {
-        return (
-            <main className="page">
-                <p className="vq-loading">Loading…</p>
-            </main>
-        );
-    }
-
     /* ── Completion screen ── */
     if (phase === 'complete') {
-        const totalCells = verb.rows.length * TENSES.length; // 6 × 4 = 24
+        const totalCells = verb.rows.length * TENSES.length;
         const accuracy = totalCells > 0 ? Math.round((correctCount / totalCells) * 100) : 0;
         return (
             <main className="page">
@@ -184,15 +288,20 @@ export default function VerbQuiz() {
                     <p className="vq-complete-verb" style={{ color: verb.color }}>
                         <em>{verb.infinitive} — {verb.translation}</em>
                     </p>
+                    {isReviewVerb && (
+                        <p style={{ fontSize: '0.82rem', color: 'var(--text-3)', marginBottom: '0.5rem' }}>
+                            {isENUI ? `Révision — tenses de ${levelKey.toUpperCase()}` : `Review — ${levelKey.toUpperCase()} tenses`}
+                        </p>
+                    )}
 
                     <div className="vq-stats-grid">
                         <div className="vq-stat">
                             <span className="vq-stat-value" style={{ color: verb.color }}>{correctCount}</span>
-                            <span className="vq-stat-label">{isENUI ? 'Score' : 'Score'}</span>
+                            <span className="vq-stat-label">Score</span>
                         </div>
                         <div className="vq-stat">
                             <span className="vq-stat-value" style={{ color: verb.color }}>{totalCells}</span>
-                            <span className="vq-stat-label">{isENUI ? 'Total' : 'Total'}</span>
+                            <span className="vq-stat-label">Total</span>
                         </div>
                         <div className="vq-stat">
                             <span className="vq-stat-value" style={{ color: verb.color }}>{accuracy}%</span>
@@ -225,11 +334,15 @@ export default function VerbQuiz() {
 
     const stepLabel = isReview
         ? `${isENUI ? 'Révision' : 'Review'} ${reviewStep + 1}/${reviewQueue.length}`
-        : `${isENUI ? 'Étape' : 'Step'} ${tenseIndex + 1}/4`;
+        : `${isENUI ? 'Étape' : 'Step'} ${tenseIndex + 1}/${TENSES.length}`;
 
     const wrongSubjectsForTense = wrongByTense[activeTenseIdx] ?? [];
 
     let inputIndex = 0;
+
+    if (!currentTense) {
+        return null;
+    }
 
     return (
         <main className="page">
@@ -246,6 +359,11 @@ export default function VerbQuiz() {
                         <SpeakerButton text={verb.infinitive} lang={isENUI ? 'en-US' : 'fr-FR'} />
                     </div>
                     <span className="vq-verb-hint">{verb.translation}</span>
+                    {isReviewVerb && !isReview && (
+                        <span style={{ fontSize: '0.72rem', color: 'var(--text-3)' }}>
+                            {isENUI ? `Révision — nouveaux temps ${levelKey.toUpperCase()}` : `Review — new ${levelKey.toUpperCase()} tenses`}
+                        </span>
+                    )}
                 </div>
                 <span className="vq-counter">
                     {isReview && '🔄 '}{stepLabel}
@@ -269,7 +387,7 @@ export default function VerbQuiz() {
                         </span>
                     )}
                     <h2 className="vq-tense-title" style={{ color: verb.color }}>
-                        {currentTense.label}
+                        {isENUI ? currentTense.labelFR : currentTense.label}
                     </h2>
                     {isReview && (
                         <p className="vq-review-hint">
@@ -285,7 +403,7 @@ export default function VerbQuiz() {
                         {verb.rows.map((row, i) => {
                             const isPrefill = isReview && !wrongSubjectsForTense.includes(row.sujet);
                             const result = cellResults[row.sujet];
-                            const expected = row[currentTense.key];
+                            const expected = (row[currentTense.key] as string | undefined) ?? '';
                             const isFirst = !isPrefill && inputIndex++ === 0;
 
                             return (
@@ -293,11 +411,8 @@ export default function VerbQuiz() {
                                     key={row.sujet}
                                     className={`vq-row${submitted && result ? ` vq-row--${result}` : ''}`}
                                 >
-                                    <td
-                                        className="vq-sujet"
-                                        style={{ color: verb.color }}
-                                    >
-                                        {displaySujet(row.sujet, row[currentTense.key])}
+                                    <td className="vq-sujet" style={{ color: verb.color }}>
+                                        {displaySujet(row.sujet, expected)}
                                     </td>
                                     <td className="vq-answer-cell">
                                         {isPrefill ? (
@@ -362,7 +477,7 @@ export default function VerbQuiz() {
                             style={{ backgroundColor: verb.color, color: '#fff' }}
                             onClick={handleNext}
                         >
-                            {phase === 'quiz' && tenseIndex < 3
+                            {phase === 'quiz' && tenseIndex < TENSES.length - 1
                                 ? (isENUI ? 'Suivant →' : 'Next →')
                                 : phase === 'review' && reviewStep < reviewQueue.length - 1
                                 ? (isENUI ? 'Suivant →' : 'Next →')
