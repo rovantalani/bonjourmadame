@@ -172,6 +172,42 @@ app.get('/api/conjugation/:verbId', (req: Request, res: Response) => {
     res.json({ ...verb, groupId });
 });
 
+const CEFR_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+
+app.get('/api/verbs-for-course/:level', (req: Request, res: Response) => {
+    const level = (req.params['level'] as string).toLowerCase();
+    const langFR = req.query['lang'] === 'fr';
+    const groups = langFR ? verbGroupsEN : verbGroups;
+    const data   = langFR ? verbsDataEN  : verbsData;
+
+    const levelIdx = CEFR_ORDER.indexOf(level);
+    if (levelIdx === -1) {
+        res.status(404).json({ error: 'Unknown level' });
+        return;
+    }
+
+    const mapVerb = ({ id, infinitive, translation, type, color }: { id: string; infinitive: string; translation: string; type: string; color: string }) =>
+        ({ id, infinitive, translation, type, color });
+
+    const newVerbs = (data[level] ?? []).map(mapVerb);
+
+    const reviewVerbs: { groupId: string; groupTitle: string; verbs: ReturnType<typeof mapVerb>[] }[] = [];
+    for (let i = 0; i < levelIdx; i++) {
+        const gid = CEFR_ORDER[i];
+        const gVerbs = (data[gid] ?? []).map(mapVerb);
+        if (gVerbs.length > 0) {
+            const g = groups[gid];
+            reviewVerbs.push({
+                groupId: gid,
+                groupTitle: g ? (langFR ? g.titleFR : g.title) : gid.toUpperCase(),
+                verbs: gVerbs,
+            });
+        }
+    }
+
+    res.json({ level, newVerbs, reviewVerbs });
+});
+
 app.get('/api/tenses-for-level/:level', (_req: Request, res: Response) => {
     const level = (_req.params['level'] as string).toLowerCase();
     const TENSES_BY_LEVEL: Record<string, { key: string; label: string; labelFR: string; quizzable: boolean }[]> = {
