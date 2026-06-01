@@ -20,8 +20,7 @@ const HELPER_VERBS_EN = [
     { id: 'to-come', title: 'To Come', translation: 'venir', icon: '🏠', color: '#DC2626' },
 ];
 
-const VERB_GROUP_IDS_FR = ['regular-verbs', 'irregular-verbs', 'advanced-irregular-verbs'];
-const VERB_GROUP_IDS_EN = ['regular-verbs', 'irregular-verbs'];
+const TYPE_ORDER = ['-ER', '-IR', '-RE', 'Regular', 'Irregular'];
 
 interface VerbSummary {
     id: string;
@@ -40,6 +39,25 @@ interface VerbGroupData {
     verbs: VerbSummary[];
 }
 
+function groupByType(verbs: VerbSummary[]): { type: string; verbs: VerbSummary[] }[] {
+    const map = new Map<string, VerbSummary[]>();
+    for (const v of verbs) {
+        const bucket = map.get(v.type) ?? [];
+        bucket.push(v);
+        map.set(v.type, bucket);
+    }
+    return [...map.entries()]
+        .sort(([a], [b]) => {
+            const ai = TYPE_ORDER.indexOf(a);
+            const bi = TYPE_ORDER.indexOf(b);
+            if (ai === -1 && bi === -1) return a.localeCompare(b);
+            if (ai === -1) return 1;
+            if (bi === -1) return -1;
+            return ai - bi;
+        })
+        .map(([type, verbs]) => ({ type, verbs }));
+}
+
 export default function Verbs() {
     const { level } = useParams<{ level: string }>();
     const navigate = useNavigate();
@@ -47,30 +65,33 @@ export default function Verbs() {
     const isEN = loadLearningMode() === 'learn-english';
 
     const helperVerbs = isEN ? HELPER_VERBS_EN : HELPER_VERBS_FR;
-    const groupIds    = isEN ? VERB_GROUP_IDS_EN : VERB_GROUP_IDS_FR;
 
-    const [groups, setGroups] = useState<VerbGroupData[]>([]);
+    const [group, setGroup] = useState<VerbGroupData | null>(null);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
 
     useEffect(() => {
         const langParam = isEN ? '?lang=fr' : '';
+        const levelId = (level ?? 'a1').toLowerCase();
         setLoading(true);
-        Promise.all(
-            groupIds.map(id =>
-                fetch(`${import.meta.env.VITE_API_BASE}/api/verb-group/${id}${langParam}`)
-                    .then(r => r.json() as Promise<VerbGroupData>)
-            )
-        ).then(data => {
-            setGroups(data);
-            setLoading(false);
-        });
-    }, [isEN]);
+        fetch(`${import.meta.env.VITE_API_BASE}/api/verb-group/${levelId}${langParam}`)
+            .then(r => r.json() as Promise<VerbGroupData>)
+            .then(data => {
+                setGroup(data);
+                setLoading(false);
+            });
+    }, [isEN, level]);
 
     const q = search.toLowerCase();
     const filteredHelpers = q
         ? helperVerbs.filter(v => v.title.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q))
         : helperVerbs;
+
+    const filteredVerbs = group
+        ? (q ? group.verbs.filter(v => v.infinitive.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q)) : group.verbs)
+        : [];
+
+    const typeGroups = groupByType(filteredVerbs);
 
     return (
         <main className="page">
@@ -91,88 +112,58 @@ export default function Verbs() {
 
             {/* Helper Verbs */}
             {filteredHelpers.length > 0 && (
-            <section className="verbs-section">
-                <h2 className="verbs-section-title">{isEN ? 'Auxiliary Verbs' : 'Verbes essentiels'}</h2>
-                <p className="verbs-section-desc">
-                    {isEN
-                        ? 'The 5 core English verbs — master these first'
-                        : 'Les 5 verbes fondamentaux du français'}
-                </p>
-                <div className="verbs-helper-grid">
-                    {filteredHelpers.map(v => (
-                        <button
-                            key={v.id}
-                            className="verbs-helper-card"
-                            style={{ borderTopColor: v.color }}
-                            onClick={() => navigate(`/courses/${level}/verbs/${v.id}/table`)}
-                            type="button"
-                        >
-                            <span className="verbs-helper-icon" style={{ backgroundColor: `${v.color}1F` }}>
-                                {v.icon}
-                            </span>
-                            <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
-                            <span className="verbs-helper-translation">{v.translation}</span>
-                        </button>
-                    ))}
-                </div>
-            </section>
+                <section className="verbs-section">
+                    <h2 className="verbs-section-title">{isEN ? 'Auxiliary Verbs' : 'Verbes essentiels'}</h2>
+                    <p className="verbs-section-desc">
+                        {isEN ? 'The 5 core English verbs — master these first' : 'Les 5 verbes fondamentaux du français'}
+                    </p>
+                    <div className="verbs-helper-grid">
+                        {filteredHelpers.map(v => (
+                            <button
+                                key={v.id}
+                                className="verbs-helper-card"
+                                style={{ borderTopColor: v.color }}
+                                onClick={() => navigate(`/courses/${level}/verbs/${v.id}/table`)}
+                                type="button"
+                            >
+                                <span className="verbs-helper-icon" style={{ backgroundColor: `${v.color}1F` }}>{v.icon}</span>
+                                <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
+                                <span className="verbs-helper-translation">{v.translation}</span>
+                            </button>
+                        ))}
+                    </div>
+                </section>
             )}
 
-            {/* Verb Groups */}
+            {/* Level Verbs */}
             {loading ? (
                 <p className="verbs-loading">Loading…</p>
+            ) : filteredVerbs.length === 0 && q ? (
+                <p className="verbs-loading" style={{ color: 'var(--text-3)' }}>No verbs match "{search}"</p>
             ) : (
-                groups.map(group => {
-                    const filteredVerbs = q
-                        ? group.verbs.filter(
-                            v => v.infinitive.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q)
-                        )
-                        : group.verbs;
-                    if (filteredVerbs.length === 0) return null;
-                    return (
-                    <section key={group.id} className="verbs-section">
-                        <div className="verbs-group-header">
-                            <span className="verbs-group-icon" style={{ backgroundColor: `${group.color}1F` }}>
-                                {group.icon}
+                typeGroups.map(({ type, verbs }) => (
+                    <section key={type} className="verbs-section">
+                        <h2 className="verbs-section-title">
+                            <span className="level-badge" style={{ backgroundColor: verbs[0]?.color ?? 'var(--accent)', fontSize: '0.75rem' }}>
+                                {type}
                             </span>
-                            <div>
-                                <h2 className="verbs-section-title" style={{ color: group.color }}>{group.title}</h2>
-                                <p className="verbs-section-desc">{group.description}</p>
-                            </div>
-                        </div>
+                        </h2>
                         <div className="verb-grid">
-                            {filteredVerbs.map(verb => (
+                            {verbs.map(verb => (
                                 <div key={verb.id} className="verb-card">
-                                    <span
-                                        className="level-badge"
-                                        style={{ backgroundColor: verb.color }}
-                                    >
-                                        {verb.type}
-                                    </span>
                                     <h2 className="verb-infinitive">{verb.infinitive}</h2>
                                     <p className="verb-translation">{verb.translation}</p>
                                     <div className="verb-actions">
                                         <button
                                             className="btn"
-                                            style={{
-                                                border: `1.5px solid ${verb.color}`,
-                                                color: verb.color,
-                                                background: 'var(--surface)',
-                                                padding: '0.45rem 0.9rem',
-                                                fontSize: '0.82rem',
-                                            }}
+                                            style={{ border: `1.5px solid ${verb.color}`, color: verb.color, background: 'var(--surface)', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
                                             onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/learn`)}
                                         >
                                             {t.verbGroupList.learn}
                                         </button>
                                         <button
                                             className="btn"
-                                            style={{
-                                                backgroundColor: verb.color,
-                                                color: '#fff',
-                                                padding: '0.45rem 0.9rem',
-                                                fontSize: '0.82rem',
-                                            }}
+                                            style={{ backgroundColor: verb.color, color: '#fff', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
                                             onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/quiz`)}
                                         >
                                             {t.verbGroupList.quiz}
@@ -182,8 +173,7 @@ export default function Verbs() {
                             ))}
                         </div>
                     </section>
-                    );
-                })
+                ))
             )}
         </main>
     );
