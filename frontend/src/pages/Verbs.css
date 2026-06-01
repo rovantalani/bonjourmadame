@@ -1,3 +1,25 @@
+.verbs-type-block {
+    margin-bottom: 1.25rem;
+}
+
+.verbs-type-block .level-badge {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+}
+
+.verbs-review-block {
+    margin-bottom: 1.5rem;
+}
+
+.verbs-review-group-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.6rem;
+}
+
 .verbs-search-row {
     margin-bottom: 1.5rem;
 }
