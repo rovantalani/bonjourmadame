@@ -126,7 +126,9 @@ export default function Verbs() {
     const filterVerbs = (verbs: VerbSummary[]) =>
         q ? verbs.filter(v => v.infinitive.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q)) : verbs;
 
-    const filteredHelpers = filterVerbs(helperVerbs.map(v => ({ ...v, type: 'Helper' })));
+    const filteredHelpers = q
+        ? helperVerbs.filter(v => v.title.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q))
+        : helperVerbs;
     const filteredNew = data ? filterVerbs(data.newVerbs) : [];
     const filteredReview = data
         ? data.reviewVerbs
