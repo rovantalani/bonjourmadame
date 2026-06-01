@@ -11,18 +11,99 @@ interface ConjugationRow {
     passeCompose: string;
     imparfait: string;
     futurSimple: string;
+    conditionnelPresent?: string;
+    subjonctifPresent?: string;
+    plusQueParfait?: string;
+    futurAnterieur?: string;
+    conditionnelPasse?: string;
+    subjonctifPasse?: string;
+    passeSimple?: string;
+    subjonctifImparfait?: string;
+    subjonctifPlusQueParfait?: string;
+    passeAnterieur?: string;
+}
+
+interface TenseDef {
+    key: keyof ConjugationRow;
+    label: string;
+    quizzable: boolean;
 }
 
 interface VerbData {
     title: string;
     translation: string;
     color: string;
-    columns?: readonly [string, string, string, string];
+    columns?: readonly string[];
     rows: ConjugationRow[];
 }
 
+const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
+    a1: [
+        { key: 'present',      label: 'Présent',       quizzable: true },
+        { key: 'passeCompose', label: 'Passé composé', quizzable: true },
+    ],
+    a2: [
+        { key: 'present',      label: 'Présent',       quizzable: true },
+        { key: 'passeCompose', label: 'Passé composé', quizzable: true },
+        { key: 'imparfait',    label: 'Imparfait',     quizzable: true },
+        { key: 'futurSimple',  label: 'Futur simple',  quizzable: true },
+    ],
+    b1: [
+        { key: 'present',             label: 'Présent',              quizzable: true },
+        { key: 'passeCompose',        label: 'Passé composé',        quizzable: true },
+        { key: 'imparfait',           label: 'Imparfait',            quizzable: true },
+        { key: 'futurSimple',         label: 'Futur simple',         quizzable: true },
+        { key: 'conditionnelPresent', label: 'Conditionnel présent', quizzable: true },
+        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   quizzable: true },
+        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     quizzable: true },
+    ],
+    b2: [
+        { key: 'present',             label: 'Présent',              quizzable: true },
+        { key: 'passeCompose',        label: 'Passé composé',        quizzable: true },
+        { key: 'imparfait',           label: 'Imparfait',            quizzable: true },
+        { key: 'futurSimple',         label: 'Futur simple',         quizzable: true },
+        { key: 'conditionnelPresent', label: 'Conditionnel présent', quizzable: true },
+        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   quizzable: true },
+        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     quizzable: true },
+        { key: 'futurAnterieur',      label: 'Futur antérieur',      quizzable: true },
+        { key: 'conditionnelPasse',   label: 'Conditionnel passé',   quizzable: true },
+        { key: 'subjonctifPasse',     label: 'Subjonctif passé',     quizzable: true },
+    ],
+    c1: [
+        { key: 'present',                  label: 'Présent',                     quizzable: true },
+        { key: 'passeCompose',             label: 'Passé composé',               quizzable: true },
+        { key: 'imparfait',                label: 'Imparfait',                   quizzable: true },
+        { key: 'futurSimple',              label: 'Futur simple',                quizzable: true },
+        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        quizzable: true },
+        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          quizzable: true },
+        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            quizzable: true },
+        { key: 'futurAnterieur',           label: 'Futur antérieur',             quizzable: true },
+        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          quizzable: true },
+        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            quizzable: true },
+        { key: 'passeSimple',              label: 'Passé simple',                quizzable: true },
+        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        quizzable: true },
+        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', quizzable: true },
+    ],
+    c2: [
+        { key: 'present',                  label: 'Présent',                     quizzable: true },
+        { key: 'passeCompose',             label: 'Passé composé',               quizzable: true },
+        { key: 'imparfait',                label: 'Imparfait',                   quizzable: true },
+        { key: 'futurSimple',              label: 'Futur simple',                quizzable: true },
+        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        quizzable: true },
+        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          quizzable: true },
+        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            quizzable: true },
+        { key: 'futurAnterieur',           label: 'Futur antérieur',             quizzable: true },
+        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          quizzable: true },
+        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            quizzable: true },
+        { key: 'passeSimple',              label: 'Passé simple',                quizzable: true },
+        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        quizzable: true },
+        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', quizzable: true },
+        { key: 'passeAnterieur',           label: 'Passé antérieur',             quizzable: false },
+    ],
+};
+
 export default function VerbConjugation() {
-    const { verbId } = useParams<{ verbId: string }>();
+    const { verbId, level } = useParams<{ verbId: string; level: string }>();
     const navigate = useNavigate();
     const t = useT();
     const isENMode = loadLearningMode() === 'learn-english';
@@ -69,6 +150,15 @@ export default function VerbConjugation() {
         );
     }
 
+    const levelKey = (level ?? 'a2').toLowerCase();
+    // Helper verbs use the English columns override when in EN mode; otherwise use level-aware tenses
+    const tenses: TenseDef[] = verb.columns
+        ? verb.columns.map((col, i) => {
+            const keys: (keyof ConjugationRow)[] = ['present', 'passeCompose', 'imparfait', 'futurSimple'];
+            return { key: keys[i] ?? 'present', label: col, quizzable: true };
+        })
+        : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
+
     return (
         <main className="page">
             <button className="back-btn" onClick={() => navigate(-1)}>
@@ -102,7 +192,11 @@ export default function VerbConjugation() {
                         <thead>
                             <tr style={{ backgroundColor: verb.color }}>
                                 <th>—</th>
-                                {(verb.columns ?? t.verbConjugation.columns).map(col => <th key={col}>{col}</th>)}
+                                {tenses.map(t => (
+                                    <th key={t.key} style={!t.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}>
+                                        {t.label}{!t.quizzable ? ' *' : ''}
+                                    </th>
+                                ))}
                                 <th>🔊</th>
                             </tr>
                         </thead>
@@ -120,10 +214,14 @@ export default function VerbConjugation() {
                                         >
                                             {row.sujet}
                                         </td>
-                                        <td>{row.present}</td>
-                                        <td>{row.passeCompose}</td>
-                                        <td>{row.imparfait}</td>
-                                        <td>{row.futurSimple}</td>
+                                        {tenses.map(t => (
+                                            <td
+                                                key={t.key}
+                                                style={!t.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}
+                                            >
+                                                {(row[t.key] as string | undefined) ?? '—'}
+                                            </td>
+                                        ))}
                                         <td className="vc-speaker-cell">
                                             <SpeakerButton
                                                 text={speakText}
@@ -136,6 +234,9 @@ export default function VerbConjugation() {
                         </tbody>
                     </table>
                 </div>
+                {tenses.some(t => !t.quizzable) && (
+                    <p className="scroll-hint">* Recognition only — not quizzed</p>
+                )}
                 <p className="scroll-hint">Scroll to see all tenses →</p>
             </div>
         </main>

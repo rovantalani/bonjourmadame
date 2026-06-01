@@ -109,6 +109,33 @@ export const verbGroupsEN: Record<string, VerbGroup> = {
         icon: '📘',
         color: '#0891B2',
     },
+    'b2': {
+        id: 'b2',
+        title: 'B2 — Upper Intermediate',
+        titleFR: 'B2 — Intermédiaire supérieur',
+        description: 'Complex verbs for near-fluent speakers',
+        descriptionFR: 'Verbes complexes pour un niveau quasi courant',
+        icon: '📙',
+        color: '#D97706',
+    },
+    'c1': {
+        id: 'c1',
+        title: 'C1 — Advanced',
+        titleFR: 'C1 — Avancé',
+        description: 'Advanced and nuanced verbs',
+        descriptionFR: 'Verbes avancés et nuancés',
+        icon: '🔥',
+        color: '#BE185D',
+    },
+    'c2': {
+        id: 'c2',
+        title: 'C2 — Mastery',
+        titleFR: 'C2 — Maîtrise',
+        description: 'Rare and archaic verbs for complete mastery',
+        descriptionFR: 'Verbes rares et archaïques pour une maîtrise totale',
+        icon: '👑',
+        color: '#6D28D9',
+    },
 };
 
 export const verbsDataEN: Record<string, VerbEntry[]> = {
@@ -169,7 +196,22 @@ export const verbsDataEN: Record<string, VerbEntry[]> = {
     'b1': [
         { id: 'keep',        infinitive: 'keep',        translation: 'garder',     type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'keep',        passeCompose: 'kept',       imparfait: 'am keeping',       futurSimple: 'will keep'       }, { sujet: 'he/she/it', present: 'keeps',       passeCompose: 'kept',       imparfait: 'is keeping',       futurSimple: 'will keep'       }] },
         { id: 'understand',  infinitive: 'understand',  translation: 'comprendre', type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'understand',  passeCompose: 'understood', imparfait: 'am understanding', futurSimple: 'will understand' }, { sujet: 'he/she/it', present: 'understands', passeCompose: 'understood', imparfait: 'is understanding', futurSimple: 'will understand' }] },
+        { id: 'believe',     infinitive: 'believe',     translation: 'croire',     type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'believe',     passeCompose: 'believed',   imparfait: 'am believing',     futurSimple: 'will believe'   }, { sujet: 'he/she/it', present: 'believes',    passeCompose: 'believed',   imparfait: 'is believing',     futurSimple: 'will believe'   }] },
+        { id: 'choose',      infinitive: 'choose',      translation: 'choisir',    type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'choose',      passeCompose: 'chose',      imparfait: 'am choosing',      futurSimple: 'will choose'    }, { sujet: 'he/she/it', present: 'chooses',     passeCompose: 'chose',      imparfait: 'is choosing',      futurSimple: 'will choose'    }] },
+        { id: 'grow',        infinitive: 'grow',        translation: 'grandir',    type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'grow',        passeCompose: 'grew',       imparfait: 'am growing',       futurSimple: 'will grow'      }, { sujet: 'he/she/it', present: 'grows',       passeCompose: 'grew',       imparfait: 'is growing',       futurSimple: 'will grow'      }] },
+        { id: 'succeed',     infinitive: 'succeed',     translation: 'réussir',    type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'succeed',     passeCompose: 'succeeded',  imparfait: 'am succeeding',    futurSimple: 'will succeed'   }, { sujet: 'he/she/it', present: 'succeeds',    passeCompose: 'succeeded',  imparfait: 'is succeeding',    futurSimple: 'will succeed'   }] },
+        { id: 'wait',        infinitive: 'wait',        translation: 'attendre',   type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'wait',        passeCompose: 'waited',     imparfait: 'am waiting',       futurSimple: 'will wait'      }, { sujet: 'he/she/it', present: 'waits',       passeCompose: 'waited',     imparfait: 'is waiting',       futurSimple: 'will wait'      }] },
+        { id: 'answer',      infinitive: 'answer',      translation: 'répondre',   type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'answer',      passeCompose: 'answered',   imparfait: 'am answering',     futurSimple: 'will answer'    }, { sujet: 'he/she/it', present: 'answers',     passeCompose: 'answered',   imparfait: 'is answering',     futurSimple: 'will answer'    }] },
+        { id: 'hear',        infinitive: 'hear',        translation: 'entendre',   type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'hear',        passeCompose: 'heard',      imparfait: 'am hearing',       futurSimple: 'will hear'      }, { sujet: 'he/she/it', present: 'hears',       passeCompose: 'heard',      imparfait: 'is hearing',       futurSimple: 'will hear'      }] },
+        { id: 'lose',        infinitive: 'lose',        translation: 'perdre',     type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'lose',        passeCompose: 'lost',       imparfait: 'am losing',        futurSimple: 'will lose'      }, { sujet: 'he/she/it', present: 'loses',       passeCompose: 'lost',       imparfait: 'is losing',        futurSimple: 'will lose'      }] },
+        { id: 'leave-b1',    infinitive: 'leave',       translation: 'partir',     type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'leave',       passeCompose: 'left',       imparfait: 'am leaving',       futurSimple: 'will leave'     }, { sujet: 'he/she/it', present: 'leaves',      passeCompose: 'left',       imparfait: 'is leaving',       futurSimple: 'will leave'     }] },
     ],
+    // ── B2 ── (content TBD)
+    'b2': [],
+    // ── C1 ── (content TBD)
+    'c1': [],
+    // ── C2 ── (content TBD)
+    'c2': [],
 };
 
 export const verbByIdEN: Record<string, VerbEntry> = Object.fromEntries(
