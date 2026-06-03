@@ -77,20 +77,25 @@
 
 .rp-tooltip {
     position: absolute;
-    bottom: calc(100% + 6px);
+    bottom: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
     background: var(--surface);
     border: 1.5px solid var(--border);
     border-radius: var(--r-md);
     box-shadow: var(--shadow-lg);
-    padding: 0.55rem 0.85rem;
+    padding: 0.6rem 0.9rem;
     white-space: nowrap;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
-    z-index: 100;
+    gap: 0.2rem;
+    z-index: 200;
     pointer-events: auto;
+    /* Prevent clipping at left/right viewport edges */
+    max-width: min(240px, 80vw);
+    white-space: normal;
+    min-width: 120px;
+    text-align: center;
 }
 
 .rp-tooltip-fr-row {
@@ -160,13 +165,6 @@
 @media (max-width: 768px) {
     .rp-paragraph {
         font-size: 1rem;
-    }
-
-    .rp-tooltip {
-        white-space: normal;
-        min-width: 140px;
-        max-width: 200px;
-        text-align: center;
     }
 
     .rp-vocab-item-fr {
