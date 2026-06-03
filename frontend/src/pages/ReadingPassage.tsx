@@ -118,13 +118,20 @@ export default function ReadingPassage() {
 
     useEffect(() => {
         if (!tooltip) return;
-        const handler = (e: MouseEvent) => {
-            if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        const handler = (e: MouseEvent | TouchEvent) => {
+            const target = e instanceof TouchEvent
+                ? (e.touches[0]?.target ?? e.changedTouches[0]?.target)
+                : (e as MouseEvent).target;
+            if (containerRef.current && !containerRef.current.contains(target as Node)) {
                 setTooltip(null);
             }
         };
-        document.addEventListener('mousedown', handler);
-        return () => document.removeEventListener('mousedown', handler);
+        document.addEventListener('mousedown', handler as (e: MouseEvent) => void);
+        document.addEventListener('touchstart', handler as (e: TouchEvent) => void, { passive: true });
+        return () => {
+            document.removeEventListener('mousedown', handler as (e: MouseEvent) => void);
+            document.removeEventListener('touchstart', handler as (e: TouchEvent) => void);
+        };
     }, [tooltip]);
 
     if (loading) {
