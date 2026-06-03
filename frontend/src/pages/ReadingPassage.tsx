@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SpeakerButton from '../components/SpeakerButton';
+import { loadLearningMode } from '../utils/settings';
 import './ReadingPassage.css';
 
 interface VocabularyWord {
@@ -35,16 +36,18 @@ function stripArticle(text: string): string {
     return text.replace(/^(le |la |les |un |une |des |l'|l')/i, '');
 }
 
-function buildVocabMap(vocabulary: VocabularyWord[]): Map<string, VocabularyWord> {
+function buildVocabMap(vocabulary: VocabularyWord[], isEN: boolean): Map<string, VocabularyWord> {
     const map = new Map<string, VocabularyWord>();
     for (const word of vocabulary) {
-        const raw = word.french;
-        const base = stripArticle(raw);
+        // In EN mode the passage text is English, so match on the English word.
+        // In FR mode the passage text is French, so match on the French word.
+        const raw = isEN ? word.english : word.french;
+        const base = isEN ? raw : stripArticle(raw);
         const normalized = normalizeForMatch(base);
         if (normalized) map.set(normalized, word);
 
         const rawNorm = normalizeForMatch(raw);
-        if (rawNorm) map.set(rawNorm, word);
+        if (rawNorm && rawNorm !== normalized) map.set(rawNorm, word);
     }
     return map;
 }
@@ -92,6 +95,7 @@ function annotate(paragraph: string, vocabMap: Map<string, VocabularyWord>): Tok
 export default function ReadingPassage() {
     const { moduleId } = useParams<{ moduleId: string }>();
     const navigate = useNavigate();
+    const isEN = loadLearningMode() === 'learn-english';
     const [data, setData] = useState<ReadingData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -153,7 +157,7 @@ export default function ReadingPassage() {
         );
     }
 
-    const vocabMap = buildVocabMap(data.vocabulary);
+    const vocabMap = buildVocabMap(data.vocabulary, isEN);
 
     const handleWordClick = (e: React.MouseEvent<HTMLButtonElement>, vocab: VocabularyWord, tokenKey: string) => {
         e.stopPropagation();
@@ -201,10 +205,17 @@ export default function ReadingPassage() {
                                         {isOpen && (
                                             <span className="rp-tooltip" role="tooltip">
                                                 <span className="rp-tooltip-fr-row">
-                                                    <strong className="rp-tooltip-fr">{tok.vocab.french}</strong>
-                                                    <SpeakerButton text={tok.vocab.french} lang="fr-FR" />
+                                                    <strong className="rp-tooltip-fr">
+                                                        {isEN ? tok.vocab.english : tok.vocab.french}
+                                                    </strong>
+                                                    <SpeakerButton
+                                                        text={isEN ? tok.vocab.english : tok.vocab.french}
+                                                        lang={isEN ? 'en-US' : 'fr-FR'}
+                                                    />
                                                 </span>
-                                                <span className="rp-tooltip-en">{tok.vocab.english}</span>
+                                                <span className="rp-tooltip-en">
+                                                    {isEN ? tok.vocab.french : tok.vocab.english}
+                                                </span>
                                             </span>
                                         )}
                                     </span>
@@ -216,13 +227,22 @@ export default function ReadingPassage() {
             </div>
 
             <div className="rp-vocab-list card">
-                <p className="section-label">Vocabulary in this passage</p>
+                <p className="section-label">
+                    {isEN ? 'Vocabulary in this passage' : 'Vocabulaire de ce passage'}
+                </p>
                 <ul className="rp-vocab-items">
                     {data.vocabulary.map(w => (
                         <li key={w.id} className="rp-vocab-item">
-                            <span className="rp-vocab-item-fr">{w.french}</span>
-                            <SpeakerButton text={w.french} lang="fr-FR" />
-                            <span className="rp-vocab-item-en">{w.english}</span>
+                            <span className="rp-vocab-item-fr">
+                                {isEN ? w.english : w.french}
+                            </span>
+                            <SpeakerButton
+                                text={isEN ? w.english : w.french}
+                                lang={isEN ? 'en-US' : 'fr-FR'}
+                            />
+                            <span className="rp-vocab-item-en">
+                                {isEN ? w.french : w.english}
+                            </span>
                         </li>
                     ))}
                 </ul>
