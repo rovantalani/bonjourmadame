@@ -25,12 +25,13 @@ export default function Vocabulary() {
     const t = useT();
     const courses = useCourses();
     const [modules, setModules] = useState<VocabularyModule[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
         axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/vocabulary-modules${langParam}`)
-            .then(res => setModules(res.data))
-            .catch(err => console.error('Failed to load vocabulary modules', err));
+            .then(res => { setModules(res.data); setLoading(false); })
+            .catch(err => { console.error('Failed to load vocabulary modules', err); setLoading(false); });
     }, []);
 
     const activeCourse = courses.find(c => c.level.toLowerCase() === (level ?? ''));
@@ -44,7 +45,9 @@ export default function Vocabulary() {
                 <p className="subtitle">{t.vocabulary.subtitle}</p>
             </header>
 
-            {vocabSteps.length === 0 ? (
+            {loading ? (
+                <p style={{ color: 'var(--text-2)', marginTop: '1.5rem' }}>{t.vocabulary.loading ?? 'Loading…'}</p>
+            ) : vocabSteps.length === 0 ? (
                 <p style={{ color: 'var(--text-3)', marginTop: '1rem' }}>No vocabulary in this course.</p>
             ) : (
                 <div className="vocab-grid">
