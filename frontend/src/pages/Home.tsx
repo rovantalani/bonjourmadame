@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
@@ -9,6 +9,8 @@ import { getActiveCourse, getNextStep, getCourseProgress } from '../utils/course
 import { useCourses } from '../utils/modeHelpers';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
+import { BookIcon, PenIcon, BoltIcon, RefreshIcon, FlameIcon } from '../components/icons';
+import type { SVGProps } from 'react';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -54,10 +56,11 @@ export default function Home() {
     const courseProgress    = activeCourse ? getCourseProgress(activeCourse) : null;
     const activeLevel       = activeCourseLevel?.toLowerCase() ?? 'a1';
 
+    type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
     const SECTION_CARDS = [
-        { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: '#4338CA', icon: '📖', ...t.home.sections.vocabulary  },
-        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: '#059669', icon: '✏️', ...t.home.sections.grammar     },
-        { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: '#D97706', icon: '⚡', ...t.home.sections.helperVerbs },
+        { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: '#4338CA', Icon: BookIcon as IconFC, ...t.home.sections.vocabulary  },
+        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: '#059669', Icon: PenIcon as IconFC,  ...t.home.sections.grammar     },
+        { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: '#D97706', Icon: BoltIcon as IconFC, ...t.home.sections.helperVerbs },
     ];
 
     return (
@@ -83,7 +86,7 @@ export default function Home() {
                 <hr className="home-rule" />
                 <div className="home-status-row">
                     <button className="home-streak-pill" onClick={() => navigate('/stats')} type="button">
-                        <span className="home-streak-fire">&#x1F525;</span>
+                        <span className="home-streak-fire"><FlameIcon size={16} /></span>
                         <span className="home-streak-num">{streak}</span>
                         <span className="home-streak-label">{t.home.dayStreak}</span>
                     </button>
@@ -110,7 +113,7 @@ export default function Home() {
                     onClick={() => navigate('/review-queue')}
                     type="button"
                 >
-                    <span className="home-review-icon">🔄</span>
+                    <span className="home-review-icon"><RefreshIcon size={20} /></span>
                     <div className="home-review-text">
                         <strong>{t.home.reviewQueue}</strong>
                         {user
@@ -160,7 +163,7 @@ export default function Home() {
                             style={{ backgroundColor: card.color }}
                         />
                         <div className="home-card-body">
-                            <span className="home-card-icon">{card.icon}</span>
+                            <span className="home-card-icon" style={{ color: card.color }}><card.Icon size={22} /></span>
                             <h2 className="home-card-title">{card.title}</h2>
                             <p className="home-card-desc">{card.description}</p>
                             <span className="home-card-meta">{card.meta}</span>

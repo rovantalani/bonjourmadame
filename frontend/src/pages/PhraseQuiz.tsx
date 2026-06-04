@@ -6,6 +6,7 @@ import { isAnswerCorrect } from '../utils/answerValidator';
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import { useT } from '../utils/i18n';
 import SpeakerButton from '../components/SpeakerButton';
+import { CheckCircleIcon } from '../components/icons';
 import './VocabularyQuiz.css';
 
 interface Phrase {
@@ -109,7 +110,7 @@ export default function PhraseQuiz() {
         return (
             <main className="page">
                 <div className="vocq-complete card">
-                    <div className="vocq-complete-emoji">🎉</div>
+                    <div className="vocq-complete-emoji"><CheckCircleIcon size={52} style={{ color: 'var(--success)' }} /></div>
                     <h1 className="vocq-complete-title">{t.quiz.complete}</h1>
                     <div className="vocq-stats-grid">
                         <div className="vocq-stat">

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
 import SpeakerButton from '../components/SpeakerButton';
+import { LessonIcon } from '../components/icons';
 import './GrammarLesson.css';
 
 interface GrammarExample {
@@ -133,7 +134,7 @@ export default function GrammarLesson() {
                     className="lesson-icon-circle"
                     style={{ backgroundColor: lesson.color }}
                 >
-                    <span className="lesson-icon-emoji">{lesson.icon}</span>
+                    <LessonIcon emoji={lesson.icon} size={28} />
                 </span>
                 <div className="lesson-header-text">
                     <span className="level-badge" style={{ backgroundColor: lesson.color }}>

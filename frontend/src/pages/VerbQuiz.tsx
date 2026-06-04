@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { loadLearningMode } from '../utils/settings';
 import SpeakerButton from '../components/SpeakerButton';
+import { CheckCircleIcon, RefreshIcon } from '../components/icons';
 import './VerbQuiz.css';
 
 interface ConjugationRow {
@@ -283,7 +284,7 @@ export default function VerbQuiz() {
         return (
             <main className="page">
                 <div className="vq-complete card">
-                    <div className="vq-complete-emoji">🎉</div>
+                    <div className="vq-complete-emoji"><CheckCircleIcon size={52} style={{ color: 'var(--success)' }} /></div>
                     <h1 className="vq-complete-title">{isENUI ? 'Quiz terminé !' : 'Quiz Complete!'}</h1>
                     <p className="vq-complete-verb" style={{ color: verb.color }}>
                         <em>{verb.infinitive} — {verb.translation}</em>
@@ -366,7 +367,7 @@ export default function VerbQuiz() {
                     )}
                 </div>
                 <span className="vq-counter">
-                    {isReview && '🔄 '}{stepLabel}
+                    {isReview && <RefreshIcon size={12} style={{ verticalAlign: 'middle', marginRight: 3 }} />}{stepLabel}
                 </span>
             </div>
 
