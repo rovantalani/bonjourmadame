@@ -12,6 +12,7 @@ interface VerbModule {
     description: string;
     Icon: React.FC<{ size?: number }>;
     color: string;
+    bg: string;
 }
 
 interface GrammarLessonMeta {
@@ -24,10 +25,10 @@ interface GrammarLessonMeta {
 }
 
 const VERB_MODULE_STATIC = [
-    { id: 'helper-verbs',            key: 'helperVerbs'            as const, Icon: UserIcon,  color: '#7C3AED' },
-    { id: 'regular-verbs',           key: 'regularVerbs'           as const, Icon: ListIcon,  color: '#059669' },
-    { id: 'irregular-verbs',         key: 'irregularVerbs'         as const, Icon: BoltIcon,  color: '#DC2626' },
-    { id: 'advanced-irregular-verbs',key: 'advancedIrregularVerbs' as const, Icon: FlameIcon, color: '#BE185D' },
+    { id: 'helper-verbs',            key: 'helperVerbs'            as const, Icon: UserIcon,  color: 'var(--accent)', bg: 'var(--accent-light)' },
+    { id: 'regular-verbs',           key: 'regularVerbs'           as const, Icon: ListIcon,  color: 'var(--verb)',   bg: 'var(--verb-soft)'    },
+    { id: 'irregular-verbs',         key: 'irregularVerbs'         as const, Icon: BoltIcon,  color: 'var(--notyet)', bg: 'var(--notyet-soft)'  },
+    { id: 'advanced-irregular-verbs',key: 'advancedIrregularVerbs' as const, Icon: FlameIcon, color: 'var(--almost)', bg: 'var(--almost-soft)'  },
 ];
 
 export default function Grammar() {
@@ -39,6 +40,7 @@ export default function Grammar() {
         id:          m.id,
         Icon:        m.Icon,
         color:       m.color,
+        bg:          m.bg,
         title:       t.grammar.verbModules[m.key].title,
         description: t.grammar.verbModules[m.key].description,
     }));
@@ -71,7 +73,7 @@ export default function Grammar() {
                         >
                             <span
                                 className="grammar-verb-icon-circle"
-                                style={{ backgroundColor: `${module.color}1F`, color: module.color }}
+                                style={{ backgroundColor: module.bg, color: module.color }}
                             >
                                 <module.Icon size={22} />
                             </span>

@@ -7,20 +7,23 @@ import './HelperVerbs.css';
 
 type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
 
+const VERB_COLOR    = 'var(--verb)';
+const VERB_COLOR_BG = 'var(--verb-soft)';
+
 const HELPER_VERB_IDS_FR = [
-    { id: 'etre',  title: 'Être',  translation: 'to be',        Icon: UserIcon as IconFC,       color: '#2563EB', key: 'etre'  as const },
-    { id: 'avoir', title: 'Avoir', translation: 'to have',      Icon: TagIcon as IconFC,        color: '#16A34A', key: 'avoir' as const },
-    { id: 'faire', title: 'Faire', translation: 'to do / make', Icon: PenIcon as IconFC,        color: '#EA580C', key: 'faire' as const },
-    { id: 'aller', title: 'Aller', translation: 'to go',        Icon: ArrowRightIcon as IconFC, color: '#7C3AED', key: 'aller' as const },
-    { id: 'venir', title: 'Venir', translation: 'to come',      Icon: ArrowLeftIcon as IconFC,  color: '#DC2626', key: 'venir' as const },
+    { id: 'etre',  title: 'Être',  translation: 'to be',        Icon: UserIcon as IconFC,       color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'etre'  as const },
+    { id: 'avoir', title: 'Avoir', translation: 'to have',      Icon: TagIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'avoir' as const },
+    { id: 'faire', title: 'Faire', translation: 'to do / make', Icon: PenIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'faire' as const },
+    { id: 'aller', title: 'Aller', translation: 'to go',        Icon: ArrowRightIcon as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'aller' as const },
+    { id: 'venir', title: 'Venir', translation: 'to come',      Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'venir' as const },
 ];
 
 const HELPER_VERB_IDS_EN = [
-    { id: 'to-be',   title: 'To Be',   translation: 'être',  Icon: UserIcon as IconFC,       color: '#2563EB', key: 'etre'  as const },
-    { id: 'to-have', title: 'To Have', translation: 'avoir', Icon: TagIcon as IconFC,        color: '#16A34A', key: 'avoir' as const },
-    { id: 'to-do',   title: 'To Do',   translation: 'faire', Icon: PenIcon as IconFC,        color: '#EA580C', key: 'faire' as const },
-    { id: 'to-go',   title: 'To Go',   translation: 'aller', Icon: ArrowRightIcon as IconFC, color: '#7C3AED', key: 'aller' as const },
-    { id: 'to-come', title: 'To Come', translation: 'venir', Icon: ArrowLeftIcon as IconFC,  color: '#DC2626', key: 'venir' as const },
+    { id: 'to-be',   title: 'To Be',   translation: 'être',  Icon: UserIcon as IconFC,       color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'etre'  as const },
+    { id: 'to-have', title: 'To Have', translation: 'avoir', Icon: TagIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'avoir' as const },
+    { id: 'to-do',   title: 'To Do',   translation: 'faire', Icon: PenIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'faire' as const },
+    { id: 'to-go',   title: 'To Go',   translation: 'aller', Icon: ArrowRightIcon as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'aller' as const },
+    { id: 'to-come', title: 'To Come', translation: 'venir', Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR, bg: VERB_COLOR_BG, key: 'venir' as const },
 ];
 
 
@@ -59,7 +62,7 @@ export default function HelperVerbs() {
                         >
                             <div className="hv-card-bar" style={{ backgroundColor: v.color }} />
                             <div className="hv-card-body">
-                                <div className="hv-icon" style={{ backgroundColor: `${v.color}1F`, color: v.color }}>
+                                <div className="hv-icon" style={{ backgroundColor: v.bg, color: v.color }}>
                                     <v.Icon size={24} />
                                 </div>
                                 <h2 className="hv-title" style={{ color: v.color }}>{v.title}</h2>
