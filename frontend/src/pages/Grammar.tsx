@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
+import { UserIcon, ListIcon, BoltIcon, FlameIcon, LessonIcon } from '../components/icons';
 import './Grammar.css';
 
 interface VerbModule {
     id: string;
     title: string;
     description: string;
-    icon: string;
+    Icon: React.FC<{ size?: number }>;
     color: string;
 }
 
@@ -23,10 +24,10 @@ interface GrammarLessonMeta {
 }
 
 const VERB_MODULE_STATIC = [
-    { id: 'helper-verbs',            key: 'helperVerbs'            as const, icon: '👤', color: '#7C3AED' },
-    { id: 'regular-verbs',           key: 'regularVerbs'           as const, icon: '📝', color: '#059669' },
-    { id: 'irregular-verbs',         key: 'irregularVerbs'         as const, icon: '⚡', color: '#DC2626' },
-    { id: 'advanced-irregular-verbs',key: 'advancedIrregularVerbs' as const, icon: '🔥', color: '#BE185D' },
+    { id: 'helper-verbs',            key: 'helperVerbs'            as const, Icon: UserIcon,  color: '#7C3AED' },
+    { id: 'regular-verbs',           key: 'regularVerbs'           as const, Icon: ListIcon,  color: '#059669' },
+    { id: 'irregular-verbs',         key: 'irregularVerbs'         as const, Icon: BoltIcon,  color: '#DC2626' },
+    { id: 'advanced-irregular-verbs',key: 'advancedIrregularVerbs' as const, Icon: FlameIcon, color: '#BE185D' },
 ];
 
 export default function Grammar() {
@@ -36,7 +37,7 @@ export default function Grammar() {
 
     const verbModules: VerbModule[] = VERB_MODULE_STATIC.map(m => ({
         id:          m.id,
-        icon:        m.icon,
+        Icon:        m.Icon,
         color:       m.color,
         title:       t.grammar.verbModules[m.key].title,
         description: t.grammar.verbModules[m.key].description,
@@ -70,9 +71,9 @@ export default function Grammar() {
                         >
                             <span
                                 className="grammar-verb-icon-circle"
-                                style={{ backgroundColor: `${module.color}1F` }}
+                                style={{ backgroundColor: `${module.color}1F`, color: module.color }}
                             >
-                                <span className="grammar-verb-icon">{module.icon}</span>
+                                <module.Icon size={22} />
                             </span>
                             <h2 className="grammar-verb-title">{module.title}</h2>
                             <p className="grammar-verb-desc">{module.description}</p>
@@ -101,7 +102,9 @@ export default function Grammar() {
                                     >
                                         {lesson.level}
                                     </span>
-                                    <span className="grammar-lesson-icon">{lesson.icon}</span>
+                                    <span className="grammar-lesson-icon" style={{ color: lesson.color }}>
+                                        <LessonIcon emoji={lesson.icon} size={16} />
+                                    </span>
                                 </div>
                                 <h2 className="grammar-lesson-title">{lesson.title}</h2>
                                 <p className="grammar-lesson-desc">{lesson.description}</p>

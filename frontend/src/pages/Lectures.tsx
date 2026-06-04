@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
 import type { StepType } from '../data/courses';
 import { getStepStatus, markStepVisited } from '../utils/courseProgress';
 import { useT } from '../utils/i18n';
+import { PenIcon, MessageIcon, BookOpenIcon, BookIcon, BoltIcon } from '../components/icons';
+import type { SVGProps } from 'react';
 import './Lectures.css';
 
 const TYPE_COLOR: Record<StepType, string> = {
@@ -14,12 +16,13 @@ const TYPE_COLOR: Record<StepType, string> = {
     verbs:      '#D97706',
 };
 
-const TYPE_ICON: Record<StepType, string> = {
-    grammar:    '✏️',
-    phrases:    '💬',
-    reading:    '📖',
-    vocabulary: '📚',
-    verbs:      '🔤',
+type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
+const TYPE_ICON: Record<StepType, IconFC> = {
+    grammar:    PenIcon as IconFC,
+    phrases:    MessageIcon as IconFC,
+    reading:    BookOpenIcon as IconFC,
+    vocabulary: BookIcon as IconFC,
+    verbs:      BoltIcon as IconFC,
 };
 
 type LectureFilter = 'all' | 'grammar' | 'phrases' | 'reading';
@@ -60,7 +63,7 @@ export default function Lectures() {
                         style={filter === f && f !== 'all' ? { backgroundColor: TYPE_COLOR[f], borderColor: TYPE_COLOR[f] } : undefined}
                         onClick={() => setFilter(f)}
                     >
-                        {f !== 'all' && <span>{TYPE_ICON[f]}</span>}
+                        {f !== 'all' && (() => { const Icon = TYPE_ICON[f]; return <Icon size={14} style={{ verticalAlign: 'middle', marginRight: 4 }} />; })()}
                         {filterLabel(f)}
                     </button>
                 ))}
@@ -73,7 +76,7 @@ export default function Lectures() {
                     {lectureSteps.map(step => {
                         const status = getStepStatus(step);
                         const color = TYPE_COLOR[step.type];
-                        const icon  = TYPE_ICON[step.type];
+                        const Icon  = TYPE_ICON[step.type];
                         const typeLabel = t.roadmap.types[step.type];
 
                         return (
@@ -84,7 +87,7 @@ export default function Lectures() {
                                 onClick={() => { markStepVisited(step.id); navigate(`/courses/${level}${step.path}`); }}
                                 type="button"
                             >
-                                <span className="lecture-icon">{icon}</span>
+                                <span className="lecture-icon" style={{ color }}><Icon size={18} /></span>
 
                                 <div className="lecture-body">
                                     <span className="lecture-title">{step.title}</span>

@@ -14,6 +14,7 @@ import { fetchDueWordsFromApi, syncAnswerToApi, type DueWord } from '../utils/pr
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import { useAuth } from '../context/AuthContext';
 import { useT } from '../utils/i18n';
+import { CheckCircleIcon } from '../components/icons';
 import './ReviewQueue.css';
 
 const API = import.meta.env.VITE_API_BASE;
@@ -224,7 +225,7 @@ export default function ReviewQueue() {
         return (
             <main className="page">
                 <div className="vocq-complete card">
-                    <div className="vocq-complete-emoji">✅</div>
+                    <div className="vocq-complete-emoji"><CheckCircleIcon size={52} style={{ color: 'var(--success)' }} /></div>
                     <h1 className="vocq-complete-title">{t.reviewQueue.complete}</h1>
                     <div className="vocq-stats-grid">
                         <div className="vocq-stat">

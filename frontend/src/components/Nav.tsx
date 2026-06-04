@@ -4,6 +4,10 @@ import { useTheme } from '../hooks/useTheme';
 import { useT } from '../utils/i18n';
 import { useCourses } from '../utils/modeHelpers';
 import { getActiveCourse, setActiveCourse } from '../utils/courseProgress';
+import {
+    BookIcon, BookOpenIcon, PenIcon, CompassIcon,
+    BarChartIcon, SettingsIcon, SunIcon, MoonIcon,
+} from './icons';
 import './Nav.css';
 
 function useActiveItem() {
@@ -111,9 +115,9 @@ export default function Nav() {
     const roadmapPath = `/courses/${level}`;
 
     const NAV_ITEMS = [
-        { path: `/courses/${level}/vocabulary`, segment: 'vocabulary', label: t.nav.vocabulary, icon: '📖' },
-        { path: `/courses/${level}/verbs`,      segment: 'verbs',      label: t.nav.verbs,      icon: '✏️'  },
-        { path: `/courses/${level}/lectures`,   segment: 'lectures',   label: t.nav.lectures,   icon: '📚' },
+        { path: `/courses/${level}/vocabulary`, segment: 'vocabulary', label: t.nav.vocabulary, Icon: BookIcon },
+        { path: `/courses/${level}/verbs`,      segment: 'verbs',      label: t.nav.verbs,      Icon: PenIcon },
+        { path: `/courses/${level}/lectures`,   segment: 'lectures',   label: t.nav.lectures,   Icon: BookOpenIcon },
     ];
 
     return (
@@ -142,6 +146,7 @@ export default function Nav() {
                                 {item.label}
                             </button>
                         ))}
+
                     </div>
 
                     <div className="top-nav-right">
@@ -153,14 +158,14 @@ export default function Nav() {
                             {t.nav.stats}
                         </button>
                         <button
-                            className={`top-nav-link ${isActive('/settings') ? 'active' : ''}`}
+                            className={`top-nav-link top-nav-icon-btn ${isActive('/settings') ? 'active' : ''}`}
                             onClick={() => navigate('/settings')}
                             aria-label="Settings"
                         >
-                            ⚙
+                            <SettingsIcon size={18} />
                         </button>
                         <button className="theme-toggle" onClick={toggle} aria-label="Toggle dark mode">
-                            {dark ? '☀' : '☽'}
+                            {dark ? <SunIcon size={17} /> : <MoonIcon size={17} />}
                         </button>
                     </div>
                 </div>
@@ -172,7 +177,7 @@ export default function Nav() {
                     className={`bottom-nav-item ${pathname === roadmapPath ? 'active' : ''}`}
                     onClick={() => navigate(roadmapPath)}
                 >
-                    <span className="bottom-nav-icon">🗺️</span>
+                    <span className="bottom-nav-icon"><CompassIcon size={22} /></span>
                     <span className="bottom-nav-label">{t.nav.overview}</span>
                 </button>
                 {NAV_ITEMS.map(item => (
@@ -181,7 +186,7 @@ export default function Nav() {
                         className={`bottom-nav-item ${pathname.includes('/' + item.segment) ? 'active' : ''}`}
                         onClick={() => navigate(item.path)}
                     >
-                        <span className="bottom-nav-icon">{item.icon}</span>
+                        <span className="bottom-nav-icon"><item.Icon size={22} /></span>
                         <span className="bottom-nav-label">{item.label}</span>
                     </button>
                 ))}
@@ -189,14 +194,14 @@ export default function Nav() {
                     className={`bottom-nav-item ${isActive('/stats') ? 'active' : ''}`}
                     onClick={() => navigate('/stats')}
                 >
-                    <span className="bottom-nav-icon">📊</span>
+                    <span className="bottom-nav-icon"><BarChartIcon size={22} /></span>
                     <span className="bottom-nav-label">{t.nav.stats}</span>
                 </button>
                 <button
                     className={`bottom-nav-item ${isActive('/settings') ? 'active' : ''}`}
                     onClick={() => navigate('/settings')}
                 >
-                    <span className="bottom-nav-icon">⚙️</span>
+                    <span className="bottom-nav-icon"><SettingsIcon size={22} /></span>
                     <span className="bottom-nav-label">{t.settings.title}</span>
                 </button>
             </nav>
