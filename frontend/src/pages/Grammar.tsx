@@ -24,10 +24,10 @@ interface GrammarLessonMeta {
 }
 
 const VERB_MODULE_STATIC = [
-    { id: 'helper-verbs',            key: 'helperVerbs'            as const, Icon: UserIcon,  color: '#7C3AED' },
-    { id: 'regular-verbs',           key: 'regularVerbs'           as const, Icon: ListIcon,  color: '#059669' },
-    { id: 'irregular-verbs',         key: 'irregularVerbs'         as const, Icon: BoltIcon,  color: '#DC2626' },
-    { id: 'advanced-irregular-verbs',key: 'advancedIrregularVerbs' as const, Icon: FlameIcon, color: '#BE185D' },
+    { id: 'helper-verbs',            key: 'helperVerbs'            as const, Icon: UserIcon,  color: 'var(--accent)' },
+    { id: 'regular-verbs',           key: 'regularVerbs'           as const, Icon: ListIcon,  color: 'var(--verb)'   },
+    { id: 'irregular-verbs',         key: 'irregularVerbs'         as const, Icon: BoltIcon,  color: 'var(--notyet)' },
+    { id: 'advanced-irregular-verbs',key: 'advancedIrregularVerbs' as const, Icon: FlameIcon, color: 'var(--almost)' },
 ];
 
 export default function Grammar() {

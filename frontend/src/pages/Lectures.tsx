@@ -9,11 +9,11 @@ import type { SVGProps } from 'react';
 import './Lectures.css';
 
 const TYPE_COLOR: Record<StepType, string> = {
-    grammar:    '#059669',
-    phrases:    '#0891B2',
-    reading:    '#7C3AED',
-    vocabulary: '#4338CA',
-    verbs:      '#D97706',
+    vocabulary: 'var(--accent)',
+    grammar:    'var(--verb)',
+    verbs:      'var(--verb)',
+    phrases:    'var(--almost)',
+    reading:    'var(--masc)',
 };
 
 type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;

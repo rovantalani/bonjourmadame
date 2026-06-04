@@ -58,9 +58,9 @@ export default function Home() {
 
     type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
     const SECTION_CARDS = [
-        { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: '#4338CA', Icon: BookIcon as IconFC, ...t.home.sections.vocabulary  },
-        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: '#059669', Icon: PenIcon as IconFC,  ...t.home.sections.grammar     },
-        { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: '#D97706', Icon: BoltIcon as IconFC, ...t.home.sections.helperVerbs },
+        { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: 'var(--accent)', Icon: BookIcon as IconFC, ...t.home.sections.vocabulary  },
+        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: 'var(--verb)',   Icon: PenIcon as IconFC,  ...t.home.sections.grammar     },
+        { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: 'var(--verb)',   Icon: BoltIcon as IconFC, ...t.home.sections.helperVerbs },
     ];
 
     return (

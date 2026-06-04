@@ -13,11 +13,11 @@ import { useT } from '../utils/i18n';
 import './CourseRoadmap.css';
 
 const TYPE_COLORS: Record<StepType, string> = {
-    vocabulary: '#4338CA',
-    grammar:    '#059669',
-    verbs:      '#D97706',
-    phrases:    '#0891B2',
-    reading:    '#7C3AED',
+    vocabulary: 'var(--accent)',
+    grammar:    'var(--verb)',
+    verbs:      'var(--verb)',
+    phrases:    'var(--almost)',
+    reading:    'var(--masc)',
 };
 
 function StatusIcon({ status }: { status: StepStatus }) {

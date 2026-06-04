@@ -8,42 +8,72 @@
   --font-serif: 'Newsreader', Georgia, serif;
   --font-ui:    'Hanken Grotesk', system-ui, -apple-system, sans-serif;
 
-  /* Backgrounds */
-  --bg:        #F5F4F0;
+  /* Backgrounds — warm paper */
+  --bg:        #FBF7EF;
   --surface:   #FFFFFF;
-  --surface-2: #F8F7F4;
+  --surface-2: #F4EEE2;
+  --surface-3: #EFE8D9;
 
   /* Borders */
-  --border:       #E8E5DF;
-  --border-light: #F0EDE8;
+  --border:       #EAE2D2;
+  --border-light: #DED5C2;
 
-  /* Text */
-  --text-1: #1A1A2E;
-  --text-2: #64748B;
-  --text-3: #94A3B8;
+  /* Text — warm, all AA-compliant */
+  --text-1: #23201A;
+  --text-2: #6F6857;
+  --text-3: #857C68;
 
-  /* Accent — rich indigo */
-  --accent:       #4338CA;
-  --accent-hover: #3730A3;
-  --accent-light: #EEF2FF;
+  /* Primary — Bleu de France */
+  --accent:       #2A4A9C;
+  --accent-hover: #213C80;
+  --accent-light: #E7ECF8;
 
-  /* Status */
-  --success:       #059669;
-  --success-light: #ECFDF5;
-  --error:         #DC2626;
-  --error-light:   #FEF2F2;
+  /* Verbs · mastery · success — forest green */
+  --success:       #2E7A52;
+  --success-light: #E2F0E7;
+  --verb:          #2E7A52;
+  --verb-soft:     #E2F0E7;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(26,26,46,.07), 0 1px 2px rgba(26,26,46,.04);
-  --shadow-md: 0 4px 12px rgba(26,26,46,.08), 0 2px 4px rgba(26,26,46,.04);
-  --shadow-lg: 0 12px 32px rgba(26,26,46,.10), 0 4px 8px rgba(26,26,46,.05);
+  /* Misses — calm coral (not alarm red) */
+  --error:         #BB5340;
+  --error-light:   #F7E6E1;
+  --notyet:        #BB5340;
+  --notyet-soft:   #F7E6E1;
 
-  /* Border radii */
-  --r-sm:   6px;
-  --r-md:   10px;
-  --r-lg:   14px;
+  /* Accent-only slip — amber */
+  --almost:        #A9792A;
+  --almost-soft:   #F4EBD7;
+
+  /* Gender system — persistent learning aid */
+  --masc:          #2F6E8E;
+  --masc-soft:     #E2EEF3;
+  --fem:           #B5502C;
+  --fem-soft:      #F6E6DD;
+
+  /* Spacing (4 px base) */
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px;
+  --s-6:24px; --s-8:32px; --s-12:48px; --s-16:64px;
+
+  /* Radii — softened */
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
   --r-xl:   20px;
   --r-pill: 999px;
+
+  /* Shadows — warm tint */
+  --shadow-sm: 0 1px 2px rgba(60,46,20,.06);
+  --shadow-md: 0 6px 20px -10px rgba(60,46,20,.22);
+  --shadow-lg: 0 20px 48px -20px rgba(60,46,20,.32);
+
+  /* Motion */
+  --ease:   cubic-bezier(.2,.7,.2,1);
+  --t-fast: 120ms;
+  --t-base: 180ms;
+  --t-slow: 280ms;
+
+  /* Focus ring */
+  --focus: 0 0 0 3px var(--accent-light), 0 0 0 1.5px var(--accent);
 
   /* Nav dimensions */
   --nav-h:        60px;
@@ -52,27 +82,43 @@
 
 /* ── Dark theme ── */
 [data-theme="dark"] {
-  --bg:        #10101A;
-  --surface:   #18181F;
-  --surface-2: #1E1E28;
+  --bg:        #15140F;
+  --surface:   #1C1A14;
+  --surface-2: #22201A;
+  --surface-3: #2A2820;
 
-  --border:       #2C2C3E;
-  --border-light: #252533;
+  --border:       #322F26;
+  --border-light: #3C392E;
 
-  --text-1: #EEEEF8;
-  --text-2: #8892A4;
-  --text-3: #525C6E;
+  --text-1: #F2ECDD;
+  --text-2: #B3AA95;
+  --text-3: #8A8270;
 
-  --accent:       #6366F1;
-  --accent-hover: #818CF8;
-  --accent-light: #1E1B4B;
+  --accent:       #5C79C8;
+  --accent-hover: #7A93D8;
+  --accent-light: #1E2A4A;
 
-  --success-light: #0A2E1D;
-  --error-light:   #2A0E0E;
+  --success:       #5AA67E;
+  --success-light: #16271E;
+  --verb:          #5AA67E;
+  --verb-soft:     #16271E;
 
-  --shadow-sm: 0 1px 3px rgba(0,0,0,.30), 0 1px 2px rgba(0,0,0,.20);
-  --shadow-md: 0 4px 12px rgba(0,0,0,.45), 0 2px 4px rgba(0,0,0,.22);
-  --shadow-lg: 0 12px 32px rgba(0,0,0,.60), 0 4px 8px rgba(0,0,0,.30);
+  --error:         #D17A66;
+  --error-light:   #2A1610;
+  --notyet:        #D17A66;
+  --notyet-soft:   #2A1610;
+
+  --almost:        #C99B53;
+  --almost-soft:   #2A2010;
+
+  --masc:          #6FA5BE;
+  --masc-soft:     #0E2230;
+  --fem:           #D58463;
+  --fem-soft:      #2A1810;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.30);
+  --shadow-md: 0 6px 20px -10px rgba(0,0,0,.55);
+  --shadow-lg: 0 20px 48px -20px rgba(0,0,0,.70);
 }
 
 html {

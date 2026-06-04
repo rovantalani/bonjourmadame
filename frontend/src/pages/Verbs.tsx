@@ -8,20 +8,22 @@ import './Verbs.css';
 
 type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
 
+const VERB_COLOR = 'var(--verb)';
+
 const HELPER_VERBS_FR = [
-    { id: 'etre',  title: 'Être',     translation: 'to be',        Icon: UserIcon as IconFC,       color: '#2563EB' },
-    { id: 'avoir', title: 'Avoir',    translation: 'to have',      Icon: TagIcon as IconFC,        color: '#16A34A' },
-    { id: 'faire', title: 'Faire',    translation: 'to do / make', Icon: PenIcon as IconFC,        color: '#EA580C' },
-    { id: 'aller', title: 'Aller',    translation: 'to go',        Icon: ArrowRightIcon as IconFC, color: '#7C3AED' },
-    { id: 'venir', title: 'Venir',    translation: 'to come',      Icon: ArrowLeftIcon as IconFC,  color: '#DC2626' },
+    { id: 'etre',  title: 'Être',     translation: 'to be',        Icon: UserIcon as IconFC,       color: VERB_COLOR },
+    { id: 'avoir', title: 'Avoir',    translation: 'to have',      Icon: TagIcon as IconFC,        color: VERB_COLOR },
+    { id: 'faire', title: 'Faire',    translation: 'to do / make', Icon: PenIcon as IconFC,        color: VERB_COLOR },
+    { id: 'aller', title: 'Aller',    translation: 'to go',        Icon: ArrowRightIcon as IconFC, color: VERB_COLOR },
+    { id: 'venir', title: 'Venir',    translation: 'to come',      Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR },
 ];
 
 const HELPER_VERBS_EN = [
-    { id: 'to-be',   title: 'To Be',   translation: 'être',  Icon: UserIcon as IconFC,       color: '#2563EB' },
-    { id: 'to-have', title: 'To Have', translation: 'avoir', Icon: TagIcon as IconFC,        color: '#16A34A' },
-    { id: 'to-do',   title: 'To Do',   translation: 'faire', Icon: PenIcon as IconFC,        color: '#EA580C' },
-    { id: 'to-go',   title: 'To Go',   translation: 'aller', Icon: ArrowRightIcon as IconFC, color: '#7C3AED' },
-    { id: 'to-come', title: 'To Come', translation: 'venir', Icon: ArrowLeftIcon as IconFC,  color: '#DC2626' },
+    { id: 'to-be',   title: 'To Be',   translation: 'être',  Icon: UserIcon as IconFC,       color: VERB_COLOR },
+    { id: 'to-have', title: 'To Have', translation: 'avoir', Icon: TagIcon as IconFC,        color: VERB_COLOR },
+    { id: 'to-do',   title: 'To Do',   translation: 'faire', Icon: PenIcon as IconFC,        color: VERB_COLOR },
+    { id: 'to-go',   title: 'To Go',   translation: 'aller', Icon: ArrowRightIcon as IconFC, color: VERB_COLOR },
+    { id: 'to-come', title: 'To Come', translation: 'venir', Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR },
 ];
 
 const TYPE_ORDER = ['-ER', '-IR', '-RE', 'Regular', 'Irregular'];
