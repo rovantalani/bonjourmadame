@@ -10,7 +10,7 @@
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     z-index: 100;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--sh-sm);
 }
 
 .top-nav-inner {
@@ -84,22 +84,44 @@
     font-weight: 600;
 }
 
-.theme-toggle {
-    background: none;
-    border: 1.5px solid var(--border);
+/* Icon-only nav buttons (stats, settings, theme) */
+.top-nav-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
     border-radius: var(--r-md);
-    padding: 0.3rem 0.6rem;
-    font-size: 1rem;
-    line-height: 1;
-    cursor: pointer;
+    background: none;
+    border: none;
     color: var(--text-2);
-    transition: border-color .15s ease, color .15s ease;
+    cursor: pointer;
+    transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+    flex-shrink: 0;
+}
+.top-nav-icon-btn:hover { background: var(--surface-2); color: var(--text-1); }
+.top-nav-icon-btn.active { color: var(--accent); }
+.top-nav-icon-btn:focus-visible { outline: none; box-shadow: var(--focus); }
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    color: var(--text-2);
+    cursor: pointer;
+    transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
     flex-shrink: 0;
 }
 .theme-toggle:hover {
     border-color: var(--accent);
     color: var(--accent);
 }
+.theme-toggle:focus-visible { outline: none; box-shadow: var(--focus); }
 
 
 /* ════════════════════════════════
@@ -290,7 +312,9 @@
     }
 
     .bottom-nav-icon {
-        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         line-height: 1;
     }
 

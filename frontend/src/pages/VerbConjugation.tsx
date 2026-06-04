@@ -33,6 +33,7 @@ interface VerbData {
     title: string;
     translation: string;
     color: string;
+    group?: string;
     columns?: readonly string[];
     rows: ConjugationRow[];
 }
@@ -102,6 +103,33 @@ const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
     ],
 };
 
+/** Longest common prefix of an array of strings. */
+function longestCommonPrefix(forms: string[]): string {
+    if (forms.length === 0) return '';
+    let stem = forms[0];
+    for (const f of forms.slice(1)) {
+        while (stem.length > 0 && !f.startsWith(stem)) {
+            stem = stem.slice(0, -1);
+        }
+        if (stem.length === 0) break;
+    }
+    return stem;
+}
+
+/** Render a conjugation form split into muted stem + coloured ending. */
+function ConjForm({ form, stem }: { form: string; stem: string }) {
+    if (!stem || !form.startsWith(stem)) {
+        return <span className="conj-irregular">{form}</span>;
+    }
+    const ending = form.slice(stem.length);
+    return (
+        <>
+            <span className="conj-stem">{stem}</span>
+            <span className="conj-ending">{ending}</span>
+        </>
+    );
+}
+
 export default function VerbConjugation() {
     const { verbId, level } = useParams<{ verbId: string; level: string }>();
     const navigate = useNavigate();
@@ -151,13 +179,21 @@ export default function VerbConjugation() {
     }
 
     const levelKey = (level ?? 'a2').toLowerCase();
-    // Helper verbs use the English columns override when in EN mode; otherwise use level-aware tenses
     const tenses: TenseDef[] = verb.columns
         ? verb.columns.map((col, i) => {
             const keys: (keyof ConjugationRow)[] = ['present', 'passeCompose', 'imparfait', 'futurSimple'];
             return { key: keys[i] ?? 'present', label: col, quizzable: true };
         })
         : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
+
+    // Compute stem per tense column from the 6 present forms
+    const stemByTense: Record<string, string> = {};
+    for (const tense of tenses) {
+        const forms = verb.rows
+            .map(r => (r[tense.key] as string | undefined) ?? '')
+            .filter(Boolean);
+        stemByTense[tense.key] = longestCommonPrefix(forms);
+    }
 
     return (
         <main className="page">
@@ -166,25 +202,27 @@ export default function VerbConjugation() {
             </button>
 
             <header className="vc-header">
-                <div
-                    className="vc-icon"
-                    style={{ backgroundColor: `${verb.color}1F` }}
-                >
-                    <span style={{ fontSize: '2rem' }}>
-                        {verb.title.charAt(0)}
-                    </span>
+                <div className="vc-title-block">
+                    <h1 className="vc-title">{verb.title}</h1>
+                    <div className="vc-meta">
+                        {verb.group && (
+                            <span className="vc-group-badge">{verb.group}</span>
+                        )}
+                        <span className="vc-translation">{verb.translation}</span>
+                    </div>
                 </div>
-                <div className="vc-title-row">
-                    <h1 className="vc-title" style={{ color: verb.color }}>
-                        {verb.title}
-                    </h1>
-                    <SpeakerButton
-                        text={verb.title}
-                        lang={isENMode ? 'en-US' : 'fr-FR'}
-                    />
-                </div>
-                <span className="vc-translation">{verb.translation}</span>
+                <SpeakerButton
+                    text={verb.title}
+                    lang={isENMode ? 'en-US' : 'fr-FR'}
+                />
             </header>
+
+            {/* Legend */}
+            <div className="vc-legend">
+                <span><i className="vc-legend-stem"></i> stem</span>
+                <span><i className="vc-legend-ending"></i> ending</span>
+                <span><i className="vc-legend-irr"></i> irregular</span>
+            </div>
 
             <div className="card vc-table-card">
                 <div className="table-scroll">
@@ -192,12 +230,12 @@ export default function VerbConjugation() {
                         <thead>
                             <tr style={{ backgroundColor: verb.color }}>
                                 <th>—</th>
-                                {tenses.map(t => (
-                                    <th key={t.key} style={!t.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}>
-                                        {t.label}{!t.quizzable ? ' *' : ''}
+                                {tenses.map(tns => (
+                                    <th key={tns.key} style={!tns.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}>
+                                        {tns.label}{!tns.quizzable ? ' *' : ''}
                                     </th>
                                 ))}
-                                <th>🔊</th>
+                                <th style={{ width: 44 }}></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -208,20 +246,26 @@ export default function VerbConjugation() {
                                         key={row.sujet}
                                         className={i % 2 === 0 ? 'row-even' : 'row-odd'}
                                     >
-                                        <td
-                                            className="sujet-cell"
-                                            style={{ color: verb.color }}
-                                        >
+                                        <td className="sujet-cell" style={{ color: verb.color }}>
                                             {row.sujet}
                                         </td>
-                                        {tenses.map(t => (
-                                            <td
-                                                key={t.key}
-                                                style={!t.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}
-                                            >
-                                                {(row[t.key] as string | undefined) ?? '—'}
-                                            </td>
-                                        ))}
+                                        {tenses.map(tns => {
+                                            const form = (row[tns.key] as string | undefined) ?? '—';
+                                            return (
+                                                <td
+                                                    key={tns.key}
+                                                    className="conj-cell"
+                                                    style={!tns.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}
+                                                >
+                                                    {form === '—' ? '—' : (
+                                                        <ConjForm
+                                                            form={form}
+                                                            stem={stemByTense[tns.key]}
+                                                        />
+                                                    )}
+                                                </td>
+                                            );
+                                        })}
                                         <td className="vc-speaker-cell">
                                             <SpeakerButton
                                                 text={speakText}
@@ -234,7 +278,7 @@ export default function VerbConjugation() {
                         </tbody>
                     </table>
                 </div>
-                {tenses.some(t => !t.quizzable) && (
+                {tenses.some(tns => !tns.quizzable) && (
                     <p className="scroll-hint">* Recognition only — not quizzed</p>
                 )}
                 <p className="scroll-hint">Scroll to see all tenses →</p>

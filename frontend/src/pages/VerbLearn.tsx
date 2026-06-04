@@ -210,7 +210,7 @@ export default function VerbLearn() {
                                         {t.label}{!t.quizzable ? ' *' : ''}
                                     </th>
                                 ))}
-                                <th>🔊</th>
+                                <th style={{ width: 44 }}></th>
                             </tr>
                         </thead>
                         <tbody>

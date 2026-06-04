@@ -3,10 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { addWrongWords, loadShufflePref, saveShufflePref } from '../utils/wordQueue';
 import { recordAnswer, recordSession, loadMastery, syncAnswerToApi, syncSessionToApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
-import { isAnswerCorrect } from '../utils/answerValidator';
+import { isAnswerCorrect, isAccentOnlyError } from '../utils/answerValidator';
 import { loadQuizDirection, type QuizDirection } from '../utils/settings';
 import { useT } from '../utils/i18n';
 import SpeakerButton from '../components/SpeakerButton';
+import AccentBar from '../components/AccentBar';
 import './VocabularyQuiz.css';
 
 interface Word {
@@ -14,6 +15,8 @@ interface Word {
     english: string;
     french: string;
 }
+
+type AnswerState = 'idle' | 'presque' | 'miss';
 
 export default function VocabularyQuiz() {
     const navigate = useNavigate();
@@ -24,7 +27,7 @@ export default function VocabularyQuiz() {
     const [words, setWords] = useState<Word[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [userAnswer, setUserAnswer] = useState('');
-    const [showAnswer, setShowAnswer] = useState(false);
+    const [answerState, setAnswerState] = useState<AnswerState>('idle');
     const [wrongWords, setWrongWords] = useState<Word[]>([]);
     const [correctCount, setCorrectCount] = useState(0);
     const [isReviewMode, setIsReviewMode] = useState(false);
@@ -35,8 +38,11 @@ export default function VocabularyQuiz() {
     const t = useT();
 
     const firstRoundWrong = useRef<Word[]>([]);
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    // Allow Enter to advance past the reveal screen without re-clicking
+    const showAnswer = answerState !== 'idle';
+
+    // Enter key advances past reveal
     useEffect(() => {
         if (!showAnswer) return;
         const onKey = (e: KeyboardEvent) => { if (e.key === 'Enter') handleNext(); };
@@ -70,18 +76,24 @@ export default function VocabularyQuiz() {
         if (!userAnswer.trim()) return;
 
         const target = quizDir === 'fr-en' ? currentWord.english : currentWord.french;
-        const isCorrect = isAnswerCorrect(userAnswer, target);
+        const correct = isAnswerCorrect(userAnswer, target);
 
-        const mastery = recordAnswer(moduleId!, currentWord.id, isCorrect);
-        if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, isCorrect, mastery.level);
+        if (correct) {
+            const mastery = recordAnswer(moduleId!, currentWord.id, true);
+            if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, true, mastery.level);
+            setCorrectCount(c => c + 1);
 
-        if (isCorrect) {
-            setCorrectCount(correctCount + 1);
-            handleNext();
+            if (isAccentOnlyError(userAnswer, target)) {
+                setAnswerState('presque');
+            } else {
+                handleNext();
+            }
         } else {
-            setShowAnswer(true);
+            const mastery = recordAnswer(moduleId!, currentWord.id, false);
+            if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, false, mastery.level);
+            setAnswerState('miss');
             if (!wrongWords.find(w => w.id === currentWord.id)) {
-                setWrongWords([...wrongWords, currentWord]);
+                setWrongWords(prev => [...prev, currentWord]);
             }
         }
     };
@@ -89,15 +101,15 @@ export default function VocabularyQuiz() {
     const handleSkip = () => {
         const mastery = recordAnswer(moduleId!, currentWord.id, false);
         if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, false, mastery.level);
-        setShowAnswer(true);
+        setAnswerState('miss');
         if (!wrongWords.find(w => w.id === currentWord.id)) {
-            setWrongWords([...wrongWords, currentWord]);
+            setWrongWords(prev => [...prev, currentWord]);
         }
     };
 
     const handleNext = () => {
         setUserAnswer('');
-        setShowAnswer(false);
+        setAnswerState('idle');
 
         if (currentIndex < words.length - 1) {
             setCurrentIndex(currentIndex + 1);
@@ -133,7 +145,7 @@ export default function VocabularyQuiz() {
         setWords(ordered);
         setCurrentIndex(0);
         setUserAnswer('');
-        setShowAnswer(false);
+        setAnswerState('idle');
         setWrongWords([]);
         setCorrectCount(0);
         setIsReviewMode(false);
@@ -151,7 +163,7 @@ export default function VocabularyQuiz() {
         setWords(ordered);
         setCurrentIndex(0);
         setUserAnswer('');
-        setShowAnswer(false);
+        setAnswerState('idle');
         setWrongWords([]);
         setCorrectCount(0);
         setIsReviewMode(false);
@@ -165,7 +177,7 @@ export default function VocabularyQuiz() {
         setWords(ordered);
         setCurrentIndex(0);
         setUserAnswer('');
-        setShowAnswer(false);
+        setAnswerState('idle');
         setWrongWords([]);
         setCorrectCount(0);
         setIsReviewMode(false);
@@ -181,7 +193,7 @@ export default function VocabularyQuiz() {
         return (
             <main className="page">
                 <div className="vocq-complete card">
-                    <div className="vocq-complete-emoji">⭐</div>
+                    <div className="vocq-complete-icon">⭐</div>
                     <h1 className="vocq-complete-title">{t.quiz.allMastered}</h1>
                     <p className="vocq-complete-subtitle">{t.quiz.allMasteredSubtitle}</p>
                     <div className="vocq-complete-actions">
@@ -213,7 +225,6 @@ export default function VocabularyQuiz() {
         return (
             <main className="page">
                 <div className="vocq-complete card">
-                    <div className="vocq-complete-emoji">🎉</div>
                     <h1 className="vocq-complete-title">{t.quiz.complete}</h1>
 
                     <div className="vocq-stats-grid">
@@ -246,6 +257,8 @@ export default function VocabularyQuiz() {
 
     /* ── Active quiz ── */
     const progress = ((currentIndex + 1) / words.length) * 100;
+    const target   = quizDir === 'fr-en' ? currentWord.english : currentWord.french;
+    const showAccentBar = quizDir !== 'fr-en'; // typing French
 
     return (
         <main className="page">
@@ -281,29 +294,40 @@ export default function VocabularyQuiz() {
                         {quizDir === 'fr-en' ? t.quiz.translateToEnglish : t.quiz.translateToFrench}
                     </p>
                     <div className="vocq-word-row">
-                        <h2 className="vocq-word-english">
+                        <h2 className="vocq-word-display">
                             {quizDir === 'fr-en' ? currentWord.french : currentWord.english}
                         </h2>
                         <SpeakerButton
-                            text={quizDir === 'fr-en' ? currentWord.english : currentWord.french}
-                            lang={quizDir === 'fr-en' ? 'en-US' : 'fr-FR'}
+                            text={quizDir === 'fr-en' ? currentWord.french : currentWord.english}
+                            lang={quizDir === 'fr-en' ? 'fr-FR' : 'en-US'}
                         />
                     </div>
                 </div>
 
                 <hr className="vocq-divider" />
 
-                {!showAnswer ? (
+                {answerState === 'idle' ? (
                     <div className="vocq-answer-section">
                         <input
+                            ref={inputRef}
                             type="text"
                             className="field-input vocq-input"
                             value={userAnswer}
                             onChange={(e) => setUserAnswer(e.target.value)}
-                            onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
+                            onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
                             placeholder={t.quiz.placeholder}
                             autoFocus
+                            autoComplete="off"
+                            autoCorrect="off"
+                            spellCheck={false}
                         />
+                        {showAccentBar && (
+                            <AccentBar
+                                inputRef={inputRef}
+                                value={userAnswer}
+                                onChange={setUserAnswer}
+                            />
+                        )}
                         <div className="vocq-btn-row">
                             <button className="btn btn-secondary" onClick={handleSkip}>
                                 {t.quiz.skip}
@@ -317,14 +341,23 @@ export default function VocabularyQuiz() {
                             </button>
                         </div>
                     </div>
+                ) : answerState === 'presque' ? (
+                    <div className="vocq-feedback vocq-feedback--presque">
+                        <div className="vocq-feedback__tag">Presque !</div>
+                        <p className="vocq-feedback__msg">
+                            Watch the accent — it's <strong>{target}</strong>. Counted as correct.
+                        </p>
+                        <button className="btn btn-primary" onClick={handleNext}>
+                            {t.quiz.nextWord}
+                        </button>
+                    </div>
                 ) : (
-                    <div className="vocq-reveal-section">
+                    <div className="vocq-feedback vocq-feedback--miss">
+                        <div className="vocq-feedback__tag">Pas tout à fait</div>
                         <div className="vocq-word-row">
-                            <p className="vocq-correct-answer">
-                                {quizDir === 'fr-en' ? currentWord.english : currentWord.french}
-                            </p>
+                            <p className="vocq-correct-answer">{target}</p>
                             <SpeakerButton
-                                text={quizDir === 'fr-en' ? currentWord.english : currentWord.french}
+                                text={target}
                                 lang={quizDir === 'fr-en' ? 'en-US' : 'fr-FR'}
                             />
                         </div>
@@ -341,11 +374,11 @@ export default function VocabularyQuiz() {
             {/* Stats bar */}
             <div className="vocq-stats-bar">
                 <div className="vocq-stat-pill vocq-stat-correct">
-                    <span>✓</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     <span>{correctCount} {t.quiz.correct}</span>
                 </div>
                 <div className="vocq-stat-pill vocq-stat-wrong">
-                    <span>✗</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                     <span>{wrongWords.length} {t.quiz.toReview}</span>
                 </div>
             </div>

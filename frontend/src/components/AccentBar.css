@@ -1,0 +1,42 @@
+.accent-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-1);
+    justify-content: center;
+    padding: var(--s-2) 0;
+}
+
+.accent-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 var(--s-2);
+    background: var(--surface);
+    border: 1px solid var(--border-2);
+    border-radius: var(--r-sm);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease),
+                transform var(--t-fast) var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accent-btn:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+.accent-btn:active {
+    transform: scale(.93);
+}
+
+@media (max-width: 480px) {
+    .accent-btn {
+        min-width: 36px;
+        font-size: 0.95rem;
+    }
+}

@@ -111,3 +111,13 @@ function getAcceptableAnswers(answer: string): string[] {
 export function isAnswerCorrect(userAnswer: string, answer: string): boolean {
     return getAcceptableAnswers(answer).includes(normalize(userAnswer));
 }
+
+/** True when the only error is a missing/wrong accent (answer still counted correct). */
+export function isAccentOnlyError(userAnswer: string, answer: string): boolean {
+    if (!isAnswerCorrect(userAnswer, answer)) return false;
+    // Check raw forms (lowercased, trimmed, accents preserved)
+    const rawForms = answer.split(' / ').map(s =>
+        s.trim().replace(/[.?!,;:…]+$/, '').replace(/\([^)]*\)/g, '').trim().toLowerCase()
+    );
+    return !rawForms.some(f => f === userAnswer.trim().toLowerCase());
+}
