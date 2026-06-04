@@ -37,13 +37,15 @@
 
 .vc-title {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 500;
+  font-family: var(--font-serif);
   margin: 0;
 }
 
 .vc-translation {
   font-size: 1rem;
   font-style: italic;
+  font-family: var(--font-serif);
   color: var(--text-2);
 }
 
@@ -81,7 +83,8 @@
 .conj-table td {
   padding: 0.8rem 1rem;
   color: var(--text-1);
-  font-size: 0.93rem;
+  font-size: 1rem;
+  font-family: var(--font-serif);
 }
 
 .row-even {

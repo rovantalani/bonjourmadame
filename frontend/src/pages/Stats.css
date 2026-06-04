@@ -71,7 +71,7 @@
     width: 64px;
     padding: 0.3rem 0.5rem;
     font-size: 0.9rem;
-    font-family: var(--font);
+    font-family: var(--font-ui);
     font-weight: 600;
     border: 1.5px solid var(--border);
     border-radius: var(--r-md);

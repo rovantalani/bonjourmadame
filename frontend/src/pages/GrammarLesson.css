@@ -223,7 +223,7 @@
     border-radius: var(--r-md);
     color: var(--text-2);
     transition: border-color .18s ease;
-    font-family: var(--font);
+    font-family: var(--font-ui);
 }
 
 .ex-hint-btn:hover {

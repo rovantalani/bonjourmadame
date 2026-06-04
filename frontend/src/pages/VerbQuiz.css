@@ -37,13 +37,15 @@
 }
 
 .vq-verb-name {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
 }
 
 .vq-verb-hint {
   font-size: 0.82rem;
   font-style: italic;
+  font-family: var(--font-serif);
   color: var(--text-2);
 }
 
@@ -73,7 +75,8 @@
 
 .vq-tense-title {
   font-size: 1.6rem;
-  font-weight: 800;
+  font-weight: 500;
+  font-family: var(--font-serif);
   margin: 0;
 }
 
