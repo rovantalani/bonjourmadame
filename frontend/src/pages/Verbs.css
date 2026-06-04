@@ -116,13 +116,15 @@
 }
 
 .verbs-helper-title {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    font-weight: 500;
     line-height: 1.2;
 }
 
 .verbs-helper-translation {
     font-size: 0.78rem;
+    font-style: italic;
     color: var(--text-3);
 }
 

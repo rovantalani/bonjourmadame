@@ -65,7 +65,8 @@
 
 .vocq-word-english {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 500;
+  font-family: var(--font-serif);
   color: var(--text-1);
   margin: 0;
 }
@@ -103,13 +104,15 @@
 
 .vocq-correct-answer {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 500;
+  font-family: var(--font-serif);
   color: var(--success);
   margin: 0;
 }
 
 .vocq-wrong-answer {
   font-size: 1.1rem;
+  font-family: var(--font-serif);
   color: var(--error);
   text-decoration: line-through;
   margin: 0;
