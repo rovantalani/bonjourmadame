@@ -8,22 +8,23 @@ import './Verbs.css';
 
 type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
 
-const VERB_COLOR = 'var(--verb)';
+const VERB_COLOR    = 'var(--verb)';
+const VERB_COLOR_BG = 'var(--verb-soft)';
 
 const HELPER_VERBS_FR = [
-    { id: 'etre',  title: 'Être',     translation: 'to be',        Icon: UserIcon as IconFC,       color: VERB_COLOR },
-    { id: 'avoir', title: 'Avoir',    translation: 'to have',      Icon: TagIcon as IconFC,        color: VERB_COLOR },
-    { id: 'faire', title: 'Faire',    translation: 'to do / make', Icon: PenIcon as IconFC,        color: VERB_COLOR },
-    { id: 'aller', title: 'Aller',    translation: 'to go',        Icon: ArrowRightIcon as IconFC, color: VERB_COLOR },
-    { id: 'venir', title: 'Venir',    translation: 'to come',      Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR },
+    { id: 'etre',  title: 'Être',     translation: 'to be',        Icon: UserIcon as IconFC,       color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'avoir', title: 'Avoir',    translation: 'to have',      Icon: TagIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'faire', title: 'Faire',    translation: 'to do / make', Icon: PenIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'aller', title: 'Aller',    translation: 'to go',        Icon: ArrowRightIcon as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'venir', title: 'Venir',    translation: 'to come',      Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR, bg: VERB_COLOR_BG },
 ];
 
 const HELPER_VERBS_EN = [
-    { id: 'to-be',   title: 'To Be',   translation: 'être',  Icon: UserIcon as IconFC,       color: VERB_COLOR },
-    { id: 'to-have', title: 'To Have', translation: 'avoir', Icon: TagIcon as IconFC,        color: VERB_COLOR },
-    { id: 'to-do',   title: 'To Do',   translation: 'faire', Icon: PenIcon as IconFC,        color: VERB_COLOR },
-    { id: 'to-go',   title: 'To Go',   translation: 'aller', Icon: ArrowRightIcon as IconFC, color: VERB_COLOR },
-    { id: 'to-come', title: 'To Come', translation: 'venir', Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR },
+    { id: 'to-be',   title: 'To Be',   translation: 'être',  Icon: UserIcon as IconFC,       color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'to-have', title: 'To Have', translation: 'avoir', Icon: TagIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'to-do',   title: 'To Do',   translation: 'faire', Icon: PenIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'to-go',   title: 'To Go',   translation: 'aller', Icon: ArrowRightIcon as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG },
+    { id: 'to-come', title: 'To Come', translation: 'venir', Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR, bg: VERB_COLOR_BG },
 ];
 
 const TYPE_ORDER = ['-ER', '-IR', '-RE', 'Regular', 'Irregular'];
@@ -178,7 +179,7 @@ export default function Verbs() {
                                 onClick={() => navigate(`/courses/${level}/verbs/${v.id}/table`)}
                                 type="button"
                             >
-                                <span className="verbs-helper-icon" style={{ backgroundColor: `${v.color}1F`, color: v.color }}><v.Icon size={20} /></span>
+                                <span className="verbs-helper-icon" style={{ backgroundColor: v.bg, color: v.color }}><v.Icon size={20} /></span>
                                 <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
                                 <span className="verbs-helper-translation">{v.translation}</span>
                             </button>
