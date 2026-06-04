@@ -20,14 +20,33 @@ const TYPE_COLORS: Record<StepType, string> = {
     reading:    'var(--masc)',
 };
 
-function StatusIcon({ status }: { status: StepStatus }) {
+const TYPE_SOFT: Record<StepType, string> = {
+    vocabulary: 'var(--accent-light)',
+    grammar:    'var(--verb-soft)',
+    verbs:      'var(--verb-soft)',
+    phrases:    'var(--almost-soft)',
+    reading:    'var(--masc-soft)',
+};
+
+function StatusNode({ status, index }: { status: StepStatus; index: number }) {
     if (status === 'complete') {
-        return <span className="cr-status-icon cr-status-complete">✓</span>;
+        return <span className="cr-node cr-node--complete">✓</span>;
     }
     if (status === 'visited') {
-        return <span className="cr-status-icon cr-status-visited">◑</span>;
+        return <span className="cr-node cr-node--visited">{index + 1}</span>;
     }
-    return <span className="cr-status-icon cr-status-not-started">○</span>;
+    return <span className="cr-node cr-node--todo">{index + 1}</span>;
+}
+
+function MasteryPips({ status }: { status: StepStatus }) {
+    const filled = status === 'complete' ? 3 : status === 'visited' ? 1 : 0;
+    return (
+        <div className="cr-pips" aria-label={`Mastery: ${filled} of 3`}>
+            {[0, 1, 2].map(i => (
+                <span key={i} className={`cr-pip${i < filled ? ' cr-pip--on' : ''}`} />
+            ))}
+        </div>
+    );
 }
 
 export default function CourseRoadmap() {
@@ -47,7 +66,7 @@ export default function CourseRoadmap() {
         navigate(`/courses/${level}${path}`);
     };
 
-    const renderStepItem = (step: CourseStep, isLast: boolean) => {
+    const renderStepItem = (step: CourseStep, index: number, isLast: boolean) => {
         const status = getStepStatus(step);
         return (
             <li key={step.id} className={`cr-step cr-step--${status}`}>
@@ -57,13 +76,20 @@ export default function CourseRoadmap() {
                     onClick={() => handleStepClick(step.path, step.id)}
                     type="button"
                 >
-                    <StatusIcon status={status} />
+                    <StatusNode status={status} index={index} />
                     <div className="cr-step-body">
                         <span className="cr-step-title">{step.title}</span>
-                        <span className="cr-step-type" style={{ color: TYPE_COLORS[step.type] }}>
+                        <span
+                            className="cr-type-badge"
+                            style={{
+                                backgroundColor: TYPE_SOFT[step.type],
+                                color: TYPE_COLORS[step.type],
+                            }}
+                        >
                             {t.roadmap.types[step.type]}
                         </span>
                     </div>
+                    <MasteryPips status={status} />
                     <span className="cr-step-arrow">›</span>
                 </button>
             </li>
@@ -103,23 +129,30 @@ export default function CourseRoadmap() {
                 <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
             </div>
 
-            {hasUnits ? (
-                course.units!.map(unit => {
-                    const unitSteps = course.steps.filter(s => s.unit === unit.number);
-                    return (
-                        <div key={unit.number} className="cr-unit">
-                            <p className="cr-unit-title">{unit.title}</p>
-                            <ol className="cr-steps">
-                                {unitSteps.map((step, i) => renderStepItem(step, i === unitSteps.length - 1))}
-                            </ol>
-                        </div>
-                    );
-                })
-            ) : (
-                <ol className="cr-steps">
-                    {course.steps.map((step, i) => renderStepItem(step, i === course.steps.length - 1))}
-                </ol>
-            )}
+            <div className="cr-content">
+                {hasUnits ? (
+                    course.units!.map(unit => {
+                        const unitSteps = course.steps.filter(s => s.unit === unit.number);
+                        const unitOffset = course.steps.findIndex(s => s.unit === unit.number);
+                        return (
+                            <div key={unit.number} className="cr-unit">
+                                <p className="cr-unit-title">{unit.title}</p>
+                                <ol className="cr-steps">
+                                    {unitSteps.map((step, i) =>
+                                        renderStepItem(step, unitOffset + i, i === unitSteps.length - 1)
+                                    )}
+                                </ol>
+                            </div>
+                        );
+                    })
+                ) : (
+                    <ol className="cr-steps">
+                        {course.steps.map((step, i) =>
+                            renderStepItem(step, i, i === course.steps.length - 1)
+                        )}
+                    </ol>
+                )}
+            </div>
         </main>
     );
 }

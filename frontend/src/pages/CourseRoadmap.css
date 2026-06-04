@@ -26,7 +26,6 @@
 
 .cr-header-text h1 {
     font-size: 1.7rem;
-    font-weight: 800;
     color: var(--text-1);
     margin-bottom: 0.25rem;
 }
@@ -52,8 +51,13 @@
 }
 
 .cr-progress-bar {
-    height: 8px;
+    height: 6px;
     margin-bottom: 2.5rem;
+}
+
+/* ── Constrained column ── */
+.cr-content {
+    max-width: 680px;
 }
 
 /* ── Step list ── */
@@ -73,74 +77,79 @@
 
 .cr-connector {
     position: absolute;
-    left: 1.35rem;
-    top: 3.2rem;
+    left: 1.1rem;
+    top: 3rem;
     bottom: 0;
     width: 2px;
     background: var(--border);
     z-index: 0;
 }
 
-.cr-step--complete .cr-connector,
-.cr-step--visited  .cr-connector {
-    background: var(--border);
-}
+.cr-step--complete .cr-connector { background: var(--verb-soft); }
+.cr-step--visited  .cr-connector { background: var(--border); }
 
+/* ── Step button ── */
 .cr-step-btn {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.9rem;
     width: 100%;
     text-align: left;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--r-lg);
-    padding: 1rem 1.1rem;
-    margin-bottom: 0.6rem;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.5rem;
     cursor: pointer;
     position: relative;
     z-index: 1;
-    transition: border-color .15s ease, box-shadow .15s ease, transform .13s ease;
+    transition: border-color var(--t-fast) var(--ease),
+                box-shadow var(--t-base) var(--ease),
+                transform var(--t-fast) var(--ease);
 }
 
 .cr-step-btn:hover {
     border-color: var(--accent);
     box-shadow: var(--shadow-md);
-    transform: translateX(3px);
+    transform: translateX(2px);
 }
 
 .cr-step--complete .cr-step-btn {
-    background: var(--success-light);
-    border-color: var(--success);
+    background: var(--verb-soft);
+    border-color: var(--verb);
 }
 
-/* ── Status icons ── */
-.cr-status-icon {
+/* ── Status node (circle with number or check) ── */
+.cr-node {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    font-size: 0.95rem;
+    font-size: 0.78rem;
     font-weight: 700;
+    font-family: var(--font-ui);
     flex-shrink: 0;
     border: 2px solid currentColor;
 }
 
-.cr-status-complete {
-    color: var(--success);
-    background: var(--success-light);
+.cr-node--complete {
+    color: var(--verb);
+    background: var(--verb-soft);
+    border-color: var(--verb);
 }
 
-.cr-status-visited {
+.cr-node--visited {
     color: var(--accent);
     background: var(--accent-light);
+    border-color: var(--accent);
 }
 
-.cr-status-not-started {
+.cr-node--todo {
     color: var(--text-3);
     background: var(--surface-2);
+    border-color: var(--border);
 }
 
 /* ── Step body ── */
@@ -148,26 +157,60 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.25rem;
+    min-width: 0;
 }
 
 .cr-step-title {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-1);
+    line-height: 1.3;
 }
 
-.cr-step-type {
-    font-size: 0.72rem;
+/* ── Type badge pill ── */
+.cr-type-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.65rem;
     font-weight: 700;
+    font-family: var(--font-ui);
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    padding: 0.15rem 0.55rem;
+    border-radius: var(--r-pill);
+    line-height: 1.6;
 }
 
+/* ── Mastery pips ── */
+.cr-pips {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.cr-pip {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background var(--t-fast) var(--ease);
+}
+
+.cr-pip--on {
+    background: var(--verb);
+}
+
+.cr-step--visited  .cr-pip--on { background: var(--accent); }
+.cr-step--complete .cr-pip--on { background: var(--verb); }
+
+/* ── Chevron ── */
 .cr-step-arrow {
     font-size: 1.3rem;
     color: var(--text-3);
     font-weight: 300;
+    flex-shrink: 0;
 }
 
 /* ── Unit grouping ── */
@@ -176,9 +219,10 @@
 }
 
 .cr-unit-title {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.09em;
+    font-family: var(--font-ui);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-3);
     padding: 0 0.25rem;
@@ -186,10 +230,9 @@
 }
 
 @media (max-width: 480px) {
-    .cr-header {
-        gap: 0.8rem;
-    }
-    .cr-header-text h1 {
-        font-size: 1.4rem;
-    }
+    .cr-header { gap: 0.8rem; }
+    .cr-header-text h1 { font-size: 1.4rem; }
+    .cr-step-btn { gap: 0.65rem; padding: 0.75rem 0.85rem; }
+    .cr-pips { gap: 3px; }
+    .cr-pip { width: 7px; height: 7px; }
 }
