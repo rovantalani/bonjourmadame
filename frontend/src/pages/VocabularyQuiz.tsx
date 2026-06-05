@@ -62,7 +62,8 @@ export default function VocabularyQuiz() {
                     const ordered = shuffle ? [...unmastered].sort(() => Math.random() - 0.5) : unmastered;
                     setWords(ordered);
                 }
-            });
+            })
+            .catch(() => setAllMastered(true)); // surface backend error as "nothing to quiz"
     }, [moduleId]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const currentWord = words[currentIndex];

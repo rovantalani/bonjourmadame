@@ -26,12 +26,13 @@ export default function Vocabulary() {
     const courses = useCourses();
     const [modules, setModules] = useState<VocabularyModule[]>([]);
     const [loading, setLoading] = useState(true);
+    const [apiError, setApiError] = useState(false);
 
     useEffect(() => {
         const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
         axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/vocabulary-modules${langParam}`)
-            .then(res => { setModules(res.data); setLoading(false); })
-            .catch(err => { console.error('Failed to load vocabulary modules', err); setLoading(false); });
+            .then(res => { setModules(res.data); setLoading(false); setApiError(false); })
+            .catch(() => { setLoading(false); setApiError(true); });
     }, []);
 
     const activeCourse = courses.find(c => c.level.toLowerCase() === (level ?? ''));
@@ -47,6 +48,8 @@ export default function Vocabulary() {
 
             {loading ? (
                 <p style={{ color: 'var(--text-2)', marginTop: '1.5rem' }}>{t.vocabulary.loading}</p>
+            ) : apiError ? (
+                <p style={{ color: 'var(--notyet)', marginTop: '1.5rem' }}>Could not load modules — make sure the server is running.</p>
             ) : vocabSteps.length === 0 ? (
                 <p style={{ color: 'var(--text-3)', marginTop: '1rem' }}>No vocabulary in this course.</p>
             ) : (
