@@ -46,7 +46,7 @@ export default function Vocabulary() {
             </header>
 
             {loading ? (
-                <p style={{ color: 'var(--text-2)', marginTop: '1.5rem' }}>{t.vocabulary.loading ?? 'Loading…'}</p>
+                <p style={{ color: 'var(--text-2)', marginTop: '1.5rem' }}>{t.vocabulary.loading}</p>
             ) : vocabSteps.length === 0 ? (
                 <p style={{ color: 'var(--text-3)', marginTop: '1rem' }}>No vocabulary in this course.</p>
             ) : (

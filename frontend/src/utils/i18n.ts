@@ -36,7 +36,7 @@ interface Translations {
         words: (n: number) => string;
         mastered: (m: number, total: number) => string;
         levelGroups: { A1: string; A2B1: string; B2C1: string; C1C2: string };
-        quiz: string; read: string;
+        quiz: string; read: string; loading: string;
     };
     courses: {
         title: string; subtitle: string;
@@ -202,7 +202,7 @@ const EN: Translations = {
         words:   (n) => `${n} word${n !== 1 ? 's' : ''}`,
         mastered:(m, t) => `${m}/${t} mastered`,
         levelGroups: { A1: 'A1 — Foundations', A2B1: 'A2 / B1', B2C1: 'B2 / C1', C1C2: 'C1 / C2 — Advanced' },
-        quiz: 'Quiz', read: 'Read',
+        quiz: 'Quiz', read: 'Read', loading: 'Loading modules…',
     },
     courses: {
         title: 'Courses', subtitle: 'Choose your level and follow a structured path from A1 to C2.',
@@ -372,7 +372,7 @@ const FR: Translations = {
         words:   (n) => `${n} mot${n > 1 ? 's' : ''}`,
         mastered:(m, t) => `${m}/${t} maîtrisés`,
         levelGroups: { A1: 'A1 — Bases', A2B1: 'A2 / B1', B2C1: 'B2 / C1', C1C2: 'C1 / C2 — Avancé' },
-        quiz: 'Quiz', read: 'Lire',
+        quiz: 'Quiz', read: 'Lire', loading: 'Chargement des modules…',
     },
     courses: {
         title: 'Cours', subtitle: 'Choisissez votre niveau et suivez un parcours structuré du A1 au C2.',

@@ -5,6 +5,7 @@ import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
 import { loadStreak, loadDailyProgress, loadDailyGoal, fetchProgressFromApi, fetchDueWordsFromApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';
 import ProgressImportBanner from '../components/ProgressImportBanner';
+import GuestBanner from '../components/GuestBanner';
 import { getActiveCourse, getNextStep, getCourseProgress } from '../utils/courseProgress';
 import { useCourses } from '../utils/modeHelpers';
 import { useT } from '../utils/i18n';
@@ -65,6 +66,7 @@ export default function Home() {
 
     return (
         <main className="page">
+            <GuestBanner />
             <ProgressImportBanner />
             {showENBanner && (
                 <div className="home-en-banner">
