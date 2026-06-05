@@ -4,9 +4,11 @@ import { useTheme } from '../hooks/useTheme';
 import { useT } from '../utils/i18n';
 import { useCourses } from '../utils/modeHelpers';
 import { getActiveCourse, setActiveCourse } from '../utils/courseProgress';
+import { loadStreak, loadDailyProgress, loadDailyGoal } from '../utils/progress';
+import { useAuth } from '../context/AuthContext';
 import {
     BookIcon, BookOpenIcon, PenIcon, CompassIcon,
-    BarChartIcon, SettingsIcon, SunIcon, MoonIcon,
+    BarChartIcon, SettingsIcon, SunIcon, MoonIcon, FlameIcon,
 } from './icons';
 import './Nav.css';
 
@@ -16,6 +18,78 @@ function useActiveItem() {
         if (path === '/') return pathname === '/';
         return pathname.startsWith(path);
     };
+}
+
+/** Flame + streak count. Hidden at 0 so first-time users see a clean nav. */
+function StreakPill() {
+    const { user } = useAuth();
+    const [streak, setStreak] = useState(0);
+
+    useEffect(() => {
+        if (!user) {
+            setStreak(loadStreak().currentStreak);
+        }
+        // For authenticated users, streak comes from API — Home.tsx already
+        // owns that fetch; here we mirror the localStorage copy which is kept
+        // up to date by recordStreak() after every quiz.
+        else {
+            setStreak(loadStreak().currentStreak);
+        }
+    }, [user]);
+
+    if (streak === 0) return null;
+
+    return (
+        <div className="nav-streak" title={`${streak}-day streak`}>
+            <FlameIcon size={14} />
+            <span>{streak}</span>
+        </div>
+    );
+}
+
+/**
+ * Circular progress ring showing today's words vs. daily goal.
+ * r=9 → circumference≈56.5px. Percentage text sits inside the SVG.
+ */
+function DailyRing() {
+    const [pct, setPct] = useState(0);
+
+    useEffect(() => {
+        const goal    = loadDailyGoal();
+        const studied = loadDailyProgress().wordsStudied;
+        setPct(Math.min(100, Math.round((studied / goal) * 100)));
+    }, []);
+
+    const r    = 9;
+    const circ = 2 * Math.PI * r;
+    const offset = circ * (1 - pct / 100);
+
+    return (
+        <div className="nav-ring" title={`${pct}% of daily goal`} aria-label={`Daily goal: ${pct}%`}>
+            <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+                {/* Track */}
+                <circle cx="15" cy="15" r={r} fill="none"
+                    stroke="var(--border)" strokeWidth="2.5" />
+                {/* Fill */}
+                <circle cx="15" cy="15" r={r} fill="none"
+                    stroke="var(--accent)" strokeWidth="2.5"
+                    strokeDasharray={circ}
+                    strokeDashoffset={offset}
+                    strokeLinecap="round"
+                    transform="rotate(-90 15 15)"
+                    style={{ transition: 'stroke-dashoffset 0.4s var(--ease)' }}
+                />
+                <text x="15" y="15"
+                    textAnchor="middle" dominantBaseline="central"
+                    fontSize="7" fontWeight="700"
+                    fill="var(--text-1)"
+                    fontFamily="var(--font-ui)"
+                >
+                    {pct}%
+                </text>
+            </svg>
+        </div>
+    );
 }
 
 function LevelIndicator({ activeLevel }: { activeLevel: string }) {
@@ -150,6 +224,8 @@ export default function Nav() {
                     </div>
 
                     <div className="top-nav-right">
+                        <StreakPill />
+                        <DailyRing />
                         <LevelIndicator activeLevel={activeLevel} />
                         <button
                             className={`top-nav-link ${isActive('/stats') ? 'active' : ''}`}

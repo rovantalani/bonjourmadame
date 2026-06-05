@@ -118,19 +118,13 @@ export default function CourseRoadmap() {
                     </span>
                     <div className="cr-continue__body">
                         <span className="cr-continue__label">{t.roadmap.continueLabel}</span>
-                        <span className="cr-continue__step">
+                        <strong className="cr-continue__step">
                             {nextStep.title}
-                            <span
-                                className="cr-type-badge"
-                                style={{
-                                    backgroundColor: TYPE_SOFT[nextStep.type],
-                                    color: TYPE_COLORS[nextStep.type],
-                                    marginLeft: '0.5rem',
-                                }}
-                            >
+                            <span className="cr-continue__dot">·</span>
+                            <span style={{ color: TYPE_COLORS[nextStep.type] }}>
                                 {t.roadmap.types[nextStep.type]}
                             </span>
-                        </span>
+                        </strong>
                     </div>
                     <span className="cr-continue__btn">{t.roadmap.resumeBtn}</span>
                 </button>
@@ -147,11 +141,14 @@ export default function CourseRoadmap() {
                 </div>
             </div>
 
-            {/* ── Progress ── */}
-            <div className="cr-progress-row">
+            {/* ── Progress inline line ── */}
+            <div className="cr-progress-line">
                 <span className="cr-progress-label">
                     {t.roadmap.steps(progress.completed + progress.visited, progress.total)}
                 </span>
+                <div className="progress-track cr-progress-bar">
+                    <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
+                </div>
                 <span className="cr-progress-pct">{progress.pct}%</span>
                 {!isActive && (
                     <button
@@ -162,10 +159,6 @@ export default function CourseRoadmap() {
                         {t.roadmap.setActive}
                     </button>
                 )}
-            </div>
-
-            <div className="progress-track cr-progress-bar">
-                <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
             </div>
 
             <div className="cr-content">

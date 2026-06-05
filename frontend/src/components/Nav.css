@@ -103,6 +103,33 @@
     align-items: center;
     justify-content: center;
 }
+
+/* ── Streak pill ── */
+.nav-streak {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--r-pill);
+    background: var(--almost-soft);
+    color: var(--almost);
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: var(--font-ui);
+    white-space: nowrap;
+    cursor: default;
+    user-select: none;
+}
+
+/* ── Daily ring ── */
+.nav-ring {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    user-select: none;
+    flex-shrink: 0;
+}
 .theme-toggle:hover {
     border-color: var(--accent);
     color: var(--accent);
@@ -258,6 +285,8 @@
     .top-nav-links { display: none; }
     .nav-brand-name { display: none; }
     .top-nav-right .top-nav-link { display: none; }
+    .nav-streak { display: none; }
+    .nav-ring    { display: none; }
 
     /* Keep level indicator and theme toggle visible in top bar on mobile */
     .top-nav-right {
