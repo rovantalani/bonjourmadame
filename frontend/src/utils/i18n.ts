@@ -48,6 +48,9 @@ interface Translations {
         back: string; setActive: string;
         steps: (done: number, total: number) => string;
         notFound: string;
+        continueLabel: string;
+        resumeBtn: string;
+        allDone: string;
         types: { vocabulary: string; grammar: string; verbs: string; phrases: string; reading: string };
     };
     phrases: {
@@ -214,6 +217,9 @@ const EN: Translations = {
         back: '← All Courses', setActive: 'Set as Active Course',
         steps: (done, total) => `${done} / ${total} steps`,
         notFound: 'Course not found.',
+        continueLabel: 'Continue where you left off',
+        resumeBtn: 'Resume →',
+        allDone: 'Course complete — great work!',
         types: { vocabulary: 'Vocabulary', grammar: 'Grammar', verbs: 'Verbs', phrases: 'Phrases', reading: 'Reading' },
     },
     phrases: {
@@ -384,6 +390,9 @@ const FR: Translations = {
         back: '← Tous les cours', setActive: 'Définir comme cours actif',
         steps: (done, total) => `${done} / ${total} étapes`,
         notFound: 'Cours introuvable.',
+        continueLabel: 'Continuez là où vous en étiez',
+        resumeBtn: 'Reprendre →',
+        allDone: 'Cours terminé — félicitations !',
         types: { vocabulary: 'Vocabulaire', grammar: 'Grammaire', verbs: 'Verbes', phrases: 'Expressions', reading: 'Lecture' },
     },
     phrases: {
