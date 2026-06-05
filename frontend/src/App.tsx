@@ -4,7 +4,6 @@ import './App.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { loadLearningMode } from './utils/settings';
 import Nav from './components/Nav';
-import GuestBanner from './components/GuestBanner';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -51,7 +50,6 @@ function AppShell() {
         <AuthGate>
             <div className="App">
                 {!isWelcome && <Nav />}
-                {!isWelcome && <GuestBanner />}
                 <Routes>
                     <Route path="/welcome"                                          element={<Welcome />} />
                     <Route path="/"                                                 element={<Home />} />
