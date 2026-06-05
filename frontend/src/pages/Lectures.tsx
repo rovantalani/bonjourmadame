@@ -79,10 +79,11 @@ export default function Lectures() {
                         const Icon  = TYPE_ICON[step.type];
                         const typeLabel = t.roadmap.types[step.type];
 
+                        const filled = status === 'complete' ? 3 : status === 'visited' ? 1 : 0;
                         return (
                             <button
                                 key={step.id}
-                                className="lecture-card"
+                                className={`lecture-card lecture-card--${status}`}
                                 style={{ borderLeftColor: color }}
                                 onClick={() => { markStepVisited(step.id); navigate(`/courses/${level}${step.path}`); }}
                                 type="button"
@@ -96,9 +97,15 @@ export default function Lectures() {
                                     </span>
                                 </div>
 
-                                <span className={`lecture-status lecture-status--${status}`}>
-                                    {status === 'complete' ? '✓' : status === 'visited' ? '◑' : '○'}
-                                </span>
+                                <div className="lecture-pips" aria-label={`Mastery: ${filled} of 3`}>
+                                    {[0, 1, 2].map(i => (
+                                        <span
+                                            key={i}
+                                            className={`lecture-pip${i < filled ? ' lecture-pip--on' : ''}`}
+                                            style={i < filled ? { background: color } : undefined}
+                                        />
+                                    ))}
+                                </div>
 
                                 <span className="lecture-arrow">›</span>
                             </button>
