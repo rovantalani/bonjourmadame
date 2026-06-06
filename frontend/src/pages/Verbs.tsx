@@ -122,10 +122,8 @@ export default function Verbs() {
         setLoading(true);
         fetch(`${import.meta.env.VITE_API_BASE}/api/verbs-for-course/${levelId}${langParam}`)
             .then(r => r.json() as Promise<CourseVerbsData>)
-            .then(d => {
-                setData(d);
-                setLoading(false);
-            });
+            .then(d => { setData(d); setLoading(false); })
+            .catch(() => setLoading(false));
     }, [isEN, level]);
 
     const q = search.toLowerCase();

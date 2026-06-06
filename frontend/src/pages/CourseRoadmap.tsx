@@ -3,6 +3,7 @@ import { useCourses } from '../utils/modeHelpers';
 import {
     getStepStatus,
     getCourseProgress,
+    getNextStep,
     getActiveCourse,
     setActiveCourse,
     markStepVisited,
@@ -58,8 +59,10 @@ export default function CourseRoadmap() {
     const course = courses.find(c => c.level.toLowerCase() === level?.toLowerCase());
     if (!course) return <main className="page"><p>{t.roadmap.notFound}</p></main>;
 
-    const progress = getCourseProgress(course);
-    const isActive = getActiveCourse() === course.level;
+    const progress  = getCourseProgress(course);
+    const isActive  = getActiveCourse() === course.level;
+    const nextStep  = getNextStep(course);
+    const hasStarted = progress.completed + progress.visited > 0;
 
     const handleStepClick = (path: string, stepId: string) => {
         markStepVisited(stepId);
@@ -100,6 +103,34 @@ export default function CourseRoadmap() {
 
     return (
         <main className="page">
+
+            {/* ── Continue strip ── */}
+            {nextStep && hasStarted && (
+                <button
+                    className="cr-continue"
+                    onClick={() => handleStepClick(nextStep.path, nextStep.id)}
+                    type="button"
+                >
+                    <span className="cr-continue__icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                    </span>
+                    <div className="cr-continue__body">
+                        <span className="cr-continue__label">{t.roadmap.continueLabel}</span>
+                        <strong className="cr-continue__step">
+                            {nextStep.title}
+                            <span className="cr-continue__dot">·</span>
+                            <span style={{ color: TYPE_COLORS[nextStep.type] }}>
+                                {t.roadmap.types[nextStep.type]}
+                            </span>
+                        </strong>
+                    </div>
+                    <span className="cr-continue__btn">{t.roadmap.resumeBtn}</span>
+                </button>
+            )}
+
+            {/* ── Course header ── */}
             <div className="cr-header">
                 <span className="cr-level-badge" style={{ backgroundColor: course.color }}>
                     {course.level}
@@ -110,10 +141,15 @@ export default function CourseRoadmap() {
                 </div>
             </div>
 
-            <div className="cr-progress-row">
+            {/* ── Progress inline line ── */}
+            <div className="cr-progress-line">
                 <span className="cr-progress-label">
                     {t.roadmap.steps(progress.completed + progress.visited, progress.total)}
                 </span>
+                <div className="progress-track cr-progress-bar">
+                    <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
+                </div>
+                <span className="cr-progress-pct">{progress.pct}%</span>
                 {!isActive && (
                     <button
                         className="btn btn-primary cr-set-active-btn"
@@ -123,10 +159,6 @@ export default function CourseRoadmap() {
                         {t.roadmap.setActive}
                     </button>
                 )}
-            </div>
-
-            <div className="progress-track cr-progress-bar">
-                <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
             </div>
 
             <div className="cr-content">
