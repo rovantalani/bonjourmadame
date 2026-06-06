@@ -11,6 +11,14 @@ interface Translations {
     };
     verbs: {
         title: string; subtitle: string; empty: string;
+        searchPlaceholder: string;
+        helperTitle: string;
+        helperNote: string;
+        newVerbs: (level: string) => string;
+        newVerbsDesc: string;
+        reviewNote: string;
+        reviewDesc: (level: string) => string;
+        noMatch: (q: string) => string;
     };
     lectures: {
         title: string; subtitle: string; empty: string; all: string;
@@ -158,10 +166,29 @@ interface Translations {
         quiz: string;
         notFound: string;
     };
+    verbLearn: {
+        back: string;
+        backToVerbs: string;
+        takeQuiz: string;
+        scrollHint: string;
+    };
+    verbQuiz: {
+        backToVerbs: string;
+        review: string;
+        step: string;
+        reviewTenses: (level: string) => string;
+        newTenses: (level: string) => string;
+        reviewHint: string;
+        finish: string;
+    };
     phraseDetail: {
         back: string;
         startQuiz: string;
         notFound: string;
+    };
+    readingPassage: {
+        back: string;
+        vocabularySection: string;
     };
 }
 
@@ -177,6 +204,14 @@ const EN: Translations = {
         title: 'Verbs',
         subtitle: 'Conjugation tables and verb practice',
         empty: 'No verb exercises in this course.',
+        searchPlaceholder: 'Search verbs…',
+        helperTitle: 'Auxiliary Verbs',
+        helperNote: 'The 5 core English verbs — master these first',
+        newVerbs: (level) => `New verbs — ${level}`,
+        newVerbsDesc: 'Verbs introduced for the first time at this level — practice all unlocked tenses',
+        reviewNote: 'Review — new tenses only',
+        reviewDesc: (level) => `These verbs were learned earlier. The quiz only tests the new ${level} tenses.`,
+        noMatch: (q) => `No verbs match "${q}"`,
     },
     lectures: {
         title: 'Lectures',
@@ -331,10 +366,29 @@ const EN: Translations = {
         quiz: 'Quiz',
         notFound: 'Module not found.',
     },
+    verbLearn: {
+        back: '← Back',
+        backToVerbs: '← Back to Verbs',
+        takeQuiz: 'Take Quiz →',
+        scrollHint: 'Scroll to see all tenses →',
+    },
+    verbQuiz: {
+        backToVerbs: 'Back to Verbs',
+        review: 'Review',
+        step: 'Step',
+        reviewTenses: (level) => `Review — ${level.toUpperCase()} tenses`,
+        newTenses: (level) => `Review — new ${level.toUpperCase()} tenses`,
+        reviewHint: 'Complete the missing forms',
+        finish: 'Finish ✓',
+    },
     phraseDetail: {
         back: '← Phrases',
         startQuiz: 'Start Quiz',
         notFound: 'Category not found.',
+    },
+    readingPassage: {
+        back: '← Back',
+        vocabularySection: 'Vocabulary in this passage',
     },
 };
 
@@ -350,6 +404,14 @@ const FR: Translations = {
         title: 'Verbes',
         subtitle: 'Tables de conjugaison et pratique',
         empty: 'Aucun exercice de verbes dans ce cours.',
+        searchPlaceholder: 'Rechercher un verbe…',
+        helperTitle: 'Verbes essentiels',
+        helperNote: 'Les 5 verbes fondamentaux du français',
+        newVerbs: (level) => `Nouveaux verbes — ${level}`,
+        newVerbsDesc: 'Verbes introduits pour la première fois à ce niveau — pratiquez tous les temps',
+        reviewNote: 'Révision — nouveaux temps uniquement',
+        reviewDesc: (level) => `Ces verbes ont déjà été appris. Le quiz ne teste que les nouveaux temps de ${level}.`,
+        noMatch: (q) => `Aucun verbe ne correspond à « ${q} »`,
     },
     lectures: {
         title: 'Leçons',
@@ -504,10 +566,29 @@ const FR: Translations = {
         quiz: 'Quiz',
         notFound: 'Module introuvable.',
     },
+    verbLearn: {
+        back: '← Retour',
+        backToVerbs: '← Retour aux verbes',
+        takeQuiz: 'Faire le quiz →',
+        scrollHint: 'Faites défiler pour voir tous les temps →',
+    },
+    verbQuiz: {
+        backToVerbs: 'Retour aux verbes',
+        review: 'Révision',
+        step: 'Étape',
+        reviewTenses: (level) => `Révision — temps ${level.toUpperCase()}`,
+        newTenses: (level) => `Révision — nouveaux temps ${level.toUpperCase()}`,
+        reviewHint: 'Complétez les formes manquantes',
+        finish: 'Terminer ✓',
+    },
     phraseDetail: {
         back: '← Expressions',
         startQuiz: 'Commencer le quiz',
         notFound: 'Catégorie introuvable.',
+    },
+    readingPassage: {
+        back: '← Retour',
+        vocabularySection: 'Vocabulaire de ce passage',
     },
 };
 

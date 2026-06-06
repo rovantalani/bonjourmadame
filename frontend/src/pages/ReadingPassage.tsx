@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SpeakerButton from '../components/SpeakerButton';
 import { loadLearningMode } from '../utils/settings';
+import { useT } from '../utils/i18n';
 import './ReadingPassage.css';
 
 interface VocabularyWord {
@@ -95,6 +96,7 @@ function annotate(paragraph: string, vocabMap: Map<string, VocabularyWord>): Tok
 export default function ReadingPassage() {
     const { moduleId } = useParams<{ moduleId: string }>();
     const navigate = useNavigate();
+    const t = useT();
     const isEN = loadLearningMode() === 'learn-english';
     const [data, setData] = useState<ReadingData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -150,7 +152,7 @@ export default function ReadingPassage() {
         return (
             <main className="page">
                 <button className="back-btn" onClick={() => navigate(-1)} type="button">
-                    ← Back
+                    {t.readingPassage.back}
                 </button>
                 <p>Reading passage not found.</p>
             </main>
@@ -228,7 +230,7 @@ export default function ReadingPassage() {
 
             <div className="rp-vocab-list card">
                 <p className="section-label">
-                    {isEN ? 'Vocabulary in this passage' : 'Vocabulaire de ce passage'}
+                    {t.readingPassage.vocabularySection}
                 </p>
                 <ul className="rp-vocab-items">
                     {data.vocabulary.map(w => (

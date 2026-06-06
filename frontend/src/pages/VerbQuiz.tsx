@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { loadLearningMode } from '../utils/settings';
+import { useT } from '../utils/i18n';
 import SpeakerButton from '../components/SpeakerButton';
 import { CheckCircleIcon, RefreshIcon } from '../components/icons';
 import './VerbQuiz.css';
@@ -149,6 +150,7 @@ function displaySujet(sujet: string, form: string): string {
 export default function VerbQuiz() {
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
+    const t = useT();
     const isENUI = loadLearningMode() === 'learn-english';
 
     const [verb, setVerb] = useState<VerbData | null>(null);
@@ -285,28 +287,28 @@ export default function VerbQuiz() {
             <main className="page">
                 <div className="vq-complete card">
                     <div className="vq-complete-emoji"><CheckCircleIcon size={52} style={{ color: 'var(--success)' }} /></div>
-                    <h1 className="vq-complete-title">{isENUI ? 'Quiz terminé !' : 'Quiz Complete!'}</h1>
+                    <h1 className="vq-complete-title">{t.quiz.complete}</h1>
                     <p className="vq-complete-verb" style={{ color: verb.color }}>
                         <em>{verb.infinitive} — {verb.translation}</em>
                     </p>
                     {isReviewVerb && (
                         <p style={{ fontSize: '0.82rem', color: 'var(--text-3)', marginBottom: '0.5rem' }}>
-                            {isENUI ? `Révision — tenses de ${levelKey.toUpperCase()}` : `Review — ${levelKey.toUpperCase()} tenses`}
+                            {t.verbQuiz.reviewTenses(levelKey)}
                         </p>
                     )}
 
                     <div className="vq-stats-grid">
                         <div className="vq-stat">
                             <span className="vq-stat-value" style={{ color: verb.color }}>{correctCount}</span>
-                            <span className="vq-stat-label">Score</span>
+                            <span className="vq-stat-label">{t.quiz.score}</span>
                         </div>
                         <div className="vq-stat">
                             <span className="vq-stat-value" style={{ color: verb.color }}>{totalCells}</span>
-                            <span className="vq-stat-label">Total</span>
+                            <span className="vq-stat-label">{t.quiz.total}</span>
                         </div>
                         <div className="vq-stat">
                             <span className="vq-stat-value" style={{ color: verb.color }}>{accuracy}%</span>
-                            <span className="vq-stat-label">{isENUI ? 'Précision' : 'Accuracy'}</span>
+                            <span className="vq-stat-label">{t.quiz.accuracy}</span>
                         </div>
                     </div>
 
@@ -316,10 +318,10 @@ export default function VerbQuiz() {
                             style={{ backgroundColor: verb.color, color: '#fff' }}
                             onClick={handleRestart}
                         >
-                            {isENUI ? 'Réessayer' : 'Try Again'}
+                            {t.quiz.tryAgain}
                         </button>
                         <button className="btn btn-secondary" onClick={handleExit}>
-                            {isENUI ? 'Retour aux verbes' : 'Back to Verbs'}
+                            {t.verbQuiz.backToVerbs}
                         </button>
                     </div>
                 </div>
@@ -334,8 +336,8 @@ export default function VerbQuiz() {
         : ((tenseIndex + 1) / TENSES.length) * 100;
 
     const stepLabel = isReview
-        ? `${isENUI ? 'Révision' : 'Review'} ${reviewStep + 1}/${reviewQueue.length}`
-        : `${isENUI ? 'Étape' : 'Step'} ${tenseIndex + 1}/${TENSES.length}`;
+        ? `${t.verbQuiz.review} ${reviewStep + 1}/${reviewQueue.length}`
+        : `${t.verbQuiz.step} ${tenseIndex + 1}/${TENSES.length}`;
 
     const wrongSubjectsForTense = wrongByTense[activeTenseIdx] ?? [];
 
@@ -350,7 +352,7 @@ export default function VerbQuiz() {
             {/* Top bar */}
             <div className="vq-top-bar">
                 <button className="btn btn-secondary vq-exit-btn" onClick={handleExit}>
-                    ✕ {isENUI ? 'Quitter' : 'Exit'}
+                    {t.quiz.exit}
                 </button>
                 <div className="vq-center-info">
                     <div className="vq-verb-name-row">
@@ -362,7 +364,7 @@ export default function VerbQuiz() {
                     <span className="vq-verb-hint">{verb.translation}</span>
                     {isReviewVerb && !isReview && (
                         <span style={{ fontSize: '0.72rem', color: 'var(--text-3)' }}>
-                            {isENUI ? `Révision — nouveaux temps ${levelKey.toUpperCase()}` : `Review — new ${levelKey.toUpperCase()} tenses`}
+                            {t.verbQuiz.newTenses(levelKey)}
                         </span>
                     )}
                 </div>
@@ -384,7 +386,7 @@ export default function VerbQuiz() {
                 <div className="vq-tense-header">
                     {isReview && (
                         <span className="vq-review-badge">
-                            {isENUI ? 'Révision' : 'Review'}
+                            {t.verbQuiz.review}
                         </span>
                     )}
                     <h2 className="vq-tense-title" style={{ color: verb.color }}>
@@ -392,9 +394,7 @@ export default function VerbQuiz() {
                     </h2>
                     {isReview && (
                         <p className="vq-review-hint">
-                            {isENUI
-                                ? 'Complétez les formes manquantes'
-                                : 'Complete the missing forms'}
+                            {t.verbQuiz.reviewHint}
                         </p>
                     )}
                 </div>
@@ -470,7 +470,7 @@ export default function VerbQuiz() {
                             style={{ backgroundColor: verb.color, color: '#fff' }}
                             onClick={handleSubmit}
                         >
-                            {isENUI ? 'Valider' : 'Submit'}
+                            {t.quiz.submit}
                         </button>
                     ) : (
                         <button
@@ -479,10 +479,10 @@ export default function VerbQuiz() {
                             onClick={handleNext}
                         >
                             {phase === 'quiz' && tenseIndex < TENSES.length - 1
-                                ? (isENUI ? 'Suivant →' : 'Next →')
+                                ? t.quiz.next
                                 : phase === 'review' && reviewStep < reviewQueue.length - 1
-                                ? (isENUI ? 'Suivant →' : 'Next →')
-                                : (isENUI ? 'Terminer ✓' : 'Finish ✓')}
+                                ? t.quiz.next
+                                : t.verbQuiz.finish}
                         </button>
                     )}
                 </div>
@@ -493,13 +493,13 @@ export default function VerbQuiz() {
                 <div className="vq-stats-bar">
                     <div className="vq-stat-pill vq-stat-correct">
                         <span>✓</span>
-                        <span>{correctCount} {isENUI ? 'Correct' : 'Correct'}</span>
+                        <span>{correctCount} {t.quiz.correct}</span>
                     </div>
                     <div className="vq-stat-pill vq-stat-wrong">
                         <span>✗</span>
                         <span>
                             {Object.values(wrongByTense).reduce((n, arr) => n + arr.length, 0)}{' '}
-                            {isENUI ? 'À revoir' : 'To Review'}
+                            {t.quiz.toReview}
                         </span>
                     </div>
                 </div>
