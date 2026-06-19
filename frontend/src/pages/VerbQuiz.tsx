@@ -136,6 +136,13 @@ const NEW_TENSES_FOR_LEVEL: Record<string, TenseDef[]> = {
     c2: [],
 };
 
+const TENSES_EN: TenseDef[] = [
+    { key: 'present',      label: 'Simple Present',     labelFR: 'Simple Present'     },
+    { key: 'imparfait',    label: 'Present Continuous', labelFR: 'Present Continuous' },
+    { key: 'passeCompose', label: 'Simple Past',        labelFR: 'Simple Past'        },
+    { key: 'futurSimple',  label: 'Future (will)',      labelFR: 'Future (will)'      },
+];
+
 function normalize(s: string): string {
     return s.toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
@@ -200,10 +207,12 @@ export default function VerbQuiz() {
     const currentLevelIdx = CEFR_ORDER.indexOf(levelKey);
     const isReviewVerb = verbLevelIdx >= 0 && currentLevelIdx > verbLevelIdx;
 
-    // Which tenses to quiz: if review verb → only new tenses for this level; if new verb → all cumulative tenses
-    const TENSES = isReviewVerb
-        ? (NEW_TENSES_FOR_LEVEL[levelKey] ?? TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2'])
-        : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
+    // Which tenses to quiz: EN mode uses English tense set; FR mode uses level-aware French tenses
+    const TENSES = isENUI
+        ? TENSES_EN
+        : isReviewVerb
+            ? (NEW_TENSES_FOR_LEVEL[levelKey] ?? TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2'])
+            : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
 
     const handleExit = () => navigate(`/courses/${level}/verbs`);
 

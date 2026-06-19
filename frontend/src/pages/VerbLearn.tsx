@@ -105,6 +105,13 @@ const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
     ],
 };
 
+const TENSES_EN: TenseDef[] = [
+    { key: 'present',      label: 'Simple Present',     quizzable: true },
+    { key: 'imparfait',    label: 'Present Continuous', quizzable: true },
+    { key: 'passeCompose', label: 'Simple Past',        quizzable: true },
+    { key: 'futurSimple',  label: 'Future (will)',      quizzable: true },
+];
+
 export default function VerbLearn() {
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
@@ -155,7 +162,7 @@ export default function VerbLearn() {
     }
 
     const levelKey = (level ?? 'a1').toLowerCase();
-    const tenses = TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2'];
+    const tenses = isENMode ? TENSES_EN : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
 
     // Determine if this is a review verb (introduced at a lower level)
     const verbLevel = verb.groupId.toLowerCase();
