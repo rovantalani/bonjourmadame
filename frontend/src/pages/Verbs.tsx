@@ -155,7 +155,7 @@ export default function Verbs() {
                 <input
                     type="search"
                     className="field-input verbs-search"
-                    placeholder={isEN ? 'Search verbs…' : 'Rechercher un verbe…'}
+                    placeholder={t.verbs.searchPlaceholder}
                     value={search}
                     onChange={e => setSearch(e.target.value)}
                 />
@@ -164,10 +164,8 @@ export default function Verbs() {
             {/* Helper Verbs */}
             {filteredHelpers.length > 0 && (
                 <section className="verbs-section">
-                    <h2 className="verbs-section-title">{isEN ? 'Auxiliary Verbs' : 'Verbes essentiels'}</h2>
-                    <p className="verbs-section-desc">
-                        {isEN ? 'The 5 core English verbs — master these first' : 'Les 5 verbes fondamentaux du français'}
-                    </p>
+                    <h2 className="verbs-section-title">{t.verbs.helperTitle}</h2>
+                    <p className="verbs-section-desc">{t.verbs.helperNote}</p>
                     <div className="verbs-helper-grid">
                         {filteredHelpers.map(v => (
                             <button
@@ -193,14 +191,8 @@ export default function Verbs() {
                     {/* New verbs for this level */}
                     {filteredNew.length > 0 && (
                         <section className="verbs-section">
-                            <h2 className="verbs-section-title">
-                                {isEN ? `Nouveaux verbes — ${levelLabel}` : `New verbs — ${levelLabel}`}
-                            </h2>
-                            <p className="verbs-section-desc">
-                                {isEN
-                                    ? `Verbes introduits pour la première fois à ce niveau — pratiquez tous les temps`
-                                    : `Verbs introduced for the first time at this level — practice all unlocked tenses`}
-                            </p>
+                            <h2 className="verbs-section-title">{t.verbs.newVerbs(levelLabel)}</h2>
+                            <p className="verbs-section-desc">{t.verbs.newVerbsDesc}</p>
                             {newTypeGroups.map(({ type, verbs }) => (
                                 <div key={type} className="verbs-type-block">
                                     <span className="level-badge" style={{ backgroundColor: verbs[0]?.color ?? 'var(--accent)', fontSize: '0.75rem' }}>
@@ -216,7 +208,7 @@ export default function Verbs() {
                                 </div>
                             ))}
                             {filteredNew.length === 0 && q && (
-                                <p className="verbs-loading" style={{ color: 'var(--text-3)' }}>No new verbs match "{search}"</p>
+                                <p className="verbs-loading" style={{ color: 'var(--text-3)' }}>{t.verbs.noMatch(search)}</p>
                             )}
                         </section>
                     )}
@@ -224,14 +216,8 @@ export default function Verbs() {
                     {/* Review verbs from prior levels */}
                     {filteredReview.length > 0 && (
                         <section className="verbs-section">
-                            <h2 className="verbs-section-title">
-                                {isEN ? 'Révision — nouveaux temps uniquement' : 'Review — new tenses only'}
-                            </h2>
-                            <p className="verbs-section-desc">
-                                {isEN
-                                    ? `Ces verbes ont déjà été appris. Le quiz ne teste que les nouveaux temps de ${levelLabel}.`
-                                    : `These verbs were learned earlier. The quiz only tests the new ${levelLabel} tenses.`}
-                            </p>
+                            <h2 className="verbs-section-title">{t.verbs.reviewNote}</h2>
+                            <p className="verbs-section-desc">{t.verbs.reviewDesc(levelLabel)}</p>
                             {filteredReview.map(group => (
                                 <div key={group.groupId} className="verbs-review-block">
                                     <h3 className="verbs-review-group-title">{group.groupTitle}</h3>
@@ -248,7 +234,7 @@ export default function Verbs() {
                     )}
 
                     {filteredNew.length === 0 && filteredReview.length === 0 && q && (
-                        <p className="verbs-loading" style={{ color: 'var(--text-3)' }}>No verbs match "{search}"</p>
+                        <p className="verbs-loading" style={{ color: 'var(--text-3)' }}>{t.verbs.noMatch(search)}</p>
                     )}
                 </>
             )}

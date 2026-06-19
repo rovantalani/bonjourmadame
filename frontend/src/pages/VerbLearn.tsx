@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SpeakerButton from '../components/SpeakerButton';
 import { loadLearningMode } from '../utils/settings';
+import { useT } from '../utils/i18n';
 import './VerbLearn.css';
 
 interface ConjugationRow {
@@ -104,9 +105,17 @@ const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
     ],
 };
 
+const TENSES_EN: TenseDef[] = [
+    { key: 'present',      label: 'Simple Present',     quizzable: true },
+    { key: 'imparfait',    label: 'Present Continuous', quizzable: true },
+    { key: 'passeCompose', label: 'Simple Past',        quizzable: true },
+    { key: 'futurSimple',  label: 'Future (will)',      quizzable: true },
+];
+
 export default function VerbLearn() {
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
+    const t = useT();
     const isENMode = loadLearningMode() === 'learn-english';
     const speakLang = isENMode ? 'en-US' : 'fr-FR';
 
@@ -145,15 +154,15 @@ export default function VerbLearn() {
         return (
             <main className="page">
                 <button className="back-btn" onClick={() => navigate(-1)}>
-                    ← Back
+                    {t.verbLearn.back}
                 </button>
-                <p>Verb not found.</p>
+                <p>{t.verbConjugation.notFound}</p>
             </main>
         );
     }
 
     const levelKey = (level ?? 'a1').toLowerCase();
-    const tenses = TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2'];
+    const tenses = isENMode ? TENSES_EN : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
 
     // Determine if this is a review verb (introduced at a lower level)
     const verbLevel = verb.groupId.toLowerCase();
@@ -170,14 +179,14 @@ export default function VerbLearn() {
                     className="back-btn"
                     onClick={() => navigate(`/courses/${level}/verbs`)}
                 >
-                    ← Back to Verbs
+                    {t.verbLearn.backToVerbs}
                 </button>
                 <button
                     className="btn vl-quiz-btn"
                     style={{ backgroundColor: verb.color, color: '#fff' }}
                     onClick={() => navigate(`/courses/${level}/verbs/${verbId}/quiz`)}
                 >
-                    Take Quiz →
+                    {t.verbLearn.takeQuiz}
                 </button>
             </div>
 
@@ -244,7 +253,7 @@ export default function VerbLearn() {
                 {tenses.some(t => !t.quizzable) && (
                     <p className="scroll-hint">* Recognition only — not quizzed</p>
                 )}
-                <p className="scroll-hint">Scroll to see all tenses →</p>
+                <p className="scroll-hint">{t.verbLearn.scrollHint}</p>
             </div>
         </main>
     );
