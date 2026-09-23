@@ -111,7 +111,7 @@
 
 .settings-toggle-btn.active {
     background: var(--accent);
-    color: #fff;
+    color: var(--accent-foreground);
 }
 
 /* ── Change password form ── */
@@ -139,12 +139,12 @@
 /* ── Danger zone ── */
 .settings-danger-btn {
     background: var(--error);
-    color: #fff;
+    color: var(--error-foreground);
     border: none;
 }
 
 .settings-danger-btn:hover {
-    background: #b91c1c;
+    background: var(--error-hover);
 }
 
 .settings-confirm-delete {

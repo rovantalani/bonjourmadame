@@ -132,7 +132,7 @@
     align-items: center;
     flex-shrink: 0;
     line-height: 1;
-    color: var(--accent);
+    color: var(--accent-text);
 }
 
 .home-review-text {
@@ -145,7 +145,7 @@
 .home-review-text strong {
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--accent-text);
 }
 
 .home-review-text span {
@@ -156,7 +156,7 @@
 .home-review-badge {
     flex-shrink: 0;
     background: var(--accent);
-    color: #fff;
+    color: var(--accent-foreground);
     font-size: 0.78rem;
     font-weight: 700;
     border-radius: var(--r-pill);
@@ -194,7 +194,7 @@
     width: 2.6rem;
     height: 2.6rem;
     border-radius: var(--r-md);
-    color: #fff;
+    color: var(--course-foreground);
     font-size: 0.8rem;
     font-weight: 800;
     flex-shrink: 0;
