@@ -27,7 +27,7 @@
 }
 
 .guest-banner-cta {
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 700;
     font-family: var(--font-ui);
     white-space: nowrap;

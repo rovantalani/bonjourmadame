@@ -92,7 +92,7 @@
 }
 
 .auth-footer a {
-    color: var(--accent);
+    color: var(--accent-text);
     font-weight: 600;
 }
 

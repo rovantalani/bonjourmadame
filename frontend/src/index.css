@@ -5,66 +5,80 @@
 }
 
 :root {
-  --font-serif: 'Newsreader', Georgia, serif;
-  --font-ui:    'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Space Grotesk', system-ui, sans-serif;
+  --font-ui:    'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+  color-scheme: light;
 
-  /* Backgrounds — warm paper */
-  --bg:        #FBF7EF;
+  /* Backgrounds — portfolio blush paper */
+  --bg:        #FDF6F8;
   --surface:   #FFFFFF;
-  --surface-2: #F4EEE2;
-  --surface-3: #EFE8D9;
+  --surface-2: #F8D7E4;
+  --surface-3: #F3DEE5;
 
   /* Borders */
-  --border:       #EAE2D2;
-  --border-light: #DED5C2;
+  --border:       #F3DEE5;
+  --border-light: #DDBBC9;
 
-  /* Text — warm, all AA-compliant */
-  --text-1: #23201A;
-  --text-2: #6F6857;
-  --text-3: #857C68;
+  /* Text — portfolio plum and muted rose */
+  --text-1: #33202A;
+  --text-2: #82626E;
+  --text-3: #82626E;
 
-  /* Primary — Bleu de France */
-  --accent:       #2A4A9C;
-  --accent-hover: #213C80;
-  --accent-light: #E7ECF8;
+  /* Primary — portfolio pink */
+  --accent:       #CE4379;
+  --accent-hover: #A83263;
+  --accent-light: #F8D7E4;
 
-  /* Verbs · mastery · success — forest green */
+  --accent-foreground: #FFFFFF;
+  --accent-text: #A83263;
+  --error-foreground: #FFFFFF;
+  --error-hover: #8D2852;
+  --course-foreground: #FFFFFF;
+  --course-a1: #A83263;
+  --course-a2: #88516E;
+  --course-b1: #765578;
+  --course-b2: #91602F;
+  --course-c1: #65435C;
+  --course-c2: #533047;
+
+  /* Correct answers keep green; study categories use a complementary plum. */
   --success:       #2E7A52;
   --success-light: #E2F0E7;
-  --verb:          #2E7A52;
-  --verb-soft:     #E2F0E7;
+  --verb:          #765578;
+  --verb-soft:     #F1E6F2;
 
-  /* Misses — calm coral (not alarm red) */
-  --error:         #BB5340;
-  --error-light:   #F7E6E1;
-  --notyet:        #BB5340;
-  --notyet-soft:   #F7E6E1;
+  /* Misses — portfolio berry */
+  --error:         #A83263;
+  --error-light:   #FBE8EF;
+  --notyet:        #A83263;
+  --notyet-soft:   #FBE8EF;
 
   /* Accent-only slip — amber */
-  --almost:        #A9792A;
-  --almost-soft:   #F4EBD7;
+  --almost:        #91602F;
+  --almost-soft:   #FDEBDC;
 
   /* Gender system — persistent learning aid */
   --masc:          #2F6E8E;
   --masc-soft:     #E2EEF3;
-  --fem:           #B5502C;
-  --fem-soft:      #F6E6DD;
+  --fem:           #A83263;
+  --fem-soft:      #FBE8EF;
 
   /* Spacing (4 px base) */
   --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px;
   --s-6:24px; --s-8:32px; --s-12:48px; --s-16:64px;
 
   /* Radii — softened */
-  --r-sm:   8px;
-  --r-md:   12px;
-  --r-lg:   16px;
-  --r-xl:   20px;
+  --r-sm:   6px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-xl:   16px;
   --r-pill: 999px;
 
-  /* Shadows — warm tint */
-  --shadow-sm: 0 1px 2px rgba(60,46,20,.06);
-  --shadow-md: 0 6px 20px -10px rgba(60,46,20,.22);
-  --shadow-lg: 0 20px 48px -20px rgba(60,46,20,.32);
+  /* Shadows — subtle plum tint */
+  --shadow-sm: 0 1px 2px rgba(51,32,42,.05);
+  --shadow-md: 0 6px 20px -10px rgba(206,67,121,.14);
+  --shadow-lg: 0 20px 48px -20px rgba(206,67,121,.20);
 
   /* Motion */
   --ease:   cubic-bezier(.2,.7,.2,1);
@@ -82,39 +96,51 @@
 
 /* ── Dark theme ── */
 [data-theme="dark"] {
-  --bg:        #15140F;
-  --surface:   #1C1A14;
-  --surface-2: #22201A;
-  --surface-3: #2A2820;
+  color-scheme: dark;
+  --accent-foreground: #271B21;
+  --accent-text: #F387B0;
+  --error-foreground: #271B21;
+  --error-hover: #F9CDDD;
+  --course-foreground: #271B21;
+  --course-a1: #F387B0;
+  --course-a2: #DDA1BF;
+  --course-b1: #C8ABD5;
+  --course-b2: #F0B47F;
+  --course-c1: #C09FAD;
+  --course-c2: #F7B3CC;
+  --bg:        #271B21;
+  --surface:   #332430;
+  --surface-2: #4E2C3C;
+  --surface-3: #46303D;
 
-  --border:       #322F26;
-  --border-light: #3C392E;
+  --border:       #4A3542;
+  --border-light: #705064;
 
-  --text-1: #F2ECDD;
-  --text-2: #B3AA95;
-  --text-3: #8A8270;
+  --text-1: #F9EDF2;
+  --text-2: #C09FAD;
+  --text-3: #C09FAD;
 
-  --accent:       #5C79C8;
-  --accent-hover: #7A93D8;
-  --accent-light: #1E2A4A;
+  --accent:       #F387B0;
+  --accent-hover: #F7B3CC;
+  --accent-light: #4E2C3C;
 
   --success:       #5AA67E;
   --success-light: #16271E;
-  --verb:          #5AA67E;
-  --verb-soft:     #16271E;
+  --verb:          #C8ABD5;
+  --verb-soft:     #3D2D45;
 
-  --error:         #D17A66;
-  --error-light:   #2A1610;
-  --notyet:        #D17A66;
-  --notyet-soft:   #2A1610;
+  --error:         #F7B3CC;
+  --error-light:   #4E2C3C;
+  --notyet:        #F7B3CC;
+  --notyet-soft:   #4E2C3C;
 
-  --almost:        #C99B53;
-  --almost-soft:   #2A2010;
+  --almost:        #F0B47F;
+  --almost-soft:   #463527;
 
   --masc:          #6FA5BE;
   --masc-soft:     #0E2230;
-  --fem:           #D58463;
-  --fem-soft:      #2A1810;
+  --fem:           #F387B0;
+  --fem-soft:      #4E2C3C;
 
   --shadow-sm: 0 1px 3px rgba(0,0,0,.30);
   --shadow-md: 0 6px 20px -10px rgba(0,0,0,.55);
@@ -138,6 +164,19 @@ body {
 a { color: inherit; text-decoration: none; }
 button { font-family: var(--font-ui); cursor: pointer; }
 
-/* Editorial headings use the serif */
-h1, h2, h3 { font-family: var(--font-serif); line-height: 1.2; font-weight: 500; }
+/* Portfolio typography; retain the legacy token for existing study views. */
+h1, h2, h3 { font-family: var(--font-serif); line-height: 1.2; font-weight: 600; letter-spacing: -0.03em; }
 h4 { font-family: var(--font-ui); line-height: 1.2; font-weight: 700; }
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+input, select, textarea { font-family: var(--font-ui); }
+input::placeholder, textarea::placeholder { color: var(--text-3); opacity: 1; }

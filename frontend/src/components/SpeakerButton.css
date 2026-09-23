@@ -21,9 +21,9 @@
 
 .speaker-btn:hover {
   background: var(--surface-2, var(--surface));
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .speaker-btn--active {
-  color: var(--accent);
+  color: var(--accent-text);
 }

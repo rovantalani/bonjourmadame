@@ -182,7 +182,7 @@
 }
 
 .vocab-step-status--complete  { color: var(--success); }
-.vocab-step-status--visited   { color: var(--accent); }
+.vocab-step-status--visited   { color: var(--accent-text); }
 .vocab-step-status--not-started { color: var(--text-3); }
 
 /* ── Mobile ── */

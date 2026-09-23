@@ -39,7 +39,7 @@
     width: 2.8rem;
     height: 2.8rem;
     border-radius: var(--r-md);
-    color: #fff;
+    color: var(--course-foreground);
     font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 0.03em;
@@ -51,7 +51,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-text);
     background: var(--accent-light);
     padding: 0.2rem 0.6rem;
     border-radius: var(--r-pill);
@@ -92,6 +92,6 @@
 .courses-cta {
     width: 100%;
     justify-content: center;
-    color: #fff !important;
+    color: var(--course-foreground) !important;
     margin-top: 0.25rem;
 }

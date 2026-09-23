@@ -193,7 +193,7 @@
 .vocq-stat-value {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .vocq-stat-label {

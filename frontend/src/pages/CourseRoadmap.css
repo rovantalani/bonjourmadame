@@ -33,7 +33,7 @@
     height: 36px;
     border-radius: 50%;
     background: var(--accent);
-    color: #fff;
+    color: var(--accent-foreground);
     flex-shrink: 0;
 }
 
@@ -49,7 +49,7 @@
     font-size: 0.78rem;
     font-weight: 500;
     font-family: var(--font-ui);
-    color: var(--accent);
+    color: var(--accent-text);
     opacity: 0.85;
 }
 
@@ -71,7 +71,7 @@
 
 .cr-continue__btn {
     background: var(--accent);
-    color: #fff;
+    color: var(--accent-foreground);
     border: none;
     border-radius: var(--r-md);
     padding: 0.55rem 1.1rem;
@@ -102,7 +102,7 @@
     width: 3.2rem;
     height: 3.2rem;
     border-radius: var(--r-md);
-    color: #fff;
+    color: var(--course-foreground);
     font-size: 0.9rem;
     font-weight: 800;
     letter-spacing: 0.03em;
@@ -151,7 +151,7 @@
 .cr-set-active-btn {
     font-size: 0.82rem;
     padding: 0.45rem 1rem;
-    color: #fff;
+    color: var(--course-foreground);
     flex-shrink: 0;
 }
 
@@ -241,7 +241,7 @@
 }
 
 .cr-node--visited {
-    color: var(--accent);
+    color: var(--accent-text);
     background: var(--accent-light);
     border-color: var(--accent);
 }
