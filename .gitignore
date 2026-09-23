@@ -1,6 +1,7 @@
 node_modules/
 .env
 .env.*
+!frontend/.env.example
 dist/
 .claude
 CLAUDE.md

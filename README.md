@@ -30,13 +30,21 @@ A French language learning web app with vocabulary quizzes, grammar lessons, and
 npm install
 
 # Install backend dependencies
-cd backend && npm install
+npm install --prefix backend
 
 # Install frontend dependencies
-cd frontend && npm install
+npm install --prefix frontend
 ```
 
 ### Run (development)
+
+From the project root, create the local frontend configuration:
+
+```bash
+cp frontend/.env.example frontend/.env.local
+```
+
+Keep `VITE_API_BASE` empty locally so `/api` requests use Vite's proxy to the backend on port 3001. Without this setting, requests include an `undefined` prefix and module content fails to load. The local configuration is ignored by Git. Restart Vite if it was already running and has not picked up the setting.
 
 ```bash
 # From the root — starts both backend and frontend concurrently
@@ -49,11 +57,11 @@ Or run them separately:
 # Terminal 1 — backend (port 3001)
 cd backend && npm run dev
 
-# Terminal 2 — frontend (port 5173)
+# Terminal 2 — frontend (port 3000)
 cd frontend && npm run dev
 ```
 
-Then open [http://localhost:5173](http://localhost:5173) in your browser.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
@@ -63,8 +71,7 @@ bonjourmadame/
 │   └── src/
 │       ├── index.ts          # Express server & API routes
 │       ├── data/
-│       │   ├── vocabulary.ts # Vocabulary word data
-│       │   └── curriculum.ts # Curriculum structure
+│       │   └── vocabulary.ts # Vocabulary word data (alongside grammar, verbs, phrases & reading)
 │       └── types/
 │           └── vocabulary.ts # Shared type definitions
 └── frontend/
