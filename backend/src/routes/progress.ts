@@ -101,28 +101,6 @@ router.post('/session', async (req: AuthRequest, res: Response): Promise<void> =
     res.json({ ok: true });
 });
 
-// ── POST /api/progress/lesson ─────────────────────────────────────────────────
-
-router.post('/lesson', async (req: AuthRequest, res: Response): Promise<void> => {
-    const { item_type, item_id, completed } = req.body as {
-        item_type?: string; item_id?: string; completed?: boolean;
-    };
-    if (!item_type || !item_id) {
-        res.status(400).json({ error: 'item_type and item_id are required' });
-        return;
-    }
-
-    await pool.query(`
-        INSERT INTO lesson_progress (user_id, item_type, item_id, completed, last_accessed)
-        VALUES ($1, $2, $3, $4, NOW())
-        ON CONFLICT (user_id, item_type, item_id) DO UPDATE SET
-            completed     = COALESCE($4, lesson_progress.completed),
-            last_accessed = NOW()
-    `, [req.userId, item_type, item_id, completed ?? false]);
-
-    res.json({ ok: true });
-});
-
 // ── GET /api/progress ─────────────────────────────────────────────────────────
 
 router.get('/', async (req: AuthRequest, res: Response): Promise<void> => {
