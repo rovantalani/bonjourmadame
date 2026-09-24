@@ -175,7 +175,7 @@ export default function VerbLearn() {
                 </button>
                 <button
                     className="btn vl-quiz-btn"
-                    style={{ backgroundColor: verb.color, color: '#fff' }}
+                    style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}
                     onClick={() => navigate(`/courses/${level}/verbs/${verbId}/quiz`)}
                 >
                     Take Quiz →
@@ -184,11 +184,11 @@ export default function VerbLearn() {
 
             <header className="vl-header">
                 <div className="vl-infinitive-row">
-                    <h1 style={{ color: verb.color }}>{verb.infinitive}</h1>
+                    <h1 style={{ color: 'var(--tag-verbs-text)' }}>{verb.infinitive}</h1>
                     <SpeakerButton text={verb.infinitive} lang={speakLang} />
                 </div>
                 <div className="vl-badges">
-                    <span className="level-badge" style={{ backgroundColor: verb.color }}>
+                    <span className="level-badge" style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}>
                         {verb.type}
                     </span>
                     {isReview && (
@@ -204,7 +204,7 @@ export default function VerbLearn() {
                 <div className="table-scroll">
                     <table className="conj-table">
                         <thead>
-                            <tr style={{ backgroundColor: verb.color }}>
+                            <tr style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}>
                                 <th>—</th>
                                 {tenses.map(t => (
                                     <th key={t.key} style={!t.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}>
@@ -222,7 +222,7 @@ export default function VerbLearn() {
                                         key={row.sujet}
                                         className={i % 2 === 0 ? 'row-even' : 'row-odd'}
                                     >
-                                        <td className="sujet-cell" style={{ color: verb.color }}>
+                                        <td className="sujet-cell" style={{ color: 'var(--tag-verbs-text)' }}>
                                             {row.sujet}
                                         </td>
                                         {tenses.map(t => (

@@ -39,7 +39,7 @@
     width: 2.8rem;
     height: 2.8rem;
     border-radius: var(--r-md);
-    color: var(--course-foreground);
+    color: var(--text-1);
     font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 0.03em;
@@ -85,13 +85,13 @@
 }
 
 .courses-bar {
-    height: 6px;
+    height: 3px;
     width: 100%;
 }
 
 .courses-cta {
     width: 100%;
     justify-content: center;
-    color: var(--course-foreground) !important;
+
     margin-top: 0.25rem;
 }

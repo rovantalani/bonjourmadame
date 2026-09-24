@@ -283,7 +283,7 @@ export default function VerbQuiz() {
                 <div className="vq-complete card">
                     <div className="vq-complete-emoji"><CheckCircleIcon size={52} style={{ color: 'var(--success)' }} /></div>
                     <h1 className="vq-complete-title">{isENUI ? 'Quiz terminé !' : 'Quiz Complete!'}</h1>
-                    <p className="vq-complete-verb" style={{ color: verb.color }}>
+                    <p className="vq-complete-verb" style={{ color: 'var(--tag-verbs-text)' }}>
                         <em>{verb.infinitive} — {verb.translation}</em>
                     </p>
                     {isReviewVerb && (
@@ -294,15 +294,15 @@ export default function VerbQuiz() {
 
                     <div className="vq-stats-grid">
                         <div className="vq-stat">
-                            <span className="vq-stat-value" style={{ color: verb.color }}>{correctCount}</span>
+                            <span className="vq-stat-value" style={{ color: 'var(--tag-verbs-text)' }}>{correctCount}</span>
                             <span className="vq-stat-label">Score</span>
                         </div>
                         <div className="vq-stat">
-                            <span className="vq-stat-value" style={{ color: verb.color }}>{totalCells}</span>
+                            <span className="vq-stat-value" style={{ color: 'var(--tag-verbs-text)' }}>{totalCells}</span>
                             <span className="vq-stat-label">Total</span>
                         </div>
                         <div className="vq-stat">
-                            <span className="vq-stat-value" style={{ color: verb.color }}>{accuracy}%</span>
+                            <span className="vq-stat-value" style={{ color: 'var(--tag-verbs-text)' }}>{accuracy}%</span>
                             <span className="vq-stat-label">{isENUI ? 'Précision' : 'Accuracy'}</span>
                         </div>
                     </div>
@@ -311,7 +311,7 @@ export default function VerbQuiz() {
                     <div className="vq-complete-actions">
                         <button
                             className="btn"
-                            style={{ backgroundColor: verb.color, color: '#fff' }}
+                            style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}
                             onClick={handleRestart}
                         >
                             {isENUI ? 'Réessayer' : 'Try Again'}
@@ -352,7 +352,7 @@ export default function VerbQuiz() {
                 </button>
                 <div className="vq-center-info">
                     <div className="vq-verb-name-row">
-                        <span className="vq-verb-name" style={{ color: verb.color }}>
+                        <span className="vq-verb-name" style={{ color: 'var(--tag-verbs-text)' }}>
                             {verb.infinitive}
                         </span>
                         <SpeakerButton text={verb.infinitive} lang={isENUI ? 'en-US' : 'fr-FR'} />
@@ -373,7 +373,7 @@ export default function VerbQuiz() {
             <div className="progress-track vq-progress">
                 <div
                     className="progress-fill"
-                    style={{ width: `${progressPct}%`, backgroundColor: verb.color }}
+                    style={{ width: `${progressPct}%`, backgroundColor: 'var(--tag-verbs-text)' }}
                 />
             </div>
 
@@ -385,7 +385,7 @@ export default function VerbQuiz() {
                             {isENUI ? 'Révision' : 'Review'}
                         </span>
                     )}
-                    <h2 className="vq-tense-title" style={{ color: verb.color }}>
+                    <h2 className="vq-tense-title" style={{ color: 'var(--tag-verbs-text)' }}>
                         {isENUI ? currentTense.labelFR : currentTense.label}
                     </h2>
                     {isReview && (
@@ -410,7 +410,7 @@ export default function VerbQuiz() {
                                     key={row.sujet}
                                     className={`vq-row${submitted && result ? ` vq-row--${result}` : ''}`}
                                 >
-                                    <td className="vq-sujet" style={{ color: verb.color }}>
+                                    <td className="vq-sujet" style={{ color: 'var(--tag-verbs-text)' }}>
                                         {displaySujet(row.sujet, expected)}
                                     </td>
                                     <td className="vq-answer-cell">
@@ -465,7 +465,7 @@ export default function VerbQuiz() {
                     {!submitted ? (
                         <button
                             className="btn vq-submit-btn"
-                            style={{ backgroundColor: verb.color, color: '#fff' }}
+                            style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}
                             onClick={handleSubmit}
                         >
                             {isENUI ? 'Valider' : 'Submit'}
@@ -473,7 +473,7 @@ export default function VerbQuiz() {
                     ) : (
                         <button
                             className="btn vq-submit-btn"
-                            style={{ backgroundColor: verb.color, color: '#fff' }}
+                            style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}
                             onClick={handleNext}
                         >
                             {phase === 'quiz' && tenseIndex < TENSES.length - 1

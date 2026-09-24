@@ -84,12 +84,12 @@ export default function PhraseDetail() {
             <div className="phrase-detail-header card">
                 <span
                     className="phrase-detail-icon-circle"
-                    style={{ backgroundColor: `${category.color}1F` }}
+                    style={{ backgroundColor: 'var(--tag-phrases-bg)' }}
                 >
                     <span className="phrase-detail-icon">{category.icon}</span>
                 </span>
                 <div className="phrase-detail-header-text">
-                    <h1 style={{ color: category.color }}>{category.title}</h1>
+                    <h1 style={{ color: 'var(--tag-phrases-text)' }}>{category.title}</h1>
                     <p className="phrase-detail-description">{category.description}</p>
                 </div>
             </div>
@@ -99,7 +99,7 @@ export default function PhraseDetail() {
                     <div
                         key={phrase.id}
                         className="phrase-item"
-                        style={{ borderLeftColor: category.color }}
+                        style={{ borderLeftColor: 'var(--tag-phrases-text)' }}
                     >
                         <div className="phrase-fr-row">
                             <p className="phrase-fr">{phrase.french}</p>

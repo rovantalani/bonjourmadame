@@ -34,19 +34,40 @@
   --accent-text: #A83263;
   --error-foreground: #FFFFFF;
   --error-hover: #8D2852;
-  --course-foreground: #FFFFFF;
-  --course-a1: #A83263;
-  --course-a2: #88516E;
-  --course-b1: #765578;
-  --course-b2: #91602F;
-  --course-c1: #65435C;
-  --course-c2: #533047;
+  /* Course level pairs stay consistent across themes. */
+  --level-a1-bg: #FBE4EC; --level-a1-text: #A83263;
+  --course-a1: var(--level-a1-bg);
+  --level-a2-bg: #F5C7D9; --level-a2-text: #8F2E58;
+  --course-a2: var(--level-a2-bg);
+  --level-b1-bg: #E896B4; --level-b1-text: #5C1B39;
+  --course-b1: var(--level-b1-bg);
+  --level-b2-bg: #D9548A; --level-b2-text: #FFEFF5;
+  --course-b2: var(--level-b2-bg);
+  --level-c1-bg: #A83263; --level-c1-text: #FBE4EC;
+  --course-c1: var(--level-c1-bg);
+  --level-c2-bg: #6E2148; --level-c2-text: #F5C7D9;
+  --course-c2: var(--level-c2-bg);
+
+  /* Content palette; main modules and lecture subtypes. */
+  --tag-vocabulary-bg: #F8D7E4; --tag-vocabulary-text: #A83263;
+  --tag-vocabulary-bg-dark: #4E2C3C; --tag-vocabulary-text-dark: #F4C2D6;
+  --tag-grammar-bg: #F6E2C8; --tag-grammar-text: #AA7A52;
+  --tag-grammar-bg-dark: #3D2E23; --tag-grammar-text-dark: #E6BC97;
+  --tag-phrases-bg: #FFF3C4; --tag-phrases-text: #8A7A2E;
+  --tag-phrases-bg-dark: #4A4222; --tag-phrases-text-dark: #F0E0A0;
+  --tag-lectures-bg: #F2E6BC; --tag-lectures-text: #8F7638;
+  --tag-lectures-bg-dark: #3A3320; --tag-lectures-text-dark: #E8D89A;
+
+  --tag-reading-bg: #F8F0CE; --tag-reading-text: #A08E4E;
+  --tag-reading-bg-dark: #3A3422; --tag-reading-text-dark: #E6D99C;
+  --tag-verbs-bg: #D0E8E4; --tag-verbs-text: #2E7A6C;
+  --tag-verbs-bg-dark: #1F3A36; --tag-verbs-text-dark: #8AD4C4;
 
   /* Correct answers keep green; study categories use a complementary plum. */
   --success:       #2E7A52;
   --success-light: #E2F0E7;
-  --verb:          #765578;
-  --verb-soft:     #F1E6F2;
+  --verb: var(--tag-verbs-text);
+  --verb-soft: var(--tag-verbs-bg);
 
   /* Misses — portfolio berry */
   --error:         #A83263;
@@ -101,13 +122,12 @@
   --accent-text: #F387B0;
   --error-foreground: #271B21;
   --error-hover: #F9CDDD;
-  --course-foreground: #271B21;
-  --course-a1: #F387B0;
-  --course-a2: #DDA1BF;
-  --course-b1: #C8ABD5;
-  --course-b2: #F0B47F;
-  --course-c1: #C09FAD;
-  --course-c2: #F7B3CC;
+  --tag-reading-bg: var(--tag-reading-bg-dark); --tag-reading-text: var(--tag-reading-text-dark);
+  --tag-verbs-bg: var(--tag-verbs-bg-dark); --tag-verbs-text: var(--tag-verbs-text-dark);
+  --tag-vocabulary-bg: var(--tag-vocabulary-bg-dark); --tag-vocabulary-text: var(--tag-vocabulary-text-dark);
+  --tag-grammar-bg: var(--tag-grammar-bg-dark); --tag-grammar-text: var(--tag-grammar-text-dark);
+  --tag-phrases-bg: var(--tag-phrases-bg-dark); --tag-phrases-text: var(--tag-phrases-text-dark);
+  --tag-lectures-bg: var(--tag-lectures-bg-dark); --tag-lectures-text: var(--tag-lectures-text-dark);
   --bg:        #271B21;
   --surface:   #332430;
   --surface-2: #4E2C3C;
@@ -126,8 +146,8 @@
 
   --success:       #5AA67E;
   --success-light: #16271E;
-  --verb:          #C8ABD5;
-  --verb-soft:     #3D2D45;
+  --verb: var(--tag-verbs-text);
+  --verb-soft: var(--tag-verbs-bg);
 
   --error:         #F7B3CC;
   --error-light:   #4E2C3C;

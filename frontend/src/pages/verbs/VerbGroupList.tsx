@@ -112,11 +112,11 @@ export default function VerbGroupList() {
             <header className="vgl-header">
                 <div
                     className="vgl-icon"
-                    style={{ backgroundColor: `${group.color}1F` }}
+                    style={{ backgroundColor: 'var(--tag-verbs-bg)' }}
                 >
                     {group.icon}
                 </div>
-                <h1 style={{ color: group.color }}>{group.title}</h1>
+                <h1 style={{ color: 'var(--tag-verbs-text)' }}>{group.title}</h1>
                 <p className="vgl-subtitle">{group.description}</p>
             </header>
 
@@ -139,7 +139,7 @@ export default function VerbGroupList() {
                             <div className="vgl-type-header">
                                 <span
                                     className="vgl-type-badge level-badge"
-                                    style={{ backgroundColor: group.color }}
+                                    style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}
                                 >
                                     {type}
                                 </span>
@@ -151,7 +151,7 @@ export default function VerbGroupList() {
                                 <div key={verb.id} className="verb-card">
                                     <span
                                         className="level-badge"
-                                        style={{ backgroundColor: verb.color }}
+                                        style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}
                                     >
                                         {verb.type}
                                     </span>
@@ -164,8 +164,8 @@ export default function VerbGroupList() {
                                         <button
                                             className="btn"
                                             style={{
-                                                border: `1.5px solid ${verb.color}`,
-                                                color: verb.color,
+                                                border: '1.5px solid var(--tag-verbs-text)',
+                                                color: 'var(--tag-verbs-text)',
                                                 background: 'var(--surface)',
                                                 padding: '0.45rem 0.9rem',
                                                 fontSize: '0.82rem',
@@ -177,8 +177,7 @@ export default function VerbGroupList() {
                                         <button
                                             className="btn"
                                             style={{
-                                                backgroundColor: verb.color,
-                                                color: '#fff',
+                                                backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)',
                                                 padding: '0.45rem 0.9rem',
                                                 fontSize: '0.82rem',
                                             }}

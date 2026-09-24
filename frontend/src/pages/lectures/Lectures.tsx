@@ -1,3 +1,4 @@
+import ModuleTags from '../../components/ModuleTags';
 import ProgressFlower from '../../components/ProgressFlower';
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -10,9 +11,9 @@ import type { SVGProps } from 'react';
 import './Lectures.css';
 
 const TYPE_COLOR: Record<LectureType, string> = {
-    grammar:    'var(--verb)',
-    phrases:    'var(--almost)',
-    reading:    'var(--masc)',
+    grammar:    'var(--tag-grammar-text)',
+    phrases:    'var(--tag-phrases-text)',
+    reading:    'var(--tag-reading-text)',
 };
 
 type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
@@ -55,7 +56,7 @@ export default function Lectures() {
                         key={f}
                         type="button"
                         className={`lectures-filter-pill${filter === f ? ' lectures-filter-pill--active' : ''}`}
-                        style={filter === f && f !== 'all' ? { backgroundColor: TYPE_COLOR[f], borderColor: TYPE_COLOR[f] } : undefined}
+                        style={filter === f && f !== 'all' ? { backgroundColor: `var(--tag-${f}-bg)`, borderColor: TYPE_COLOR[f], color: `var(--tag-${f}-text)` } : undefined}
                         onClick={() => setFilter(f)}
                     >
                         {f !== 'all' && (() => { const Icon = TYPE_ICON[f]; return <Icon size={14} style={{ verticalAlign: 'middle', marginRight: 4 }} />; })()}
@@ -71,8 +72,6 @@ export default function Lectures() {
                     {lectureSteps.map(step => {
                         const status = getStepStatus(step, level);
                         const color = TYPE_COLOR[step.type];
-                        const Icon  = TYPE_ICON[step.type];
-                        const typeLabel = t.roadmap.types[step.type];
 
                         return (
                             <button
@@ -82,13 +81,9 @@ export default function Lectures() {
                                 onClick={() => { markStepVisited(step.id); navigate(`/courses/${level}${step.path}`); }}
                                 type="button"
                             >
-                                <span className="lecture-icon" style={{ color }}><Icon size={18} /></span>
-
                                 <div className="lecture-body">
                                     <span className="lecture-title">{step.title}</span>
-                                    <span className="lecture-type" style={{ color }}>
-                                        {typeLabel}
-                                    </span>
+                                    <ModuleTags step={step} showModule={false} />
                                 </div>
 
                                 <ProgressFlower status={status} />
