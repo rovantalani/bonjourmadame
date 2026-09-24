@@ -19,7 +19,6 @@ import PhraseDetail from './pages/lectures/phrases/PhraseDetail';
 import PhraseQuiz from './pages/lectures/phrases/PhraseQuiz';
 import ReviewQueue from './pages/vocabulary/ReviewQueue';
 import ReadingPassage from './pages/lectures/reading/ReadingPassage';
-import Stats from './pages/Stats';
 import Courses from './pages/Courses';
 import CourseRoadmap from './pages/CourseRoadmap';
 import Verbs from './pages/verbs/Verbs';
@@ -68,7 +67,7 @@ function AppShell() {
                     <Route path="/courses/:level/lectures/phrases/:categoryId/quiz" element={<PhraseQuiz />} />
                     <Route path="/courses/:level/lectures/reading/:moduleId"        element={<ReadingPassage />} />
                     <Route path="/review-queue"                                     element={<ReviewQueue />} />
-                    <Route path="/stats"                                            element={<Stats />} />
+                    <Route path="/stats"                                            element={<Navigate to="/" replace />} />
                     <Route path="/settings"                                         element={<Settings />} />
                     <Route path="/login"                                            element={<Login />} />
                     <Route path="/register"                                         element={<Register />} />

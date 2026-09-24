@@ -1,3 +1,5 @@
+import { useLearningVisit } from '../../hooks/useLearningVisit';
+import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { loadLearningMode } from '../../utils/settings';
@@ -184,6 +186,8 @@ export default function VerbQuiz() {
         }
     }, [tenseIndex, reviewStep, submitted]);
 
+    useLearningVisit(verb !== null);
+
     if (!verb) {
         return (
             <main className="page">
@@ -212,7 +216,6 @@ export default function VerbQuiz() {
         if (!verb || submitted || !currentTense) return;
 
         const results: Record<string, CellResult> = {};
-        const wrongSubjects: string[] = [];
         let correct = 0;
 
         for (const row of verb.rows) {
@@ -224,41 +227,35 @@ export default function VerbQuiz() {
             const isCorrect = normalize(userAnswer) === normalize(expected);
             results[row.sujet] = isCorrect ? 'correct' : 'wrong';
             if (isCorrect) correct++;
-            else wrongSubjects.push(row.sujet);
         }
 
         setCellResults(results);
         setSubmitted(true);
 
-        if (phase === 'quiz') {
-            setCorrectCount(prev => prev + correct);
-            if (wrongSubjects.length > 0) {
-                setWrongByTense(prev => ({ ...prev, [activeTenseIdx]: wrongSubjects }));
-            }
-        }
+        setCorrectCount(prev => prev + correct);
     };
 
     const handleNext = () => {
+        if (!submitted) return;
+        const remaining = { ...wrongByTense };
+        const missed = Object.entries(cellResults).filter(([, result]) => result === 'wrong').map(([subject]) => subject);
+        if (missed.length) remaining[activeTenseIdx] = missed;
+        else delete remaining[activeTenseIdx];
+        setWrongByTense(remaining);
         setUserAnswers({});
         setSubmitted(false);
         setCellResults({});
 
-        if (phase === 'quiz') {
-            if (tenseIndex < TENSES.length - 1) {
-                setTenseIndex(prev => prev + 1);
-            } else {
-                const queue = Object.keys(wrongByTense).map(Number).sort((a, b) => a - b);
-                if (queue.length > 0) {
-                    setReviewQueue(queue);
-                    setReviewStep(0);
-                    setPhase('review');
-                } else {
-                    setPhase('complete');
-                }
-            }
-        } else if (phase === 'review') {
-            if (reviewStep < reviewQueue.length - 1) {
-                setReviewStep(prev => prev + 1);
+        if (phase === 'quiz' && tenseIndex < TENSES.length - 1) {
+            setTenseIndex(prev => prev + 1);
+        } else if (phase === 'review' && reviewStep < reviewQueue.length - 1) {
+            setReviewStep(prev => prev + 1);
+        } else {
+            const queue = Object.keys(remaining).map(Number).sort((a, b) => a - b);
+            if (queue.length) {
+                setReviewQueue(queue);
+                setReviewStep(0);
+                setPhase('review');
             } else {
                 setPhase('complete');
             }
@@ -310,6 +307,7 @@ export default function VerbQuiz() {
                         </div>
                     </div>
 
+                    <LearningCompletion quizPassed />
                     <div className="vq-complete-actions">
                         <button
                             className="btn"
@@ -482,6 +480,8 @@ export default function VerbQuiz() {
                                 ? (isENUI ? 'Suivant →' : 'Next →')
                                 : phase === 'review' && reviewStep < reviewQueue.length - 1
                                 ? (isENUI ? 'Suivant →' : 'Next →')
+                                : Object.values(cellResults).includes('wrong') || Object.entries(wrongByTense).some(([i, subjects]) => Number(i) !== activeTenseIdx && subjects.length > 0)
+                                ? (isENUI ? 'Revoir les erreurs →' : 'Review missed answers →')
                                 : (isENUI ? 'Terminer ✓' : 'Finish ✓')}
                         </button>
                     )}

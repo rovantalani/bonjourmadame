@@ -31,9 +31,9 @@ export default function ProgressImportBanner() {
         const history = loadHistory();
 
         await Promise.allSettled([
-            ...Object.entries(mastery).map(([word_id, m]) => {
+            ...Object.entries(mastery).filter(([, m]) => typeof m.known === 'boolean').map(([word_id, m]) => {
                 const module_id = word_id.split(':')[0];
-                return syncAnswerToApi(word_id, module_id, m.level >= 3, m.level);
+                return syncAnswerToApi(word_id, module_id, m.known === true);
             }),
             ...history.map(s => syncSessionToApi(s.moduleId, s.sessionType, s.score, s.total)),
         ]);

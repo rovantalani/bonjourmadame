@@ -1,7 +1,7 @@
+import ProgressFlower from '../../components/ProgressFlower';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { getModuleMastery } from '../../utils/progress';
 import { getStepStatus } from '../../utils/courseProgress';
 import { useCourses } from '../../utils/modeHelpers';
 import { useT } from '../../utils/i18n';
@@ -58,13 +58,8 @@ export default function Vocabulary() {
                         const module = moduleMap.get(step.contentId);
                         if (!module) return null;
 
-                        const status = getStepStatus(step);
+                        const status = getStepStatus(step, level);
                         const hasReading = READING_IDS.has(module.id);
-                        const { mastered, practiced } = getModuleMastery(module.id);
-                        const masteryPct = module.wordCount > 0
-                            ? Math.round((mastered / module.wordCount) * 100)
-                            : 0;
-
                         const cardInner = (
                             <>
                                 <div className="vocab-card-top-row">
@@ -74,27 +69,12 @@ export default function Vocabulary() {
                                     >
                                         <span className="vocab-card-icon">{module.icon}</span>
                                     </span>
-                                    <span className={`vocab-step-status vocab-step-status--${status}`}>
-                                        {status === 'complete' ? '✓' : status === 'visited' ? '◑' : '○'}
-                                    </span>
+                                    <ProgressFlower status={status} />
                                 </div>
                                 <span className="vocab-card-title">{module.title}</span>
                                 <div className="vocab-card-footer">
                                     <span className="vocab-card-badge">{t.vocabulary.words(module.wordCount)}</span>
-                                    {practiced > 0 && (
-                                        <span className="vocab-card-mastery" style={{ color: module.color }}>
-                                            {t.vocabulary.mastered(mastered, module.wordCount)}
-                                        </span>
-                                    )}
                                 </div>
-                                {practiced > 0 && (
-                                    <div className="progress-track vocab-card-progress">
-                                        <div
-                                            className="progress-fill"
-                                            style={{ width: `${masteryPct}%`, backgroundColor: module.color }}
-                                        />
-                                    </div>
-                                )}
                             </>
                         );
 

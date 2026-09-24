@@ -1,13 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useLearningVisit } from '../../hooks/useLearningVisit';
+import LearningCompletion from '../../components/LearningCompletion';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { addWrongWords, loadShufflePref, saveShufflePref } from '../../utils/wordQueue';
-import { recordAnswer, recordSession, loadMastery, syncAnswerToApi, syncSessionToApi } from '../../utils/progress';
+import { addWrongWords, removeCorrectWord, loadShufflePref, saveShufflePref } from '../../utils/wordQueue';
+import { recordAnswer, recordSession, syncAnswerToApi, syncSessionToApi } from '../../utils/progress';
 import { useAuth } from '../../context/AuthContext';
 import { isAnswerCorrect } from '../../utils/answerValidator';
-import { loadQuizDirection, type QuizDirection } from '../../utils/settings';
+import { loadLearningMode, loadQuizDirection, type QuizDirection } from '../../utils/settings';
 import { useT } from '../../utils/i18n';
 import SpeakerButton from '../../components/SpeakerButton';
-import { StarIcon, CheckCircleIcon } from '../../components/icons/index';
+import { CheckCircleIcon } from '../../components/icons/index';
 import './VocabularyQuiz.css';
 
 interface Word {
@@ -31,56 +33,44 @@ export default function VocabularyQuiz() {
     const [isReviewMode, setIsReviewMode] = useState(false);
     const [quizComplete, setQuizComplete] = useState(false);
     const [shuffle, setShuffle] = useState<boolean>(loadShufflePref);
-    const [allMastered, setAllMastered] = useState(false);
+    const [loadError, setLoadError] = useState(false);
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
     const t = useT();
 
-    const firstRoundWrong = useRef<Word[]>([]);
-
-    // Allow Enter to advance past the reveal screen without re-clicking
-    useEffect(() => {
-        if (!showAnswer) return;
-        const onKey = (e: KeyboardEvent) => { if (e.key === 'Enter') handleNext(); };
-        window.addEventListener('keydown', onKey);
-        return () => window.removeEventListener('keydown', onKey);
-    }, [showAnswer]); // eslint-disable-line react-hooks/exhaustive-deps
-
-    const getUnmastered = (data: Word[]) => {
-        const mastery = loadMastery();
-        return data.filter(w => (mastery[`${moduleId}:${w.id}`]?.level ?? 0) < 3);
-    };
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_BASE}/api/vocabulary/${moduleId}`)
-            .then(res => res.json())
+        let cancelled = false;
+        const lang = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
+        fetch(`${import.meta.env.VITE_API_BASE}/api/vocabulary/${moduleId}${lang}`)
+            .then(res => { if (!res.ok) throw new Error('Load failed'); return res.json(); })
             .then((data: Word[]) => {
+                if (cancelled) return;
+                if (!Array.isArray(data) || !data.length) throw new Error('Empty quiz');
                 setAllWords(data);
-                const unmastered = getUnmastered(data);
-                if (unmastered.length === 0) {
-                    setAllMastered(true);
-                } else {
-                    const ordered = shuffle ? [...unmastered].sort(() => Math.random() - 0.5) : unmastered;
-                    setWords(ordered);
-                }
+                setWords(shuffle ? [...data].sort(() => Math.random() - 0.5) : data);
             })
-            .catch(() => setAllMastered(true)); // surface backend error as "nothing to quiz"
+            .catch(() => { if (!cancelled) setLoadError(true); });
+        return () => { cancelled = true; };
     }, [moduleId]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const currentWord = words[currentIndex];
 
     const handleSubmit = () => {
-        if (!userAnswer.trim()) return;
+        if (!userAnswer.trim() || showAnswer || quizComplete) return;
 
         const target = quizDir === 'fr-en' ? currentWord.english : currentWord.french;
         const isCorrect = isAnswerCorrect(userAnswer, target);
 
-        const mastery = recordAnswer(moduleId!, currentWord.id, isCorrect);
-        if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, isCorrect, mastery.level);
+        recordAnswer(moduleId!, currentWord.id, isCorrect);
+        if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, isCorrect);
 
         if (isCorrect) {
-            setCorrectCount(correctCount + 1);
-            handleNext();
+            const score = correctCount + 1;
+            setCorrectCount(score);
+            removeCorrectWord(moduleId!, currentWord.id);
+            handleNext(score);
         } else {
+            addWrongWords(moduleId!, [currentWord]);
             setShowAnswer(true);
             if (!wrongWords.find(w => w.id === currentWord.id)) {
                 setWrongWords([...wrongWords, currentWord]);
@@ -89,115 +79,66 @@ export default function VocabularyQuiz() {
     };
 
     const handleSkip = () => {
-        const mastery = recordAnswer(moduleId!, currentWord.id, false);
-        if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, false, mastery.level);
+        if (showAnswer || quizComplete) return;
+        addWrongWords(moduleId!, [currentWord]);
+        recordAnswer(moduleId!, currentWord.id, false);
+        if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, false);
         setShowAnswer(true);
         if (!wrongWords.find(w => w.id === currentWord.id)) {
             setWrongWords([...wrongWords, currentWord]);
         }
     };
 
-    const handleNext = () => {
+    const handleNext = (score = correctCount) => {
         setUserAnswer('');
         setShowAnswer(false);
-
         if (currentIndex < words.length - 1) {
             setCurrentIndex(currentIndex + 1);
+        } else if (wrongWords.length > 0) {
+            setIsReviewMode(true);
+            setWords(wrongWords);
+            setCurrentIndex(0);
+            setWrongWords([]);
         } else {
-            if (wrongWords.length > 0 && !isReviewMode) {
-                firstRoundWrong.current = wrongWords;
-                setIsReviewMode(true);
-                setWords(wrongWords);
-                setCurrentIndex(0);
-                setWrongWords([]);
-            } else {
-                if (!isReviewMode && wrongWords.length === 0) {
-                    firstRoundWrong.current = wrongWords;
-                }
-                if (firstRoundWrong.current.length > 0 && moduleId) {
-                    addWrongWords(moduleId, firstRoundWrong.current);
-                }
-                const sessionType = isReviewMode ? 'review' : 'vocabulary';
-                recordSession(moduleId!, sessionType, correctCount, allWords.length);
-                if (user) syncSessionToApi(moduleId!, sessionType, correctCount, allWords.length);
-                setQuizComplete(true);
-            }
+            recordSession(moduleId!, 'vocabulary', score, allWords.length);
+            if (user) syncSessionToApi(moduleId!, 'vocabulary', score, allWords.length);
+            setQuizComplete(true);
         }
     };
 
+    const restart = (shuffled: boolean) => {
+        setWords(shuffled ? [...allWords].sort(() => Math.random() - 0.5) : allWords);
+        setCurrentIndex(0);
+        setUserAnswer('');
+        setShowAnswer(false);
+        setWrongWords([]);
+        setCorrectCount(0);
+        setIsReviewMode(false);
+        setQuizComplete(false);
+    };
+    const handleRestart = () => restart(shuffle);
     const handleToggleShuffle = () => {
         const next = !shuffle;
         setShuffle(next);
         saveShufflePref(next);
-        const unmastered = getUnmastered(allWords);
-        const base = unmastered.length > 0 ? unmastered : allWords;
-        const ordered = next ? [...base].sort(() => Math.random() - 0.5) : base;
-        setWords(ordered);
-        setCurrentIndex(0);
-        setUserAnswer('');
-        setShowAnswer(false);
-        setWrongWords([]);
-        setCorrectCount(0);
-        setIsReviewMode(false);
-        firstRoundWrong.current = [];
-    };
-
-    const handleRestart = () => {
-        const unmastered = getUnmastered(allWords);
-        if (unmastered.length === 0) {
-            setAllMastered(true);
-            setQuizComplete(false);
-            return;
-        }
-        const ordered = shuffle ? [...unmastered].sort(() => Math.random() - 0.5) : unmastered;
-        setWords(ordered);
-        setCurrentIndex(0);
-        setUserAnswer('');
-        setShowAnswer(false);
-        setWrongWords([]);
-        setCorrectCount(0);
-        setIsReviewMode(false);
-        setQuizComplete(false);
-        firstRoundWrong.current = [];
-    };
-
-    const handlePracticeAll = () => {
-        setAllMastered(false);
-        const ordered = shuffle ? [...allWords].sort(() => Math.random() - 0.5) : allWords;
-        setWords(ordered);
-        setCurrentIndex(0);
-        setUserAnswer('');
-        setShowAnswer(false);
-        setWrongWords([]);
-        setCorrectCount(0);
-        setIsReviewMode(false);
-        setQuizComplete(false);
-        firstRoundWrong.current = [];
+        restart(next);
     };
 
     const handleExit = () => {
         navigate(`/courses/${level}/vocabulary`);
     };
 
-    if (allMastered) {
-        return (
-            <main className="page">
-                <div className="vocq-complete card">
-                    <div className="vocq-complete-emoji"><StarIcon size={52} style={{ color: 'var(--accent)' }} /></div>
-                    <h1 className="vocq-complete-title">{t.quiz.allMastered}</h1>
-                    <p className="vocq-complete-subtitle">{t.quiz.allMasteredSubtitle}</p>
-                    <div className="vocq-complete-actions">
-                        <button className="btn btn-primary" onClick={handlePracticeAll}>
-                            {t.quiz.practiceAll}
-                        </button>
-                        <button className="btn btn-secondary" onClick={handleExit}>
-                            {t.quiz.backToVocabulary}
-                        </button>
-                    </div>
-                </div>
-            </main>
-        );
-    }
+    // Allow Enter to advance past the reveal screen without re-clicking
+    useEffect(() => {
+        if (!showAnswer) return;
+        const onKey = (e: KeyboardEvent) => { if (e.key === 'Enter' && !e.repeat && !(e.target instanceof HTMLButtonElement)) { e.preventDefault(); handleNext(); } };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [showAnswer]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    useLearningVisit(allWords.length > 0);
+
+    if (loadError) return <main className="page"><p>{t.quiz.loadError}</p></main>;
 
     if (!currentWord && !quizComplete) {
         return (
@@ -233,6 +174,7 @@ export default function VocabularyQuiz() {
                         </div>
                     </div>
 
+                    <LearningCompletion quizPassed />
                     <div className="vocq-complete-actions">
                         <button className="btn btn-primary" onClick={handleRestart}>
                             {t.quiz.tryAgain}
@@ -333,7 +275,7 @@ export default function VocabularyQuiz() {
                         {userAnswer && (
                             <p className="vocq-wrong-answer">{userAnswer}</p>
                         )}
-                        <button className="btn btn-primary" onClick={handleNext}>
+                        <button className="btn btn-primary" onClick={() => handleNext()}>
                             {t.quiz.nextWord}
                         </button>
                     </div>

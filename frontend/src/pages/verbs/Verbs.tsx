@@ -1,3 +1,5 @@
+import ProgressFlower from '../../components/ProgressFlower';
+import { getContentStatus } from '../../utils/courseProgress';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../../utils/i18n';
@@ -80,7 +82,10 @@ function VerbGrid({ verbs, level, navigate, learnLabel, quizLabel }: {
         <div className="verb-grid">
             {verbs.map(verb => (
                 <div key={verb.id} className="verb-card">
-                    <h2 className="verb-infinitive">{verb.infinitive}</h2>
+                    <div className="verb-card-heading">
+                                        <h2 className="verb-infinitive">{verb.infinitive}</h2>
+                                        <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${verb.id}/learn`)} />
+                                    </div>
                     <p className="verb-translation">{verb.translation}</p>
                     <div className="verb-actions">
                         <button
@@ -180,6 +185,7 @@ export default function Verbs() {
                                 <span className="verbs-helper-icon" style={{ backgroundColor: v.bg, color: v.color }}><v.Icon size={20} /></span>
                                 <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
                                 <span className="verbs-helper-translation">{v.translation}</span>
+                                <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${v.id}/table`)} />
                             </button>
                         ))}
                     </div>

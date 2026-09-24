@@ -104,21 +104,6 @@
     letter-spacing: 0.06em;
 }
 
-.lecture-pips {
-    display: flex;
-    gap: 4px;
-    flex-shrink: 0;
-    align-items: center;
-}
-
-.lecture-pip {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    transition: background var(--t-fast) var(--ease);
-}
-
 .lecture-arrow {
     font-size: 1.3rem;
     color: var(--text-3);

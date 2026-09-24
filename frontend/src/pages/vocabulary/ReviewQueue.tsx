@@ -10,7 +10,7 @@ import {
     type QueuedWord,
 } from '../../utils/wordQueue';
 import { isAnswerCorrect } from '../../utils/answerValidator';
-import { fetchDueWordsFromApi, syncAnswerToApi, type DueWord } from '../../utils/progress';
+import { fetchDueWordsFromApi, syncAnswerToApi, recordAnswer, type DueWord } from '../../utils/progress';
 import { loadQuizDirection, type QuizDirection } from '../../utils/settings';
 import { useAuth } from '../../context/AuthContext';
 import { useT } from '../../utils/i18n';
@@ -21,7 +21,6 @@ const API = import.meta.env.VITE_API_BASE;
 
 interface ReviewWord extends QueuedWord {
     moduleId: string;
-    masteryLevel?: number;
 }
 
 interface ReviewSession {
@@ -56,7 +55,6 @@ async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
                             english:      word.english,
                             french:       word.french,
                             moduleId,
-                            masteryLevel: due.masteryLevel,
                         });
                     }
                 }
@@ -266,10 +264,9 @@ export default function ReviewQueue() {
         const target = quizDir === 'fr-en' ? current.english : current.french;
         const isCorrect = isAnswerCorrect(session.userAnswer, target);
 
+        recordAnswer(current.moduleId, current.id, isCorrect);
         if (user) {
-            const currentLevel = current.masteryLevel ?? 0;
-            const newLevel = isCorrect ? Math.min(5, currentLevel + 1) : Math.max(0, currentLevel - 1);
-            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, isCorrect, newLevel);
+            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, isCorrect);
         } else if (isCorrect) {
             removeCorrectWord(current.moduleId, current.id);
         }
@@ -292,9 +289,9 @@ export default function ReviewQueue() {
     };
 
     const handleSkip = () => {
+        recordAnswer(current.moduleId, current.id, false);
         if (user) {
-            const currentLevel = current.masteryLevel ?? 0;
-            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, false, Math.max(0, currentLevel - 1));
+            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, false);
         }
         setSession(s => s && ({ ...s, showAnswer: true }));
     };
