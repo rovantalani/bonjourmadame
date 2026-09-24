@@ -1,12 +1,12 @@
 # Bonjour Madame
 
-A French language learning web app with vocabulary quizzes, grammar lessons, and verb conjugation tables.
+A French and English learning app organised into Vocabulary, Verbs, and Lectures.
 
 ## Features
 
 - **Vocabulary** — Thematic word modules (Sherlock Holmes, daily life, emotions, travel) with flashcard-style quizzes
-- **Grammar** — Interactive grammar lessons
-- **Helper Verbs** — Conjugation tables for *être*, *avoir*, *faire*, *aller*, *venir* across four tenses (présent, passé composé, imparfait, futur simple)
+- **Verbs** — Conjugation tables, guided learning, and quizzes
+- **Lectures** — Grammar lessons, phrases, and reading passages
 
 ## Tech Stack
 
@@ -69,28 +69,52 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 bonjourmadame/
 ├── backend/
 │   └── src/
-│       ├── index.ts          # Express server & API routes
+│       ├── index.ts          # Server setup and module router mounting
 │       ├── data/
-│       │   └── vocabulary.ts # Vocabulary word data (alongside grammar, verbs, phrases & reading)
-│       └── types/
-│           └── vocabulary.ts # Shared type definitions
+│       │   ├── vocabulary/   # vocabulary_fr/en.ts and modules_fr/en.ts
+│       │   ├── verbs/        # verbs_fr.ts and verbs_en.ts
+│       │   └── lectures/
+│       │       ├── grammar/  # grammar_fr.ts and grammar_en.ts
+│       │       ├── phrases/  # phrases_fr.ts and phrases_en.ts
+│       │       └── reading/  # reading_fr.ts and reading_en.ts
+│       ├── routes/
+│       │   ├── vocabulary.ts
+│       │   ├── verbs.ts
+│       │   ├── lectures/    # Grammar, phrases, and reading routers
+│       │   ├── auth.ts
+│       │   └── progress.ts
+│       └── types/           # Shared interfaces; lecture types live in lectures/
 └── frontend/
     └── src/
         ├── App.tsx           # Router setup
+        ├── data/courses.ts  # Course steps identify their module and content subtype
         └── pages/
-            ├── Home.tsx
-            ├── Vocabulary.tsx
-            ├── VocabularyQuiz.tsx
-            ├── Grammar.tsx
-            ├── HelperVerbs.tsx
-            └── VerbConjugation.tsx
+            ├── vocabulary/
+            ├── verbs/
+            └── lectures/
+                ├── Lectures.tsx
+                ├── grammar/
+                ├── phrases/
+                └── reading/
 ```
+
+Every file under `backend/src/data` ends in `_fr.ts` or `_en.ts`, indicating the language being learned, not the interface language. Shared bilingual vocabulary and phrase pairs are reused by the English datasets rather than duplicated. Vocabulary for English reading passages lives in `vocabulary_en.ts`.
+
+The existing `?lang=fr` API parameter means a French interface for English learners. It is preserved for compatibility. Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
 
 ## API Endpoints
 
 | Method | Path | Description |
 |---|---|---|
 | GET | `/api/health` | Health check |
-| GET | `/api/vocabulary-modules` | List all vocabulary modules |
+| GET | `/api/vocabulary/modules` | List all vocabulary modules |
 | GET | `/api/vocabulary/:moduleId` | Words for a specific module |
-| GET | `/api/helper-verbs/:verbId` | Conjugation table for a verb |
+| GET | `/api/verbs/helpers/:verbId` | Helper-verb conjugation table |
+| GET | `/api/verbs/groups/:groupId` | Verb group and its verbs |
+| GET | `/api/verbs/conjugation/:verbId` | Conjugation data for learning and quizzes |
+| GET | `/api/verbs/courses/:level` | New and review verbs for a course |
+| GET | `/api/lectures/grammar/:lessonId` | Grammar lecture |
+| GET | `/api/lectures/phrases/:categoryId` | Phrase lecture and quiz content |
+| GET | `/api/lectures/reading/:moduleId` | Reading lecture with supporting vocabulary |
+
+The previous flat content API paths are replaced by these module paths. Deploy the frontend and backend together; the browser's course URLs remain unchanged.

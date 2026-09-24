@@ -6,7 +6,7 @@ import { loadLearningMode, type LearningMode } from './settings';
 interface Translations {
     nav: {
         home: string; courses: string; vocabulary: string;
-        grammar: string; phrases: string; stats: string;
+        stats: string;
         verbs: string; lectures: string; overview: string;
     };
     verbs: {
@@ -25,9 +25,8 @@ interface Translations {
         courseComplete: string;
         sections: {
             vocabulary: { title: string; description: string; meta: string };
-            grammar:    { title: string; description: string; meta: string };
-            phrases:    { title: string; description: string; meta: string };
-            helperVerbs:{ title: string; description: string; meta: string };
+            verbs:      { title: string; description: string; meta: string };
+            lectures:   { title: string; description: string; meta: string };
         };
     };
     vocabulary: {
@@ -52,20 +51,6 @@ interface Translations {
         resumeBtn: string;
         allDone: string;
         types: { vocabulary: string; grammar: string; verbs: string; phrases: string; reading: string };
-    };
-    phrases: {
-        title: string; subtitle: string;
-        phraseCount: (n: number) => string;
-    };
-    grammar: {
-        title: string; subtitle: string;
-        conjugation: string; grammarLessons: string;
-        verbModules: {
-            helperVerbs:           { title: string; description: string };
-            regularVerbs:          { title: string; description: string };
-            irregularVerbs:        { title: string; description: string };
-            advancedIrregularVerbs:{ title: string; description: string };
-        };
     };
     stats: {
         title: string; subtitle: string;
@@ -170,7 +155,7 @@ interface Translations {
 const EN: Translations = {
     nav: {
         home: 'Home', courses: 'Courses', vocabulary: 'Vocabulary',
-        grammar: 'Grammar', phrases: 'Phrases', stats: 'Stats',
+        stats: 'Stats',
         verbs: 'Verbs', lectures: 'Lectures', overview: 'Overview',
     },
     verbs: {
@@ -193,10 +178,9 @@ const EN: Translations = {
         wordsReady: (n) => `${n} word${n !== 1 ? 's' : ''} ready for review`,
         courseComplete: 'Course complete!',
         sections: {
-            vocabulary:  { title: 'Vocabulary',   description: 'Words, flashcards & quizzes across 20 curated modules',         meta: '20 modules · 400+ words' },
-            grammar:     { title: 'Grammar',       description: 'Conjugation tables and 10 structured grammar lessons',          meta: '10 lessons · 52 verbs'   },
-            phrases:     { title: 'Phrases',       description: '90 essential expressions for real conversations',              meta: '6 categories · 90 phrases'},
-            helperVerbs: { title: 'Helper Verbs',  description: 'The 5 essential verbs: être, avoir, faire, aller, venir',     meta: '5 verbs · 4 tenses'      },
+            vocabulary: { title: 'Vocabulary', description: 'Build your vocabulary with word practice and quizzes', meta: 'Words · Flashcards · Quizzes' },
+            verbs: { title: 'Verbs', description: 'Learn conjugations and practise verbs across tenses', meta: 'Learn · Practise · Conjugate' },
+            lectures: { title: 'Lectures', description: 'Explore grammar, useful phrases and reading passages', meta: 'Grammar · Phrases · Reading' },
         },
     },
     vocabulary: {
@@ -221,20 +205,6 @@ const EN: Translations = {
         resumeBtn: 'Resume →',
         allDone: 'Course complete — great work!',
         types: { vocabulary: 'Vocabulary', grammar: 'Grammar', verbs: 'Verbs', phrases: 'Phrases', reading: 'Reading' },
-    },
-    phrases: {
-        title: 'Phrases', subtitle: 'Real French for real situations',
-        phraseCount: (n) => `${n} phrase${n !== 1 ? 's' : ''}`,
-    },
-    grammar: {
-        title: 'Grammar', subtitle: 'Conjugation & lessons',
-        conjugation: 'Conjugation', grammarLessons: 'Grammar Lessons',
-        verbModules: {
-            helperVerbs:            { title: 'Helper Verbs',            description: 'Master the 5 essential helper verbs in French'          },
-            regularVerbs:           { title: 'Regular Verbs',           description: 'Learn conjugation patterns for regular verbs'           },
-            irregularVerbs:         { title: 'Irregular Verbs',         description: 'Master the most common irregular verb forms'            },
-            advancedIrregularVerbs: { title: 'Advanced Irregular Verbs',description: 'Complex irregular patterns for fluent-level mastery'    },
-        },
     },
     stats: {
         title: 'Progress', subtitle: 'Your learning at a glance',
@@ -313,7 +283,7 @@ const EN: Translations = {
         advancedIrregularVerbs: { title: 'Advanced Irregular Verbs', description: 'Complex patterns for fluent-level mastery' },
     },
     grammarLesson: {
-        back: '← Grammar',
+        back: '← Back',
         exercises: 'Exercises',
         checkAnswers: 'Check Answers',
         tryAgain: 'Try Again',
@@ -321,7 +291,7 @@ const EN: Translations = {
         notFound: 'Lesson not found.',
     },
     verbConjugation: {
-        back: '← Back to Helper Verbs',
+        back: '← Back',
         notFound: 'Verb not found.',
         columns: ['Présent', 'Passé composé', 'Imparfait', 'Futur simple'] as const,
     },
@@ -332,7 +302,7 @@ const EN: Translations = {
         notFound: 'Module not found.',
     },
     phraseDetail: {
-        back: '← Phrases',
+        back: '← Lectures',
         startQuiz: 'Start Quiz',
         notFound: 'Category not found.',
     },
@@ -343,7 +313,7 @@ const EN: Translations = {
 const FR: Translations = {
     nav: {
         home: 'Accueil', courses: 'Cours', vocabulary: 'Vocabulaire',
-        grammar: 'Grammaire', phrases: 'Expressions', stats: 'Progrès',
+        stats: 'Progrès',
         verbs: 'Verbes', lectures: 'Leçons', overview: 'Aperçu',
     },
     verbs: {
@@ -366,10 +336,9 @@ const FR: Translations = {
         wordsReady: (n) => `${n} mot${n > 1 ? 's' : ''} prêt${n > 1 ? 's' : ''} à réviser`,
         courseComplete: 'Cours terminé !',
         sections: {
-            vocabulary:  { title: 'Vocabulaire',      description: 'Vocabulaire anglais — quiz et flashcards pour 20 modules',           meta: '20 modules · 400+ mots'          },
-            grammar:     { title: 'Grammaire',         description: 'Leçons de grammaire anglaise expliquées en français',               meta: '8 leçons · 5 verbes'             },
-            phrases:     { title: 'Expressions',       description: '90 expressions essentielles pour de vraies conversations',           meta: '6 catégories · 90 expressions'   },
-            helperVerbs: { title: 'Verbes essentiels', description: 'Les 5 verbes anglais essentiels : to be, to have, to do…',          meta: '5 verbes · 4 temps'              },
+            vocabulary: { title: 'Vocabulaire', description: 'Enrichissez votre vocabulaire avec des exercices et des quiz', meta: 'Mots · Fiches · Quiz' },
+            verbs: { title: 'Verbes', description: 'Apprenez les conjugaisons et pratiquez les différents temps', meta: 'Apprendre · Pratiquer · Conjuguer' },
+            lectures: { title: 'Leçons', description: 'Explorez la grammaire, les expressions et les textes', meta: 'Grammaire · Expressions · Lecture' },
         },
     },
     vocabulary: {
@@ -394,20 +363,6 @@ const FR: Translations = {
         resumeBtn: 'Reprendre →',
         allDone: 'Cours terminé — félicitations !',
         types: { vocabulary: 'Vocabulaire', grammar: 'Grammaire', verbs: 'Verbes', phrases: 'Expressions', reading: 'Lecture' },
-    },
-    phrases: {
-        title: 'Expressions', subtitle: 'Des expressions pour toutes les situations',
-        phraseCount: (n) => `${n} expression${n > 1 ? 's' : ''}`,
-    },
-    grammar: {
-        title: 'Grammaire', subtitle: 'Conjugaison et leçons',
-        conjugation: 'Conjugaison', grammarLessons: 'Leçons de grammaire',
-        verbModules: {
-            helperVerbs:            { title: 'Verbes auxiliaires',           description: 'Maîtrisez les 5 verbes auxiliaires essentiels en français'       },
-            regularVerbs:           { title: 'Verbes réguliers',             description: 'Apprenez les modèles de conjugaison des verbes réguliers'        },
-            irregularVerbs:         { title: 'Verbes irréguliers',           description: 'Maîtrisez les formes irrégulières les plus courantes'           },
-            advancedIrregularVerbs: { title: 'Verbes irréguliers avancés',   description: 'Modèles irréguliers complexes pour une maîtrise avancée'        },
-        },
     },
     stats: {
         title: 'Progrès', subtitle: 'Votre apprentissage en un coup d\'œil',
@@ -486,7 +441,7 @@ const FR: Translations = {
         advancedIrregularVerbs: { title: 'Verbes irréguliers avancés',description: 'Structures complexes pour une maîtrise avancée' },
     },
     grammarLesson: {
-        back: '← Grammaire',
+        back: '← Retour',
         exercises: 'Exercices',
         checkAnswers: 'Vérifier les réponses',
         tryAgain: 'Réessayer',
@@ -494,7 +449,7 @@ const FR: Translations = {
         notFound: 'Leçon introuvable.',
     },
     verbConjugation: {
-        back: '← Retour aux verbes essentiels',
+        back: '← Retour',
         notFound: 'Verbe introuvable.',
         columns: ['Présent', 'Passé composé', 'Imparfait', 'Futur simple'] as const,
     },
@@ -505,7 +460,7 @@ const FR: Translations = {
         notFound: 'Module introuvable.',
     },
     phraseDetail: {
-        back: '← Expressions',
+        back: '← Leçons',
         startQuiz: 'Commencer le quiz',
         notFound: 'Catégorie introuvable.',
     },
