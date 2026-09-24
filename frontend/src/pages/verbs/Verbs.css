@@ -238,3 +238,62 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* Compact cards retain the quiet borders and colors of the lesson lists. */
+.verbs-page .verbs-section { margin-bottom: 2rem; }
+.verbs-page .verbs-section-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 0.75rem;
+}
+.verbs-page .verb-grid, .verbs-page .verbs-helper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+    gap: 0.65rem;
+    margin-top: 0.65rem;
+}
+.verbs-page .verb-card, .verbs-page .verbs-helper-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.85rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--tag-verbs-text);
+    border-radius: var(--r-lg);
+    box-shadow: none;
+    text-align: left;
+    min-width: 0;
+}
+.verbs-page .verb-card:hover, .verbs-page .verbs-helper-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+.verbs-page .verb-row-body { display: flex; flex-direction: column; min-width: 0; gap: 0.2rem; }
+.verbs-page .verb-infinitive, .verbs-page .verbs-helper-title {
+    margin: 0;
+    padding-right: 1.7rem;
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
+}
+.verbs-page .verb-translation, .verbs-page .verbs-helper-translation {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-3);
+    overflow-wrap: anywhere;
+}
+.verbs-page .verb-actions { margin-top: auto; padding-top: 0.25rem; gap: 0.4rem; justify-content: flex-start; flex-wrap: wrap; }
+.verbs-page .verb-card > .progress-flower,
+.verbs-page .verbs-helper-card > .progress-flower { position: absolute; top: 0.85rem; right: 0.7rem; }
+.verbs-page .verb-card--new-tenses { padding-top: 2.3rem; }
+.verbs-page .verb-card--new-tenses > .progress-flower { top: 2.3rem; }
+.verbs-page .verbs-helper-icon { width: 32px; height: 32px; }
+.verbs-page button:focus-visible { outline: 2px solid var(--verb); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+    .verbs-page .verb-card, .verbs-page .verbs-helper-card { transition: none; }
+    .verbs-page .verb-card:hover, .verbs-page .verbs-helper-card:hover { transform: none; }
+}

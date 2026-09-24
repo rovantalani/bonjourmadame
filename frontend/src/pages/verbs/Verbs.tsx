@@ -87,11 +87,11 @@ function VerbGrid({ verbs, level, navigate, learnLabel, quizLabel, newTensesLabe
                     {verb.newTenses && (
                         <span className="verb-new-tenses"><span aria-hidden="true">✦</span> {newTensesLabel}</span>
                     )}
-                    <div className="verb-card-heading">
-                                        <h2 className="verb-infinitive">{verb.infinitive}</h2>
-                                        <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${verb.id}/learn`)} />
-                                    </div>
-                    <p className="verb-translation">{verb.translation}</p>
+                    <div className="verb-row-body">
+                        <h3 className="verb-infinitive">{verb.infinitive}</h3>
+                        <p className="verb-translation">{verb.translation}</p>
+                    </div>
+                    <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${verb.id}/learn`)} />
                     <div className="verb-actions">
                         <button
                             className="btn"
@@ -161,7 +161,7 @@ export default function Verbs() {
     }
 
     return (
-        <main className="page">
+        <main className="page verbs-page">
             <header className="page-header verbs-page-header">
                 <div className="verbs-page-intro">
                     <h1>{t.verbs.title}</h1>
@@ -206,8 +206,10 @@ export default function Verbs() {
                                             type="button"
                                         >
                                             <span className="verbs-helper-icon" style={{ backgroundColor: v.bg, color: v.color }}><v.Icon size={20} /></span>
+                                            <span className="verb-row-body">
                                             <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
                                             <span className="verbs-helper-translation">{v.translation}</span>
+                                            </span>
                                             <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${v.id}/table`)} />
                                         </button>
                                     ))}
