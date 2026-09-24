@@ -1,3 +1,6 @@
+import ProgressFlower from '../../components/ProgressFlower';
+import { getContentStatus, hasPassedQuiz } from '../../utils/courseProgress';
+import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../../utils/i18n';
@@ -152,7 +155,10 @@ export default function VerbGroupList() {
                                     >
                                         {verb.type}
                                     </span>
-                                    <h2 className="verb-infinitive">{verb.infinitive}</h2>
+                                    <div className="verb-card-heading">
+                                        <h2 className="verb-infinitive">{verb.infinitive}</h2>
+                                        <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${verb.id}/learn`)} />
+                                    </div>
                                     <p className="verb-translation">{verb.translation}</p>
                                     <div className="verb-actions">
                                         <button
@@ -187,6 +193,7 @@ export default function VerbGroupList() {
                     </section>
                 ))
             )}
+            <LearningCompletion quizPassed={group.verbs.length > 0 && group.verbs.every(verb => hasPassedQuiz(`/courses/${level}/verbs/${verb.id}/quiz`))} />
         </main>
     );
 }

@@ -15,7 +15,7 @@ export async function migrate(): Promise<void> {
             user_id       INTEGER REFERENCES users(id) ON DELETE CASCADE,
             word_id       TEXT NOT NULL,
             module_id     TEXT NOT NULL,
-            mastery_level INTEGER DEFAULT 0,
+            is_known      BOOLEAN NOT NULL DEFAULT FALSE,
             correct_count INTEGER DEFAULT 0,
             wrong_count   INTEGER DEFAULT 0,
             last_seen_at  TIMESTAMPTZ DEFAULT NOW(),
@@ -46,16 +46,7 @@ export async function migrate(): Promise<void> {
         )
     `);
 
-    await pool.query(`
-        CREATE TABLE IF NOT EXISTS user_stats (
-            user_id              INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
-            current_streak       INTEGER DEFAULT 0,
-            longest_streak       INTEGER DEFAULT 0,
-            last_activity_date   DATE,
-            total_words_mastered INTEGER DEFAULT 0
-        )
-    `);
-
+    await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS is_known BOOLEAN NOT NULL DEFAULT FALSE`);
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS srs_box INTEGER DEFAULT 1`);
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS next_review_at TIMESTAMPTZ DEFAULT NOW()`);
 

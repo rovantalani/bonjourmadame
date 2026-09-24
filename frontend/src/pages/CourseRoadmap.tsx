@@ -1,3 +1,4 @@
+import ProgressFlower from '../components/ProgressFlower';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
 import {
@@ -7,7 +8,6 @@ import {
     getActiveCourse,
     setActiveCourse,
     markStepVisited,
-    type StepStatus,
 } from '../utils/courseProgress';
 import type { CourseStep, StepType } from '../data/courses';
 import { useT } from '../utils/i18n';
@@ -29,27 +29,6 @@ const TYPE_SOFT: Record<StepType, string> = {
     reading:    'var(--masc-soft)',
 };
 
-function StatusNode({ status, index }: { status: StepStatus; index: number }) {
-    if (status === 'complete') {
-        return <span className="cr-node cr-node--complete">✓</span>;
-    }
-    if (status === 'visited') {
-        return <span className="cr-node cr-node--visited">{index + 1}</span>;
-    }
-    return <span className="cr-node cr-node--todo">{index + 1}</span>;
-}
-
-function MasteryPips({ status }: { status: StepStatus }) {
-    const filled = status === 'complete' ? 3 : status === 'visited' ? 1 : 0;
-    return (
-        <div className="cr-pips" aria-label={`Mastery: ${filled} of 3`}>
-            {[0, 1, 2].map(i => (
-                <span key={i} className={`cr-pip${i < filled ? ' cr-pip--on' : ''}`} />
-            ))}
-        </div>
-    );
-}
-
 export default function CourseRoadmap() {
     const { level } = useParams<{ level: string }>();
     const navigate  = useNavigate();
@@ -70,7 +49,7 @@ export default function CourseRoadmap() {
     };
 
     const renderStepItem = (step: CourseStep, index: number, isLast: boolean) => {
-        const status = getStepStatus(step);
+        const status = getStepStatus(step, level);
         return (
             <li key={step.id} className={`cr-step cr-step--${status}`}>
                 {!isLast && <span className="cr-connector" />}
@@ -79,7 +58,7 @@ export default function CourseRoadmap() {
                     onClick={() => handleStepClick(step.path, step.id)}
                     type="button"
                 >
-                    <StatusNode status={status} index={index} />
+                    <span className="cr-node cr-node--todo">{index + 1}</span>
                     <div className="cr-step-body">
                         <span className="cr-step-title">{step.title}</span>
                         <span
@@ -92,7 +71,7 @@ export default function CourseRoadmap() {
                             {t.roadmap.types[step.type]}
                         </span>
                     </div>
-                    <MasteryPips status={status} />
+                    <ProgressFlower status={status} />
                     <span className="cr-step-arrow">›</span>
                 </button>
             </li>
@@ -103,32 +82,6 @@ export default function CourseRoadmap() {
 
     return (
         <main className="page">
-
-            {/* ── Continue strip ── */}
-            {nextStep && hasStarted && (
-                <button
-                    className="cr-continue"
-                    onClick={() => handleStepClick(nextStep.path, nextStep.id)}
-                    type="button"
-                >
-                    <span className="cr-continue__icon" aria-hidden="true">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <polygon points="5 3 19 12 5 21 5 3" />
-                        </svg>
-                    </span>
-                    <div className="cr-continue__body">
-                        <span className="cr-continue__label">{t.roadmap.continueLabel}</span>
-                        <strong className="cr-continue__step">
-                            {nextStep.title}
-                            <span className="cr-continue__dot">·</span>
-                            <span style={{ color: TYPE_COLORS[nextStep.type] }}>
-                                {t.roadmap.types[nextStep.type]}
-                            </span>
-                        </strong>
-                    </div>
-                    <span className="cr-continue__btn">{t.roadmap.resumeBtn}</span>
-                </button>
-            )}
 
             {/* ── Course header ── */}
             <div className="cr-header">
@@ -144,7 +97,7 @@ export default function CourseRoadmap() {
             {/* ── Progress inline line ── */}
             <div className="cr-progress-line">
                 <span className="cr-progress-label">
-                    {t.roadmap.steps(progress.completed + progress.visited, progress.total)}
+                    {t.roadmap.steps(progress.completed, progress.total)}
                 </span>
                 <div className="progress-track cr-progress-bar">
                     <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
@@ -162,6 +115,25 @@ export default function CourseRoadmap() {
             </div>
 
             <div className="cr-content">
+                {nextStep && hasStarted && (
+                    <button
+                        className="cr-continue"
+                        onClick={() => handleStepClick(nextStep.path, nextStep.id)}
+                        type="button"
+                    >
+                        <span className="cr-continue__body">
+                            <span className="cr-continue__label">{t.roadmap.continueLabel}</span>
+                            <span className="cr-continue__step">
+                                <strong>{nextStep.title}</strong>{' '}
+                                <span className="cr-continue__type">
+                                    · {t.roadmap.types[nextStep.type]}
+                                </span>
+                            </span>
+                        </span>
+                        <span className="cr-continue__action">{t.roadmap.resumeBtn}</span>
+                    </button>
+                )}
+
                 {hasUnits ? (
                     course.units!.map(unit => {
                         const unitSteps = course.steps.filter(s => s.unit === unit.number);

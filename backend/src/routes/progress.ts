@@ -10,11 +10,11 @@ const SRS_INTERVALS_DAYS = [0, 1, 2, 4, 7, 14]; // index = box (1–5)
 // ── POST /api/progress/word ───────────────────────────────────────────────────
 
 router.post('/word', async (req: AuthRequest, res: Response): Promise<void> => {
-    const { word_id, module_id, correct, mastery_level } = req.body as {
-        word_id?: string; module_id?: string; correct?: boolean; mastery_level?: number;
+    const { word_id, module_id, correct } = req.body as {
+        word_id?: string; module_id?: string; correct?: boolean;
     };
-    if (!word_id || !module_id || correct === undefined || mastery_level === undefined) {
-        res.status(400).json({ error: 'word_id, module_id, correct, mastery_level are required' });
+    if (!word_id || !module_id || typeof correct !== 'boolean') {
+        res.status(400).json({ error: 'word_id, module_id, correct are required' });
         return;
     }
 
@@ -27,27 +27,16 @@ router.post('/word', async (req: AuthRequest, res: Response): Promise<void> => {
     const intervalDays = SRS_INTERVALS_DAYS[newBox];
 
     await pool.query(`
-        INSERT INTO word_mastery (user_id, word_id, module_id, mastery_level, correct_count, wrong_count, last_seen_at, srs_box, next_review_at)
+        INSERT INTO word_mastery (user_id, word_id, module_id, is_known, correct_count, wrong_count, last_seen_at, srs_box, next_review_at)
         VALUES ($1, $2, $3, $4, $5, $6, NOW(), $7, NOW() + ($8 || ' days')::INTERVAL)
         ON CONFLICT (user_id, word_id) DO UPDATE SET
-            mastery_level  = $4,
+            is_known  = $4,
             correct_count  = word_mastery.correct_count + $5,
             wrong_count    = word_mastery.wrong_count   + $6,
             last_seen_at   = NOW(),
             srs_box        = $7,
             next_review_at = NOW() + ($8 || ' days')::INTERVAL
-    `, [req.userId, word_id, module_id, mastery_level, correct ? 1 : 0, correct ? 0 : 1, newBox, intervalDays]);
-
-    // Recompute total_words_mastered
-    const { rows } = await pool.query<{ count: string }>(
-        `SELECT COUNT(*) AS count FROM word_mastery WHERE user_id = $1 AND mastery_level >= 3`,
-        [req.userId]
-    );
-    await pool.query(`
-        INSERT INTO user_stats (user_id, total_words_mastered)
-        VALUES ($1, $2)
-        ON CONFLICT (user_id) DO UPDATE SET total_words_mastered = $2
-    `, [req.userId, parseInt(rows[0].count, 10)]);
+    `, [req.userId, word_id, module_id, correct, correct ? 1 : 0, correct ? 0 : 1, newBox, intervalDays]);
 
     res.json({ ok: true });
 });
@@ -68,51 +57,16 @@ router.post('/session', async (req: AuthRequest, res: Response): Promise<void> =
         [req.userId, module_id, session_type, score, total]
     );
 
-    // Update streak in user_stats
-    const today = new Date().toISOString().slice(0, 10);
-    const { rows } = await pool.query<{
-        current_streak: number; longest_streak: number; last_activity_date: string | null;
-    }>(
-        `SELECT current_streak, longest_streak, last_activity_date FROM user_stats WHERE user_id = $1`,
-        [req.userId]
-    );
-
-    const existing = rows[0] ?? { current_streak: 0, longest_streak: 0, last_activity_date: null };
-    const last = existing.last_activity_date ? existing.last_activity_date.toString().slice(0, 10) : null;
-
-    let newStreak = existing.current_streak;
-    if (last !== today) {
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const yStr = yesterday.toISOString().slice(0, 10);
-        newStreak = last === yStr ? existing.current_streak + 1 : 1;
-    }
-    const newLongest = Math.max(existing.longest_streak, newStreak);
-
-    await pool.query(`
-        INSERT INTO user_stats (user_id, current_streak, longest_streak, last_activity_date)
-        VALUES ($1, $2, $3, $4)
-        ON CONFLICT (user_id) DO UPDATE SET
-            current_streak     = $2,
-            longest_streak     = $3,
-            last_activity_date = $4
-    `, [req.userId, newStreak, newLongest, today]);
-
     res.json({ ok: true });
 });
 
 // ── GET /api/progress ─────────────────────────────────────────────────────────
 
 router.get('/', async (req: AuthRequest, res: Response): Promise<void> => {
-    const [masteryRes, statsRes, sessionsRes] = await Promise.all([
-        pool.query<{ word_id: string; module_id: string; mastery_level: number; correct_count: number; wrong_count: number; last_seen_at: string }>(
-            `SELECT word_id, module_id, mastery_level, correct_count, wrong_count, last_seen_at
+    const [masteryRes, sessionsRes] = await Promise.all([
+        pool.query<{ word_id: string; module_id: string; is_known: boolean; correct_count: number; wrong_count: number; last_seen_at: string }>(
+            `SELECT word_id, module_id, is_known, correct_count, wrong_count, last_seen_at
              FROM word_mastery WHERE user_id = $1`,
-            [req.userId]
-        ),
-        pool.query<{ current_streak: number; longest_streak: number; last_activity_date: string | null; total_words_mastered: number }>(
-            `SELECT current_streak, longest_streak, last_activity_date, total_words_mastered
-             FROM user_stats WHERE user_id = $1`,
             [req.userId]
         ),
         pool.query<{ module_id: string; session_type: string; score: number; total: number; created_at: string }>(
@@ -123,26 +77,18 @@ router.get('/', async (req: AuthRequest, res: Response): Promise<void> => {
         ),
     ]);
 
-    const mastery: Record<string, { level: number; correct: number; wrong: number; lastSeen: string }> = {};
+    const mastery: Record<string, { known: boolean; correct: number; wrong: number; lastSeen: string }> = {};
     for (const row of masteryRes.rows) {
         mastery[row.word_id] = {
-            level:   row.mastery_level,
+            known:   row.is_known,
             correct: row.correct_count,
             wrong:   row.wrong_count,
             lastSeen: row.last_seen_at,
         };
     }
 
-    const statsRow = statsRes.rows[0] ?? { current_streak: 0, longest_streak: 0, last_activity_date: null, total_words_mastered: 0 };
-
     res.json({
         mastery,
-        stats: {
-            currentStreak:      statsRow.current_streak,
-            longestStreak:      statsRow.longest_streak,
-            lastActivityDate:   statsRow.last_activity_date ? statsRow.last_activity_date.toString().slice(0, 10) : null,
-            totalWordsMastered: statsRow.total_words_mastered,
-        },
         sessions: sessionsRes.rows.map(r => ({
             moduleId:    r.module_id,
             sessionType: r.session_type,
@@ -156,8 +102,8 @@ router.get('/', async (req: AuthRequest, res: Response): Promise<void> => {
 // ── GET /api/progress/due ─────────────────────────────────────────────────────
 
 router.get('/due', async (req: AuthRequest, res: Response): Promise<void> => {
-    const { rows } = await pool.query<{ word_id: string; module_id: string; srs_box: number; mastery_level: number }>(
-        `SELECT word_id, module_id, srs_box, mastery_level
+    const { rows } = await pool.query<{ word_id: string; module_id: string; srs_box: number; is_known: boolean }>(
+        `SELECT word_id, module_id, srs_box, is_known
          FROM word_mastery
          WHERE user_id = $1 AND next_review_at <= NOW()
          ORDER BY next_review_at ASC`,
@@ -167,7 +113,7 @@ router.get('/due', async (req: AuthRequest, res: Response): Promise<void> => {
         wordId:       r.word_id,
         moduleId:     r.module_id,
         srsBox:       r.srs_box,
-        masteryLevel: r.mastery_level,
+        known:        r.is_known,
     })));
 });
 

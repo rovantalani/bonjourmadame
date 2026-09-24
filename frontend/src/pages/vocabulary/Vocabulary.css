@@ -120,18 +120,6 @@
     width: 100%;
 }
 
-.vocab-card-mastery {
-    font-size: 0.7rem;
-    font-weight: 600;
-    opacity: 0.85;
-}
-
-.vocab-card-progress {
-    width: 100%;
-    height: 3px;
-    margin-top: -0.15rem;
-}
-
 .vocab-card--reading {
     cursor: default;
 }
@@ -174,16 +162,6 @@
     justify-content: space-between;
     width: 100%;
 }
-
-.vocab-step-status {
-    font-size: 1rem;
-    line-height: 1;
-    flex-shrink: 0;
-}
-
-.vocab-step-status--complete  { color: var(--success); }
-.vocab-step-status--visited   { color: var(--accent-text); }
-.vocab-step-status--not-started { color: var(--text-3); }
 
 /* ── Mobile ── */
 @media (max-width: 640px) {

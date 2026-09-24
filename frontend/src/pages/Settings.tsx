@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { loadDailyGoal, saveDailyGoal } from '../utils/progress';
+import ProgressImportBanner from '../components/ProgressImportBanner';
 import { loadLearningMode, saveLearningMode, type LearningMode } from '../utils/settings';
 import { useT } from '../utils/i18n';
 import './Settings.css';
@@ -12,8 +12,6 @@ export default function Settings() {
     const t = useT();
 
     // Preferences
-    const [goal, setGoal]                 = useState(10);
-    const [goalInput, setGoalInput]       = useState('10');
     const [mode, setMode]                 = useState<LearningMode>(() => loadLearningMode() ?? 'learn-french');
 
     // Change password form
@@ -28,22 +26,6 @@ export default function Settings() {
     // Delete account
     const [confirmDelete, setConfirmDelete] = useState(false);
     const [deleteLoading, setDeleteLoading] = useState(false);
-
-    useEffect(() => {
-        const g = loadDailyGoal();
-        setGoal(g);
-        setGoalInput(String(g));
-    }, []);
-
-    function commitGoal() {
-        const n = parseInt(goalInput, 10);
-        if (!isNaN(n) && n > 0) {
-            setGoal(n);
-            saveDailyGoal(n);
-        } else {
-            setGoalInput(String(goal));
-        }
-    }
 
     function handleModeChange(m: LearningMode) {
         setMode(m);
@@ -104,23 +86,6 @@ export default function Settings() {
             <section className="settings-section card">
                 <h2 className="settings-section-title">{t.settings.preferences}</h2>
 
-                <div className="settings-row">
-                    <div className="settings-row-label">
-                        <span className="settings-label">{t.settings.dailyGoal}</span>
-                        <span className="settings-hint">{t.settings.dailyGoalHint}</span>
-                    </div>
-                    <input
-                        type="number"
-                        className="field-input settings-goal-input"
-                        min={1}
-                        max={200}
-                        value={goalInput}
-                        onChange={e => setGoalInput(e.target.value)}
-                        onBlur={commitGoal}
-                        onKeyDown={e => { if (e.key === 'Enter') commitGoal(); }}
-                    />
-                </div>
-
                 <div className="settings-row settings-row--col">
                     <div className="settings-row-label">
                         <span className="settings-label">{t.settings.learningLanguage}</span>
@@ -142,6 +107,8 @@ export default function Settings() {
                     </div>
                 </div>
             </section>
+
+            <ProgressImportBanner />
 
             {/* ── Account (auth users) ── */}
             {user && (
@@ -247,13 +214,7 @@ export default function Settings() {
             {isGuest && (
                 <section className="settings-section card">
                     <h2 className="settings-section-title">{t.settings.account}</h2>
-                    <p className="settings-guest-msg">
-                        {t.settings.guestMsg}
-                    </p>
                     <div className="settings-guest-actions">
-                        <button className="btn btn-primary" onClick={() => navigate('/register')}>
-                            {t.settings.createAccount}
-                        </button>
                         <button className="btn btn-secondary" onClick={() => navigate('/login')}>
                             {t.settings.logIn}
                         </button>

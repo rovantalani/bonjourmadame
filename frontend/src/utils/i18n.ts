@@ -4,9 +4,12 @@ import { loadLearningMode, type LearningMode } from './settings';
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface Translations {
+    progressFlower: {
+        'not-started': string; visited: string; complete: string;
+        markComplete: string; undo: string;
+    };
     nav: {
         home: string; courses: string; vocabulary: string;
-        stats: string;
         verbs: string; lectures: string; overview: string;
     };
     verbs: {
@@ -17,8 +20,6 @@ interface Translations {
     };
     home: {
         subtitle: string;
-        dayStreak: string;
-        wordsToday: (n: number, goal: number) => string;
         reviewQueue: string;
         wordsDue: (n: number) => string;
         wordsReady: (n: number) => string;
@@ -33,7 +34,6 @@ interface Translations {
         title: string; subtitle: string;
         searchPlaceholder: string;
         words: (n: number) => string;
-        mastered: (m: number, total: number) => string;
         levelGroups: { A1: string; A2B1: string; B2C1: string; C1C2: string };
         quiz: string; read: string; loading: string;
     };
@@ -52,22 +52,10 @@ interface Translations {
         allDone: string;
         types: { vocabulary: string; grammar: string; verbs: string; phrases: string; reading: string };
     };
-    stats: {
-        title: string; subtitle: string;
-        dayStreak: string; bestStreak: string;
-        wordsMastered: string; accuracy: string;
-        today: string;
-        wordsToday: (n: number, goal: number) => string;
-        goal: string; dailyGoalLabel: string;
-        moduleActivity: string;
-        masteredPracticed: (m: number, p: number) => string;
-        recentQuizzes: string; noQuizzes: string;
-        dateLocale: string;
-    };
     quiz: {
+        loadError: string;
         loading: string;
-        allMastered: string; allMasteredSubtitle: string;
-        practiceAll: string; backToVocabulary: string;
+        backToVocabulary: string;
         complete: string; score: string; total: string;
         accuracy: string; tryAgain: string;
         exit: string;
@@ -96,7 +84,6 @@ interface Translations {
         preferences: string;
         learningLanguage: string; learningLanguageHint: string;
         learnFrench: string; learnEnglish: string;
-        dailyGoal: string; dailyGoalHint: string;
         account: string; email: string;
         password: string; changePassword: string;
         passwordUpdated: string; cancelBtn: string; updateBtn: string;
@@ -105,9 +92,9 @@ interface Translations {
         deleteAccount: string; deleteAccountHint: string;
         confirmDeleteMsg: string; yesDelete: string;
         saving: string; deleting: string;
-        guestMsg: string; createAccount: string; logIn: string;
+        logIn: string;
     };
-    guest: { banner: string; createAccount: string };
+    guest: { banner: string; dismiss: string };
     helperVerbs: {
         pageSubtitle: string;
         helperSection: string;
@@ -153,9 +140,9 @@ interface Translations {
 // ─── English ──────────────────────────────────────────────────────────────────
 
 const EN: Translations = {
+    progressFlower: { 'not-started': 'Not started', visited: 'In progress', complete: 'Completed', markComplete: 'Mark complete', undo: 'Mark as in progress' },
     nav: {
         home: 'Home', courses: 'Courses', vocabulary: 'Vocabulary',
-        stats: 'Stats',
         verbs: 'Verbs', lectures: 'Lectures', overview: 'Overview',
     },
     verbs: {
@@ -171,8 +158,6 @@ const EN: Translations = {
     },
     home: {
         subtitle: 'Your personal French course',
-        dayStreak: 'day streak',
-        wordsToday: (n, g) => `${n} / ${g} words today`,
         reviewQueue: 'Review Queue',
         wordsDue:   (n) => `${n} word${n !== 1 ? 's' : ''} due for review`,
         wordsReady: (n) => `${n} word${n !== 1 ? 's' : ''} ready for review`,
@@ -187,7 +172,6 @@ const EN: Translations = {
         title: 'Vocabulary', subtitle: 'Choose a module to practise',
         searchPlaceholder: 'Search modules…',
         words:   (n) => `${n} word${n !== 1 ? 's' : ''}`,
-        mastered:(m, t) => `${m}/${t} mastered`,
         levelGroups: { A1: 'A1 — Foundations', A2B1: 'A2 / B1', B2C1: 'B2 / C1', C1C2: 'C1 / C2 — Advanced' },
         quiz: 'Quiz', read: 'Read', loading: 'Loading modules…',
     },
@@ -201,28 +185,15 @@ const EN: Translations = {
         back: '← All Courses', setActive: 'Set as Active Course',
         steps: (done, total) => `${done} / ${total} steps`,
         notFound: 'Course not found.',
-        continueLabel: 'Continue where you left off',
-        resumeBtn: 'Resume →',
+        continueLabel: 'Continue learning',
+        resumeBtn: 'Continue →',
         allDone: 'Course complete — great work!',
         types: { vocabulary: 'Vocabulary', grammar: 'Grammar', verbs: 'Verbs', phrases: 'Phrases', reading: 'Reading' },
     },
-    stats: {
-        title: 'Progress', subtitle: 'Your learning at a glance',
-        dayStreak: 'day streak', bestStreak: 'best streak',
-        wordsMastered: 'words mastered', accuracy: 'accuracy',
-        today: 'Today',
-        wordsToday: (n, g) => `${n} / ${g} words today`,
-        goal: 'Goal:', dailyGoalLabel: 'Daily goal',
-        moduleActivity: 'Module Activity',
-        masteredPracticed: (m, p) => `${m} mastered · ${p} practiced`,
-        recentQuizzes: 'Recent Quizzes',
-        noQuizzes: 'No quizzes completed yet. Start a vocabulary quiz!',
-        dateLocale: 'en-US',
-    },
     quiz: {
+        loadError: 'Could not load this quiz. Please try again.',
         loading: 'Loading…',
-        allMastered: 'All Mastered!', allMasteredSubtitle: "You've mastered every word in this module.",
-        practiceAll: 'Practice All Anyway', backToVocabulary: 'Back to Vocabulary',
+        backToVocabulary: 'Back to Vocabulary',
         complete: 'Quiz Complete!', score: 'Score', total: 'Total',
         accuracy: 'Accuracy', tryAgain: 'Try Again',
         exit: '✕ Exit',
@@ -253,7 +224,6 @@ const EN: Translations = {
         preferences: 'Preferences',
         learningLanguage: 'Learning language', learningLanguageHint: 'Takes effect at the start of your next quiz',
         learnFrench: '🇫🇷 Learn French', learnEnglish: '🇬🇧 Learn English',
-        dailyGoal: 'Daily goal', dailyGoalHint: 'Words to study per day',
         account: 'Account', email: 'Email',
         password: 'Password', changePassword: 'Change password',
         passwordUpdated: 'Password updated.', cancelBtn: 'Cancel', updateBtn: 'Update password',
@@ -262,10 +232,9 @@ const EN: Translations = {
         deleteAccount: 'Delete account', deleteAccountHint: 'Permanently removes all your data',
         confirmDeleteMsg: 'Are you sure? This cannot be undone.',
         yesDelete: 'Yes, delete', saving: 'Saving…', deleting: 'Deleting…',
-        guestMsg: "You're using Bonjour Madame as a guest. Create an account to sync your progress across devices.",
-        createAccount: 'Create account', logIn: 'Log in',
+        logIn: 'Log in',
     },
-    guest: { banner: "Guest mode — progress won't sync across devices.", createAccount: ' Create a free account' },
+    guest: { banner: 'Guest mode', dismiss: 'Dismiss guest note' },
     helperVerbs: {
         pageSubtitle: 'Conjugation tables, quizzes and practice',
         helperSection: 'Helper Verbs',
@@ -311,9 +280,9 @@ const EN: Translations = {
 // ─── French ───────────────────────────────────────────────────────────────────
 
 const FR: Translations = {
+    progressFlower: { 'not-started': 'Pas encore commencé', visited: 'En cours', complete: 'Terminé', markComplete: 'Marquer comme terminé', undo: 'Marquer comme en cours' },
     nav: {
         home: 'Accueil', courses: 'Cours', vocabulary: 'Vocabulaire',
-        stats: 'Progrès',
         verbs: 'Verbes', lectures: 'Leçons', overview: 'Aperçu',
     },
     verbs: {
@@ -329,8 +298,6 @@ const FR: Translations = {
     },
     home: {
         subtitle: 'Votre cours d\'anglais personnel',
-        dayStreak: 'jours consécutifs',
-        wordsToday: (n, g) => `${n} / ${g} mots aujourd'hui`,
         reviewQueue: 'File de révision',
         wordsDue:   (n) => `${n} mot${n > 1 ? 's' : ''} à réviser`,
         wordsReady: (n) => `${n} mot${n > 1 ? 's' : ''} prêt${n > 1 ? 's' : ''} à réviser`,
@@ -345,7 +312,6 @@ const FR: Translations = {
         title: 'Vocabulaire', subtitle: 'Choisissez un module à pratiquer',
         searchPlaceholder: 'Rechercher un module…',
         words:   (n) => `${n} mot${n > 1 ? 's' : ''}`,
-        mastered:(m, t) => `${m}/${t} maîtrisés`,
         levelGroups: { A1: 'A1 — Bases', A2B1: 'A2 / B1', B2C1: 'B2 / C1', C1C2: 'C1 / C2 — Avancé' },
         quiz: 'Quiz', read: 'Lire', loading: 'Chargement des modules…',
     },
@@ -359,28 +325,15 @@ const FR: Translations = {
         back: '← Tous les cours', setActive: 'Définir comme cours actif',
         steps: (done, total) => `${done} / ${total} étapes`,
         notFound: 'Cours introuvable.',
-        continueLabel: 'Continuez là où vous en étiez',
-        resumeBtn: 'Reprendre →',
+        continueLabel: 'Poursuivre votre apprentissage',
+        resumeBtn: 'Continuer →',
         allDone: 'Cours terminé — félicitations !',
         types: { vocabulary: 'Vocabulaire', grammar: 'Grammaire', verbs: 'Verbes', phrases: 'Expressions', reading: 'Lecture' },
     },
-    stats: {
-        title: 'Progrès', subtitle: 'Votre apprentissage en un coup d\'œil',
-        dayStreak: 'jours consécutifs', bestStreak: 'meilleure série',
-        wordsMastered: 'mots maîtrisés', accuracy: 'précision',
-        today: 'Aujourd\'hui',
-        wordsToday: (n, g) => `${n} / ${g} mots aujourd'hui`,
-        goal: 'Objectif :', dailyGoalLabel: 'Objectif quotidien',
-        moduleActivity: 'Activité par module',
-        masteredPracticed: (m, p) => `${m} maîtrisés · ${p} pratiqués`,
-        recentQuizzes: 'Quiz récents',
-        noQuizzes: 'Aucun quiz complété. Commencez un quiz de vocabulaire !',
-        dateLocale: 'fr-FR',
-    },
     quiz: {
+        loadError: 'Impossible de charger ce quiz. Veuillez réessayer.',
         loading: 'Chargement…',
-        allMastered: 'Tout maîtrisé !', allMasteredSubtitle: 'Vous avez maîtrisé tous les mots de ce module.',
-        practiceAll: 'Pratiquer quand même', backToVocabulary: 'Retour au vocabulaire',
+        backToVocabulary: 'Retour au vocabulaire',
         complete: 'Quiz terminé !', score: 'Score', total: 'Total',
         accuracy: 'Précision', tryAgain: 'Réessayer',
         exit: '✕ Quitter',
@@ -411,7 +364,6 @@ const FR: Translations = {
         preferences: 'Préférences',
         learningLanguage: 'Langue apprise', learningLanguageHint: 'Prend effet au prochain quiz',
         learnFrench: '🇫🇷 Apprendre le français', learnEnglish: '🇬🇧 Apprendre l\'anglais',
-        dailyGoal: 'Objectif quotidien', dailyGoalHint: 'Mots à étudier par jour',
         account: 'Compte', email: 'E-mail',
         password: 'Mot de passe', changePassword: 'Changer le mot de passe',
         passwordUpdated: 'Mot de passe mis à jour.', cancelBtn: 'Annuler', updateBtn: 'Mettre à jour',
@@ -420,10 +372,9 @@ const FR: Translations = {
         deleteAccount: 'Supprimer le compte', deleteAccountHint: 'Supprime définitivement toutes vos données',
         confirmDeleteMsg: 'Êtes-vous sûr(e) ? Cette action est irréversible.',
         yesDelete: 'Oui, supprimer', saving: 'Enregistrement…', deleting: 'Suppression…',
-        guestMsg: 'Vous utilisez Bonjour Madame en tant qu\'invité(e). Créez un compte pour synchroniser votre progression.',
-        createAccount: 'Créer un compte', logIn: 'Se connecter',
+        logIn: 'Se connecter',
     },
-    guest: { banner: 'Mode invité — votre progression ne sera pas synchronisée.', createAccount: ' Créer un compte gratuit' },
+    guest: { banner: 'Mode invité', dismiss: 'Masquer la note' },
     helperVerbs: {
         pageSubtitle: 'Tables de conjugaison, quiz et pratique',
         helperSection: 'Verbes essentiels',

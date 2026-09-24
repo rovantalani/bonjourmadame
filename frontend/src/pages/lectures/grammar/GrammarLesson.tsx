@@ -1,3 +1,4 @@
+import LearningCompletion from '../../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../../../utils/i18n';
@@ -260,6 +261,7 @@ export default function GrammarLesson() {
                     </div>
                 </div>
             )}
+            <LearningCompletion requireQuiz={exercises.length > 0} quizPassed={exercises.length === 0 || (checkedResults.length === exercises.length && checkedResults.every(Boolean))} />
         </main>
     );
 }

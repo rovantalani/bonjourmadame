@@ -2,90 +2,70 @@
     margin-bottom: 1.5rem;
 }
 
-/* ── Continue strip ── */
+/* ── Continue learning ── */
 .cr-continue {
     display: flex;
     align-items: center;
-    gap: var(--s-4);
+    flex-wrap: wrap;
+    gap: var(--s-3) var(--s-4);
     width: 100%;
-    max-width: 680px;
-    background: var(--accent-light);
-    border: 1px solid var(--accent);
-    border-left: 4px solid var(--accent);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--r-lg);
-    padding: var(--s-4) var(--s-6);
+    padding: 1rem;
     margin-bottom: var(--s-8);
     cursor: pointer;
     text-align: left;
-    transition: box-shadow var(--t-base) var(--ease), transform var(--t-fast) var(--ease);
+    font-family: var(--font-ui);
+    transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
 
 .cr-continue:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateX(2px);
+    border-color: var(--accent);
+    background: var(--surface-2);
 }
 
-.cr-continue__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--accent-foreground);
-    flex-shrink: 0;
+.cr-continue:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
 .cr-continue__body {
-    flex: 1;
+    flex: 1 1 200px;
     display: flex;
     flex-direction: column;
-    gap: var(--s-1);
+    gap: 0.4rem;
     min-width: 0;
 }
 
 .cr-continue__label {
-    font-size: 0.78rem;
+    font-size: 0.65rem;
     font-weight: 500;
-    font-family: var(--font-ui);
-    color: var(--accent-text);
-    opacity: 0.85;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-2);
 }
 
 .cr-continue__step {
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    line-height: 1.5;
     color: var(--text-1);
-    display: flex;
-    align-items: center;
-    gap: var(--s-2);
-    flex-wrap: wrap;
+    overflow-wrap: anywhere;
 }
 
-.cr-continue__dot {
-    color: var(--text-3);
-    font-weight: 400;
+.cr-continue__step strong { font-weight: 600; }
+
+.cr-continue__type {
+    font-size: 0.82rem;
+    color: var(--text-2);
 }
 
-.cr-continue__btn {
-    background: var(--accent);
-    color: var(--accent-foreground);
-    border: none;
-    border-radius: var(--r-md);
-    padding: 0.55rem 1.1rem;
-    font-size: 0.88rem;
-    font-weight: 700;
-    font-family: var(--font-ui);
+.cr-continue__action {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-text);
     white-space: nowrap;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: background var(--t-fast) var(--ease);
-}
-
-.cr-continue__btn:hover {
-    background: var(--accent-hover);
 }
 
 .cr-header {
@@ -219,7 +199,7 @@
     border-color: var(--verb);
 }
 
-/* ── Status node (circle with number or check) ── */
+/* ── Lesson number ── */
 .cr-node {
     display: inline-flex;
     align-items: center;
@@ -232,18 +212,6 @@
     font-family: var(--font-ui);
     flex-shrink: 0;
     border: 2px solid currentColor;
-}
-
-.cr-node--complete {
-    color: var(--verb);
-    background: var(--verb-soft);
-    border-color: var(--verb);
-}
-
-.cr-node--visited {
-    color: var(--accent-text);
-    background: var(--accent-light);
-    border-color: var(--accent);
 }
 
 .cr-node--todo {
@@ -282,29 +250,6 @@
     line-height: 1.6;
 }
 
-/* ── Mastery pips ── */
-.cr-pips {
-    display: flex;
-    gap: 4px;
-    flex-shrink: 0;
-    align-items: center;
-}
-
-.cr-pip {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    transition: background var(--t-fast) var(--ease);
-}
-
-.cr-pip--on {
-    background: var(--verb);
-}
-
-.cr-step--visited  .cr-pip--on { background: var(--accent); }
-.cr-step--complete .cr-pip--on { background: var(--verb); }
-
 /* ── Chevron ── */
 .cr-step-arrow {
     font-size: 1.3rem;
@@ -333,6 +278,5 @@
     .cr-header { gap: 0.8rem; }
     .cr-header-text h1 { font-size: 1.4rem; }
     .cr-step-btn { gap: 0.65rem; padding: 0.75rem 0.85rem; }
-    .cr-pips { gap: 3px; }
-    .cr-pip { width: 7px; height: 7px; }
+
 }

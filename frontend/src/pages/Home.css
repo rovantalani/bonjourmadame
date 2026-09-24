@@ -1,38 +1,10 @@
-/* ── English mode onboarding banner ── */
-.home-en-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    background: var(--verb-soft);
-    border: 1.5px solid var(--verb);
-    border-radius: var(--r-lg);
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: var(--verb);
-}
-
-.home-en-banner-close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--verb);
-    font-size: 1rem;
-    padding: 0 0.25rem;
-    flex-shrink: 0;
-    opacity: 0.7;
-}
-
-.home-en-banner-close:hover { opacity: 1; }
-
 /* ── Hero ── */
 .home-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-bottom: 2.5rem;
+    padding-bottom: 0;
     margin-bottom: 2.5rem;
 }
 
@@ -53,57 +25,6 @@
     font-size: 1.05rem;
     color: var(--text-2);
     margin-bottom: 1.25rem;
-}
-
-.home-rule {
-    border: none;
-    border-top: 2px solid var(--border);
-    width: 60px;
-    margin: 0 auto 1.5rem;
-}
-
-.home-status-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 0.25rem;
-    width: 100%;
-    max-width: 420px;
-}
-
-.home-streak-pill {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    background: var(--surface-2);
-    border: 1.5px solid var(--border);
-    border-radius: var(--r-pill);
-    padding: 0.35rem 0.85rem;
-    cursor: pointer;
-    transition: border-color .15s ease;
-    flex-shrink: 0;
-}
-.home-streak-pill:hover { border-color: var(--accent); }
-
-.home-streak-fire { font-size: 1rem; line-height: 1; }
-.home-streak-num  { font-size: 0.95rem; font-weight: 700; color: var(--text-1); }
-.home-streak-label { font-size: 0.75rem; color: var(--text-2); }
-
-.home-daily-goal {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.home-daily-label {
-    font-size: 0.78rem;
-    color: var(--text-2);
-    text-align: left;
-}
-
-.home-daily-bar {
-    height: 5px;
 }
 
 /* ── Review banner ── */
@@ -240,7 +161,7 @@
 /* ── Section grid ── */
 .home-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
 }
 
@@ -303,18 +224,6 @@
     color: var(--text-2);
     line-height: 1.6;
     margin: 0.4rem 0 0.75rem;
-}
-
-.home-card-meta {
-    display: inline-block;
-    font-size: 0.75rem;
-    color: var(--text-3);
-    background: var(--surface-2);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--r-pill);
-    font-weight: 500;
-    margin-top: auto;
-    align-self: flex-start;
 }
 
 /* ── Mobile ── */

@@ -78,11 +78,6 @@
 }
 
 /* ── Goal input ── */
-.settings-goal-input {
-    width: 80px;
-    text-align: center;
-    flex-shrink: 0;
-}
 
 /* ── Quiz direction toggle ── */
 .settings-toggle-group {
@@ -164,12 +159,6 @@
 }
 
 /* ── Guest section ── */
-.settings-guest-msg {
-    font-size: 0.88rem;
-    color: var(--text-2);
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-}
 
 .settings-guest-actions {
     display: flex;

@@ -1,3 +1,4 @@
+import LearningCompletion from '../../../components/LearningCompletion';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../../../utils/i18n';
@@ -114,6 +115,7 @@ export default function PhraseDetail() {
                     </div>
                 ))}
             </div>
+            <LearningCompletion />
         </main>
     );
 }

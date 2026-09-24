@@ -1,3 +1,4 @@
+import LearningCompletion from '../../../components/LearningCompletion';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SpeakerButton from '../../../components/SpeakerButton';
@@ -247,6 +248,7 @@ export default function ReadingPassage() {
                     ))}
                 </ul>
             </div>
+            <LearningCompletion />
         </main>
     );
 }

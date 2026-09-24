@@ -1,3 +1,4 @@
+import ProgressFlower from '../../components/ProgressFlower';
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useCourses } from '../../utils/modeHelpers';
@@ -68,12 +69,11 @@ export default function Lectures() {
             ) : (
                 <div className="lectures-list">
                     {lectureSteps.map(step => {
-                        const status = getStepStatus(step);
+                        const status = getStepStatus(step, level);
                         const color = TYPE_COLOR[step.type];
                         const Icon  = TYPE_ICON[step.type];
                         const typeLabel = t.roadmap.types[step.type];
 
-                        const filled = status === 'complete' ? 3 : status === 'visited' ? 1 : 0;
                         return (
                             <button
                                 key={step.id}
@@ -91,15 +91,7 @@ export default function Lectures() {
                                     </span>
                                 </div>
 
-                                <div className="lecture-pips" aria-label={`Mastery: ${filled} of 3`}>
-                                    {[0, 1, 2].map(i => (
-                                        <span
-                                            key={i}
-                                            className={`lecture-pip${i < filled ? ' lecture-pip--on' : ''}`}
-                                            style={i < filled ? { background: color } : undefined}
-                                        />
-                                    ))}
-                                </div>
+                                <ProgressFlower status={status} />
 
                                 <span className="lecture-arrow">›</span>
                             </button>

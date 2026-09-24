@@ -1,3 +1,4 @@
+import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../../utils/i18n';
@@ -239,6 +240,7 @@ export default function VerbConjugation() {
                 )}
                 <p className="scroll-hint">Scroll to see all tenses →</p>
             </div>
+            <LearningCompletion />
         </main>
     );
 }

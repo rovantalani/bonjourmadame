@@ -49,7 +49,7 @@ export default function Courses() {
 
                             <div className="courses-card-footer">
                                 <span className="courses-step-count">
-                                    {t.courses.steps(progress.completed + progress.visited, progress.total)}
+                                    {t.courses.steps(progress.completed, progress.total)}
                                 </span>
                                 <div className="progress-track courses-bar">
                                     <div
@@ -66,7 +66,7 @@ export default function Courses() {
                                 className="btn btn-primary courses-cta"
                                 style={{ backgroundColor: course.color }}
                             >
-                                {isActive ? t.courses.continue : progress.pct > 0 ? t.courses.resume : t.courses.start}
+                                {isActive ? t.courses.continue : progress.completed + progress.visited > 0 ? t.courses.resume : t.courses.start}
                             </span>
                         </button>
                     );
