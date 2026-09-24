@@ -62,19 +62,15 @@ export default function Vocabulary() {
                         const hasReading = READING_IDS.has(module.id);
                         const cardInner = (
                             <>
-                                <div className="vocab-card-top-row">
-                                    <span
-                                        className="vocab-card-icon-circle"
-                                        style={{ backgroundColor: 'var(--tag-vocabulary-bg)' }}
-                                    >
-                                        <span className="vocab-card-icon">{module.icon}</span>
-                                    </span>
-                                    <ProgressFlower status={status} />
-                                </div>
-                                <span className="vocab-card-title">{module.title}</span>
-                                <div className="vocab-card-footer">
+                                <span className="vocab-card-icon-circle">
+                                    <span className="vocab-card-icon">{module.icon}</span>
+                                </span>
+                                <span className="vocab-card-body">
+                                    <span className="vocab-card-title">{module.title}</span>
                                     <span className="vocab-card-badge">{t.vocabulary.words(module.wordCount)}</span>
-                                </div>
+                                </span>
+                                <ProgressFlower status={status} />
+                                {!hasReading && <span className="vocab-card-arrow" aria-hidden="true">›</span>}
                             </>
                         );
 
