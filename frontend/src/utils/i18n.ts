@@ -44,6 +44,7 @@ interface Translations {
         continue: string; resume: string; start: string;
     };
     roadmap: {
+        lecture: string;
         back: string; setActive: string;
         steps: (done: number, total: number) => string;
         notFound: string;
@@ -178,12 +179,13 @@ const EN: Translations = {
     courses: {
         title: 'Courses', subtitle: 'Choose your level and follow a structured path from A1 to C2.',
         active: 'Active',
-        steps: (done, total) => `${done} / ${total} steps`,
+        steps: (done, total) => `${done} of ${total} completed`,
         continue: 'Continue', resume: 'Resume', start: 'Start',
     },
     roadmap: {
+        lecture: 'Lecture',
         back: '← All Courses', setActive: 'Set as Active Course',
-        steps: (done, total) => `${done} / ${total} steps`,
+        steps: (done, total) => `${done} of ${total} completed`,
         notFound: 'Course not found.',
         continueLabel: 'Continue learning',
         resumeBtn: 'Continue →',
@@ -318,12 +320,13 @@ const FR: Translations = {
     courses: {
         title: 'Cours', subtitle: 'Choisissez votre niveau et suivez un parcours structuré du A1 au C2.',
         active: 'Actif',
-        steps: (done, total) => `${done} / ${total} étapes`,
+        steps: (done, total) => `${done} sur ${total} terminées`,
         continue: 'Continuer', resume: 'Reprendre', start: 'Commencer',
     },
     roadmap: {
+        lecture: 'Leçon',
         back: '← Tous les cours', setActive: 'Définir comme cours actif',
-        steps: (done, total) => `${done} / ${total} étapes`,
+        steps: (done, total) => `${done} sur ${total} terminées`,
         notFound: 'Cours introuvable.',
         continueLabel: 'Poursuivre votre apprentissage',
         resumeBtn: 'Continuer →',

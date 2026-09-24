@@ -15,8 +15,8 @@ export default function CourseBar({ activeLevel, onChange }: Props) {
                     className={`course-bar-pill ${activeLevel === c.level ? 'course-bar-pill--active' : ''}`}
                     style={
                         activeLevel === c.level
-                            ? { backgroundColor: c.color, borderColor: c.color, color: 'var(--course-foreground)' }
-                            : { borderColor: c.color, color: c.color }
+                            ? { backgroundColor: c.color, borderColor: c.color, color: c.textColor }
+                            : { backgroundColor: c.color, borderColor: c.color, color: c.textColor }
                     }
                     onClick={() => onChange(c.level)}
                     type="button"

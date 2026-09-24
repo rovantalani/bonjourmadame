@@ -37,9 +37,9 @@ export default function Home() {
 
     type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
     const SECTION_CARDS = [
-        { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: 'var(--accent)', Icon: BookIcon as IconFC, ...t.home.sections.vocabulary  },
+        { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: 'var(--tag-vocabulary-text)', Icon: BookIcon as IconFC, ...t.home.sections.vocabulary  },
         { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: 'var(--verb)',   Icon: BoltIcon as IconFC, ...t.home.sections.verbs },
-        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: 'var(--almost)', Icon: BookOpenIcon as IconFC, ...t.home.sections.lectures },
+        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: 'var(--tag-lectures-text)', Icon: BookOpenIcon as IconFC, ...t.home.sections.lectures },
     ];
 
     return (
@@ -77,7 +77,7 @@ export default function Home() {
                 >
                     <span
                         className="home-course-badge"
-                        style={{ backgroundColor: activeCourse.color }}
+                        style={{ backgroundColor: activeCourse.color, color: activeCourse.textColor }}
                     >
                         {activeCourse.level}
                     </span>

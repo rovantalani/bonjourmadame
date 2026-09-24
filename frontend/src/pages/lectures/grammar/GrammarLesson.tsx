@@ -42,6 +42,8 @@ function normalizeAnswer(str: string): string {
     return str
         .toLowerCase()
         .trim()
+        .replace(/[’‘`]/g, "'")
+        .replace(/\s*'\s*/g, "'")
         .normalize('NFD')
         .replace(/[̀-ͯ]/g, '');
 }
@@ -56,6 +58,7 @@ export default function GrammarLesson() {
     const [error, setError] = useState(false);
 
     const [inputs, setInputs] = useState<string[]>([]);
+    const [solved, setSolved] = useState<boolean[]>([]);
     const [exerciseState, setExerciseState] = useState<ExerciseState>('idle');
     const [shownHints, setShownHints] = useState<boolean[]>([]);
 
@@ -71,6 +74,7 @@ export default function GrammarLesson() {
             .then((data: GrammarLessonData) => {
                 setLesson(data);
                 setInputs(new Array(data.exercises?.length ?? 0).fill(''));
+                setSolved(new Array(data.exercises?.length ?? 0).fill(false));
                 setShownHints(new Array(data.exercises?.length ?? 0).fill(false));
                 setExerciseState('idle');
                 setLoading(false);
@@ -83,16 +87,13 @@ export default function GrammarLesson() {
 
     function handleInputChange(index: number, value: string) {
         setInputs(prev => prev.map((v, i) => (i === index ? value : v)));
+        setExerciseState('idle');
     }
 
     function handleCheckAnswers() {
+        const results = (lesson?.exercises ?? []).map((ex, i) => normalizeAnswer(inputs[i] ?? '') === normalizeAnswer(ex.answer));
+        setSolved(prev => prev.map((wasSolved, i) => wasSolved || results[i]));
         setExerciseState('checked');
-    }
-
-    function handleTryAgain() {
-        setInputs(new Array(lesson?.exercises?.length ?? 0).fill(''));
-        setShownHints(new Array(lesson?.exercises?.length ?? 0).fill(false));
-        setExerciseState('idle');
     }
 
     function handleShowHint(index: number) {
@@ -119,10 +120,8 @@ export default function GrammarLesson() {
     }
 
     const exercises = lesson.exercises ?? [];
-    const checkedResults = exerciseState === 'checked'
-        ? exercises.map((ex, i) => normalizeAnswer(inputs[i]) === normalizeAnswer(ex.answer))
-        : [];
-    const score = checkedResults.filter(Boolean).length;
+    const checkedResults = exerciseState === 'checked' ? solved : [];
+    const score = solved.filter(Boolean).length;
 
     return (
         <main className="page">
@@ -133,15 +132,15 @@ export default function GrammarLesson() {
             <div className="lesson-header card">
                 <span
                     className="lesson-icon-circle"
-                    style={{ backgroundColor: lesson.color }}
+                    style={{ backgroundColor: 'var(--tag-grammar-bg)', color: 'var(--tag-grammar-text)' }}
                 >
                     <LessonIcon emoji={lesson.icon} size={28} />
                 </span>
                 <div className="lesson-header-text">
-                    <span className="level-badge" style={{ backgroundColor: lesson.color }}>
+                    <span className="level-badge" style={{ backgroundColor: `var(--level-${lesson.level.toLowerCase()}-bg)`, color: `var(--level-${lesson.level.toLowerCase()}-text)` }}>
                         {lesson.level}
                     </span>
-                    <h1 style={{ color: lesson.color }}>{lesson.title}</h1>
+                    <h1 style={{ color: 'var(--tag-grammar-text)' }}>{lesson.title}</h1>
                     <p className="lesson-description">{lesson.description}</p>
                 </div>
             </div>
@@ -151,13 +150,13 @@ export default function GrammarLesson() {
                     <div key={idx} className="lesson-section card">
                         <h2
                             className="lesson-section-title"
-                            style={{ borderBottomColor: lesson.color }}
+                            style={{ borderBottomColor: 'var(--tag-grammar-text)' }}
                         >
                             {section.title}
                         </h2>
                         <p
                             className="lesson-explanation"
-                            style={{ borderLeftColor: `${lesson.color}66` }}
+                            style={{ borderLeftColor: 'var(--tag-grammar-bg)' }}
                         >
                             {section.explanation}
                         </p>
@@ -213,7 +212,7 @@ export default function GrammarLesson() {
                                             className="field-input ex-input"
                                             value={inputs[i]}
                                             onChange={e => handleInputChange(i, e.target.value)}
-                                            disabled={exerciseState === 'checked'}
+                                            disabled={solved[i]}
                                             placeholder="___"
                                             aria-label={`Answer for exercise ${i + 1}`}
                                         />
@@ -241,23 +240,14 @@ export default function GrammarLesson() {
                     </div>
 
                     <div className="ex-actions">
-                        {exerciseState === 'idle' ? (
-                            <button
-                                type="button"
-                                className="btn btn-primary"
-                                onClick={handleCheckAnswers}
-                            >
-                                {t.grammarLesson.checkAnswers}
-                            </button>
-                        ) : (
-                            <button
-                                type="button"
-                                className="btn btn-secondary"
-                                onClick={handleTryAgain}
-                            >
-                                {t.grammarLesson.tryAgain}
-                            </button>
-                        )}
+                        <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={handleCheckAnswers}
+                            disabled={solved.every(Boolean)}
+                        >
+                            {t.grammarLesson.checkAnswers}
+                        </button>
                     </div>
                 </div>
             )}

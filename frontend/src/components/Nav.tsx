@@ -37,16 +37,17 @@ function LevelIndicator({ activeLevel }: { activeLevel: string }) {
     }, [open]);
 
     const activeCourse = courses.find(c => c.level === activeLevel);
-    const color = activeCourse?.color ?? 'var(--accent)';
+    const color = activeCourse?.color ?? 'var(--level-a1-bg)';
+    const textColor = activeCourse?.textColor ?? 'var(--level-a1-text)';
 
     return (
         <div className="level-indicator" ref={ref}>
             <button
                 className="level-indicator-btn"
                 style={{
-                    backgroundColor: `${color}1A`,
-                    color: color,
-                    borderColor: `${color}40`,
+                    backgroundColor: color,
+                    color: textColor,
+                    borderColor: color,
                 }}
                 onClick={() => setOpen(o => !o)}
                 aria-label="Change course level"
@@ -71,13 +72,13 @@ function LevelIndicator({ activeLevel }: { activeLevel: string }) {
                                 >
                                     <span
                                         className="level-dropdown-badge"
-                                        style={{ backgroundColor: c.color }}
+                                        style={{ backgroundColor: c.color, color: c.textColor }}
                                     >
                                         {c.level}
                                     </span>
                                     <span className="level-dropdown-title">{c.title}</span>
                                     {c.level === activeLevel && (
-                                        <span className="level-dropdown-check" style={{ color: c.color }}>✓</span>
+                                        <span className="level-dropdown-check" style={{ color: 'var(--accent-text)' }}>✓</span>
                                     )}
                                 </button>
                             </li>

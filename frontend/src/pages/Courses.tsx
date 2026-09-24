@@ -37,7 +37,7 @@ export default function Courses() {
                             <div className="courses-card-top">
                                 <span
                                     className="courses-level-badge"
-                                    style={{ backgroundColor: course.color }}
+                                    style={{ backgroundColor: course.color, color: course.textColor }}
                                 >
                                     {course.level}
                                 </span>
@@ -64,7 +64,7 @@ export default function Courses() {
 
                             <span
                                 className="btn btn-primary courses-cta"
-                                style={{ backgroundColor: course.color }}
+                                style={{ backgroundColor: course.color, color: course.textColor }}
                             >
                                 {isActive ? t.courses.continue : progress.completed + progress.visited > 0 ? t.courses.resume : t.courses.start}
                             </span>

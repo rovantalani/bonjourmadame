@@ -32,6 +32,7 @@ export interface Course {
     title: string;
     description: string;
     color: string;
+    textColor: string;
     units?: CourseUnit[];
     steps: CourseStep[];
 }
@@ -42,6 +43,7 @@ export const COURSES_EN: Course[] = [
         title: 'Les Bases',
         description: 'Construisez votre premier vocabulaire anglais et maîtrisez les règles de grammaire essentielles.',
         color: 'var(--course-a1)',
+        textColor: 'var(--level-a1-text)',
         units: [
             { number: 1, title: 'Premiers Mots' },
             { number: 2, title: 'Grammaire Fondamentale' },
@@ -98,6 +100,7 @@ export const COURSES_EN: Course[] = [
         title: "L'Anglais du Quotidien",
         description: 'Élargissez votre vocabulaire et maîtrisez les temps du passé et du futur.',
         color: 'var(--course-a2)',
+        textColor: 'var(--level-a2-text)',
         units: [
             { number: 1, title: 'Monde & Personnes' },
             { number: 2, title: 'Passé & Futur' },
@@ -152,6 +155,7 @@ export const COURSES_EN: Course[] = [
         title: 'Construction de la Fluidité',
         description: "Maîtrisez les conditionnels, la voix passive et enrichissez votre vocabulaire d'usage.",
         color: 'var(--course-b1)',
+        textColor: 'var(--level-b1-text)',
         units: [
             { number: 1, title: 'Monde Moderne' },
             { number: 2, title: 'Structures Avancées' },
@@ -202,6 +206,7 @@ export const COURSES_EN: Course[] = [
         title: 'Intermédiaire Supérieur',
         description: "Maîtrisez les structures avancées, le vocabulaire de précision et les textes d'opinion.",
         color: 'var(--course-b2)',
+        textColor: 'var(--level-b2-text)',
         units: [
             { number: 1, title: 'Monde & Société' },
             { number: 2, title: 'Grammaire de Précision' },
@@ -246,6 +251,7 @@ export const COURSES_EN: Course[] = [
         title: 'Avancé',
         description: 'Registre, grammaire littéraire, discours académique et textes authentiques.',
         color: 'var(--course-c1)',
+        textColor: 'var(--level-c1-text)',
         units: [
             { number: 1, title: 'Registre & Modalité' },
             { number: 2, title: 'Discours Académique' },
@@ -301,6 +307,7 @@ export const COURSES_EN: Course[] = [
         title: 'Maîtrise',
         description: 'Précision stylistique, lecture des grands textes français, traduction et maîtrise totale du registre.',
         color: 'var(--course-c2)',
+        textColor: 'var(--level-c2-text)',
         units: [
             { number: 1, title: 'Précision & Raffinement' },
             { number: 2, title: 'Langue en Contexte' },
@@ -358,6 +365,7 @@ export const COURSES: Course[] = [
         title: 'Foundations',
         description: 'Build your first French vocabulary and master essential grammar rules.',
         color: 'var(--course-a1)',
+        textColor: 'var(--level-a1-text)',
         units: [
             { number: 1, title: 'Unit 1 — First Contact' },
             { number: 2, title: 'Unit 2 — My World' },
@@ -422,6 +430,7 @@ export const COURSES: Course[] = [
         title: 'Everyday French',
         description: 'Master past tenses, pronouns, and real-world French situations.',
         color: 'var(--course-a2)',
+        textColor: 'var(--level-a2-text)',
         units: [
             { number: 1, title: 'Unit 1 — Le Passé' },
             { number: 2, title: 'Unit 2 — Achats & Goûts' },
@@ -485,6 +494,7 @@ export const COURSES: Course[] = [
         title: 'Building Fluency',
         description: 'Master past and future tenses, irregular verbs, and real-world phrases.',
         color: 'var(--course-b1)',
+        textColor: 'var(--level-b1-text)',
         units: [
             { number: 1, title: 'Unit 1 — Récit & Mémoire' },
             { number: 2, title: 'Unit 2 — Opinions & Société' },
@@ -545,6 +555,7 @@ export const COURSES: Course[] = [
         title: 'Intermediate',
         description: 'Master advanced grammar, authentic French texts, formal writing, and complex discourse.',
         color: 'var(--course-b2)',
+        textColor: 'var(--level-b2-text)',
         units: [
             { number: 1, title: 'Unit 1 — Grammaire Complexe' },
             { number: 2, title: 'Unit 2 — Expression Nuancée' },
@@ -603,6 +614,7 @@ export const COURSES: Course[] = [
         title: 'Advanced',
         description: 'Register, literary grammar, academic discourse, and authentic French texts.',
         color: 'var(--course-c1)',
+        textColor: 'var(--level-c1-text)',
         units: [
             { number: 1, title: 'Register & Modality' },
             { number: 2, title: 'Academic Discourse' },
@@ -658,6 +670,7 @@ export const COURSES: Course[] = [
         title: 'Mastery',
         description: 'Stylistic precision, canonical French literature, translation, and total register mastery.',
         color: 'var(--course-c2)',
+        textColor: 'var(--level-c2-text)',
         units: [
             { number: 1, title: 'Precision & Refinement' },
             { number: 2, title: 'Language in Context' },

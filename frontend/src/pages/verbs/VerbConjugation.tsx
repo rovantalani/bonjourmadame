@@ -169,14 +169,14 @@ export default function VerbConjugation() {
             <header className="vc-header">
                 <div
                     className="vc-icon"
-                    style={{ backgroundColor: `${verb.color}1F` }}
+                    style={{ backgroundColor: 'var(--tag-verbs-bg)' }}
                 >
                     <span style={{ fontSize: '2rem' }}>
                         {verb.title.charAt(0)}
                     </span>
                 </div>
                 <div className="vc-title-row">
-                    <h1 className="vc-title" style={{ color: verb.color }}>
+                    <h1 className="vc-title" style={{ color: 'var(--tag-verbs-text)' }}>
                         {verb.title}
                     </h1>
                     <SpeakerButton
@@ -191,7 +191,7 @@ export default function VerbConjugation() {
                 <div className="table-scroll">
                     <table className="conj-table">
                         <thead>
-                            <tr style={{ backgroundColor: verb.color }}>
+                            <tr style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)' }}>
                                 <th>—</th>
                                 {tenses.map(t => (
                                     <th key={t.key} style={!t.quizzable ? { opacity: 0.7, fontStyle: 'italic' } : undefined}>
@@ -211,7 +211,7 @@ export default function VerbConjugation() {
                                     >
                                         <td
                                             className="sujet-cell"
-                                            style={{ color: verb.color }}
+                                            style={{ color: 'var(--tag-verbs-text)' }}
                                         >
                                             {row.sujet}
                                         </td>

@@ -176,7 +176,7 @@ export default function PhraseQuiz() {
             <div className="progress-track vocq-progress">
                 <div
                     className="progress-fill"
-                    style={{ width: `${progress}%`, backgroundColor: category?.color ?? 'var(--accent)' }}
+                    style={{ width: `${progress}%`, backgroundColor: 'var(--tag-phrases-text)' }}
                 />
             </div>
 

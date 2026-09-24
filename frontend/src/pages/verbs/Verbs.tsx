@@ -37,6 +37,7 @@ interface VerbSummary {
     translation: string;
     type: string;
     color: string;
+    newTenses?: boolean;
 }
 
 interface ReviewGroup {
@@ -70,18 +71,22 @@ function groupByType(verbs: VerbSummary[]): { type: string; verbs: VerbSummary[]
         .map(([type, verbs]) => ({ type, verbs }));
 }
 
-function VerbGrid({ verbs, level, navigate, learnLabel, quizLabel }: {
+function VerbGrid({ verbs, level, navigate, learnLabel, quizLabel, newTensesLabel }: {
     verbs: VerbSummary[];
     level: string | undefined;
     navigate: (path: string) => void;
     learnLabel: string;
     quizLabel: string;
+    newTensesLabel: string;
 }) {
     if (verbs.length === 0) return null;
     return (
         <div className="verb-grid">
             {verbs.map(verb => (
-                <div key={verb.id} className="verb-card">
+                <div key={verb.id} className={`verb-card${verb.newTenses ? ' verb-card--new-tenses' : ''}`}>
+                    {verb.newTenses && (
+                        <span className="verb-new-tenses"><span aria-hidden="true">✦</span> {newTensesLabel}</span>
+                    )}
                     <div className="verb-card-heading">
                                         <h2 className="verb-infinitive">{verb.infinitive}</h2>
                                         <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${verb.id}/learn`)} />
@@ -90,14 +95,14 @@ function VerbGrid({ verbs, level, navigate, learnLabel, quizLabel }: {
                     <div className="verb-actions">
                         <button
                             className="btn"
-                            style={{ border: `1.5px solid ${verb.color}`, color: verb.color, background: 'var(--surface)', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
+                            style={{ border: '1.5px solid var(--tag-verbs-text)', color: 'var(--tag-verbs-text)', background: 'var(--surface)', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
                             onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/learn`)}
                         >
                             {learnLabel}
                         </button>
                         <button
                             className="btn"
-                            style={{ backgroundColor: verb.color, color: '#fff', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
+                            style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
                             onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/quiz`)}
                         >
                             {quizLabel}
@@ -146,115 +151,80 @@ export default function Verbs() {
             .filter(g => g.verbs.length > 0)
         : [];
 
-    const newTypeGroups = groupByType(filteredNew);
-    const levelLabel = (level ?? 'A1').toUpperCase();
+    // New verbs come first; previously introduced verbs stay at the end of their type.
+    const typeGroups = groupByType([
+        ...filteredNew,
+        ...filteredReview.flatMap(group => group.verbs.map(verb => ({ ...verb, newTenses: true }))),
+    ]);
+    if (filteredHelpers.length > 0 && !typeGroups.some(group => group.type === 'Irregular')) {
+        typeGroups.push({ type: 'Irregular', verbs: [] });
+    }
 
     return (
         <main className="page">
-            <header className="page-header">
-                <h1>{t.verbs.title}</h1>
-                <p className="subtitle">{t.verbs.subtitle}</p>
+            <header className="page-header verbs-page-header">
+                <div className="verbs-page-intro">
+                    <h1>{t.verbs.title}</h1>
+                    <p className="subtitle">{t.verbs.subtitle}</p>
+                </div>
+                <div className="verbs-search-row">
+                    <svg className="verbs-search-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="10.8" cy="10.8" r="6.3" />
+                        <path d="m15.5 15.5 4.2 4.2" />
+                    </svg>
+                    <input
+                        type="search"
+                        className="verbs-search"
+                        aria-label={isEN ? 'Search verbs' : 'Rechercher un verbe'}
+                        placeholder={isEN ? 'Find a verb…' : 'Trouver un verbe…'}
+                        value={search}
+                        onChange={e => setSearch(e.target.value)}
+                    />
+                    {search && (
+                        <button className="verbs-search-clear" type="button" onClick={() => setSearch('')} aria-label={isEN ? 'Clear search' : 'Effacer la recherche'}>
+                            ×
+                        </button>
+                    )}
+                </div>
             </header>
-
-            <div className="verbs-search-row">
-                <input
-                    type="search"
-                    className="field-input verbs-search"
-                    placeholder={isEN ? 'Search verbs…' : 'Rechercher un verbe…'}
-                    value={search}
-                    onChange={e => setSearch(e.target.value)}
-                />
-            </div>
-
-            {/* Helper Verbs */}
-            {filteredHelpers.length > 0 && (
-                <section className="verbs-section">
-                    <h2 className="verbs-section-title">{isEN ? 'Auxiliary Verbs' : 'Verbes essentiels'}</h2>
-                    <p className="verbs-section-desc">
-                        {isEN ? 'The 5 core English verbs — master these first' : 'Les 5 verbes fondamentaux du français'}
-                    </p>
-                    <div className="verbs-helper-grid">
-                        {filteredHelpers.map(v => (
-                            <button
-                                key={v.id}
-                                className="verbs-helper-card"
-                                style={{ borderTopColor: v.color }}
-                                onClick={() => navigate(`/courses/${level}/verbs/${v.id}/table`)}
-                                type="button"
-                            >
-                                <span className="verbs-helper-icon" style={{ backgroundColor: v.bg, color: v.color }}><v.Icon size={20} /></span>
-                                <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
-                                <span className="verbs-helper-translation">{v.translation}</span>
-                                <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${v.id}/table`)} />
-                            </button>
-                        ))}
-                    </div>
-                </section>
-            )}
 
             {loading ? (
                 <p className="verbs-loading">Loading…</p>
             ) : (
                 <>
-                    {/* New verbs for this level */}
-                    {filteredNew.length > 0 && (
-                        <section className="verbs-section">
-                            <h2 className="verbs-section-title">
-                                {isEN ? `Nouveaux verbes — ${levelLabel}` : `New verbs — ${levelLabel}`}
-                            </h2>
-                            <p className="verbs-section-desc">
-                                {isEN
-                                    ? `Verbes introduits pour la première fois à ce niveau — pratiquez tous les temps`
-                                    : `Verbs introduced for the first time at this level — practice all unlocked tenses`}
-                            </p>
-                            {newTypeGroups.map(({ type, verbs }) => (
-                                <div key={type} className="verbs-type-block">
-                                    <span className="level-badge" style={{ backgroundColor: verbs[0]?.color ?? 'var(--accent)', fontSize: '0.75rem' }}>
-                                        {type}
-                                    </span>
-                                    <VerbGrid
-                                        verbs={verbs}
-                                        level={level}
-                                        navigate={navigate}
-                                        learnLabel={t.verbGroupList.learn}
-                                        quizLabel={t.verbGroupList.quiz}
-                                    />
+                    {typeGroups.map(({ type, verbs }) => (
+                        <section key={type} className="verbs-section">
+                            <h2 className="verbs-section-title">{type}</h2>
+                            {type === 'Irregular' && filteredHelpers.length > 0 && (
+                                <div className="verbs-helper-grid">
+                                    {filteredHelpers.map(v => (
+                                        <button
+                                            key={v.id}
+                                            className="verbs-helper-card"
+                                            style={{ borderTopColor: v.color }}
+                                            onClick={() => navigate(`/courses/${level}/verbs/${v.id}/table`)}
+                                            type="button"
+                                        >
+                                            <span className="verbs-helper-icon" style={{ backgroundColor: v.bg, color: v.color }}><v.Icon size={20} /></span>
+                                            <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
+                                            <span className="verbs-helper-translation">{v.translation}</span>
+                                            <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${v.id}/table`)} />
+                                        </button>
+                                    ))}
                                 </div>
-                            ))}
-                            {filteredNew.length === 0 && q && (
-                                <p className="verbs-loading" style={{ color: 'var(--text-3)' }}>No new verbs match "{search}"</p>
                             )}
+                            <VerbGrid
+                                verbs={verbs}
+                                level={level}
+                                navigate={navigate}
+                                learnLabel={t.verbGroupList.learn}
+                                quizLabel={t.verbGroupList.quiz}
+                                newTensesLabel={isEN ? 'Nouveaux temps' : 'New tenses'}
+                            />
                         </section>
-                    )}
-
-                    {/* Review verbs from prior levels */}
-                    {filteredReview.length > 0 && (
-                        <section className="verbs-section">
-                            <h2 className="verbs-section-title">
-                                {isEN ? 'Révision — nouveaux temps uniquement' : 'Review — new tenses only'}
-                            </h2>
-                            <p className="verbs-section-desc">
-                                {isEN
-                                    ? `Ces verbes ont déjà été appris. Le quiz ne teste que les nouveaux temps de ${levelLabel}.`
-                                    : `These verbs were learned earlier. The quiz only tests the new ${levelLabel} tenses.`}
-                            </p>
-                            {filteredReview.map(group => (
-                                <div key={group.groupId} className="verbs-review-block">
-                                    <h3 className="verbs-review-group-title">{group.groupTitle}</h3>
-                                    <VerbGrid
-                                        verbs={group.verbs}
-                                        level={level}
-                                        navigate={navigate}
-                                        learnLabel={t.verbGroupList.learn}
-                                        quizLabel={t.verbGroupList.quiz}
-                                    />
-                                </div>
-                            ))}
-                        </section>
-                    )}
-
-                    {filteredNew.length === 0 && filteredReview.length === 0 && q && (
-                        <p className="verbs-loading" style={{ color: 'var(--text-3)' }}>No verbs match "{search}"</p>
+                    ))}
+                    {typeGroups.length === 0 && q && (
+                        <p className="verbs-loading">No verbs match "{search}"</p>
                     )}
                 </>
             )}

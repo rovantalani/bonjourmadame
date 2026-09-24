@@ -72,14 +72,6 @@
     background: var(--verb-soft);
 }
 
-.lecture-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 2rem;
-}
-
 .lecture-body {
     flex: 1;
     display: flex;
@@ -97,12 +89,6 @@
     text-overflow: ellipsis;
 }
 
-.lecture-type {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
 
 .lecture-arrow {
     font-size: 1.3rem;

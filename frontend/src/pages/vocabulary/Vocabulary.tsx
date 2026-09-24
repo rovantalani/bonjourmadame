@@ -65,7 +65,7 @@ export default function Vocabulary() {
                                 <div className="vocab-card-top-row">
                                     <span
                                         className="vocab-card-icon-circle"
-                                        style={{ backgroundColor: `${module.color}1F` }}
+                                        style={{ backgroundColor: 'var(--tag-vocabulary-bg)' }}
                                     >
                                         <span className="vocab-card-icon">{module.icon}</span>
                                     </span>
@@ -94,7 +94,7 @@ export default function Vocabulary() {
                                             className="vocab-card-action-btn vocab-card-action-btn--read"
                                             onClick={() => navigate(`/courses/${level}/lectures/reading/${module.id}`)}
                                             type="button"
-                                            style={{ borderColor: module.color, color: module.color }}
+                                            style={{ borderColor: 'var(--tag-reading-text)', color: 'var(--tag-reading-text)' }}
                                         >
                                             {t.vocabulary.read}
                                         </button>

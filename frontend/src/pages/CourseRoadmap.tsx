@@ -1,3 +1,4 @@
+import ModuleTags from '../components/ModuleTags';
 import ProgressFlower from '../components/ProgressFlower';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
@@ -9,25 +10,9 @@ import {
     setActiveCourse,
     markStepVisited,
 } from '../utils/courseProgress';
-import type { CourseStep, StepType } from '../data/courses';
+import type { CourseStep } from '../data/courses';
 import { useT } from '../utils/i18n';
 import './CourseRoadmap.css';
-
-const TYPE_COLORS: Record<StepType, string> = {
-    vocabulary: 'var(--accent)',
-    grammar:    'var(--verb)',
-    verbs:      'var(--verb)',
-    phrases:    'var(--almost)',
-    reading:    'var(--masc)',
-};
-
-const TYPE_SOFT: Record<StepType, string> = {
-    vocabulary: 'var(--accent-light)',
-    grammar:    'var(--verb-soft)',
-    verbs:      'var(--verb-soft)',
-    phrases:    'var(--almost-soft)',
-    reading:    'var(--masc-soft)',
-};
 
 export default function CourseRoadmap() {
     const { level } = useParams<{ level: string }>();
@@ -61,15 +46,7 @@ export default function CourseRoadmap() {
                     <span className="cr-node cr-node--todo">{index + 1}</span>
                     <div className="cr-step-body">
                         <span className="cr-step-title">{step.title}</span>
-                        <span
-                            className="cr-type-badge"
-                            style={{
-                                backgroundColor: TYPE_SOFT[step.type],
-                                color: TYPE_COLORS[step.type],
-                            }}
-                        >
-                            {t.roadmap.types[step.type]}
-                        </span>
+                        <ModuleTags step={step} />
                     </div>
                     <ProgressFlower status={status} />
                     <span className="cr-step-arrow">›</span>
@@ -85,7 +62,7 @@ export default function CourseRoadmap() {
 
             {/* ── Course header ── */}
             <div className="cr-header">
-                <span className="cr-level-badge" style={{ backgroundColor: course.color }}>
+                <span className="cr-level-badge" style={{ backgroundColor: course.color, color: course.textColor }}>
                     {course.level}
                 </span>
                 <div className="cr-header-text">
@@ -94,19 +71,19 @@ export default function CourseRoadmap() {
                 </div>
             </div>
 
-            {/* ── Progress inline line ── */}
+            {/* ── Course progress ── */}
             <div className="cr-progress-line">
                 <span className="cr-progress-label">
                     {t.roadmap.steps(progress.completed, progress.total)}
                 </span>
-                <div className="progress-track cr-progress-bar">
-                    <div className="progress-fill" style={{ width: `${progress.pct}%`, backgroundColor: course.color }} />
+                <div className="progress-track cr-progress-bar" role="progressbar"
+                    aria-label={t.roadmap.steps(progress.completed, progress.total)}
+                    aria-valuemin={0} aria-valuemax={progress.total} aria-valuenow={progress.completed}>
+                    <div className="progress-fill" style={{ width: `${progress.pct}%` }} />
                 </div>
-                <span className="cr-progress-pct">{progress.pct}%</span>
                 {!isActive && (
                     <button
-                        className="btn btn-primary cr-set-active-btn"
-                        style={{ backgroundColor: course.color }}
+                        className="cr-set-active-btn"
                         onClick={() => setActiveCourse(course.level)}
                     >
                         {t.roadmap.setActive}
@@ -126,7 +103,7 @@ export default function CourseRoadmap() {
                             <span className="cr-continue__step">
                                 <strong>{nextStep.title}</strong>{' '}
                                 <span className="cr-continue__type">
-                                    · {t.roadmap.types[nextStep.type]}
+                                    · {nextStep.module === 'lectures' ? `${t.roadmap.lecture} · ${t.roadmap.types[nextStep.type]}` : t.roadmap.types[nextStep.type]}
                                 </span>
                             </span>
                         </span>
