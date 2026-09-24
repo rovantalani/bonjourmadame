@@ -10,7 +10,7 @@ import { getActiveCourse, getNextStep, getCourseProgress } from '../utils/course
 import { useCourses } from '../utils/modeHelpers';
 import { useT } from '../utils/i18n';
 import { loadLearningMode } from '../utils/settings';
-import { BookIcon, PenIcon, BoltIcon, RefreshIcon, FlameIcon } from '../components/icons';
+import { BookIcon, BookOpenIcon, BoltIcon, RefreshIcon, FlameIcon } from '../components/icons';
 import type { SVGProps } from 'react';
 
 export default function Home() {
@@ -60,8 +60,8 @@ export default function Home() {
     type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
     const SECTION_CARDS = [
         { id: 'vocabulary', path: `/courses/${activeLevel}/vocabulary`, color: 'var(--accent)', Icon: BookIcon as IconFC, ...t.home.sections.vocabulary  },
-        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: 'var(--verb)',   Icon: PenIcon as IconFC,  ...t.home.sections.grammar     },
-        { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: 'var(--verb)',   Icon: BoltIcon as IconFC, ...t.home.sections.helperVerbs },
+        { id: 'verbs',      path: `/courses/${activeLevel}/verbs`,      color: 'var(--verb)',   Icon: BoltIcon as IconFC, ...t.home.sections.verbs },
+        { id: 'lectures',   path: `/courses/${activeLevel}/lectures`,   color: 'var(--almost)', Icon: BookOpenIcon as IconFC, ...t.home.sections.lectures },
     ];
 
     return (

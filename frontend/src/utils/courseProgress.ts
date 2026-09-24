@@ -22,7 +22,7 @@ export function markStepVisited(stepId: string): void {
 export function getStepStatus(step: CourseStep): StepStatus {
     const visited = loadVisited();
 
-    if (step.type === 'vocabulary') {
+    if (step.module === 'vocabulary') {
         const mastery = loadMastery();
         const prefix  = `${step.contentId}:`;
         const entries = Object.entries(mastery).filter(([k]) => k.startsWith(prefix));
