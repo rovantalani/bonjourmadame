@@ -228,10 +228,7 @@ export default function VocabularyQuiz() {
                         <h2 className="vocq-word-english">
                             {quizDir === 'fr-en' ? currentWord.french : currentWord.english}
                         </h2>
-                        <SpeakerButton
-                            text={quizDir === 'fr-en' ? currentWord.english : currentWord.french}
-                            lang={quizDir === 'fr-en' ? 'en-US' : 'fr-FR'}
-                        />
+
                     </div>
                 </div>
 

@@ -232,6 +232,7 @@ export default function GrammarLesson() {
                                     {isWrong && (
                                         <p className="ex-correct-reveal">
                                             Correct: <strong>{ex.answer}</strong>
+                                            <SpeakerButton text={ex.answer} lang={isENMode ? 'en-US' : 'fr-FR'} />
                                         </p>
                                     )}
                                 </div>
