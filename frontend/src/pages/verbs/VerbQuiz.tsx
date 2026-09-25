@@ -355,7 +355,7 @@ export default function VerbQuiz() {
                         <span className="vq-verb-name" style={{ color: 'var(--tag-verbs-text)' }}>
                             {verb.infinitive}
                         </span>
-                        <SpeakerButton text={verb.infinitive} lang={isENUI ? 'en-US' : 'fr-FR'} />
+
                     </div>
                     <span className="vq-verb-hint">{verb.translation}</span>
                     {isReviewVerb && !isReview && (
@@ -422,7 +422,10 @@ export default function VerbQuiz() {
                                                     {userAnswers[row.sujet] || '—'}
                                                 </span>
                                                 {result === 'wrong' && (
-                                                    <span className="vq-correct-reveal">{expected}</span>
+                                                    <span className="vq-correct-reveal">
+                                                        {expected}
+                                                        <SpeakerButton text={expected} lang={isENUI ? 'en-US' : 'fr-FR'} />
+                                                    </span>
                                                 )}
                                             </div>
                                         ) : (
