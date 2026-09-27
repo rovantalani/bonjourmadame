@@ -10,6 +10,7 @@ export default function SpeakerButton({ text, lang = 'fr-FR' }: Props) {
     const { speak, speaking } = useSpeech();
     return (
         <button
+            type="button"
             className={`speaker-btn${speaking ? ' speaker-btn--active' : ''}`}
             onClick={() => speak(text, lang)}
             aria-label="Play pronunciation"

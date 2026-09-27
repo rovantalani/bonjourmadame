@@ -189,10 +189,7 @@ export default function PhraseQuiz() {
                         <h2 className="vocq-word-english">
                             {quizDir === 'fr-en' ? current.french : current.english}
                         </h2>
-                        <SpeakerButton
-                            text={quizDir === 'fr-en' ? current.english : current.french}
-                            lang={quizDir === 'fr-en' ? 'en-US' : 'fr-FR'}
-                        />
+
                     </div>
                     {current.note && <p style={{ fontSize: '0.82rem', color: 'var(--text-3)', marginTop: '0.4rem' }}>{current.note}</p>}
                 </div>
