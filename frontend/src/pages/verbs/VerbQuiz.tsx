@@ -1,3 +1,5 @@
+import { gradeAnswer, type AnswerResult } from '../../utils/answerValidator';
+import { useT } from '../../utils/i18n';
 import { useLearningVisit } from '../../hooks/useLearningVisit';
 import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect, useRef } from 'react';
@@ -36,7 +38,7 @@ interface VerbData {
 
 type TenseKey = keyof Omit<ConjugationRow, 'sujet'>;
 type Phase = 'quiz' | 'review' | 'complete';
-type CellResult = 'correct' | 'wrong';
+type CellResult = AnswerResult;
 
 interface TenseDef {
     key: TenseKey;
@@ -137,9 +139,6 @@ const NEW_TENSES_FOR_LEVEL: Record<string, TenseDef[]> = {
     c2: [],
 };
 
-function normalize(s: string): string {
-    return s.toLowerCase().trim().normalize('NFD').replace(/[̀-ͯ]/g, '');
-}
 
 function displaySujet(sujet: string, form: string): string {
     if (sujet.toLowerCase() === 'je' && /^[aeiouhyàâäéèêëîïôùûüœæ']/i.test(form.trim())) {
@@ -149,6 +148,7 @@ function displaySujet(sujet: string, form: string): string {
 }
 
 export default function VerbQuiz() {
+    const t = useT();
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
     const isENUI = loadLearningMode() === 'learn-english';
@@ -224,8 +224,9 @@ export default function VerbQuiz() {
             }
             const expected = (row[currentTense.key] as string | undefined) ?? '';
             const userAnswer = userAnswers[row.sujet] ?? '';
-            const isCorrect = normalize(userAnswer) === normalize(expected);
-            results[row.sujet] = isCorrect ? 'correct' : 'wrong';
+            const result = gradeAnswer(userAnswer, expected);
+            const isCorrect = result !== 'wrong';
+            results[row.sujet] = result;
             if (isCorrect) correct++;
         }
 
@@ -421,7 +422,8 @@ export default function VerbQuiz() {
                                                 <span className={`vq-user-val vq-user-val--${result}`}>
                                                     {userAnswers[row.sujet] || '—'}
                                                 </span>
-                                                {result === 'wrong' && (
+                                                {result === 'partial' && <span className="vq-partial-warning" role="status">{t.quiz.partialWarning}</span>}
+                                                {result !== 'correct' && (
                                                     <span className="vq-correct-reveal">
                                                         {expected}
                                                         <SpeakerButton text={expected} lang={isENUI ? 'en-US' : 'fr-FR'} />

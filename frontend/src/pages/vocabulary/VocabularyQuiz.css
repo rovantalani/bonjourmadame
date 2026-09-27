@@ -247,3 +247,5 @@
     width: 100%;
   }
 }
+
+.vocq-partial-answer { color: var(--warning, #986000); }

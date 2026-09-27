@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { addWrongWords, removeCorrectWord, loadShufflePref, saveShufflePref } from '../../utils/wordQueue';
 import { recordAnswer, recordSession, syncAnswerToApi, syncSessionToApi } from '../../utils/progress';
 import { useAuth } from '../../context/AuthContext';
-import { isAnswerCorrect } from '../../utils/answerValidator';
+import { gradeAnswer } from '../../utils/answerValidator';
 import { loadLearningMode, loadQuizDirection, type QuizDirection } from '../../utils/settings';
 import { useT } from '../../utils/i18n';
 import SpeakerButton from '../../components/SpeakerButton';
@@ -35,6 +35,7 @@ export default function VocabularyQuiz() {
     const [shuffle, setShuffle] = useState<boolean>(loadShufflePref);
     const [loadError, setLoadError] = useState(false);
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
+    const [partiallyCorrect, setPartiallyCorrect] = useState(false);
     const t = useT();
 
 
@@ -59,7 +60,9 @@ export default function VocabularyQuiz() {
         if (!userAnswer.trim() || showAnswer || quizComplete) return;
 
         const target = quizDir === 'fr-en' ? currentWord.english : currentWord.french;
-        const isCorrect = isAnswerCorrect(userAnswer, target);
+        const result = gradeAnswer(userAnswer, target);
+        const isCorrect = result !== 'wrong';
+        setPartiallyCorrect(result === 'partial');
 
         recordAnswer(moduleId!, currentWord.id, isCorrect);
         if (user) syncAnswerToApi(`${moduleId}:${currentWord.id}`, moduleId!, isCorrect);
@@ -68,7 +71,8 @@ export default function VocabularyQuiz() {
             const score = correctCount + 1;
             setCorrectCount(score);
             removeCorrectWord(moduleId!, currentWord.id);
-            handleNext(score);
+            if (result === 'partial') setShowAnswer(true);
+            else handleNext(score);
         } else {
             addWrongWords(moduleId!, [currentWord]);
             setShowAnswer(true);
@@ -90,6 +94,7 @@ export default function VocabularyQuiz() {
     };
 
     const handleNext = (score = correctCount) => {
+        setPartiallyCorrect(false);
         setUserAnswer('');
         setShowAnswer(false);
         if (currentIndex < words.length - 1) {
@@ -109,6 +114,7 @@ export default function VocabularyQuiz() {
     const restart = (shuffled: boolean) => {
         setWords(shuffled ? [...allWords].sort(() => Math.random() - 0.5) : allWords);
         setCurrentIndex(0);
+        setPartiallyCorrect(false);
         setUserAnswer('');
         setShowAnswer(false);
         setWrongWords([]);
@@ -260,6 +266,7 @@ export default function VocabularyQuiz() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
+                        {partiallyCorrect && <p className="vocq-partial-answer" role="status">{t.quiz.partialWarning}</p>}
                         <div className="vocq-word-row">
                             <p className="vocq-correct-answer">
                                 {quizDir === 'fr-en' ? currentWord.english : currentWord.french}
@@ -270,7 +277,7 @@ export default function VocabularyQuiz() {
                             />
                         </div>
                         {userAnswer && (
-                            <p className="vocq-wrong-answer">{userAnswer}</p>
+                            <p className={partiallyCorrect ? "vocq-partial-answer" : "vocq-wrong-answer"}>{userAnswer}</p>
                         )}
                         <button className="btn btn-primary" onClick={() => handleNext()}>
                             {t.quiz.nextWord}

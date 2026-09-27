@@ -108,6 +108,33 @@ function getAcceptableAnswers(answer: string): string[] {
     return [...results];
 }
 
+export type AnswerResult = 'correct' | 'partial' | 'wrong';
+
+function withoutSymbols(value: string): string {
+    return value.replace(/\s*[\p{P}\p{S}]+\s*/gu, '').trim();
+}
+
+function matchesSymbolSpacing(value: string, expected: string): boolean {
+    // Allow spaces where the expected answer has punctuation, while preserving
+    // ordinary word boundaries ("a part" must not match "apart").
+    const parts = expected.split(/\s*[\p{P}\p{S}]+\s*/u);
+    if (parts.length < 2) return false;
+    const pattern = parts.map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+        .join('[\\p{P}\\p{S}\\s]*');
+    return new RegExp(`^${pattern}$`, 'u').test(value);
+}
+
+export function gradeAnswer(userAnswer: string, answer: string): AnswerResult {
+    const acceptable = getAcceptableAnswers(answer);
+    const normalized = normalize(userAnswer);
+    if (acceptable.includes(normalized)) return 'correct';
+    const letters = withoutSymbols(normalized);
+    if (letters && acceptable.some(form =>
+        withoutSymbols(form) === letters || matchesSymbolSpacing(normalized, form)
+    )) return 'partial';
+    return 'wrong';
+}
+
 export function isAnswerCorrect(userAnswer: string, answer: string): boolean {
-    return getAcceptableAnswers(answer).includes(normalize(userAnswer));
+    return gradeAnswer(userAnswer, answer) !== 'wrong';
 }
