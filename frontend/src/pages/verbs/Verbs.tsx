@@ -1,3 +1,4 @@
+import { normalizeSearch } from '../../utils/search';
 import ProgressFlower from '../../components/ProgressFlower';
 import { getContentStatus } from '../../utils/courseProgress';
 import React, { useState, useEffect } from 'react';
@@ -136,13 +137,13 @@ export default function Verbs() {
             .catch(() => setLoading(false));
     }, [isEN, level]);
 
-    const q = search.toLowerCase();
+    const q = normalizeSearch(search);
 
     const filterVerbs = (verbs: VerbSummary[]) =>
-        q ? verbs.filter(v => v.infinitive.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q)) : verbs;
+        q ? verbs.filter(v => normalizeSearch(v.infinitive).includes(q) || normalizeSearch(v.translation).includes(q)) : verbs;
 
     const filteredHelpers = q
-        ? helperVerbs.filter(v => v.title.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q))
+        ? helperVerbs.filter(v => normalizeSearch(v.title).includes(q) || normalizeSearch(v.translation).includes(q))
         : helperVerbs;
     const filteredNew = data ? filterVerbs(data.newVerbs) : [];
     const filteredReview = data
