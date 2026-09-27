@@ -333,3 +333,7 @@
     width: 100%;
   }
 }
+
+.vq-row--partial { background: color-mix(in srgb, var(--warning, #986000) 8%, transparent); }
+.vq-user-val--partial, .vq-partial-warning { color: var(--warning, #986000); }
+.vq-partial-warning { font-size: 0.85rem; }

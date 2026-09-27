@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { recordAnswer, syncAnswerToApi, syncSessionToApi, recordSession } from '../../../utils/progress';
 import { useAuth } from '../../../context/AuthContext';
-import { isAnswerCorrect } from '../../../utils/answerValidator';
+import { gradeAnswer } from '../../../utils/answerValidator';
 import { loadLearningMode, loadQuizDirection, type QuizDirection } from '../../../utils/settings';
 import { useT } from '../../../utils/i18n';
 import SpeakerButton from '../../../components/SpeakerButton';
@@ -44,6 +44,7 @@ export default function PhraseQuiz() {
     const [quizComplete, setQuizComplete]     = useState(false);
     const [loading, setLoading]               = useState(true);
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
+    const [partiallyCorrect, setPartiallyCorrect] = useState(false);
     const t = useT();
 
     useEffect(() => {
@@ -65,14 +66,17 @@ export default function PhraseQuiz() {
         if (!userAnswer.trim() || showAnswer || quizComplete) return;
         const current   = phrases[currentIndex];
         const target = quizDir === 'fr-en' ? current.english : current.french;
-        const isCorrect = isAnswerCorrect(userAnswer, target);
+        const result = gradeAnswer(userAnswer, target);
+        const isCorrect = result !== 'wrong';
+        setPartiallyCorrect(result === 'partial');
         recordAnswer(moduleKey, current.id, isCorrect);
         if (user) syncAnswerToApi(`${moduleKey}:${current.id}`, moduleKey, isCorrect);
 
         if (isCorrect) {
             const score = correctCount + 1;
             setCorrectCount(score);
-            handleNext(score);
+            if (result === 'partial') setShowAnswer(true);
+            else handleNext(score);
         } else {
             setWrongPhrases(items => [...items, current]);
             setShowAnswer(true);
@@ -89,6 +93,7 @@ export default function PhraseQuiz() {
     };
 
     const handleNext = (score = correctCount) => {
+        setPartiallyCorrect(false);
         setUserAnswer('');
         setShowAnswer(false);
         if (currentIndex < phrases.length - 1) {
@@ -220,6 +225,7 @@ export default function PhraseQuiz() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
+                        {partiallyCorrect && <p className="vocq-partial-answer" role="status">{t.quiz.partialWarning}</p>}
                         <div className="vocq-word-row">
                             <p className="vocq-correct-answer">
                                 {quizDir === 'fr-en' ? current.english : current.french}
@@ -229,7 +235,7 @@ export default function PhraseQuiz() {
                                 lang={quizDir === 'fr-en' ? 'en-US' : 'fr-FR'}
                             />
                         </div>
-                        {userAnswer && <p className="vocq-wrong-answer">{userAnswer}</p>}
+                        {userAnswer && <p className={partiallyCorrect ? "vocq-partial-answer" : "vocq-wrong-answer"}>{userAnswer}</p>}
                         <button className="btn btn-primary" onClick={() => handleNext()}>
                             {t.quiz.next}
                         </button>
