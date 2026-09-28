@@ -1,6 +1,6 @@
 import type { Course, CourseStep } from '../data/courseTypes';
 import { loadMastery } from './progress';
-import { loadLearningMode } from './settings';
+import { loadLearningMode, learningStorageKey } from './settings';
 
 export type StepStatus = 'complete' | 'visited' | 'not-started';
 
@@ -50,7 +50,7 @@ export function setContentStatus(path: string, status: StepStatus): void {
 
 function loadVisited(): Set<string> {
     try {
-        const raw = localStorage.getItem(VISITED_KEY);
+        const raw = localStorage.getItem(learningStorageKey(VISITED_KEY));
         return new Set(raw ? JSON.parse(raw) : []);
     } catch { return new Set(); }
 }
@@ -58,7 +58,7 @@ function loadVisited(): Set<string> {
 export function markStepVisited(stepId: string): void {
     const visited = loadVisited();
     visited.add(stepId);
-    localStorage.setItem(VISITED_KEY, JSON.stringify([...visited]));
+    localStorage.setItem(learningStorageKey(VISITED_KEY), JSON.stringify([...visited]));
 }
 
 export function getStepStatus(step: CourseStep, level?: string): StepStatus {
@@ -101,11 +101,11 @@ export function getCourseProgress(course: Course): CourseProgress {
 }
 
 export function getActiveCourse(): string | null {
-    return localStorage.getItem(ACTIVE_COURSE_KEY);
+    return localStorage.getItem(learningStorageKey(ACTIVE_COURSE_KEY));
 }
 
 export function setActiveCourse(level: string): void {
-    localStorage.setItem(ACTIVE_COURSE_KEY, level);
+    localStorage.setItem(learningStorageKey(ACTIVE_COURSE_KEY), level);
     window.dispatchEvent(new CustomEvent('activeCourseChanged', { detail: level }));
 }
 
