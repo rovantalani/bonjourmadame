@@ -61,6 +61,7 @@ for (const language of ['fr', 'en']) {
         const reading = Object.values(content(language, 'reading'))[0];
         const verbs = content(language, 'verbs');
         const verbById = verbs.verbById ?? verbs.verbByIdEN;
+        const verbGroups = verbs.verbGroups ?? verbs.verbGroupsEN;
         const helpers = verbs.helperVerbsDataFR ?? verbs.helperVerbsDataEN;
         const missing = [];
         for (const course of courses(language)) {
@@ -71,7 +72,7 @@ for (const language of ['fr', 'en']) {
                     grammar: grammar.some(lesson => lesson.id === id),
                     phrases: phrases.some(category => category.id === id),
                     reading: reading.some(passage => passage.moduleId === id),
-                    verbs: verbById[id] || helpers[id],
+                    verbs: verbGroups[id] || verbById[id] || helpers[id],
                 }[step.type];
                 if (!found) missing.push(`${course.level}/${step.id}: ${step.type} ${id}`);
             }
