@@ -103,9 +103,9 @@ Frontend curricula follow the same rule under `frontend/src/data/fr` and `fronte
 
 Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Course verb-group references must resolve within their own language catalog.
 
-The frontend uses the strict language-scoped content APIs and loads learning material only from the selected language package. Progress storage is also language-scoped. Legacy content endpoints remain temporarily available for compatibility and can be removed separately.
+The frontend uses the strict language-scoped content APIs and loads learning material only from the selected language package. Progress storage is also language-scoped.
 
-The existing `?lang=fr` API parameter means a French interface for English learners. It is preserved for compatibility. Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
+Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
 
 ## API Endpoints
 
@@ -123,24 +123,7 @@ New learning requests use `/api/learning/:targetLanguage`, where `targetLanguage
 | GET | `/lectures/phrases/:categoryId` | Phrase lesson and quiz content |
 | GET | `/lectures/reading/:moduleId` | Reading passage with vocabulary from the same curriculum |
 
-Missing or unsupported target languages return JSON `400`. Content absent from the selected catalog and unknown scoped routes return JSON `404`; there is no cross-language lookup or fallback. The URL path selects the curriculum even if a legacy `?lang=` parameter is supplied. IDs may overlap between independent catalogs. Existing copied bilingual vocabulary and phrases remain valid in both catalogs until edited independently.
-
-The following legacy endpoints remain temporarily available during the API transition; the learning frontend uses the scoped endpoints above:
-
-| Method | Path | Description |
-|---|---|---|
-| GET | `/api/health` | Health check |
-| GET | `/api/vocabulary/modules` | List all vocabulary modules |
-| GET | `/api/vocabulary/:moduleId` | Words for a specific module |
-| GET | `/api/verbs/helpers/:verbId` | Helper-verb conjugation table |
-| GET | `/api/verbs/groups/:groupId` | Verb group and its verbs |
-| GET | `/api/verbs/conjugation/:verbId` | Conjugation data for learning and quizzes |
-| GET | `/api/verbs/courses/:level` | New and review verbs for a course |
-| GET | `/api/lectures/grammar/:lessonId` | Grammar lecture |
-| GET | `/api/lectures/phrases/:categoryId` | Phrase lecture and quiz content |
-| GET | `/api/lectures/reading/:moduleId` | Reading lecture with supporting vocabulary |
-
-The legacy endpoints will be removed in a later cleanup. Browser learning URLs are scoped by target language.
+Missing or unsupported target languages return JSON `400`. Content absent from the selected catalog and unknown scoped routes return JSON `404`; there is no cross-language lookup or fallback. The URL path selects the curriculum. IDs may overlap between independent catalogs. Existing copied bilingual vocabulary and phrases remain valid in both catalogs until edited independently. Browser learning URLs are scoped by target language.
 
 ## Progress language isolation
 

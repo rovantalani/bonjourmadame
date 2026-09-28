@@ -78,7 +78,6 @@ for (const language of ['fr', 'en']) {
             level: 'a2', newVerbs: c.verbs.a2.map(summarize),
             reviewVerbs: [{ groupId: 'a1', groupTitle: c.verbGroups.a1.title, verbs: c.verbs.a1.map(summarize) }],
         });
-        assert.deepEqual(await get(`${prefix}/vocabulary/modules?lang=${language === 'fr' ? 'fr' : 'en'}`), modules);
     });
 
     test(`${language} endpoints reject IDs exclusive to the other real curriculum`, async () => {
