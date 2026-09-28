@@ -4,6 +4,10 @@ import { loadLearningMode, type LearningMode } from './settings';
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface Translations {
+    progressImport: {
+        prompt: string; import: string; saving: string; success: string;
+        error: string; signedOut: string; retry: string; later: string; close: string;
+    };
     progressFlower: {
         'not-started': string; visited: string; complete: string;
         markComplete: string; undo: string;
@@ -142,6 +146,14 @@ interface Translations {
 // ─── English ──────────────────────────────────────────────────────────────────
 
 const EN: Translations = {
+    progressImport: {
+        prompt: 'You have progress saved on this device. Save a copy to your account?',
+        import: 'Import', saving: 'Saving…',
+        success: 'Your progress has been saved to your account. A copy is still on this device.',
+        error: 'We couldn’t save your progress. It is still safe on this device. Try again.',
+        signedOut: 'Please sign in again to save your progress. It is still safe on this device.',
+        retry: 'Try again', later: 'Later', close: 'Close',
+    },
     progressFlower: { 'not-started': 'Not started', visited: 'In progress', complete: 'Completed', markComplete: 'Mark complete', undo: 'Mark as in progress' },
     nav: {
         home: 'Home', courses: 'Courses', vocabulary: 'Vocabulary',
@@ -284,6 +296,14 @@ const EN: Translations = {
 // ─── French ───────────────────────────────────────────────────────────────────
 
 const FR: Translations = {
+    progressImport: {
+        prompt: 'Votre progression est enregistrée sur cet appareil. Enregistrer une copie dans votre compte ?',
+        import: 'Importer', saving: 'Enregistrement…',
+        success: 'Votre progression est enregistrée dans votre compte. Une copie reste sur cet appareil.',
+        error: 'Impossible d’enregistrer votre progression. Elle reste sur cet appareil. Réessayez.',
+        signedOut: 'Reconnectez-vous pour enregistrer votre progression. Elle reste sur cet appareil.',
+        retry: 'Réessayer', later: 'Plus tard', close: 'Fermer',
+    },
     progressFlower: { 'not-started': 'Pas encore commencé', visited: 'En cours', complete: 'Terminé', markComplete: 'Marquer comme terminé', undo: 'Marquer comme en cours' },
     nav: {
         home: 'Accueil', courses: 'Cours', vocabulary: 'Vocabulaire',

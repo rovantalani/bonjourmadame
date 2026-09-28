@@ -17,6 +17,7 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({ origin: true, credentials: true }));
+app.use('/api/progress/import', express.json({ limit: '2mb' }));
 app.use(express.json());
 app.use(cookieParser());
 

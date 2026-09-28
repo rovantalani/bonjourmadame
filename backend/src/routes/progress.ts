@@ -1,9 +1,32 @@
+import { importProgress, isProgressImport, ImportConflict } from '../services/progressImport';
 import { Router, Response } from 'express';
 import { pool } from '../db/client';
 import { requireAuth, AuthRequest } from '../middleware/auth';
 
 const router = Router();
 router.use(requireAuth);
+
+router.post('/import', async (req: AuthRequest, res: Response): Promise<void> => {
+    if (!isProgressImport(req.body)) {
+        res.status(400).json({ error: 'Invalid progress import' });
+        return;
+    }
+    if (req.body.userId !== req.userId) {
+        res.status(409).json({ error: 'Account changed. Sign in to the original account to retry.' });
+        return;
+    }
+    try {
+        await importProgress(req.userId!, req.body);
+        res.json({ ok: true, importId: req.body.importId });
+    } catch (error) {
+        if (error instanceof ImportConflict) {
+            res.status(409).json({ error: 'Import reference does not match saved progress' });
+        } else {
+            console.error('Progress import failed', error);
+            res.status(500).json({ error: 'Could not save progress. Please retry.' });
+        }
+    }
+});
 
 const SRS_INTERVALS_DAYS = [0, 1, 2, 4, 7, 14]; // index = box (1–5)
 

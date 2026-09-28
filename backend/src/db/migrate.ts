@@ -50,5 +50,15 @@ export async function migrate(): Promise<void> {
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS srs_box INTEGER DEFAULT 1`);
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS next_review_at TIMESTAMPTZ DEFAULT NOW()`);
 
+    await pool.query(`
+        CREATE TABLE IF NOT EXISTS progress_imports (
+            user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+            import_id UUID NOT NULL,
+            payload_hash TEXT NOT NULL,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            PRIMARY KEY (user_id, import_id)
+        )
+    `);
+
     console.log('DB migration complete');
 }

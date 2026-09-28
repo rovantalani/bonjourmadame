@@ -118,3 +118,13 @@ The existing `?lang=fr` API parameter means a French interface for English learn
 | GET | `/api/lectures/reading/:moduleId` | Reading lecture with supporting vocabulary |
 
 The previous flat content API paths are replaced by these module paths. Deploy the frontend and backend together; the browser's course URLs remain unchanged.
+
+## Safe progress import
+
+In Settings, signed-in users can save a copy of this device's word progress and quiz history to their account. The browser keeps its copy, including any work done while the import is running. Failed imports show a retry message. Choosing “Later” hides the message for that visit only.
+
+The import saves a fixed copy with a unique reference before sending it. The server saves everything together, including a record of that reference. Retrying after a refresh or lost connection reuses the same reference and does not import the same results twice. A success message appears only after the server confirms that reference was saved.
+
+For older records, answer counts may already include work saved to the account. The import keeps the higher correct/wrong counts rather than adding them together. The newest answer determines whether a word is known. Quiz dates are preserved, identical saved sessions are skipped, and existing review schedules are kept. Old records do not have shared answer IDs, so separate histories cannot always be combined exactly. This change protects imports; separating all learning progress by account and language remains separate work.
+
+The backend creates the `progress_imports` table during its normal startup migration. Deploy the updated backend and frontend together. Import database tests use an in-memory PostgreSQL engine through the development-only PGlite dependency; `npm test --prefix backend` runs them without a separate database server.
