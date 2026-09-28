@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from 'express';
-import { phraseCategories } from '../../data/lectures/phrases/phrases_fr';
-import { phraseCategoriesEN } from '../../data/lectures/phrases/phrases_en';
+import { phraseCategories } from '../../content/fr/phrases';
+import { phraseCategoriesEN } from '../../content/en/phrases';
 
 const router = Router();
 

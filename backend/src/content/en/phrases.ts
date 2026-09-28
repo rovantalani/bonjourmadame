@@ -1,6 +1,6 @@
-import type { PhraseCategory } from '../../../types/lectures/phrases';
+import type { PhraseCategory } from '../../types/lectures/phrases';
 
-export const phraseCategories: PhraseCategory[] = [
+export const phraseCategoriesEN: PhraseCategory[] = [
     {
         id: 'everyday-conversation',
         title: 'Everyday Conversation',

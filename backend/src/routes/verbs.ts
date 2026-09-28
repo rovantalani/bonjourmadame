@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from 'express';
-import { verbGroups, verbsData, verbById, verbGroupMap, helperVerbsDataFR } from '../data/verbs/verbs_fr';
-import { helperVerbsDataEN, verbGroupsEN, verbsDataEN, verbByIdEN, verbGroupMapEN } from '../data/verbs/verbs_en';
+import { verbGroups, verbsData, verbById, verbGroupMap, helperVerbsDataFR } from '../content/fr/verbs';
+import { helperVerbsDataEN, verbGroupsEN, verbsDataEN, verbByIdEN, verbGroupMapEN } from '../content/en/verbs';
 
 const router = Router();
 const CEFR_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];

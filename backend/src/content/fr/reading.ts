@@ -1,4 +1,4 @@
-import type { ReadingPassage } from '../../../types/lectures/reading';
+import type { ReadingPassage } from '../../types/lectures/reading';
 
 export const readingPassages: ReadingPassage[] = [
     {

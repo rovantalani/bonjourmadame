@@ -1,4 +1,4 @@
-import type { CourseStep, LectureType } from '../data/courses';
+import type { CourseStep, LectureType } from '../data/courseTypes';
 import { useT } from '../utils/i18n';
 import { BookOpenIcon, PenIcon, MessageIcon } from './icons';
 import './ModuleTags.css';
