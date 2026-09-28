@@ -1,8 +1,9 @@
+import { useLearning } from '../../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../../hooks/useLearningNavigation';
 import LearningCompletion from '../../../components/LearningCompletion';
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SpeakerButton from '../../../components/SpeakerButton';
-import { loadLearningMode } from '../../../utils/settings';
 import './ReadingPassage.css';
 
 interface VocabularyWord {
@@ -94,9 +95,10 @@ function annotate(paragraph: string, vocabMap: Map<string, VocabularyWord>): Tok
 }
 
 export default function ReadingPassage() {
+    const { language } = useLearning();
     const { moduleId } = useParams<{ moduleId: string }>();
     const navigate = useNavigate();
-    const isEN = loadLearningMode() === 'learn-english';
+    const isEN = language === 'en';
     const [data, setData] = useState<ReadingData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -106,7 +108,7 @@ export default function ReadingPassage() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/lectures/reading/${moduleId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/lectures/reading/${moduleId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -119,7 +121,7 @@ export default function ReadingPassage() {
                 setError(true);
                 setLoading(false);
             });
-    }, [moduleId]);
+    }, [moduleId, language]);
 
     useEffect(() => {
         if (!tooltip) return;

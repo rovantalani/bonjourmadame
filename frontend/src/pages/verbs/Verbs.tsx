@@ -1,10 +1,11 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import { normalizeSearch } from '../../utils/search';
 import ProgressFlower from '../../components/ProgressFlower';
 import { getContentStatus } from '../../utils/courseProgress';
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useT } from '../../utils/i18n';
-import { loadLearningMode } from '../../utils/settings';
 import { UserIcon, TagIcon, PenIcon, ArrowRightIcon, ArrowLeftIcon } from '../../components/icons/index';
 import type { SVGProps } from 'react';
 import './Verbs.css';
@@ -13,22 +14,6 @@ type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
 
 const VERB_COLOR    = 'var(--verb)';
 const VERB_COLOR_BG = 'var(--verb-soft)';
-
-const HELPER_VERBS_FR = [
-    { id: 'etre',  title: 'Être',     translation: 'to be',        Icon: UserIcon as IconFC,       color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'avoir', title: 'Avoir',    translation: 'to have',      Icon: TagIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'faire', title: 'Faire',    translation: 'to do / make', Icon: PenIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'aller', title: 'Aller',    translation: 'to go',        Icon: ArrowRightIcon as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'venir', title: 'Venir',    translation: 'to come',      Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR, bg: VERB_COLOR_BG },
-];
-
-const HELPER_VERBS_EN = [
-    { id: 'to-be',   title: 'To Be',   translation: 'être',  Icon: UserIcon as IconFC,       color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'to-have', title: 'To Have', translation: 'avoir', Icon: TagIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'to-do',   title: 'To Do',   translation: 'faire', Icon: PenIcon as IconFC,        color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'to-go',   title: 'To Go',   translation: 'aller', Icon: ArrowRightIcon as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG },
-    { id: 'to-come', title: 'To Come', translation: 'venir', Icon: ArrowLeftIcon as IconFC,  color: VERB_COLOR, bg: VERB_COLOR_BG },
-];
 
 const TYPE_ORDER = ['-ER', '-IR', '-RE', 'Regular', 'Irregular'];
 
@@ -119,23 +104,23 @@ export default function Verbs() {
     const { level } = useParams<{ level: string }>();
     const navigate = useNavigate();
     const t = useT();
-    const isEN = loadLearningMode() === 'learn-english';
-
-    const helperVerbs = isEN ? HELPER_VERBS_EN : HELPER_VERBS_FR;
+    const { helpers, language } = useLearning();
+    const isEN = language === 'en';
+    const icons = { user: UserIcon, tag: TagIcon, pen: PenIcon, right: ArrowRightIcon, left: ArrowLeftIcon };
+    const helperVerbs = helpers.map(helper => ({ ...helper, Icon: icons[helper.icon] as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG }));
 
     const [data, setData] = useState<CourseVerbsData | null>(null);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-        const langParam = isEN ? '?lang=fr' : '';
         const levelId = (level ?? 'a1').toLowerCase();
         setLoading(true);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/verbs/courses/${levelId}${langParam}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/verbs/courses/${levelId}`)
             .then(r => r.json() as Promise<CourseVerbsData>)
             .then(d => { setData(d); setLoading(false); })
             .catch(() => setLoading(false));
-    }, [isEN, level]);
+    }, [language, level]);
 
     const q = normalizeSearch(search);
 

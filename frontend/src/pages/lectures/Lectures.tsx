@@ -1,7 +1,8 @@
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import ModuleTags from '../../components/ModuleTags';
 import ProgressFlower from '../../components/ProgressFlower';
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useCourses } from '../../utils/modeHelpers';
 import { isLectureStep, type LectureType } from '../../data/courseTypes';
 import { getStepStatus, markStepVisited } from '../../utils/courseProgress';
