@@ -1,6 +1,7 @@
+import { useLearningNavigate as useNavigate } from '../hooks/useLearningNavigation';
 import ModuleTags from '../components/ModuleTags';
 import ProgressFlower from '../components/ProgressFlower';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
 import {
     getStepStatus,

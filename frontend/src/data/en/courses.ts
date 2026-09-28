@@ -141,7 +141,7 @@ export const COURSES_EN: Course[] = [
             { id: 'b1en-relative',        title: 'Les Propositions Relatives',   module: 'lectures', type: 'grammar',    contentId: 'en-relative-clauses',     path: '/lectures/grammar/en-relative-clauses', unit: 2 },
             { id: 'b1en-togo',            title: 'Verbe : to go',                module: 'verbs', type: 'verbs',      contentId: 'to-go',                   path: '/verbs/to-go/table',                   unit: 2 },
             { id: 'b1en-tocome',          title: 'Verbe : to come',              module: 'verbs', type: 'verbs',      contentId: 'to-come',                 path: '/verbs/to-come/table',                 unit: 2 },
-            { id: 'b1en-irregular',       title: 'Verbes irréguliers',           module: 'verbs', type: 'verbs',      contentId: 'irregular-verbs',         path: '/verbs/irregular-verbs',               unit: 2 },
+            { id: 'b1en-irregular',       title: 'Verbes irréguliers',           module: 'verbs', type: 'verbs',      contentId: 'b1',         path: '/verbs/b1',               unit: 2 },
             { id: 'b1en-reading-green',   title: 'Lecture : Building a Greener City', module: 'lectures', type: 'reading', contentId: 'b1en-green-city',      path: '/lectures/reading/b1en-green-city',    unit: 2 },
             { id: 'b1en-reading-remote',  title: 'Lecture : The Rise of Remote Work', module: 'lectures', type: 'reading', contentId: 'b1en-remote-work',     path: '/lectures/reading/b1en-remote-work',   unit: 2 },
             { id: 'b1en-reading-health',  title: 'Lecture : Living a Healthier Life', module: 'lectures', type: 'reading', contentId: 'b1en-healthy-living',  path: '/lectures/reading/b1en-healthy-living', unit: 3 },
@@ -189,7 +189,7 @@ export const COURSES_EN: Course[] = [
             { id: 'b2en-word-order',      title: "L'Ordre des Mots",             module: 'lectures', type: 'grammar',    contentId: 'en-word-order',           path: '/lectures/grammar/en-word-order',      unit: 2 },
             { id: 'b2en-third-cond',      title: 'Le 3e Conditionnel',           module: 'lectures', type: 'grammar',    contentId: 'en-third-conditional',    path: '/lectures/grammar/en-third-conditional', unit: 2 },
             { id: 'b2en-inversion',       title: 'Inversion & Emphase',          module: 'lectures', type: 'grammar',    contentId: 'en-inversion-emphasis',   path: '/lectures/grammar/en-inversion-emphasis', unit: 2 },
-            { id: 'b2en-regular',         title: 'Verbes réguliers',             module: 'verbs', type: 'verbs',      contentId: 'regular-verbs',           path: '/verbs/regular-verbs',                 unit: 2 },
+            { id: 'b2en-regular',         title: 'Verbes réguliers',             module: 'verbs', type: 'verbs',      contentId: 'b2',           path: '/verbs/b2',                 unit: 2 },
             // Unit 3 — Registre & Argumentation
             { id: 'b2en-adv-modals',      title: 'Modaux au Passé',              module: 'lectures', type: 'grammar',    contentId: 'en-advanced-modals',      path: '/lectures/grammar/en-advanced-modals', unit: 3 },
             { id: 'b2en-cohesion',        title: 'Cohésion & Connecteurs',       module: 'lectures', type: 'grammar',    contentId: 'en-cohesion',             path: '/lectures/grammar/en-cohesion',        unit: 3 },

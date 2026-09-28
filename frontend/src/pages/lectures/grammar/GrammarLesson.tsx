@@ -1,8 +1,9 @@
+import { useLearning } from '../../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../../hooks/useLearningNavigation';
 import LearningCompletion from '../../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useT } from '../../../utils/i18n';
-import { loadLearningMode } from '../../../utils/settings';
 import SpeakerButton from '../../../components/SpeakerButton';
 import { LessonIcon } from '../../../components/icons/index';
 import './GrammarLesson.css';
@@ -49,10 +50,11 @@ function normalizeAnswer(str: string): string {
 }
 
 export default function GrammarLesson() {
+    const { language } = useLearning();
     const { lessonId } = useParams<{ lessonId: string }>();
     const navigate = useNavigate();
     const t = useT();
-    const isENMode = loadLearningMode() === 'learn-english';
+    const isENMode = language === 'en';
     const [lesson, setLesson] = useState<GrammarLessonData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -65,8 +67,7 @@ export default function GrammarLesson() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
-        fetch(`${import.meta.env.VITE_API_BASE}/api/lectures/grammar/${lessonId}${langParam}`)
+                fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/lectures/grammar/${lessonId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -83,7 +84,7 @@ export default function GrammarLesson() {
                 setError(true);
                 setLoading(false);
             });
-    }, [lessonId]);
+    }, [lessonId, language]);
 
     function handleInputChange(index: number, value: string) {
         setInputs(prev => prev.map((v, i) => (i === index ? value : v)));

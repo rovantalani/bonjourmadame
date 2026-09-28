@@ -1,5 +1,6 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {
     loadQueue,
@@ -11,7 +12,7 @@ import {
 } from '../../utils/wordQueue';
 import { isAnswerCorrect } from '../../utils/answerValidator';
 import { fetchDueWordsFromApi, syncAnswerToApi, recordAnswer, type DueWord } from '../../utils/progress';
-import { loadTargetLanguage, loadQuizDirection, type QuizDirection } from '../../utils/settings';
+import { loadQuizDirection, type QuizDirection, type TargetLanguage } from '../../utils/settings';
 import { useAuth } from '../../context/AuthContext';
 import { useT } from '../../utils/i18n';
 import { CheckCircleIcon } from '../../components/icons/index';
@@ -32,7 +33,7 @@ interface ReviewSession {
     done: boolean;
 }
 
-async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
+async function loadDueWords(dueList: DueWord[], language: TargetLanguage): Promise<ReviewWord[]> {
     const byModule: Record<string, DueWord[]> = {};
     for (const d of dueList) {
         (byModule[d.moduleId] ??= []).push(d);
@@ -43,7 +44,7 @@ async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
         Object.entries(byModule).map(async ([moduleId, dues]) => {
             try {
                 const res = await axios.get<{ id: number; english: string; french: string }[]>(
-                    `${API}/api/vocabulary/${moduleId}`,
+                    `${API}/api/learning/${language}/vocabulary/${moduleId}`,
                     { withCredentials: true },
                 );
                 for (const due of dues) {
@@ -65,20 +66,21 @@ async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
 }
 
 export default function ReviewQueue() {
+    const { language } = useLearning();
     const navigate = useNavigate();
     const { user } = useAuth();
     const t = useT();
     const [queue, setQueue] = useState<WordQueue>({});
     const [session, setSession] = useState<ReviewSession | null>(null);
     const [loading, setLoading] = useState(false);
-    const [targetLanguage] = useState(loadTargetLanguage);
+    const targetLanguage = language;
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
 
     useEffect(() => {
         if (user) {
             setLoading(true);
             fetchDueWordsFromApi(targetLanguage).then(due => {
-                loadDueWords(due).then(words => {
+                loadDueWords(due, language).then(words => {
                     setSession(words.length > 0 ? {
                         words: [...words].sort(() => Math.random() - 0.5),
                         currentIndex: 0,

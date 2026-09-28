@@ -1,12 +1,14 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import { useLearningVisit } from '../../hooks/useLearningVisit';
 import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { addWrongWords, removeCorrectWord, loadShufflePref, saveShufflePref } from '../../utils/wordQueue';
 import { recordAnswer, recordSession, syncAnswerToApi, syncSessionToApi } from '../../utils/progress';
 import { useAuth } from '../../context/AuthContext';
 import { gradeAnswer } from '../../utils/answerValidator';
-import { loadTargetLanguage, loadQuizDirection, type QuizDirection } from '../../utils/settings';
+import { loadQuizDirection, type QuizDirection } from '../../utils/settings';
 import { useT } from '../../utils/i18n';
 import SpeakerButton from '../../components/SpeakerButton';
 import { CheckCircleIcon } from '../../components/icons/index';
@@ -19,6 +21,7 @@ interface Word {
 }
 
 export default function VocabularyQuiz() {
+    const { language } = useLearning();
     const navigate = useNavigate();
     const { level, moduleId } = useParams<{ level: string; moduleId: string }>();
     const { user } = useAuth();
@@ -34,7 +37,7 @@ export default function VocabularyQuiz() {
     const [quizComplete, setQuizComplete] = useState(false);
     const [shuffle, setShuffle] = useState<boolean>(loadShufflePref);
     const [loadError, setLoadError] = useState(false);
-    const [targetLanguage] = useState(loadTargetLanguage);
+    const targetLanguage = language;
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
     const [partiallyCorrect, setPartiallyCorrect] = useState(false);
     const t = useT();
@@ -42,8 +45,7 @@ export default function VocabularyQuiz() {
 
     useEffect(() => {
         let cancelled = false;
-        const lang = targetLanguage === 'en' ? '?lang=fr' : '';
-        fetch(`${import.meta.env.VITE_API_BASE}/api/vocabulary/${moduleId}${lang}`)
+                fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/vocabulary/${moduleId}`)
             .then(res => { if (!res.ok) throw new Error('Load failed'); return res.json(); })
             .then((data: Word[]) => {
                 if (cancelled) return;
@@ -53,7 +55,7 @@ export default function VocabularyQuiz() {
             })
             .catch(() => { if (!cancelled) setLoadError(true); });
         return () => { cancelled = true; };
-    }, [moduleId]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [moduleId, language]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const currentWord = words[currentIndex];
 
