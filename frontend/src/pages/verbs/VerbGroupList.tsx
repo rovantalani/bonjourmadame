@@ -1,3 +1,4 @@
+import { normalizeSearch } from '../../utils/search';
 import ProgressFlower from '../../components/ProgressFlower';
 import { getContentStatus, hasPassedQuiz } from '../../utils/courseProgress';
 import LearningCompletion from '../../components/LearningCompletion';
@@ -93,10 +94,10 @@ export default function VerbGroupList() {
         );
     }
 
-    const q = search.toLowerCase();
+    const q = normalizeSearch(search);
     const filtered = q
         ? group.verbs.filter(
-            v => v.infinitive.toLowerCase().includes(q) || v.translation.toLowerCase().includes(q)
+            v => normalizeSearch(v.infinitive).includes(q) || normalizeSearch(v.translation).includes(q)
         )
         : group.verbs;
 
