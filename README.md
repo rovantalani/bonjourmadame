@@ -103,7 +103,7 @@ Frontend curricula follow the same rule under `frontend/src/data/fr` and `fronte
 
 Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Five existing legacy verb-group references (French A2/B1/B2 and English B1/B2) are explicitly recorded in the tests for correction during the frontend routing cutover. No additional unresolved references are permitted.
 
-Independent content packages and strict language-scoped content APIs are implemented. The current frontend still uses legacy routes with historical language selection and combined vocabulary/reading lookups. Progress storage, the frontend cutover, and removal of compatibility behavior follow in separate PRs.
+Independent content packages and strict language-scoped content APIs are implemented. The current frontend still uses legacy routes with historical language selection and combined vocabulary/reading lookups. Progress storage is also language-scoped. The content frontend cutover and removal of compatibility behavior follow in separate PRs.
 
 The existing `?lang=fr` API parameter means a French interface for English learners. It is preserved for compatibility. Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
 
@@ -140,4 +140,23 @@ The following legacy endpoints remain temporarily available for the current fron
 | GET | `/api/lectures/phrases/:categoryId` | Phrase lecture and quiz content |
 | GET | `/api/lectures/reading/:moduleId` | Reading lecture with supporting vocabulary |
 
-The scoped content API can deploy before the frontend cutover. The legacy endpoints will be removed after the frontend switches; browser course URLs and progress APIs remain unchanged in this stage.
+The scoped content API can deploy before the content frontend cutover. The legacy content endpoints will be removed after the frontend switches; browser course URLs remain unchanged in this stage.
+
+## Language-scoped progress
+
+Authenticated progress now requires `/api/progress/:targetLanguage`, with exactly `fr` or `en`:
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | `/api/progress/:targetLanguage` | Mastery and recent quiz sessions for that language |
+| GET | `/api/progress/:targetLanguage/due` | Due review items for that language |
+| POST | `/api/progress/:targetLanguage/word` | Record an answer for a word or phrase in that language |
+| POST | `/api/progress/:targetLanguage/session` | Record a quiz session in that language |
+
+Every database read/write includes both the authenticated account and target language. Word and lesson primary keys include the language; review schedules and quiz histories are independent. Word IDs must match their module and exist in the selected catalog. Phrase mastery uses `phrase-<categoryId>:<numericId>`. Verb sessions must reference a verb, helper, or group in that language. Old unscoped progress URLs are rejected rather than defaulting to French.
+
+Local mastery, history, review queues, visited steps, and active course use `:learn-french` or `:learn-english` storage suffixes. Existing `contentProgress` and `passedQuizzes` language-scoped keys are preserved. Answer/session writes capture the quiz's starting language. General preferences such as shuffle remain shared.
+
+The startup migration is transactional and repeatable. Existing database records have no reliable language provenance, so they are retained intact under the reserved `legacy` value and excluded from both active curricula. The API never accepts `legacy`. Existing unscoped browser keys are retained untouched and not automatically copied into either language. Consequently, old unscoped mastery/history/reviews do not appear in either language after this change; already-scoped completion remains available. No guest-import migration or improvements are included.
+
+Deploy the backend and frontend progress changes together. Old open browser tabs must reload to use the new progress URLs. Do not roll back to the old backend after applying the schema migration: its unscoped writes no longer match the database keys. No production database is changed by running the tests; migration and API integration tests use an isolated PGlite PostgreSQL database.
