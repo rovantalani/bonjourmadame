@@ -1,4 +1,5 @@
 import { pool } from './client';
+import { migrateLanguageProgress } from './languageProgress';
 
 export async function migrate(): Promise<void> {
     await pool.query(`
@@ -50,5 +51,6 @@ export async function migrate(): Promise<void> {
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS srs_box INTEGER DEFAULT 1`);
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS next_review_at TIMESTAMPTZ DEFAULT NOW()`);
 
+    await migrateLanguageProgress();
     console.log('DB migration complete');
 }

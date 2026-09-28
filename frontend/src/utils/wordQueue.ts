@@ -1,3 +1,5 @@
+import { learningStorageKey, loadTargetLanguage, type TargetLanguage } from './settings';
+
 const STORAGE_KEY = 'wordQueue';
 const SHUFFLE_PREF_KEY = 'vocabShufflePref';
 
@@ -9,22 +11,22 @@ export interface QueuedWord {
 
 export type WordQueue = Record<string, QueuedWord[]>;
 
-export function loadQueue(): WordQueue {
+export function loadQueue(language: TargetLanguage = loadTargetLanguage()): WordQueue {
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        const raw = localStorage.getItem(learningStorageKey(STORAGE_KEY, language));
         return raw ? (JSON.parse(raw) as WordQueue) : {};
     } catch {
         return {};
     }
 }
 
-export function saveQueue(queue: WordQueue): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(queue));
+export function saveQueue(queue: WordQueue, language: TargetLanguage = loadTargetLanguage()): void {
+    localStorage.setItem(learningStorageKey(STORAGE_KEY, language), JSON.stringify(queue));
 }
 
-export function addWrongWords(moduleId: string, words: QueuedWord[]): void {
+export function addWrongWords(moduleId: string, words: QueuedWord[], language: TargetLanguage = loadTargetLanguage()): void {
     if (words.length === 0) return;
-    const queue = loadQueue();
+    const queue = loadQueue(language);
     const existing = queue[moduleId] ?? [];
     const merged = [...existing];
     for (const w of words) {
@@ -33,17 +35,17 @@ export function addWrongWords(moduleId: string, words: QueuedWord[]): void {
         }
     }
     queue[moduleId] = merged;
-    saveQueue(queue);
+    saveQueue(queue, language);
 }
 
-export function removeCorrectWord(moduleId: string, wordId: number): void {
-    const queue = loadQueue();
+export function removeCorrectWord(moduleId: string, wordId: number, language: TargetLanguage = loadTargetLanguage()): void {
+    const queue = loadQueue(language);
     if (!queue[moduleId]) return;
     queue[moduleId] = queue[moduleId].filter(w => w.id !== wordId);
     if (queue[moduleId].length === 0) {
         delete queue[moduleId];
     }
-    saveQueue(queue);
+    saveQueue(queue, language);
 }
 
 export function totalQueuedCount(queue: WordQueue): number {
