@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLearningNavigate as useNavigate } from '../hooks/useLearningNavigation';
 import { getCourseProgress, getActiveCourse, setActiveCourse } from '../utils/courseProgress';
 import { useCourses } from '../utils/modeHelpers';
 import { useT } from '../utils/i18n';

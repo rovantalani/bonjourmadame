@@ -1,6 +1,6 @@
+import { useLearningNavigate as useNavigate } from '../hooks/useLearningNavigation';
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
 import { loadQueue, totalQueuedCount } from '../utils/wordQueue';
 import { fetchDueWordsFromApi } from '../utils/progress';
 import { useAuth } from '../context/AuthContext';

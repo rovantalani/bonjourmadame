@@ -1,8 +1,9 @@
+import { useLearningNavigate as useNavigate } from '../hooks/useLearningNavigation';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import ProgressImportBanner from '../components/ProgressImportBanner';
 import { loadLearningMode, saveLearningMode, type LearningMode } from '../utils/settings';
+import { learningPath } from '../utils/learningRoutes';
 import { useT } from '../utils/i18n';
 import './Settings.css';
 
@@ -30,6 +31,8 @@ export default function Settings() {
     function handleModeChange(m: LearningMode) {
         setMode(m);
         saveLearningMode(m);
+        const target = m === 'learn-english' ? 'en' : 'fr';
+        navigate(learningPath(target, '/'), { replace: true });
     }
 
     async function handleChangePassword(e: React.FormEvent) {

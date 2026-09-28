@@ -99,11 +99,11 @@ bonjourmadame/
 
 Content belongs to the language being learned: `backend/src/content/fr` and `backend/src/content/en`. These packages may import their own files and neutral types, but must never import or re-export each other's content. English vocabulary, module labels, and phrases were copied once to establish independent ownership; edit each curriculum separately from now on. Bilingual translations within a package are intentional.
 
-Frontend curricula follow the same rule under `frontend/src/data/fr` and `frontend/src/data/en`, with neutral course types in `courseTypes.ts`. The mode selector currently imports both curricula; loading only the active curriculum is part of the later frontend cutover.
+Frontend curricula follow the same rule under `frontend/src/data/fr` and `frontend/src/data/en`, with neutral course types in `courseTypes.ts`. The app loads only the selected curriculum, and learning URLs are scoped under `/learn/fr` or `/learn/en`.
 
-Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Five existing legacy verb-group references (French A2/B1/B2 and English B1/B2) are explicitly recorded in the tests for correction during the frontend routing cutover. No additional unresolved references are permitted.
+Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Course verb-group references must resolve within their own language catalog.
 
-Independent content packages and strict language-scoped content APIs are implemented. The current frontend still uses legacy routes with historical language selection and combined vocabulary/reading lookups. Progress storage is also language-scoped. The frontend content cutover and removal of compatibility behavior follow in separate PRs.
+The frontend uses the strict language-scoped content APIs and loads learning material only from the selected language package. Progress storage is also language-scoped. Legacy content endpoints remain temporarily available for compatibility and can be removed separately.
 
 The existing `?lang=fr` API parameter means a French interface for English learners. It is preserved for compatibility. Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
 
@@ -125,7 +125,7 @@ New learning requests use `/api/learning/:targetLanguage`, where `targetLanguage
 
 Missing or unsupported target languages return JSON `400`. Content absent from the selected catalog and unknown scoped routes return JSON `404`; there is no cross-language lookup or fallback. The URL path selects the curriculum even if a legacy `?lang=` parameter is supplied. IDs may overlap between independent catalogs. Existing copied bilingual vocabulary and phrases remain valid in both catalogs until edited independently.
 
-The following legacy endpoints remain temporarily available for the current frontend:
+The following legacy endpoints remain temporarily available during the API transition; the learning frontend uses the scoped endpoints above:
 
 | Method | Path | Description |
 |---|---|---|
@@ -140,7 +140,7 @@ The following legacy endpoints remain temporarily available for the current fron
 | GET | `/api/lectures/phrases/:categoryId` | Phrase lecture and quiz content |
 | GET | `/api/lectures/reading/:moduleId` | Reading lecture with supporting vocabulary |
 
-The scoped content API can deploy before the frontend cutover. The legacy endpoints will be removed after the frontend switches; browser course URLs remain unchanged in this stage.
+The legacy endpoints will be removed in a later cleanup. Browser learning URLs are scoped by target language.
 
 ## Progress language isolation
 

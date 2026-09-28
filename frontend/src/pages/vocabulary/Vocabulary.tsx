@@ -1,11 +1,12 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import ProgressFlower from '../../components/ProgressFlower';
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { getStepStatus } from '../../utils/courseProgress';
 import { useCourses } from '../../utils/modeHelpers';
 import { useT } from '../../utils/i18n';
-import { loadLearningMode } from '../../utils/settings';
 import './Vocabulary.css';
 
 interface VocabularyModule {
@@ -20,6 +21,7 @@ interface VocabularyModule {
 const READING_IDS = new Set(['sherlock-holmes-ch1', 'sherlock-holmes-ch2']);
 
 export default function Vocabulary() {
+    const { language } = useLearning();
     const { level } = useParams<{ level: string }>();
     const navigate = useNavigate();
     const t = useT();
@@ -29,11 +31,10 @@ export default function Vocabulary() {
     const [apiError, setApiError] = useState(false);
 
     useEffect(() => {
-        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
-        axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/vocabulary/modules${langParam}`)
+                axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/vocabulary/modules`)
             .then(res => { setModules(res.data); setLoading(false); setApiError(false); })
             .catch(() => { setLoading(false); setApiError(true); });
-    }, []);
+    }, [language]);
 
     const activeCourse = courses.find(c => c.level.toLowerCase() === (level ?? ''));
     const vocabSteps = activeCourse?.steps.filter(s => s.module === 'vocabulary') ?? [];

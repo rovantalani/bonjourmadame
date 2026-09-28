@@ -1,11 +1,13 @@
+import { useLearning } from '../../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../../hooks/useLearningNavigation';
 import { useLearningVisit } from '../../../hooks/useLearningVisit';
 import LearningCompletion from '../../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { recordAnswer, syncAnswerToApi, syncSessionToApi, recordSession } from '../../../utils/progress';
 import { useAuth } from '../../../context/AuthContext';
 import { gradeAnswer } from '../../../utils/answerValidator';
-import { loadTargetLanguage, loadQuizDirection, type QuizDirection } from '../../../utils/settings';
+import { loadQuizDirection, type QuizDirection } from '../../../utils/settings';
 import { useT } from '../../../utils/i18n';
 import SpeakerButton from '../../../components/SpeakerButton';
 import { CheckCircleIcon } from '../../../components/icons/index';
@@ -28,6 +30,7 @@ interface PhraseCategoryData {
 }
 
 export default function PhraseQuiz() {
+    const { language } = useLearning();
     const navigate                = useNavigate();
     const { level, categoryId }   = useParams<{ level: string; categoryId: string }>();
     const { user }                = useAuth();
@@ -43,14 +46,13 @@ export default function PhraseQuiz() {
     const [loadError, setLoadError] = useState(false);
     const [quizComplete, setQuizComplete]     = useState(false);
     const [loading, setLoading]               = useState(true);
-    const [targetLanguage] = useState(loadTargetLanguage);
+    const targetLanguage = language;
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
     const [partiallyCorrect, setPartiallyCorrect] = useState(false);
     const t = useT();
 
     useEffect(() => {
-        const lang = targetLanguage === 'en' ? '?lang=fr' : '';
-        fetch(`${import.meta.env.VITE_API_BASE}/api/lectures/phrases/${categoryId}${lang}`)
+                fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/lectures/phrases/${categoryId}`)
             .then(res => { if (!res.ok) throw new Error('Load failed'); return res.json(); })
             .then((data: PhraseCategoryData) => {
                 if (!data.phrases?.length) throw new Error('Empty quiz');

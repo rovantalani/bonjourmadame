@@ -76,13 +76,7 @@ for (const language of ['fr', 'en']) {
                 if (!found) missing.push(`${course.level}/${step.id}: ${step.type} ${id}`);
             }
         }
-        // Existing legacy verb-group links are preserved in this data-only PR.
-        // Resolve these during the frontend routing cutover, then remove this baseline.
-        const legacyMissing = {
-            fr: ['A2/a2-regular-verbs: verbs regular-verbs', 'B1/b1-irregular-verbs: verbs irregular-verbs', 'B2/b2-adv-verbs: verbs advanced-irregular-verbs'],
-            en: ['B1/b1en-irregular: verbs irregular-verbs', 'B2/b2en-regular: verbs regular-verbs'],
-        };
-        assert.deepEqual(missing, legacyMissing[language]);
+        assert.deepEqual(missing, []);
         for (const passage of reading) {
             assert(vocabulary[passage.moduleId]?.length, `${language}: missing reading vocabulary ${passage.moduleId}`);
         }

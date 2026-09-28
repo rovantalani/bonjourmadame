@@ -1,5 +1,5 @@
+import { useLearningNavigate as useNavigate, useLearningLocation as useLocation } from '../hooks/useLearningNavigation';
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { useT } from '../utils/i18n';
 import { useCourses } from '../utils/modeHelpers';
