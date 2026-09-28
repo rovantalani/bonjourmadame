@@ -10,7 +10,7 @@ import {
     setActiveCourse,
     markStepVisited,
 } from '../utils/courseProgress';
-import type { CourseStep } from '../data/courses';
+import type { CourseStep } from '../data/courseTypes';
 import { useT } from '../utils/i18n';
 import './CourseRoadmap.css';
 

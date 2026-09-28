@@ -1,4 +1,4 @@
-import { COURSES } from '../data/courses';
+import { useCourses } from '../utils/modeHelpers';
 import './CourseBar.css';
 
 interface Props {
@@ -7,9 +7,10 @@ interface Props {
 }
 
 export default function CourseBar({ activeLevel, onChange }: Props) {
+    const courses = useCourses();
     return (
         <div className="course-bar">
-            {COURSES.map(c => (
+            {courses.map(c => (
                 <button
                     key={c.level}
                     className={`course-bar-pill ${activeLevel === c.level ? 'course-bar-pill--active' : ''}`}

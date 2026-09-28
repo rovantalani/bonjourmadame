@@ -1,4 +1,4 @@
-import type { GrammarLesson } from '../../../types/lectures/grammar';
+import type { GrammarLesson } from '../../types/lectures/grammar';
 
 export const grammarLessons: GrammarLesson[] = [
     {

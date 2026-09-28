@@ -3,7 +3,7 @@ import ProgressFlower from '../../components/ProgressFlower';
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useCourses } from '../../utils/modeHelpers';
-import { isLectureStep, type LectureType } from '../../data/courses';
+import { isLectureStep, type LectureType } from '../../data/courseTypes';
 import { getStepStatus, markStepVisited } from '../../utils/courseProgress';
 import { useT } from '../../utils/i18n';
 import { PenIcon, MessageIcon, BookOpenIcon } from '../../components/icons/index';

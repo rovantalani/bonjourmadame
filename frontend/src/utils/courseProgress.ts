@@ -1,4 +1,4 @@
-import type { Course, CourseStep } from '../data/courses';
+import type { Course, CourseStep } from '../data/courseTypes';
 import { loadMastery } from './progress';
 import { loadLearningMode } from './settings';
 

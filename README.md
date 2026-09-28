@@ -70,13 +70,9 @@ bonjourmadame/
 ├── backend/
 │   └── src/
 │       ├── index.ts          # Server setup and module router mounting
-│       ├── data/
-│       │   ├── vocabulary/   # vocabulary_fr/en.ts and modules_fr/en.ts
-│       │   ├── verbs/        # verbs_fr.ts and verbs_en.ts
-│       │   └── lectures/
-│       │       ├── grammar/  # grammar_fr.ts and grammar_en.ts
-│       │       ├── phrases/  # phrases_fr.ts and phrases_en.ts
-│       │       └── reading/  # reading_fr.ts and reading_en.ts
+│       ├── content/
+│       │   ├── fr/          # French-owned vocabulary, modules, verbs, grammar, phrases, reading
+│       │   └── en/          # Independently editable English-owned content
 │       ├── routes/
 │       │   ├── vocabulary.ts
 │       │   ├── verbs.ts
@@ -87,7 +83,10 @@ bonjourmadame/
 └── frontend/
     └── src/
         ├── App.tsx           # Router setup
-        ├── data/courses.ts  # Course steps identify their module and content subtype
+        ├── data/
+        │   ├── courseTypes.ts # Neutral course interfaces and helpers
+        │   ├── fr/courses.ts  # French curriculum
+        │   └── en/courses.ts  # English curriculum
         └── pages/
             ├── vocabulary/
             ├── verbs/
@@ -98,7 +97,13 @@ bonjourmadame/
                 └── reading/
 ```
 
-Every file under `backend/src/data` ends in `_fr.ts` or `_en.ts`, indicating the language being learned, not the interface language. Shared bilingual vocabulary and phrase pairs are reused by the English datasets rather than duplicated. Vocabulary for English reading passages lives in `vocabulary_en.ts`.
+Content belongs to the language being learned: `backend/src/content/fr` and `backend/src/content/en`. These packages may import their own files and neutral types, but must never import or re-export each other's content. English vocabulary, module labels, and phrases were copied once to establish independent ownership; edit each curriculum separately from now on. Bilingual translations within a package are intentional.
+
+Frontend curricula follow the same rule under `frontend/src/data/fr` and `frontend/src/data/en`, with neutral course types in `courseTypes.ts`. The mode selector currently imports both curricula; loading only the active curriculum is part of the later frontend cutover.
+
+Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Five existing legacy verb-group references (French A2/B1/B2 and English B1/B2) are explicitly recorded in the tests for correction during the frontend routing cutover. No additional unresolved references are permitted.
+
+This is the first stage of language separation. Existing routes still retain their historical language selection and combined vocabulary/reading lookups. Strict language-scoped APIs, progress storage, frontend routing, and removal of compatibility behavior follow in separate PRs.
 
 The existing `?lang=fr` API parameter means a French interface for English learners. It is preserved for compatibility. Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
 

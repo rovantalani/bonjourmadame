@@ -1,4 +1,4 @@
-import type { ReadingPassage } from '../../../types/lectures/reading';
+import type { ReadingPassage } from '../../types/lectures/reading';
 
 /**
  * English-language reading passages, used when the learner is in

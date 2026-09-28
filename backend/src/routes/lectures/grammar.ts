@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from 'express';
-import { grammarLessons } from '../../data/lectures/grammar/grammar_fr';
-import { grammarLessonsEN } from '../../data/lectures/grammar/grammar_en';
+import { grammarLessons } from '../../content/fr/grammar';
+import { grammarLessonsEN } from '../../content/en/grammar';
 
 const router = Router();
 

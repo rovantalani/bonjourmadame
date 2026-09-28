@@ -1,7 +1,7 @@
 import { Router, type Request, type Response } from 'express';
-import { readingPassages } from '../../data/lectures/reading/reading_fr';
-import { readingPassagesEN } from '../../data/lectures/reading/reading_en';
-import { vocabularyDataEN as vocabularyData } from '../../data/vocabulary/vocabulary_en';
+import { readingPassages } from '../../content/fr/reading';
+import { readingPassagesEN } from '../../content/en/reading';
+import { vocabularyDataEN as vocabularyData } from '../../content/en/vocabulary';
 
 const router = Router();
 

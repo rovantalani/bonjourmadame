@@ -54,13 +54,13 @@ test('verb routes load the appropriate language and preserve review progression'
 
 test('lectures serve grammar, bilingual phrases and reading in both languages', async () => {
     for (const [suffix, query] of [['fr', ''], ['en', '?lang=fr']]) {
-        const grammar = require(`../dist/data/lectures/grammar/grammar_${suffix}`);
+        const grammar = require(`../dist/content/${suffix}/grammar`);
         const lessons = suffix === 'fr' ? grammar.grammarLessons : grammar.grammarLessonsEN;
         const lesson = await get(`/lectures/grammar/${lessons[0].id}${query}`);
         assert.deepEqual(lesson, lessons[0]);
         const phrases = await get(`/lectures/phrases/introducing-yourself${query}`);
         assert(phrases.phrases.every(phrase => phrase.french && phrase.english));
-        const reading = require(`../dist/data/lectures/reading/reading_${suffix}`);
+        const reading = require(`../dist/content/${suffix}/reading`);
         const passages = suffix === 'fr' ? reading.readingPassages : reading.readingPassagesEN;
         const passage = await get(`/lectures/reading/${passages[0].moduleId}${query}`);
         assert.deepEqual(passage.paragraphs, passages[0].paragraphs);
@@ -75,24 +75,26 @@ test('unknown content IDs return 404 under each module', async () => {
 });
 
 test('course steps put lecture subtypes under Lectures and keep matching browser paths', () => {
-    const file = path.resolve(__dirname, '../../frontend/src/data/courses.ts');
-    const code = ts.transpileModule(fs.readFileSync(file, 'utf8'), {
-        compilerOptions: { module: ts.ModuleKind.CommonJS },
-    }).outputText;
-    const context = { exports: {} };
-    vm.runInNewContext(code, context);
-    for (const course of [...context.exports.COURSES, ...context.exports.COURSES_EN]) {
-        const ids = new Set();
-        for (const step of course.steps) {
-            assert(!ids.has(step.id), `Duplicate step: ${step.id}`);
-            ids.add(step.id);
-            assert(['vocabulary', 'verbs', 'lectures'].includes(step.module));
-            assert(step.path.startsWith(`/${step.module}/`), step.path);
-            if (step.module === 'lectures') {
-                assert(['grammar', 'phrases', 'reading'].includes(step.type));
-                assert(step.path.startsWith(`/lectures/${step.type}/`), step.path);
-            } else {
-                assert.equal(step.type, step.module);
+    for (const language of ['fr', 'en']) {
+        const file = path.resolve(__dirname, `../../frontend/src/data/${language}/courses.ts`);
+        const code = ts.transpileModule(fs.readFileSync(file, 'utf8'), {
+            compilerOptions: { module: ts.ModuleKind.CommonJS },
+        }).outputText;
+        const context = { exports: {} };
+        vm.runInNewContext(code, context);
+        for (const course of (context.exports.COURSES ?? context.exports.COURSES_EN)) {
+            const ids = new Set();
+            for (const step of course.steps) {
+                assert(!ids.has(step.id), `Duplicate step: ${step.id}`);
+                ids.add(step.id);
+                assert(['vocabulary', 'verbs', 'lectures'].includes(step.module));
+                assert(step.path.startsWith(`/${step.module}/`), step.path);
+                if (step.module === 'lectures') {
+                    assert(['grammar', 'phrases', 'reading'].includes(step.type));
+                    assert(step.path.startsWith(`/lectures/${step.type}/`), step.path);
+                } else {
+                    assert.equal(step.type, step.module);
+                }
             }
         }
     }
