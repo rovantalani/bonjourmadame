@@ -1,19 +1,10 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
-const vm = require('node:vm');
-const ts = require('typescript');
 
 test('course steps use valid modules, lecture types and matching content paths', () => {
     for (const language of ['fr', 'en']) {
-        const file = path.resolve(__dirname, `../../frontend/src/data/${language}/courses.ts`);
-        const code = ts.transpileModule(fs.readFileSync(file, 'utf8'), {
-            compilerOptions: { module: ts.ModuleKind.CommonJS },
-        }).outputText;
-        const context = { exports: {} };
-        vm.runInNewContext(code, context);
-        for (const course of (context.exports.COURSES ?? context.exports.COURSES_EN)) {
+        const data = require(`../dist/content/${language}/courses`);
+        for (const course of (data.COURSES ?? data.COURSES_EN)) {
             const ids = new Set();
             for (const step of course.steps) {
                 assert(!ids.has(step.id), `Duplicate step: ${step.id}`);

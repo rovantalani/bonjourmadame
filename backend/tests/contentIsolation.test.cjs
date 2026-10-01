@@ -2,7 +2,6 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const vm = require('node:vm');
 const ts = require('typescript');
 
 const root = path.resolve(__dirname, '../..');
@@ -13,12 +12,8 @@ function files(dir) {
     });
 }
 function courses(language) {
-    const file = path.join(root, `frontend/src/data/${language}/courses.ts`);
-    const context = { exports: {} };
-    vm.runInNewContext(ts.transpileModule(fs.readFileSync(file, 'utf8'), {
-        compilerOptions: { module: ts.ModuleKind.CommonJS },
-    }).outputText, context);
-    return context.exports.COURSES ?? context.exports.COURSES_EN;
+    const data = require(`../dist/content/${language}/courses`);
+    return data.COURSES ?? data.COURSES_EN;
 }
 function content(language, name) {
     return require(`../dist/content/${language}/${name}`);
