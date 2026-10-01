@@ -45,6 +45,8 @@ function LegacyRedirect() {
 
 function LearningSession({ language }: { language: TargetLanguage }) {
     const [curriculum, setCurriculum] = useState<Curriculum | null>(null);
+    const [loadFailed, setLoadFailed] = useState(false);
+    const [retryCount, setRetryCount] = useState(0);
     const navigate = useNavigate();
     const desiredMode = language === 'en' ? 'learn-english' : 'learn-french';
 
@@ -54,9 +56,11 @@ function LearningSession({ language }: { language: TargetLanguage }) {
 
     useEffect(() => {
         let active = true;
-        loadCurriculum(language).then(data => { if (active) setCurriculum(data); });
+        loadCurriculum(language)
+            .then(data => { if (active) setCurriculum(data); })
+            .catch(() => { if (active) setLoadFailed(true); });
         return () => { active = false; };
-    }, [language]);
+    }, [language, retryCount]);
 
 
     useEffect(() => {
@@ -72,6 +76,14 @@ function LearningSession({ language }: { language: TargetLanguage }) {
         return () => window.removeEventListener('storage', handleStorage);
     }, [navigate]);
 
+    if (loadFailed) return (
+        <div className="App" role="alert">
+            <p>{language === 'fr' ? 'Impossible de charger les cours.' : 'Could not load the courses.'}</p>
+            <button type="button" onClick={() => { setLoadFailed(false); setRetryCount(count => count + 1); }}>
+                {language === 'fr' ? 'Réessayer' : 'Retry'}
+            </button>
+        </div>
+    );
     if (!curriculum) return null;
     return (
         <LearningContext.Provider value={{ ...curriculum, language }}>

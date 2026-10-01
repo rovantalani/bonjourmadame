@@ -1,11 +1,14 @@
 import type { TargetLanguage } from './settings';
 import type { Curriculum } from '../context/LearningContext';
+import type { Course } from '../data/courseTypes';
 
 export async function loadCurriculum(language: TargetLanguage): Promise<Curriculum> {
-    if (language === 'en') {
-        const [courses, verbs] = await Promise.all([import('../data/en/courses'), import('../data/en/verbs')]);
-        return { courses: courses.COURSES_EN, tenses: verbs.TENSES_BY_LEVEL, helpers: verbs.HELPERS };
-    }
-    const [courses, verbs] = await Promise.all([import('../data/fr/courses'), import('../data/fr/verbs')]);
-    return { courses: courses.COURSES, tenses: verbs.TENSES_BY_LEVEL, helpers: verbs.HELPERS };
+    const verbsPromise = language === 'en' ? import('../data/en/verbs') : import('../data/fr/verbs');
+    const [response, verbs] = await Promise.all([
+        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/courses`),
+        verbsPromise,
+    ]);
+    if (!response.ok) throw new Error(`Could not load ${language} courses (${response.status})`);
+    const courses: Course[] = await response.json();
+    return { courses, tenses: verbs.TENSES_BY_LEVEL, helpers: verbs.HELPERS };
 }
