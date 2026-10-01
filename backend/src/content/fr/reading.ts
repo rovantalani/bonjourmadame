@@ -1,58 +1,293 @@
 import type { ReadingPassage } from '../../types/lectures/reading';
 
 export const readingPassages: ReadingPassage[] = [
+    // ─── A1 Reading Passages ────────────────────────────────────────────────────
     {
-        moduleId: 'a1-au-cafe',
-        title: 'Au Café de la Paix',
+        moduleId: 'a1-bonjour-je-mappelle-clara',
+        title: 'Bonjour, je m’appelle Clara',
         source: 'Texte original — niveau A1',
         paragraphs: [
-            'Marie et Thomas entrent dans un café. Il y a une table libre près de la fenêtre. Le serveur arrive. « Bonjour ! Vous désirez ? » demande-t-il. Marie répond : « Je voudrais un café au lait, s\'il vous plaît. » Thomas dit : « Et moi, je prends un chocolat chaud. »',
-            'Le serveur apporte les boissons. Thomas goûte son chocolat chaud. « C\'est délicieux ! » dit-il. Marie regarde la carte. « Vous avez des croissants ? » demande-t-elle. « Oui, bien sûr, » répond le serveur. « Alors un croissant pour moi, s\'il vous plaît. »',
-            'Ils parlent pendant une heure. Dehors, il pleut. À l\'intérieur, il fait chaud et c\'est très agréable. Marie aime beaucoup ce café. Elle habite dans le quartier et elle vient ici chaque semaine.',
-            'À la fin, Thomas appelle le serveur. « L\'addition, s\'il vous plaît. » Le serveur apporte l\'addition. « C\'est douze euros, monsieur. » « Service compris ? » demande Thomas. « Oui, monsieur. » Ils paient et quittent le café. « À bientôt ! » dit le serveur.',
+            'Bonjour ! Je m’appelle Clara. J’ai vingt-six ans et je suis française. J’habite à Toulouse, dans le sud de la France. Je travaille dans une petite agence de voyages.',
+            'Je parle français et anglais. J’apprends aussi l’espagnol. J’aime les langues, les voyages et la musique. Le week-end, j’aime aller au cinéma ou boire un café avec mes amis.',
+            'J’habite avec mon chat, Oscar, dans un petit appartement. Ma famille habite à Bordeaux. Je téléphone souvent à mes parents et je vais les voir une fois par mois.',
         ],
     },
     {
-        moduleId: 'sherlock-holmes-ch1',
-        title: 'L\'Arrivée à Baker Street',
-        source: 'Une étude en rouge, A. Conan Doyle (adapté)',
+        moduleId: 'a1-une-nouvelle-collegue',
+        title: 'Une Nouvelle Collègue',
+        source: 'Texte original — niveau A1',
         paragraphs: [
-            'Le matin où tout commença, la bonne frappa à ma porte avec une enveloppe dans la main. Elle me la tendit sans un mot, puis attendit sur le seuil. Je pris ceci avec une certaine curiosité — l\'écriture sur l\'enveloppe était fine et précise, celle d\'un homme habitué à observer les détails.',
-            'Je viens de lire votre annonce dans le journal, disait la lettre. Un appartement à partager au 221B, Baker Street. Je propose que nous nous rencontrions sur-le-champ, car je dois quitter mon hôtel dès demain. — Signé : S. Holmes.',
-            'Je regardai par-dessus mon épaule vers la rue en contrebas. Un homme grand et mince se tenait immobile sur le trottoir d\'en face, les yeux levés vers ma fenêtre. Dès qu\'il vit que je l\'observais, il ôta son chapeau avec un sourire bref.',
-            'Je pensai d\'abord que c\'était un ingrat que de juger un homme sur sa seule apparence. Mais quelque chose dans son regard — cette intensité calme, ce mouvement économe — me dit que cette rencontre allait changer bien des choses. Je descendis l\'escalier pour lui ouvrir la porte.',
+            'Ce matin, Léa arrive dans son nouveau bureau. C’est son premier jour de travail. Une femme vient vers elle et sourit. « Bonjour ! Tu es Léa ? Moi, c’est Sarah. Bienvenue ! »',
+            'Léa répond : « Bonjour Sarah, enchantée ! » Sarah travaille dans l’entreprise depuis trois ans. Elle montre le bureau à Léa et présente les autres personnes de l’équipe.',
+            'À midi, Sarah propose de déjeuner ensemble. « Il y a un bon restaurant à côté du bureau. Tu veux venir ? » Léa accepte. Elle est contente de connaître sa nouvelle collègue.',
+        ],
+    },
+    {
+        moduleId: 'a1-mon-ami-thomas',
+        title: 'Mon Ami Thomas',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Thomas est mon ami. Il a vingt-neuf ans et il habite à Nantes. Il est grand, il a les cheveux bruns et les yeux marron. Il est calme et très drôle.',
+            'Thomas travaille dans une librairie au centre-ville. Il adore les livres et il lit beaucoup. Il aime aussi cuisiner, faire du vélo et écouter de la musique.',
+            'Nous nous voyons souvent le samedi. Nous allons parfois au restaurant ou nous faisons une promenade. Avec Thomas, je passe toujours un bon moment.',
         ],
     },
     {
         moduleId: 'a1-la-famille-martin',
         title: 'La Famille Martin',
-        source: 'Texte original',
+        source: 'Texte original — niveau A1',
         paragraphs: [
-            'Je m\'appelle Marie Martin. J\'ai trente-cinq ans et j\'habite à Lyon avec ma famille. Mon mari s\'appelle Thomas. Il a trente-huit ans. Il est médecin. Il travaille à l\'hôpital tous les jours. C\'est un homme très gentil.',
-            'Nous avons deux enfants. Notre fils s\'appelle Léo. Il a huit ans. Il aime le football et les jeux vidéo. Notre fille s\'appelle Emma. Elle a cinq ans. Elle aime dessiner et chanter. Les enfants vont à l\'école près de chez nous.',
+            'Je m’appelle Marie Martin. J’ai trente-cinq ans et j’habite à Lyon avec ma famille. Mon mari s’appelle Thomas. Il a trente-huit ans. Il est médecin. Il travaille à l’hôpital tous les jours. C’est un homme très gentil.',
+            'Nous avons deux enfants. Notre fils s’appelle Léo. Il a huit ans. Il aime le football et les jeux vidéo. Notre fille s’appelle Emma. Elle a cinq ans. Elle aime dessiner et chanter. Les enfants vont à l’école près de chez nous.',
             'Notre appartement est grand et confortable. Il y a quatre chambres, un salon, une cuisine et une salle de bain. Nous avons aussi un petit jardin. Le week-end, nous aimons manger ensemble et faire des promenades dans le parc. Ma famille est ma grande joie !',
         ],
     },
     {
         moduleId: 'a1-une-journee-typique',
         title: 'Une Journée Typique',
-        source: 'Texte original',
+        source: 'Texte original — niveau A1',
         paragraphs: [
-            'Je m\'appelle Lucas. J\'ai onze ans et je vais au collège. Ma journée typique commence à sept heures. Je me lève, je prends une douche et je m\'habille. Ensuite, je mange mon petit-déjeuner : du pain avec du beurre et un verre de jus d\'orange.',
-            'À huit heures, je prends le bus pour aller à l\'école. Les cours commencent à huit heures et demie. J\'ai cours de français, de maths et d\'anglais le matin. À midi, je mange à la cantine avec mes amis. L\'après-midi, j\'ai cours de sport et de sciences.',
-            'À cinq heures, je rentre à la maison. Je fais mes devoirs pendant une heure. Après, je joue avec mon chien ou je regarde la télévision. À sept heures et demie, nous dînons en famille. Je me couche à neuf heures et demie. C\'est ma journée normale !',
+            'Je m’appelle Lucas. J’ai onze ans et je vais au collège. Ma journée typique commence à sept heures. Je me lève, je prends une douche et je m’habille. Ensuite, je mange mon petit-déjeuner : du pain avec du beurre et un verre de jus d’orange.',
+            'À huit heures, je prends le bus pour aller à l’école. Les cours commencent à huit heures et demie. J’ai cours de français, de maths et d’anglais le matin. À midi, je mange à la cantine avec mes amis. L’après-midi, j’ai cours de sport et de sciences.',
+            'À cinq heures, je rentre à la maison. Je fais mes devoirs pendant une heure. Après, je joue avec mon chien ou je regarde la télévision. À sept heures et demie, nous dînons en famille. Je me couche à neuf heures et demie. C’est ma journée normale !',
+        ],
+    },
+    {
+        moduleId: 'a1-le-samedi-de-sophie',
+        title: 'Le Samedi de Sophie',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Le samedi, Sophie ne travaille pas. Elle se lève vers neuf heures et prend son petit-déjeuner tranquillement. Elle boit du café et mange du pain avec de la confiture.',
+            'Le matin, elle fait quelques courses dans son quartier. Ensuite, elle rentre chez elle et prépare le déjeuner. L’après-midi, elle retrouve souvent une amie en ville.',
+            'Le soir, Sophie aime rester à la maison. Elle prépare quelque chose à manger, regarde un film ou lit un livre. Pour elle, le samedi est une journée simple et agréable.',
+        ],
+    },
+    {
+        moduleId: 'a1-une-journee-au-travail',
+        title: 'Une Journée au Travail',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Nicolas travaille dans un hôtel à Nice. Il commence à neuf heures du matin. Quand il arrive, il ouvre son ordinateur et regarde les réservations de la journée.',
+            'Il accueille les clients, répond au téléphone et donne des informations sur la ville. Il parle français avec ses collègues et souvent anglais avec les touristes.',
+            'À midi, Nicolas déjeune avec deux collègues. Il termine son travail à dix-sept heures. Après le travail, il rentre chez lui en tramway.',
+        ],
+    },
+    {
+        moduleId: 'a1-apres-le-travail',
+        title: 'Après le Travail',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Il est dix-huit heures. Amélie quitte son bureau et retrouve son amie Inès devant une station de métro. Elles travaillent toutes les deux dans le centre de Paris.',
+            '« Tu veux prendre un verre ? » demande Inès. Amélie accepte. Elles vont dans un petit café et parlent de leur journée. Inès commande un thé et Amélie prend un jus de fruit.',
+            'Vers dix-neuf heures trente, elles se disent au revoir. Amélie rentre chez elle, prépare son dîner et écoute un peu de musique avant de dormir.',
+        ],
+    },
+    {
+        moduleId: 'a1-mon-appartement',
+        title: 'Mon Appartement',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'J’habite dans un appartement à Montpellier. Il n’est pas très grand, mais il est lumineux et confortable. Il y a un salon, une chambre, une cuisine et une salle de bain.',
+            'Dans le salon, il y a un canapé, une petite table et une bibliothèque. J’aime beaucoup cette pièce parce qu’il y a une grande fenêtre.',
+            'Ma chambre est à côté du salon. La cuisine est petite, mais je cuisine souvent. Mon appartement n’est pas parfait, mais je me sens bien chez moi.',
+        ],
+    },
+    {
+        moduleId: 'a1-chez-mes-parents',
+        title: 'Chez Mes Parents',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Mes parents habitent dans une maison près de Rennes. Je vais chez eux environ deux fois par mois. Leur maison est dans une rue calme avec beaucoup d’arbres.',
+            'Au rez-de-chaussée, il y a une cuisine, un salon et une salle à manger. À l’étage, il y a trois chambres et une salle de bain.',
+            'Derrière la maison, mes parents ont un jardin. Mon père aime y travailler et ma mère aime prendre son café sur la terrasse quand il fait beau.',
+        ],
+    },
+    {
+        moduleId: 'a1-mon-quartier',
+        title: 'Mon Quartier',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'J’habite dans un quartier animé de Strasbourg. Ma rue est près du centre-ville. Il y a beaucoup de magasins, de cafés et de restaurants.',
+            'À côté de mon immeuble, il y a une boulangerie. En face, il y a une pharmacie. Le supermarché est à cinq minutes à pied et la station de tramway est au bout de la rue.',
+            'J’aime mon quartier parce que je peux presque tout faire à pied. Le dimanche, je vais souvent au parc avec des amis. C’est un quartier pratique et agréable.',
+        ],
+    },
+    {
+        moduleId: 'a1-une-promenade-dans-le-quartier',
+        title: 'Une Promenade dans le Quartier',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Paul vient rendre visite à son amie Nora. Il ne connaît pas encore son quartier. Après le déjeuner, Nora lui propose de faire une promenade.',
+            'Ils sortent de l’immeuble et tournent à droite. Nora montre la boulangerie, la poste et son café préféré. Un peu plus loin, ils passent devant une petite place avec une fontaine.',
+            'Ils continuent jusqu’au parc. Beaucoup de personnes sont dehors : des enfants jouent et des gens promènent leur chien. Paul trouve le quartier très agréable.',
+        ],
+    },
+    {
+        moduleId: 'a1-au-cafe',
+        title: 'Au Café de la Paix',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Marie et Thomas entrent dans un café. Il y a une table libre près de la fenêtre. Le serveur arrive. « Bonjour ! Vous désirez ? » demande-t-il. Marie répond : « Je voudrais un café au lait, s’il vous plaît. » Thomas dit : « Et moi, je prends un chocolat chaud. »',
+            'Le serveur apporte les boissons. Thomas goûte son chocolat chaud. « C’est délicieux ! » dit-il. Marie regarde la carte. « Vous avez des croissants ? » demande-t-elle. « Oui, bien sûr », répond le serveur. « Alors un croissant pour moi, s’il vous plaît. »',
+            'Ils parlent pendant une heure. Dehors, il pleut. À l’intérieur, il fait chaud et c’est très agréable. Marie aime beaucoup ce café. Elle habite dans le quartier et elle vient ici chaque semaine.',
+            'À la fin, Thomas appelle le serveur. « L’addition, s’il vous plaît. » Le serveur apporte l’addition. « C’est douze euros, monsieur. » « Service compris ? » demande Thomas. « Oui, monsieur. » Ils paient et quittent le café. « À bientôt ! » dit le serveur.',
         ],
     },
     {
         moduleId: 'a1-au-marche',
         title: 'Au Marché',
-        source: 'Texte original',
+        source: 'Texte original — niveau A1',
         paragraphs: [
             'Le samedi matin, Sophie va au marché. Il y a beaucoup de légumes, de fruits et de fromages. Sophie parle avec le marchand de légumes.',
-            '— Bonjour ! Je voudrais des tomates, s\'il vous plaît. C\'est combien ?\n— Bonjour madame ! Les tomates, c\'est deux euros le kilo. Vous en voulez combien ?\n— Un kilo, s\'il vous plaît. Et les carottes ?\n— Un euro cinquante le kilo, madame.\n— Très bien. Je prends aussi un kilo de carottes. Ça fait combien en tout ?\n— Ça fait trois euros cinquante, s\'il vous plaît.',
-            'Sophie donne quatre euros au marchand. Il lui rend cinquante centimes de monnaie. — Merci, au revoir ! dit Sophie. — Bonne journée, madame ! répond le marchand. Sophie continue sa promenade au marché. Elle achète aussi du pain et des pommes. Elle adore le marché du samedi !',
+            '— Bonjour ! Je voudrais des tomates, s’il vous plaît. C’est combien ?\n— Bonjour madame ! Les tomates, c’est deux euros le kilo. Vous en voulez combien ?\n— Un kilo, s’il vous plaît. Et les carottes ?\n— Un euro cinquante le kilo, madame.\n— Très bien. Je prends aussi un kilo de carottes. Ça fait combien en tout ?\n— Ça fait trois euros cinquante, s’il vous plaît.',
+            'Sophie donne quatre euros au marchand. Il lui rend cinquante centimes de monnaie. « Merci, au revoir ! » dit Sophie. « Bonne journée, madame ! » répond le marchand. Sophie continue sa promenade au marché. Elle achète aussi du pain et des pommes. Elle adore le marché du samedi !',
         ],
     },
+    {
+        moduleId: 'a1-a-la-boulangerie',
+        title: 'À la Boulangerie',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Il est huit heures du matin et Julien entre dans la boulangerie près de chez lui. Il y a déjà trois personnes devant lui.',
+            'Quand c’est son tour, la boulangère demande : « Bonjour monsieur, qu’est-ce que vous désirez ? » Julien répond : « Une baguette et deux croissants, s’il vous plaît. »',
+            '« Ce sera quatre euros vingt », dit la boulangère. Julien paie et prend son sac. « Merci, bonne journée ! » dit-il. « Merci, à vous aussi ! » répond la boulangère.',
+        ],
+    },
+    {
+        moduleId: 'a1-au-restaurant',
+        title: 'Au Restaurant',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Ce soir, Ana et Karim dînent dans un petit restaurant. Le serveur leur apporte la carte. Ana regarde les plats et Karim regarde les boissons.',
+            '« Pour moi, une salade et le poulet, s’il vous plaît », dit Ana. Karim choisit le poisson avec du riz. Ils commandent aussi une bouteille d’eau.',
+            'Après le repas, le serveur demande : « Vous désirez un dessert ? » Ana prend une glace. Karim préfère un café. Ils demandent ensuite l’addition et paient avant de partir.',
+        ],
+    },
+    {
+        moduleId: 'a1-jaime-le-sport',
+        title: 'J’aime le Sport',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Je m’appelle Hugo et j’adore le sport. Je joue au football avec mes amis le mercredi soir et je vais courir le dimanche matin.',
+            'Ma sœur préfère la natation. Elle va à la piscine deux fois par semaine. Mon père, lui, aime regarder le rugby à la télévision, mais il ne fait pas beaucoup de sport.',
+            'En été, nous faisons parfois du vélo ensemble. Pour moi, le sport est une bonne façon de passer du temps avec les autres et de sortir de la maison.',
+        ],
+    },
+    {
+        moduleId: 'a1-on-va-au-cinema',
+        title: 'On Va au Cinéma ?',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Vendredi après-midi, Chloé envoie un message à son ami Maxime. « Tu fais quoi ce soir ? Il y a un nouveau film au cinéma. Tu veux venir ? »',
+            'Maxime répond : « Oui, bonne idée ! Le film commence à quelle heure ? » Chloé regarde les horaires. Il y a une séance à dix-neuf heures trente.',
+            'Ils décident de se retrouver devant le cinéma à dix-neuf heures. Après le film, ils vont manger quelque chose ensemble.',
+        ],
+    },
+    {
+        moduleId: 'a1-une-soiree-entre-amis',
+        title: 'Une Soirée Entre Amis',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Samedi soir, Émilie invite quatre amis chez elle. Ses amis arrivent vers vingt heures. Ils apportent des boissons et un gâteau au chocolat.',
+            'Émilie prépare des pizzas et une grande salade. Tout le monde mange dans le salon. Ils parlent de leur travail, de leurs vacances et de leurs projets.',
+            'Après le dîner, ils écoutent de la musique et jouent à un jeu. La soirée se termine vers minuit. Émilie est fatiguée, mais très contente.',
+        ],
+    },
+    {
+        moduleId: 'a1-tu-viens-samedi',
+        title: 'Tu Viens Samedi ?',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Emma téléphone à son frère Léo. « Samedi, je fais un petit repas à la maison. Tu veux venir ? » Léo demande qui vient au repas.',
+            'Emma invite aussi leurs cousins Camille et Nathan. Elle propose de commencer vers midi. Léo accepte, mais il explique qu’il doit partir vers seize heures.',
+            '« Pas de problème », répond Emma. « Tu peux apporter du pain ? » Léo accepte. Ils se disent au revoir et Emma continue de préparer son déjeuner de samedi.',
+        ],
+    },
+    {
+        moduleId: 'a1-je-vais-au-travail',
+        title: 'Je Vais au Travail',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Chaque matin, Salomé quitte son appartement à sept heures quarante-cinq. Son bureau est dans un autre quartier de la ville.',
+            'Elle marche cinq minutes jusqu’à l’arrêt de bus. Elle prend le bus numéro douze et descend près de la gare. Ensuite, elle marche encore quelques minutes.',
+            'Quand il fait beau, Salomé va parfois au travail à vélo. C’est un peu plus long, mais elle préfère le vélo au bus.',
+        ],
+    },
+    {
+        moduleId: 'a1-ou-est-la-gare',
+        title: 'Où Est la Gare ?',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'David est en vacances à Tours. Il veut aller à la gare, mais il ne connaît pas bien la ville. Il demande de l’aide à une femme dans la rue.',
+            '« Excusez-moi madame, où est la gare, s’il vous plaît ? » La femme répond : « Continuez tout droit jusqu’au feu, puis tournez à gauche. La gare est en face de l’hôtel. »',
+            'David la remercie et suit ses indications. Après quelques minutes, il voit la gare. Il regarde l’heure : il a encore vingt minutes avant son train.',
+        ],
+    },
+    {
+        moduleId: 'a1-a-la-gare',
+        title: 'À la Gare',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Julie arrive à la gare de Lille. Elle veut prendre le train pour Paris. Elle regarde le grand écran pour trouver son train et son quai.',
+            'Son train part à quatorze heures dix du quai six. Julie a un peu de temps, alors elle achète une bouteille d’eau et un sandwich.',
+            'À quatorze heures, elle va sur le quai. Elle trouve sa voiture et sa place près de la fenêtre. Quelques minutes plus tard, le train part.',
+        ],
+    },
+    {
+        moduleId: 'a1-un-week-end-a-lyon',
+        title: 'Un Week-end à Lyon',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Manon et Alex vont passer le week-end à Lyon. Ils partent samedi matin en train et arrivent vers dix heures. Leur hôtel est près du centre-ville.',
+            'Le samedi, ils veulent visiter la vieille ville, déjeuner dans un restaurant et se promener près de la rivière. Le soir, ils vont retrouver une amie qui habite à Lyon.',
+            'Le dimanche matin, ils vont au marché puis dans un parc. Leur train de retour part à dix-huit heures. Le week-end est court, mais leur programme est bien rempli.',
+        ],
+    },
+    {
+        moduleId: 'a1-une-journee-a-marseille',
+        title: 'Une Journée à Marseille',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Laura habite à Aix-en-Provence et passe la journée à Marseille avec son amie Zoé. Elles arrivent le matin en train et commencent leur journée près du Vieux-Port.',
+            'Elles marchent près de l’eau et s’arrêtent dans un café. Laura prend un café et Zoé commande un jus d’orange. Ensuite, elles visitent quelques rues du centre et entrent dans plusieurs petites boutiques.',
+            'À midi, elles déjeunent dans un restaurant. Après le repas, elles prennent un bus pour aller près de la mer. Il fait beau et elles restent dehors une grande partie de l’après-midi.',
+            'En fin de journée, Laura et Zoé retournent à la gare. Elles sont fatiguées, mais elles sont contentes de leur journée.',
+        ],
+    },
+    {
+        moduleId: 'a1-une-visite-chez-des-amis',
+        title: 'Une Visite Chez des Amis',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Dimanche, Mehdi et Claire vont déjeuner chez leurs amis Pauline et Victor. Ils habitent dans une maison à trente minutes de la ville.',
+            'Quand Mehdi et Claire arrivent, Pauline prépare encore le repas. Victor leur montre la maison et le jardin. Leur nouveau chien court partout et veut jouer avec tout le monde.',
+            'Ils déjeunent ensemble sur la terrasse. Pauline prépare du poulet avec des légumes et Claire apporte un gâteau. Après le repas, ils prennent un café et parlent de leurs prochaines vacances.',
+            'Vers dix-sept heures, Mehdi et Claire rentrent chez eux. Avant de partir, ils invitent Pauline et Victor à venir dîner chez eux le mois prochain.',
+        ],
+    },
+    {
+        moduleId: 'a1-mes-premieres-semaines-en-france',
+        title: 'Mes Premières Semaines en France',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Je m’appelle Sofia et je viens du Portugal. Maintenant, j’habite à Bordeaux parce que j’étudie le français. Je partage un appartement avec une étudiante française qui s’appelle Louise.',
+            'Le matin, je vais à mon cours de français en tramway. J’étudie avec des personnes de plusieurs pays. Après les cours, nous déjeunons parfois ensemble dans un café près de l’école.',
+            'Au début, parler français est difficile pour moi. Dans les magasins ou au restaurant, les personnes parlent parfois trop vite. Mais chaque jour, je comprends un peu plus.',
+            'J’aime beaucoup ma nouvelle ville. Le week-end, Louise me montre différents quartiers et je rencontre ses amis. Je suis loin de ma famille, mais je suis contente de vivre cette nouvelle expérience.',
+        ],
+    },
+    {
+        moduleId: 'a1-un-week-end-a-la-campagne',
+        title: 'Un Week-end à la Campagne',
+        source: 'Texte original — niveau A1',
+        paragraphs: [
+            'Vendredi soir, Adrien quitte la ville avec deux amis pour passer le week-end à la campagne. Ils vont dans la maison des parents de son amie Louise. La maison est petite, mais elle a un grand jardin.',
+            'Le samedi matin, ils prennent un long petit-déjeuner puis vont faire une promenade. À midi, ils achètent du pain, du fromage et des légumes dans un village voisin.',
+            'L’après-midi, Adrien lit dans le jardin pendant que ses amis jouent aux cartes. Le soir, ils préparent le dîner ensemble et mangent dehors.',
+            'Le dimanche, ils se lèvent tard et profitent encore un peu du calme. Ils retournent en ville dans l’après-midi. Adrien aime la ville, mais il trouve aussi agréable de passer quelques jours à la campagne.',
+        ],
+    },
+
     // ─── A2 Reading Passages ────────────────────────────────────────────────────
     {
         moduleId: 'a2-une-journee-typique',
