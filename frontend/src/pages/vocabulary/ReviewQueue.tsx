@@ -1,5 +1,6 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {
     loadQueue,
@@ -11,7 +12,7 @@ import {
 } from '../../utils/wordQueue';
 import { isAnswerCorrect } from '../../utils/answerValidator';
 import { fetchDueWordsFromApi, syncAnswerToApi, recordAnswer, type DueWord } from '../../utils/progress';
-import { loadQuizDirection, type QuizDirection } from '../../utils/settings';
+import { loadQuizDirection, type QuizDirection, type TargetLanguage } from '../../utils/settings';
 import { useAuth } from '../../context/AuthContext';
 import { useT } from '../../utils/i18n';
 import { CheckCircleIcon } from '../../components/icons/index';
@@ -32,7 +33,7 @@ interface ReviewSession {
     done: boolean;
 }
 
-async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
+async function loadDueWords(dueList: DueWord[], language: TargetLanguage): Promise<ReviewWord[]> {
     const byModule: Record<string, DueWord[]> = {};
     for (const d of dueList) {
         (byModule[d.moduleId] ??= []).push(d);
@@ -43,7 +44,7 @@ async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
         Object.entries(byModule).map(async ([moduleId, dues]) => {
             try {
                 const res = await axios.get<{ id: number; english: string; french: string }[]>(
-                    `${API}/api/vocabulary/${moduleId}`,
+                    `${API}/api/learning/${language}/vocabulary/${moduleId}`,
                     { withCredentials: true },
                 );
                 for (const due of dues) {
@@ -65,19 +66,21 @@ async function loadDueWords(dueList: DueWord[]): Promise<ReviewWord[]> {
 }
 
 export default function ReviewQueue() {
+    const { language } = useLearning();
     const navigate = useNavigate();
     const { user } = useAuth();
     const t = useT();
     const [queue, setQueue] = useState<WordQueue>({});
     const [session, setSession] = useState<ReviewSession | null>(null);
     const [loading, setLoading] = useState(false);
+    const targetLanguage = language;
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
 
     useEffect(() => {
         if (user) {
             setLoading(true);
-            fetchDueWordsFromApi().then(due => {
-                loadDueWords(due).then(words => {
+            fetchDueWordsFromApi(targetLanguage).then(due => {
+                loadDueWords(due, language).then(words => {
                     setSession(words.length > 0 ? {
                         words: [...words].sort(() => Math.random() - 0.5),
                         currentIndex: 0,
@@ -90,9 +93,9 @@ export default function ReviewQueue() {
                 });
             });
         } else {
-            setQueue(loadQueue());
+            setQueue(loadQueue(targetLanguage));
         }
-    }, [user]);
+    }, [user, targetLanguage]);
 
     // Allow Enter to advance past the reveal screen
     useEffect(() => {
@@ -129,7 +132,7 @@ export default function ReviewQueue() {
     const clearModule = (moduleId: string) => {
         const updated = { ...queue };
         delete updated[moduleId];
-        saveQueue(updated);
+        saveQueue(updated, targetLanguage);
         setQueue(updated);
     };
 
@@ -242,8 +245,8 @@ export default function ReviewQueue() {
                         </div>
                     </div>
                     <div className="vocq-complete-actions">
-                        {!user && totalQueuedCount(loadQueue()) > 0 && (
-                            <button className="btn btn-primary" onClick={() => { setQueue(loadQueue()); setSession(null); }}>
+                        {!user && totalQueuedCount(loadQueue(targetLanguage)) > 0 && (
+                            <button className="btn btn-primary" onClick={() => { setQueue(loadQueue(targetLanguage)); setSession(null); }}>
                                 {t.reviewQueue.reviewRemaining}
                             </button>
                         )}
@@ -264,11 +267,11 @@ export default function ReviewQueue() {
         const target = quizDir === 'fr-en' ? current.english : current.french;
         const isCorrect = isAnswerCorrect(session.userAnswer, target);
 
-        recordAnswer(current.moduleId, current.id, isCorrect);
+        recordAnswer(current.moduleId, current.id, isCorrect, targetLanguage);
         if (user) {
-            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, isCorrect);
+            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, isCorrect, targetLanguage);
         } else if (isCorrect) {
-            removeCorrectWord(current.moduleId, current.id);
+            removeCorrectWord(current.moduleId, current.id, targetLanguage);
         }
 
         if (isCorrect) {
@@ -289,9 +292,9 @@ export default function ReviewQueue() {
     };
 
     const handleSkip = () => {
-        recordAnswer(current.moduleId, current.id, false);
+        recordAnswer(current.moduleId, current.id, false, targetLanguage);
         if (user) {
-            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, false);
+            syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, false, targetLanguage);
         }
         setSession(s => s && ({ ...s, showAnswer: true }));
     };
@@ -314,7 +317,7 @@ export default function ReviewQueue() {
             <div className="vocq-top-bar">
                 <button
                     className="btn btn-secondary vocq-exit-btn"
-                    onClick={() => { if (!user) setQueue(loadQueue()); setSession(null); }}
+                    onClick={() => { if (!user) setQueue(loadQueue(targetLanguage)); setSession(null); }}
                 >
                     {t.quiz.exit}
                 </button>

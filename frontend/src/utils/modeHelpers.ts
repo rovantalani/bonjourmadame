@@ -1,7 +1,5 @@
-import { COURSES } from '../data/fr/courses';
-import { COURSES_EN } from '../data/en/courses';
-import { loadLearningMode } from './settings';
+import { useLearning } from '../context/LearningContext';
 
 export function useCourses() {
-    return loadLearningMode() === 'learn-english' ? COURSES_EN : COURSES;
+    return useLearning().courses;
 }

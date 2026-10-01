@@ -1,11 +1,13 @@
+import { useLearning } from '../../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../../hooks/useLearningNavigation';
 import { useLearningVisit } from '../../../hooks/useLearningVisit';
 import LearningCompletion from '../../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { recordAnswer, syncAnswerToApi, syncSessionToApi, recordSession } from '../../../utils/progress';
 import { useAuth } from '../../../context/AuthContext';
 import { gradeAnswer } from '../../../utils/answerValidator';
-import { loadLearningMode, loadQuizDirection, type QuizDirection } from '../../../utils/settings';
+import { loadQuizDirection, type QuizDirection } from '../../../utils/settings';
 import { useT } from '../../../utils/i18n';
 import SpeakerButton from '../../../components/SpeakerButton';
 import { CheckCircleIcon } from '../../../components/icons/index';
@@ -28,6 +30,7 @@ interface PhraseCategoryData {
 }
 
 export default function PhraseQuiz() {
+    const { language } = useLearning();
     const navigate                = useNavigate();
     const { level, categoryId }   = useParams<{ level: string; categoryId: string }>();
     const { user }                = useAuth();
@@ -43,13 +46,13 @@ export default function PhraseQuiz() {
     const [loadError, setLoadError] = useState(false);
     const [quizComplete, setQuizComplete]     = useState(false);
     const [loading, setLoading]               = useState(true);
+    const targetLanguage = language;
     const [quizDir] = useState<QuizDirection>(loadQuizDirection);
     const [partiallyCorrect, setPartiallyCorrect] = useState(false);
     const t = useT();
 
     useEffect(() => {
-        const lang = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
-        fetch(`${import.meta.env.VITE_API_BASE}/api/lectures/phrases/${categoryId}${lang}`)
+                fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/lectures/phrases/${categoryId}`)
             .then(res => { if (!res.ok) throw new Error('Load failed'); return res.json(); })
             .then((data: PhraseCategoryData) => {
                 if (!data.phrases?.length) throw new Error('Empty quiz');
@@ -58,7 +61,7 @@ export default function PhraseQuiz() {
                 setLoading(false);
             })
             .catch(() => { setLoadError(true); setLoading(false); });
-    }, [categoryId]);
+    }, [categoryId, targetLanguage]);
 
     const moduleKey = `phrase-${categoryId}`;
 
@@ -69,8 +72,8 @@ export default function PhraseQuiz() {
         const result = gradeAnswer(userAnswer, target);
         const isCorrect = result !== 'wrong';
         setPartiallyCorrect(result === 'partial');
-        recordAnswer(moduleKey, current.id, isCorrect);
-        if (user) syncAnswerToApi(`${moduleKey}:${current.id}`, moduleKey, isCorrect);
+        recordAnswer(moduleKey, current.id, isCorrect, targetLanguage);
+        if (user) syncAnswerToApi(`${moduleKey}:${current.id}`, moduleKey, isCorrect, targetLanguage);
 
         if (isCorrect) {
             const score = correctCount + 1;
@@ -86,8 +89,8 @@ export default function PhraseQuiz() {
     const handleSkip = () => {
         if (showAnswer || quizComplete) return;
         const current = phrases[currentIndex];
-        recordAnswer(moduleKey, current.id, false);
-        if (user) syncAnswerToApi(`${moduleKey}:${current.id}`, moduleKey, false);
+        recordAnswer(moduleKey, current.id, false, targetLanguage);
+        if (user) syncAnswerToApi(`${moduleKey}:${current.id}`, moduleKey, false, targetLanguage);
         setWrongPhrases(items => [...items, current]);
         setShowAnswer(true);
     };
@@ -104,8 +107,8 @@ export default function PhraseQuiz() {
             setCurrentIndex(0);
             setIsReviewMode(true);
         } else {
-            recordSession(moduleKey, 'vocabulary', score, category!.phrases.length);
-            if (user) syncSessionToApi(moduleKey, 'vocabulary', score, category!.phrases.length);
+            recordSession(moduleKey, 'vocabulary', score, category!.phrases.length, targetLanguage);
+            if (user) syncSessionToApi(moduleKey, 'vocabulary', score, category!.phrases.length, targetLanguage);
             setQuizComplete(true);
         }
     };

@@ -1,11 +1,12 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import { normalizeSearch } from '../../utils/search';
 import ProgressFlower from '../../components/ProgressFlower';
 import { getContentStatus, hasPassedQuiz } from '../../utils/courseProgress';
 import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useT } from '../../utils/i18n';
-import { loadLearningMode } from '../../utils/settings';
 import './VerbGroupList.css';
 
 interface VerbSummary {
@@ -47,6 +48,7 @@ function groupByType(verbs: VerbSummary[]): { type: string; verbs: VerbSummary[]
 }
 
 export default function VerbGroupList() {
+    const { language } = useLearning();
     const { level, moduleId } = useParams<{ level: string; moduleId: string }>();
     const navigate = useNavigate();
     const t = useT();
@@ -59,8 +61,7 @@ export default function VerbGroupList() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
-        fetch(`${import.meta.env.VITE_API_BASE}/api/verbs/groups/${moduleId}${langParam}`)
+                fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/verbs/groups/${moduleId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -73,7 +74,7 @@ export default function VerbGroupList() {
                 setError(true);
                 setLoading(false);
             });
-    }, [moduleId, navigate]);
+    }, [moduleId, language]);
 
     if (loading) {
         return (
