@@ -99,6 +99,8 @@ bonjourmadame/
 
 Content belongs to the language being learned: `backend/src/content/fr` and `backend/src/content/en`. These packages may import their own files and neutral types, but must never import or re-export each other's content. English vocabulary, module labels, and phrases were copied once to establish independent ownership; edit each curriculum separately from now on. Bilingual translations within a package are intentional.
 
+Each backend learning module now has one CEFR `level` and one numbered `unit`. This includes grammar, phrase categories, reading passages, vocabulary module definitions in `modules.ts`, helper verbs, and individual verbs. Vocabulary word lists that support a reading passage are not separate course modules. Units are currently defined in the frontend course files; `npm test --prefix backend` checks every placement against those units and checks existing course steps. Modules not yet shown in a course still have a placement. Existing unlisted verbs were assigned to the last unit of their level as a starting point; teachers should review these placements before the course-sync step adds them to a roadmap. The course files remain in the frontend until the next migration step.
+
 Frontend curricula follow the same rule under `frontend/src/data/fr` and `frontend/src/data/en`, with neutral course types in `courseTypes.ts`. The app loads only the selected curriculum, and learning URLs are scoped under `/learn/fr` or `/learn/en`.
 
 Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Course verb-group references must resolve within their own language catalog.

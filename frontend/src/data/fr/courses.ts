@@ -54,7 +54,7 @@ export const COURSES: Course[] = [
             { id: 'a1-city',            title: 'City Places',                    module: 'vocabulary', type: 'vocabulary', contentId: 'city-places',                path: '/vocabulary/city-places',                   unit: 4 },
             { id: 'a1-shopping',        title: 'Shopping Basics',                module: 'lectures', type: 'phrases',    contentId: 'shopping-basics',            path: '/lectures/phrases/shopping-basics',                  unit: 4 },
             { id: 'a1-demonstratives',  title: 'Demonstrative Adjectives',       module: 'lectures', type: 'grammar',    contentId: 'demonstrative-adjectives',   path: '/lectures/grammar/demonstrative-adjectives',  unit: 4 },
-            // Unit 5 — Health & Review (10 steps)
+            // Unit 5 — Health & Review (9 steps)
             { id: 'a1-body-health',     title: 'Body & Health',                  module: 'vocabulary', type: 'vocabulary', contentId: 'body-health',                path: '/vocabulary/body-health',                   unit: 5 },
             { id: 'a1-seasons',         title: 'Seasons & Weather',              module: 'vocabulary', type: 'vocabulary', contentId: 'seasons-weather',            path: '/vocabulary/seasons-weather',               unit: 5 },
             { id: 'a1-present-ir-re',   title: 'Present Tense: -IR & -RE Verbs', module: 'lectures', type: 'grammar',   contentId: 'present-tense-ir-re',        path: '/lectures/grammar/present-tense-ir-re',      unit: 5 },
@@ -88,26 +88,24 @@ export const COURSES: Course[] = [
             { id: 'a2-school',            title: 'School & Education',            module: 'vocabulary', type: 'vocabulary', contentId: 'school-education',           path: '/vocabulary/school-education',                   unit: 1 },
             { id: 'a2-daily-routine',     title: 'Daily Routine',                 module: 'lectures', type: 'phrases',    contentId: 'daily-routine',             path: '/lectures/phrases/daily-routine',                         unit: 1 },
             { id: 'a2-reading-journee',   title: 'Reading: La Journée de Clara',  module: 'lectures', type: 'reading',    contentId: 'a2-une-journee-typique',     path: '/lectures/reading/a2-une-journee-typique',                unit: 1 },
-            // Unit 2 — Achats & Goûts (7 steps)
+            // Unit 2 — Achats & Goûts (8 steps)
             { id: 'a2-shopping',          title: 'Shopping & Money',              module: 'vocabulary', type: 'vocabulary', contentId: 'shopping-money',             path: '/vocabulary/shopping-money',                     unit: 2 },
             { id: 'a2-adjectives',        title: 'Adjective Agreement',           module: 'lectures', type: 'grammar',    contentId: 'adjective-agreement',        path: '/lectures/grammar/adjective-agreement',           unit: 2 },
             { id: 'a2-comparatives',      title: 'Comparatives & Superlatives',   module: 'lectures', type: 'grammar',    contentId: 'comparatives-superlatives',  path: '/lectures/grammar/comparatives-superlatives',     unit: 2 },
             { id: 'a2-restaurant',        title: 'At the Restaurant',             module: 'lectures', type: 'phrases',    contentId: 'at-the-restaurant',          path: '/lectures/phrases/at-the-restaurant',                     unit: 2 },
             { id: 'a2-food-culture',      title: 'Food & Culture',                module: 'vocabulary', type: 'vocabulary', contentId: 'food-culture',               path: '/vocabulary/food-culture',                       unit: 2 },
-            { id: 'a2-partitive',         title: 'Partitive Articles (Review)',   module: 'lectures', type: 'grammar',    contentId: 'partitive-articles',         path: '/lectures/grammar/partitive-articles',            unit: 2 },
             { id: 'a2-animals',           title: 'Animals',                       module: 'vocabulary', type: 'vocabulary', contentId: 'animals',                    path: '/vocabulary/animals',                            unit: 2 },
             { id: 'a2-imperative',        title: 'The Imperative Mood',           module: 'lectures', type: 'grammar',    contentId: 'imperative-mood',            path: '/lectures/grammar/imperative-mood',               unit: 2 },
             { id: 'a2-market-phrases',    title: 'At the Market',                 module: 'lectures', type: 'phrases',    contentId: 'at-the-market',              path: '/lectures/phrases/at-the-market',                         unit: 2 },
-            // Unit 3 — Voyages & Nature (8 steps)
+            // Unit 3 — Voyages & Nature (7 steps)
             { id: 'a2-weather',           title: 'Weather & Nature',              module: 'vocabulary', type: 'vocabulary', contentId: 'weather-nature',             path: '/vocabulary/weather-nature',                     unit: 3 },
-            { id: 'a2-futur-proche',      title: 'Le Futur Proche (Review)',      module: 'lectures', type: 'grammar',    contentId: 'futur-proche',               path: '/lectures/grammar/futur-proche',                  unit: 3 },
             { id: 'a2-futur-simple',      title: 'Le Futur Simple',               module: 'lectures', type: 'grammar',    contentId: 'futur-simple-intro',         path: '/lectures/grammar/futur-simple-intro',            unit: 3 },
             { id: 'a2-transport',         title: 'Transport & Travel',            module: 'vocabulary', type: 'vocabulary', contentId: 'transport-travel',           path: '/vocabulary/transport-travel',                   unit: 3 },
             { id: 'a2-hotel',             title: 'At the Hotel',                  module: 'lectures', type: 'phrases',    contentId: 'at-the-hotel',               path: '/lectures/phrases/at-the-hotel',                          unit: 3 },
             { id: 'a2-direct-object',     title: 'Direct Object Pronouns',        module: 'lectures', type: 'grammar',    contentId: 'direct-object-pronouns',     path: '/lectures/grammar/direct-object-pronouns',        unit: 3 },
             { id: 'a2-regular-verbs',     title: 'Regular Verbs',                 module: 'verbs', type: 'verbs',      contentId: 'a2',              path: '/verbs/a2',                         unit: 3 },
             { id: 'a2-reading-bretagne',  title: 'Reading: Vacances en Bretagne', module: 'lectures', type: 'reading',    contentId: 'a2-vacances-en-bretagne',    path: '/lectures/reading/a2-vacances-en-bretagne',               unit: 3 },
-            // Unit 4 — Vie Sociale (7 steps)
+            // Unit 4 — Vie Sociale (9 steps)
             { id: 'a2-sports',            title: 'Sports & Hobbies',              module: 'vocabulary', type: 'vocabulary', contentId: 'sports-hobbies',             path: '/vocabulary/sports-hobbies',                     unit: 4 },
             { id: 'a2-indirect-object',   title: 'Indirect Object Pronouns',      module: 'lectures', type: 'grammar',    contentId: 'indirect-object-pronouns',   path: '/lectures/grammar/indirect-object-pronouns',      unit: 4 },
             { id: 'a2-health-doctor',     title: 'Health & Doctor',               module: 'vocabulary', type: 'vocabulary', contentId: 'health-doctor',              path: '/vocabulary/health-doctor',                      unit: 4 },
@@ -117,7 +115,7 @@ export const COURSES: Course[] = [
             { id: 'a2-on-phone',          title: 'On the Phone',                  module: 'lectures', type: 'phrases',    contentId: 'on-the-phone',               path: '/lectures/phrases/on-the-phone',                          unit: 4 },
             { id: 'a2-conditionnel',      title: 'Polite Conditionals',           module: 'lectures', type: 'grammar',    contentId: 'conditionnel-intro',         path: '/lectures/grammar/conditionnel-intro',            unit: 4 },
             { id: 'a2-making-plans',      title: 'Making Plans',                  module: 'lectures', type: 'phrases',    contentId: 'making-plans',               path: '/lectures/phrases/making-plans',                          unit: 4 },
-            // Unit 5 — Personnes & Bilan (9 steps)
+            // Unit 5 — Personnes & Bilan (10 steps)
             { id: 'a2-reflexive-basics',  title: 'Reflexive Verbs',               module: 'lectures', type: 'grammar',    contentId: 'reflexive-verbs-basics',     path: '/lectures/grammar/reflexive-verbs-basics',        unit: 5 },
             { id: 'a2-personality',       title: 'Personality & Character',       module: 'vocabulary', type: 'vocabulary', contentId: 'personality-character',      path: '/vocabulary/personality-character',              unit: 5 },
             { id: 'a2-celebrations',      title: 'Celebrations & Events',         module: 'vocabulary', type: 'vocabulary', contentId: 'celebrations-events',         path: '/vocabulary/celebrations-events',                unit: 5 },
@@ -176,13 +174,9 @@ export const COURSES: Course[] = [
             { id: 'b1-negation-advanced',  title: 'Advanced Negation',              module: 'lectures', type: 'grammar',    contentId: 'negation-advanced',          path: '/lectures/grammar/negation-advanced',         unit: 4 },
             { id: 'b1-work-phrases',       title: 'Talking About Work',             module: 'lectures', type: 'phrases',    contentId: 'talking-about-work',         path: '/lectures/phrases/talking-about-work',                unit: 4 },
             { id: 'b1-customer-service',   title: 'Customer Service',               module: 'lectures', type: 'phrases',    contentId: 'customer-service',           path: '/lectures/phrases/customer-service',                  unit: 4 },
-            { id: 'b1-reflexive',          title: 'Reflexive Verbs',                module: 'lectures', type: 'grammar',    contentId: 'reflexive-verbs',            path: '/lectures/grammar/reflexive-verbs',           unit: 4 },
             { id: 'b1-housing',            title: 'Housing & Urban Life',           module: 'vocabulary', type: 'vocabulary', contentId: 'housing-urban',              path: '/vocabulary/housing-urban',                  unit: 4 },
             { id: 'b1-reading-artiste',    title: 'Reading: Rencontre avec une Artiste', module: 'lectures', type: 'reading', contentId: 'b1-interview-artiste',  path: '/lectures/reading/b1-interview-artiste',              unit: 4 },
-            // Unit 5 — Expression Complexe & Bilan (9 steps)
-            { id: 'b1-faire',              title: 'Verb: faire',                    module: 'verbs', type: 'verbs',      contentId: 'faire',                      path: '/verbs/faire/table',                        unit: 5 },
-            { id: 'b1-aller',              title: 'Verb: aller',                    module: 'verbs', type: 'verbs',      contentId: 'aller',                      path: '/verbs/aller/table',                        unit: 5 },
-            { id: 'b1-venir',              title: 'Verb: venir',                    module: 'verbs', type: 'verbs',      contentId: 'venir',                      path: '/verbs/venir/table',                        unit: 5 },
+            // Unit 5 — Expression Complexe & Bilan (6 steps)
             { id: 'b1-double-pronouns',    title: 'Double Pronoun Order',           module: 'lectures', type: 'grammar',    contentId: 'double-pronoun-order',       path: '/lectures/grammar/double-pronoun-order',      unit: 5 },
             { id: 'b1-health-lifestyle',   title: 'Health & Lifestyle',             module: 'vocabulary', type: 'vocabulary', contentId: 'health-lifestyle',           path: '/vocabulary/health-lifestyle',               unit: 5 },
             { id: 'b1-health-phrases',     title: 'Health & Lifestyle Phrases',     module: 'lectures', type: 'phrases',    contentId: 'health-lifestyle-phrases',   path: '/lectures/phrases/health-lifestyle-phrases',          unit: 5 },
@@ -213,33 +207,30 @@ export const COURSES: Course[] = [
             { id: 'b2-business',              title: 'Business & Economy',             module: 'vocabulary', type: 'vocabulary', contentId: 'business-economy',              path: '/vocabulary/business-economy',                    unit: 1 },
             { id: 'b2-passive',               title: 'Passive Voice',                  module: 'lectures', type: 'grammar',    contentId: 'passive-voice',                 path: '/lectures/grammar/passive-voice',                  unit: 1 },
             { id: 'b2-reading-education',     title: 'Reading: L\'École de la République', module: 'lectures', type: 'reading', contentId: 'b2-article-education',         path: '/lectures/reading/b2-article-education',                   unit: 1 },
-            // Unit 2 — Expression Nuancée (8 steps)
+            // Unit 2 — Expression Nuancée (7 steps)
             { id: 'b2-reported',              title: 'Reported Speech',                module: 'lectures', type: 'grammar',    contentId: 'reported-speech',               path: '/lectures/grammar/reported-speech',                unit: 2 },
             { id: 'b2-media-journalism',      title: 'Media & Journalism',             module: 'vocabulary', type: 'vocabulary', contentId: 'media-journalism',              path: '/vocabulary/media-journalism',                    unit: 2 },
             { id: 'b2-gerondif',              title: 'Le Gérondif',                    module: 'lectures', type: 'grammar',    contentId: 'gerondif',                      path: '/lectures/grammar/gerondif',                       unit: 2 },
             { id: 'b2-cleft-sentences',       title: 'Emphasis & Cleft Sentences',     module: 'lectures', type: 'grammar',    contentId: 'emphasis-cleft-sentences',      path: '/lectures/grammar/emphasis-cleft-sentences',       unit: 2 },
             { id: 'b2-science-tech',          title: 'Science & Technology',           module: 'vocabulary', type: 'vocabulary', contentId: 'science-technology',            path: '/vocabulary/science-technology',                  unit: 2 },
-            { id: 'b2-opinions',              title: 'Expressing Opinions',            module: 'lectures', type: 'phrases',    contentId: 'expressing-opinions',           path: '/lectures/phrases/expressing-opinions',                    unit: 2 },
             { id: 'b2-debating',              title: 'Debating & Persuading',          module: 'lectures', type: 'phrases',    contentId: 'debating-persuading',           path: '/lectures/phrases/debating-persuading',                    unit: 2 },
             { id: 'b2-reading-ecologie',      title: 'Reading: Nucléaire ou Renouvelable', module: 'lectures', type: 'reading', contentId: 'b2-debat-ecologie',            path: '/lectures/reading/b2-debat-ecologie',                      unit: 2 },
-            // Unit 3 — Français Professionnel (7 steps)
-            { id: 'b2-emotions',              title: 'Emotions & Psychology',          module: 'vocabulary', type: 'vocabulary', contentId: 'emotions-psychology',           path: '/vocabulary/emotions-psychology',                 unit: 3 },
+            // Unit 3 — Français Professionnel (6 steps)
             { id: 'b2-concession',            title: 'Concession & Opposition',        module: 'lectures', type: 'grammar',    contentId: 'concession-opposition',         path: '/lectures/grammar/concession-opposition',          unit: 3 },
             { id: 'b2-work-pro',              title: 'Professional French',            module: 'lectures', type: 'phrases',    contentId: 'work-professional',             path: '/lectures/phrases/work-professional',                      unit: 3 },
             { id: 'b2-law',                   title: 'Law & Justice',                  module: 'vocabulary', type: 'vocabulary', contentId: 'law-justice',                   path: '/vocabulary/law-justice',                         unit: 3 },
             { id: 'b2-nominalisation',        title: 'La Nominalisation',              module: 'lectures', type: 'grammar',    contentId: 'nominalisation',                path: '/lectures/grammar/nominalisation',                 unit: 3 },
             { id: 'b2-formal-correspondence', title: 'Formal Correspondence',          module: 'lectures', type: 'phrases',    contentId: 'formal-correspondence',         path: '/lectures/phrases/formal-correspondence',                  unit: 3 },
             { id: 'b2-reading-lettre',        title: 'Reading: Lettre Ouverte',        module: 'lectures', type: 'reading',    contentId: 'b2-lettre-ouverte',             path: '/lectures/reading/b2-lettre-ouverte',                      unit: 3 },
-            // Unit 4 — Textes Authentiques (8 steps)
+            // Unit 4 — Textes Authentiques (6 steps)
             { id: 'b2-adv-verbs',             title: 'Advanced Irregular Verbs',       module: 'verbs', type: 'verbs',      contentId: 'b2',      path: '/verbs/b2',               unit: 4 },
             { id: 'b2-philosophy',            title: 'Philosophy & Ethics',            module: 'vocabulary', type: 'vocabulary', contentId: 'philosophy-ethics',             path: '/vocabulary/philosophy-ethics',                   unit: 4 },
             { id: 'b2-infinitive',            title: 'Infinitive Constructions',       module: 'lectures', type: 'grammar',    contentId: 'infinitive-constructions',      path: '/lectures/grammar/infinitive-constructions',       unit: 4 },
             { id: 'b2-arts',                  title: 'Arts & Criticism',               module: 'vocabulary', type: 'vocabulary', contentId: 'arts-and-criticism',            path: '/vocabulary/arts-and-criticism',                  unit: 4 },
             { id: 'b2-emotions-reactions',    title: 'Emotions & Reactions',           module: 'lectures', type: 'phrases',    contentId: 'emotions-reactions',            path: '/lectures/phrases/emotions-reactions',                     unit: 4 },
             { id: 'b2-reading-chronique',     title: 'Reading: Réseaux Sociaux',       module: 'lectures', type: 'reading',    contentId: 'b2-chronique-societale',        path: '/lectures/reading/b2-chronique-societale',                 unit: 4 },
-            // Unit 5 — Maîtrise de la Complexité (8 steps)
+            // Unit 5 — Maîtrise de la Complexité (7 steps)
             { id: 'b2-subj-vs-indic',         title: 'Subjonctif ou Indicatif ?',      module: 'lectures', type: 'grammar',    contentId: 'subjunctive-vs-indicative',     path: '/lectures/grammar/subjunctive-vs-indicative',      unit: 5 },
-            { id: 'b2-daily-life',            title: 'Daily Life (Advanced)',          module: 'vocabulary', type: 'vocabulary', contentId: 'daily-life-advanced',           path: '/vocabulary/daily-life-advanced',                 unit: 5 },
             { id: 'b2-urban-society',         title: 'Urban Society',                  module: 'vocabulary', type: 'vocabulary', contentId: 'urban-society',                 path: '/vocabulary/urban-society',                       unit: 5 },
             { id: 'b2-formal-arg',            title: 'Formal Argumentation',           module: 'lectures', type: 'phrases',    contentId: 'formal-argumentation',          path: '/lectures/phrases/formal-argumentation',                   unit: 5 },
             { id: 'b2-discussing-society',    title: 'Discussing Society',             module: 'lectures', type: 'phrases',    contentId: 'discussing-society',            path: '/lectures/phrases/discussing-society',                     unit: 5 },
@@ -296,7 +287,6 @@ export const COURSES: Course[] = [
             { id: 'c1-reading-ernaux',    title: 'Reading: Ernaux',              module: 'lectures', type: 'reading',    contentId: 'c1-roman-contemporain',      path: '/lectures/reading/c1-roman-contemporain',              unit: 4 },
             // Unit 5 — Full Mastery & Review
             { id: 'c1-proverbs',          title: 'Proverbs & Sayings',           module: 'lectures', type: 'phrases',    contentId: 'proverbs-sayings',           path: '/lectures/phrases/proverbs-sayings',                   unit: 5 },
-            { id: 'c1-phrases-formal',    title: 'Formal Argumentation',         module: 'lectures', type: 'phrases',    contentId: 'formal-argumentation',       path: '/lectures/phrases/formal-argumentation',               unit: 5 },
             { id: 'c1-nuanced-adj',       title: 'Nuanced Adjectives',           module: 'vocabulary', type: 'vocabulary', contentId: 'nuanced-adjectives',         path: '/vocabulary/nuanced-adjectives',              unit: 5 },
             { id: 'c1-human-condition',   title: 'The Human Condition',          module: 'vocabulary', type: 'vocabulary', contentId: 'human-condition',            path: '/vocabulary/human-condition',                 unit: 5 },
             { id: 'c1-conditionnel-passe', title: 'Le Conditionnel Passé',       module: 'lectures', type: 'grammar',    contentId: 'conditionnel-passe',         path: '/lectures/grammar/conditionnel-passe',         unit: 5 },
@@ -320,11 +310,8 @@ export const COURSES: Course[] = [
         steps: [
             // Unit 1 — Precision & Refinement
             { id: 'c2-style-register',   title: 'Style & Register Mastery',     module: 'lectures', type: 'grammar',    contentId: 'style-and-register-mastery', path: '/lectures/grammar/style-and-register-mastery', unit: 1 },
-            { id: 'c2-nuanced',          title: 'Nuanced Adjectives',           module: 'vocabulary', type: 'vocabulary', contentId: 'nuanced-adjectives',         path: '/vocabulary/nuanced-adjectives',              unit: 1 },
             { id: 'c2-archaic',          title: 'Classical French Forms',       module: 'lectures', type: 'grammar',    contentId: 'archaic-classical-forms',    path: '/lectures/grammar/archaic-classical-forms',    unit: 1 },
             { id: 'c2-abstract',         title: 'Abstract Thought',             module: 'vocabulary', type: 'vocabulary', contentId: 'abstract-thought',           path: '/vocabulary/abstract-thought',                unit: 1 },
-            { id: 'c2-human',            title: 'The Human Condition',          module: 'vocabulary', type: 'vocabulary', contentId: 'human-condition',            path: '/vocabulary/human-condition',                 unit: 1 },
-            { id: 'c2-proverbs',         title: 'Proverbs & Sayings',           module: 'lectures', type: 'phrases',    contentId: 'proverbs-sayings',           path: '/lectures/phrases/proverbs-sayings',                   unit: 1 },
             { id: 'c2-reading-proust',   title: 'Reading: Proust',              module: 'lectures', type: 'reading',    contentId: 'c2-proust-extract',          path: '/lectures/reading/c2-proust-extract',                  unit: 1 },
             // Unit 2 — Language in Context
             { id: 'c2-oral-written',     title: 'Oral vs Written French',       module: 'lectures', type: 'grammar',    contentId: 'oral-vs-written-divergence', path: '/lectures/grammar/oral-vs-written-divergence', unit: 2 },
@@ -332,7 +319,6 @@ export const COURSES: Course[] = [
             { id: 'c2-discourse',        title: 'Advanced Discourse Markers',   module: 'lectures', type: 'grammar',    contentId: 'discourse-markers-advanced', path: '/lectures/grammar/discourse-markers-advanced', unit: 2 },
             { id: 'c2-cultural',         title: 'Cultural References',          module: 'vocabulary', type: 'vocabulary', contentId: 'cultural-references',        path: '/vocabulary/cultural-references',              unit: 2 },
             { id: 'c2-literary-anal',    title: 'Literary Analysis',            module: 'lectures', type: 'phrases',    contentId: 'literary-analysis',          path: '/lectures/phrases/literary-analysis',                  unit: 2 },
-            { id: 'c2-law',              title: 'Law & Administration',         module: 'vocabulary', type: 'vocabulary', contentId: 'law-administration',         path: '/vocabulary/law-administration',               unit: 2 },
             { id: 'c2-reading-poesie',   title: 'Reading: Baudelaire',          module: 'lectures', type: 'reading',    contentId: 'c2-poesie-symboliste',       path: '/lectures/reading/c2-poesie-symboliste',               unit: 2 },
             // Unit 3 — Literature & Thought
             { id: 'c2-literary-mov',     title: 'Literary Movements',           module: 'vocabulary', type: 'vocabulary', contentId: 'literary-movements',         path: '/vocabulary/literary-movements',               unit: 3 },
@@ -352,11 +338,8 @@ export const COURSES: Course[] = [
             { id: 'c2-reading-essay',    title: 'Reading: On Boredom',          module: 'lectures', type: 'reading',    contentId: 'c2-essay-contemporary',      path: '/lectures/reading/c2-essay-contemporary',              unit: 4 },
             // Unit 5 — Capstone
             { id: 'c2-debate-length',    title: 'Debating at Length',           module: 'lectures', type: 'phrases',    contentId: 'debating-at-length',         path: '/lectures/phrases/debating-at-length',                 unit: 5 },
-            { id: 'c2-formal-arg',       title: 'Formal Argumentation',         module: 'lectures', type: 'phrases',    contentId: 'formal-argumentation',       path: '/lectures/phrases/formal-argumentation',               unit: 5 },
             { id: 'c2-reading-univ',     title: 'Reading: The University',      module: 'lectures', type: 'reading',    contentId: 'c2-discours-academique',     path: '/lectures/reading/c2-discours-academique',             unit: 5 },
             { id: 'c2-reading-press',    title: 'Reading: Reading an Editorial', module: 'lectures', type: 'reading',   contentId: 'c2-news-analysis',           path: '/lectures/reading/c2-news-analysis',                   unit: 5 },
-            { id: 'c2-literary-abstr',   title: 'Literary & Abstract Vocab',    module: 'vocabulary', type: 'vocabulary', contentId: 'literary-abstract',          path: '/vocabulary/literary-abstract',               unit: 5 },
-            { id: 'c2-reading-sartre2',  title: 'Reading: Sartre — Huis Clos',  module: 'lectures', type: 'reading',    contentId: 'c2-sartre-huis-clos',        path: '/lectures/reading/c2-sartre-huis-clos',                unit: 5 },
         ],
     },
 ];

@@ -1,3 +1,5 @@
+import type { CoursePlacement } from './curriculum';
+
 export interface ConjugationRow {
     sujet: string;
     present: string;
@@ -16,7 +18,7 @@ export interface ConjugationRow {
     passeAnterieur?: string;
 }
 
-export interface HelperVerbFR {
+export interface HelperVerbFR extends CoursePlacement {
     title: string;
     translation: string;
     color: string;
@@ -27,7 +29,7 @@ export interface HelperVerbEN extends HelperVerbFR {
     columns: readonly [string, string, string, string];
 }
 
-export interface VerbEntry {
+export interface VerbEntry extends CoursePlacement {
     id: string;
     infinitive: string;
     translation: string;

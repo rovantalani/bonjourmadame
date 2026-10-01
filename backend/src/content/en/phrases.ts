@@ -2,6 +2,7 @@ import type { PhraseCategory } from '../../types/lectures/phrases';
 
 export const phraseCategoriesEN: PhraseCategory[] = [
     {
+        level: 'A1', unit: 1,
         id: 'everyday-conversation',
         title: 'Everyday Conversation',
         titleFR: 'Conversation quotidienne',
@@ -28,6 +29,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         id: 'at-the-restaurant',
         title: 'At the Restaurant',
         titleFR: 'Au restaurant',
@@ -54,6 +56,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         id: 'getting-around',
         title: 'Getting Around',
         titleFR: 'Se déplacer',
@@ -80,6 +83,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         id: 'expressing-opinions',
         title: 'Expressing Opinions',
         titleFR: 'Exprimer ses opinions',
@@ -107,6 +111,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
     },
     // ─── B1 Phrase Categories ─────────────────────────────────────────────────
     {
+        level: 'A2', unit: 3,
         id: 'expressing-feelings',
         title: 'Expressing Feelings',
         titleFR: 'Exprimer ses émotions',
@@ -133,6 +138,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'expressing-disagreement',
         title: 'Expressing Disagreement',
         titleFR: 'Exprimer son désaccord',
@@ -159,6 +165,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         id: 'at-the-museum-event',
         title: 'At the Museum / Event',
         titleFR: 'Au musée / à un événement',
@@ -185,6 +192,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         id: 'talking-about-work',
         title: 'Talking About Work',
         titleFR: 'Parler du travail',
@@ -211,6 +219,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         id: 'health-lifestyle-phrases',
         title: 'Health & Lifestyle',
         titleFR: 'Santé & mode de vie',
@@ -237,6 +246,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         id: 'customer-service',
         title: 'Customer Service & Complaints',
         titleFR: 'Service client & réclamations',
@@ -263,6 +273,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         id: 'work-professional',
         title: 'Professional French',
         titleFR: 'Français professionnel',
@@ -289,6 +300,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         id: 'emotions-reactions',
         title: 'Emotions & Reactions',
         titleFR: 'Émotions & Réactions',
@@ -315,6 +327,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C1', unit: 1,
         id: 'academic-discourse',
         title: 'Academic Discourse',
         titleFR: 'Discours académique',
@@ -341,6 +354,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         id: 'cultural-commentary',
         title: 'Cultural Commentary',
         titleFR: 'Commentaire culturel',
@@ -367,6 +381,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C1', unit: 2,
         id: 'intellectual-debate',
         title: 'Intellectual Debate',
         titleFR: 'Débat intellectuel',
@@ -393,6 +408,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C1', unit: 3,
         id: 'expressing-emotion-subtly',
         title: 'Expressing Emotion Subtly',
         titleFR: 'Exprimer les émotions avec subtilité',
@@ -419,6 +435,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C2', unit: 2,
         id: 'literary-analysis',
         title: 'Literary Analysis',
         titleFR: 'Analyse littéraire',
@@ -445,6 +462,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         id: 'high-register-speech',
         title: 'High-Register Speech',
         titleFR: 'Expression soutenue',
@@ -471,6 +489,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C2', unit: 5,
         id: 'debating-at-length',
         title: 'Debating at Length',
         titleFR: 'Débattre en profondeur',
@@ -497,6 +516,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C2', unit: 4,
         id: 'translation-commentary',
         title: 'Translation Commentary',
         titleFR: 'Commentaire de traduction',
@@ -523,6 +543,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C1', unit: 5,
         id: 'proverbs-sayings',
         title: 'Proverbs & Sayings',
         titleFR: 'Proverbes & Expressions',
@@ -550,6 +571,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
     },
     // ─── B2 Phrase Categories ─────────────────────────────────────────────────
     {
+        level: 'B2', unit: 3,
         id: 'formal-correspondence',
         title: 'Formal Correspondence',
         titleFR: 'Correspondance formelle',
@@ -576,6 +598,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         id: 'debating-persuading',
         title: 'Debating & Persuading',
         titleFR: 'Débattre et convaincre',
@@ -602,6 +625,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         id: 'discussing-society',
         title: 'Discussing Society',
         titleFR: 'Parler de société',
@@ -628,6 +652,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'C1', unit: 5,
         id: 'formal-argumentation',
         title: 'Formal Argumentation',
         titleFR: 'Argumentation formelle',
@@ -654,6 +679,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 1,
         id: 'introducing-yourself',
         title: 'Introducing Yourself',
         titleFR: 'Se présenter',
@@ -680,6 +706,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         id: 'describing-your-home',
         title: 'Describing Your Home',
         titleFR: 'Décrire son logement',
@@ -706,6 +733,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         id: 'at-the-cafe',
         title: 'At the Café',
         titleFR: 'Au café',
@@ -732,6 +760,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         id: 'asking-directions',
         title: 'Asking for Directions',
         titleFR: 'Demander son chemin',
@@ -758,6 +787,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         id: 'shopping-basics',
         title: 'Shopping Basics',
         titleFR: 'Faire les courses',
@@ -784,6 +814,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         id: 'daily-routine',
         title: 'Daily Routine',
         titleFR: 'La routine quotidienne',
@@ -810,6 +841,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'at-the-hotel',
         title: 'At the Hotel',
         titleFR: 'À l\'hôtel',
@@ -836,6 +868,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'at-the-doctor',
         title: 'At the Doctor\'s',
         titleFR: 'Chez le médecin',
@@ -862,6 +895,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'making-plans',
         title: 'Making Plans',
         titleFR: 'Faire des projets',
@@ -888,6 +922,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'on-the-phone',
         title: 'On the Phone',
         titleFR: 'Au téléphone',
@@ -914,6 +949,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'at-the-market',
         title: 'At the Market',
         titleFR: 'Au marché',
@@ -940,6 +976,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'writing-a-postcard',
         title: 'Writing a Postcard',
         titleFR: 'Écrire une carte postale',
@@ -966,6 +1003,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         id: 'talking-about-health',
         title: 'Talking About Health',
         titleFR: 'Parler de sa santé',
@@ -992,6 +1030,7 @@ export const phraseCategoriesEN: PhraseCategory[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         id: 'classroom-survival',
         title: 'Classroom Survival',
         titleFR: 'Survie en classe',

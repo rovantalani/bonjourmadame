@@ -2,6 +2,7 @@ import type { GrammarLesson } from '../../types/lectures/grammar';
 
 export const grammarLessons: GrammarLesson[] = [
     {
+        unit: 1,
         id: 'articles',
         title: 'Articles',
         level: 'A1',
@@ -51,6 +52,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'noun-gender',
         title: 'Noun Gender & Number',
         level: 'A1',
@@ -110,6 +112,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'telling-time',
         title: 'Telling the Time',
         level: 'A1',
@@ -171,6 +174,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'possessive-adjectives',
         title: 'Possessive Adjectives',
         level: 'A1',
@@ -219,6 +223,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'prepositions-place',
         title: 'Prepositions of Place',
         level: 'A1',
@@ -269,6 +274,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'adjective-basics',
         title: 'Adjective Agreement & Position',
         level: 'A1',
@@ -319,6 +325,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'present-tense-er',
         title: 'Present Tense: -ER Verbs',
         level: 'A1',
@@ -369,6 +376,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'demonstrative-adjectives',
         title: 'Demonstrative Adjectives',
         level: 'A1',
@@ -418,6 +426,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'stress-pronouns',
         title: 'Stress Pronouns',
         level: 'A1',
@@ -469,6 +478,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'partitive-articles',
         title: 'Partitive Articles',
         level: 'A1',
@@ -518,6 +528,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'vouloir-pouvoir-devoir',
         title: 'Modal Verbs: vouloir, pouvoir, devoir',
         level: 'A1',
@@ -569,6 +580,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'futur-proche',
         title: 'Le Futur Proche',
         level: 'A1',
@@ -618,6 +630,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'present-tense-ir-re',
         title: 'Present Tense: -IR and -RE Verbs',
         level: 'A1',
@@ -678,6 +691,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'negation',
         title: 'Negation',
         level: 'A1',
@@ -728,6 +742,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'questions',
         title: 'Asking Questions',
         level: 'A1',
@@ -789,6 +804,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'imparfait-intro',
         title: 'L\'Imparfait — Introduction',
         level: 'A2',
@@ -837,6 +853,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'passe-compose-vs-imparfait',
         title: 'Passé Composé vs Imparfait',
         level: 'A2',
@@ -884,6 +901,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'reflexive-verbs-basics',
         title: 'Reflexive Verbs — Basics',
         level: 'A2',
@@ -933,6 +951,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'comparatives-superlatives',
         title: 'Comparatives & Superlatives',
         level: 'A2',
@@ -981,6 +1000,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'futur-simple-intro',
         title: 'Le Futur Simple',
         level: 'A2',
@@ -1030,6 +1050,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'direct-object-pronouns',
         title: 'Direct Object Pronouns',
         level: 'A2',
@@ -1077,6 +1098,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'indirect-object-pronouns',
         title: 'Indirect Object Pronouns',
         level: 'A2',
@@ -1125,6 +1147,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'depuis-pendant',
         title: 'Depuis, Pendant, Il y a, Dans',
         level: 'A2',
@@ -1171,6 +1194,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'adjective-agreement',
         title: 'Adjective Agreement',
         level: 'A2',
@@ -1224,6 +1248,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'passe-compose',
         title: 'Passé Composé',
         level: 'A2',
@@ -1288,6 +1313,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'imperative-mood',
         title: 'The Imperative Mood',
         level: 'A2',
@@ -1337,6 +1363,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'conditionnel-intro',
         title: 'Polite Conditionals',
         level: 'A2',
@@ -1385,6 +1412,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'adverbs-ment',
         title: 'Adverbs — Formation & Placement',
         level: 'A2',
@@ -1435,6 +1463,7 @@ export const grammarLessons: GrammarLesson[] = [
     },
     // ─── B1 Grammar Lessons ──────────────────────────────────────────────────
     {
+        unit: 1,
         id: 'plus-que-parfait',
         title: 'Le Plus-que-parfait',
         level: 'B1',
@@ -1482,6 +1511,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'relative-pronouns',
         title: 'Pronoms Relatifs',
         level: 'B1',
@@ -1528,6 +1558,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'si-clauses-type1',
         title: 'Si + Présent : Conditions Réelles',
         level: 'B1',
@@ -1571,6 +1602,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'subjunctive-intro',
         title: 'Le Subjonctif : Introduction',
         level: 'B1',
@@ -1622,6 +1654,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'y-en-pronouns',
         title: 'Les Pronoms Y et En',
         level: 'B1',
@@ -1668,6 +1701,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'present-participle',
         title: 'Le Participe Présent & le Gérondif',
         level: 'B1',
@@ -1714,6 +1748,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'negation-advanced',
         title: 'La Négation Avancée',
         level: 'B1',
@@ -1764,6 +1799,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'double-pronoun-order',
         title: 'L\'Ordre des Doubles Pronoms',
         level: 'B1',
@@ -1809,6 +1845,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'imparfait',
         title: 'L\'Imparfait',
         level: 'B1',
@@ -1867,9 +1904,10 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'reflexive-verbs',
         title: 'Reflexive Verbs',
-        level: 'B1',
+        level: 'A2',
         description: 'Pronominal verbs where the subject acts on itself',
         icon: '🔄',
         color: '#16A34A',
@@ -1929,6 +1967,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'futur-conditionnel',
         title: 'Future & Conditional',
         level: 'B1',
@@ -1990,6 +2029,7 @@ export const grammarLessons: GrammarLesson[] = [
     },
     // ─── B2 Grammar Lessons ──────────────────────────────────────────────────
     {
+        unit: 1,
         id: 'subjunctive-advanced',
         title: 'Subjonctif Avancé',
         level: 'B2',
@@ -2038,6 +2078,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'si-clauses-type2-3',
         title: 'Si : Hypothèses et Regrets',
         level: 'B2',
@@ -2082,6 +2123,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'emphasis-cleft-sentences',
         title: 'L\'Emphase et la Mise en Relief',
         level: 'B2',
@@ -2128,6 +2170,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'concession-opposition',
         title: 'La Concession et l\'Opposition',
         level: 'B2',
@@ -2173,6 +2216,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'nominalisation',
         title: 'La Nominalisation',
         level: 'B2',
@@ -2219,6 +2263,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'infinitive-constructions',
         title: 'Les Constructions Infinitives',
         level: 'B2',
@@ -2264,6 +2309,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'subjunctive-vs-indicative',
         title: 'Subjonctif ou Indicatif ?',
         level: 'B2',
@@ -2307,6 +2353,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'subjonctif',
         title: 'The Subjunctive',
         level: 'B2',
@@ -2359,6 +2406,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'gerondif',
         title: 'Le Gérondif',
         level: 'B2',
@@ -2427,6 +2475,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'passive-voice',
         title: 'La Voix Passive',
         level: 'B2',
@@ -2486,6 +2535,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'reported-speech',
         title: 'Le Discours Indirect',
         level: 'B2',
@@ -2554,6 +2604,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'subjunctive-literary',
         title: 'Subjunctive: Literary & Formal Uses',
         level: 'C1',
@@ -2599,6 +2650,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'register-formal-informal',
         title: 'Register: Formal & Informal French',
         level: 'C1',
@@ -2644,6 +2696,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'participle-constructions',
         title: 'Advanced Participle Constructions',
         level: 'C1',
@@ -2689,6 +2742,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'reported-speech-advanced',
         title: 'Advanced Reported Speech',
         level: 'C1',
@@ -2734,6 +2788,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'modal-nuance',
         title: 'Modal Verbs & Nuance',
         level: 'C1',
@@ -2779,6 +2834,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'hypothetical-past',
         title: 'Hypothetical Past & Mixed Conditionals',
         level: 'C1',
@@ -2824,6 +2880,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'inversion-literary',
         title: 'Literary & Stylistic Inversion',
         level: 'C1',
@@ -2869,6 +2926,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'advanced-negation-literary',
         title: 'Advanced & Literary Negation',
         level: 'C1',
@@ -2914,6 +2972,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'conditionnel-passe',
         title: 'Le Conditionnel Passé',
         level: 'C1',
@@ -2972,6 +3031,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 5,
         id: 'connecteurs-logiques',
         title: 'Les Connecteurs Logiques',
         level: 'C1',
@@ -3044,6 +3104,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'style-and-register-mastery',
         title: 'Style & Register Mastery',
         level: 'C2',
@@ -3089,6 +3150,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'archaic-classical-forms',
         title: 'Archaic & Classical French Forms',
         level: 'C2',
@@ -3134,6 +3196,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'oral-vs-written-divergence',
         title: 'Oral vs Written French: Divergence and Bridging',
         level: 'C2',
@@ -3179,6 +3242,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'discourse-markers-advanced',
         title: 'Advanced Discourse Markers',
         level: 'C2',
@@ -3224,6 +3288,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'translation-equivalence',
         title: 'Translation & Equivalence',
         level: 'C2',
