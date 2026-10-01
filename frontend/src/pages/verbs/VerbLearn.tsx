@@ -1,33 +1,13 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
+import type { ConjugationRow } from '../../data/courseTypes';
 import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
-import { loadLearningMode } from '../../utils/settings';
 import './VerbLearn.css';
 
-interface ConjugationRow {
-    sujet: string;
-    present: string;
-    passeCompose: string;
-    imparfait: string;
-    futurSimple: string;
-    conditionnelPresent?: string;
-    subjonctifPresent?: string;
-    plusQueParfait?: string;
-    futurAnterieur?: string;
-    conditionnelPasse?: string;
-    subjonctifPasse?: string;
-    passeSimple?: string;
-    subjonctifImparfait?: string;
-    subjonctifPlusQueParfait?: string;
-    passeAnterieur?: string;
-}
 
-interface TenseDef {
-    key: keyof ConjugationRow;
-    label: string;
-    quizzable: boolean;
-}
 
 interface VerbData {
     infinitive: string;
@@ -40,75 +20,12 @@ interface VerbData {
 
 const CEFR_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 
-const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
-    a1: [
-        { key: 'present',      label: 'Présent',       quizzable: true },
-        { key: 'passeCompose', label: 'Passé composé', quizzable: true },
-    ],
-    a2: [
-        { key: 'present',      label: 'Présent',       quizzable: true },
-        { key: 'passeCompose', label: 'Passé composé', quizzable: true },
-        { key: 'imparfait',    label: 'Imparfait',     quizzable: true },
-        { key: 'futurSimple',  label: 'Futur simple',  quizzable: true },
-    ],
-    b1: [
-        { key: 'present',             label: 'Présent',              quizzable: true },
-        { key: 'passeCompose',        label: 'Passé composé',        quizzable: true },
-        { key: 'imparfait',           label: 'Imparfait',            quizzable: true },
-        { key: 'futurSimple',         label: 'Futur simple',         quizzable: true },
-        { key: 'conditionnelPresent', label: 'Conditionnel présent', quizzable: true },
-        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   quizzable: true },
-        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     quizzable: true },
-    ],
-    b2: [
-        { key: 'present',             label: 'Présent',              quizzable: true },
-        { key: 'passeCompose',        label: 'Passé composé',        quizzable: true },
-        { key: 'imparfait',           label: 'Imparfait',            quizzable: true },
-        { key: 'futurSimple',         label: 'Futur simple',         quizzable: true },
-        { key: 'conditionnelPresent', label: 'Conditionnel présent', quizzable: true },
-        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   quizzable: true },
-        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     quizzable: true },
-        { key: 'futurAnterieur',      label: 'Futur antérieur',      quizzable: true },
-        { key: 'conditionnelPasse',   label: 'Conditionnel passé',   quizzable: true },
-        { key: 'subjonctifPasse',     label: 'Subjonctif passé',     quizzable: true },
-    ],
-    c1: [
-        { key: 'present',                  label: 'Présent',                     quizzable: true },
-        { key: 'passeCompose',             label: 'Passé composé',               quizzable: true },
-        { key: 'imparfait',                label: 'Imparfait',                   quizzable: true },
-        { key: 'futurSimple',              label: 'Futur simple',                quizzable: true },
-        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        quizzable: true },
-        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          quizzable: true },
-        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            quizzable: true },
-        { key: 'futurAnterieur',           label: 'Futur antérieur',             quizzable: true },
-        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          quizzable: true },
-        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            quizzable: true },
-        { key: 'passeSimple',              label: 'Passé simple',                quizzable: true },
-        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        quizzable: true },
-        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', quizzable: true },
-    ],
-    c2: [
-        { key: 'present',                  label: 'Présent',                     quizzable: true },
-        { key: 'passeCompose',             label: 'Passé composé',               quizzable: true },
-        { key: 'imparfait',                label: 'Imparfait',                   quizzable: true },
-        { key: 'futurSimple',              label: 'Futur simple',                quizzable: true },
-        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        quizzable: true },
-        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          quizzable: true },
-        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            quizzable: true },
-        { key: 'futurAnterieur',           label: 'Futur antérieur',             quizzable: true },
-        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          quizzable: true },
-        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            quizzable: true },
-        { key: 'passeSimple',              label: 'Passé simple',                quizzable: true },
-        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        quizzable: true },
-        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', quizzable: true },
-        { key: 'passeAnterieur',           label: 'Passé antérieur',             quizzable: false },
-    ],
-};
 
 export default function VerbLearn() {
+    const { tenses: TENSES_BY_LEVEL, language } = useLearning();
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
-    const isENMode = loadLearningMode() === 'learn-english';
+    const isENMode = language === 'en';
     const speakLang = isENMode ? 'en-US' : 'fr-FR';
 
     const [verb, setVerb] = useState<VerbData | null>(null);
@@ -118,8 +35,7 @@ export default function VerbLearn() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
-        fetch(`${import.meta.env.VITE_API_BASE}/api/verbs/conjugation/${verbId}${langParam}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/verbs/conjugation/${verbId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -132,7 +48,7 @@ export default function VerbLearn() {
                 setError(true);
                 setLoading(false);
             });
-    }, [verbId]);
+    }, [verbId, language]);
 
     if (loading) {
         return (

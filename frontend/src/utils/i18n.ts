@@ -226,7 +226,7 @@ const EN: Translations = {
     settings: {
         title: 'Settings',
         preferences: 'Preferences',
-        learningLanguage: 'Learning language', learningLanguageHint: 'Takes effect at the start of your next quiz',
+        learningLanguage: 'Learning language', learningLanguageHint: 'Changes your course immediately',
         learnFrench: '🇫🇷 Learn French', learnEnglish: '🇬🇧 Learn English',
         account: 'Account', email: 'Email',
         password: 'Password', changePassword: 'Change password',
@@ -368,7 +368,7 @@ const FR: Translations = {
     settings: {
         title: 'Paramètres',
         preferences: 'Préférences',
-        learningLanguage: 'Langue apprise', learningLanguageHint: 'Prend effet au prochain quiz',
+        learningLanguage: 'Langue apprise', learningLanguageHint: 'Change immédiatement votre cours',
         learnFrench: '🇫🇷 Apprendre le français', learnEnglish: '🇬🇧 Apprendre l\'anglais',
         account: 'Compte', email: 'E-mail',
         password: 'Mot de passe', changePassword: 'Changer le mot de passe',

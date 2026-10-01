@@ -99,27 +99,34 @@ bonjourmadame/
 
 Content belongs to the language being learned: `backend/src/content/fr` and `backend/src/content/en`. These packages may import their own files and neutral types, but must never import or re-export each other's content. English vocabulary, module labels, and phrases were copied once to establish independent ownership; edit each curriculum separately from now on. Bilingual translations within a package are intentional.
 
-Frontend curricula follow the same rule under `frontend/src/data/fr` and `frontend/src/data/en`, with neutral course types in `courseTypes.ts`. The mode selector currently imports both curricula; loading only the active curriculum is part of the later frontend cutover.
+Frontend curricula follow the same rule under `frontend/src/data/fr` and `frontend/src/data/en`, with neutral course types in `courseTypes.ts`. The app loads only the selected curriculum, and learning URLs are scoped under `/learn/fr` or `/learn/en`.
 
-Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Five existing legacy verb-group references (French A2/B1/B2 and English B1/B2) are explicitly recorded in the tests for correction during the frontend routing cutover. No additional unresolved references are permitted.
+Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Course verb-group references must resolve within their own language catalog.
 
-This is the first stage of language separation. Existing routes still retain their historical language selection and combined vocabulary/reading lookups. Strict language-scoped APIs, progress storage, frontend routing, and removal of compatibility behavior follow in separate PRs.
+The frontend uses the strict language-scoped content APIs and loads learning material only from the selected language package. Progress storage is also language-scoped.
 
-The existing `?lang=fr` API parameter means a French interface for English learners. It is preserved for compatibility. Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
+Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
 
 ## API Endpoints
 
-| Method | Path | Description |
-|---|---|---|
-| GET | `/api/health` | Health check |
-| GET | `/api/vocabulary/modules` | List all vocabulary modules |
-| GET | `/api/vocabulary/:moduleId` | Words for a specific module |
-| GET | `/api/verbs/helpers/:verbId` | Helper-verb conjugation table |
-| GET | `/api/verbs/groups/:groupId` | Verb group and its verbs |
-| GET | `/api/verbs/conjugation/:verbId` | Conjugation data for learning and quizzes |
-| GET | `/api/verbs/courses/:level` | New and review verbs for a course |
-| GET | `/api/lectures/grammar/:lessonId` | Grammar lecture |
-| GET | `/api/lectures/phrases/:categoryId` | Phrase lecture and quiz content |
-| GET | `/api/lectures/reading/:moduleId` | Reading lecture with supporting vocabulary |
+New learning requests use `/api/learning/:targetLanguage`, where `targetLanguage` is exactly `fr` (learning French) or `en` (learning English). This is independent of interface language. For example, `/api/learning/en/lectures/grammar/en-articles` retrieves an English lesson; `/api/learning/fr/verbs/helpers/etre` retrieves a French helper verb.
 
-The previous flat content API paths are replaced by these module paths. Deploy the frontend and backend together; the browser's course URLs remain unchanged.
+| Method | Path after `/api/learning/:targetLanguage` | Description |
+|---|---|---|
+| GET | `/vocabulary/modules` | Selected curriculum's module labels and word counts |
+| GET | `/vocabulary/:moduleId` | Selected curriculum's vocabulary |
+| GET | `/verbs/helpers/:verbId` | Helper-verb conjugation table |
+| GET | `/verbs/groups/:groupId` | Verb group and its verbs |
+| GET | `/verbs/conjugation/:verbId` | Conjugation data |
+| GET | `/verbs/courses/:level` | New and earlier-level review verbs |
+| GET | `/lectures/grammar/:lessonId` | Grammar lesson |
+| GET | `/lectures/phrases/:categoryId` | Phrase lesson and quiz content |
+| GET | `/lectures/reading/:moduleId` | Reading passage with vocabulary from the same curriculum |
+
+Missing or unsupported target languages return JSON `400`. Content absent from the selected catalog and unknown scoped routes return JSON `404`; there is no cross-language lookup or fallback. The URL path selects the curriculum. IDs may overlap between independent catalogs. Existing copied bilingual vocabulary and phrases remain valid in both catalogs until edited independently. Browser learning URLs are scoped by target language.
+
+## Progress language isolation
+
+Progress requests use `/api/progress/fr` or `/api/progress/en`, followed by `/word`, `/session`, or `/due` where applicable. Database reads and writes are scoped by account and language. Local mastery, history, review queues, visited steps, and active course are also language-scoped; existing completion keys remain unchanged.
+
+Deploy backend and frontend together. The existing schema setup adds the language column and updates the keys. Old unclassified database rows remain untouched under `legacy` (not accessible through the language APIs); unscoped browser keys are left untouched. No guest-import changes or migration framework are included.

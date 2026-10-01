@@ -17,3 +17,15 @@ export function saveLearningMode(mode: LearningMode): void {
 export function loadQuizDirection(): QuizDirection {
     return loadLearningMode() === 'learn-english' ? 'fr-en' : 'en-fr';
 }
+
+export type TargetLanguage = 'fr' | 'en';
+
+export function loadTargetLanguage(): TargetLanguage {
+    const mode = loadLearningMode();
+    if (!mode) throw new Error('Select a learning language before accessing progress');
+    return mode === 'learn-english' ? 'en' : 'fr';
+}
+
+export function learningStorageKey(key: string, language: TargetLanguage = loadTargetLanguage()): string {
+    return `${key}:learn-${language === 'en' ? 'english' : 'french'}`;
+}
