@@ -18,8 +18,6 @@ interface VocabularyModule {
     wordCount: number;
 }
 
-const READING_IDS = new Set(['sherlock-holmes-ch1', 'sherlock-holmes-ch2']);
-
 export default function Vocabulary() {
     const { language } = useLearning();
     const { level } = useParams<{ level: string }>();
@@ -31,7 +29,7 @@ export default function Vocabulary() {
     const [apiError, setApiError] = useState(false);
 
     useEffect(() => {
-                axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/vocabulary/modules`)
+        axios.get<VocabularyModule[]>(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/vocabulary/modules`)
             .then(res => { setModules(res.data); setLoading(false); setApiError(false); })
             .catch(() => { setLoading(false); setApiError(true); });
     }, [language]);
@@ -60,7 +58,6 @@ export default function Vocabulary() {
                         if (!module) return null;
 
                         const status = getStepStatus(step, level);
-                        const hasReading = READING_IDS.has(module.id);
                         const cardInner = (
                             <>
                                 <span className="vocab-card-icon-circle">
@@ -71,34 +68,9 @@ export default function Vocabulary() {
                                     <span className="vocab-card-badge">{t.vocabulary.words(module.wordCount)}</span>
                                 </span>
                                 <ProgressFlower status={status} />
-                                {!hasReading && <span className="vocab-card-arrow" aria-hidden="true">›</span>}
+                                <span className="vocab-card-arrow" aria-hidden="true">›</span>
                             </>
                         );
-
-                        if (hasReading) {
-                            return (
-                                <div key={module.id} className="vocab-card vocab-card--reading">
-                                    {cardInner}
-                                    <div className="vocab-card-actions">
-                                        <button
-                                            className="vocab-card-action-btn"
-                                            onClick={() => navigate(`/courses/${level}/vocabulary/${module.id}`)}
-                                            type="button"
-                                        >
-                                            {t.vocabulary.quiz}
-                                        </button>
-                                        <button
-                                            className="vocab-card-action-btn vocab-card-action-btn--read"
-                                            onClick={() => navigate(`/courses/${level}/lectures/reading/${module.id}`)}
-                                            type="button"
-                                            style={{ borderColor: 'var(--tag-reading-text)', color: 'var(--tag-reading-text)' }}
-                                        >
-                                            {t.vocabulary.read}
-                                        </button>
-                                    </div>
-                                </div>
-                            );
-                        }
                         return (
                             <button
                                 key={module.id}

@@ -4,7 +4,7 @@ A French and English learning app organised into Vocabulary, Verbs, and Lectures
 
 ## Features
 
-- **Vocabulary** — Thematic word modules (Sherlock Holmes, daily life, emotions, travel) with flashcard-style quizzes
+- **Vocabulary** — Thematic word modules (daily life, emotions, travel) with flashcard-style quizzes
 - **Verbs** — Conjugation tables, guided learning, and quizzes
 - **Lectures** — Grammar lessons, phrases, and reading passages
 

@@ -4,38 +4,6 @@ import type { VocabularyData } from '../../types/vocabulary';
 // Edit this curriculum independently of the French curriculum.
 export const vocabularyDataEN: VocabularyData = {
 
-    'sherlock-holmes-ch1': [
-        { id: 1, english: 'the maid / housemaid', french: 'la bonne' },
-        { id: 2, english: 'this (thing) / this one', french: 'ceci' },
-        { id: 3, english: 'have just (done something)', french: 'viens de' },
-        { id: 5, english: 'over / across / above', french: 'par-dessus' },
-        { id: 6, english: 'an ungrateful person (male)', french: 'un ingrat' },
-        { id: 7, english: 'immediately / right away', french: 'sur-le-champ' },
-    ],
-
-    'sherlock-holmes-ch2': [
-        { id: 1, english: 'to suspect / to have suspicions about', french: 'soupçonner' },
-        { id: 2, english: 'a clue / a lead', french: 'un indice' },
-        { id: 3, english: 'to deduce / to infer', french: 'déduire' },
-        { id: 4, english: 'cunning / shrewd', french: 'rusé(e)' },
-        { id: 5, english: 'to investigate / to look into', french: 'enquêter' },
-        { id: 6, english: 'to conceal / to hide (something)', french: 'dissimuler' },
-        { id: 7, english: 'an accomplice', french: 'un complice' },
-        { id: 8, english: 'a witness', french: 'un témoin' },
-        { id: 9, english: 'baffling / bewildering', french: 'déconcertant(e)' },
-        { id: 10, english: 'to confront (someone)', french: 'confronter' },
-        { id: 11, english: 'disguised / in disguise', french: 'déguisé(e)' },
-        { id: 12, english: 'to threaten', french: 'menacer' },
-        { id: 13, english: 'a scheme / a plot', french: 'un stratagème' },
-        { id: 14, english: 'crafty / wily', french: 'astucieux(-euse)' },
-        { id: 15, english: 'to confess / to admit', french: 'avouer' },
-        { id: 16, english: 'suspicious / mistrustful (of others)', french: 'méfiant(e)' },
-        { id: 17, english: 'to unravel / to solve (a mystery)', french: 'démêler' },
-        { id: 18, english: 'relentless / unyielding', french: 'implacable' },
-        { id: 19, english: 'a breakthrough / key discovery', french: 'une percée' },
-        { id: 20, english: 'to lay a trap / to set a snare', french: 'tendre un piège' },
-    ],
-
     // ─── Reading Passage Vocabulary ───────────────────────────────────────────
     'a1-au-cafe': [
         { id: 1, english: 'the waiter / server', french: 'le serveur' },
