@@ -13,7 +13,17 @@ const summarizeVerb = ({ id, infinitive, translation, type, color }: VerbEntry) 
 
 export function createContentRouter(content: LearningContent): Router {
     const router = Router();
-
+// WHy are we not grtting by CERF course here? We are always getting all modules in the content files. 
+// Thhat's very inefficient as the next task is to increase the content 
+// I think the structure of the backend should be like this : 
+// Content 
+// EN/FRENCH
+// In those folders, we have either A1, A2, B1, B2, C1, C2 folders. OR 
+// We have FOLDERS for grammar, modules, phrases, reading, verbs, vocabulary. 
+// The file names end with .a1 or .a2 etc 
+// In addition to this, I think having the data/lang/courses and modules in the frontend is dumb.
+// If i add content in the backend, i have to update the frontend as well 
+// That's quite annooying as I will have teachers working on updating the backend content every day 
     router.get('/vocabulary/modules', (_req, res) => {
         res.json(content.modules.map(({ id, title, description, icon, color }) => ({
             id, title, description, icon, color,
