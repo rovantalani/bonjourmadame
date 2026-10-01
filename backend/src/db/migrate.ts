@@ -50,5 +50,21 @@ export async function migrate(): Promise<void> {
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS srs_box INTEGER DEFAULT 1`);
     await pool.query(`ALTER TABLE word_mastery ADD COLUMN IF NOT EXISTS next_review_at TIMESTAMPTZ DEFAULT NOW()`);
 
+    // Existing unclassified rows stay intact; APIs accept only fr/en.
+    // One atomic schema update, with no migration registry or import machinery.
+    await pool.query(`DO $$ BEGIN
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns
+            WHERE table_schema = current_schema() AND table_name = 'word_mastery' AND column_name = 'target_language') THEN
+            ALTER TABLE word_mastery ADD COLUMN target_language TEXT NOT NULL DEFAULT 'legacy' CHECK (target_language IN ('fr', 'en', 'legacy'));
+            ALTER TABLE quiz_sessions ADD COLUMN target_language TEXT NOT NULL DEFAULT 'legacy' CHECK (target_language IN ('fr', 'en', 'legacy'));
+            ALTER TABLE lesson_progress ADD COLUMN target_language TEXT NOT NULL DEFAULT 'legacy' CHECK (target_language IN ('fr', 'en', 'legacy'));
+            ALTER TABLE word_mastery ALTER COLUMN target_language DROP DEFAULT,
+                DROP CONSTRAINT word_mastery_pkey, ADD PRIMARY KEY (user_id, target_language, word_id);
+            ALTER TABLE quiz_sessions ALTER COLUMN target_language DROP DEFAULT;
+            ALTER TABLE lesson_progress ALTER COLUMN target_language DROP DEFAULT,
+                DROP CONSTRAINT lesson_progress_pkey, ADD PRIMARY KEY (user_id, target_language, item_type, item_id);
+        END IF;
+    END $$`);
+
     console.log('DB migration complete');
 }

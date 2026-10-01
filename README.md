@@ -103,7 +103,7 @@ Frontend curricula follow the same rule under `frontend/src/data/fr` and `fronte
 
 Run `npm test --prefix backend` to check content boundaries, independent object ownership, and curriculum references. Five existing legacy verb-group references (French A2/B1/B2 and English B1/B2) are explicitly recorded in the tests for correction during the frontend routing cutover. No additional unresolved references are permitted.
 
-Independent content packages and strict language-scoped content APIs are implemented. The current frontend still uses legacy routes with historical language selection and combined vocabulary/reading lookups. Progress storage, the frontend cutover, and removal of compatibility behavior follow in separate PRs.
+Independent content packages and strict language-scoped content APIs are implemented. The current frontend still uses legacy routes with historical language selection and combined vocabulary/reading lookups. Progress storage is also language-scoped. The frontend content cutover and removal of compatibility behavior follow in separate PRs.
 
 The existing `?lang=fr` API parameter means a French interface for English learners. It is preserved for compatibility. Course step IDs and content IDs remain stable so saved progress continues to match. Course steps use one of three `module` values: `vocabulary`, `verbs`, or `lectures`; lecture `type` values are `grammar`, `phrases`, or `reading`.
 
@@ -140,4 +140,10 @@ The following legacy endpoints remain temporarily available for the current fron
 | GET | `/api/lectures/phrases/:categoryId` | Phrase lecture and quiz content |
 | GET | `/api/lectures/reading/:moduleId` | Reading lecture with supporting vocabulary |
 
-The scoped content API can deploy before the frontend cutover. The legacy endpoints will be removed after the frontend switches; browser course URLs and progress APIs remain unchanged in this stage.
+The scoped content API can deploy before the frontend cutover. The legacy endpoints will be removed after the frontend switches; browser course URLs remain unchanged in this stage.
+
+## Progress language isolation
+
+Progress requests use `/api/progress/fr` or `/api/progress/en`, followed by `/word`, `/session`, or `/due` where applicable. Database reads and writes are scoped by account and language. Local mastery, history, review queues, visited steps, and active course are also language-scoped; existing completion keys remain unchanged.
+
+Deploy backend and frontend together. The existing schema setup adds the language column and updates the keys. Old unclassified database rows remain untouched under `legacy` (not accessible through the language APIs); unscoped browser keys are left untouched. No guest-import changes or migration framework are included.
