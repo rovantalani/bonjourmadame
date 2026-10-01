@@ -6,9 +6,6 @@ import path from 'path';
 import { migrate } from './db/migrate';
 import authRouter from './routes/auth';
 import progressRouter from './routes/progress';
-import vocabularyRouter from './routes/vocabulary';
-import verbsRouter from './routes/verbs';
-import lecturesRouter from './routes/lectures';
 import learningRouter from './routes/learning';
 
 dotenv.config();
@@ -32,13 +29,13 @@ app.get('/api/health', (req: Request, res: Response) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Explicit target-language API. Legacy routes remain until the frontend cutover.
+// Explicit target-language API.
 app.use('/api/learning', learningRouter);
 
-// Learning modules: Vocabulary, Verbs, and Lectures.
-app.use('/api/vocabulary', vocabularyRouter);
-app.use('/api/verbs', verbsRouter);
-app.use('/api/lectures', lecturesRouter);
+// Keep retired or unknown API paths from falling through to the SPA response.
+app.use('/api', (_req: Request, res: Response) => {
+    res.status(404).json({ error: 'API route not found' });
+});
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
