@@ -225,14 +225,12 @@ export const COURSES_EN: Course[] = [
         steps: [
             // Unit 1 — Registre & Modalité
             { id: 'c1en-register',          title: 'Registre formel & informel',    module: 'lectures', type: 'grammar',    contentId: 'en-register-formal-informal', path: '/lectures/grammar/en-register-formal-informal', unit: 1 },
-            { id: 'c1en-modal-nuance',      title: 'Verbes modaux & nuance',        module: 'lectures', type: 'grammar',    contentId: 'en-advanced-modals',          path: '/lectures/grammar/en-advanced-modals',          unit: 1 },
             { id: 'c1en-subjunctive-lit',   title: 'Le Subjonctif en anglais',      module: 'lectures', type: 'grammar',    contentId: 'en-subjunctive-mood',          path: '/lectures/grammar/en-subjunctive-mood',         unit: 1 },
             { id: 'c1en-rhetoric',          title: 'Rhétorique & Argumentation',    module: 'vocabulary', type: 'vocabulary', contentId: 'rhetoric-argumentation',       path: '/vocabulary/rhetoric-argumentation',            unit: 1 },
             { id: 'c1en-idioms',            title: 'Idiomes & Expressions',         module: 'vocabulary', type: 'vocabulary', contentId: 'idioms-expressions',           path: '/vocabulary/idioms-expressions',                unit: 1 },
             { id: 'c1en-academic-disc',     title: 'Discours académique',           module: 'lectures', type: 'phrases',    contentId: 'academic-discourse',           path: '/lectures/phrases/academic-discourse',          unit: 1 },
             { id: 'c1en-reading-pol',       title: 'Lecture : The Future of Europe', module: 'lectures', type: 'reading',  contentId: 'c1en-europe',                  path: '/lectures/reading/c1en-europe',                 unit: 1 },
             // Unit 2 — Discours Académique
-            { id: 'c1en-inversion',         title: 'Inversion & Emphase',           module: 'lectures', type: 'grammar',    contentId: 'en-inversion-emphasis',        path: '/lectures/grammar/en-inversion-emphasis',       unit: 2 },
             { id: 'c1en-reported-adv',      title: 'Style indirect avancé',         module: 'lectures', type: 'grammar',    contentId: 'en-reported-speech-advanced',  path: '/lectures/grammar/en-reported-speech-advanced', unit: 2 },
             { id: 'c1en-law',               title: 'Droit & Administration',        module: 'vocabulary', type: 'vocabulary', contentId: 'law-administration',           path: '/vocabulary/law-administration',                unit: 2 },
             { id: 'c1en-science-philo',     title: 'Science & Philosophie',         module: 'vocabulary', type: 'vocabulary', contentId: 'science-philosophy',           path: '/vocabulary/science-philosophy',                unit: 2 },
@@ -240,7 +238,6 @@ export const COURSES_EN: Course[] = [
             { id: 'c1en-reading-philo',     title: 'Lecture : On Freedom',         module: 'lectures', type: 'reading',    contentId: 'c1en-freedom',                 path: '/lectures/reading/c1en-freedom',                unit: 2 },
             { id: 'c1en-reading-identite',  title: 'Lecture : The Question of Identity', module: 'lectures', type: 'reading', contentId: 'c1en-identity',             path: '/lectures/reading/c1en-identity',               unit: 2 },
             // Unit 3 — Langue Nuancée
-            { id: 'c1en-hypothetical',      title: 'Conditionnel & Hypothèses',     module: 'lectures', type: 'grammar',    contentId: 'en-third-conditional',         path: '/lectures/grammar/en-third-conditional',        unit: 3 },
             { id: 'c1en-negation-adv',      title: 'Négation avancée',              module: 'lectures', type: 'grammar',    contentId: 'en-advanced-negation',         path: '/lectures/grammar/en-advanced-negation',        unit: 3 },
             { id: 'c1en-participle',        title: 'Constructions participiales',   module: 'lectures', type: 'grammar',    contentId: 'en-participle-constructions',  path: '/lectures/grammar/en-participle-constructions', unit: 3 },
             { id: 'c1en-faux-amis',         title: 'Faux Amis',                     module: 'vocabulary', type: 'vocabulary', contentId: 'faux-amis',                    path: '/vocabulary/faux-amis',                         unit: 3 },
@@ -260,8 +257,6 @@ export const COURSES_EN: Course[] = [
             { id: 'c1en-formal',            title: 'Argumentation formelle',        module: 'lectures', type: 'phrases',    contentId: 'formal-argumentation',         path: '/lectures/phrases/formal-argumentation',         unit: 5 },
             { id: 'c1en-nuanced-adj',       title: 'Adjectifs nuancés',             module: 'vocabulary', type: 'vocabulary', contentId: 'nuanced-adjectives',           path: '/vocabulary/nuanced-adjectives',                 unit: 5 },
             { id: 'c1en-human-condition',   title: 'La Condition humaine',          module: 'vocabulary', type: 'vocabulary', contentId: 'human-condition',              path: '/vocabulary/human-condition',                    unit: 5 },
-            { id: 'c1en-conditionnel-passe', title: 'Troisième conditionnel',       module: 'lectures', type: 'grammar',    contentId: 'en-third-conditional',         path: '/lectures/grammar/en-third-conditional',         unit: 5 },
-            { id: 'c1en-connecteurs',       title: 'Connecteurs logiques',          module: 'lectures', type: 'grammar',    contentId: 'en-cohesion',                  path: '/lectures/grammar/en-cohesion',                  unit: 5 },
             { id: 'c1en-reading-droit',     title: 'Lecture : The Right to Be Forgotten', module: 'lectures', type: 'reading', contentId: 'c1en-privacy',            path: '/lectures/reading/c1en-privacy',                unit: 5 },
         ],
     },
@@ -281,11 +276,8 @@ export const COURSES_EN: Course[] = [
         steps: [
             // Unit 1 — Précision & Raffinement
             { id: 'c2en-style-register',  title: 'Style & Registre',              module: 'lectures', type: 'grammar',    contentId: 'en-style-register-mastery',   path: '/lectures/grammar/en-style-register-mastery',  unit: 1 },
-            { id: 'c2en-nuanced',         title: 'Adjectifs nuancés',             module: 'vocabulary', type: 'vocabulary', contentId: 'nuanced-adjectives',           path: '/vocabulary/nuanced-adjectives',               unit: 1 },
             { id: 'c2en-archaic',         title: 'Formes classiques anglaises',   module: 'lectures', type: 'grammar',    contentId: 'en-classical-forms',           path: '/lectures/grammar/en-classical-forms',         unit: 1 },
             { id: 'c2en-abstract',        title: 'Pensée abstraite',              module: 'vocabulary', type: 'vocabulary', contentId: 'abstract-thought',             path: '/vocabulary/abstract-thought',                 unit: 1 },
-            { id: 'c2en-human',           title: 'La Condition humaine',          module: 'vocabulary', type: 'vocabulary', contentId: 'human-condition',              path: '/vocabulary/human-condition',                  unit: 1 },
-            { id: 'c2en-proverbs',        title: 'Proverbes & Expressions',       module: 'lectures', type: 'phrases',    contentId: 'proverbs-sayings',             path: '/lectures/phrases/proverbs-sayings',           unit: 1 },
             { id: 'c2en-reading-proust',  title: 'Lecture : Virginia Woolf',     module: 'lectures', type: 'reading',    contentId: 'c2en-woolf',                   path: '/lectures/reading/c2en-woolf',                 unit: 1 },
             // Unit 2 — Langue en Contexte
             { id: 'c2en-oral-written',    title: 'Oral vs Écrit',                 module: 'lectures', type: 'grammar',    contentId: 'en-oral-vs-written',           path: '/lectures/grammar/en-oral-vs-written',         unit: 2 },
@@ -293,7 +285,6 @@ export const COURSES_EN: Course[] = [
             { id: 'c2en-discourse',       title: 'Connecteurs avancés',           module: 'lectures', type: 'grammar',    contentId: 'en-advanced-discourse-markers', path: '/lectures/grammar/en-advanced-discourse-markers', unit: 2 },
             { id: 'c2en-cultural',        title: 'Références culturelles',        module: 'vocabulary', type: 'vocabulary', contentId: 'cultural-references',           path: '/vocabulary/cultural-references',              unit: 2 },
             { id: 'c2en-literary-anal',   title: 'Analyse littéraire',            module: 'lectures', type: 'phrases',    contentId: 'literary-analysis',            path: '/lectures/phrases/literary-analysis',          unit: 2 },
-            { id: 'c2en-law',             title: 'Droit & Administration',        module: 'vocabulary', type: 'vocabulary', contentId: 'law-administration',            path: '/vocabulary/law-administration',               unit: 2 },
             { id: 'c2en-reading-poesie',  title: 'Lecture : T. S. Eliot',        module: 'lectures', type: 'reading',    contentId: 'c2en-eliot',                    path: '/lectures/reading/c2en-eliot',                 unit: 2 },
             // Unit 3 — Littérature & Pensée
             { id: 'c2en-literary-mov',    title: 'Mouvements littéraires',        module: 'vocabulary', type: 'vocabulary', contentId: 'literary-movements',            path: '/vocabulary/literary-movements',               unit: 3 },
@@ -313,10 +304,8 @@ export const COURSES_EN: Course[] = [
             { id: 'c2en-reading-essay',   title: 'Lecture : In Praise of Boredom', module: 'lectures', type: 'reading', contentId: 'c2en-boredom',                  path: '/lectures/reading/c2en-boredom',               unit: 4 },
             // Unit 5 — Sommet & Capstone
             { id: 'c2en-debate-length',   title: 'Débattre en profondeur',        module: 'lectures', type: 'phrases',    contentId: 'debating-at-length',            path: '/lectures/phrases/debating-at-length',         unit: 5 },
-            { id: 'c2en-formal-arg',      title: 'Argumentation formelle',        module: 'lectures', type: 'phrases',    contentId: 'formal-argumentation',          path: '/lectures/phrases/formal-argumentation',       unit: 5 },
             { id: 'c2en-reading-univ',    title: 'Lecture : What Are Universities For?', module: 'lectures', type: 'reading', contentId: 'c2en-university',         path: '/lectures/reading/c2en-university',             unit: 5 },
             { id: 'c2en-reading-press',   title: 'Lecture : How to Read an Editorial', module: 'lectures', type: 'reading', contentId: 'c2en-editorial',             path: '/lectures/reading/c2en-editorial',             unit: 5 },
-            { id: 'c2en-literary-abstr',  title: 'Vocabulaire littéraire',        module: 'vocabulary', type: 'vocabulary', contentId: 'literary-abstract',            path: '/vocabulary/literary-abstract',                unit: 5 },
             { id: 'c2en-reading-goriot',  title: 'Lecture : Dickens — Hard Times', module: 'lectures', type: 'reading',  contentId: 'c2en-hardtimes',               path: '/lectures/reading/c2en-hardtimes',             unit: 5 },
         ],
     },

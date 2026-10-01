@@ -13,6 +13,7 @@ export const verbGroups: Record<string, VerbGroup> = {
 export const verbsData: Record<string, VerbEntry[]> = {
     'a1': [
         {
+        level: 'A1', unit: 5,
             id: 'parler', infinitive: 'parler', translation: 'to speak', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'parle' , passeCompose: 'ai parlé' , imparfait: 'parlais' , futurSimple: 'parlerai' , conditionnelPresent: 'parlerais' , subjonctifPresent: 'parle' , plusQueParfait: 'avais parlé' , futurAnterieur: 'aurai parlé' , conditionnelPasse: 'aurais parlé' , subjonctifPasse: 'aie parlé' , passeSimple: 'parlai' , subjonctifImparfait: 'parlasse' , subjonctifPlusQueParfait: 'eusse parlé' , passeAnterieur: 'eus parlé' },
@@ -24,6 +25,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'manger', infinitive: 'manger', translation: 'to eat', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'mange' , passeCompose: 'ai mangé' , imparfait: 'mangeais' , futurSimple: 'mangerai' , conditionnelPresent: 'mangerais' , subjonctifPresent: 'mange' , plusQueParfait: 'avais mangé' , futurAnterieur: 'aurai mangé' , conditionnelPasse: 'aurais mangé' , subjonctifPasse: 'aie mangé' , passeSimple: 'mangeai' , subjonctifImparfait: 'mangeasse' , subjonctifPlusQueParfait: 'eusse mangé' , passeAnterieur: 'eus mangé' },
@@ -35,6 +37,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'aimer', infinitive: 'aimer', translation: 'to like / love', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'aime' , passeCompose: 'ai aimé' , imparfait: 'aimais' , futurSimple: 'aimerai' , conditionnelPresent: 'aimerais' , subjonctifPresent: 'aime' , plusQueParfait: 'avais aimé' , futurAnterieur: 'aurai aimé' , conditionnelPasse: 'aurais aimé' , subjonctifPasse: 'aie aimé' , passeSimple: 'aimai' , subjonctifImparfait: 'aimasse' , subjonctifPlusQueParfait: 'eusse aimé' , passeAnterieur: 'eus aimé' },
@@ -46,6 +49,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'travailler', infinitive: 'travailler', translation: 'to work', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'travaille' , passeCompose: 'ai travaillé' , imparfait: 'travaillais' , futurSimple: 'travaillerai' , conditionnelPresent: 'travaillerais' , subjonctifPresent: 'travaille' , plusQueParfait: 'avais travaillé' , futurAnterieur: 'aurai travaillé' , conditionnelPasse: 'aurais travaillé' , subjonctifPasse: 'aie travaillé' , passeSimple: 'travaillai' , subjonctifImparfait: 'travaillasse' , subjonctifPlusQueParfait: 'eusse travaillé' , passeAnterieur: 'eus travaillé' },
@@ -57,6 +61,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'habiter', infinitive: 'habiter', translation: 'to live / reside', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'habite' , passeCompose: 'ai habité' , imparfait: 'habitais' , futurSimple: 'habiterai' , conditionnelPresent: 'habiterais' , subjonctifPresent: 'habite' , plusQueParfait: 'avais habité' , futurAnterieur: 'aurai habité' , conditionnelPasse: 'aurais habité' , subjonctifPasse: 'aie habité' , passeSimple: 'habitai' , subjonctifImparfait: 'habitasse' , subjonctifPlusQueParfait: 'eusse habité' , passeAnterieur: 'eus habité' },
@@ -68,6 +73,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'regarder', infinitive: 'regarder', translation: 'to watch / look at', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'regarde' , passeCompose: 'ai regardé' , imparfait: 'regardais' , futurSimple: 'regarderai' , conditionnelPresent: 'regarderais' , subjonctifPresent: 'regarde' , plusQueParfait: 'avais regardé' , futurAnterieur: 'aurai regardé' , conditionnelPasse: 'aurais regardé' , subjonctifPasse: 'aie regardé' , passeSimple: 'regardai' , subjonctifImparfait: 'regardasse' , subjonctifPlusQueParfait: 'eusse regardé' , passeAnterieur: 'eus regardé' },
@@ -79,6 +85,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'arriver', infinitive: 'arriver', translation: 'to arrive', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'arrive' , passeCompose: 'suis arrivé(e)' , imparfait: 'arrivais' , futurSimple: 'arriverai' , conditionnelPresent: 'arriverais' , subjonctifPresent: 'arrive' , plusQueParfait: 'étais arrivé(e)' , futurAnterieur: 'serai arrivé(e)' , conditionnelPasse: 'serais arrivé(e)' , subjonctifPasse: 'sois arrivé(e)' , passeSimple: 'arrivai' , subjonctifImparfait: 'arrivasse' , subjonctifPlusQueParfait: 'fusse arrivé(e)' , passeAnterieur: 'fus arrivé(e)' },
@@ -90,6 +97,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'donner', infinitive: 'donner', translation: 'to give', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'donne' , passeCompose: 'ai donné' , imparfait: 'donnais' , futurSimple: 'donnerai' , conditionnelPresent: 'donnerais' , subjonctifPresent: 'donne' , plusQueParfait: 'avais donné' , futurAnterieur: 'aurai donné' , conditionnelPasse: 'aurais donné' , subjonctifPasse: 'aie donné' , passeSimple: 'donnai' , subjonctifImparfait: 'donnasse' , subjonctifPlusQueParfait: 'eusse donné' , passeAnterieur: 'eus donné' },
@@ -101,6 +109,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'demander', infinitive: 'demander', translation: 'to ask', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'demande' , passeCompose: 'ai demandé' , imparfait: 'demandais' , futurSimple: 'demanderai' , conditionnelPresent: 'demanderais' , subjonctifPresent: 'demande' , plusQueParfait: 'avais demandé' , futurAnterieur: 'aurai demandé' , conditionnelPasse: 'aurais demandé' , subjonctifPasse: 'aie demandé' , passeSimple: 'demandai' , subjonctifImparfait: 'demandasse' , subjonctifPlusQueParfait: 'eusse demandé' , passeAnterieur: 'eus demandé' },
@@ -112,6 +121,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'jouer', infinitive: 'jouer', translation: 'to play', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'joue' , passeCompose: 'ai joué' , imparfait: 'jouais' , futurSimple: 'jouerai' , conditionnelPresent: 'jouerais' , subjonctifPresent: 'joue' , plusQueParfait: 'avais joué' , futurAnterieur: 'aurai joué' , conditionnelPasse: 'aurais joué' , subjonctifPasse: 'aie joué' , passeSimple: 'jouai' , subjonctifImparfait: 'jouasse' , subjonctifPlusQueParfait: 'eusse joué' , passeAnterieur: 'eus joué' },
@@ -123,6 +133,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'penser', infinitive: 'penser', translation: 'to think', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'pense' , passeCompose: 'ai pensé' , imparfait: 'pensais' , futurSimple: 'penserai' , conditionnelPresent: 'penserais' , subjonctifPresent: 'pense' , plusQueParfait: 'avais pensé' , futurAnterieur: 'aurai pensé' , conditionnelPasse: 'aurais pensé' , subjonctifPasse: 'aie pensé' , passeSimple: 'pensai' , subjonctifImparfait: 'pensasse' , subjonctifPlusQueParfait: 'eusse pensé' , passeAnterieur: 'eus pensé' },
@@ -134,6 +145,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'rester', infinitive: 'rester', translation: 'to stay / remain', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'reste' , passeCompose: 'suis resté(e)' , imparfait: 'restais' , futurSimple: 'resterai' , conditionnelPresent: 'resterais' , subjonctifPresent: 'reste' , plusQueParfait: 'étais resté(e)' , futurAnterieur: 'serai resté(e)' , conditionnelPasse: 'serais resté(e)' , subjonctifPasse: 'sois resté(e)' , passeSimple: 'restai' , subjonctifImparfait: 'restasse' , subjonctifPlusQueParfait: 'fusse resté(e)' , passeAnterieur: 'fus resté(e)' },
@@ -145,6 +157,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'trouver', infinitive: 'trouver', translation: 'to find', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'trouve' , passeCompose: 'ai trouvé' , imparfait: 'trouvais' , futurSimple: 'trouverai' , conditionnelPresent: 'trouverais' , subjonctifPresent: 'trouve' , plusQueParfait: 'avais trouvé' , futurAnterieur: 'aurai trouvé' , conditionnelPasse: 'aurais trouvé' , subjonctifPasse: 'aie trouvé' , passeSimple: 'trouvai' , subjonctifImparfait: 'trouvasse' , subjonctifPlusQueParfait: 'eusse trouvé' , passeAnterieur: 'eus trouvé' },
@@ -156,6 +169,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'ecouter', infinitive: 'écouter', translation: 'to listen', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'écoute' , passeCompose: 'ai écouté' , imparfait: 'écoutais' , futurSimple: 'écouterai' , conditionnelPresent: 'écouterais' , subjonctifPresent: 'écoute' , plusQueParfait: 'avais écouté' , futurAnterieur: 'aurai écouté' , conditionnelPasse: 'aurais écouté' , subjonctifPasse: 'aie écouté' , passeSimple: 'écoutai' , subjonctifImparfait: 'écoutasse' , subjonctifPlusQueParfait: 'eusse écouté' , passeAnterieur: 'eus écouté' },
@@ -167,6 +181,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'entrer', infinitive: 'entrer', translation: 'to enter', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'entre' , passeCompose: 'suis entré(e)' , imparfait: 'entrais' , futurSimple: 'entrerai' , conditionnelPresent: 'entrerais' , subjonctifPresent: 'entre' , plusQueParfait: 'étais entré(e)' , futurAnterieur: 'serai entré(e)' , conditionnelPasse: 'serais entré(e)' , subjonctifPasse: 'sois entré(e)' , passeSimple: 'entrai' , subjonctifImparfait: 'entrasse' , subjonctifPlusQueParfait: 'fusse entré(e)' , passeAnterieur: 'fus entré(e)' },
@@ -178,6 +193,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'porter', infinitive: 'porter', translation: 'to carry / to wear', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'porte' , passeCompose: 'ai porté' , imparfait: 'portais' , futurSimple: 'porterai' , conditionnelPresent: 'porterais' , subjonctifPresent: 'porte' , plusQueParfait: 'avais porté' , futurAnterieur: 'aurai porté' , conditionnelPasse: 'aurais porté' , subjonctifPasse: 'aie porté' , passeSimple: 'portai' , subjonctifImparfait: 'portasse' , subjonctifPlusQueParfait: 'eusse porté' , passeAnterieur: 'eus porté' },
@@ -189,6 +205,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'marcher', infinitive: 'marcher', translation: 'to walk', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'marche' , passeCompose: 'ai marché' , imparfait: 'marchais' , futurSimple: 'marcherai' , conditionnelPresent: 'marcherais' , subjonctifPresent: 'marche' , plusQueParfait: 'avais marché' , futurAnterieur: 'aurai marché' , conditionnelPasse: 'aurais marché' , subjonctifPasse: 'aie marché' , passeSimple: 'marchai' , subjonctifImparfait: 'marchasse' , subjonctifPlusQueParfait: 'eusse marché' , passeAnterieur: 'eus marché' },
@@ -200,6 +217,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'chanter', infinitive: 'chanter', translation: 'to sing', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'chante' , passeCompose: 'ai chanté' , imparfait: 'chantais' , futurSimple: 'chanterai' , conditionnelPresent: 'chanterais' , subjonctifPresent: 'chante' , plusQueParfait: 'avais chanté' , futurAnterieur: 'aurai chanté' , conditionnelPasse: 'aurais chanté' , subjonctifPasse: 'aie chanté' , passeSimple: 'chantai' , subjonctifImparfait: 'chantasse' , subjonctifPlusQueParfait: 'eusse chanté' , passeAnterieur: 'eus chanté' },
@@ -211,6 +229,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'finir', infinitive: 'finir', translation: 'to finish', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'finis' , passeCompose: 'ai fini' , imparfait: 'finissais' , futurSimple: 'finirai' , conditionnelPresent: 'finirais' , subjonctifPresent: 'finisse' , plusQueParfait: 'avais fini' , futurAnterieur: 'aurai fini' , conditionnelPasse: 'aurais fini' , subjonctifPasse: 'aie fini' , passeSimple: 'finis' , subjonctifImparfait: 'finisse' , subjonctifPlusQueParfait: 'eusse fini' , passeAnterieur: 'eus fini' },
@@ -222,6 +241,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'vendre', infinitive: 'vendre', translation: 'to sell', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'vends' , passeCompose: 'ai vendu' , imparfait: 'vendais' , futurSimple: 'vendrai' , conditionnelPresent: 'vendrais' , subjonctifPresent: 'vende' , plusQueParfait: 'avais vendu' , futurAnterieur: 'aurai vendu' , conditionnelPasse: 'aurais vendu' , subjonctifPasse: 'aie vendu' , passeSimple: 'vendis' , subjonctifImparfait: 'vendisse' , subjonctifPlusQueParfait: 'eusse vendu' , passeAnterieur: 'eus vendu' },
@@ -233,6 +253,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'prendre', infinitive: 'prendre', translation: 'to take', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'prends' , passeCompose: 'ai pris' , imparfait: 'prenais' , futurSimple: 'prendrai' , conditionnelPresent: 'prendrais' , subjonctifPresent: 'prenne' , plusQueParfait: 'avais pris' , futurAnterieur: 'aurai pris' , conditionnelPasse: 'aurais pris' , subjonctifPasse: 'aie pris' , passeSimple: 'pris' , subjonctifImparfait: 'prisse' , subjonctifPlusQueParfait: 'eusse pris' , passeAnterieur: 'eus pris' },
@@ -244,6 +265,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'vouloir', infinitive: 'vouloir', translation: 'to want', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'veux' , passeCompose: 'ai voulu' , imparfait: 'voulais' , futurSimple: 'voudrai' , conditionnelPresent: 'voudrais' , subjonctifPresent: 'veuille' , plusQueParfait: 'avais voulu' , futurAnterieur: 'aurai voulu' , conditionnelPasse: 'aurais voulu' , subjonctifPasse: 'aie voulu' , passeSimple: 'voulus' , subjonctifImparfait: 'voulusse' , subjonctifPlusQueParfait: 'eusse voulu' , passeAnterieur: 'eus voulu' },
@@ -255,6 +277,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'pouvoir', infinitive: 'pouvoir', translation: 'to be able to / can', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'peux' , passeCompose: 'ai pu' , imparfait: 'pouvais' , futurSimple: 'pourrai' , conditionnelPresent: 'pourrais' , subjonctifPresent: 'puisse' , plusQueParfait: 'avais pu' , futurAnterieur: 'aurai pu' , conditionnelPasse: 'aurais pu' , subjonctifPasse: 'aie pu' , passeSimple: 'pus' , subjonctifImparfait: 'pusse' , subjonctifPlusQueParfait: 'eusse pu' , passeAnterieur: 'eus pu' },
@@ -266,6 +289,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'devoir', infinitive: 'devoir', translation: 'to have to / must', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'dois' , passeCompose: 'ai dû' , imparfait: 'devais' , futurSimple: 'devrai' , conditionnelPresent: 'devrais' , subjonctifPresent: 'doive' , plusQueParfait: 'avais dû' , futurAnterieur: 'aurai dû' , conditionnelPasse: 'aurais dû' , subjonctifPasse: 'aie dû' , passeSimple: 'dus' , subjonctifImparfait: 'dusse' , subjonctifPlusQueParfait: 'eusse dû' , passeAnterieur: 'eus dû' },
@@ -277,6 +301,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A1', unit: 5,
             id: 'dormir', infinitive: 'dormir', translation: 'to sleep', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'dors' , passeCompose: 'ai dormi' , imparfait: 'dormais' , futurSimple: 'dormirai' , conditionnelPresent: 'dormirais' , subjonctifPresent: 'dorme' , plusQueParfait: 'avais dormi' , futurAnterieur: 'aurai dormi' , conditionnelPasse: 'aurais dormi' , subjonctifPasse: 'aie dormi' , passeSimple: 'dormis' , subjonctifImparfait: 'dormisse' , subjonctifPlusQueParfait: 'eusse dormi' , passeAnterieur: 'eus dormi' },
@@ -290,6 +315,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
     ],
     'a2': [
         {
+        level: 'A2', unit: 5,
             id: 'voyager', infinitive: 'voyager', translation: 'to travel', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'voyage' , passeCompose: 'ai voyagé' , imparfait: 'voyageais' , futurSimple: 'voyagerai' , conditionnelPresent: 'voyagerais' , subjonctifPresent: 'voyage' , plusQueParfait: 'avais voyagé' , futurAnterieur: 'aurai voyagé' , conditionnelPasse: 'aurais voyagé' , subjonctifPasse: 'aie voyagé' , passeSimple: 'voyageai' , subjonctifImparfait: 'voyageasse' , subjonctifPlusQueParfait: 'eusse voyagé' , passeAnterieur: 'eus voyagé' },
@@ -301,6 +327,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'nager', infinitive: 'nager', translation: 'to swim', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'nage' , passeCompose: 'ai nagé' , imparfait: 'nageais' , futurSimple: 'nagerai' , conditionnelPresent: 'nagerais' , subjonctifPresent: 'nage' , plusQueParfait: 'avais nagé' , futurAnterieur: 'aurai nagé' , conditionnelPasse: 'aurais nagé' , subjonctifPasse: 'aie nagé' , passeSimple: 'nageai' , subjonctifImparfait: 'nageasse' , subjonctifPlusQueParfait: 'eusse nagé' , passeAnterieur: 'eus nagé' },
@@ -312,6 +339,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'danser', infinitive: 'danser', translation: 'to dance', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'danse' , passeCompose: 'ai dansé' , imparfait: 'dansais' , futurSimple: 'danserai' , conditionnelPresent: 'danserais' , subjonctifPresent: 'danse' , plusQueParfait: 'avais dansé' , futurAnterieur: 'aurai dansé' , conditionnelPasse: 'aurais dansé' , subjonctifPasse: 'aie dansé' , passeSimple: 'dansai' , subjonctifImparfait: 'dansasse' , subjonctifPlusQueParfait: 'eusse dansé' , passeAnterieur: 'eus dansé' },
@@ -323,6 +351,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'chercher', infinitive: 'chercher', translation: 'to look for / search', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'cherche' , passeCompose: 'ai cherché' , imparfait: 'cherchais' , futurSimple: 'chercherai' , conditionnelPresent: 'chercherais' , subjonctifPresent: 'cherche' , plusQueParfait: 'avais cherché' , futurAnterieur: 'aurai cherché' , conditionnelPasse: 'aurais cherché' , subjonctifPasse: 'aie cherché' , passeSimple: 'cherchai' , subjonctifImparfait: 'cherchasse' , subjonctifPlusQueParfait: 'eusse cherché' , passeAnterieur: 'eus cherché' },
@@ -334,6 +363,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'tomber', infinitive: 'tomber', translation: 'to fall', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'tombe' , passeCompose: 'suis tombé(e)' , imparfait: 'tombais' , futurSimple: 'tomberai' , conditionnelPresent: 'tomberais' , subjonctifPresent: 'tombe' , plusQueParfait: 'étais tombé(e)' , futurAnterieur: 'serai tombé(e)' , conditionnelPasse: 'serais tombé(e)' , subjonctifPasse: 'sois tombé(e)' , passeSimple: 'tombai' , subjonctifImparfait: 'tombasse' , subjonctifPlusQueParfait: 'fusse tombé(e)' , passeAnterieur: 'fus tombé(e)' },
@@ -345,6 +375,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'choisir', infinitive: 'choisir', translation: 'to choose', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'choisis' , passeCompose: 'ai choisi' , imparfait: 'choisissais' , futurSimple: 'choisirai' , conditionnelPresent: 'choisirais' , subjonctifPresent: 'choisisse' , plusQueParfait: 'avais choisi' , futurAnterieur: 'aurai choisi' , conditionnelPasse: 'aurais choisi' , subjonctifPasse: 'aie choisi' , passeSimple: 'choisis' , subjonctifImparfait: 'choisisse' , subjonctifPlusQueParfait: 'eusse choisi' , passeAnterieur: 'eus choisi' },
@@ -356,6 +387,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'grandir', infinitive: 'grandir', translation: 'to grow', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'grandis' , passeCompose: 'ai grandi' , imparfait: 'grandissais' , futurSimple: 'grandirai' , conditionnelPresent: 'grandirais' , subjonctifPresent: 'grandisse' , plusQueParfait: 'avais grandi' , futurAnterieur: 'aurai grandi' , conditionnelPasse: 'aurais grandi' , subjonctifPasse: 'aie grandi' , passeSimple: 'grandis' , subjonctifImparfait: 'grandisse' , subjonctifPlusQueParfait: 'eusse grandi' , passeAnterieur: 'eus grandi' },
@@ -367,6 +399,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'reussir', infinitive: 'réussir', translation: 'to succeed', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'réussis' , passeCompose: 'ai réussi' , imparfait: 'réussissais' , futurSimple: 'réussirai' , conditionnelPresent: 'réussirais' , subjonctifPresent: 'réussisse' , plusQueParfait: 'avais réussi' , futurAnterieur: 'aurai réussi' , conditionnelPasse: 'aurais réussi' , subjonctifPasse: 'aie réussi' , passeSimple: 'réussis' , subjonctifImparfait: 'réussisse' , subjonctifPlusQueParfait: 'eusse réussi' , passeAnterieur: 'eus réussi' },
@@ -378,6 +411,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'attendre', infinitive: 'attendre', translation: 'to wait', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'attends' , passeCompose: 'ai attendu' , imparfait: 'attendais' , futurSimple: 'attendrai' , conditionnelPresent: 'attendrais' , subjonctifPresent: 'attende' , plusQueParfait: 'avais attendu' , futurAnterieur: 'aurai attendu' , conditionnelPasse: 'aurais attendu' , subjonctifPasse: 'aie attendu' , passeSimple: 'attendis' , subjonctifImparfait: 'attendisse' , subjonctifPlusQueParfait: 'eusse attendu' , passeAnterieur: 'eus attendu' },
@@ -389,6 +423,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'repondre', infinitive: 'répondre', translation: 'to answer', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'réponds' , passeCompose: 'ai répondu' , imparfait: 'répondais' , futurSimple: 'répondrai' , conditionnelPresent: 'répondrais' , subjonctifPresent: 'réponde' , plusQueParfait: 'avais répondu' , futurAnterieur: 'aurai répondu' , conditionnelPasse: 'aurais répondu' , subjonctifPasse: 'aie répondu' , passeSimple: 'répondis' , subjonctifImparfait: 'répondisse' , subjonctifPlusQueParfait: 'eusse répondu' , passeAnterieur: 'eus répondu' },
@@ -400,6 +435,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'entendre', infinitive: 'entendre', translation: 'to hear', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'entends' , passeCompose: 'ai entendu' , imparfait: 'entendais' , futurSimple: 'entendrai' , conditionnelPresent: 'entendrais' , subjonctifPresent: 'entende' , plusQueParfait: 'avais entendu' , futurAnterieur: 'aurai entendu' , conditionnelPasse: 'aurais entendu' , subjonctifPasse: 'aie entendu' , passeSimple: 'entendis' , subjonctifImparfait: 'entendisse' , subjonctifPlusQueParfait: 'eusse entendu' , passeAnterieur: 'eus entendu' },
@@ -411,6 +447,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'partir', infinitive: 'partir', translation: 'to leave', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'pars' , passeCompose: 'suis parti(e)' , imparfait: 'partais' , futurSimple: 'partirai' , conditionnelPresent: 'partirais' , subjonctifPresent: 'parte' , plusQueParfait: 'étais parti(e)' , futurAnterieur: 'serai parti(e)' , conditionnelPasse: 'serais parti(e)' , subjonctifPasse: 'sois parti(e)' , passeSimple: 'partis' , subjonctifImparfait: 'partisse' , subjonctifPlusQueParfait: 'fusse parti(e)' , passeAnterieur: 'fus parti(e)' },
@@ -422,6 +459,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'mettre', infinitive: 'mettre', translation: 'to put', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'mets' , passeCompose: 'ai mis' , imparfait: 'mettais' , futurSimple: 'mettrai' , conditionnelPresent: 'mettrais' , subjonctifPresent: 'mette' , plusQueParfait: 'avais mis' , futurAnterieur: 'aurai mis' , conditionnelPasse: 'aurais mis' , subjonctifPasse: 'aie mis' , passeSimple: 'mis' , subjonctifImparfait: 'misse' , subjonctifPlusQueParfait: 'eusse mis' , passeAnterieur: 'eus mis' },
@@ -433,6 +471,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'dire', infinitive: 'dire', translation: 'to say', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'dis' , passeCompose: 'ai dit' , imparfait: 'disais' , futurSimple: 'dirai' , conditionnelPresent: 'dirais' , subjonctifPresent: 'dise' , plusQueParfait: 'avais dit' , futurAnterieur: 'aurai dit' , conditionnelPasse: 'aurais dit' , subjonctifPasse: 'aie dit' , passeSimple: 'dis' , subjonctifImparfait: 'disse' , subjonctifPlusQueParfait: 'eusse dit' , passeAnterieur: 'eus dit' },
@@ -444,6 +483,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'voir', infinitive: 'voir', translation: 'to see', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'vois' , passeCompose: 'ai vu' , imparfait: 'voyais' , futurSimple: 'verrai' , conditionnelPresent: 'verrais' , subjonctifPresent: 'voie' , plusQueParfait: 'avais vu' , futurAnterieur: 'aurai vu' , conditionnelPasse: 'aurais vu' , subjonctifPasse: 'aie vu' , passeSimple: 'vis' , subjonctifImparfait: 'visse' , subjonctifPlusQueParfait: 'eusse vu' , passeAnterieur: 'eus vu' },
@@ -455,6 +495,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'sortir', infinitive: 'sortir', translation: 'to go out / to leave', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'sors' , passeCompose: 'suis sorti(e)' , imparfait: 'sortais' , futurSimple: 'sortirai' , conditionnelPresent: 'sortirais' , subjonctifPresent: 'sorte' , plusQueParfait: 'étais sorti(e)' , futurAnterieur: 'serai sorti(e)' , conditionnelPasse: 'serais sorti(e)' , subjonctifPasse: 'sois sorti(e)' , passeSimple: 'sortis' , subjonctifImparfait: 'sortisse' , subjonctifPlusQueParfait: 'fusse sorti(e)' , passeAnterieur: 'fus sorti(e)' },
@@ -466,6 +507,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'A2', unit: 5,
             id: 'croire', infinitive: 'croire', translation: 'to believe / to think', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'crois' , passeCompose: 'ai cru' , imparfait: 'croyais' , futurSimple: 'croirai' , conditionnelPresent: 'croirais' , subjonctifPresent: 'croie' , plusQueParfait: 'avais cru' , futurAnterieur: 'aurai cru' , conditionnelPasse: 'aurais cru' , subjonctifPasse: 'aie cru' , passeSimple: 'crus' , subjonctifImparfait: 'crusse' , subjonctifPlusQueParfait: 'eusse cru' , passeAnterieur: 'eus cru' },
@@ -479,6 +521,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
     ],
     'b1': [
         {
+        level: 'B1', unit: 5,
             id: 'obeir', infinitive: 'obéir', translation: 'to obey', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'obéis' , passeCompose: 'ai obéi' , imparfait: 'obéissais' , futurSimple: 'obéirai' , conditionnelPresent: 'obéirais' , subjonctifPresent: 'obéisse' , plusQueParfait: 'avais obéi' , futurAnterieur: 'aurai obéi' , conditionnelPasse: 'aurais obéi' , subjonctifPasse: 'aie obéi' , passeSimple: 'obéis' , subjonctifImparfait: 'obéisse' , subjonctifPlusQueParfait: 'eusse obéi' , passeAnterieur: 'eus obéi' },
@@ -490,6 +533,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'rougir', infinitive: 'rougir', translation: 'to blush / to turn red', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'rougis' , passeCompose: 'ai rougi' , imparfait: 'rougissais' , futurSimple: 'rougirai' , conditionnelPresent: 'rougirais' , subjonctifPresent: 'rougisse' , plusQueParfait: 'avais rougi' , futurAnterieur: 'aurai rougi' , conditionnelPasse: 'aurais rougi' , subjonctifPasse: 'aie rougi' , passeSimple: 'rougis' , subjonctifImparfait: 'rougisse' , subjonctifPlusQueParfait: 'eusse rougi' , passeAnterieur: 'eus rougi' },
@@ -501,6 +545,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'reflechir', infinitive: 'réfléchir', translation: 'to think / to reflect', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'réfléchis' , passeCompose: 'ai réfléchi' , imparfait: 'réfléchissais' , futurSimple: 'réfléchirai' , conditionnelPresent: 'réfléchirais' , subjonctifPresent: 'réfléchisse' , plusQueParfait: 'avais réfléchi' , futurAnterieur: 'aurai réfléchi' , conditionnelPasse: 'aurais réfléchi' , subjonctifPasse: 'aie réfléchi' , passeSimple: 'réfléchis' , subjonctifImparfait: 'réfléchisse' , subjonctifPlusQueParfait: 'eusse réfléchi' , passeAnterieur: 'eus réfléchi' },
@@ -512,6 +557,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'remplir', infinitive: 'remplir', translation: 'to fill', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'remplis' , passeCompose: 'ai rempli' , imparfait: 'remplissais' , futurSimple: 'remplirai' , conditionnelPresent: 'remplirais' , subjonctifPresent: 'remplisse' , plusQueParfait: 'avais rempli' , futurAnterieur: 'aurai rempli' , conditionnelPasse: 'aurais rempli' , subjonctifPasse: 'aie rempli' , passeSimple: 'remplis' , subjonctifImparfait: 'remplisse' , subjonctifPlusQueParfait: 'eusse rempli' , passeAnterieur: 'eus rempli' },
@@ -523,6 +569,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'batir', infinitive: 'bâtir', translation: 'to build', type: '-IR', color: '#0891B2',
             rows: [
             { sujet: 'je' , present: 'bâtis' , passeCompose: 'ai bâti' , imparfait: 'bâtissais' , futurSimple: 'bâtirai' , conditionnelPresent: 'bâtirais' , subjonctifPresent: 'bâtisse' , plusQueParfait: 'avais bâti' , futurAnterieur: 'aurai bâti' , conditionnelPasse: 'aurais bâti' , subjonctifPasse: 'aie bâti' , passeSimple: 'bâtis' , subjonctifImparfait: 'bâtisse' , subjonctifPlusQueParfait: 'eusse bâti' , passeAnterieur: 'eus bâti' },
@@ -534,6 +581,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'perdre', infinitive: 'perdre', translation: 'to lose', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'perds' , passeCompose: 'ai perdu' , imparfait: 'perdais' , futurSimple: 'perdrai' , conditionnelPresent: 'perdrais' , subjonctifPresent: 'perde' , plusQueParfait: 'avais perdu' , futurAnterieur: 'aurai perdu' , conditionnelPasse: 'aurais perdu' , subjonctifPasse: 'aie perdu' , passeSimple: 'perdis' , subjonctifImparfait: 'perdisse' , subjonctifPlusQueParfait: 'eusse perdu' , passeAnterieur: 'eus perdu' },
@@ -545,6 +593,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'descendre', infinitive: 'descendre', translation: 'to go down / to come down', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'descends' , passeCompose: 'suis descendu(e)' , imparfait: 'descendais' , futurSimple: 'descendrai' , conditionnelPresent: 'descendrais' , subjonctifPresent: 'descende' , plusQueParfait: 'étais descendu(e)' , futurAnterieur: 'serai descendu(e)' , conditionnelPasse: 'serais descendu(e)' , subjonctifPasse: 'sois descendu(e)' , passeSimple: 'descendis' , subjonctifImparfait: 'descendisse' , subjonctifPlusQueParfait: 'fusse descendu(e)' , passeAnterieur: 'fus descendu(e)' },
@@ -556,6 +605,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'rendre', infinitive: 'rendre', translation: 'to give back / to return', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'rends' , passeCompose: 'ai rendu' , imparfait: 'rendais' , futurSimple: 'rendrai' , conditionnelPresent: 'rendrais' , subjonctifPresent: 'rende' , plusQueParfait: 'avais rendu' , futurAnterieur: 'aurai rendu' , conditionnelPasse: 'aurais rendu' , subjonctifPasse: 'aie rendu' , passeSimple: 'rendis' , subjonctifImparfait: 'rendisse' , subjonctifPlusQueParfait: 'eusse rendu' , passeAnterieur: 'eus rendu' },
@@ -567,6 +617,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'savoir', infinitive: 'savoir', translation: 'to know', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'sais' , passeCompose: 'ai su' , imparfait: 'savais' , futurSimple: 'saurai' , conditionnelPresent: 'saurais' , subjonctifPresent: 'sache' , plusQueParfait: 'avais su' , futurAnterieur: 'aurai su' , conditionnelPasse: 'aurais su' , subjonctifPasse: 'aie su' , passeSimple: 'sus' , subjonctifImparfait: 'susse' , subjonctifPlusQueParfait: 'eusse su' , passeAnterieur: 'eus su' },
@@ -578,6 +629,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'lire', infinitive: 'lire', translation: 'to read', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'lis' , passeCompose: 'ai lu' , imparfait: 'lisais' , futurSimple: 'lirai' , conditionnelPresent: 'lirais' , subjonctifPresent: 'lise' , plusQueParfait: 'avais lu' , futurAnterieur: 'aurai lu' , conditionnelPasse: 'aurais lu' , subjonctifPasse: 'aie lu' , passeSimple: 'lus' , subjonctifImparfait: 'lusse' , subjonctifPlusQueParfait: 'eusse lu' , passeAnterieur: 'eus lu' },
@@ -589,6 +641,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'ecrire', infinitive: 'écrire', translation: 'to write', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'écris' , passeCompose: 'ai écrit' , imparfait: 'écrivais' , futurSimple: 'écrirai' , conditionnelPresent: 'écrirais' , subjonctifPresent: 'écrive' , plusQueParfait: 'avais écrit' , futurAnterieur: 'aurai écrit' , conditionnelPasse: 'aurais écrit' , subjonctifPasse: 'aie écrit' , passeSimple: 'écrivis' , subjonctifImparfait: 'écrivisse' , subjonctifPlusQueParfait: 'eusse écrit' , passeAnterieur: 'eus écrit' },
@@ -600,6 +653,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'connaitre', infinitive: 'connaître', translation: 'to know / be acquainted with', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'connais' , passeCompose: 'ai connu' , imparfait: 'connaissais' , futurSimple: 'connaîtrai' , conditionnelPresent: 'connaîtrais' , subjonctifPresent: 'connaisse' , plusQueParfait: 'avais connu' , futurAnterieur: 'aurai connu' , conditionnelPasse: 'aurais connu' , subjonctifPasse: 'aie connu' , passeSimple: 'connus' , subjonctifImparfait: 'connusse' , subjonctifPlusQueParfait: 'eusse connu' , passeAnterieur: 'eus connu' },
@@ -611,6 +665,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'boire', infinitive: 'boire', translation: 'to drink', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'bois' , passeCompose: 'ai bu' , imparfait: 'buvais' , futurSimple: 'boirai' , conditionnelPresent: 'boirais' , subjonctifPresent: 'boive' , plusQueParfait: 'avais bu' , futurAnterieur: 'aurai bu' , conditionnelPasse: 'aurais bu' , subjonctifPasse: 'aie bu' , passeSimple: 'bus' , subjonctifImparfait: 'busse' , subjonctifPlusQueParfait: 'eusse bu' , passeAnterieur: 'eus bu' },
@@ -622,6 +677,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'tenir', infinitive: 'tenir', translation: 'to hold / to keep', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'tiens' , passeCompose: 'ai tenu' , imparfait: 'tenais' , futurSimple: 'tiendrai' , conditionnelPresent: 'tiendrais' , subjonctifPresent: 'tienne' , plusQueParfait: 'avais tenu' , futurAnterieur: 'aurai tenu' , conditionnelPasse: 'aurais tenu' , subjonctifPasse: 'aie tenu' , passeSimple: 'tins' , subjonctifImparfait: 'tinsse' , subjonctifPlusQueParfait: 'eusse tenu' , passeAnterieur: 'eus tenu' },
@@ -633,6 +689,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'ouvrir', infinitive: 'ouvrir', translation: 'to open', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'ouvre' , passeCompose: 'ai ouvert' , imparfait: 'ouvrais' , futurSimple: 'ouvrirai' , conditionnelPresent: 'ouvrirais' , subjonctifPresent: 'ouvre' , plusQueParfait: 'avais ouvert' , futurAnterieur: 'aurai ouvert' , conditionnelPasse: 'aurais ouvert' , subjonctifPasse: 'aie ouvert' , passeSimple: 'ouvris' , subjonctifImparfait: 'ouvrisse' , subjonctifPlusQueParfait: 'eusse ouvert' , passeAnterieur: 'eus ouvert' },
@@ -644,6 +701,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'courir', infinitive: 'courir', translation: 'to run', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'cours' , passeCompose: 'ai couru' , imparfait: 'courais' , futurSimple: 'courrai' , conditionnelPresent: 'courrais' , subjonctifPresent: 'coure' , plusQueParfait: 'avais couru' , futurAnterieur: 'aurai couru' , conditionnelPasse: 'aurais couru' , subjonctifPasse: 'aie couru' , passeSimple: 'courus' , subjonctifImparfait: 'courusse' , subjonctifPlusQueParfait: 'eusse couru' , passeAnterieur: 'eus couru' },
@@ -655,6 +713,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'vivre', infinitive: 'vivre', translation: 'to live', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'vis' , passeCompose: 'ai vécu' , imparfait: 'vivais' , futurSimple: 'vivrai' , conditionnelPresent: 'vivrais' , subjonctifPresent: 'vive' , plusQueParfait: 'avais vécu' , futurAnterieur: 'aurai vécu' , conditionnelPasse: 'aurais vécu' , subjonctifPasse: 'aie vécu' , passeSimple: 'vécus' , subjonctifImparfait: 'vécusse' , subjonctifPlusQueParfait: 'eusse vécu' , passeAnterieur: 'eus vécu' },
@@ -666,6 +725,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B1', unit: 5,
             id: 'recevoir', infinitive: 'recevoir', translation: 'to receive', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'reçois' , passeCompose: 'ai reçu' , imparfait: 'recevais' , futurSimple: 'recevrai' , conditionnelPresent: 'recevrais' , subjonctifPresent: 'reçoive' , plusQueParfait: 'avais reçu' , futurAnterieur: 'aurai reçu' , conditionnelPasse: 'aurais reçu' , subjonctifPasse: 'aie reçu' , passeSimple: 'reçus' , subjonctifImparfait: 'reçusse' , subjonctifPlusQueParfait: 'eusse reçu' , passeAnterieur: 'eus reçu' },
@@ -679,6 +739,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
     ],
     'b2': [
         {
+        level: 'B2', unit: 5,
             id: 'conduire', infinitive: 'conduire', translation: 'to drive', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'conduis' , passeCompose: 'ai conduit' , imparfait: 'conduisais' , futurSimple: 'conduirai' , conditionnelPresent: 'conduirais' , subjonctifPresent: 'conduise' , plusQueParfait: 'avais conduit' , futurAnterieur: 'aurai conduit' , conditionnelPasse: 'aurais conduit' , subjonctifPasse: 'aie conduit' , passeSimple: 'conduisis' , subjonctifImparfait: 'conduisisse' , subjonctifPlusQueParfait: 'eusse conduit' , passeAnterieur: 'eus conduit' },
@@ -690,6 +751,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'craindre', infinitive: 'craindre', translation: 'to fear', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'crains' , passeCompose: 'ai craint' , imparfait: 'craignais' , futurSimple: 'craindrai' , conditionnelPresent: 'craindrais' , subjonctifPresent: 'craigne' , plusQueParfait: 'avais craint' , futurAnterieur: 'aurai craint' , conditionnelPasse: 'aurais craint' , subjonctifPasse: 'aie craint' , passeSimple: 'craignis' , subjonctifImparfait: 'craignisse' , subjonctifPlusQueParfait: 'eusse craint' , passeAnterieur: 'eus craint' },
@@ -701,6 +763,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'naitre', infinitive: 'naître', translation: 'to be born', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'nais' , passeCompose: 'suis né(e)' , imparfait: 'naissais' , futurSimple: 'naîtrai' , conditionnelPresent: 'naîtrais' , subjonctifPresent: 'naisse' , plusQueParfait: 'étais né(e)' , futurAnterieur: 'serai né(e)' , conditionnelPasse: 'serais né(e)' , subjonctifPasse: 'sois né(e)' , passeSimple: 'naquis' , subjonctifImparfait: 'naquisse' , subjonctifPlusQueParfait: 'fusse né(e)' , passeAnterieur: 'fus né(e)' },
@@ -712,6 +775,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'plaire', infinitive: 'plaire', translation: 'to please', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'plais' , passeCompose: 'ai plu' , imparfait: 'plaisais' , futurSimple: 'plairai' , conditionnelPresent: 'plairais' , subjonctifPresent: 'plaise' , plusQueParfait: 'avais plu' , futurAnterieur: 'aurai plu' , conditionnelPasse: 'aurais plu' , subjonctifPasse: 'aie plu' , passeSimple: 'plus' , subjonctifImparfait: 'plusse' , subjonctifPlusQueParfait: 'eusse plu' , passeAnterieur: 'eus plu' },
@@ -723,6 +787,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'rire', infinitive: 'rire', translation: 'to laugh', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'ris' , passeCompose: 'ai ri' , imparfait: 'riais' , futurSimple: 'rirai' , conditionnelPresent: 'rirais' , subjonctifPresent: 'rie' , plusQueParfait: 'avais ri' , futurAnterieur: 'aurai ri' , conditionnelPasse: 'aurais ri' , subjonctifPasse: 'aie ri' , passeSimple: 'ris' , subjonctifImparfait: 'risse' , subjonctifPlusQueParfait: 'eusse ri' , passeAnterieur: 'eus ri' },
@@ -734,6 +799,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'suivre', infinitive: 'suivre', translation: 'to follow', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'suis' , passeCompose: 'ai suivi' , imparfait: 'suivais' , futurSimple: 'suivrai' , conditionnelPresent: 'suivrais' , subjonctifPresent: 'suive' , plusQueParfait: 'avais suivi' , futurAnterieur: 'aurai suivi' , conditionnelPasse: 'aurais suivi' , subjonctifPasse: 'aie suivi' , passeSimple: 'suivis' , subjonctifImparfait: 'suivisse' , subjonctifPlusQueParfait: 'eusse suivi' , passeAnterieur: 'eus suivi' },
@@ -745,6 +811,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'mourir', infinitive: 'mourir', translation: 'to die', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'meurs' , passeCompose: 'suis mort(e)' , imparfait: 'mourais' , futurSimple: 'mourrai' , conditionnelPresent: 'mourrais' , subjonctifPresent: 'meure' , plusQueParfait: 'étais mort(e)' , futurAnterieur: 'serai mort(e)' , conditionnelPasse: 'serais mort(e)' , subjonctifPasse: 'sois mort(e)' , passeSimple: 'mourus' , subjonctifImparfait: 'mourusse' , subjonctifPlusQueParfait: 'fusse mort(e)' , passeAnterieur: 'fus mort(e)' },
@@ -756,6 +823,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'resoudre', infinitive: 'résoudre', translation: 'to resolve / solve', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'résous' , passeCompose: 'ai résolu' , imparfait: 'résolvais' , futurSimple: 'résoudrai' , conditionnelPresent: 'résoudrais' , subjonctifPresent: 'résolve' , plusQueParfait: 'avais résolu' , futurAnterieur: 'aurai résolu' , conditionnelPasse: 'aurais résolu' , subjonctifPasse: 'aie résolu' , passeSimple: 'résolus' , subjonctifImparfait: 'résolusse' , subjonctifPlusQueParfait: 'eusse résolu' , passeAnterieur: 'eus résolu' },
@@ -767,6 +835,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'coudre', infinitive: 'coudre', translation: 'to sew', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'couds' , passeCompose: 'ai cousu' , imparfait: 'cousais' , futurSimple: 'coudrai' , conditionnelPresent: 'coudrais' , subjonctifPresent: 'couse' , plusQueParfait: 'avais cousu' , futurAnterieur: 'aurai cousu' , conditionnelPasse: 'aurais cousu' , subjonctifPasse: 'aie cousu' , passeSimple: 'cousis' , subjonctifImparfait: 'cousisse' , subjonctifPlusQueParfait: 'eusse cousu' , passeAnterieur: 'eus cousu' },
@@ -778,6 +847,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'moudre', infinitive: 'moudre', translation: 'to grind', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'mouds' , passeCompose: 'ai moulu' , imparfait: 'moulais' , futurSimple: 'moudrai' , conditionnelPresent: 'moudrais' , subjonctifPresent: 'moule' , plusQueParfait: 'avais moulu' , futurAnterieur: 'aurai moulu' , conditionnelPasse: 'aurais moulu' , subjonctifPasse: 'aie moulu' , passeSimple: 'moulus' , subjonctifImparfait: 'moulusse' , subjonctifPlusQueParfait: 'eusse moulu' , passeAnterieur: 'eus moulu' },
@@ -789,6 +859,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'envoyer', infinitive: 'envoyer', translation: 'to send', type: '-ER', color: '#059669',
             rows: [
             { sujet: 'je' , present: 'envoie' , passeCompose: 'ai envoyé' , imparfait: 'envoyais' , futurSimple: 'enverrai' , conditionnelPresent: 'enverrais' , subjonctifPresent: 'envoie' , plusQueParfait: 'avais envoyé' , futurAnterieur: 'aurai envoyé' , conditionnelPasse: 'aurais envoyé' , subjonctifPasse: 'aie envoyé' , passeSimple: 'envoyai' , subjonctifImparfait: 'envoyasse' , subjonctifPlusQueParfait: 'eusse envoyé' , passeAnterieur: 'eus envoyé' },
@@ -800,6 +871,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'mordre', infinitive: 'mordre', translation: 'to bite', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'mords' , passeCompose: 'ai mordu' , imparfait: 'mordais' , futurSimple: 'mordrai' , conditionnelPresent: 'mordrais' , subjonctifPresent: 'morde' , plusQueParfait: 'avais mordu' , futurAnterieur: 'aurai mordu' , conditionnelPasse: 'aurais mordu' , subjonctifPasse: 'aie mordu' , passeSimple: 'mordis' , subjonctifImparfait: 'mordisse' , subjonctifPlusQueParfait: 'eusse mordu' , passeAnterieur: 'eus mordu' },
@@ -811,6 +883,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'tordre', infinitive: 'tordre', translation: 'to twist', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'tords' , passeCompose: 'ai tordu' , imparfait: 'tordais' , futurSimple: 'tordrai' , conditionnelPresent: 'tordrais' , subjonctifPresent: 'torde' , plusQueParfait: 'avais tordu' , futurAnterieur: 'aurai tordu' , conditionnelPasse: 'aurais tordu' , subjonctifPasse: 'aie tordu' , passeSimple: 'tordis' , subjonctifImparfait: 'tordisse' , subjonctifPlusQueParfait: 'eusse tordu' , passeAnterieur: 'eus tordu' },
@@ -822,6 +895,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'fondre', infinitive: 'fondre', translation: 'to melt / dissolve', type: '-RE', color: '#D97706',
             rows: [
             { sujet: 'je' , present: 'fonds' , passeCompose: 'ai fondu' , imparfait: 'fondais' , futurSimple: 'fondrai' , conditionnelPresent: 'fondrais' , subjonctifPresent: 'fonde' , plusQueParfait: 'avais fondu' , futurAnterieur: 'aurai fondu' , conditionnelPasse: 'aurais fondu' , subjonctifPasse: 'aie fondu' , passeSimple: 'fondis' , subjonctifImparfait: 'fondisse' , subjonctifPlusQueParfait: 'eusse fondu' , passeAnterieur: 'eus fondu' },
@@ -833,6 +907,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'peindre', infinitive: 'peindre', translation: 'to paint', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'peins' , passeCompose: 'ai peint' , imparfait: 'peignais' , futurSimple: 'peindrai' , conditionnelPresent: 'peindrais' , subjonctifPresent: 'peigne' , plusQueParfait: 'avais peint' , futurAnterieur: 'aurai peint' , conditionnelPasse: 'aurais peint' , subjonctifPasse: 'aie peint' , passeSimple: 'peignis' , subjonctifImparfait: 'peignisse' , subjonctifPlusQueParfait: 'eusse peint' , passeAnterieur: 'eus peint' },
@@ -844,6 +919,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'rejoindre', infinitive: 'rejoindre', translation: 'to rejoin / catch up with', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'rejoins' , passeCompose: 'ai rejoint' , imparfait: 'rejoignais' , futurSimple: 'rejoindrai' , conditionnelPresent: 'rejoindrais' , subjonctifPresent: 'rejoigne' , plusQueParfait: 'avais rejoint' , futurAnterieur: 'aurai rejoint' , conditionnelPasse: 'aurais rejoint' , subjonctifPasse: 'aie rejoint' , passeSimple: 'rejoignis' , subjonctifImparfait: 'rejoignisse' , subjonctifPlusQueParfait: 'eusse rejoint' , passeAnterieur: 'eus rejoint' },
@@ -855,6 +931,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'construire', infinitive: 'construire', translation: 'to build / construct', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'construis' , passeCompose: 'ai construit' , imparfait: 'construisais' , futurSimple: 'construirai' , conditionnelPresent: 'construirais' , subjonctifPresent: 'construise' , plusQueParfait: 'avais construit' , futurAnterieur: 'aurai construit' , conditionnelPasse: 'aurais construit' , subjonctifPasse: 'aie construit' , passeSimple: 'construisis' , subjonctifImparfait: 'construisisse' , subjonctifPlusQueParfait: 'eusse construit' , passeAnterieur: 'eus construit' },
@@ -866,6 +943,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'B2', unit: 5,
             id: 'absoudre', infinitive: 'absoudre', translation: 'to absolve', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'absous' , passeCompose: 'ai absous' , imparfait: 'absolvais' , futurSimple: 'absoudrai' , conditionnelPresent: 'absoudrais' , subjonctifPresent: 'absolve' , plusQueParfait: 'avais absous' , futurAnterieur: 'aurai absous' , conditionnelPasse: 'aurais absous' , subjonctifPasse: 'aie absous' , passeSimple: 'absolus' , subjonctifImparfait: 'absolusse' , subjonctifPlusQueParfait: 'eusse absous' , passeAnterieur: 'eus absous' },
@@ -879,6 +957,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
     ],
     'c1': [
         {
+        level: 'C1', unit: 5,
             id: 'vaincre', infinitive: 'vaincre', translation: 'to defeat / overcome', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'vaincs' , passeCompose: 'ai vaincu' , imparfait: 'vainquais' , futurSimple: 'vaincrai' , conditionnelPresent: 'vaincrais' , subjonctifPresent: 'vainque' , plusQueParfait: 'avais vaincu' , futurAnterieur: 'aurai vaincu' , conditionnelPasse: 'aurais vaincu' , subjonctifPasse: 'aie vaincu' , passeSimple: 'vainquis' , subjonctifImparfait: 'vainquisse' , subjonctifPlusQueParfait: 'eusse vaincu' , passeAnterieur: 'eus vaincu' },
@@ -890,6 +969,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'valoir', infinitive: 'valoir', translation: 'to be worth', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'vaux' , passeCompose: 'ai valu' , imparfait: 'valais' , futurSimple: 'vaudrai' , conditionnelPresent: 'vaudrais' , subjonctifPresent: 'vaille' , plusQueParfait: 'avais valu' , futurAnterieur: 'aurai valu' , conditionnelPasse: 'aurais valu' , subjonctifPasse: 'aie valu' , passeSimple: 'valus' , subjonctifImparfait: 'valusse' , subjonctifPlusQueParfait: 'eusse valu' , passeAnterieur: 'eus valu' },
@@ -901,6 +981,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'joindre', infinitive: 'joindre', translation: 'to join / to reach', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'joins' , passeCompose: 'ai joint' , imparfait: 'joignais' , futurSimple: 'joindrai' , conditionnelPresent: 'joindrais' , subjonctifPresent: 'joigne' , plusQueParfait: 'avais joint' , futurAnterieur: 'aurai joint' , conditionnelPasse: 'aurais joint' , subjonctifPasse: 'aie joint' , passeSimple: 'joignis' , subjonctifImparfait: 'joignisse' , subjonctifPlusQueParfait: 'eusse joint' , passeAnterieur: 'eus joint' },
@@ -912,6 +993,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'battre', infinitive: 'battre', translation: 'to beat', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'bats' , passeCompose: 'ai battu' , imparfait: 'battais' , futurSimple: 'battrai' , conditionnelPresent: 'battrais' , subjonctifPresent: 'batte' , plusQueParfait: 'avais battu' , futurAnterieur: 'aurai battu' , conditionnelPasse: 'aurais battu' , subjonctifPasse: 'aie battu' , passeSimple: 'battis' , subjonctifImparfait: 'battisse' , subjonctifPlusQueParfait: 'eusse battu' , passeAnterieur: 'eus battu' },
@@ -923,6 +1005,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'acquerir', infinitive: 'acquérir', translation: 'to acquire', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'acquiers' , passeCompose: 'ai acquis' , imparfait: 'acquérais' , futurSimple: 'acquerrai' , conditionnelPresent: 'acquerrais' , subjonctifPresent: 'acquière' , plusQueParfait: 'avais acquis' , futurAnterieur: 'aurai acquis' , conditionnelPasse: 'aurais acquis' , subjonctifPasse: 'aie acquis' , passeSimple: 'acquis' , subjonctifImparfait: 'acquisse' , subjonctifPlusQueParfait: 'eusse acquis' , passeAnterieur: 'eus acquis' },
@@ -934,6 +1017,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'fuir', infinitive: 'fuir', translation: 'to flee / to escape', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'fuis' , passeCompose: 'ai fui' , imparfait: 'fuyais' , futurSimple: 'fuirai' , conditionnelPresent: 'fuirais' , subjonctifPresent: 'fuie' , plusQueParfait: 'avais fui' , futurAnterieur: 'aurai fui' , conditionnelPasse: 'aurais fui' , subjonctifPasse: 'aie fui' , passeSimple: 'fuis' , subjonctifImparfait: 'fuisse' , subjonctifPlusQueParfait: 'eusse fui' , passeAnterieur: 'eus fui' },
@@ -945,6 +1029,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'nuire', infinitive: 'nuire', translation: 'to harm', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'nuis' , passeCompose: 'ai nui' , imparfait: 'nuisais' , futurSimple: 'nuirai' , conditionnelPresent: 'nuirais' , subjonctifPresent: 'nuise' , plusQueParfait: 'avais nui' , futurAnterieur: 'aurai nui' , conditionnelPasse: 'aurais nui' , subjonctifPasse: 'aie nui' , passeSimple: 'nuisis' , subjonctifImparfait: 'nuisisse' , subjonctifPlusQueParfait: 'eusse nui' , passeAnterieur: 'eus nui' },
@@ -956,6 +1041,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'luire', infinitive: 'luire', translation: 'to shine / gleam', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'luis' , passeCompose: 'ai lui' , imparfait: 'luisais' , futurSimple: 'luirai' , conditionnelPresent: 'luirais' , subjonctifPresent: 'luise' , plusQueParfait: 'avais lui' , futurAnterieur: 'aurai lui' , conditionnelPasse: 'aurais lui' , subjonctifPasse: 'aie lui' , passeSimple: 'luisis' , subjonctifImparfait: 'luisisse' , subjonctifPlusQueParfait: 'eusse lui' , passeAnterieur: 'eus lui' },
@@ -967,6 +1053,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'clore', infinitive: 'clore', translation: 'to close / end', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'clos' , passeCompose: 'ai clos' , imparfait: 'closais' , futurSimple: 'clorai' , conditionnelPresent: 'clorais' , subjonctifPresent: 'close' , plusQueParfait: 'avais clos' , futurAnterieur: 'aurai clos' , conditionnelPasse: 'aurais clos' , subjonctifPasse: 'aie clos' , passeSimple: 'closis' , subjonctifImparfait: 'closisse' , subjonctifPlusQueParfait: 'eusse clos' , passeAnterieur: 'eus clos' },
@@ -978,6 +1065,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'traire', infinitive: 'traire', translation: 'to milk', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'trais' , passeCompose: 'ai trait' , imparfait: 'trayais' , futurSimple: 'trairai' , conditionnelPresent: 'trairais' , subjonctifPresent: 'traie' , plusQueParfait: 'avais trait' , futurAnterieur: 'aurai trait' , conditionnelPasse: 'aurais trait' , subjonctifPasse: 'aie trait' , passeSimple: 'trayis' , subjonctifImparfait: 'trayisse' , subjonctifPlusQueParfait: 'eusse trait' , passeAnterieur: 'eus trait' },
@@ -989,6 +1077,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'extraire', infinitive: 'extraire', translation: 'to extract', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'extrais' , passeCompose: 'ai extrait' , imparfait: 'extrayais' , futurSimple: 'extrairai' , conditionnelPresent: 'extrairais' , subjonctifPresent: 'extraie' , plusQueParfait: 'avais extrait' , futurAnterieur: 'aurai extrait' , conditionnelPasse: 'aurais extrait' , subjonctifPasse: 'aie extrait' , passeSimple: 'extrayis' , subjonctifImparfait: 'extrayisse' , subjonctifPlusQueParfait: 'eusse extrait' , passeAnterieur: 'eus extrait' },
@@ -1000,6 +1089,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'souffrir', infinitive: 'souffrir', translation: 'to suffer', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'souffre' , passeCompose: 'ai souffert' , imparfait: 'souffrais' , futurSimple: 'souffrirai' , conditionnelPresent: 'souffrirais' , subjonctifPresent: 'souffre' , plusQueParfait: 'avais souffert' , futurAnterieur: 'aurai souffert' , conditionnelPasse: 'aurais souffert' , subjonctifPasse: 'aie souffert' , passeSimple: 'souffris' , subjonctifImparfait: 'souffrisse' , subjonctifPlusQueParfait: 'eusse souffert' , passeAnterieur: 'eus souffert' },
@@ -1011,6 +1101,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'offrir', infinitive: 'offrir', translation: 'to offer', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'offre' , passeCompose: 'ai offert' , imparfait: 'offrais' , futurSimple: 'offrirai' , conditionnelPresent: 'offrirais' , subjonctifPresent: 'offre' , plusQueParfait: 'avais offert' , futurAnterieur: 'aurai offert' , conditionnelPasse: 'aurais offert' , subjonctifPasse: 'aie offert' , passeSimple: 'offris' , subjonctifImparfait: 'offrisse' , subjonctifPlusQueParfait: 'eusse offert' , passeAnterieur: 'eus offert' },
@@ -1022,6 +1113,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'cueillir', infinitive: 'cueillir', translation: 'to pick / gather', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'cueille' , passeCompose: 'ai cueilli' , imparfait: 'cueillais' , futurSimple: 'cueillerai' , conditionnelPresent: 'cueillerais' , subjonctifPresent: 'cueille' , plusQueParfait: 'avais cueilli' , futurAnterieur: 'aurai cueilli' , conditionnelPasse: 'aurais cueilli' , subjonctifPasse: 'aie cueilli' , passeSimple: 'cueillis' , subjonctifImparfait: 'cueillisse' , subjonctifPlusQueParfait: 'eusse cueilli' , passeAnterieur: 'eus cueilli' },
@@ -1033,6 +1125,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C1', unit: 5,
             id: 'assaillir', infinitive: 'assaillir', translation: 'to assail / attack', type: 'Irregular', color: '#DC2626',
             rows: [
             { sujet: 'je' , present: 'assaille' , passeCompose: 'ai assailli' , imparfait: 'assaillais' , futurSimple: 'assaillirai' , conditionnelPresent: 'assaillirais' , subjonctifPresent: 'assaille' , plusQueParfait: 'avais assailli' , futurAnterieur: 'aurai assailli' , conditionnelPasse: 'aurais assailli' , subjonctifPasse: 'aie assailli' , passeSimple: 'assaillis' , subjonctifImparfait: 'assaillisse' , subjonctifPlusQueParfait: 'eusse assailli' , passeAnterieur: 'eus assailli' },
@@ -1046,6 +1139,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
     ],
     'c2': [
         {
+        level: 'C2', unit: 5,
             id: 'dissoudre', infinitive: 'dissoudre', translation: 'to dissolve', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'dissous' , passeCompose: 'ai dissous' , imparfait: 'dissolvais' , futurSimple: 'dissoudrai' , conditionnelPresent: 'dissoudrais' , subjonctifPresent: 'dissolve' , plusQueParfait: 'avais dissous' , futurAnterieur: 'aurai dissous' , conditionnelPasse: 'aurais dissous' , subjonctifPasse: 'aie dissous' , passeSimple: 'dissolus' , subjonctifImparfait: 'dissolusse' , subjonctifPlusQueParfait: 'eusse dissous' , passeAnterieur: 'eus dissous' },
@@ -1057,6 +1151,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'contredire', infinitive: 'contredire', translation: 'to contradict', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'contredis' , passeCompose: 'ai contredit' , imparfait: 'contredisais' , futurSimple: 'contredirai' , conditionnelPresent: 'contredirais' , subjonctifPresent: 'contredise' , plusQueParfait: 'avais contredit' , futurAnterieur: 'aurai contredit' , conditionnelPasse: 'aurais contredit' , subjonctifPasse: 'aie contredit' , passeSimple: 'contredis' , subjonctifImparfait: 'contredisse' , subjonctifPlusQueParfait: 'eusse contredit' , passeAnterieur: 'eus contredit' },
@@ -1068,6 +1163,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'maudire', infinitive: 'maudire', translation: 'to curse', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'maudis' , passeCompose: 'ai maudit' , imparfait: 'maudissais' , futurSimple: 'maudirai' , conditionnelPresent: 'maudirais' , subjonctifPresent: 'maudisse' , plusQueParfait: 'avais maudit' , futurAnterieur: 'aurai maudit' , conditionnelPasse: 'aurais maudit' , subjonctifPasse: 'aie maudit' , passeSimple: 'maudis' , subjonctifImparfait: 'maudisse' , subjonctifPlusQueParfait: 'eusse maudit' , passeAnterieur: 'eus maudit' },
@@ -1079,6 +1175,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'feindre', infinitive: 'feindre', translation: 'to pretend / feign', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'feins' , passeCompose: 'ai feint' , imparfait: 'feignais' , futurSimple: 'feindrai' , conditionnelPresent: 'feindrais' , subjonctifPresent: 'feigne' , plusQueParfait: 'avais feint' , futurAnterieur: 'aurai feint' , conditionnelPasse: 'aurais feint' , subjonctifPasse: 'aie feint' , passeSimple: 'feignis' , subjonctifImparfait: 'feignisse' , subjonctifPlusQueParfait: 'eusse feint' , passeAnterieur: 'eus feint' },
@@ -1090,6 +1187,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'ceindre', infinitive: 'ceindre', translation: 'to gird / surround', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'ceins' , passeCompose: 'ai ceint' , imparfait: 'ceignais' , futurSimple: 'ceindrai' , conditionnelPresent: 'ceindrais' , subjonctifPresent: 'ceigne' , plusQueParfait: 'avais ceint' , futurAnterieur: 'aurai ceint' , conditionnelPasse: 'aurais ceint' , subjonctifPasse: 'aie ceint' , passeSimple: 'ceignis' , subjonctifImparfait: 'ceignisse' , subjonctifPlusQueParfait: 'eusse ceint' , passeAnterieur: 'eus ceint' },
@@ -1101,6 +1199,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'choir', infinitive: 'choir', translation: 'to fall (archaic)', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'chois' , passeCompose: 'suis chu(e)' , imparfait: 'choyais' , futurSimple: 'choirai' , conditionnelPresent: 'choirais' , subjonctifPresent: 'choie' , plusQueParfait: 'étais chu(e)' , futurAnterieur: 'serai chu(e)' , conditionnelPasse: 'serais chu(e)' , subjonctifPasse: 'sois chu(e)' , passeSimple: 'chus' , subjonctifImparfait: 'chusse' , subjonctifPlusQueParfait: 'fusse chu(e)' , passeAnterieur: 'fus chu(e)' },
@@ -1112,6 +1211,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'faillir', infinitive: 'faillir', translation: 'to almost do / fail', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'faillis' , passeCompose: 'ai failli' , imparfait: 'faillissais' , futurSimple: 'faillirai' , conditionnelPresent: 'faillirais' , subjonctifPresent: 'faillisse' , plusQueParfait: 'avais failli' , futurAnterieur: 'aurai failli' , conditionnelPasse: 'aurais failli' , subjonctifPasse: 'aie failli' , passeSimple: 'faillis' , subjonctifImparfait: 'faillisse' , subjonctifPlusQueParfait: 'eusse failli' , passeAnterieur: 'eus failli' },
@@ -1123,6 +1223,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'ouir', infinitive: 'ouïr', translation: 'to hear (archaic)', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'ois' , passeCompose: 'ai ouï' , imparfait: 'oyais' , futurSimple: 'ouïrai' , conditionnelPresent: 'ouïrais' , subjonctifPresent: 'oie' , plusQueParfait: 'avais ouï' , futurAnterieur: 'aurai ouï' , conditionnelPasse: 'aurais ouï' , subjonctifPasse: 'aie ouï' , passeSimple: 'ouïis' , subjonctifImparfait: 'ouïisse' , subjonctifPlusQueParfait: 'eusse ouï' , passeAnterieur: 'eus ouï' },
@@ -1134,6 +1235,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'paitre', infinitive: 'paître', translation: 'to graze', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'pais' , passeCompose: '—' , imparfait: 'paissais' , futurSimple: 'paîtrai' , conditionnelPresent: 'paîtrais' , subjonctifPresent: 'paisse' , plusQueParfait: '—' , futurAnterieur: '—' , conditionnelPasse: '—' , subjonctifPasse: '—' , passeSimple: '—' , subjonctifImparfait: '—' , subjonctifPlusQueParfait: '—' , passeAnterieur: '—' },
@@ -1145,6 +1247,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
             ],
         },
         {
+        level: 'C2', unit: 5,
             id: 'poindre', infinitive: 'poindre', translation: 'to dawn / appear', type: 'Irregular', color: '#6D28D9',
             rows: [
             { sujet: 'je' , present: 'poinds' , passeCompose: 'ai point' , imparfait: 'poignais' , futurSimple: 'poindrai' , conditionnelPresent: 'poindrais' , subjonctifPresent: 'poigne' , plusQueParfait: 'avais point' , futurAnterieur: 'aurai point' , conditionnelPasse: 'aurais point' , subjonctifPasse: 'aie point' , passeSimple: 'poignis' , subjonctifImparfait: 'poignisse' , subjonctifPlusQueParfait: 'eusse point' , passeAnterieur: 'eus point' },
@@ -1160,6 +1263,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
 
 export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
     etre: {
+        level: 'A1', unit: 2,
         title: 'Être',
         translation: 'to be',
         color: '#2563EB',
@@ -1173,6 +1277,7 @@ export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
         ],
     },
     avoir: {
+        level: 'A1', unit: 2,
         title: 'Avoir',
         translation: 'to have',
         color: '#16A34A',
@@ -1186,6 +1291,7 @@ export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
         ],
     },
     faire: {
+        level: 'A1', unit: 2,
         title: 'Faire',
         translation: 'to do / make',
         color: '#EA580C',
@@ -1199,6 +1305,7 @@ export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
         ],
     },
     aller: {
+        level: 'A1', unit: 6,
         title: 'Aller',
         translation: 'to go',
         color: '#7C3AED',
@@ -1212,6 +1319,7 @@ export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
         ],
     },
     venir: {
+        level: 'A1', unit: 5,
         title: 'Venir',
         translation: 'to come',
         color: '#DC2626',

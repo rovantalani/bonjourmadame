@@ -1,0 +1,101 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const ts = require('typescript');
+const { learningContent } = require('../dist/services/learningContent');
+const frVerbs = require('../dist/content/fr/verbs');
+const enVerbs = require('../dist/content/en/verbs');
+const { vocabularyData } = require('../dist/content/fr/vocabulary');
+
+function courses(language) {
+    const source = fs.readFileSync(path.join(__dirname, `../../frontend/src/data/${language}/courses.ts`), 'utf8');
+    const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
+    const exports = {};
+    vm.runInNewContext(compiled, { exports });
+    return Object.values(exports)[0];
+}
+
+test('French A1 readings and their vocabulary follow the seven-unit syllabus', () => {
+    const expected = [
+        ['a1-bonjour-je-mappelle-marie', 'a1-une-nouvelle-collegue', 'a1-mon-ami-thomas', 'a1-la-famille-martin'],
+        ['a1-une-journee-typique', 'a1-le-samedi-de-sophie', 'a1-une-journee-au-travail', 'a1-apres-le-travail'],
+        ['a1-mon-appartement', 'a1-chez-mes-parents', 'a1-mon-quartier', 'a1-une-promenade-dans-le-quartier'],
+        ['a1-au-cafe', 'a1-au-marche', 'a1-a-la-boulangerie', 'a1-au-restaurant'],
+        ['a1-jaime-le-sport', 'a1-on-va-au-cinema', 'a1-une-soiree-entre-amis', 'a1-tu-viens-samedi'],
+        ['a1-je-vais-au-travail', 'a1-ou-est-la-gare', 'a1-a-la-gare', 'a1-un-week-end-a-lyon'],
+        ['a1-une-journee-a-marseille', 'a1-une-visite-chez-des-amis', 'a1-mes-premieres-semaines-en-france', 'a1-un-week-end-a-la-campagne'],
+    ];
+    const titles = ['Faire connaissance', 'La vie quotidienne', 'La maison et le quartier',
+        'Manger et faire les courses', 'Loisirs et vie sociale', 'Se déplacer et voyager', 'La vie en France'];
+    const course = courses('fr').find(item => item.level === 'A1');
+    assert.deepEqual(Array.from(course.units, unit => unit.title), titles);
+    const passages = learningContent.fr.reading;
+    const modules = new Map(learningContent.fr.modules.map(module => [module.id, module]));
+    for (let unit = 1; unit <= 7; unit++) {
+        const readingSteps = course.steps.filter(step => step.unit === unit && step.type === 'reading');
+        assert.deepEqual(Array.from(readingSteps, step => step.contentId), expected[unit - 1]);
+        for (const id of expected[unit - 1]) {
+            const passage = passages.find(item => item.moduleId === id);
+            const module = modules.get(id);
+            assert.equal(passage?.unit, unit, `reading ${id}`);
+            assert.equal(module?.unit, unit, `vocabulary ${id}`);
+            assert.equal(passage.level, 'A1');
+            assert.equal(module.level, 'A1');
+            assert.equal(vocabularyData[id]?.length, 15, `vocabulary words for ${id}`);
+            const readingIndex = course.steps.findIndex(step => step.type === 'reading' && step.contentId === id);
+            const vocabularyStep = course.steps[readingIndex - 1];
+            assert.equal(vocabularyStep?.type, 'vocabulary');
+            assert.equal(vocabularyStep?.contentId, id);
+        }
+    }
+});
+
+for (const language of ['fr', 'en']) {
+    test(`${language} modules have one valid level and unit, matching their course placement`, () => {
+        const curriculum = courses(language);
+        const unitCount = new Map(curriculum.map(course => [course.level, course.units.length]));
+        const catalog = learningContent[language];
+        const rawVerbs = language === 'fr' ? frVerbs.verbsData : enVerbs.verbsDataEN;
+        const modules = {
+            vocabulary: catalog.modules.map(module => [module.id, module]),
+            grammar: catalog.grammar.map(module => [module.id, module]),
+            phrases: catalog.phrases.map(module => [module.id, module]),
+            reading: catalog.reading.map(module => [module.moduleId, module]),
+            verbs: [...Object.values(rawVerbs).flat().map(module => [module.id, module]),
+                ...Object.entries(catalog.helpers)],
+        };
+        const index = {};
+        for (const [type, entries] of Object.entries(modules)) {
+            const ids = new Set();
+            for (const [id, module] of entries) {
+                assert(!ids.has(id), `${language}: duplicate ${type} module ${id}`);
+                ids.add(id);
+                assert(unitCount.has(module.level), `${language}: ${type}/${id} has invalid level`);
+                assert(Number.isInteger(module.unit) && module.unit >= 1 && module.unit <= unitCount.get(module.level),
+                    `${language}: ${type}/${id} has invalid unit`);
+                if (type === 'phrases') {
+                    const phraseIds = module.phrases.map(phrase => phrase.id);
+                    assert.equal(new Set(phraseIds).size, phraseIds.length,
+                        `${language}: ${type}/${id} has duplicate phrase IDs`);
+                }
+            }
+            index[type] = new Map(entries);
+        }
+        const seen = new Set();
+        for (const course of curriculum) {
+            for (const step of course.steps) {
+                const key = `${step.type}:${step.contentId}`;
+                assert(!seen.has(key), `${language}: repeated course module ${key}`);
+                seen.add(key);
+                // Legacy verb-group pages are navigation, not individual verb modules.
+                if (step.type === 'verbs' && !index.verbs.has(step.contentId)) continue;
+                const module = index[step.type].get(step.contentId);
+                assert(module, `${language}: course module ${key} does not exist`);
+                assert.equal(module.level, course.level, `${language}: ${key} level differs from course`);
+                assert.equal(module.unit, step.unit, `${language}: ${key} unit differs from course`);
+            }
+        }
+    });
+}

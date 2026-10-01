@@ -2,6 +2,7 @@ import type { GrammarLesson } from '../../types/lectures/grammar';
 
 export const grammarLessonsEN: GrammarLesson[] = [
     {
+        unit: 2,
         id: 'en-articles',
         title: 'Les Articles en Anglais',
         level: 'A1',
@@ -53,6 +54,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-present-simple',
         title: 'Le Présent Simple et Continu',
         level: 'A1',
@@ -101,6 +103,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-past-tenses',
         title: 'Les Temps du Passé',
         level: 'A2',
@@ -149,6 +152,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-future',
         title: 'Le Futur en Anglais',
         level: 'A2',
@@ -193,6 +197,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-prepositions',
         title: 'Les Prépositions Anglaises',
         level: 'B1',
@@ -242,6 +247,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'en-phrasal-verbs',
         title: 'Les Verbes à Particule',
         level: 'B1',
@@ -291,6 +297,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-false-friends',
         title: 'Les Faux Amis',
         level: 'B2',
@@ -340,6 +347,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-word-order',
         title: "L'Ordre des Mots",
         level: 'B2',
@@ -388,6 +396,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
     },
     // ─── New A1 Lessons ─────────────────────────────────────────────────────────
     {
+        unit: 2,
         id: 'en-plurals-nouns',
         title: 'Le Pluriel et les Noms en Anglais',
         level: 'A1',
@@ -441,6 +450,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-questions',
         title: 'Poser des Questions en Anglais',
         level: 'A1',
@@ -491,6 +501,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-negation',
         title: 'La Négation en Anglais',
         level: 'A1',
@@ -539,6 +550,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-can-modals',
         title: 'Can, Could, May et Might',
         level: 'A1',
@@ -588,6 +600,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
     },
     // ─── New A2 Lessons ─────────────────────────────────────────────────────────
     {
+        unit: 2,
         id: 'en-present-perfect',
         title: 'Le Present Perfect',
         level: 'A2',
@@ -637,6 +650,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-comparatives',
         title: 'Les Comparatifs et Superlatifs',
         level: 'A2',
@@ -686,6 +700,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'en-modal-verbs',
         title: 'Les Verbes Modaux : Conseil et Obligation',
         level: 'A2',
@@ -733,6 +748,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'en-verb-patterns',
         title: 'Gérondif ou Infinitif ?',
         level: 'A2',
@@ -785,6 +801,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
     },
     // ─── New B1 Lessons ─────────────────────────────────────────────────────────
     {
+        unit: 2,
         id: 'en-conditionals-1-2',
         title: 'Les Conditionnels 1 et 2',
         level: 'B1',
@@ -832,6 +849,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-passive-voice',
         title: 'La Voix Passive',
         level: 'B1',
@@ -880,6 +898,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-reported-speech',
         title: 'Le Discours Rapporté',
         level: 'B1',
@@ -927,6 +946,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-relative-clauses',
         title: 'Les Propositions Relatives',
         level: 'B1',
@@ -975,6 +995,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
     },
     // ─── New B2 Lessons ─────────────────────────────────────────────────────────
     {
+        unit: 2,
         id: 'en-third-conditional',
         title: 'Le Troisième Conditionnel et le Conditionnel Mixte',
         level: 'B2',
@@ -1021,6 +1042,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-inversion-emphasis',
         title: 'Inversion et Mise en Relief',
         level: 'B2',
@@ -1068,6 +1090,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'en-advanced-modals',
         title: 'Les Modaux Passés : Déductions et Regrets',
         level: 'B2',
@@ -1115,6 +1138,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'en-cohesion',
         title: 'Les Connecteurs Logiques et la Cohésion du Texte',
         level: 'B2',
@@ -1165,6 +1189,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
 
     /* ── C1 LESSONS ── */
     {
+        unit: 1,
         id: 'en-register-formal-informal',
         title: 'Registre formel et informel en anglais',
         level: 'C1',
@@ -1212,6 +1237,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'en-subjunctive-mood',
         title: 'Le Subjonctif en anglais',
         level: 'C1',
@@ -1259,6 +1285,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-reported-speech-advanced',
         title: 'Discours rapporté avancé',
         level: 'C1',
@@ -1307,6 +1334,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'en-advanced-negation',
         title: 'Négation avancée et structures emphatiques',
         level: 'C1',
@@ -1355,6 +1383,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 3,
         id: 'en-participle-constructions',
         title: 'Constructions participiales',
         level: 'C1',
@@ -1404,6 +1433,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
 
     /* ── C2 LESSONS ── */
     {
+        unit: 1,
         id: 'en-style-register-mastery',
         title: 'Maîtrise du style et du registre',
         level: 'C2',
@@ -1451,6 +1481,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 1,
         id: 'en-classical-forms',
         title: 'Formes classiques et archaïques de l\'anglais',
         level: 'C2',
@@ -1498,6 +1529,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-oral-vs-written',
         title: 'Anglais oral vs. anglais écrit',
         level: 'C2',
@@ -1545,6 +1577,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 2,
         id: 'en-advanced-discourse-markers',
         title: 'Marqueurs de discours avancés',
         level: 'C2',
@@ -1592,6 +1625,7 @@ export const grammarLessonsEN: GrammarLesson[] = [
         ],
     },
     {
+        unit: 4,
         id: 'en-translation-strategies',
         title: 'Stratégies de traduction et équivalence',
         level: 'C2',

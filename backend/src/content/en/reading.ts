@@ -12,6 +12,7 @@ import type { ReadingPassage } from '../../types/lectures/reading';
 export const readingPassagesEN: ReadingPassage[] = [
     /* ─────────────────────────── A1 ─────────────────────────── */
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-first-day',
         title: 'First Day at School',
         source: 'Original text — Level A1',
@@ -22,6 +23,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-my-city',
         title: 'My City',
         source: 'Original text — Level A1',
@@ -32,6 +34,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-my-family',
         title: 'My Family',
         source: 'Original text — Level A1',
@@ -42,6 +45,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-my-day',
         title: 'My Day',
         source: 'Original text — Level A1',
@@ -52,6 +56,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-the-park',
         title: 'A Day at the Park',
         source: 'Original text — Level A1',
@@ -62,6 +67,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-my-pet',
         title: 'My Pet',
         source: 'Original text — Level A1',
@@ -72,6 +78,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-birthday-party',
         title: 'My Birthday Party',
         source: 'Original text — Level A1',
@@ -82,6 +89,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-at-the-zoo',
         title: 'A Visit to the Zoo',
         source: 'Original text — Level A1',
@@ -92,6 +100,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-a-rainy-day',
         title: 'A Rainy Day',
         source: 'Original text — Level A1',
@@ -102,6 +111,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1en-my-school',
         title: 'My School',
         source: 'Original text — Level A1',
@@ -113,6 +123,7 @@ export const readingPassagesEN: ReadingPassage[] = [
     },
     /* ─────────────────────────── A2 ─────────────────────────── */
     {
+        level: 'A2', unit: 2,
         moduleId: 'a2en-weekend-trip',
         title: 'A Weekend in London',
         source: 'Original text — Level A2',
@@ -124,6 +135,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-job-interview',
         title: 'Sophie\'s Job Interview',
         source: 'Original text — Level A2',
@@ -135,6 +147,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-shopping-trip',
         title: 'A Shopping Trip',
         source: 'Original text — Level A2',
@@ -146,6 +159,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-holiday-plans',
         title: 'Planning a Holiday',
         source: 'Original text — Level A2',
@@ -157,6 +171,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-new-flatmate',
         title: 'A New Flatmate',
         source: 'Original text — Level A2',
@@ -168,6 +183,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-lost-in-town',
         title: 'Lost in a New Town',
         source: 'Original text — Level A2',
@@ -179,6 +195,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-cooking-dinner',
         title: 'Cooking Dinner for Friends',
         source: 'Original text — Level A2',
@@ -190,6 +207,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-the-concert',
         title: 'The Concert',
         source: 'Original text — Level A2',
@@ -201,6 +219,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-moving-house',
         title: 'Moving House',
         source: 'Original text — Level A2',
@@ -212,6 +231,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2en-summer-job',
         title: 'My First Summer Job',
         source: 'Original text — Level A2',
@@ -224,6 +244,7 @@ export const readingPassagesEN: ReadingPassage[] = [
     },
     /* ─────────────────────────── B1 ─────────────────────────── */
     {
+        level: 'B1', unit: 1,
         moduleId: 'b1en-social-media',
         title: 'Social Media and Young People',
         source: 'Original article — Level B1',
@@ -235,6 +256,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 2,
         moduleId: 'b1en-green-city',
         title: 'Building a Greener City',
         source: 'Original article — Level B1',
@@ -246,6 +268,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 2,
         moduleId: 'b1en-remote-work',
         title: 'The Rise of Remote Work',
         source: 'Original article — Level B1',
@@ -257,6 +280,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         moduleId: 'b1en-healthy-living',
         title: 'Living a Healthier Life',
         source: 'Original article — Level B1',
@@ -268,6 +292,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         moduleId: 'b1en-trip-to-remember',
         title: 'A Trip to Remember',
         source: 'Original text — Level B1',
@@ -279,6 +304,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         moduleId: 'b1en-volunteering',
         title: 'Why People Volunteer',
         source: 'Original article — Level B1',
@@ -290,6 +316,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 2,
         moduleId: 'b1en-learning-language',
         title: 'The Benefits of Learning a Language',
         source: 'Original article — Level B1',
@@ -301,6 +328,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 2,
         moduleId: 'b1en-future-of-food',
         title: 'The Future of Food',
         source: 'Original article — Level B1',
@@ -312,6 +340,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         moduleId: 'b1en-city-vs-country',
         title: 'City Life or Country Life?',
         source: 'Original article — Level B1',
@@ -323,6 +352,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         moduleId: 'b1en-power-of-music',
         title: 'The Power of Music',
         source: 'Original article — Level B1',
@@ -335,6 +365,7 @@ export const readingPassagesEN: ReadingPassage[] = [
     },
     /* ─────────────────────────── B2 ─────────────────────────── */
     {
+        level: 'B2', unit: 1,
         moduleId: 'b2en-digital-education',
         title: 'Education in the Digital Age',
         source: 'Original article — Level B2',
@@ -347,6 +378,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         moduleId: 'b2en-cultural-identity',
         title: 'Cultural Identity in a Globalised World',
         source: 'Original article — Level B2',
@@ -360,6 +392,7 @@ export const readingPassagesEN: ReadingPassage[] = [
     },
 
     {
+        level: 'B2', unit: 2,
         moduleId: 'b2en-ai-everyday',
         title: 'Artificial Intelligence in Everyday Life',
         source: 'Original article — Level B2',
@@ -372,6 +405,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 2,
         moduleId: 'b2en-work-life-balance',
         title: 'Rethinking Work-Life Balance',
         source: 'Original article — Level B2',
@@ -384,6 +418,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         moduleId: 'b2en-misinformation',
         title: 'The Challenge of Misinformation',
         source: 'Original article — Level B2',
@@ -396,6 +431,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         moduleId: 'b2en-urban-nature',
         title: 'Bringing Nature Back to Cities',
         source: 'Original article — Level B2',
@@ -408,6 +444,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 2,
         moduleId: 'b2en-space-exploration',
         title: 'The New Age of Space Exploration',
         source: 'Original article — Level B2',
@@ -420,6 +457,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 2,
         moduleId: 'b2en-future-of-money',
         title: 'The Changing Face of Money',
         source: 'Original article — Level B2',
@@ -432,6 +470,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         moduleId: 'b2en-overtourism',
         title: 'The Problem of Overtourism',
         source: 'Original article — Level B2',
@@ -444,6 +483,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         moduleId: 'b2en-genetic-ethics',
         title: 'The Ethics of Genetic Engineering',
         source: 'Original article — Level B2',
@@ -457,6 +497,7 @@ export const readingPassagesEN: ReadingPassage[] = [
     },
     /* ─────────────────────────── C1 ─────────────────────────── */
     {
+        level: 'C1', unit: 1,
         moduleId: 'c1en-europe',
         title: 'The Future of Europe',
         source: 'Original text — Level C1',
@@ -468,6 +509,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 2,
         moduleId: 'c1en-freedom',
         title: 'On Freedom',
         source: 'Original text — Level C1',
@@ -479,6 +521,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 2,
         moduleId: 'c1en-identity',
         title: 'The Question of Identity',
         source: 'Original text — Level C1',
@@ -490,6 +533,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 3,
         moduleId: 'c1en-healthcare',
         title: 'The Crisis of Rural Healthcare',
         source: 'Original report — Level C1',
@@ -501,6 +545,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1en-shakespeare',
         title: 'Shakespeare and the English Language',
         source: 'Original text — Level C1',
@@ -512,6 +557,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1en-orwell',
         title: 'Orwell and the Politics of Language',
         source: 'Original text — Level C1',
@@ -523,6 +569,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1en-austen',
         title: 'Jane Austen and the Art of Irony',
         source: 'Original text — Level C1',
@@ -534,6 +581,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1en-dickens',
         title: 'Dickens and the Victorian City',
         source: 'Original text — Level C1',
@@ -545,6 +593,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 5,
         moduleId: 'c1en-privacy',
         title: 'The Right to Be Forgotten',
         source: 'Original press article — Level C1',
@@ -558,6 +607,7 @@ export const readingPassagesEN: ReadingPassage[] = [
 
     /* ─────────────────────────── C2 ─────────────────────────── */
     {
+        level: 'C2', unit: 1,
         moduleId: 'c2en-woolf',
         title: 'Virginia Woolf and the Stream of Consciousness',
         source: 'Original text — Level C2',
@@ -569,6 +619,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 2,
         moduleId: 'c2en-eliot',
         title: 'Modernist Poetry and the Fragmented World',
         source: 'Original text — Level C2',
@@ -580,6 +631,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2en-bronte',
         title: 'The Brontës and the Romantic Imagination',
         source: 'Original text — Level C2',
@@ -591,6 +643,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2en-wollstonecraft',
         title: 'Wollstonecraft and the Rights of Woman',
         source: 'Original text — Level C2',
@@ -602,6 +655,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2en-conrad',
         title: 'Conrad and the Heart of Darkness',
         source: 'Original text — Level C2',
@@ -613,6 +667,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2en-james',
         title: 'Henry James and the Inner Drama',
         source: 'Original text — Level C2',
@@ -624,6 +679,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 4,
         moduleId: 'c2en-joyce',
         title: 'Joyce and the Ordinary Made Strange',
         source: 'Original text — Level C2',
@@ -635,6 +691,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 4,
         moduleId: 'c2en-boredom',
         title: 'In Praise of Boredom',
         source: 'Original essay — Level C2',
@@ -646,6 +703,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 5,
         moduleId: 'c2en-university',
         title: 'What Are Universities For?',
         source: 'Original academic text — Level C2',
@@ -657,6 +715,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 5,
         moduleId: 'c2en-editorial',
         title: 'How to Read an Editorial',
         source: 'Original text — Level C2',
@@ -668,6 +727,7 @@ export const readingPassagesEN: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 5,
         moduleId: 'c2en-hardtimes',
         title: 'Dickens and the Critique of Utilitarianism',
         source: 'Original text — Level C2',

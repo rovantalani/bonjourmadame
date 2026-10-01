@@ -1,3 +1,5 @@
+import type { CoursePlacement } from '../curriculum';
+
 export interface GrammarExample {
     french: string;
     english: string;
@@ -16,10 +18,9 @@ export interface GrammarExercise {
     hint?: string;
 }
 
-export interface GrammarLesson {
+export interface GrammarLesson extends CoursePlacement {
     id: string;
     title: string;
-    level: string;
     description: string;
     icon: string;
     color: string;

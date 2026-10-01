@@ -3,16 +3,18 @@ import type { ReadingPassage } from '../../types/lectures/reading';
 export const readingPassages: ReadingPassage[] = [
     // ─── A1 Reading Passages ────────────────────────────────────────────────────
     {
-        moduleId: 'a1-bonjour-je-mappelle-clara',
-        title: 'Bonjour, je m’appelle Clara',
+        level: 'A1', unit: 1,
+        moduleId: 'a1-bonjour-je-mappelle-marie',
+        title: 'Bonjour, je m’appelle Marie',
         source: 'Texte original — niveau A1',
         paragraphs: [
-            'Bonjour ! Je m’appelle Clara. J’ai vingt-six ans et je suis française. J’habite à Toulouse, dans le sud de la France. Je travaille dans une petite agence de voyages.',
+            'Bonjour ! Je m’appelle Marie. J’ai vingt-six ans et je suis française. J’habite à Toulouse, dans le sud de la France. Je travaille dans une petite agence de voyages.',
             'Je parle français et anglais. J’apprends aussi l’espagnol. J’aime les langues, les voyages et la musique. Le week-end, j’aime aller au cinéma ou boire un café avec mes amis.',
             'J’habite avec mon chat, Oscar, dans un petit appartement. Ma famille habite à Bordeaux. Je téléphone souvent à mes parents et je vais les voir une fois par mois.',
         ],
     },
     {
+        level: 'A1', unit: 1,
         moduleId: 'a1-une-nouvelle-collegue',
         title: 'Une Nouvelle Collègue',
         source: 'Texte original — niveau A1',
@@ -23,6 +25,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 1,
         moduleId: 'a1-mon-ami-thomas',
         title: 'Mon Ami Thomas',
         source: 'Texte original — niveau A1',
@@ -33,6 +36,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 1,
         moduleId: 'a1-la-famille-martin',
         title: 'La Famille Martin',
         source: 'Texte original — niveau A1',
@@ -43,6 +47,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 2,
         moduleId: 'a1-une-journee-typique',
         title: 'Une Journée Typique',
         source: 'Texte original — niveau A1',
@@ -53,6 +58,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 2,
         moduleId: 'a1-le-samedi-de-sophie',
         title: 'Le Samedi de Sophie',
         source: 'Texte original — niveau A1',
@@ -63,6 +69,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 2,
         moduleId: 'a1-une-journee-au-travail',
         title: 'Une Journée au Travail',
         source: 'Texte original — niveau A1',
@@ -73,6 +80,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 2,
         moduleId: 'a1-apres-le-travail',
         title: 'Après le Travail',
         source: 'Texte original — niveau A1',
@@ -83,6 +91,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1-mon-appartement',
         title: 'Mon Appartement',
         source: 'Texte original — niveau A1',
@@ -93,6 +102,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1-chez-mes-parents',
         title: 'Chez Mes Parents',
         source: 'Texte original — niveau A1',
@@ -103,6 +113,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1-mon-quartier',
         title: 'Mon Quartier',
         source: 'Texte original — niveau A1',
@@ -113,6 +124,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 3,
         moduleId: 'a1-une-promenade-dans-le-quartier',
         title: 'Une Promenade dans le Quartier',
         source: 'Texte original — niveau A1',
@@ -123,6 +135,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 4,
         moduleId: 'a1-au-cafe',
         title: 'Au Café de la Paix',
         source: 'Texte original — niveau A1',
@@ -134,6 +147,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 4,
         moduleId: 'a1-au-marche',
         title: 'Au Marché',
         source: 'Texte original — niveau A1',
@@ -144,6 +158,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 4,
         moduleId: 'a1-a-la-boulangerie',
         title: 'À la Boulangerie',
         source: 'Texte original — niveau A1',
@@ -154,6 +169,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 4,
         moduleId: 'a1-au-restaurant',
         title: 'Au Restaurant',
         source: 'Texte original — niveau A1',
@@ -164,6 +180,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 5,
         moduleId: 'a1-jaime-le-sport',
         title: 'J’aime le Sport',
         source: 'Texte original — niveau A1',
@@ -174,6 +191,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 5,
         moduleId: 'a1-on-va-au-cinema',
         title: 'On Va au Cinéma ?',
         source: 'Texte original — niveau A1',
@@ -184,6 +202,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 5,
         moduleId: 'a1-une-soiree-entre-amis',
         title: 'Une Soirée Entre Amis',
         source: 'Texte original — niveau A1',
@@ -194,6 +213,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 5,
         moduleId: 'a1-tu-viens-samedi',
         title: 'Tu Viens Samedi ?',
         source: 'Texte original — niveau A1',
@@ -204,6 +224,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 6,
         moduleId: 'a1-je-vais-au-travail',
         title: 'Je Vais au Travail',
         source: 'Texte original — niveau A1',
@@ -214,6 +235,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 6,
         moduleId: 'a1-ou-est-la-gare',
         title: 'Où Est la Gare ?',
         source: 'Texte original — niveau A1',
@@ -224,6 +246,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 6,
         moduleId: 'a1-a-la-gare',
         title: 'À la Gare',
         source: 'Texte original — niveau A1',
@@ -234,6 +257,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 6,
         moduleId: 'a1-un-week-end-a-lyon',
         title: 'Un Week-end à Lyon',
         source: 'Texte original — niveau A1',
@@ -244,6 +268,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 7,
         moduleId: 'a1-une-journee-a-marseille',
         title: 'Une Journée à Marseille',
         source: 'Texte original — niveau A1',
@@ -255,6 +280,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 7,
         moduleId: 'a1-une-visite-chez-des-amis',
         title: 'Une Visite Chez des Amis',
         source: 'Texte original — niveau A1',
@@ -266,6 +292,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 7,
         moduleId: 'a1-mes-premieres-semaines-en-france',
         title: 'Mes Premières Semaines en France',
         source: 'Texte original — niveau A1',
@@ -277,6 +304,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A1', unit: 7,
         moduleId: 'a1-un-week-end-a-la-campagne',
         title: 'Un Week-end à la Campagne',
         source: 'Texte original — niveau A1',
@@ -290,6 +318,7 @@ export const readingPassages: ReadingPassage[] = [
 
     // ─── A2 Reading Passages ────────────────────────────────────────────────────
     {
+        level: 'A2', unit: 1,
         moduleId: 'a2-une-journee-typique',
         title: 'La Journée de Clara',
         source: 'Texte original — niveau A2',
@@ -301,6 +330,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 3,
         moduleId: 'a2-vacances-en-bretagne',
         title: 'Vacances en Bretagne',
         source: 'Texte original — niveau A2',
@@ -312,6 +342,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 5,
         moduleId: 'a2-le-marche',
         title: 'Le Marché du Dimanche',
         source: 'Texte original — niveau A2',
@@ -323,6 +354,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 5,
         moduleId: 'a2-une-lettre-damitie',
         title: 'Une Lettre d\'Amitié',
         source: 'Texte original — niveau A2',
@@ -334,6 +366,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'A2', unit: 5,
         moduleId: 'a2-recette-francaise',
         title: 'La Tarte aux Pommes de Grand-Mère',
         source: 'Texte original — niveau A2',
@@ -346,6 +379,7 @@ export const readingPassages: ReadingPassage[] = [
     },
     // ─── B1 Reading Passages ────────────────────────────────────────────────────
     {
+        level: 'B1', unit: 1,
         moduleId: 'b1-une-histoire-de-famille',
         title: 'Une Histoire de Famille',
         source: 'Texte original — niveau B1',
@@ -357,6 +391,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 2,
         moduleId: 'b1-le-travail-a-distance',
         title: 'Le Travail à Distance : Révolution ou Illusion ?',
         source: 'Texte original — niveau B1',
@@ -368,6 +403,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 3,
         moduleId: 'b1-voyage-en-provence',
         title: 'Carnet de Voyage : La Provence en Juillet',
         source: 'Texte original — niveau B1',
@@ -379,6 +415,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 4,
         moduleId: 'b1-interview-artiste',
         title: 'Rencontre avec une Artiste',
         source: 'Texte original — niveau B1',
@@ -390,6 +427,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 5,
         moduleId: 'b1-une-lettre-a-ami',
         title: 'Lettre à un Ami',
         source: 'Texte original — niveau B1',
@@ -401,6 +439,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 5,
         moduleId: 'b1-article-jeunesse',
         title: 'La Jeunesse Française Aujourd\'hui',
         source: 'Texte original — niveau B1',
@@ -412,6 +451,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B1', unit: 5,
         moduleId: 'b1-temoignage-expatrie',
         title: 'Témoignage d\'un Expatrié',
         source: 'Texte original — niveau B1',
@@ -424,6 +464,7 @@ export const readingPassages: ReadingPassage[] = [
     },
     // ─── B2 Reading Passages ────────────────────────────────────────────────────
     {
+        level: 'B2', unit: 1,
         moduleId: 'b2-article-education',
         title: 'L\'École de la République : Promesse ou Illusion ?',
         source: 'Texte original — niveau B2',
@@ -435,6 +476,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 2,
         moduleId: 'b2-debat-ecologie',
         title: 'Nucléaire ou Renouvelable : Le Grand Débat',
         source: 'Texte original — niveau B2',
@@ -446,6 +488,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 4,
         moduleId: 'b2-chronique-societale',
         title: 'Réseaux Sociaux et Santé Mentale : La Génération Sous Pression',
         source: 'Texte original — niveau B2',
@@ -457,6 +500,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 5,
         moduleId: 'b2-nouvelles-francophones',
         title: 'Le Retour',
         source: 'Texte original — niveau B2 (inspiration francophone)',
@@ -468,6 +512,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 3,
         moduleId: 'b2-lettre-ouverte',
         title: 'Lettre Ouverte au Maire de Bordeaux',
         source: 'Texte original — niveau B2',
@@ -479,6 +524,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 5,
         moduleId: 'b2-interview-intellectuel',
         title: 'Entretien avec une Philosophe',
         source: 'Texte original — niveau B2',
@@ -490,6 +536,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'B2', unit: 5,
         moduleId: 'b2-article-scientifique-vulgarise',
         title: 'L\'Intelligence Artificielle va-t-elle Remplacer les Médecins ?',
         source: 'Texte original — niveau B2',
@@ -502,6 +549,7 @@ export const readingPassages: ReadingPassage[] = [
     },
     // ─── C1 Passages ────────────────────────────────────────────────────────────
     {
+        level: 'C1', unit: 1,
         moduleId: 'c1-discours-politique',
         title: 'L\'Europe face à ses contradictions',
         source: 'Texte original — niveau C1',
@@ -513,6 +561,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 2,
         moduleId: 'c1-article-philosophique',
         title: 'La Liberté est-elle une illusion ?',
         source: 'Texte original — niveau C1',
@@ -524,6 +573,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1-moliere-extract',
         title: 'Le Misanthrope — Acte I, Scène 1 (extrait adapté)',
         source: 'Molière, Le Misanthrope (1666) — texte adapté, niveau C1',
@@ -534,6 +584,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1-camus-etranger',
         title: 'L\'Étranger — Chapitre premier (extrait adapté)',
         source: 'Albert Camus, L\'Étranger (1942) — texte adapté, niveau C1',
@@ -545,6 +596,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1-voltaire-candide',
         title: 'Candide — Chapitre premier (extrait adapté)',
         source: 'Voltaire, Candide ou l\'Optimisme (1759) — texte adapté, niveau C1',
@@ -555,6 +607,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 4,
         moduleId: 'c1-roman-contemporain',
         title: 'Les Années — Portrait d\'une génération (extrait adapté)',
         source: 'Annie Ernaux, Les Années (2008) — texte adapté, niveau C1',
@@ -566,6 +619,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 2,
         moduleId: 'c1-essai-identite',
         title: 'Identité : entre héritage et construction de soi',
         source: 'Texte original — niveau C1',
@@ -577,6 +631,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 3,
         moduleId: 'c1-reportage-social',
         title: 'Les déserts médicaux : une France qui souffre en silence',
         source: 'Texte original — niveau C1',
@@ -588,6 +643,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C1', unit: 5,
         moduleId: 'c1-article-presse-specialisee',
         title: 'Le droit à l\'oubli numérique : entre mémoire et effacement',
         source: 'Texte original — niveau C1',
@@ -600,6 +656,7 @@ export const readingPassages: ReadingPassage[] = [
     },
     // ─── C2 Passages ────────────────────────────────────────────────────────────
     {
+        level: 'C2', unit: 1,
         moduleId: 'c2-proust-extract',
         title: 'La Madeleine — Du côté de chez Swann (extrait adapté)',
         source: 'Marcel Proust, Du côté de chez Swann (1913) — extrait adapté, niveau C2',
@@ -611,6 +668,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2-hugo-les-miserables',
         title: 'Les Chandelliers de l\'Évêque — Les Misérables (extrait adapté)',
         source: 'Victor Hugo, Les Misérables (1862) — extrait adapté, niveau C2',
@@ -622,6 +680,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2-beauvoir-deuxieme-sexe',
         title: 'On ne naît pas femme — Le Deuxième Sexe (extrait adapté)',
         source: 'Simone de Beauvoir, Le Deuxième Sexe (1949) — extrait adapté, niveau C2',
@@ -633,6 +692,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2-sartre-huis-clos',
         title: 'L\'Enfer, c\'est les autres — Huis Clos (extrait adapté)',
         source: 'Jean-Paul Sartre, Huis Clos (1944) — extrait adapté, niveau C2',
@@ -644,6 +704,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 3,
         moduleId: 'c2-balzac-goriot',
         title: 'Le Père Goriot — Portrait d\'un Paris impitoyable (extrait adapté)',
         source: 'Honoré de Balzac, Le Père Goriot (1835) — extrait adapté, niveau C2',
@@ -655,6 +716,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 4,
         moduleId: 'c2-flaubert-bovary',
         title: 'Emma Bovary — Style Indirect Libre (extrait adapté)',
         source: 'Gustave Flaubert, Madame Bovary (1857) — extrait adapté, niveau C2',
@@ -666,6 +728,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 2,
         moduleId: 'c2-poesie-symboliste',
         title: 'Correspondances — Baudelaire (extrait et analyse)',
         source: 'Charles Baudelaire, Les Fleurs du Mal (1857) — texte et analyse, niveau C2',
@@ -677,6 +740,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 4,
         moduleId: 'c2-essay-contemporary',
         title: 'L\'Ennui au XX° siècle — Essai (texte original)',
         source: 'Texte original — niveau C2',
@@ -688,6 +752,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 5,
         moduleId: 'c2-discours-academique',
         title: 'L\'Université et la Société — Leçon inaugurale (extrait adapté)',
         source: 'Texte original inspiré du Collège de France — niveau C2',
@@ -699,6 +764,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
+        level: 'C2', unit: 5,
         moduleId: 'c2-news-analysis',
         title: 'Comment lire un éditorial — Analyse de presse',
         source: 'Texte original — niveau C2',

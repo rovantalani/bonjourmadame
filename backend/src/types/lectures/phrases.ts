@@ -1,3 +1,5 @@
+import type { CoursePlacement } from '../curriculum';
+
 export interface Phrase {
     id: number;
     french: string;
@@ -5,7 +7,7 @@ export interface Phrase {
     note?: string;
 }
 
-export interface PhraseCategory {
+export interface PhraseCategory extends CoursePlacement {
     id: string;
     title: string;
     titleFR: string;
