@@ -13,6 +13,14 @@ const summarizeVerb = ({ id, infinitive, translation, type, color }: VerbEntry) 
 
 export function createContentRouter(content: LearningContent): Router {
     const router = Router();
+    router.get('/courses', (_req, res) => {
+        res.json(content.courses);
+    });
+    router.get('/courses/:level', (req, res) => {
+        const course = content.courses.find(item => item.level.toLowerCase() === req.params.level.toLowerCase());
+        if (!course) { res.status(404).json({ error: 'Course not found' }); return; }
+        res.json(course);
+    });
 // WHy are we not grtting by CERF course here? We are always getting all modules in the content files. 
 // Thhat's very inefficient as the next task is to increase the content 
 // I think the structure of the backend should be like this : 

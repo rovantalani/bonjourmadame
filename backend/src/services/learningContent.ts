@@ -3,6 +3,9 @@ import type { GrammarLesson } from '../types/lectures/grammar';
 import type { PhraseCategory } from '../types/lectures/phrases';
 import type { ReadingPassage } from '../types/lectures/reading';
 import type { HelperVerbFR, HelperVerbEN, VerbEntry, VerbGroup } from '../types/verbs';
+import type { Course } from '../types/courses';
+import { COURSES } from '../content/fr/courses';
+import { COURSES_EN } from '../content/en/courses';
 import { vocabularyData } from '../content/fr/vocabulary';
 import { vocabularyModules } from '../content/fr/modules';
 import { grammarLessons } from '../content/fr/grammar';
@@ -19,6 +22,7 @@ import * as englishVerbs from '../content/en/verbs';
 export type TargetLanguage = 'fr' | 'en';
 
 export interface LearningContent {
+    courses: Course[];
     vocabulary: VocabularyData;
     modules: { id: string; title: string; description: string; icon: string; color: string }[];
     grammar: GrammarLesson[];
@@ -35,6 +39,7 @@ export interface LearningContent {
 // import each other, and request handlers receive only the selected catalog.
 export const learningContent: Record<TargetLanguage, LearningContent> = {
     fr: {
+        courses: COURSES,
         vocabulary: vocabularyData,
         modules: vocabularyModules,
         grammar: grammarLessons,
@@ -47,6 +52,7 @@ export const learningContent: Record<TargetLanguage, LearningContent> = {
         helpers: frenchVerbs.helperVerbsDataFR,
     },
     en: {
+        courses: COURSES_EN,
         vocabulary: vocabularyDataEN,
         modules: vocabularyModulesEN,
         grammar: grammarLessonsEN,

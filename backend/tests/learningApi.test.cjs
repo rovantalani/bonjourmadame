@@ -18,6 +18,7 @@ function fixture(language) {
     const phrases = { ...source.phrases[0], id: 'shared', title: `${language} phrases` };
     const reading = { ...source.reading[0], moduleId: 'shared', title: `${language} reading` };
     return {
+        courses: [{ ...source.courses[0], title: `${language} course` }],
         vocabulary: { shared: Array(language === 'fr' ? 1 : 2).fill(word), [`${language}-only`]: [word] },
         modules: [{ ...source.modules[0], id: 'shared', title: `${language} module` }],
         grammar: [grammar, { ...grammar, id: `${language}-only` }],
@@ -56,6 +57,10 @@ for (const language of ['fr', 'en']) {
     test(`${language} scoped endpoints serve only their catalog and preserve response shapes`, async () => {
         const c = learningContent[language];
         const prefix = `/api/learning/${language}`;
+        assert.deepEqual(await get(`${prefix}/courses`), c.courses);
+        for (const course of c.courses) {
+            assert.deepEqual(await get(`${prefix}/courses/${course.level.toLowerCase()}`), course);
+        }
         const modules = await get(`${prefix}/vocabulary/modules`);
         assert.deepEqual(modules, c.modules.map(({ id, title, description, icon, color }) => ({
             id, title, description, icon, color, wordCount: (c.vocabulary[id] ?? []).length,
@@ -98,6 +103,8 @@ for (const language of ['fr', 'en']) {
     test(`${language} overlapping fixture IDs resolve independently across every content type`, async () => {
         const c = fixtures[language];
         const prefix = `/fixtures/${language}`;
+        assert.equal((await get(`${prefix}/courses/a1`)).title, `${language} course`);
+        assert.equal((await get(`${prefix}/courses`))[0].title, `${language} course`);
         const modules = await get(`${prefix}/vocabulary/modules`);
         assert.equal(modules[0].title, `${language} module`);
         assert.equal(modules[0].wordCount, c.vocabulary.shared.length);
@@ -125,7 +132,7 @@ test('missing or unsupported language returns 400 without a default or SPA fallb
 test('unknown routes and prototype property IDs return JSON 404 in both languages', async () => {
     for (const language of ['fr', 'en']) {
         const prefix = `/api/learning/${language}`;
-        for (const route of ['vocabulary', 'lectures/grammar', 'lectures/phrases', 'lectures/reading', 'verbs/helpers', 'verbs/groups', 'verbs/conjugation', 'verbs/courses']) {
+        for (const route of ['courses', 'vocabulary', 'lectures/grammar', 'lectures/phrases', 'lectures/reading', 'verbs/helpers', 'verbs/groups', 'verbs/conjugation', 'verbs/courses']) {
             for (const id of ['missing', 'constructor', '__proto__', 'toString']) {
                 await get(`${prefix}/${route}/${id}`, 404);
             }

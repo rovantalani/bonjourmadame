@@ -1,20 +1,13 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
-const vm = require('node:vm');
-const ts = require('typescript');
 const { learningContent } = require('../dist/services/learningContent');
 const frVerbs = require('../dist/content/fr/verbs');
 const enVerbs = require('../dist/content/en/verbs');
 const { vocabularyData } = require('../dist/content/fr/vocabulary');
 
 function courses(language) {
-    const source = fs.readFileSync(path.join(__dirname, `../../frontend/src/data/${language}/courses.ts`), 'utf8');
-    const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
-    const exports = {};
-    vm.runInNewContext(compiled, { exports });
-    return Object.values(exports)[0];
+    const data = require(`../dist/content/${language}/courses`);
+    return data.COURSES ?? data.COURSES_EN;
 }
 
 test('French A1 readings and their vocabulary follow the seven-unit syllabus', () => {
