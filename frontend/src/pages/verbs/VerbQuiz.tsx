@@ -1,31 +1,16 @@
+import { useLearning } from '../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
+import type { ConjugationRow } from '../../data/courseTypes';
 import { gradeAnswer, type AnswerResult } from '../../utils/answerValidator';
 import { useT } from '../../utils/i18n';
 import { useLearningVisit } from '../../hooks/useLearningVisit';
 import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { loadLearningMode } from '../../utils/settings';
+import { useParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
 import { CheckCircleIcon, RefreshIcon } from '../../components/icons/index';
 import './VerbQuiz.css';
 
-interface ConjugationRow {
-    sujet: string;
-    present: string;
-    passeCompose: string;
-    imparfait: string;
-    futurSimple: string;
-    conditionnelPresent?: string;
-    subjonctifPresent?: string;
-    plusQueParfait?: string;
-    futurAnterieur?: string;
-    conditionnelPasse?: string;
-    subjonctifPasse?: string;
-    passeSimple?: string;
-    subjonctifImparfait?: string;
-    subjonctifPlusQueParfait?: string;
-    passeAnterieur?: string;
-}
 
 interface VerbData {
     infinitive: string;
@@ -36,108 +21,15 @@ interface VerbData {
     rows: ConjugationRow[];
 }
 
-type TenseKey = keyof Omit<ConjugationRow, 'sujet'>;
 type Phase = 'quiz' | 'review' | 'complete';
 type CellResult = AnswerResult;
 
-interface TenseDef {
-    key: TenseKey;
-    label: string;
-    labelFR: string;
-}
 
 const CEFR_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 
 // All tenses cumulative per level (quizzable only — passeAnterieur excluded)
-const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
-    a1: [
-        { key: 'present',      label: 'Présent',       labelFR: 'Présent'       },
-        { key: 'passeCompose', label: 'Passé composé', labelFR: 'Passé composé' },
-    ],
-    a2: [
-        { key: 'present',      label: 'Présent',       labelFR: 'Présent'       },
-        { key: 'passeCompose', label: 'Passé composé', labelFR: 'Passé composé' },
-        { key: 'imparfait',    label: 'Imparfait',     labelFR: 'Imparfait'     },
-        { key: 'futurSimple',  label: 'Futur simple',  labelFR: 'Futur simple'  },
-    ],
-    b1: [
-        { key: 'present',             label: 'Présent',              labelFR: 'Présent'              },
-        { key: 'passeCompose',        label: 'Passé composé',        labelFR: 'Passé composé'        },
-        { key: 'imparfait',           label: 'Imparfait',            labelFR: 'Imparfait'            },
-        { key: 'futurSimple',         label: 'Futur simple',         labelFR: 'Futur simple'         },
-        { key: 'conditionnelPresent', label: 'Conditionnel présent', labelFR: 'Conditionnel présent' },
-        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   labelFR: 'Subjonctif présent'   },
-        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     labelFR: 'Plus-que-parfait'     },
-    ],
-    b2: [
-        { key: 'present',             label: 'Présent',              labelFR: 'Présent'              },
-        { key: 'passeCompose',        label: 'Passé composé',        labelFR: 'Passé composé'        },
-        { key: 'imparfait',           label: 'Imparfait',            labelFR: 'Imparfait'            },
-        { key: 'futurSimple',         label: 'Futur simple',         labelFR: 'Futur simple'         },
-        { key: 'conditionnelPresent', label: 'Conditionnel présent', labelFR: 'Conditionnel présent' },
-        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   labelFR: 'Subjonctif présent'   },
-        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     labelFR: 'Plus-que-parfait'     },
-        { key: 'futurAnterieur',      label: 'Futur antérieur',      labelFR: 'Futur antérieur'      },
-        { key: 'conditionnelPasse',   label: 'Conditionnel passé',   labelFR: 'Conditionnel passé'   },
-        { key: 'subjonctifPasse',     label: 'Subjonctif passé',     labelFR: 'Subjonctif passé'     },
-    ],
-    c1: [
-        { key: 'present',                  label: 'Présent',                     labelFR: 'Présent'                     },
-        { key: 'passeCompose',             label: 'Passé composé',               labelFR: 'Passé composé'               },
-        { key: 'imparfait',                label: 'Imparfait',                   labelFR: 'Imparfait'                   },
-        { key: 'futurSimple',              label: 'Futur simple',                labelFR: 'Futur simple'                },
-        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        labelFR: 'Conditionnel présent'        },
-        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          labelFR: 'Subjonctif présent'          },
-        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            labelFR: 'Plus-que-parfait'            },
-        { key: 'futurAnterieur',           label: 'Futur antérieur',             labelFR: 'Futur antérieur'             },
-        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          labelFR: 'Conditionnel passé'          },
-        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            labelFR: 'Subjonctif passé'            },
-        { key: 'passeSimple',              label: 'Passé simple',                labelFR: 'Passé simple'                },
-        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait'        },
-        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait' },
-    ],
-    c2: [
-        { key: 'present',                  label: 'Présent',                     labelFR: 'Présent'                     },
-        { key: 'passeCompose',             label: 'Passé composé',               labelFR: 'Passé composé'               },
-        { key: 'imparfait',                label: 'Imparfait',                   labelFR: 'Imparfait'                   },
-        { key: 'futurSimple',              label: 'Futur simple',                labelFR: 'Futur simple'                },
-        { key: 'conditionnelPresent',      label: 'Conditionnel présent',        labelFR: 'Conditionnel présent'        },
-        { key: 'subjonctifPresent',        label: 'Subjonctif présent',          labelFR: 'Subjonctif présent'          },
-        { key: 'plusQueParfait',           label: 'Plus-que-parfait',            labelFR: 'Plus-que-parfait'            },
-        { key: 'futurAnterieur',           label: 'Futur antérieur',             labelFR: 'Futur antérieur'             },
-        { key: 'conditionnelPasse',        label: 'Conditionnel passé',          labelFR: 'Conditionnel passé'          },
-        { key: 'subjonctifPasse',          label: 'Subjonctif passé',            labelFR: 'Subjonctif passé'            },
-        { key: 'passeSimple',              label: 'Passé simple',                labelFR: 'Passé simple'                },
-        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait'        },
-        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait' },
-        // passeAnterieur excluded — recognition only, not quizzed
-    ],
-};
 
 // Only the NEW tenses introduced at each level (for review verb quizzes)
-const NEW_TENSES_FOR_LEVEL: Record<string, TenseDef[]> = {
-    a1: TENSES_BY_LEVEL.a1,
-    a2: [
-        { key: 'imparfait',   label: 'Imparfait',    labelFR: 'Imparfait'    },
-        { key: 'futurSimple', label: 'Futur simple', labelFR: 'Futur simple' },
-    ],
-    b1: [
-        { key: 'conditionnelPresent', label: 'Conditionnel présent', labelFR: 'Conditionnel présent' },
-        { key: 'subjonctifPresent',   label: 'Subjonctif présent',   labelFR: 'Subjonctif présent'   },
-        { key: 'plusQueParfait',      label: 'Plus-que-parfait',     labelFR: 'Plus-que-parfait'     },
-    ],
-    b2: [
-        { key: 'futurAnterieur',    label: 'Futur antérieur',    labelFR: 'Futur antérieur'    },
-        { key: 'conditionnelPasse', label: 'Conditionnel passé', labelFR: 'Conditionnel passé' },
-        { key: 'subjonctifPasse',   label: 'Subjonctif passé',   labelFR: 'Subjonctif passé'   },
-    ],
-    c1: [
-        { key: 'passeSimple',              label: 'Passé simple',                labelFR: 'Passé simple'                },
-        { key: 'subjonctifImparfait',      label: 'Subjonctif imparfait',        labelFR: 'Subjonctif imparfait'        },
-        { key: 'subjonctifPlusQueParfait', label: 'Subjonctif plus-que-parfait', labelFR: 'Subjonctif plus-que-parfait' },
-    ],
-    c2: [],
-};
 
 
 function displaySujet(sujet: string, form: string): string {
@@ -148,10 +40,11 @@ function displaySujet(sujet: string, form: string): string {
 }
 
 export default function VerbQuiz() {
+    const { tenses: TENSES_BY_LEVEL, language } = useLearning();
     const t = useT();
     const { level, verbId } = useParams<{ level: string; verbId: string }>();
     const navigate = useNavigate();
-    const isENUI = loadLearningMode() === 'learn-english';
+    const isENUI = language === 'en';
 
     const [verb, setVerb] = useState<VerbData | null>(null);
 
@@ -170,15 +63,14 @@ export default function VerbQuiz() {
     const firstInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        const langParam = loadLearningMode() === 'learn-english' ? '?lang=fr' : '';
-        fetch(`${import.meta.env.VITE_API_BASE}/api/verbs/conjugation/${verbId}${langParam}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/verbs/conjugation/${verbId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
             })
             .then((data: VerbData) => setVerb(data))
             .catch(() => {});
-    }, [verbId]);
+    }, [verbId, language]);
 
     useEffect(() => {
         if (!submitted) {
@@ -203,9 +95,11 @@ export default function VerbQuiz() {
     const isReviewVerb = verbLevelIdx >= 0 && currentLevelIdx > verbLevelIdx;
 
     // Which tenses to quiz: if review verb → only new tenses for this level; if new verb → all cumulative tenses
-    const TENSES = isReviewVerb
-        ? (NEW_TENSES_FOR_LEVEL[levelKey] ?? TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2'])
-        : (TENSES_BY_LEVEL[levelKey] ?? TENSES_BY_LEVEL['a2']);
+    const available = (TENSES_BY_LEVEL[levelKey] ?? []).filter(tense =>
+        tense.quizzable && verb.rows.every(row => !!row[tense.key]));
+    const previousKeys = new Set((TENSES_BY_LEVEL[CEFR_ORDER[currentLevelIdx - 1]] ?? []).map(tense => tense.key));
+    const newTenses = available.filter(tense => !previousKeys.has(tense.key));
+    const TENSES = isReviewVerb && newTenses.length ? newTenses : available;
 
     const handleExit = () => navigate(`/courses/${level}/verbs`);
 
@@ -387,7 +281,7 @@ export default function VerbQuiz() {
                         </span>
                     )}
                     <h2 className="vq-tense-title" style={{ color: 'var(--tag-verbs-text)' }}>
-                        {isENUI ? currentTense.labelFR : currentTense.label}
+                        {currentTense.label}
                     </h2>
                     {isReview && (
                         <p className="vq-review-hint">

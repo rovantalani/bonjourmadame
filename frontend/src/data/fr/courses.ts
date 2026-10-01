@@ -105,7 +105,7 @@ export const COURSES: Course[] = [
             { id: 'a2-transport',         title: 'Transport & Travel',            module: 'vocabulary', type: 'vocabulary', contentId: 'transport-travel',           path: '/vocabulary/transport-travel',                   unit: 3 },
             { id: 'a2-hotel',             title: 'At the Hotel',                  module: 'lectures', type: 'phrases',    contentId: 'at-the-hotel',               path: '/lectures/phrases/at-the-hotel',                          unit: 3 },
             { id: 'a2-direct-object',     title: 'Direct Object Pronouns',        module: 'lectures', type: 'grammar',    contentId: 'direct-object-pronouns',     path: '/lectures/grammar/direct-object-pronouns',        unit: 3 },
-            { id: 'a2-regular-verbs',     title: 'Regular Verbs',                 module: 'verbs', type: 'verbs',      contentId: 'regular-verbs',              path: '/verbs/regular-verbs',                         unit: 3 },
+            { id: 'a2-regular-verbs',     title: 'Regular Verbs',                 module: 'verbs', type: 'verbs',      contentId: 'a2',              path: '/verbs/a2',                         unit: 3 },
             { id: 'a2-reading-bretagne',  title: 'Reading: Vacances en Bretagne', module: 'lectures', type: 'reading',    contentId: 'a2-vacances-en-bretagne',    path: '/lectures/reading/a2-vacances-en-bretagne',               unit: 3 },
             // Unit 4 — Vie Sociale (7 steps)
             { id: 'a2-sports',            title: 'Sports & Hobbies',              module: 'vocabulary', type: 'vocabulary', contentId: 'sports-hobbies',             path: '/vocabulary/sports-hobbies',                     unit: 4 },
@@ -166,7 +166,7 @@ export const COURSES: Course[] = [
             { id: 'b1-getting-around',     title: 'Getting Around',                 module: 'lectures', type: 'phrases',    contentId: 'getting-around',             path: '/lectures/phrases/getting-around',                    unit: 3 },
             { id: 'b1-y-en-pronouns',      title: 'Pronouns Y & En',                module: 'lectures', type: 'grammar',    contentId: 'y-en-pronouns',              path: '/lectures/grammar/y-en-pronouns',             unit: 3 },
             { id: 'b1-art-culture',        title: 'Art & Culture',                  module: 'vocabulary', type: 'vocabulary', contentId: 'art-culture',                path: '/vocabulary/art-culture',                    unit: 3 },
-            { id: 'b1-irregular-verbs',    title: 'Irregular Verbs',                module: 'verbs', type: 'verbs',      contentId: 'irregular-verbs',            path: '/verbs/irregular-verbs',                   unit: 3 },
+            { id: 'b1-irregular-verbs',    title: 'Irregular Verbs',                module: 'verbs', type: 'verbs',      contentId: 'b1',            path: '/verbs/b1',                   unit: 3 },
             { id: 'b1-museum',             title: 'At the Museum / Event',          module: 'lectures', type: 'phrases',    contentId: 'at-the-museum-event',        path: '/lectures/phrases/at-the-museum-event',               unit: 3 },
             { id: 'b1-reading-provence',   title: 'Reading: Voyage en Provence',    module: 'lectures', type: 'reading',    contentId: 'b1-voyage-en-provence',      path: '/lectures/reading/b1-voyage-en-provence',             unit: 3 },
             // Unit 4 — Travail & Société (8 steps)
@@ -231,7 +231,7 @@ export const COURSES: Course[] = [
             { id: 'b2-formal-correspondence', title: 'Formal Correspondence',          module: 'lectures', type: 'phrases',    contentId: 'formal-correspondence',         path: '/lectures/phrases/formal-correspondence',                  unit: 3 },
             { id: 'b2-reading-lettre',        title: 'Reading: Lettre Ouverte',        module: 'lectures', type: 'reading',    contentId: 'b2-lettre-ouverte',             path: '/lectures/reading/b2-lettre-ouverte',                      unit: 3 },
             // Unit 4 — Textes Authentiques (8 steps)
-            { id: 'b2-adv-verbs',             title: 'Advanced Irregular Verbs',       module: 'verbs', type: 'verbs',      contentId: 'advanced-irregular-verbs',      path: '/verbs/advanced-irregular-verbs',               unit: 4 },
+            { id: 'b2-adv-verbs',             title: 'Advanced Irregular Verbs',       module: 'verbs', type: 'verbs',      contentId: 'b2',      path: '/verbs/b2',               unit: 4 },
             { id: 'b2-philosophy',            title: 'Philosophy & Ethics',            module: 'vocabulary', type: 'vocabulary', contentId: 'philosophy-ethics',             path: '/vocabulary/philosophy-ethics',                   unit: 4 },
             { id: 'b2-infinitive',            title: 'Infinitive Constructions',       module: 'lectures', type: 'grammar',    contentId: 'infinitive-constructions',      path: '/lectures/grammar/infinitive-constructions',       unit: 4 },
             { id: 'b2-arts',                  title: 'Arts & Criticism',               module: 'vocabulary', type: 'vocabulary', contentId: 'arts-and-criticism',            path: '/vocabulary/arts-and-criticism',                  unit: 4 },

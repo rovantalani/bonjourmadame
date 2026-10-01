@@ -1,6 +1,8 @@
+import { useLearning } from '../../../context/LearningContext';
+import { useLearningNavigate as useNavigate } from '../../../hooks/useLearningNavigation';
 import LearningCompletion from '../../../components/LearningCompletion';
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useT } from '../../../utils/i18n';
 import SpeakerButton from '../../../components/SpeakerButton';
 import './PhraseDetail.css';
@@ -22,6 +24,7 @@ interface PhraseCategoryData {
 }
 
 export default function PhraseDetail() {
+    const { language } = useLearning();
     const { level, categoryId } = useParams<{ level: string; categoryId: string }>();
     const navigate = useNavigate();
     const t = useT();
@@ -32,7 +35,7 @@ export default function PhraseDetail() {
     useEffect(() => {
         setLoading(true);
         setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/lectures/phrases/${categoryId}`)
+        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/lectures/phrases/${categoryId}`)
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
@@ -45,7 +48,7 @@ export default function PhraseDetail() {
                 setError(true);
                 setLoading(false);
             });
-    }, [categoryId]);
+    }, [categoryId, language]);
 
     if (loading) {
         return (
