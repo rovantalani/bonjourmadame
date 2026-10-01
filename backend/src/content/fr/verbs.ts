@@ -1263,7 +1263,7 @@ export const verbsData: Record<string, VerbEntry[]> = {
 
 export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
     etre: {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 2,
         title: 'Être',
         translation: 'to be',
         color: '#2563EB',
@@ -1277,7 +1277,7 @@ export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
         ],
     },
     avoir: {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 2,
         title: 'Avoir',
         translation: 'to have',
         color: '#16A34A',
@@ -1291,7 +1291,7 @@ export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
         ],
     },
     faire: {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 2,
         title: 'Faire',
         translation: 'to do / make',
         color: '#EA580C',
@@ -1305,7 +1305,7 @@ export const helperVerbsDataFR: Record<string, HelperVerbFR> = {
         ],
     },
     aller: {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 6,
         title: 'Aller',
         translation: 'to go',
         color: '#7C3AED',

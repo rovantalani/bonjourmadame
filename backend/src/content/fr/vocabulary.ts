@@ -6,7 +6,7 @@ export const vocabularyData: VocabularyData = {
     
     // A1 Reading Passages
 
-    'a1-bonjour-je-mappelle-clara': [
+    'a1-bonjour-je-mappelle-marie': [
         { id: 1, english: 'to be called / named', french: 's\'appeler' },
         { id: 2, english: 'French (nationality)', french: 'français / française' },
         { id: 3, english: 'to live', french: 'habiter' },

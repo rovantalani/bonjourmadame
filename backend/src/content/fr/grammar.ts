@@ -112,7 +112,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 1,
+        unit: 2,
         id: 'telling-time',
         title: 'Telling the Time',
         level: 'A1',
@@ -174,7 +174,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 2,
+        unit: 3,
         id: 'possessive-adjectives',
         title: 'Possessive Adjectives',
         level: 'A1',
@@ -223,7 +223,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 2,
+        unit: 3,
         id: 'prepositions-place',
         title: 'Prepositions of Place',
         level: 'A1',
@@ -274,7 +274,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 2,
+        unit: 3,
         id: 'adjective-basics',
         title: 'Adjective Agreement & Position',
         level: 'A1',
@@ -325,7 +325,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 3,
+        unit: 2,
         id: 'present-tense-er',
         title: 'Present Tense: -ER Verbs',
         level: 'A1',
@@ -376,7 +376,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 4,
+        unit: 3,
         id: 'demonstrative-adjectives',
         title: 'Demonstrative Adjectives',
         level: 'A1',
@@ -426,7 +426,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 2,
+        unit: 1,
         id: 'stress-pronouns',
         title: 'Stress Pronouns',
         level: 'A1',
@@ -478,7 +478,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 3,
+        unit: 4,
         id: 'partitive-articles',
         title: 'Partitive Articles',
         level: 'A1',
@@ -528,7 +528,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 3,
+        unit: 5,
         id: 'vouloir-pouvoir-devoir',
         title: 'Modal Verbs: vouloir, pouvoir, devoir',
         level: 'A1',
@@ -580,7 +580,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 4,
+        unit: 5,
         id: 'futur-proche',
         title: 'Le Futur Proche',
         level: 'A1',
@@ -630,7 +630,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 5,
+        unit: 2,
         id: 'present-tense-ir-re',
         title: 'Present Tense: -IR and -RE Verbs',
         level: 'A1',
@@ -691,7 +691,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 4,
+        unit: 2,
         id: 'negation',
         title: 'Negation',
         level: 'A1',
@@ -742,7 +742,7 @@ export const grammarLessons: GrammarLesson[] = [
         ],
     },
     {
-        unit: 4,
+        unit: 5,
         id: 'questions',
         title: 'Asking Questions',
         level: 'A1',

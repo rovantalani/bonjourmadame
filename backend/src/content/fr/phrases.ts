@@ -897,7 +897,7 @@ export const phraseCategories: PhraseCategory[] = [
     },
 
     {
-        level: 'A1', unit: 2,
+        level: 'A1', unit: 3,
         id: 'describing-your-home',
         title: 'Describing Your Home',
         titleFR: 'Décrire son logement',
@@ -924,7 +924,7 @@ export const phraseCategories: PhraseCategory[] = [
         ],
     },
     {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 4,
         id: 'at-the-cafe',
         title: 'At the Café',
         titleFR: 'Au café',
@@ -951,7 +951,7 @@ export const phraseCategories: PhraseCategory[] = [
         ],
     },
     {
-        level: 'A1', unit: 4,
+        level: 'A1', unit: 6,
         id: 'asking-directions',
         title: 'Asking for Directions',
         titleFR: 'Demander son chemin',
@@ -1168,7 +1168,7 @@ export const phraseCategories: PhraseCategory[] = [
         ],
     },
     {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 7,
         id: 'talking-about-health',
         title: 'Talking About Health',
         titleFR: 'Parler de sa santé',

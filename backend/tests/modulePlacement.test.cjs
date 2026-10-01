@@ -7,6 +7,7 @@ const ts = require('typescript');
 const { learningContent } = require('../dist/services/learningContent');
 const frVerbs = require('../dist/content/fr/verbs');
 const enVerbs = require('../dist/content/en/verbs');
+const { vocabularyData } = require('../dist/content/fr/vocabulary');
 
 function courses(language) {
     const source = fs.readFileSync(path.join(__dirname, `../../frontend/src/data/${language}/courses.ts`), 'utf8');
@@ -15,6 +16,41 @@ function courses(language) {
     vm.runInNewContext(compiled, { exports });
     return Object.values(exports)[0];
 }
+
+test('French A1 readings and their vocabulary follow the seven-unit syllabus', () => {
+    const expected = [
+        ['a1-bonjour-je-mappelle-marie', 'a1-une-nouvelle-collegue', 'a1-mon-ami-thomas', 'a1-la-famille-martin'],
+        ['a1-une-journee-typique', 'a1-le-samedi-de-sophie', 'a1-une-journee-au-travail', 'a1-apres-le-travail'],
+        ['a1-mon-appartement', 'a1-chez-mes-parents', 'a1-mon-quartier', 'a1-une-promenade-dans-le-quartier'],
+        ['a1-au-cafe', 'a1-au-marche', 'a1-a-la-boulangerie', 'a1-au-restaurant'],
+        ['a1-jaime-le-sport', 'a1-on-va-au-cinema', 'a1-une-soiree-entre-amis', 'a1-tu-viens-samedi'],
+        ['a1-je-vais-au-travail', 'a1-ou-est-la-gare', 'a1-a-la-gare', 'a1-un-week-end-a-lyon'],
+        ['a1-une-journee-a-marseille', 'a1-une-visite-chez-des-amis', 'a1-mes-premieres-semaines-en-france', 'a1-un-week-end-a-la-campagne'],
+    ];
+    const titles = ['Faire connaissance', 'La vie quotidienne', 'La maison et le quartier',
+        'Manger et faire les courses', 'Loisirs et vie sociale', 'Se déplacer et voyager', 'La vie en France'];
+    const course = courses('fr').find(item => item.level === 'A1');
+    assert.deepEqual(Array.from(course.units, unit => unit.title), titles);
+    const passages = learningContent.fr.reading;
+    const modules = new Map(learningContent.fr.modules.map(module => [module.id, module]));
+    for (let unit = 1; unit <= 7; unit++) {
+        const readingSteps = course.steps.filter(step => step.unit === unit && step.type === 'reading');
+        assert.deepEqual(Array.from(readingSteps, step => step.contentId), expected[unit - 1]);
+        for (const id of expected[unit - 1]) {
+            const passage = passages.find(item => item.moduleId === id);
+            const module = modules.get(id);
+            assert.equal(passage?.unit, unit, `reading ${id}`);
+            assert.equal(module?.unit, unit, `vocabulary ${id}`);
+            assert.equal(passage.level, 'A1');
+            assert.equal(module.level, 'A1');
+            assert.equal(vocabularyData[id]?.length, 15, `vocabulary words for ${id}`);
+            const readingIndex = course.steps.findIndex(step => step.type === 'reading' && step.contentId === id);
+            const vocabularyStep = course.steps[readingIndex - 1];
+            assert.equal(vocabularyStep?.type, 'vocabulary');
+            assert.equal(vocabularyStep?.contentId, id);
+        }
+    }
+});
 
 for (const language of ['fr', 'en']) {
     test(`${language} modules have one valid level and unit, matching their course placement`, () => {

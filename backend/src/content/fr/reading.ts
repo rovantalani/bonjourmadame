@@ -4,11 +4,11 @@ export const readingPassages: ReadingPassage[] = [
     // ─── A1 Reading Passages ────────────────────────────────────────────────────
     {
         level: 'A1', unit: 1,
-        moduleId: 'a1-bonjour-je-mappelle-clara',
-        title: 'Bonjour, je m’appelle Clara',
+        moduleId: 'a1-bonjour-je-mappelle-marie',
+        title: 'Bonjour, je m’appelle Marie',
         source: 'Texte original — niveau A1',
         paragraphs: [
-            'Bonjour ! Je m’appelle Clara. J’ai vingt-six ans et je suis française. J’habite à Toulouse, dans le sud de la France. Je travaille dans une petite agence de voyages.',
+            'Bonjour ! Je m’appelle Marie. J’ai vingt-six ans et je suis française. J’habite à Toulouse, dans le sud de la France. Je travaille dans une petite agence de voyages.',
             'Je parle français et anglais. J’apprends aussi l’espagnol. J’aime les langues, les voyages et la musique. Le week-end, j’aime aller au cinéma ou boire un café avec mes amis.',
             'J’habite avec mon chat, Oscar, dans un petit appartement. Ma famille habite à Bordeaux. Je téléphone souvent à mes parents et je vais les voir une fois par mois.',
         ],
@@ -25,7 +25,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 2,
+        level: 'A1', unit: 1,
         moduleId: 'a1-mon-ami-thomas',
         title: 'Mon Ami Thomas',
         source: 'Texte original — niveau A1',
@@ -36,7 +36,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 1,
         moduleId: 'a1-la-famille-martin',
         title: 'La Famille Martin',
         source: 'Texte original — niveau A1',
@@ -47,7 +47,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 2,
         moduleId: 'a1-une-journee-typique',
         title: 'Une Journée Typique',
         source: 'Texte original — niveau A1',
@@ -58,7 +58,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 2,
         moduleId: 'a1-le-samedi-de-sophie',
         title: 'Le Samedi de Sophie',
         source: 'Texte original — niveau A1',
@@ -69,7 +69,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 2,
         moduleId: 'a1-une-journee-au-travail',
         title: 'Une Journée au Travail',
         source: 'Texte original — niveau A1',
@@ -80,7 +80,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 2,
         moduleId: 'a1-apres-le-travail',
         title: 'Après le Travail',
         source: 'Texte original — niveau A1',
@@ -91,7 +91,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 2,
+        level: 'A1', unit: 3,
         moduleId: 'a1-mon-appartement',
         title: 'Mon Appartement',
         source: 'Texte original — niveau A1',
@@ -102,7 +102,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 2,
+        level: 'A1', unit: 3,
         moduleId: 'a1-chez-mes-parents',
         title: 'Chez Mes Parents',
         source: 'Texte original — niveau A1',
@@ -113,7 +113,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 2,
+        level: 'A1', unit: 3,
         moduleId: 'a1-mon-quartier',
         title: 'Mon Quartier',
         source: 'Texte original — niveau A1',
@@ -124,7 +124,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 4,
+        level: 'A1', unit: 3,
         moduleId: 'a1-une-promenade-dans-le-quartier',
         title: 'Une Promenade dans le Quartier',
         source: 'Texte original — niveau A1',
@@ -135,7 +135,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 4,
         moduleId: 'a1-au-cafe',
         title: 'Au Café de la Paix',
         source: 'Texte original — niveau A1',
@@ -147,7 +147,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 4,
         moduleId: 'a1-au-marche',
         title: 'Au Marché',
         source: 'Texte original — niveau A1',
@@ -158,7 +158,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 4,
         moduleId: 'a1-a-la-boulangerie',
         title: 'À la Boulangerie',
         source: 'Texte original — niveau A1',
@@ -169,7 +169,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 3,
+        level: 'A1', unit: 4,
         moduleId: 'a1-au-restaurant',
         title: 'Au Restaurant',
         source: 'Texte original — niveau A1',
@@ -224,7 +224,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 4,
+        level: 'A1', unit: 6,
         moduleId: 'a1-je-vais-au-travail',
         title: 'Je Vais au Travail',
         source: 'Texte original — niveau A1',
@@ -235,7 +235,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 4,
+        level: 'A1', unit: 6,
         moduleId: 'a1-ou-est-la-gare',
         title: 'Où Est la Gare ?',
         source: 'Texte original — niveau A1',
@@ -246,7 +246,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 4,
+        level: 'A1', unit: 6,
         moduleId: 'a1-a-la-gare',
         title: 'À la Gare',
         source: 'Texte original — niveau A1',
@@ -257,7 +257,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 4,
+        level: 'A1', unit: 6,
         moduleId: 'a1-un-week-end-a-lyon',
         title: 'Un Week-end à Lyon',
         source: 'Texte original — niveau A1',
@@ -268,7 +268,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 4,
+        level: 'A1', unit: 7,
         moduleId: 'a1-une-journee-a-marseille',
         title: 'Une Journée à Marseille',
         source: 'Texte original — niveau A1',
@@ -280,7 +280,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 7,
         moduleId: 'a1-une-visite-chez-des-amis',
         title: 'Une Visite Chez des Amis',
         source: 'Texte original — niveau A1',
@@ -292,7 +292,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 7,
         moduleId: 'a1-mes-premieres-semaines-en-france',
         title: 'Mes Premières Semaines en France',
         source: 'Texte original — niveau A1',
@@ -304,7 +304,7 @@ export const readingPassages: ReadingPassage[] = [
         ],
     },
     {
-        level: 'A1', unit: 5,
+        level: 'A1', unit: 7,
         moduleId: 'a1-un-week-end-a-la-campagne',
         title: 'Un Week-end à la Campagne',
         source: 'Texte original — niveau A1',
