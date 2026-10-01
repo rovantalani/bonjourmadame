@@ -9,6 +9,7 @@ import progressRouter from './routes/progress';
 import vocabularyRouter from './routes/vocabulary';
 import verbsRouter from './routes/verbs';
 import lecturesRouter from './routes/lectures';
+import learningRouter from './routes/learning';
 
 dotenv.config();
 
@@ -30,6 +31,9 @@ app.use('/api/progress', progressRouter);
 app.get('/api/health', (req: Request, res: Response) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
+
+// Explicit target-language API. Legacy routes remain until the frontend cutover.
+app.use('/api/learning', learningRouter);
 
 // Learning modules: Vocabulary, Verbs, and Lectures.
 app.use('/api/vocabulary', vocabularyRouter);
