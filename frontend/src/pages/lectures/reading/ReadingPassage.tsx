@@ -4,6 +4,7 @@ import LearningCompletion from '../../../components/LearningCompletion';
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import SpeakerButton from '../../../components/SpeakerButton';
+import { useSpeech } from '../../../hooks/useSpeech';
 import './ReadingPassage.css';
 
 interface VocabularyWord {
@@ -99,29 +100,33 @@ export default function ReadingPassage() {
     const { moduleId } = useParams<{ moduleId: string }>();
     const navigate = useNavigate();
     const isEN = language === 'en';
-    const [data, setData] = useState<ReadingData | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const requestKey = `${language}/${moduleId}`;
+    const [result, setResult] = useState<{ key: string; data: ReadingData | null; error: boolean } | null>(null);
+    const loading = result?.key !== requestKey;
+    const error = result?.key === requestKey && result.error;
+    const data = result?.key === requestKey ? result.data : null;
     const [tooltip, setTooltip] = useState<TooltipState | null>(null);
+    const [playingParagraph, setPlayingParagraph] = useState<number | null>(null);
+    const { speak, stop, speaking, supported: audioSupported } = useSpeech();
     const containerRef = useRef<HTMLDivElement>(null);
 
+    useEffect(() => () => stop(), [moduleId, language, stop]);
+
     useEffect(() => {
-        setLoading(true);
-        setError(false);
-        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/lectures/reading/${moduleId}`)
+        const controller = new AbortController();
+        fetch(`${import.meta.env.VITE_API_BASE}/api/learning/${language}/lectures/reading/${moduleId}`, { signal: controller.signal })
             .then(res => {
                 if (!res.ok) throw new Error('Not found');
                 return res.json();
             })
             .then((d: ReadingData) => {
-                setData(d);
-                setLoading(false);
+                setResult({ key: requestKey, data: d, error: false });
             })
             .catch(() => {
-                setError(true);
-                setLoading(false);
+                if (!controller.signal.aborted) setResult({ key: requestKey, data: null, error: true });
             });
-    }, [moduleId, language]);
+        return () => controller.abort();
+    }, [moduleId, language, requestKey]);
 
     useEffect(() => {
         if (!tooltip) return;
@@ -171,6 +176,15 @@ export default function ReadingPassage() {
         setTooltip({ word: vocab, tokenKey, anchorRect: e.currentTarget.getBoundingClientRect() });
     };
 
+    const handleParagraphAudio = (paragraph: string, index: number) => {
+        if (speaking && playingParagraph === index) {
+            stop();
+            return;
+        }
+        setPlayingParagraph(index);
+        speak(paragraph, isEN ? 'en-US' : 'fr-FR');
+    };
+
     return (
         <main className="page" onClick={() => setTooltip(null)}>
             <button className="back-btn" onClick={() => navigate(-1)} type="button">
@@ -186,45 +200,65 @@ export default function ReadingPassage() {
             </div>
 
             <div className="rp-passage-wrap" ref={containerRef}>
+                <div className="rp-listen-intro">
+                    <h2>{isEN ? 'Écoutez et répétez' : 'Listen through and repeat'}</h2>
+                    <p>{isEN ? 'Écoutez chaque paragraphe, puis répétez-le à voix haute.' : 'Listen to each paragraph, then repeat it aloud.'}</p>
+                    {!audioSupported && <p role="status">{isEN ? 'La lecture audio n’est pas disponible dans ce navigateur.' : 'Audio playback is not available in this browser.'}</p>}
+                </div>
                 {data.paragraphs.map((para, pi) => {
                     const tokens = annotate(para, vocabMap);
+                    const isPlaying = speaking && playingParagraph === pi;
                     return (
-                        <p className="rp-paragraph" key={pi}>
-                            {tokens.map((tok, ti) => {
-                                if (!tok.vocab) {
-                                    return <span key={ti}>{tok.text}</span>;
-                                }
-                                const tokenKey = `${pi}-${ti}`;
-                                const isOpen = tooltip?.tokenKey === tokenKey;
-                                return (
-                                    <span key={ti} className="rp-word-wrap">
-                                        <button
-                                            type="button"
-                                            className={`rp-vocab-word${isOpen ? ' rp-vocab-word--active' : ''}`}
-                                            onClick={e => handleWordClick(e, tok.vocab!, tokenKey)}
-                                        >
-                                            {tok.text}
-                                        </button>
-                                        {isOpen && (
-                                            <span className="rp-tooltip" role="tooltip">
-                                                <span className="rp-tooltip-fr-row">
-                                                    <strong className="rp-tooltip-fr">
-                                                        {isEN ? tok.vocab.english : tok.vocab.french}
-                                                    </strong>
-                                                    <SpeakerButton
-                                                        text={isEN ? tok.vocab.english : tok.vocab.french}
-                                                        lang={isEN ? 'en-US' : 'fr-FR'}
-                                                    />
+                        <div className="rp-paragraph-block" key={pi}>
+                            <button
+                                type="button"
+                                className={`rp-listen-button${isPlaying ? ' rp-listen-button--active' : ''}`}
+                                onClick={() => handleParagraphAudio(para, pi)}
+                                aria-pressed={isPlaying}
+                                disabled={!audioSupported}
+                            >
+                                <span aria-hidden="true">{isPlaying ? '■' : '▶'}</span>
+                                {isPlaying
+                                    ? (isEN ? `Arrêter le paragraphe ${pi + 1}` : `Stop paragraph ${pi + 1}`)
+                                    : (isEN ? `Écouter le paragraphe ${pi + 1}` : `Listen to paragraph ${pi + 1}`)}
+                            </button>
+                            <p className="rp-paragraph">
+                                {tokens.map((tok, ti) => {
+                                    if (!tok.vocab) {
+                                        return <span key={ti}>{tok.text}</span>;
+                                    }
+                                    const tokenKey = `${pi}-${ti}`;
+                                    const isOpen = tooltip?.tokenKey === tokenKey;
+                                    return (
+                                        <span key={ti} className="rp-word-wrap">
+                                            <button
+                                                type="button"
+                                                className={`rp-vocab-word${isOpen ? ' rp-vocab-word--active' : ''}`}
+                                                onClick={e => handleWordClick(e, tok.vocab!, tokenKey)}
+                                            >
+                                                {tok.text}
+                                            </button>
+                                            {isOpen && (
+                                                <span className="rp-tooltip" role="tooltip">
+                                                    <span className="rp-tooltip-fr-row">
+                                                        <strong className="rp-tooltip-fr">
+                                                            {isEN ? tok.vocab.english : tok.vocab.french}
+                                                        </strong>
+                                                        <SpeakerButton
+                                                            text={isEN ? tok.vocab.english : tok.vocab.french}
+                                                            lang={isEN ? 'en-US' : 'fr-FR'}
+                                                        />
+                                                    </span>
+                                                    <span className="rp-tooltip-en">
+                                                        {isEN ? tok.vocab.french : tok.vocab.english}
+                                                    </span>
                                                 </span>
-                                                <span className="rp-tooltip-en">
-                                                    {isEN ? tok.vocab.french : tok.vocab.english}
-                                                </span>
-                                            </span>
-                                        )}
-                                    </span>
-                                );
-                            })}
-                        </p>
+                                            )}
+                                        </span>
+                                    );
+                                })}
+                            </p>
+                        </div>
                     );
                 })}
             </div>
