@@ -1,0 +1,77 @@
+import type { HelperVerbEN, VerbEntry, VerbGroup } from '../../../types/verbs';
+
+export const verbGroupA1: VerbGroup = {
+        id: 'a1',
+        title: 'A1 — Les Bases',
+        titleFR: 'A1 — Les Bases',
+        description: 'Core verbs for everyday basics',
+        descriptionFR: 'Verbes essentiels pour les situations quotidiennes',
+        icon: '🌱',
+        color: '#4338CA',
+    };
+
+export const verbsA1: VerbEntry[] = [
+        { level: 'A1', unit: 3,  id: 'walk',   infinitive: 'walk',   translation: 'marcher',          type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'walk',    passeCompose: 'walked',    imparfait: 'am walking',    futurSimple: 'will walk'    }, { sujet: 'he/she/it', present: 'walks',      passeCompose: 'walked',    imparfait: 'is walking',    futurSimple: 'will walk'    }] },
+        { level: 'A1', unit: 3,  id: 'talk',   infinitive: 'talk',   translation: 'parler',           type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'talk',    passeCompose: 'talked',    imparfait: 'am talking',    futurSimple: 'will talk'    }, { sujet: 'he/she/it', present: 'talks',      passeCompose: 'talked',    imparfait: 'is talking',    futurSimple: 'will talk'    }] },
+        { level: 'A1', unit: 3,  id: 'work',   infinitive: 'work',   translation: 'travailler',       type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'work',    passeCompose: 'worked',    imparfait: 'am working',    futurSimple: 'will work'    }, { sujet: 'he/she/it', present: 'works',      passeCompose: 'worked',    imparfait: 'is working',    futurSimple: 'will work'    }] },
+        { level: 'A1', unit: 3,  id: 'play',   infinitive: 'play',   translation: 'jouer',            type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'play',    passeCompose: 'played',    imparfait: 'am playing',    futurSimple: 'will play'    }, { sujet: 'he/she/it', present: 'plays',      passeCompose: 'played',    imparfait: 'is playing',    futurSimple: 'will play'    }] },
+        { level: 'A1', unit: 3,  id: 'finish', infinitive: 'finish', translation: 'finir',            type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'finish',  passeCompose: 'finished',  imparfait: 'am finishing',  futurSimple: 'will finish'  }, { sujet: 'he/she/it', present: 'finishes',   passeCompose: 'finished',  imparfait: 'is finishing',  futurSimple: 'will finish'  }] },
+        { level: 'A1', unit: 3,  id: 'watch',  infinitive: 'watch',  translation: 'regarder',         type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'watch',   passeCompose: 'watched',   imparfait: 'am watching',   futurSimple: 'will watch'   }, { sujet: 'he/she/it', present: 'watches',    passeCompose: 'watched',   imparfait: 'is watching',   futurSimple: 'will watch'   }] },
+        { level: 'A1', unit: 3,  id: 'listen', infinitive: 'listen', translation: 'écouter',          type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'listen',  passeCompose: 'listened',  imparfait: 'am listening',  futurSimple: 'will listen'  }, { sujet: 'he/she/it', present: 'listens',    passeCompose: 'listened',  imparfait: 'is listening',  futurSimple: 'will listen'  }] },
+        { level: 'A1', unit: 3,  id: 'open',   infinitive: 'open',   translation: 'ouvrir',           type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'open',    passeCompose: 'opened',    imparfait: 'am opening',    futurSimple: 'will open'    }, { sujet: 'he/she/it', present: 'opens',      passeCompose: 'opened',    imparfait: 'is opening',    futurSimple: 'will open'    }] },
+        { level: 'A1', unit: 3,  id: 'close',  infinitive: 'close',  translation: 'fermer',           type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'close',   passeCompose: 'closed',    imparfait: 'am closing',    futurSimple: 'will close'   }, { sujet: 'he/she/it', present: 'closes',     passeCompose: 'closed',    imparfait: 'is closing',    futurSimple: 'will close'   }] },
+        { level: 'A1', unit: 3,  id: 'start',  infinitive: 'start',  translation: 'commencer',        type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'start',   passeCompose: 'started',   imparfait: 'am starting',   futurSimple: 'will start'   }, { sujet: 'he/she/it', present: 'starts',     passeCompose: 'started',   imparfait: 'is starting',   futurSimple: 'will start'   }] },
+        { level: 'A1', unit: 3,  id: 'stop',   infinitive: 'stop',   translation: 'arrêter',          type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'stop',    passeCompose: 'stopped',   imparfait: 'am stopping',   futurSimple: 'will stop'    }, { sujet: 'he/she/it', present: 'stops',      passeCompose: 'stopped',   imparfait: 'is stopping',   futurSimple: 'will stop'    }] },
+        { level: 'A1', unit: 3,  id: 'help',   infinitive: 'help',   translation: 'aider',            type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'help',    passeCompose: 'helped',    imparfait: 'am helping',    futurSimple: 'will help'    }, { sujet: 'he/she/it', present: 'helps',      passeCompose: 'helped',    imparfait: 'is helping',    futurSimple: 'will help'    }] },
+        { level: 'A1', unit: 3,  id: 'want',   infinitive: 'want',   translation: 'vouloir',          type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'want',    passeCompose: 'wanted',    imparfait: 'am wanting',    futurSimple: 'will want'    }, { sujet: 'he/she/it', present: 'wants',      passeCompose: 'wanted',    imparfait: 'is wanting',    futurSimple: 'will want'    }] },
+        { level: 'A1', unit: 3,  id: 'need',   infinitive: 'need',   translation: 'avoir besoin de',  type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'need',    passeCompose: 'needed',    imparfait: 'am needing',    futurSimple: 'will need'    }, { sujet: 'he/she/it', present: 'needs',      passeCompose: 'needed',    imparfait: 'is needing',    futurSimple: 'will need'    }] },
+        { level: 'A1', unit: 3,  id: 'ask',    infinitive: 'ask',    translation: 'demander',         type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'ask',     passeCompose: 'asked',     imparfait: 'am asking',     futurSimple: 'will ask'     }, { sujet: 'he/she/it', present: 'asks',       passeCompose: 'asked',     imparfait: 'is asking',     futurSimple: 'will ask'     }] },
+        { level: 'A1', unit: 3,  id: 'love',   infinitive: 'love',   translation: 'aimer',            type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'love',    passeCompose: 'loved',     imparfait: 'am loving',     futurSimple: 'will love'    }, { sujet: 'he/she/it', present: 'loves',      passeCompose: 'loved',     imparfait: 'is loving',     futurSimple: 'will love'    }] },
+        { level: 'A1', unit: 3,  id: 'cook',   infinitive: 'cook',   translation: 'cuisiner',         type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'cook',    passeCompose: 'cooked',    imparfait: 'am cooking',    futurSimple: 'will cook'    }, { sujet: 'he/she/it', present: 'cooks',      passeCompose: 'cooked',    imparfait: 'is cooking',    futurSimple: 'will cook'    }] },
+        { level: 'A1', unit: 3,  id: 'go',     infinitive: 'go',     translation: 'aller',            type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'go',      passeCompose: 'went',      imparfait: 'am going',      futurSimple: 'will go'      }, { sujet: 'he/she/it', present: 'goes',       passeCompose: 'went',      imparfait: 'is going',      futurSimple: 'will go'      }] },
+        { level: 'A1', unit: 3,  id: 'come',   infinitive: 'come',   translation: 'venir',            type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'come',    passeCompose: 'came',      imparfait: 'am coming',     futurSimple: 'will come'    }, { sujet: 'he/she/it', present: 'comes',      passeCompose: 'came',      imparfait: 'is coming',     futurSimple: 'will come'    }] },
+        { level: 'A1', unit: 3,  id: 'see',    infinitive: 'see',    translation: 'voir',             type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'see',     passeCompose: 'saw',       imparfait: 'am seeing',     futurSimple: 'will see'     }, { sujet: 'he/she/it', present: 'sees',       passeCompose: 'saw',       imparfait: 'is seeing',     futurSimple: 'will see'     }] },
+        { level: 'A1', unit: 3,  id: 'get',    infinitive: 'get',    translation: 'obtenir / devenir', type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'get',    passeCompose: 'got',       imparfait: 'am getting',    futurSimple: 'will get'     }, { sujet: 'he/she/it', present: 'gets',       passeCompose: 'got',       imparfait: 'is getting',    futurSimple: 'will get'     }] },
+        { level: 'A1', unit: 3,  id: 'give',   infinitive: 'give',   translation: 'donner',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'give',    passeCompose: 'gave',      imparfait: 'am giving',     futurSimple: 'will give'    }, { sujet: 'he/she/it', present: 'gives',      passeCompose: 'gave',      imparfait: 'is giving',     futurSimple: 'will give'    }] },
+        { level: 'A1', unit: 3,  id: 'take',   infinitive: 'take',   translation: 'prendre',          type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'take',    passeCompose: 'took',      imparfait: 'am taking',     futurSimple: 'will take'    }, { sujet: 'he/she/it', present: 'takes',      passeCompose: 'took',      imparfait: 'is taking',     futurSimple: 'will take'    }] },
+        { level: 'A1', unit: 3,  id: 'say',    infinitive: 'say',    translation: 'dire',             type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'say',     passeCompose: 'said',      imparfait: 'am saying',     futurSimple: 'will say'     }, { sujet: 'he/she/it', present: 'says',       passeCompose: 'said',      imparfait: 'is saying',     futurSimple: 'will say'     }] },
+        { level: 'A1', unit: 3,  id: 'make',   infinitive: 'make',   translation: 'faire / fabriquer', type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'make',   passeCompose: 'made',      imparfait: 'am making',     futurSimple: 'will make'    }, { sujet: 'he/she/it', present: 'makes',      passeCompose: 'made',      imparfait: 'is making',     futurSimple: 'will make'    }] },
+        { level: 'A1', unit: 3,  id: 'put',    infinitive: 'put',    translation: 'mettre / poser',   type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'put',     passeCompose: 'put',       imparfait: 'am putting',    futurSimple: 'will put'     }, { sujet: 'he/she/it', present: 'puts',       passeCompose: 'put',       imparfait: 'is putting',    futurSimple: 'will put'     }] },
+        { level: 'A1', unit: 3,  id: 'run',    infinitive: 'run',    translation: 'courir',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'run',     passeCompose: 'ran',       imparfait: 'am running',    futurSimple: 'will run'     }, { sujet: 'he/she/it', present: 'runs',       passeCompose: 'ran',       imparfait: 'is running',    futurSimple: 'will run'     }] },
+        { level: 'A1', unit: 3,  id: 'eat',    infinitive: 'eat',    translation: 'manger',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'eat',     passeCompose: 'ate',       imparfait: 'am eating',     futurSimple: 'will eat'     }, { sujet: 'he/she/it', present: 'eats',       passeCompose: 'ate',       imparfait: 'is eating',     futurSimple: 'will eat'     }] },
+        { level: 'A1', unit: 3,  id: 'drink',  infinitive: 'drink',  translation: 'boire',            type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'drink',   passeCompose: 'drank',     imparfait: 'am drinking',   futurSimple: 'will drink'   }, { sujet: 'he/she/it', present: 'drinks',     passeCompose: 'drank',     imparfait: 'is drinking',   futurSimple: 'will drink'   }] },
+        { level: 'A1', unit: 3,  id: 'sleep',  infinitive: 'sleep',  translation: 'dormir',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'sleep',   passeCompose: 'slept',     imparfait: 'am sleeping',   futurSimple: 'will sleep'   }, { sujet: 'he/she/it', present: 'sleeps',     passeCompose: 'slept',     imparfait: 'is sleeping',   futurSimple: 'will sleep'   }] },
+    ];
+
+export const helpersA1: Record<string, HelperVerbEN> = {
+    'to-be': {
+        level: 'A1', unit: 2,
+        title: 'To Be',
+        translation: 'être',
+        color: '#2563EB',
+        columns: ['Present Simple', 'Past Simple', 'Present Continuous', 'Future (will)'],
+        rows: [
+            { sujet: 'I',          present: 'am',   passeCompose: 'was',  imparfait: 'am being',   futurSimple: 'will be'   },
+            { sujet: 'you',        present: 'are',  passeCompose: 'were', imparfait: 'are being',  futurSimple: 'will be'   },
+            { sujet: 'he/she/it',  present: 'is',   passeCompose: 'was',  imparfait: 'is being',   futurSimple: 'will be'   },
+            { sujet: 'we',         present: 'are',  passeCompose: 'were', imparfait: 'are being',  futurSimple: 'will be'   },
+            { sujet: 'you (pl.)',  present: 'are',  passeCompose: 'were', imparfait: 'are being',  futurSimple: 'will be'   },
+            { sujet: 'they',       present: 'are',  passeCompose: 'were', imparfait: 'are being',  futurSimple: 'will be'   },
+        ],
+    },
+    'to-have': {
+        level: 'A1', unit: 2,
+        title: 'To Have',
+        translation: 'avoir',
+        color: '#16A34A',
+        columns: ['Present Simple', 'Past Simple', 'Present Continuous', 'Future (will)'],
+        rows: [
+            { sujet: 'I',          present: 'have', passeCompose: 'had', imparfait: 'am having',   futurSimple: 'will have' },
+            { sujet: 'you',        present: 'have', passeCompose: 'had', imparfait: 'are having',  futurSimple: 'will have' },
+            { sujet: 'he/she/it',  present: 'has',  passeCompose: 'had', imparfait: 'is having',   futurSimple: 'will have' },
+            { sujet: 'we',         present: 'have', passeCompose: 'had', imparfait: 'are having',  futurSimple: 'will have' },
+            { sujet: 'you (pl.)',  present: 'have', passeCompose: 'had', imparfait: 'are having',  futurSimple: 'will have' },
+            { sujet: 'they',       present: 'have', passeCompose: 'had', imparfait: 'are having',  futurSimple: 'will have' },
+        ],
+    },
+};

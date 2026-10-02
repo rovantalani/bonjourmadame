@@ -1,0 +1,53 @@
+import type { Course } from '../../../types/courses';
+
+export const courseB1: Course = {
+        level: 'B1',
+        title: 'Construction de la Fluidité',
+        description: "Maîtrisez les conditionnels, la voix passive et enrichissez votre vocabulaire d'usage.",
+        color: 'var(--course-b1)',
+        textColor: 'var(--level-b1-text)',
+        units: [
+            { number: 1, title: 'Monde Moderne' },
+            { number: 2, title: 'Structures Avancées' },
+            { number: 3, title: 'Fluence & Expression' },
+        ],
+        steps: [
+            // Unit 1 — Monde Moderne
+            { id: 'b1en-tech',            title: 'Technologie & Médias',         module: 'vocabulary', type: 'vocabulary', contentId: 'technology-media',        path: '/vocabulary/technology-media',         unit: 1 },
+            { id: 'b1en-media-news',      title: 'Médias & Actualités',          module: 'vocabulary', type: 'vocabulary', contentId: 'media-news',              path: '/vocabulary/media-news',               unit: 1 },
+            { id: 'b1en-environment',     title: 'Environnement & Écologie',     module: 'vocabulary', type: 'vocabulary', contentId: 'environment-ecology',     path: '/vocabulary/environment-ecology',      unit: 1 },
+            { id: 'b1en-art-culture',     title: 'Art & Culture',                module: 'vocabulary', type: 'vocabulary', contentId: 'art-culture',             path: '/vocabulary/art-culture',              unit: 1 },
+            { id: 'b1en-relationships',   title: 'Relations Sociales',           module: 'vocabulary', type: 'vocabulary', contentId: 'relationships-social',    path: '/vocabulary/relationships-social',     unit: 1 },
+            { id: 'b1en-housing',         title: 'Logement & Vie urbaine',       module: 'vocabulary', type: 'vocabulary', contentId: 'housing-urban',           path: '/vocabulary/housing-urban',            unit: 1 },
+            { id: 'b1en-reading-social',  title: 'Lecture : Social Media',       module: 'lectures', type: 'reading',    contentId: 'b1en-social-media',       path: '/lectures/reading/b1en-social-media',  unit: 1 },
+            // Unit 2 — Structures Avancées
+            { id: 'b1en-prepositions',    title: 'Les Prépositions Anglaises',   module: 'lectures', type: 'grammar',    contentId: 'en-prepositions',         path: '/lectures/grammar/en-prepositions',    unit: 2 },
+            { id: 'b1en-conditionals',    title: 'Conditionnels 1 & 2',          module: 'lectures', type: 'grammar',    contentId: 'en-conditionals-1-2',     path: '/lectures/grammar/en-conditionals-1-2', unit: 2 },
+            { id: 'b1en-passive',         title: 'La Voix Passive',              module: 'lectures', type: 'grammar',    contentId: 'en-passive-voice',        path: '/lectures/grammar/en-passive-voice',   unit: 2 },
+            { id: 'b1en-reported',        title: 'Le Discours Rapporté',         module: 'lectures', type: 'grammar',    contentId: 'en-reported-speech',      path: '/lectures/grammar/en-reported-speech', unit: 2 },
+            { id: 'b1en-relative',        title: 'Les Propositions Relatives',   module: 'lectures', type: 'grammar',    contentId: 'en-relative-clauses',     path: '/lectures/grammar/en-relative-clauses', unit: 2 },
+            { id: 'b1en-togo',            title: 'Verbe : to go',                module: 'verbs', type: 'verbs',      contentId: 'to-go',                   path: '/verbs/to-go/table',                   unit: 2 },
+            { id: 'b1en-tocome',          title: 'Verbe : to come',              module: 'verbs', type: 'verbs',      contentId: 'to-come',                 path: '/verbs/to-come/table',                 unit: 2 },
+            { id: 'b1en-irregular',       title: 'Verbes irréguliers',           module: 'verbs', type: 'verbs',      contentId: 'b1',         path: '/verbs/b1',               unit: 2 },
+            { id: 'b1en-reading-green',   title: 'Lecture : Building a Greener City', module: 'lectures', type: 'reading', contentId: 'b1en-green-city',      path: '/lectures/reading/b1en-green-city',    unit: 2 },
+            { id: 'b1en-reading-remote',  title: 'Lecture : The Rise of Remote Work', module: 'lectures', type: 'reading', contentId: 'b1en-remote-work',     path: '/lectures/reading/b1en-remote-work',   unit: 2 },
+            { id: 'b1en-reading-health',  title: 'Lecture : Living a Healthier Life', module: 'lectures', type: 'reading', contentId: 'b1en-healthy-living',  path: '/lectures/reading/b1en-healthy-living', unit: 3 },
+            { id: 'b1en-reading-trip',    title: 'Lecture : A Trip to Remember',  module: 'lectures', type: 'reading',    contentId: 'b1en-trip-to-remember',   path: '/lectures/reading/b1en-trip-to-remember', unit: 3 },
+            { id: 'b1en-reading-volunteer', title: 'Lecture : Why People Volunteer', module: 'lectures', type: 'reading', contentId: 'b1en-volunteering',     path: '/lectures/reading/b1en-volunteering',  unit: 3 },
+            { id: 'b1en-reading-langlearn', title: 'Lecture : Benefits of Learning a Language', module: 'lectures', type: 'reading', contentId: 'b1en-learning-language', path: '/lectures/reading/b1en-learning-language', unit: 2 },
+            { id: 'b1en-reading-food',    title: 'Lecture : The Future of Food',  module: 'lectures', type: 'reading',    contentId: 'b1en-future-of-food',     path: '/lectures/reading/b1en-future-of-food', unit: 2 },
+            { id: 'b1en-reading-citycountry', title: 'Lecture : City or Country?', module: 'lectures', type: 'reading',   contentId: 'b1en-city-vs-country',    path: '/lectures/reading/b1en-city-vs-country', unit: 3 },
+            { id: 'b1en-reading-music',   title: 'Lecture : The Power of Music',  module: 'lectures', type: 'reading',    contentId: 'b1en-power-of-music',     path: '/lectures/reading/b1en-power-of-music', unit: 3 },
+            // Unit 3 — Fluence & Expression
+            { id: 'b1en-daily-adv',       title: 'Vie quotidienne avancée',      module: 'vocabulary', type: 'vocabulary', contentId: 'daily-life-advanced',     path: '/vocabulary/daily-life-advanced',      unit: 3 },
+            { id: 'b1en-health-life',     title: 'Santé & Mode de vie',          module: 'vocabulary', type: 'vocabulary', contentId: 'health-lifestyle',        path: '/vocabulary/health-lifestyle',         unit: 3 },
+            { id: 'b1en-emotions',        title: 'Émotions & Psychologie',       module: 'vocabulary', type: 'vocabulary', contentId: 'emotions-psychology',     path: '/vocabulary/emotions-psychology',      unit: 3 },
+            { id: 'b1en-phrasal',         title: 'Les Verbes à Particule',       module: 'lectures', type: 'grammar',    contentId: 'en-phrasal-verbs',        path: '/lectures/grammar/en-phrasal-verbs',   unit: 3 },
+            { id: 'b1en-phrases-home',    title: 'Décrire son logement',         module: 'lectures', type: 'phrases',    contentId: 'describing-your-home',    path: '/lectures/phrases/describing-your-home', unit: 3 },
+            { id: 'b1en-phrases-opin',    title: 'Exprimer ses opinions',        module: 'lectures', type: 'phrases',    contentId: 'expressing-opinions',     path: '/lectures/phrases/expressing-opinions', unit: 3 },
+            { id: 'b1en-phrases-museum',  title: 'Musées & événements',          module: 'lectures', type: 'phrases',    contentId: 'at-the-museum-event',     path: '/lectures/phrases/at-the-museum-event', unit: 3 },
+            { id: 'b1en-phrases-work',    title: 'Parler de son travail',        module: 'lectures', type: 'phrases',    contentId: 'talking-about-work',      path: '/lectures/phrases/talking-about-work', unit: 3 },
+            { id: 'b1en-customer',        title: 'Service client',               module: 'lectures', type: 'phrases',    contentId: 'customer-service',        path: '/lectures/phrases/customer-service',   unit: 3 },
+            { id: 'b1en-phrases-health2', title: 'Santé & Mode de vie',          module: 'lectures', type: 'phrases',    contentId: 'health-lifestyle-phrases', path: '/lectures/phrases/health-lifestyle-phrases', unit: 3 },
+        ],
+    };
