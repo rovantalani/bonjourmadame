@@ -43,12 +43,56 @@
     margin-bottom: 2.5rem;
 }
 
+.rp-listen-intro {
+    margin-bottom: 1.5rem;
+}
+
+.rp-listen-intro h2 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-1);
+    margin-bottom: 0.35rem;
+}
+
+.rp-listen-intro p {
+    color: var(--text-2);
+    font-size: 0.9rem;
+}
+
+.rp-paragraph-block {
+    margin-bottom: 1.6rem;
+}
+
+.rp-listen-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    background: var(--surface);
+    color: var(--accent-text);
+    padding: 0.45rem 0.7rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.rp-listen-button:hover:not(:disabled),
+.rp-listen-button--active {
+    background: var(--accent-light);
+}
+
+.rp-listen-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
 .rp-paragraph {
     font-size: 1.1rem;
     font-family: var(--font-serif);
     line-height: 1.85;
     color: var(--text-1);
-    margin-bottom: 1.4em;
+    margin-top: 0.5rem;
 }
 
 .rp-word-wrap {
