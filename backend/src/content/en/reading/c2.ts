@@ -1,0 +1,136 @@
+import type { ReadingPassage } from '../../../types/lectures/reading';
+
+export const readingC2: ReadingPassage[] = [
+    {
+        level: 'C2', unit: 1,
+        moduleId: 'c2en-woolf',
+        title: 'Virginia Woolf and the Stream of Consciousness',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'Among the writers who transformed the English novel in the early twentieth century, Virginia Woolf stands as perhaps the most radical innovator. Dissatisfied with the conventions of realist fiction, which she regarded as preoccupied with external appearances at the expense of inner truth, she set out to capture something far more elusive: the texture of consciousness itself, the ceaseless flicker of impressions, memories and feelings that constitutes the lived experience of a mind.',
+            'The technique with which she is most often associated — the so-called "stream of consciousness" — sought to render thought not as orderly sequence but as fluid, associative movement. In novels such as "Mrs Dalloway" and "To the Lighthouse", the narrative drifts seamlessly between characters and across time, following the currents of memory and perception. A single day, even a single moment, can open outward into a whole life, as the present summons the past and the trivial discloses the profound.',
+            'This was not mere technical experiment for its own sake. Woolf believed that conventional narrative falsified human experience, imposing a false tidiness on the genuine disorder of consciousness. Life, she famously wrote, is not a series of gig-lamps symmetrically arranged but "a luminous halo, a semi-transparent envelope". The task of the modern novelist, as she conceived it, was to convey this luminous, shifting quality — to record the atoms as they fall upon the mind.',
+            'Woolf\'s achievement extended well beyond fiction. In essays of dazzling lucidity, above all "A Room of One\'s Own", she examined the material and social conditions that had, for centuries, silenced the creative voices of women. Her insistence that artistic freedom depends upon economic independence and intellectual space remains one of the foundational arguments of modern feminist thought, no less resonant now than when she first advanced it.',
+        ],
+    },
+    {
+        level: 'C2', unit: 2,
+        moduleId: 'c2en-eliot',
+        title: 'Modernist Poetry and the Fragmented World',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'The poetry that emerged in the aftermath of the First World War bore the unmistakable mark of a civilisation in crisis. The confident certainties of the nineteenth century had been shattered on the battlefields of Europe, and poets responded by abandoning the smooth forms and consoling sentiments of their predecessors. In their place they offered fragmentation, allusion and difficulty — a poetry that mirrored, in its very structure, the dislocation of the age.',
+            'The most influential figure in this transformation was T. S. Eliot, an American who settled in England and became, paradoxically, the dominant voice of English poetic modernism. His long poem "The Waste Land", published in 1922, is often regarded as the defining work of the movement. Assembled from a bewildering array of voices, languages and literary echoes, it presents a vision of a spiritually barren world, fragmented and adrift, in which the great traditions of the past survive only as broken shards.',
+            'To the first readers, such poetry seemed wilfully obscure, even chaotic. Yet the difficulty was deliberate and meaningful. Eliot and his contemporaries held that a complex and disordered civilisation demanded a correspondingly complex and disordered art. The reader was no longer to be lulled by melody but provoked into active interpretation, made to labour at the construction of meaning from the fragments laid before them.',
+            'Whatever one makes of its difficulty, modernist poetry permanently altered the expectations we bring to verse. It severed the assumed bond between poetry and pleasant musicality, insisting that the form could accommodate the harsh, the discordant and the unresolved. In doing so it expanded the territory of the art, and bequeathed to later poets a freedom — and a burden — with which they are still reckoning.',
+        ],
+    },
+    {
+        level: 'C2', unit: 3,
+        moduleId: 'c2en-bronte',
+        title: 'The Brontës and the Romantic Imagination',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'From a remote parsonage on the Yorkshire moors, three sisters produced, within the space of a few extraordinary years, a body of work that would unsettle and enthral the Victorian reading public. Charlotte, Emily and Anne Brontë wrote at first under masculine pseudonyms, partly to evade the prejudice against women authors and partly, perhaps, to give themselves licence to explore passions that polite society preferred to leave unspoken.',
+            'Emily\'s sole novel, "Wuthering Heights", remains the most startling of their achievements. Its story of obsessive, destructive love, set against the wild and indifferent landscape of the moors, baffled and disturbed its first reviewers, who found in it a savagery quite at odds with the gentle domestic fiction of the period. Time has vindicated Emily\'s vision: the novel is now recognised as a work of singular power, its structural complexity and emotional intensity unmatched in the literature of its century.',
+            'Charlotte\'s "Jane Eyre", by contrast, gave the English novel one of its first truly interior heroines — a plain, poor, fiercely independent woman who insists upon her own moral worth in defiance of every social expectation. The novel\'s famous declaration of equality between souls, regardless of rank or wealth, struck a chord that still reverberates, and helped to establish a tradition of fiction centred on the inner life of the unremarkable individual.',
+            'What unites the sisters\' work is the force of the Romantic imagination, channelled through disciplined craft. They wrote of feeling raised to the pitch of the sublime, of nature as a mirror of the soul, of the individual will pitted against the constraints of circumstance. That such intensity should have issued from three women living in obscurity and dying young only deepens the strange and enduring fascination of their story.',
+        ],
+    },
+    {
+        level: 'C2', unit: 3,
+        moduleId: 'c2en-wollstonecraft',
+        title: 'Wollstonecraft and the Rights of Woman',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'Long before the organised campaigns for women\'s suffrage, a lone and formidable voice articulated, with unprecedented force, the case for the equality of the sexes. Mary Wollstonecraft, writing at the close of the eighteenth century amid the upheavals of the French Revolution, produced in "A Vindication of the Rights of Woman" a work whose arguments retain a startling relevance more than two centuries later.',
+            'Her central contention was deceptively simple: that the apparent inferiority of women was not natural but manufactured. Denied education and confined to a sphere of triviality, women had been trained to be ornamental rather than rational, encouraged to cultivate charm at the expense of understanding. The defects for which they were then condemned were, Wollstonecraft argued, the predictable product of the very conditions imposed upon them — a self-fulfilling prophecy of subordination.',
+            'The remedy she proposed was education: not the superficial accomplishments thought suitable for young ladies, but a rigorous training of the mind equal to that offered to men. Only when women were permitted to develop their reason, she insisted, could they become genuine moral agents, fit not merely to please their husbands but to fulfil their duties as citizens, mothers and rational beings. The cultivation of virtue, she maintained, was impossible without the cultivation of intellect.',
+            'Wollstonecraft\'s argument was met, in her own time, with hostility and ridicule, and her unconventional private life was long used to discredit her ideas. Yet the essential justice of her case has proved impossible to dismiss. Nearly every subsequent movement for women\'s emancipation has drawn, knowingly or not, upon the principles she set out: that rights are grounded in our common rationality, and that no society can call itself just while it denies half its members the means to think for themselves.',
+        ],
+    },
+    {
+        level: 'C2', unit: 3,
+        moduleId: 'c2en-conrad',
+        title: 'Conrad and the Heart of Darkness',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'Joseph Conrad came to English as a third language, having grown up speaking Polish and French, and he did not begin to write in it seriously until well into adulthood. That a man so circumstanced should become one of the supreme prose stylists of the English novel is among the more remarkable facts in literary history — and a reminder that mastery of a language is not the exclusive birthright of those born to it.',
+            'Drawing on his years as a sailor in the merchant marine, Conrad set much of his fiction at sea or in the remote outposts of empire, using these settings to probe the darker recesses of the human character. His most celebrated work, the novella "Heart of Darkness", follows a journey up an African river that is also, unmistakably, a journey into the moral abyss — an unflinching meditation on greed, cruelty and the thin veneer of what we call civilisation.',
+            'Conrad\'s vision was profoundly sceptical, even bleak. He distrusted the grand ideals — progress, enlightenment, the civilising mission — in whose name so much violence was perpetrated, and he exposed the self-deception that allowed comfortable Europeans to avert their gaze from the brutality on which their prosperity rested. Yet his scepticism was never mere cynicism; it was rooted in a stern moral seriousness, a refusal to be consoled by comforting illusions.',
+            'His legacy is complex and, in recent decades, hotly debated. Some readers have charged that, for all his critique of imperialism, his portrayal of Africa and its peoples remains caught within the prejudices of his era. The controversy is a serious one, and worth confronting honestly. Yet it has not diminished the disturbing power of his finest work, nor the influence of his exploration of moral ambiguity upon the literature that followed him.',
+        ],
+    },
+    {
+        level: 'C2', unit: 3,
+        moduleId: 'c2en-james',
+        title: 'Henry James and the Inner Drama',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'Henry James occupies a peculiar position in the history of the novel: an American who spent most of his life in Europe, a writer poised between two continents and two literary traditions, and an artist who pushed the novel of psychological analysis to a degree of refinement that has never been surpassed and seldom equalled. His subject was consciousness — the subtle, often unspoken dramas of perception, motive and moral choice.',
+            'In novels such as "The Portrait of a Lady" and "The Ambassadors", little happens in the conventional sense. There are no battles, few deaths, scarcely any of the incident that propels more popular fiction. The action is internal: a slow dawning of awareness, a gradual revision of judgement, the painful recognition of a truth long resisted. James trained his enormous powers of observation upon the most delicate movements of the mind, finding high drama in a glance, a hesitation, an unfinished sentence.',
+            'This concentration on inner life was matched by a prose of extraordinary intricacy. James\'s late style, with its long, qualified sentences, its parenthetical hesitations and its scrupulous reaching after precision, can demand great patience of the reader. Yet for those willing to attend to it, the reward is a fineness of discrimination, a sensitivity to nuance, that few other writers can offer. Every clause earns its place; nothing is careless.',
+            'James\'s influence on the development of the modern novel can hardly be overstated. His insistence that fiction should dramatise consciousness rather than merely report events, his sophisticated handling of narrative point of view, his belief that the novel is a serious art form demanding the utmost craftsmanship — all of these helped to shape the writers who came after him. He stands, in many respects, at the threshold of literary modernism, pointing the way toward the experiments to come.',
+        ],
+    },
+    {
+        level: 'C2', unit: 4,
+        moduleId: 'c2en-joyce',
+        title: 'Joyce and the Ordinary Made Strange',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'James Joyce devoted his career to a paradoxical ambition: to make the most ordinary materials of life yield the richness usually reserved for myth and epic. A single day in the city of Dublin, the half-formed thoughts of unremarkable people, the texture of an unexceptional afternoon — these became, in his hands, the stuff of literature of the highest order. No writer has insisted more strenuously that the everyday is inexhaustibly significant.',
+            'His early collection of stories, "Dubliners", appears at first deceptively plain. Its tales of clerks, shopkeepers and disappointed dreamers proceed with a quiet, almost clinical restraint. Yet each builds toward a moment of sudden illumination — what Joyce termed an "epiphany" — in which a character, or the reader, glimpses some truth ordinarily concealed beneath the surface of habit. The technique transformed the short story, demonstrating how much could be conveyed through implication and reticence.',
+            'In his monumental novel "Ulysses", Joyce extended these methods to an astonishing scale. Mapping the wanderings of a single day onto the structure of an ancient epic, he deployed a dazzling variety of styles and an unprecedented frankness about the contents of the human mind. The book\'s difficulty, and its candour, provoked both prosecution and adulation; it remains a touchstone for debates about the limits and possibilities of the novel form.',
+            'For all the formidable reputation of his later work, Joyce\'s essential preoccupation never changed: the conviction that the inner lives of ordinary men and women, fully attended to, contain depths as profound as any in literature. To read him with care is to learn a new attentiveness — to recognise, in the trivial round of one\'s own existence, the same buried significance that he laboured a lifetime to reveal.',
+        ],
+    },
+    {
+        level: 'C2', unit: 4,
+        moduleId: 'c2en-boredom',
+        title: 'In Praise of Boredom',
+        source: 'Original essay — Level C2',
+        paragraphs: [
+            'We live in an age that has all but abolished boredom, and we are, perhaps, the poorer for it. The slightest interval of unoccupied time — a queue, a delayed train, a quiet evening — is now instantly filled by the glowing rectangle in our pockets. The empty moment, once an unavoidable feature of human life, has become a problem to be solved, a void to be banished at the first opportunity. Yet in our eagerness to escape boredom, we may have lost something of value.',
+            'For boredom, properly understood, is not merely the absence of stimulation but a peculiar and productive state of mind. It is in the unfilled hour that the imagination begins to stir, that half-formed ideas drift to the surface, that the mind, deprived of external entertainment, turns inward and discovers its own resources. Many of the great works of art and science have their origin not in frantic activity but in the apparently idle reverie that boredom makes possible.',
+            'Psychologists have begun to confirm what writers and philosophers long suspected. The wandering, unfocused mind, far from being unproductive, is the engine of creativity and self-reflection. It is when we are doing nothing in particular that we consolidate memory, make unexpected connections, and arrive at insights that purposeful concentration would never yield. To be perpetually entertained is, in a sense, to be perpetually distracted from the deeper workings of one\'s own mind.',
+            'None of this is to romanticise tedium, which in its more acute forms can be genuinely oppressive. The argument is rather for a recovered tolerance of empty time — a willingness to sit with our own thoughts rather than fleeing them at every opportunity. In an economy designed to capture our attention at every waking moment, the capacity to be bored, and to endure it, may turn out to be a small but significant act of self-possession.',
+        ],
+    },
+    {
+        level: 'C2', unit: 5,
+        moduleId: 'c2en-university',
+        title: 'What Are Universities For?',
+        source: 'Original academic text — Level C2',
+        paragraphs: [
+            'The question of what universities are for has rarely seemed more urgent, or more contested, than it does today. Once regarded as cloistered sanctuaries of disinterested learning, universities now find themselves pressed to justify their existence in the language of economic return — to demonstrate, in measurable terms, the value they add to graduates\' earnings and to national competitiveness. This shift in expectation deserves careful scrutiny, for it touches on the very purpose of higher education.',
+            'There is, to be sure, a respectable case for the economic conception. Universities are expensive institutions, sustained in large part by public funds and private fees, and it is not unreasonable to ask what society receives in return. The training of skilled professionals, the generation of research that fuels innovation, the cultivation of a productive workforce: these are genuine public goods, and no honest defence of the university can afford to ignore them.',
+            'Yet to reduce the university to an engine of economic growth is to mistake a part for the whole. The older ideal — that of education as an end in itself, a means of forming the mind and enlarging the sympathies — cannot be captured in any spreadsheet. The study of history, philosophy or literature may yield no obvious commercial dividend, yet it equips citizens to think critically, to weigh evidence, to resist manipulation, and to participate in democratic life. These are benefits no less real for being difficult to quantify.',
+            'The deepest danger, perhaps, lies in allowing a single measure of value to crowd out all others. A society that asks of its universities only that they serve the economy will, in time, get the universities it deserves: efficient, perhaps, but spiritually impoverished, stripped of the very qualities that made them worth defending. The challenge for our age is to honour the practical contributions of higher learning without forgetting the more elusive, and more important, goods it exists to serve.',
+        ],
+    },
+    {
+        level: 'C2', unit: 5,
+        moduleId: 'c2en-editorial',
+        title: 'How to Read an Editorial',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'The editorial — that anonymous column in which a newspaper speaks in its own voice — is among the most distinctive and least understood forms of journalistic writing. Unlike the news report, which aspires, however imperfectly, to neutrality, the editorial is unashamedly an instrument of persuasion. To read it intelligently, one must learn to recognise the techniques by which it seeks to shape opinion, and to hold its arguments to account.',
+            'The first thing the critical reader notices is the careful management of tone. A skilled editorialist adopts the register of calm, reasonable authority, presenting contestable judgements as though they were settled conclusions. Phrases such as "it is surely clear that" or "no reasonable person could deny" perform a quiet rhetorical work, inviting the reader\'s assent before any argument has been made. The appearance of moderation is itself a persuasive device.',
+            'Equally important is what the editorial chooses to omit. Persuasion operates as much through silence as through statement: the inconvenient fact left unmentioned, the counter-argument briefly acknowledged only to be dismissed, the complexity flattened in the interest of a clean conclusion. The discerning reader learns to ask not only what is being said, but what is being left out, and whose interests the resulting picture happens to serve.',
+            'None of this is to suggest that editorials should be distrusted on principle. At their best, they perform an indispensable function, distilling complex issues, holding power to account, and contributing to the public conversation that democratic life requires. The point is rather that they should be read as what they are: not neutral reports but reasoned advocacy, to be engaged with critically, weighed against other voices, and, where the evidence warrants, resisted.',
+        ],
+    },
+    {
+        level: 'C2', unit: 5,
+        moduleId: 'c2en-hardtimes',
+        title: 'Dickens and the Critique of Utilitarianism',
+        source: 'Original text — Level C2',
+        paragraphs: [
+            'Among the many targets of Charles Dickens\'s social criticism, few drew his fire more sharply than the cold philosophy of pure utility that gained ground in the industrial nineteenth century. In his novel "Hard Times", he mounted a sustained assault on a worldview that reduced human beings to units of production and measured every question by the narrow yardstick of fact and calculation, to the exclusion of imagination, feeling and wonder.',
+            'The novel opens in a schoolroom presided over by a man who demands of his pupils nothing but "Facts" — a relentless drilling of statistics and definitions, the systematic suppression of fancy and play. In this regime, a child who loves horses is rebuked for failing to define one; the products of the imagination are dismissed as worthless idleness. Dickens presents this educational philosophy not as a harmless eccentricity but as a kind of spiritual mutilation, a deliberate starving of the soul.',
+            'The consequences, as the novel unfolds, prove ruinous. The characters reared on this arid creed find themselves emotionally crippled, unable to love, to sympathise, or to find meaning in their own lives. The pursuit of efficiency and self-interest, divorced from any larger conception of human flourishing, yields not prosperity but desolation. The factory town in which the action unfolds, with its monotonous streets and poisoned air, becomes the physical emblem of a stunted civilisation.',
+            'Dickens\'s critique was, in its way, prophetic. The reduction of human worth to economic productivity, the elevation of measurable quantity over immeasurable quality, the suspicion of anything that cannot be costed and counted — these tendencies, which he diagnosed with such vehemence, have hardly disappeared. "Hard Times" endures not only as a period piece but as a standing rebuke to any age, including our own, tempted to forget that human beings do not live by facts alone.',
+        ],
+    },
+];

@@ -1,0 +1,297 @@
+import type { GrammarLesson } from '../../../types/lectures/grammar';
+
+export const grammarB1: GrammarLesson[] = [
+    {
+        unit: 2,
+        id: 'en-prepositions',
+        title: 'Les Prépositions Anglaises',
+        level: 'B1',
+        description: "In, on, at — les prépositions anglaises ne se traduisent pas mot à mot. Voici les règles qui simplifient tout.",
+        icon: '📍',
+        color: '#DC2626',
+        sections: [
+            {
+                title: 'In / On / At pour le temps',
+                explanation: "La règle générale : AT pour un moment précis, IN pour une période large (mois, année, saison), ON pour les jours et dates.",
+                examples: [
+                    { french: 'at 3 o\'clock / at midnight / at noon', english: 'à 3h / à minuit / à midi', note: 'AT → moment précis' },
+                    { french: 'in March / in 2024 / in winter', english: 'en mars / en 2024 / en hiver', note: 'IN → période' },
+                    { french: 'on Monday / on 14 July / on my birthday', english: 'le lundi / le 14 juillet / le jour de mon anniversaire', note: 'ON → jour ou date' },
+                    { french: 'at night / at the weekend', english: 'la nuit / le week-end', note: 'Exceptions mémorisables' },
+                    { french: 'in the morning / in the evening', english: 'le matin / le soir', note: 'IN pour les parties de la journée' },
+                ],
+            },
+            {
+                title: 'In / On / At pour le lieu',
+                explanation: "La même logique : AT pour un point précis, IN pour un espace fermé ou une ville/pays, ON pour une surface.",
+                examples: [
+                    { french: 'at the bus stop / at the airport', english: "à l'arrêt de bus / à l'aéroport", note: 'AT → point de passage' },
+                    { french: 'in the room / in Paris / in France', english: 'dans la pièce / à Paris / en France', note: 'IN → espace ou lieu géographique' },
+                    { french: 'on the table / on the wall / on the floor', english: 'sur la table / sur le mur / sur le sol', note: 'ON → surface' },
+                    { french: 'on the bus / on the train / on the plane', english: 'dans le bus / dans le train / dans l\'avion', note: 'Transports : ON (pas in)' },
+                    { french: 'in the car / in the taxi', english: 'dans la voiture / dans le taxi', note: 'Véhicules fermés petits : IN' },
+                ],
+            },
+            {
+                title: 'Différences clés avec le français',
+                explanation: "Les prépositions anglaises ne se traduisent pas toujours littéralement. Voici les pièges les plus courants.",
+                examples: [
+                    { french: 'interested in', english: 'intéressé par', note: 'Pas « interested by »' },
+                    { french: 'good at', english: 'bon en / doué pour', note: 'Pas « good in »' },
+                    { french: 'depend on', english: 'dépendre de', note: 'Pas « depend of »' },
+                    { french: 'married to', english: 'marié à', note: 'Pas « married with »' },
+                    { french: 'listen to', english: 'écouter', note: 'Pas « listen » sans préposition' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'The meeting is ___ Monday ___ 10 am.', answer: 'on / at', hint: 'Jour → on ; heure précise → at' },
+            { sentence: 'She was born ___ 1995 ___ July.', answer: 'in / in', hint: 'Année et mois → in' },
+            { sentence: 'I\'ll see you ___ the weekend.', answer: 'at', hint: 'Week-end → at (usage britannique) ou on (américain)' },
+            { sentence: 'He is very good ___ languages.', answer: 'at', hint: 'good at = être doué pour' },
+        ],
+    },
+    {
+        unit: 3,
+        id: 'en-phrasal-verbs',
+        title: 'Les Verbes à Particule',
+        level: 'B1',
+        description: "Turn on, give up, look for... Les phrasal verbs sont partout en anglais. Apprenez leur logique plutôt que de les mémoriser un par un.",
+        icon: '⚡',
+        color: '#0891B2',
+        sections: [
+            {
+                title: "Qu'est-ce qu'un phrasal verb ?",
+                explanation: "Un phrasal verb est un verbe suivi d'une ou deux particules (prépositions ou adverbes) qui changent complètement son sens. Le sens littéral et le sens réel sont souvent très différents.",
+                examples: [
+                    { french: 'give up', english: 'abandonner', note: 'give = donner + up → abandonnerd' },
+                    { french: 'look for', english: 'chercher', note: 'look = regarder + for → chercher' },
+                    { french: 'turn on / turn off', english: 'allumer / éteindre', note: 'Contraires' },
+                    { french: 'find out', english: 'découvrir, apprendre (une info)', note: 'find = trouver + out → découvrir' },
+                    { french: 'get up', english: 'se lever', note: 'get = obtenir + up → se lever' },
+                ],
+            },
+            {
+                title: 'Séparables vs inséparables',
+                explanation: "Certains phrasal verbs peuvent être séparés par le complément d'objet (séparables). D'autres ne peuvent pas être séparés (inséparables). Si le complément est un pronom, il doit toujours se placer au milieu pour les verbes séparables.",
+                examples: [
+                    { french: 'Turn off the light. / Turn the light off. ✓', english: 'Éteignez la lumière.', note: 'Séparable : objet peut aller avant ou après' },
+                    { french: 'Turn it off. ✓  /  Turn off it. ✗', english: 'Pronom → toujours au milieu', note: 'Règle du pronom' },
+                    { french: 'I look after my sister. ✓', english: "Je m'occupe de ma sœur.", note: 'Inséparable : after reste collé au verbe' },
+                    { french: 'I look my sister after. ✗', english: 'Forme incorrecte', note: 'Ne pas séparer les inséparables' },
+                ],
+            },
+            {
+                title: 'Les plus courants',
+                explanation: "Voici les phrasal verbs les plus fréquents dans la conversation quotidienne. Apprenez-les en contexte.",
+                examples: [
+                    { french: 'She grew up in the south.', english: 'Elle a grandi dans le sud.' },
+                    { french: 'I ran into an old friend.', english: "J'ai croisé un vieux ami par hasard." },
+                    { french: 'Can you look after the children?', english: 'Peux-tu t\'occuper des enfants ?' },
+                    { french: 'He put off the meeting until Friday.', english: 'Il a reporté la réunion à vendredi.' },
+                    { french: 'She brought up an interesting point.', english: 'Elle a soulevé un point intéressant.' },
+                    { french: 'I\'m looking forward to seeing you.', english: "J'ai hâte de vous voir.", note: 'look forward to + -ing : impatient de' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'She decided to ___ ___ smoking. (arrêter)', answer: 'give up', hint: 'abandonner une habitude → give up' },
+            { sentence: 'Can you ___ ___ the music? I\'m trying to sleep. (baisser)', answer: 'turn down', hint: 'Baisser le volume → turn down' },
+            { sentence: 'I need to ___ ___ what time the train leaves. (vérifier)', answer: 'find out', hint: 'Chercher une info → find out' },
+            { sentence: "Don't ___ ___ the meeting until next week.", answer: 'put off', hint: 'Reporter → put off' },
+        ],
+    },
+    {
+        unit: 2,
+        id: 'en-conditionals-1-2',
+        title: 'Les Conditionnels 1 et 2',
+        level: 'B1',
+        description: "If it rains... / If I won the lottery... Le conditionnel réel et le conditionnel hypothétique en anglais.",
+        icon: '🌿',
+        color: '#2563EB',
+        sections: [
+            {
+                title: 'Premier conditionnel — situations réelles ou probables',
+                explanation: "Le premier conditionnel exprime une situation réelle ou probable dans le futur. Structure : if + présent simple → will + infinitif. La condition est possible — le locuteur pense que ça peut vraiment arriver. En français, on utilise si + présent → futur simple.",
+                examples: [
+                    { french: 'If it rains tomorrow, we will stay at home.', english: 'S\'il pleut demain, nous resterons à la maison.' },
+                    { french: 'If you study hard, you will pass the exam.', english: 'Si tu travailles dur, tu réussiras l\'examen.' },
+                    { french: 'She will call you if she has time.', english: 'Elle t\'appellera si elle a le temps.' },
+                    { french: 'If I miss the bus, I\'ll take a taxi.', english: 'Si je rate le bus, je prendrai un taxi.' },
+                ],
+            },
+            {
+                title: 'Deuxième conditionnel — situations hypothétiques',
+                explanation: "Le deuxième conditionnel exprime une situation hypothétique, imaginaire ou peu probable dans le présent ou le futur. Structure : if + past simple → would + infinitif. Même si on utilise un temps passé, le sens est présent ou futur. En français, c'est le conditionnel présent : si + imparfait → conditionnel.",
+                examples: [
+                    { french: 'If I won the lottery, I would travel the world.', english: 'Si je gagnais à la loterie, je ferais le tour du monde.' },
+                    { french: 'If I were you, I would apologise.', english: 'À ta place, je m\'excuserais.' },
+                    { french: 'She would be happier if she changed jobs.', english: 'Elle serait plus heureuse si elle changeait de travail.' },
+                    { french: 'What would you do if you lost your phone?', english: 'Que ferais-tu si tu perdais ton téléphone ?' },
+                ],
+            },
+            {
+                title: 'Variantes : unless, as long as, provided that',
+                explanation: "D'autres conjonctions introduisent des conditions en anglais. Unless signifie « sauf si / à moins que ». As long as et provided (that) signifient « à condition que ». Ces structures sont très courantes dans la langue formelle et contractuelle.",
+                examples: [
+                    { french: 'Unless you hurry, you\'ll miss the train.', english: 'Sauf si tu te dépêches, tu rateras le train.' },
+                    { french: 'I\'ll help you as long as you work hard.', english: 'Je t\'aiderai à condition que tu travailles dur.' },
+                    { french: 'You can borrow my car provided you drive carefully.', english: 'Tu peux emprunter ma voiture à condition de conduire prudemment.' },
+                    { french: 'I won\'t go unless you come with me.', english: 'Je n\'irai pas à moins que tu ne viennes avec moi.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'If she ___ (study), she ___ (pass) the exam.', answer: 'studies / will pass', hint: '1er conditionnel : if + présent simple → will + infinitif' },
+            { sentence: 'If I ___ (be) rich, I ___ (buy) a yacht.', answer: 'were / would buy', hint: '2ème conditionnel : if + past simple → would + infinitif' },
+            { sentence: '___ you hurry, you will be late.', answer: 'Unless', hint: 'Unless = sauf si / à moins que' },
+            { sentence: 'What ___ you ___ (do) if you found a wallet in the street?', answer: 'would / do', hint: '2ème conditionnel hypothétique → would + infinitif' },
+            { sentence: 'If it ___ (not/rain), we ___ (have) a picnic.', answer: "doesn't rain / will have", hint: '1er conditionnel négatif → doesn\'t + infinitif → will' },
+        ],
+    },
+    {
+        unit: 2,
+        id: 'en-passive-voice',
+        title: 'La Voix Passive',
+        level: 'B1',
+        description: "The letter was written, the bridge will be built... La voix passive en anglais : formation, usages et différences avec le français.",
+        icon: '🔃',
+        color: '#6366F1',
+        sections: [
+            {
+                title: 'Formation de la voix passive',
+                explanation: "La voix passive se forme avec le verbe be (conjugué au temps voulu) + le participe passé. L'agent (celui qui fait l'action) peut être ajouté avec « by » mais est souvent omis. En français, la construction est similaire : être + participe passé. La voix passive déplace le focus de l'agent vers l'objet de l'action.",
+                examples: [
+                    { french: 'The letter is written every week. (présent)', english: 'La lettre est écrite chaque semaine.' },
+                    { french: 'The bridge was built in 1889. (passé)', english: 'Le pont a été construit en 1889.' },
+                    { french: 'The results will be announced tomorrow. (futur)', english: 'Les résultats seront annoncés demain.' },
+                    { french: 'The house was built by a famous architect.', english: 'La maison a été construite par un architecte célèbre.' },
+                ],
+            },
+            {
+                title: 'Le passif au présent et au passé',
+                explanation: "Au présent, on utilise is/are + participe passé. Au passé, on utilise was/were + participe passé. La règle d'accord suit le sujet de la phrase passive, comme en français. Les questions et négations se forment directement sur le verbe be.",
+                examples: [
+                    { french: 'Coffee is grown in Colombia.', english: 'Le café est cultivé en Colombie.' },
+                    { french: 'These cars are made in Japan.', english: 'Ces voitures sont fabriquées au Japon.' },
+                    { french: 'The museum was opened in 1902.', english: 'Le musée a été ouvert en 1902.' },
+                    { french: 'Were you invited to the party?', english: 'Avez-vous été invité à la fête ?' },
+                    { french: 'The package wasn\'t delivered yesterday.', english: 'Le colis n\'a pas été livré hier.' },
+                ],
+            },
+            {
+                title: 'Pourquoi utiliser le passif ?',
+                explanation: "On utilise le passif quand l'agent est inconnu, sans importance ou évident. On l'utilise aussi dans les écrits formels, scientifiques ou journalistiques pour donner un ton plus objectif. En anglais, le passif est encore plus fréquent qu'en français, notamment à l'écrit.",
+                examples: [
+                    { french: 'My wallet was stolen. (agent inconnu)', english: 'Mon portefeuille a été volé.' },
+                    { french: 'The experiment was conducted over six months. (style scientifique)', english: 'L\'expérience a été menée sur six mois.' },
+                    { french: 'French is spoken in 29 countries.', english: 'Le français est parlé dans 29 pays.' },
+                    { french: 'The suspect was arrested last night.', english: 'Le suspect a été arrêté hier soir.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'The Eiffel Tower ___ ___ in 1889. (construire)', answer: 'was built', hint: 'Passé passif : was/were + participe passé' },
+            { sentence: 'English ___ ___ all over the world. (parler)', answer: 'is spoken', hint: 'Présent passif : is/are + participe passé' },
+            { sentence: 'The results ___ ___ next Monday. (annoncer)', answer: 'will be announced', hint: 'Futur passif : will be + participe passé' },
+            { sentence: '___ the report ___ yet? (terminer)', answer: 'Has / been finished', hint: 'Present perfect passif : has/have been + participe passé' },
+            { sentence: 'She ___ ___ the news by her colleague. (informer)', answer: 'was told', hint: 'Passé passif de tell → was told' },
+        ],
+    },
+    {
+        unit: 2,
+        id: 'en-reported-speech',
+        title: 'Le Discours Rapporté',
+        level: 'B1',
+        description: "She said that... / He told me... Rapporter les paroles de quelqu\'un en anglais avec les bonnes concordances de temps.",
+        icon: '💬',
+        color: '#0891B2',
+        sections: [
+            {
+                title: 'Say vs Tell',
+                explanation: "En anglais, say et tell sont les deux verbes principaux pour rapporter des paroles. La différence : tell est TOUJOURS suivi d'un pronom personnel complément (tell me, tell her, tell us...). Say ne prend pas de complément direct — on dit say that, pas say me. Cette distinction n'existe pas en français avec « dire ».",
+                examples: [
+                    { french: 'She said that she was tired.', english: 'Elle a dit qu\'elle était fatiguée.' },
+                    { french: 'She told me that she was tired.', english: 'Elle m\'a dit qu\'elle était fatiguée.' },
+                    { french: 'He said he would come.', english: 'Il a dit qu\'il viendrait.' },
+                    { french: 'They told us the news.', english: 'Ils nous ont annoncé la nouvelle.' },
+                ],
+            },
+            {
+                title: 'La concordance des temps (Backshift)',
+                explanation: "Quand on rapporte des paroles passées, les temps reculent d'un cran : le présent devient passé, le will devient would, le can devient could. Ce phénomène s'appelle le backshift. En français, la concordance des temps fonctionne de façon similaire, mais elle est moins strictement obligatoire qu'en anglais.",
+                examples: [
+                    { french: '"I am tired." → She said she was tired.', english: '« Je suis fatiguée. » → Elle a dit qu\'elle était fatiguée.' },
+                    { french: '"I will call you." → He said he would call me.', english: '« Je t\'appellerai. » → Il a dit qu\'il m\'appellerait.' },
+                    { french: '"I can help." → She said she could help.', english: '« Je peux aider. » → Elle a dit qu\'elle pouvait aider.' },
+                    { french: '"I have finished." → He said he had finished.', english: '« J\'ai fini. » → Il a dit qu\'il avait fini.' },
+                ],
+            },
+            {
+                title: 'Les questions rapportées',
+                explanation: "Pour rapporter une question, on n'utilise pas l'inversion ni le point d'interrogation. Les questions oui/non sont introduites par if ou whether. Les questions Wh- conservent leur mot interrogatif mais l'ordre redevient sujet–verbe. Le ton passe de direct à indirect.",
+                examples: [
+                    { french: '"Are you coming?" → She asked if I was coming.', english: '« Tu viens ? » → Elle a demandé si je venais.' },
+                    { french: '"Where do you live?" → He asked where I lived.', english: '« Où habites-tu ? » → Il a demandé où j\'habitais.' },
+                    { french: '"What time is it?" → She asked what time it was.', english: '« Quelle heure est-il ? » → Elle a demandé quelle heure il était.' },
+                    { french: '"Have you eaten?" → He asked whether I had eaten.', english: '« As-tu mangé ? » → Il a demandé si j\'avais mangé.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'He said he ___ (be) tired. (concordance des temps)', answer: 'was', hint: 'Présent → passé simple en discours rapporté : am → was' },
+            { sentence: 'She ___ me that she would call later. (say/tell)', answer: 'told', hint: 'Suivi d\'un pronom complément → tell, pas say' },
+            { sentence: '"I can swim." → She said she ___ swim.', answer: 'could', hint: 'Backshift : can → could au discours rapporté' },
+            { sentence: 'He asked ___ I was from France. (question oui/non rapportée)', answer: 'if', hint: 'Question oui/non rapportée → if ou whether' },
+            { sentence: '"I will help you." → She said she ___ help me.', answer: 'would', hint: 'Backshift : will → would' },
+        ],
+    },
+    {
+        unit: 2,
+        id: 'en-relative-clauses',
+        title: 'Les Propositions Relatives',
+        level: 'B1',
+        description: "Who, which, that, whose, where... Relier des idées avec les pronoms relatifs en anglais.",
+        icon: '🔗',
+        color: '#059669',
+        sections: [
+            {
+                title: 'Les pronoms relatifs',
+                explanation: "Les pronoms relatifs servent à relier deux propositions. En anglais, le choix du pronom dépend de ce à quoi il se réfère : who pour les personnes, which pour les choses et les animaux, that peut remplacer who ou which dans les propositions définissantes, whose pour la possession, where pour les lieux, when pour le temps.",
+                examples: [
+                    { french: 'The woman who lives next door is a doctor.', english: 'La femme qui habite à côté est médecin.' },
+                    { french: 'The book which/that I read was very good.', english: 'Le livre que j\'ai lu était très bon.' },
+                    { french: 'The student whose bag was stolen called the police.', english: 'L\'étudiant dont le sac a été volé a appelé la police.' },
+                    { french: 'Paris is the city where I was born.', english: 'Paris est la ville où je suis né.' },
+                    { french: 'I remember the day when we first met.', english: 'Je me souviens du jour où nous nous sommes rencontrés pour la première fois.' },
+                ],
+            },
+            {
+                title: 'Propositions relatives définissantes',
+                explanation: "Une proposition relative définissante donne une information essentielle pour identifier le nom. Sans elle, la phrase n'a plus de sens complet. Elle ne prend PAS de virgule. Dans ce type de proposition, who et which peuvent être remplacés par that, et on peut même omettre le pronom si c'est l'objet de la relative.",
+                examples: [
+                    { french: 'The film that I saw last night was amazing.', english: 'Le film que j\'ai vu hier soir était fantastique.' },
+                    { french: 'The man (who/that) she married is very kind.', english: 'L\'homme qu\'elle a épousé est très gentil.' },
+                    { french: 'Is this the bag (that) you were looking for?', english: 'Est-ce le sac que vous cherchiez ?' },
+                    { french: 'Students who work hard usually succeed.', english: 'Les étudiants qui travaillent dur réussissent généralement.' },
+                ],
+            },
+            {
+                title: 'Propositions relatives non définissantes',
+                explanation: "Une proposition relative non définissante ajoute une information supplémentaire mais non essentielle. Elle se met entre virgules (ou tirets). On ne peut pas utiliser that dans ce cas — seulement who ou which. On ne peut pas non plus omettre le pronom. Ce type de relative est plus fréquent à l'écrit et dans un registre soutenu.",
+                examples: [
+                    { french: 'My brother, who lives in London, is a teacher.', english: 'Mon frère, qui habite à Londres, est enseignant.' },
+                    { french: 'The Eiffel Tower, which was built in 1889, attracts millions of visitors.', english: 'La tour Eiffel, qui a été construite en 1889, attire des millions de visiteurs.' },
+                    { french: 'She gave me this book, which I found very useful.', english: 'Elle m\'a donné ce livre, que j\'ai trouvé très utile.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'The person ___ called is my manager. (qui)', answer: 'who', hint: 'Pour les personnes → who' },
+            { sentence: 'That\'s the house ___ I grew up. (où)', answer: 'where', hint: 'Pour les lieux → where' },
+            { sentence: 'The report, ___ was 50 pages long, took a month to write. (virgules → non définissante)', answer: 'which', hint: 'Proposition non définissante (virgules) → which, pas that' },
+            { sentence: 'She is the student ___ work is always excellent. (possession)', answer: 'whose', hint: 'Possession → whose' },
+            { sentence: 'Is that the film ___ won the Oscar? (chose)', answer: 'that / which', hint: 'Pour les choses dans une relative définissante → that ou which' },
+        ],
+    },
+];

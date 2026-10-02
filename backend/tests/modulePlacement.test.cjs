@@ -46,6 +46,32 @@ test('French A1 readings and their vocabulary follow the seven-unit syllabus', (
 });
 
 for (const language of ['fr', 'en']) {
+    test(`${language} level files contain only their own course content`, () => {
+        for (const level of ['a1', 'a2', 'b1', 'b2', 'c1', 'c2']) {
+            const root = `../dist/content/${language}`;
+            const upper = level.toUpperCase();
+            const course = require(`${root}/courses/${level}`)[`course${upper}`];
+            assert.equal(course.level, upper);
+            for (const kind of ['grammar', 'phrases', 'reading']) {
+                const entries = require(`${root}/${kind}/${level}`)[`${kind}${upper}`];
+                for (const entry of entries) assert.equal(entry.level, upper, `${kind}/${level}`);
+            }
+            const vocabulary = require(`${root}/vocabulary/${level}`);
+            for (const module of vocabulary[`modules${upper}`]) {
+                assert.equal(module.level, upper, `vocabulary/${module.id}`);
+                assert(module.words.length > 0, `vocabulary/${module.id} has no words`);
+                assert.deepEqual(learningContent[language].vocabulary[module.id], module.words);
+            }
+            for (const id of Object.keys(vocabulary[`readingWords${upper}`])) {
+                assert(id.toLowerCase().startsWith(level), `reading words ${id} in ${level}`);
+            }
+            const verbs = require(`${root}/verbs/${level}`);
+            assert.equal(verbs[`verbGroup${upper}`].id, level);
+            for (const entry of verbs[`verbs${upper}`]) assert.equal(entry.level, upper, `verb/${entry.id}`);
+            for (const entry of Object.values(verbs[`helpers${upper}`])) assert.equal(entry.level, upper);
+        }
+    });
+
     test(`${language} modules have one valid level and unit, matching their course placement`, () => {
         const curriculum = courses(language);
         const unitCount = new Map(curriculum.map(course => [course.level, course.units.length]));

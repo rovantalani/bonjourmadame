@@ -1,0 +1,59 @@
+import type { Course } from '../../../types/courses';
+
+export const courseB1: Course = {
+        level: 'B1',
+        title: 'Building Fluency',
+        description: 'Master past and future tenses, irregular verbs, and real-world phrases.',
+        color: 'var(--course-b1)',
+        textColor: 'var(--level-b1-text)',
+        units: [
+            { number: 1, title: 'Unit 1 — Récit & Mémoire' },
+            { number: 2, title: 'Unit 2 — Opinions & Société' },
+            { number: 3, title: 'Unit 3 — Voyages & Culture' },
+            { number: 4, title: 'Unit 4 — Travail & Société' },
+            { number: 5, title: 'Unit 5 — Expression Complexe & Bilan' },
+        ],
+        steps: [
+            // Unit 1 — Récit & Mémoire (7 steps)
+            { id: 'b1-daily-life',         title: 'Daily Life (Advanced)',           module: 'vocabulary', type: 'vocabulary', contentId: 'daily-life-advanced',        path: '/vocabulary/daily-life-advanced',           unit: 1 },
+            { id: 'b1-imparfait',          title: "L'Imparfait",                    module: 'lectures', type: 'grammar',    contentId: 'imparfait',                  path: '/lectures/grammar/imparfait',                unit: 1 },
+            { id: 'b1-plus-que-parfait',   title: 'Le Plus-que-parfait',            module: 'lectures', type: 'grammar',    contentId: 'plus-que-parfait',           path: '/lectures/grammar/plus-que-parfait',          unit: 1 },
+            { id: 'b1-emotions',           title: 'Emotions & Psychology',          module: 'vocabulary', type: 'vocabulary', contentId: 'emotions-psychology',        path: '/vocabulary/emotions-psychology',            unit: 1 },
+            { id: 'b1-relative-pronouns',  title: 'Relative Pronouns',              module: 'lectures', type: 'grammar',    contentId: 'relative-pronouns',          path: '/lectures/grammar/relative-pronouns',         unit: 1 },
+            { id: 'b1-expressing-feelings',title: 'Expressing Feelings',            module: 'lectures', type: 'phrases',    contentId: 'expressing-feelings',        path: '/lectures/phrases/expressing-feelings',               unit: 1 },
+            { id: 'b1-reading-famille',    title: 'Reading: Une Histoire de Famille', module: 'lectures', type: 'reading',  contentId: 'b1-une-histoire-de-famille', path: '/lectures/reading/b1-une-histoire-de-famille',        unit: 1 },
+            // Unit 2 — Opinions & Société (8 steps)
+            { id: 'b1-futur',              title: 'Future & Conditional',           module: 'lectures', type: 'grammar',    contentId: 'futur-conditionnel',         path: '/lectures/grammar/futur-conditionnel',        unit: 2 },
+            { id: 'b1-environment',        title: 'Environment & Ecology',          module: 'vocabulary', type: 'vocabulary', contentId: 'environment-ecology',        path: '/vocabulary/environment-ecology',            unit: 2 },
+            { id: 'b1-si-clauses',         title: 'Si Clauses (Type 1)',            module: 'lectures', type: 'grammar',    contentId: 'si-clauses-type1',           path: '/lectures/grammar/si-clauses-type1',          unit: 2 },
+            { id: 'b1-opinions',           title: 'Expressing Opinions',            module: 'lectures', type: 'phrases',    contentId: 'expressing-opinions',        path: '/lectures/phrases/expressing-opinions',               unit: 2 },
+            { id: 'b1-media-news',         title: 'Media & News',                   module: 'vocabulary', type: 'vocabulary', contentId: 'media-news',                 path: '/vocabulary/media-news',                     unit: 2 },
+            { id: 'b1-subjunctive',        title: 'Le Subjonctif',                  module: 'lectures', type: 'grammar',    contentId: 'subjunctive-intro',          path: '/lectures/grammar/subjunctive-intro',         unit: 2 },
+            { id: 'b1-disagreement',       title: 'Expressing Disagreement',        module: 'lectures', type: 'phrases',    contentId: 'expressing-disagreement',    path: '/lectures/phrases/expressing-disagreement',           unit: 2 },
+            { id: 'b1-reading-travail',    title: 'Reading: Le Travail à Distance', module: 'lectures', type: 'reading',    contentId: 'b1-le-travail-a-distance',   path: '/lectures/reading/b1-le-travail-a-distance',          unit: 2 },
+            // Unit 3 — Voyages & Culture (7 steps)
+            { id: 'b1-travel',             title: 'Travel & Culture',               module: 'vocabulary', type: 'vocabulary', contentId: 'travel-culture',             path: '/vocabulary/travel-culture',                 unit: 3 },
+            { id: 'b1-getting-around',     title: 'Getting Around',                 module: 'lectures', type: 'phrases',    contentId: 'getting-around',             path: '/lectures/phrases/getting-around',                    unit: 3 },
+            { id: 'b1-y-en-pronouns',      title: 'Pronouns Y & En',                module: 'lectures', type: 'grammar',    contentId: 'y-en-pronouns',              path: '/lectures/grammar/y-en-pronouns',             unit: 3 },
+            { id: 'b1-art-culture',        title: 'Art & Culture',                  module: 'vocabulary', type: 'vocabulary', contentId: 'art-culture',                path: '/vocabulary/art-culture',                    unit: 3 },
+            { id: 'b1-irregular-verbs',    title: 'Irregular Verbs',                module: 'verbs', type: 'verbs',      contentId: 'b1',            path: '/verbs/b1',                   unit: 3 },
+            { id: 'b1-museum',             title: 'At the Museum / Event',          module: 'lectures', type: 'phrases',    contentId: 'at-the-museum-event',        path: '/lectures/phrases/at-the-museum-event',               unit: 3 },
+            { id: 'b1-reading-provence',   title: 'Reading: Voyage en Provence',    module: 'lectures', type: 'reading',    contentId: 'b1-voyage-en-provence',      path: '/lectures/reading/b1-voyage-en-provence',             unit: 3 },
+            // Unit 4 — Travail & Société (8 steps)
+            { id: 'b1-technology',         title: 'Technology & Media',             module: 'vocabulary', type: 'vocabulary', contentId: 'technology-media',           path: '/vocabulary/technology-media',               unit: 4 },
+            { id: 'b1-present-participle', title: 'Participe Présent & Gérondif',   module: 'lectures', type: 'grammar',    contentId: 'present-participle',         path: '/lectures/grammar/present-participle',        unit: 4 },
+            { id: 'b1-relationships',      title: 'Relationships & Society',        module: 'vocabulary', type: 'vocabulary', contentId: 'relationships-social',       path: '/vocabulary/relationships-social',           unit: 4 },
+            { id: 'b1-negation-advanced',  title: 'Advanced Negation',              module: 'lectures', type: 'grammar',    contentId: 'negation-advanced',          path: '/lectures/grammar/negation-advanced',         unit: 4 },
+            { id: 'b1-work-phrases',       title: 'Talking About Work',             module: 'lectures', type: 'phrases',    contentId: 'talking-about-work',         path: '/lectures/phrases/talking-about-work',                unit: 4 },
+            { id: 'b1-customer-service',   title: 'Customer Service',               module: 'lectures', type: 'phrases',    contentId: 'customer-service',           path: '/lectures/phrases/customer-service',                  unit: 4 },
+            { id: 'b1-housing',            title: 'Housing & Urban Life',           module: 'vocabulary', type: 'vocabulary', contentId: 'housing-urban',              path: '/vocabulary/housing-urban',                  unit: 4 },
+            { id: 'b1-reading-artiste',    title: 'Reading: Rencontre avec une Artiste', module: 'lectures', type: 'reading', contentId: 'b1-interview-artiste',  path: '/lectures/reading/b1-interview-artiste',              unit: 4 },
+            // Unit 5 — Expression Complexe & Bilan (6 steps)
+            { id: 'b1-double-pronouns',    title: 'Double Pronoun Order',           module: 'lectures', type: 'grammar',    contentId: 'double-pronoun-order',       path: '/lectures/grammar/double-pronoun-order',      unit: 5 },
+            { id: 'b1-health-lifestyle',   title: 'Health & Lifestyle',             module: 'vocabulary', type: 'vocabulary', contentId: 'health-lifestyle',           path: '/vocabulary/health-lifestyle',               unit: 5 },
+            { id: 'b1-health-phrases',     title: 'Health & Lifestyle Phrases',     module: 'lectures', type: 'phrases',    contentId: 'health-lifestyle-phrases',   path: '/lectures/phrases/health-lifestyle-phrases',          unit: 5 },
+            { id: 'b1-reading-lettre',     title: "Reading: Lettre à un Ami",       module: 'lectures', type: 'reading',    contentId: 'b1-une-lettre-a-ami',        path: '/lectures/reading/b1-une-lettre-a-ami',               unit: 5 },
+            { id: 'b1-reading-jeunesse',   title: 'Reading: La Jeunesse Française', module: 'lectures', type: 'reading',    contentId: 'b1-article-jeunesse',        path: '/lectures/reading/b1-article-jeunesse',               unit: 5 },
+            { id: 'b1-reading-expatrie',   title: "Reading: Témoignage d'un Expatrié", module: 'lectures', type: 'reading', contentId: 'b1-temoignage-expatrie',     path: '/lectures/reading/b1-temoignage-expatrie',            unit: 5 },
+        ],
+    };

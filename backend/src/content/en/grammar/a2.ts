@@ -1,0 +1,298 @@
+import type { GrammarLesson } from '../../../types/lectures/grammar';
+
+export const grammarA2: GrammarLesson[] = [
+    {
+        unit: 2,
+        id: 'en-past-tenses',
+        title: 'Les Temps du Passé',
+        level: 'A2',
+        description: "Past Simple ou Present Perfect ? La confusion la plus fréquente pour les francophones — enfin expliquée.",
+        icon: '📅',
+        color: '#EA580C',
+        sections: [
+            {
+                title: 'Le Past Simple',
+                explanation: "Le Past Simple exprime une action terminée à un moment précis du passé. On ajoute « -ed » aux verbes réguliers. Les verbes irréguliers ont une forme propre (go → went, see → saw). Il se traduit souvent par le passé composé ou l'imparfait selon le contexte.",
+                examples: [
+                    { french: 'I visited Paris last year.', english: "J'ai visité Paris l'année dernière." },
+                    { french: 'She worked here in 2019.', english: 'Elle travaillait ici en 2019.' },
+                    { french: 'They went to the cinema yesterday.', english: 'Ils sont allés au cinéma hier.' },
+                    { french: 'Did you see the film?', english: 'Est-ce que tu as vu le film ?' },
+                    { french: 'He did not call me.', english: 'Il ne m\'a pas appelé.' },
+                ],
+            },
+            {
+                title: 'Le Present Perfect',
+                explanation: "Le Present Perfect (have + participe passé) relie le passé au présent. Il n'existe pas en français — on l'exprime souvent par le passé composé, mais le sens est différent. On l'utilise pour une expérience de vie, une action récente avec un résultat visible, ou une durée jusqu'à maintenant.",
+                examples: [
+                    { french: 'I have been to Japan.', english: "Je suis déjà allé au Japon. (dans ma vie)", note: 'Expérience de vie, pas de moment précis' },
+                    { french: 'She has just left.', english: 'Elle vient de partir.', note: 'Action très récente → just' },
+                    { french: 'Have you ever tried sushi?', english: 'As-tu déjà essayé les sushis ?', note: 'Expérience → ever' },
+                    { french: 'I have lived here for ten years.', english: "J'habite ici depuis dix ans.", note: "Durée jusqu'au présent → for/since" },
+                    { french: 'I lost my keys. / I have lost my keys.', english: 'J\'ai perdu mes clés (hier). / J\'ai perdu mes clés (résultat : je ne les ai toujours pas).', note: 'Contexte change tout' },
+                ],
+            },
+            {
+                title: 'Signaux temporels',
+                explanation: "Certains mots déclenchent automatiquement l'un ou l'autre temps. C'est le raccourci le plus pratique.",
+                examples: [
+                    { french: 'yesterday / last week / in 2020 / ago', english: 'hier / la semaine dernière / en 2020 / il y a → Past Simple' },
+                    { french: 'already / just / yet / ever / never / for / since', english: 'déjà / venir de / encore / jamais / pour / depuis → Present Perfect' },
+                    { french: 'I saw him yesterday.', english: "Je l'ai vu hier." },
+                    { french: 'I have already seen that film.', english: "J'ai déjà vu ce film." },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'I ___ (visit) London in 2018.', answer: 'visited', hint: 'Date précise → Past Simple' },
+            { sentence: '___ you ever ___ (eat) frog legs?', answer: 'Have / eaten', hint: 'Expérience de vie → Present Perfect + ever' },
+            { sentence: 'She ___ (just / finish) her report.', answer: 'has just finished', hint: 'Action récente → Present Perfect + just' },
+            { sentence: 'We ___ (not / see) him since Monday.', answer: 'have not seen', hint: 'Depuis un moment précis → Present Perfect + since' },
+        ],
+    },
+    {
+        unit: 2,
+        id: 'en-future',
+        title: 'Le Futur en Anglais',
+        level: 'A2',
+        description: "Will, going to ou présent continu ? Trois façons d'exprimer le futur — chacune avec son nuance.",
+        icon: '🔮',
+        color: '#7C3AED',
+        sections: [
+            {
+                title: "Will — décisions spontanées et prédictions",
+                explanation: "On utilise « will + infinitif » pour les décisions prises au moment de parler, les promesses et les prédictions basées sur une opinion personnelle. En français, cela correspond souvent au futur simple.",
+                examples: [
+                    { french: 'I will call you later.', english: "Je t'appellerai plus tard.", note: 'Promesse / décision spontanée' },
+                    { french: 'It will rain tomorrow.', english: 'Il pleuvra demain.', note: 'Prédiction / opinion' },
+                    { french: "Don't worry, I'll help you.", english: "Ne t'inquiète pas, je vais t'aider.", note: 'Offre spontanée' },
+                    { french: 'Will you open the window?', english: 'Pouvez-vous ouvrir la fenêtre ?', note: 'Demande polie' },
+                ],
+            },
+            {
+                title: "Going to — plans et prédictions évidentes",
+                explanation: "« Be going to + infinitif » s'utilise pour les plans et intentions déjà décidés, et pour des prédictions basées sur ce qu'on voit. En français, on dit souvent « aller + infinitif » ou « avoir l'intention de ».",
+                examples: [
+                    { french: "I'm going to study medicine.", english: "Je vais étudier la médecine.", note: 'Plan décidé' },
+                    { french: "She's going to have a baby.", english: 'Elle va avoir un bébé.', note: 'Intention / plan' },
+                    { french: "Look at those clouds — it's going to rain.", english: "Regardez ces nuages — il va pleuvoir.", note: 'Prédiction basée sur ce qu\'on voit' },
+                ],
+            },
+            {
+                title: 'Présent continu pour le futur',
+                explanation: "On peut utiliser le présent continu pour parler d'arrangements déjà fixés avec une autre personne, en général avec une heure ou un lieu précis.",
+                examples: [
+                    { french: "I'm meeting Sarah at 6.", english: "Je retrouve Sarah à 6h. (c'est fixé)", note: 'RDV confirmé → présent continu' },
+                    { french: "We're flying to Rome on Friday.", english: "On prend l'avion pour Rome vendredi.", note: 'Voyage réservé → présent continu' },
+                    { french: "What are you doing tonight?", english: "Qu'est-ce que tu fais ce soir ?", note: 'Demande d\'arrangement' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'A: "The phone is ringing." B: "I ___ (get) it!"', answer: "will get", hint: 'Décision spontanée au moment de parler → will' },
+            { sentence: 'She ___ (go / to) visit her parents next weekend. She booked the train already.', answer: 'is going to', hint: 'Plan déjà décidé → going to' },
+            { sentence: 'Look out! That glass ___ (fall)!', answer: 'is going to fall', hint: 'On voit clairement que ça va arriver → going to' },
+            { sentence: '___ you ___ (be) at the meeting tomorrow?', answer: 'Will / be', hint: 'Question sur le futur → will' },
+        ],
+    },
+    {
+        unit: 2,
+        id: 'en-present-perfect',
+        title: 'Le Present Perfect',
+        level: 'A2',
+        description: "Have you ever...? I've just... Le present perfect relie le passé au présent — une structure absente du français.",
+        icon: '🔗',
+        color: '#0284C7',
+        sections: [
+            {
+                title: 'Formation du present perfect',
+                explanation: "Le present perfect se forme avec have/has + le participe passé du verbe. Les verbes réguliers forment leur participe en -ed (like → liked, work → worked). Les verbes irréguliers ont une forme propre (go → gone, see → seen, eat → eaten). En français, on n'a pas de temps équivalent exact — on traduit souvent par le passé composé, mais le sens est différent.",
+                examples: [
+                    { french: 'I have visited Paris.', english: 'J\'ai visité Paris. (dans ma vie)' },
+                    { french: 'She has finished her homework.', english: 'Elle a fini ses devoirs.' },
+                    { french: 'They have never seen snow.', english: 'Ils n\'ont jamais vu la neige.' },
+                    { french: 'He has eaten sushi before.', english: 'Il a déjà mangé des sushis.' },
+                    { french: 'Have you been to Japan?', english: 'Êtes-vous déjà allé(e) au Japon ?' },
+                ],
+            },
+            {
+                title: 'Usages : ever, never, already, yet, just',
+                explanation: "Ces adverbes signalent presque toujours un present perfect. Ever (dans une question) signifie « un jour / déjà ». Never = jamais. Already = déjà (action accomplie). Yet (en fin de phrase négative ou interrogative) = encore / déjà. Just = venir de (action très récente).",
+                examples: [
+                    { french: 'Have you ever tried Indian food?', english: 'As-tu déjà essayé la cuisine indienne ?' },
+                    { french: 'I\'ve just got home.', english: 'Je viens juste d\'arriver chez moi.' },
+                    { french: 'She has already left.', english: 'Elle est déjà partie.' },
+                    { french: 'Have you finished yet?', english: 'As-tu déjà fini ?' },
+                    { french: 'I haven\'t called him yet.', english: 'Je ne lui ai pas encore téléphoné.' },
+                ],
+            },
+            {
+                title: 'Present perfect vs Past Simple',
+                explanation: "La distinction clé : le past simple s'utilise quand on précise QUAND l'action a eu lieu (hier, en 2020, last week). Le present perfect s'utilise quand le moment n'est pas important ou non précisé. C'est souvent la présence ou l'absence d'un indicateur de temps précis qui fait la différence.",
+                examples: [
+                    { french: 'I have seen that film. (dans ma vie — quand ? peu importe)', english: 'J\'ai vu ce film.' },
+                    { french: 'I saw that film last Friday. (moment précis → past simple)', english: 'J\'ai vu ce film vendredi dernier.' },
+                    { french: 'She has lived in London. (à un moment de sa vie)', english: 'Elle a vécu à Londres.' },
+                    { french: 'She lived in London from 2010 to 2015. (dates précises → past simple)', english: 'Elle a vécu à Londres de 2010 à 2015.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: '___ you ever ___ (eat) frogs\' legs?', answer: 'Have / eaten', hint: 'Expérience de vie → Have + ever + participe passé' },
+            { sentence: 'I\'ve ___ finished — I\'m ready now. (venir de)', answer: 'just', hint: 'Action très récente → just' },
+            { sentence: 'She ___ (not / see) that film yet.', answer: "hasn't seen", hint: 'Négatif + yet → hasn\'t + participe passé' },
+            { sentence: 'We ___ (move) to this city in 2018. (date précise)', answer: 'moved', hint: 'Date précise → Past Simple, pas present perfect' },
+            { sentence: 'Have you ___ your keys? (trouver)', answer: 'found', hint: 'Participe passé irrégulier de find → found' },
+        ],
+    },
+    {
+        unit: 2,
+        id: 'en-comparatives',
+        title: 'Les Comparatifs et Superlatifs',
+        level: 'A2',
+        description: "Bigger, more beautiful, the best... Comment comparer en anglais avec les formes régulières et irrégulières.",
+        icon: '📊',
+        color: '#16A34A',
+        sections: [
+            {
+                title: 'Le comparatif',
+                explanation: "Pour comparer deux choses en anglais, on utilise soit -er + than (adjectifs courts, une ou deux syllabes), soit more + adjectif + than (adjectifs longs, trois syllabes ou plus). « Than » correspond à « que » en français. Attention aux doublements de consonne : big → bigger, hot → hotter.",
+                examples: [
+                    { french: 'Paris is bigger than Lyon.', english: 'Paris est plus grand que Lyon.' },
+                    { french: 'This film is more interesting than the last one.', english: 'Ce film est plus intéressant que le dernier.' },
+                    { french: 'She is taller than her brother.', english: 'Elle est plus grande que son frère.' },
+                    { french: 'English is less difficult than Chinese.', english: 'L\'anglais est moins difficile que le chinois.' },
+                    { french: 'This bag is as heavy as mine.', english: 'Ce sac est aussi lourd que le mien.' },
+                ],
+            },
+            {
+                title: 'Le superlatif',
+                explanation: "Le superlatif s'utilise pour désigner le plus haut degré dans un groupe de trois ou plus. On utilise the + -est (adjectifs courts) ou the most + adjectif (adjectifs longs). Le superlatif est toujours précédé de « the ». En français, on dit « le/la plus... ».",
+                examples: [
+                    { french: 'Mount Everest is the highest mountain in the world.', english: 'Le mont Everest est la plus haute montagne du monde.' },
+                    { french: 'This is the most expensive restaurant in town.', english: 'C\'est le restaurant le plus cher en ville.' },
+                    { french: 'She is the fastest runner in the team.', english: 'Elle est la coureuse la plus rapide de l\'équipe.' },
+                    { french: 'What is the least expensive option?', english: 'Quelle est l\'option la moins chère ?' },
+                ],
+            },
+            {
+                title: 'Les formes irrégulières',
+                explanation: "Certains adjectifs très courants ont des comparatifs et superlatifs irréguliers, comme en français (bon → meilleur → le meilleur). Ces formes doivent être mémorisées — elles n'obéissent à aucune règle.",
+                examples: [
+                    { french: 'good → better → the best', english: 'bon → meilleur → le meilleur' },
+                    { french: 'bad → worse → the worst', english: 'mauvais → pire → le pire' },
+                    { french: 'far → further → the furthest', english: 'loin → plus loin → le plus loin' },
+                    { french: 'little → less → the least', english: 'peu → moins → le moins' },
+                    { french: 'This is worse than I expected.', english: 'C\'est pire que je ne le pensais.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'London is ___ than Paris. (grand)', answer: 'bigger', hint: 'Adjectif court big → comparatif : bigger + than' },
+            { sentence: 'This exercise is ___ ___ the last one. (moins difficile)', answer: 'less difficult than', hint: 'Less + adjectif + than → moins... que' },
+            { sentence: 'She is the ___ student in the class. (bon)', answer: 'best', hint: 'Superlatif irrégulier de good → the best' },
+            { sentence: 'That was the ___ film I have ever seen! (mauvais)', answer: 'worst', hint: 'Superlatif irrégulier de bad → the worst' },
+            { sentence: 'Is Spanish ___ ___ English for French speakers? (facile)', answer: 'easier than', hint: 'Adjectif court easy → comparatif : easier + than' },
+        ],
+    },
+    {
+        unit: 3,
+        id: 'en-modal-verbs',
+        title: 'Les Verbes Modaux : Conseil et Obligation',
+        level: 'A2',
+        description: "Should, must, have to, might, would... Exprimer le conseil, l'obligation et la possibilité en anglais.",
+        icon: '⚖️',
+        color: '#D97706',
+        sections: [
+            {
+                title: 'Should / Shouldn\'t — le conseil',
+                explanation: "Should exprime un conseil ou une recommandation. Il équivaut à « devrais/devrait » en français. Shouldn't (should not) est son contraire. Ces modaux ne se conjuguent pas — ils restent invariables à toutes les personnes et sont toujours suivis de l'infinitif sans « to ».",
+                examples: [
+                    { french: 'You should see a doctor.', english: 'Tu devrais voir un médecin.' },
+                    { french: 'She shouldn\'t work so much.', english: 'Elle ne devrait pas travailler autant.' },
+                    { french: 'Should I call him?', english: 'Est-ce que je devrais l\'appeler ?' },
+                    { french: 'You should try the local food.', english: 'Vous devriez goûter la cuisine locale.' },
+                ],
+            },
+            {
+                title: 'Must / Have to — l\'obligation',
+                explanation: "Must et have to expriment tous les deux l'obligation, mais avec une nuance importante. Must vient souvent d'une règle intérieure ou d'une conviction personnelle. Have to indique une obligation extérieure (loi, règle, autorité). À la forme négative, la différence est cruciale : mustn't = interdit, don't have to = pas obligatoire.",
+                examples: [
+                    { french: 'You must show your passport at the border.', english: 'Vous devez montrer votre passeport à la frontière.' },
+                    { french: 'I have to finish this report by Friday.', english: 'Je dois finir ce rapport avant vendredi. (obligation extérieure)' },
+                    { french: 'You mustn\'t smoke here. (= It\'s forbidden)', english: 'Il est interdit de fumer ici.' },
+                    { french: 'You don\'t have to wear a tie. (= It\'s not necessary)', english: 'Vous n\'êtes pas obligé de porter une cravate.' },
+                ],
+            },
+            {
+                title: 'Might / Would / Need — autres modaux utiles',
+                explanation: "Might exprime une possibilité incertaine. Would sert à faire des propositions polies, à exprimer le conditionnel ou à parler d'habitudes passées. Need (modal) exprime une nécessité négative.",
+                examples: [
+                    { french: 'I might come to the party, I\'m not sure.', english: 'Je viendrai peut-être à la fête, je ne suis pas sûr.' },
+                    { french: 'Would you like a cup of tea?', english: 'Voulez-vous une tasse de thé ?' },
+                    { french: 'I would love to visit Japan one day.', english: 'J\'aimerais beaucoup visiter le Japon un jour.' },
+                    { french: 'You needn\'t worry — everything is fine.', english: 'Vous n\'avez pas besoin de vous inquiéter — tout va bien.' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'You ___ eat more vegetables — it\'s good for you. (conseil)', answer: 'should', hint: 'Conseil / recommandation → should' },
+            { sentence: 'She ___ (not/be) late — it\'s very important.', answer: "mustn't be", hint: 'Interdiction → mustn\'t + infinitif' },
+            { sentence: 'Do you ___ wear a uniform at your school?', answer: 'have to', hint: 'Obligation extérieure (règle scolaire) → have to' },
+            { sentence: 'I\'m not sure, but she ___ be at home right now.', answer: 'might', hint: 'Possibilité incertaine → might' },
+            { sentence: '___ you like to join us for dinner?', answer: 'Would', hint: 'Invitation polie → Would you like...' },
+        ],
+    },
+    {
+        unit: 3,
+        id: 'en-verb-patterns',
+        title: 'Gérondif ou Infinitif ?',
+        level: 'A2',
+        description: "Enjoy doing ou enjoy to do ? Certains verbes se construisent avec -ing, d\'autres avec to + infinitif — et quelques-uns les deux avec un sens différent.",
+        icon: '🔄',
+        color: '#7C3AED',
+        sections: [
+            {
+                title: 'Verbes suivis du gérondif (-ing)',
+                explanation: "Certains verbes anglais sont toujours suivis d'un gérondif (verbe + -ing), jamais d'un infinitif. Les plus courants : enjoy, finish, avoid, mind, suggest, keep, consider, admit, deny, miss, practise. En français, ces verbes se construisent généralement avec de + infinitif.",
+                examples: [
+                    { french: 'I enjoy cooking Italian food.', english: "J'aime cuisiner la cuisine italienne." },
+                    { french: 'She finished reading the report.', english: 'Elle a fini de lire le rapport.' },
+                    { french: 'He avoids eating sugar.', english: 'Il évite de manger du sucre.' },
+                    { french: 'Do you mind waiting a moment?', english: 'Cela vous dérange-t-il d\'attendre un moment ?' },
+                    { french: 'She suggested going to the cinema.', english: 'Elle a suggéré d\'aller au cinéma.' },
+                ],
+            },
+            {
+                title: 'Verbes suivis de l\'infinitif (to + verbe)',
+                explanation: "D'autres verbes sont suivis de l'infinitif avec « to ». Les plus courants : want, decide, hope, refuse, manage, agree, plan, promise, choose, fail, need, offer. En français, ces verbes se construisent aussi généralement avec de/à + infinitif.",
+                examples: [
+                    { french: 'I want to learn English.', english: 'Je veux apprendre l\'anglais.' },
+                    { french: 'She decided to leave early.', english: 'Elle a décidé de partir tôt.' },
+                    { french: 'He managed to finish on time.', english: 'Il a réussi à terminer à temps.' },
+                    { french: 'They refused to help.', english: 'Ils ont refusé d\'aider.' },
+                    { french: 'I hope to see you soon.', english: "J'espère vous voir bientôt." },
+                ],
+            },
+            {
+                title: 'Verbes qui changent de sens',
+                explanation: "Certains verbes peuvent être suivis du gérondif ou de l'infinitif, mais avec un sens différent. Les plus importants : stop, remember, try, forget. Ce changement de sens est une difficulté réelle même pour les apprenants avancés.",
+                examples: [
+                    { french: 'I stopped smoking. (j\'ai arrêté)', english: 'J\'ai arrêté de fumer.' },
+                    { french: 'I stopped to smoke. (je me suis arrêté pour fumer)', english: 'Je me suis arrêté pour fumer.' },
+                    { french: 'I remember meeting her. (souvenir du passé)', english: 'Je me souviens de l\'avoir rencontrée.' },
+                    { french: 'I remembered to call her. (ne pas oublier de faire)', english: 'Je n\'ai pas oublié de lui téléphoner.' },
+                    { french: 'Try eating less sugar. (essaie comme expérience)', english: 'Essaie de manger moins de sucre (comme expérience).' },
+                    { french: 'Try to eat less sugar. (fais l\'effort de)', english: 'Essaie de manger moins de sucre (fais l\'effort).' },
+                ],
+            },
+        ],
+        exercises: [
+            { sentence: 'I enjoy ___ (swim) in the sea.', answer: 'swimming', hint: 'enjoy est toujours suivi du gérondif (-ing)' },
+            { sentence: 'She decided ___ (leave) the company.', answer: 'to leave', hint: 'decide est suivi de l\'infinitif avec to' },
+            { sentence: 'He stopped ___ (talk) when she entered. (il s\'est arrêté pour parler)', answer: 'to talk', hint: 'stop + infinitif = s\'arrêter POUR faire quelque chose' },
+            { sentence: 'Do you mind ___ (wait) a few minutes?', answer: 'waiting', hint: 'mind est toujours suivi du gérondif' },
+            { sentence: 'I forgot ___ (buy) milk. (j\'ai oublié de l\'acheter)', answer: 'to buy', hint: 'forget + infinitif = oublier de faire quelque chose (futur)' },
+        ],
+    },
+];

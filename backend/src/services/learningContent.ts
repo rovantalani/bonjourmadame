@@ -4,20 +4,8 @@ import type { PhraseCategory } from '../types/lectures/phrases';
 import type { ReadingPassage } from '../types/lectures/reading';
 import type { HelperVerbFR, HelperVerbEN, VerbEntry, VerbGroup } from '../types/verbs';
 import type { Course } from '../types/courses';
-import { COURSES } from '../content/fr/courses';
-import { COURSES_EN } from '../content/en/courses';
-import { vocabularyData } from '../content/fr/vocabulary';
-import { vocabularyModules } from '../content/fr/modules';
-import { grammarLessons } from '../content/fr/grammar';
-import { phraseCategories } from '../content/fr/phrases';
-import { readingPassages } from '../content/fr/reading';
-import * as frenchVerbs from '../content/fr/verbs';
-import { vocabularyDataEN } from '../content/en/vocabulary';
-import { vocabularyModulesEN } from '../content/en/modules';
-import { grammarLessonsEN } from '../content/en/grammar';
-import { phraseCategoriesEN } from '../content/en/phrases';
-import { readingPassagesEN } from '../content/en/reading';
-import * as englishVerbs from '../content/en/verbs';
+import * as frenchContent from '../content/fr';
+import * as englishContent from '../content/en';
 
 export type TargetLanguage = 'fr' | 'en';
 
@@ -39,32 +27,32 @@ export interface LearningContent {
 // import each other, and request handlers receive only the selected catalog.
 export const learningContent: Record<TargetLanguage, LearningContent> = {
     fr: {
-        courses: COURSES,
-        vocabulary: vocabularyData,
-        modules: vocabularyModules,
-        grammar: grammarLessons,
-        phrases: phraseCategories,
-        reading: readingPassages,
-        verbGroups: frenchVerbs.verbGroups,
-        verbs: frenchVerbs.verbsData,
-        verbById: frenchVerbs.verbById,
-        verbGroupMap: frenchVerbs.verbGroupMap,
-        helpers: frenchVerbs.helperVerbsDataFR,
+        courses: frenchContent.COURSES,
+        vocabulary: frenchContent.vocabularyData,
+        modules: frenchContent.vocabularyModules,
+        grammar: frenchContent.grammarLessons,
+        phrases: frenchContent.phraseCategories,
+        reading: frenchContent.readingPassages,
+        verbGroups: frenchContent.verbGroups,
+        verbs: frenchContent.verbsData,
+        verbById: frenchContent.verbById,
+        verbGroupMap: frenchContent.verbGroupMap,
+        helpers: frenchContent.helperVerbsDataFR,
     },
     en: {
-        courses: COURSES_EN,
-        vocabulary: vocabularyDataEN,
-        modules: vocabularyModulesEN,
-        grammar: grammarLessonsEN,
-        phrases: phraseCategoriesEN,
-        reading: readingPassagesEN,
-        verbGroups: Object.fromEntries(Object.entries(englishVerbs.verbGroupsEN).map(([id, group]) => [id, {
+        courses: englishContent.COURSES_EN,
+        vocabulary: englishContent.vocabularyDataEN,
+        modules: englishContent.vocabularyModulesEN,
+        grammar: englishContent.grammarLessonsEN,
+        phrases: englishContent.phraseCategoriesEN,
+        reading: englishContent.readingPassagesEN,
+        verbGroups: Object.fromEntries(Object.entries(englishContent.verbGroupsEN).map(([id, group]) => [id, {
             ...group, title: group.titleFR, description: group.descriptionFR,
         }])),
-        verbs: englishVerbs.verbsDataEN,
-        verbById: englishVerbs.verbByIdEN,
-        verbGroupMap: englishVerbs.verbGroupMapEN,
-        helpers: englishVerbs.helperVerbsDataEN,
+        verbs: englishContent.verbsDataEN,
+        verbById: englishContent.verbByIdEN,
+        verbGroupMap: englishContent.verbGroupMapEN,
+        helpers: englishContent.helperVerbsDataEN,
     },
 };
 

@@ -16,7 +16,16 @@ function courses(language) {
     return data.COURSES ?? data.COURSES_EN;
 }
 function content(language, name) {
-    return require(`../dist/content/${language}/${name}`);
+    const exports = require(`../dist/content/${language}/${name === 'modules' ? 'vocabulary' : name}`);
+    if (name === 'verbs') return exports;
+    const suffix = language === 'en' ? 'EN' : '';
+    return {
+        vocabulary: exports[`vocabularyData${suffix}`],
+        modules: exports[`vocabularyModules${suffix}`],
+        grammar: exports[`grammarLessons${suffix}`],
+        phrases: exports[`phraseCategories${suffix}`],
+        reading: exports[`readingPassages${suffix}`],
+    }[name];
 }
 
 for (const language of ['fr', 'en']) {
@@ -49,11 +58,11 @@ for (const language of ['fr', 'en']) {
     });
 
     test(`${language} curriculum references have no new gaps and reading vocabulary is local`, () => {
-        const vocabulary = Object.values(content(language, 'vocabulary'))[0];
-        const modules = Object.values(content(language, 'modules'))[0];
-        const grammar = Object.values(content(language, 'grammar'))[0];
-        const phrases = Object.values(content(language, 'phrases'))[0];
-        const reading = Object.values(content(language, 'reading'))[0];
+        const vocabulary = content(language, 'vocabulary');
+        const modules = content(language, 'modules');
+        const grammar = content(language, 'grammar');
+        const phrases = content(language, 'phrases');
+        const reading = content(language, 'reading');
         const verbs = content(language, 'verbs');
         const verbById = verbs.verbById ?? verbs.verbByIdEN;
         const verbGroups = verbs.verbGroups ?? verbs.verbGroupsEN;
@@ -81,8 +90,8 @@ for (const language of ['fr', 'en']) {
 
 test('editing English vocabulary, module labels or phrases cannot mutate French content', () => {
     for (const name of ['vocabulary', 'modules', 'phrases']) {
-        const fr = Object.values(content('fr', name))[0];
-        const en = Object.values(content('en', name))[0];
+        const fr = content('fr', name);
+        const en = content('en', name);
         const before = JSON.stringify(fr);
         const entry = name === 'vocabulary' ? en['greetings-basics'][0] : en[0];
         const field = name === 'vocabulary' ? 'english' : 'title';

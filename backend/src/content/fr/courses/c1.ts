@@ -1,0 +1,57 @@
+import type { Course } from '../../../types/courses';
+
+export const courseC1: Course = {
+        level: 'C1',
+        title: 'Advanced',
+        description: 'Register, literary grammar, academic discourse, and authentic French texts.',
+        color: 'var(--course-c1)',
+        textColor: 'var(--level-c1-text)',
+        units: [
+            { number: 1, title: 'Register & Modality' },
+            { number: 2, title: 'Academic Discourse' },
+            { number: 3, title: 'Nuanced Language' },
+            { number: 4, title: 'Culture & Literature' },
+            { number: 5, title: 'Full Mastery & Review' },
+        ],
+        steps: [
+            // Unit 1 — Register & Modality
+            { id: 'c1-register',          title: 'Formal & Informal Register',   module: 'lectures', type: 'grammar',    contentId: 'register-formal-informal',   path: '/lectures/grammar/register-formal-informal',   unit: 1 },
+            { id: 'c1-modal-nuance',      title: 'Modal Verbs & Nuance',         module: 'lectures', type: 'grammar',    contentId: 'modal-nuance',               path: '/lectures/grammar/modal-nuance',               unit: 1 },
+            { id: 'c1-subjunctive-lit',   title: 'Literary Subjunctive',         module: 'lectures', type: 'grammar',    contentId: 'subjunctive-literary',       path: '/lectures/grammar/subjunctive-literary',       unit: 1 },
+            { id: 'c1-rhetoric',          title: 'Rhetoric & Argumentation',     module: 'vocabulary', type: 'vocabulary', contentId: 'rhetoric-argumentation',     path: '/vocabulary/rhetoric-argumentation',          unit: 1 },
+            { id: 'c1-idioms',            title: 'Idioms & Expressions',         module: 'vocabulary', type: 'vocabulary', contentId: 'idioms-expressions',         path: '/vocabulary/idioms-expressions',              unit: 1 },
+            { id: 'c1-academic-disc',     title: 'Academic Discourse',           module: 'lectures', type: 'phrases',    contentId: 'academic-discourse',         path: '/lectures/phrases/academic-discourse',                 unit: 1 },
+            { id: 'c1-reading-pol',       title: 'Reading: Europe\'s Tensions',  module: 'lectures', type: 'reading',    contentId: 'c1-discours-politique',      path: '/lectures/reading/c1-discours-politique',              unit: 1 },
+            // Unit 2 — Academic Discourse
+            { id: 'c1-inversion',         title: 'Literary Inversion',           module: 'lectures', type: 'grammar',    contentId: 'inversion-literary',         path: '/lectures/grammar/inversion-literary',         unit: 2 },
+            { id: 'c1-reported-adv',      title: 'Advanced Reported Speech',     module: 'lectures', type: 'grammar',    contentId: 'reported-speech-advanced',   path: '/lectures/grammar/reported-speech-advanced',   unit: 2 },
+            { id: 'c1-law',               title: 'Law & Administration',         module: 'vocabulary', type: 'vocabulary', contentId: 'law-administration',         path: '/vocabulary/law-administration',              unit: 2 },
+            { id: 'c1-science-philo',     title: 'Science & Philosophy',         module: 'vocabulary', type: 'vocabulary', contentId: 'science-philosophy',         path: '/vocabulary/science-philosophy',              unit: 2 },
+            { id: 'c1-intellectual-deb',  title: 'Intellectual Debate',          module: 'lectures', type: 'phrases',    contentId: 'intellectual-debate',        path: '/lectures/phrases/intellectual-debate',                unit: 2 },
+            { id: 'c1-reading-philo',     title: 'Reading: On Freedom',          module: 'lectures', type: 'reading',    contentId: 'c1-article-philosophique',   path: '/lectures/reading/c1-article-philosophique',           unit: 2 },
+            { id: 'c1-reading-identite',  title: 'Reading: Identity',            module: 'lectures', type: 'reading',    contentId: 'c1-essai-identite',          path: '/lectures/reading/c1-essai-identite',                  unit: 2 },
+            // Unit 3 — Nuanced Language
+            { id: 'c1-hypothetical',      title: 'Hypothetical Past',            module: 'lectures', type: 'grammar',    contentId: 'hypothetical-past',          path: '/lectures/grammar/hypothetical-past',          unit: 3 },
+            { id: 'c1-negation-adv',      title: 'Advanced Negation',            module: 'lectures', type: 'grammar',    contentId: 'advanced-negation-literary', path: '/lectures/grammar/advanced-negation-literary', unit: 3 },
+            { id: 'c1-participle',        title: 'Participle Constructions',     module: 'lectures', type: 'grammar',    contentId: 'participle-constructions',   path: '/lectures/grammar/participle-constructions',   unit: 3 },
+            { id: 'c1-faux-amis',         title: 'Faux Amis',                    module: 'vocabulary', type: 'vocabulary', contentId: 'faux-amis',                  path: '/vocabulary/faux-amis',                       unit: 3 },
+            { id: 'c1-literary',          title: 'Literary & Abstract Vocab',    module: 'vocabulary', type: 'vocabulary', contentId: 'literary-abstract',          path: '/vocabulary/literary-abstract',               unit: 3 },
+            { id: 'c1-emotion-subtly',    title: 'Expressing Emotion Subtly',    module: 'lectures', type: 'phrases',    contentId: 'expressing-emotion-subtly',  path: '/lectures/phrases/expressing-emotion-subtly',          unit: 3 },
+            { id: 'c1-reading-social',    title: 'Reading: Medical Deserts',     module: 'lectures', type: 'reading',    contentId: 'c1-reportage-social',        path: '/lectures/reading/c1-reportage-social',                unit: 3 },
+            // Unit 4 — Culture & Literature
+            { id: 'c1-history',           title: 'History & Civilisation',       module: 'vocabulary', type: 'vocabulary', contentId: 'history-civilisation',       path: '/vocabulary/history-civilisation',            unit: 4 },
+            { id: 'c1-aesthetics',        title: 'Aesthetics & Criticism',       module: 'vocabulary', type: 'vocabulary', contentId: 'aesthetics-criticism',       path: '/vocabulary/aesthetics-criticism',            unit: 4 },
+            { id: 'c1-cultural-comm',     title: 'Cultural Commentary',          module: 'lectures', type: 'phrases',    contentId: 'cultural-commentary',        path: '/lectures/phrases/cultural-commentary',                unit: 4 },
+            { id: 'c1-reading-moliere',   title: 'Reading: Molière',             module: 'lectures', type: 'reading',    contentId: 'c1-moliere-extract',         path: '/lectures/reading/c1-moliere-extract',                 unit: 4 },
+            { id: 'c1-reading-camus',     title: 'Reading: Camus',               module: 'lectures', type: 'reading',    contentId: 'c1-camus-etranger',          path: '/lectures/reading/c1-camus-etranger',                  unit: 4 },
+            { id: 'c1-reading-voltaire',  title: 'Reading: Voltaire',            module: 'lectures', type: 'reading',    contentId: 'c1-voltaire-candide',        path: '/lectures/reading/c1-voltaire-candide',                unit: 4 },
+            { id: 'c1-reading-ernaux',    title: 'Reading: Ernaux',              module: 'lectures', type: 'reading',    contentId: 'c1-roman-contemporain',      path: '/lectures/reading/c1-roman-contemporain',              unit: 4 },
+            // Unit 5 — Full Mastery & Review
+            { id: 'c1-proverbs',          title: 'Proverbs & Sayings',           module: 'lectures', type: 'phrases',    contentId: 'proverbs-sayings',           path: '/lectures/phrases/proverbs-sayings',                   unit: 5 },
+            { id: 'c1-nuanced-adj',       title: 'Nuanced Adjectives',           module: 'vocabulary', type: 'vocabulary', contentId: 'nuanced-adjectives',         path: '/vocabulary/nuanced-adjectives',              unit: 5 },
+            { id: 'c1-human-condition',   title: 'The Human Condition',          module: 'vocabulary', type: 'vocabulary', contentId: 'human-condition',            path: '/vocabulary/human-condition',                 unit: 5 },
+            { id: 'c1-conditionnel-passe', title: 'Le Conditionnel Passé',       module: 'lectures', type: 'grammar',    contentId: 'conditionnel-passe',         path: '/lectures/grammar/conditionnel-passe',         unit: 5 },
+            { id: 'c1-connecteurs',       title: 'Connecteurs Logiques',         module: 'lectures', type: 'grammar',    contentId: 'connecteurs-logiques',       path: '/lectures/grammar/connecteurs-logiques',       unit: 5 },
+            { id: 'c1-reading-droit',     title: 'Reading: The Right to Be Forgotten', module: 'lectures', type: 'reading', contentId: 'c1-article-presse-specialisee', path: '/lectures/reading/c1-article-presse-specialisee', unit: 5 },
+        ],
+    };
