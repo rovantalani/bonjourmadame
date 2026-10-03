@@ -250,7 +250,12 @@ export default function VocabularyQuiz() {
                             className="field-input vocq-input"
                             value={userAnswer}
                             onChange={(e) => setUserAnswer(e.target.value)}
-                            onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
+                            onKeyDown={e => {
+                                if (e.key !== 'Enter' || e.repeat || e.nativeEvent.isComposing) return;
+                                e.preventDefault();
+                                if (e.currentTarget.value.trim()) handleSubmit();
+                                else handleSkip();
+                            }}
                             placeholder={t.quiz.placeholder}
                             autoFocus
                         />
