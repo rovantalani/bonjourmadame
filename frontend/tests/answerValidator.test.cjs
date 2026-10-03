@@ -17,9 +17,22 @@ test('symbol mistakes receive partial feedback and full credit', () => {
     }
 });
 test('existing accepted forms remain correct', () => {
-    for (const [actual, expected] of [['ENCHANTEE', 'enchanté(e)'], ['fougueuse', 'fougueux(-euse)'], ['housemaid', 'the maid / housemaid'], ['bonjour', 'bonjour!']]) {
+    for (const [actual, expected] of [['enchantée', 'enchanté(e)'], ['fougueuse', 'fougueux(-euse)'], ['housemaid', 'the maid / housemaid'], ['bonjour', 'bonjour!']]) {
         assert.equal(gradeAnswer(actual, expected), 'correct');
     }
+});
+test('capitalization and accents pass with a warning in words and phrases', () => {
+    for (const [actual, expected] of [['ENCHANTEE', 'enchanté(e)'], ['bonjour', 'Bonjour'], ['bonjour, je suis marie', 'Bonjour, je suis Marie'], ['cafe', 'café']]) {
+        assert.equal(gradeAnswer(actual, expected), 'partial', actual);
+        assert.equal(isAnswerCorrect(actual, expected), true);
+    }
+});
+test('one missing or extra final s passes with a warning', () => {
+    for (const [actual, expected] of [['ami', 'amis'], ['amies', 'amie'], ['Je mange des pomme', 'Je mange des pommes'], ['j\'aimes', "j'aime"]]) {
+        assert.equal(gradeAnswer(actual, expected), 'partial', actual);
+    }
+    assert.equal(gradeAnswer('des pomme verte', 'des pommes vertes'), 'wrong');
+    assert.equal(gradeAnswer('a', 'as'), 'wrong');
 });
 test('spaces replacing punctuation receive partial feedback and full credit', () => {
     for (const [actual, expected] of [['soixante dix', 'soixante-dix'], ['soixante   dix', 'soixante-dix'], ['quatre vingt-dix', 'quatre-vingt-dix'], ['j aime', "j'aime"]]) {
