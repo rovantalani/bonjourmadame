@@ -101,7 +101,8 @@ export default function ReviewQueue() {
     useEffect(() => {
         if (!session?.showAnswer) return;
         const onKey = (e: KeyboardEvent) => {
-            if (e.key !== 'Enter') return;
+            if (e.key !== 'Enter' || e.repeat || e.target instanceof HTMLButtonElement) return;
+            e.preventDefault();
             setSession(s => {
                 if (!s) return s;
                 if (s.currentIndex >= s.words.length - 1) return { ...s, done: true };
@@ -352,7 +353,12 @@ export default function ReviewQueue() {
                             className="field-input vocq-input"
                             value={session.userAnswer}
                             onChange={e => setSession(s => s && ({ ...s, userAnswer: e.target.value }))}
-                            onKeyPress={e => e.key === 'Enter' && handleSubmit()}
+                            onKeyDown={e => {
+                                if (e.key !== 'Enter' || e.repeat || e.nativeEvent.isComposing) return;
+                                e.preventDefault();
+                                if (e.currentTarget.value.trim()) handleSubmit();
+                                else handleSkip();
+                            }}
                             placeholder={t.quiz.placeholder}
                             autoFocus
                         />
