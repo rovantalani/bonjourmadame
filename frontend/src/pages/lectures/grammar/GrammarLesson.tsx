@@ -250,7 +250,7 @@ export default function GrammarLesson() {
                     </div>
                 </div>
             )}
-            <LearningCompletion requireQuiz={exercises.length > 0} quizPassed={exercises.length === 0 || (checkedResults.length === exercises.length && checkedResults.every(Boolean))} />
+            <LearningCompletion completeOnView={exercises.length === 0} quizPassed={exercises.length > 0 && checkedResults.length === exercises.length && checkedResults.every(Boolean)} />
         </main>
     );
 }

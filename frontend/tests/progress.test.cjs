@@ -23,7 +23,8 @@ function setup() {
         get: (...args) => { calls.push(args); return new Promise(resolve => { resolveGet = resolve; }); },
     };
     const words = load('progress.ts', { axios: { default: axios }, './settings': settings });
-    const progress = load('courseProgress.ts', { './progress': words, './settings': settings });
+    const routes = load('learningRoutes.ts', {});
+    const progress = load('courseProgress.ts', { './progress': words, './settings': settings, './learningRoutes': routes });
     const queue = load('wordQueue.ts', { './settings': settings });
     return { words, progress, queue, settings, calls, localStorage,
         resolveGet: data => resolveGet({ data }),
@@ -63,10 +64,18 @@ test('quiz proof follows a verb between table, lesson and quiz, but not between 
     assert.equal(progress.hasPassedQuiz('/courses/a1/verbs/etre/quiz'), false);
 });
 
-test('reading without a quiz can still be marked read', () => {
+test('reaching the end of a reading can complete it without quiz proof', () => {
     const { progress } = setup();
     const path = '/courses/a1/lectures/reading/a-day';
-    progress.setContentStatus(path, 'complete');
+    progress.completeLesson(`/learn/fr${path}`);
+    assert.equal(progress.getContentStatus(path), 'complete');
+    assert.equal(progress.hasPassedQuiz(path), false);
+});
+
+test('a grammar lesson without exercises can complete after reaching the end', () => {
+    const { progress } = setup();
+    const path = '/courses/a1/lectures/grammar/articles';
+    progress.completeLesson(`/learn/fr${path}`);
     assert.equal(progress.getContentStatus(path), 'complete');
 });
 
@@ -76,11 +85,28 @@ test('visiting a lesson does not inflate course completion', () => {
     const step = { id: 'a1-greeting', module: 'vocabulary', type: 'vocabulary', contentId: 'greetings', path: '/vocabulary/greetings' };
     const course = { level: 'A1', steps: [step] };
     const path = '/courses/a1/vocabulary/greetings';
-    progress.setContentStatus(path, 'visited');
+    progress.setContentStatus(`/learn/fr${path}`, 'visited');
     assert.equal(progress.getCourseProgress(course).pct, 0);
-    progress.recordQuizPass(path);
-    progress.setContentStatus(path, 'complete');
+    progress.completeLesson(`/learn/fr${path}`);
     assert.equal(progress.getCourseProgress(course).pct, 100);
+});
+
+test('automatic completion shares progress between scoped pages and course steps', () => {
+    const { progress } = setup();
+    const step = { id: 'a1-etre', module: 'verbs', type: 'verbs', contentId: 'etre', path: '/verbs/etre/table' };
+    progress.completeLesson('/learn/fr/courses/a1/verbs/etre/quiz');
+    assert.equal(progress.getStepStatus(step, 'A1'), 'complete');
+    assert.equal(progress.hasPassedQuiz('/courses/a1/verbs/etre/table'), true);
+});
+
+test('progress saved under old language-prefixed keys remains visible', () => {
+    const { progress, localStorage } = setup();
+    const key = '/learn/fr/courses/a1/vocabulary/greetings';
+    localStorage.setItem('contentProgress:learn-french', JSON.stringify({ [key]: 'complete' }));
+    localStorage.setItem('passedQuizzes:learn-french', JSON.stringify([key]));
+    assert.equal(progress.getContentStatus('/courses/a1/vocabulary/greetings'), 'complete');
+    progress.setContentStatus('/courses/a1/vocabulary/greetings', 'complete');
+    assert.deepEqual(JSON.parse(localStorage.getItem('contentProgress:learn-french')), { '/courses/a1/vocabulary/greetings': 'complete' });
 });
 
 

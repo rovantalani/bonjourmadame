@@ -1,6 +1,7 @@
 import type { Course, CourseStep } from '../data/courseTypes';
 import { loadMastery } from './progress';
 import { loadLearningMode, learningStorageKey } from './settings';
+import { unscopedPath } from './learningRoutes';
 
 export type StepStatus = 'complete' | 'visited' | 'not-started';
 
@@ -9,7 +10,12 @@ const ACTIVE_COURSE_KEY = 'activeCourse';
 
 // Verb tables, lessons and quizzes share a flower within the same course.
 function contentKey(path: string): string {
-    return path.replace(/\/(learn|table|quiz)\/?$/, '').replace(/\/$/, '');
+    return unscopedPath(path).replace(/\/(learn|table|quiz)\/?$/, '').replace(/\/$/, '');
+}
+
+function legacyContentKey(path: string): string {
+    const language = loadLearningMode() === 'learn-english' ? 'en' : 'fr';
+    return `/learn/${language}${contentKey(path)}`;
 }
 
 function loadContentProgress(): Record<string, StepStatus> {
@@ -24,7 +30,7 @@ export function requiresQuiz(path: string): boolean {
 export function hasPassedQuiz(path: string): boolean {
     try {
         const passed: string[] = JSON.parse(localStorage.getItem(`passedQuizzes:${loadLearningMode() ?? 'learn-french'}`) || '[]');
-        return passed.includes(contentKey(path));
+        return passed.some(saved => contentKey(saved) === contentKey(path));
     } catch { return false; }
 }
 
@@ -36,7 +42,8 @@ export function recordQuizPass(path: string): void {
 }
 
 export function getContentStatus(path: string): StepStatus {
-    const status = loadContentProgress()[contentKey(path)] ?? 'not-started';
+    const progress = loadContentProgress();
+    const status = progress[contentKey(path)] ?? progress[legacyContentKey(path)] ?? 'not-started';
     // Old manual completions are not evidence of clearing a quiz.
     return status === 'complete' && requiresQuiz(path) && !hasPassedQuiz(path) ? 'visited' : status;
 }
@@ -45,7 +52,13 @@ export function setContentStatus(path: string, status: StepStatus): void {
     if (status === 'complete' && requiresQuiz(path) && !hasPassedQuiz(path)) return;
     const data = loadContentProgress();
     data[contentKey(path)] = status;
+    delete data[legacyContentKey(path)];
     localStorage.setItem(`contentProgress:${loadLearningMode() ?? 'learn-french'}`, JSON.stringify(data));
+}
+
+export function completeLesson(path: string): void {
+    if (requiresQuiz(path)) recordQuizPass(path);
+    setContentStatus(path, 'complete');
 }
 
 function loadVisited(): Set<string> {
