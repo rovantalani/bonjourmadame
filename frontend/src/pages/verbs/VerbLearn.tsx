@@ -5,6 +5,7 @@ import LearningCompletion from '../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import SpeakerButton from '../../components/SpeakerButton';
+import { useT } from '../../utils/i18n';
 import './VerbLearn.css';
 
 
@@ -27,6 +28,7 @@ export default function VerbLearn() {
     const navigate = useNavigate();
     const isENMode = language === 'en';
     const speakLang = isENMode ? 'en-US' : 'fr-FR';
+    const t = useT();
 
     const [verb, setVerb] = useState<VerbData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -115,6 +117,8 @@ export default function VerbLearn() {
                 </div>
                 <span className="vl-translation">{verb.translation}</span>
             </header>
+
+            <p className="vl-practice-instruction">{t.verbLearn.listenRepeat}</p>
 
             <div className="card vl-table-card">
                 <div className="table-scroll">

@@ -97,6 +97,8 @@ export default function PhraseDetail() {
                 </div>
             </div>
 
+            <p className="phrase-detail-instruction">{t.phraseDetail.listenRepeat}</p>
+
             <div className="phrase-list">
                 {category.phrases.map((phrase) => (
                     <div

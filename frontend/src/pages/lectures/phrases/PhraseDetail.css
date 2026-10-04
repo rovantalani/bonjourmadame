@@ -52,6 +52,16 @@
     margin: 0;
 }
 
+.phrase-detail-instruction {
+    color: var(--tag-phrases-text);
+    background: var(--tag-phrases-bg);
+    border-radius: var(--r-md);
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
 /* ── Phrase list ── */
 .phrase-list {
     display: flex;
