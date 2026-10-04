@@ -194,7 +194,7 @@ const EN: Translations = {
         types: { vocabulary: 'Vocabulary', grammar: 'Grammar', verbs: 'Verbs', phrases: 'Phrases', reading: 'Reading' },
     },
     quiz: {
-        partialWarning: 'Partially correct — you passed, but be careful with punctuation and symbols. Counted as correct.',
+        partialWarning: 'You passed, but check the spelling, capitals, and punctuation. Counted as correct.',
         loadError: 'Could not load this quiz. Please try again.',
         loading: 'Loading…',
         backToVocabulary: 'Back to Vocabulary',
@@ -336,7 +336,7 @@ const FR: Translations = {
         types: { vocabulary: 'Vocabulaire', grammar: 'Grammaire', verbs: 'Verbes', phrases: 'Expressions', reading: 'Lecture' },
     },
     quiz: {
-        partialWarning: 'Partiellement correct — réponse acceptée, mais attention à la ponctuation et aux symboles. Comptée comme correcte.',
+        partialWarning: 'Réponse acceptée, mais vérifiez l’orthographe, les majuscules et la ponctuation. Comptée comme correcte.',
         loadError: 'Impossible de charger ce quiz. Veuillez réessayer.',
         loading: 'Chargement…',
         backToVocabulary: 'Retour au vocabulaire',
