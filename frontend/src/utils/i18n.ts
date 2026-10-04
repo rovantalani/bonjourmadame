@@ -136,6 +136,10 @@ interface Translations {
         back: string;
         startQuiz: string;
         notFound: string;
+        listenRepeat: string;
+    };
+    verbLearn: {
+        listenRepeat: string;
     };
 }
 
@@ -278,6 +282,10 @@ const EN: Translations = {
         back: '← Lectures',
         startQuiz: 'Start Quiz',
         notFound: 'Category not found.',
+        listenRepeat: 'Listen to each phrase and repeat it aloud before starting the quiz.',
+    },
+    verbLearn: {
+        listenRepeat: 'Listen to the verb and example forms, then repeat them aloud before taking the quiz.',
     },
 };
 
@@ -420,6 +428,10 @@ const FR: Translations = {
         back: '← Leçons',
         startQuiz: 'Commencer le quiz',
         notFound: 'Catégorie introuvable.',
+        listenRepeat: 'Écoutez chaque expression et répétez-la à voix haute avant de commencer le quiz.',
+    },
+    verbLearn: {
+        listenRepeat: 'Écoutez le verbe et les formes données en exemple, puis répétez-les à voix haute avant le quiz.',
     },
 };
 
