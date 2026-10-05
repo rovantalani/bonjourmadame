@@ -40,6 +40,7 @@ export default function Nav() {
             <p className="sidebar-section-label">{fr ? 'VOTRE PARCOURS' : 'YOUR LEARNING PATH'}</p>
             {entry(base, t.nav.overview, CompassIcon, pathname === base && !showUnits)}
             {entry(`${base}?units=all`, fr ? 'Unités' : 'Units', BookOpenIcon, pathname === base && showUnits)}
+            <div className="sidebar-divider" />
             <div className="sidebar-lessons">
                 {entry(`${base}/lectures`, fr ? 'Leçons' : 'Lessons', BookOpenIcon,
                     pathname === `${base}/lectures` && !['grammar', 'phrases', 'reading'].includes(filter ?? ''))}
@@ -52,7 +53,6 @@ export default function Nav() {
                         pathname.includes('/lectures/reading') || pathname === `${base}/lectures` && filter === 'reading', true)}</li>
                 </ul>
             </div>
-            <div className="sidebar-divider" />
             {entry(`${base}/vocabulary`, t.nav.vocabulary, BookIcon, pathname.includes('/vocabulary'))}
             {entry(`${base}/verbs`, t.nav.verbs, PenIcon, pathname.includes('/verbs'))}
             {entry(`${base}/exams`, fr ? 'Examens' : 'Exams', BookOpenIcon, pathname.includes('/exams'))}
