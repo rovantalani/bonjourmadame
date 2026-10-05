@@ -176,16 +176,6 @@
     background: var(--success-light);
 }
 
-.ex-item--partial {
-    border-color: var(--warning, #986000);
-}
-
-.ex-partial-warning {
-    color: var(--warning, #986000);
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-}
-
 .ex-item--wrong {
     border-color: var(--error);
     background: var(--error-light);

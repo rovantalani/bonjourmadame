@@ -10,7 +10,7 @@ import {
     type WordQueue,
     type QueuedWord,
 } from '../../utils/wordQueue';
-import { gradeAnswer } from '../../utils/answerValidator';
+import { isAnswerCorrect } from '../../utils/answerValidator';
 import { fetchDueWordsFromApi, syncAnswerToApi, recordAnswer, type DueWord } from '../../utils/progress';
 import { loadQuizDirection, type QuizDirection, type TargetLanguage } from '../../utils/settings';
 import { useAuth } from '../../context/AuthContext';
@@ -29,7 +29,6 @@ interface ReviewSession {
     currentIndex: number;
     userAnswer: string;
     showAnswer: boolean;
-    partiallyCorrect: boolean;
     correctCount: number;
     done: boolean;
 }
@@ -87,7 +86,6 @@ export default function ReviewQueue() {
                         currentIndex: 0,
                         userAnswer: '',
                         showAnswer: false,
-                        partiallyCorrect: false,
                         correctCount: 0,
                         done: false,
                     } : null);
@@ -108,7 +106,7 @@ export default function ReviewQueue() {
             setSession(s => {
                 if (!s) return s;
                 if (s.currentIndex >= s.words.length - 1) return { ...s, done: true };
-                return { ...s, currentIndex: s.currentIndex + 1, userAnswer: '', showAnswer: false, partiallyCorrect: false };
+                return { ...s, currentIndex: s.currentIndex + 1, userAnswer: '', showAnswer: false };
             });
         };
         window.addEventListener('keydown', onKey);
@@ -127,7 +125,6 @@ export default function ReviewQueue() {
             currentIndex: 0,
             userAnswer: '',
             showAnswer: false,
-            partiallyCorrect: false,
             correctCount: 0,
             done: false,
         });
@@ -269,8 +266,7 @@ export default function ReviewQueue() {
     const handleSubmit = () => {
         if (!session.userAnswer.trim()) return;
         const target = quizDir === 'fr-en' ? current.english : current.french;
-        const result = gradeAnswer(session.userAnswer, target);
-        const isCorrect = result !== 'wrong';
+        const isCorrect = isAnswerCorrect(session.userAnswer, target);
 
         recordAnswer(current.moduleId, current.id, isCorrect, targetLanguage);
         if (user) {
@@ -280,9 +276,7 @@ export default function ReviewQueue() {
         }
 
         if (isCorrect) {
-            if (result === 'partial') {
-                setSession(s => s && ({ ...s, correctCount: s.correctCount + 1, showAnswer: true, partiallyCorrect: true }));
-            } else if (session.currentIndex >= session.words.length - 1) {
+            if (session.currentIndex >= session.words.length - 1) {
                 setSession(s => s && ({ ...s, correctCount: s.correctCount + 1, done: true }));
             } else {
                 setSession(s => s && ({
@@ -291,11 +285,10 @@ export default function ReviewQueue() {
                     currentIndex: s.currentIndex + 1,
                     userAnswer: '',
                     showAnswer: false,
-                    partiallyCorrect: false,
                 }));
             }
         } else {
-            setSession(s => s && ({ ...s, showAnswer: true, partiallyCorrect: false }));
+            setSession(s => s && ({ ...s, showAnswer: true }));
         }
     };
 
@@ -304,7 +297,7 @@ export default function ReviewQueue() {
         if (user) {
             syncAnswerToApi(`${current.moduleId}:${current.id}`, current.moduleId, false, targetLanguage);
         }
-        setSession(s => s && ({ ...s, showAnswer: true, partiallyCorrect: false }));
+        setSession(s => s && ({ ...s, showAnswer: true }));
     };
 
     const handleNext = () => {
@@ -316,7 +309,6 @@ export default function ReviewQueue() {
                 currentIndex: s.currentIndex + 1,
                 userAnswer: '',
                 showAnswer: false,
-                partiallyCorrect: false,
             }));
         }
     };
@@ -385,12 +377,11 @@ export default function ReviewQueue() {
                     </div>
                 ) : (
                     <div className="vocq-reveal-section">
-                        {session.partiallyCorrect && <p className="vocq-partial-answer" role="status">{t.quiz.partialWarning}</p>}
                         <p className="vocq-correct-answer">
                             {quizDir === 'fr-en' ? current.english : current.french}
                         </p>
                         {session.userAnswer && (
-                            <p className={session.partiallyCorrect ? 'vocq-partial-answer' : 'vocq-wrong-answer'}>{session.userAnswer}</p>
+                            <p className="vocq-wrong-answer">{session.userAnswer}</p>
                         )}
                         <button className="btn btn-primary" onClick={handleNext}>
                             {t.quiz.nextWord}

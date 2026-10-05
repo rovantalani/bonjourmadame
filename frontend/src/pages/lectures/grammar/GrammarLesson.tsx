@@ -4,7 +4,6 @@ import LearningCompletion from '../../../components/LearningCompletion';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useT } from '../../../utils/i18n';
-import { gradeAnswer, type AnswerResult } from '../../../utils/answerValidator';
 import SpeakerButton from '../../../components/SpeakerButton';
 import { LessonIcon } from '../../../components/icons/index';
 import './GrammarLesson.css';
@@ -40,6 +39,16 @@ interface GrammarLessonData {
 
 type ExerciseState = 'idle' | 'checked';
 
+function normalizeAnswer(str: string): string {
+    return str
+        .toLowerCase()
+        .trim()
+        .replace(/[’‘`]/g, "'")
+        .replace(/\s*'\s*/g, "'")
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '');
+}
+
 export default function GrammarLesson() {
     const { language } = useLearning();
     const { lessonId } = useParams<{ lessonId: string }>();
@@ -52,7 +61,6 @@ export default function GrammarLesson() {
 
     const [inputs, setInputs] = useState<string[]>([]);
     const [solved, setSolved] = useState<boolean[]>([]);
-    const [answerResults, setAnswerResults] = useState<AnswerResult[]>([]);
     const [exerciseState, setExerciseState] = useState<ExerciseState>('idle');
     const [shownHints, setShownHints] = useState<boolean[]>([]);
 
@@ -68,7 +76,6 @@ export default function GrammarLesson() {
                 setLesson(data);
                 setInputs(new Array(data.exercises?.length ?? 0).fill(''));
                 setSolved(new Array(data.exercises?.length ?? 0).fill(false));
-                setAnswerResults([]);
                 setShownHints(new Array(data.exercises?.length ?? 0).fill(false));
                 setExerciseState('idle');
                 setLoading(false);
@@ -85,9 +92,8 @@ export default function GrammarLesson() {
     }
 
     function handleCheckAnswers() {
-        const results = (lesson?.exercises ?? []).map((ex, i) => gradeAnswer(inputs[i] ?? '', ex.answer));
-        setAnswerResults(results);
-        setSolved(prev => prev.map((wasSolved, i) => wasSolved || results[i] !== 'wrong'));
+        const results = (lesson?.exercises ?? []).map((ex, i) => normalizeAnswer(inputs[i] ?? '') === normalizeAnswer(ex.answer));
+        setSolved(prev => prev.map((wasSolved, i) => wasSolved || results[i]));
         setExerciseState('checked');
     }
 
@@ -191,14 +197,12 @@ export default function GrammarLesson() {
                         {exercises.map((ex, i) => {
                             const isCorrect = exerciseState === 'checked' && checkedResults[i];
                             const isWrong = exerciseState === 'checked' && !checkedResults[i];
-                            const isPartial = isCorrect && answerResults[i] === 'partial';
                             return (
                                 <div
                                     key={i}
                                     className={
                                         'ex-item' +
                                         (isCorrect ? ' ex-item--correct' : '') +
-                                        (isPartial ? ' ex-item--partial' : '') +
                                         (isWrong ? ' ex-item--wrong' : '')
                                     }
                                 >
@@ -226,7 +230,6 @@ export default function GrammarLesson() {
                                     {shownHints[i] && exerciseState === 'idle' && (
                                         <p className="ex-hint-text">{ex.hint}</p>
                                     )}
-                                    {isPartial && <p className="ex-partial-warning" role="status">{t.quiz.partialWarning} <strong>{ex.answer}</strong></p>}
                                     {isWrong && (
                                         <p className="ex-correct-reveal">
                                             Correct: <strong>{ex.answer}</strong>

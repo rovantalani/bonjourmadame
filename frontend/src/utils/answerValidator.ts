@@ -20,7 +20,7 @@ function normalize(str: string): string {
 }
 
 /**
- * Returns all acceptable forms for one (slash-free) answer segment.
+ * Returns all acceptable normalized forms for one (slash-free) answer segment.
  *
  * Handles:
  *   enchanté(e)       → ["enchante", "enchantee"]
@@ -80,8 +80,8 @@ function processSegment(segment: string): string[] {
         }
     }
 
-    const baseNorm = base.trim();
-    const femNorm = fem.trim();
+    const baseNorm = normalize(base.trim());
+    const femNorm = normalize(fem.trim());
 
     const results = new Set([baseNorm]);
     if (femNorm !== baseNorm) results.add(femNorm);
@@ -90,7 +90,7 @@ function processSegment(segment: string): string[] {
 }
 
 /**
- * Returns all acceptable forms for an answer string.
+ * Returns all acceptable normalized forms for an answer string.
  *
  * Splits on ' / ' first so that slash-separated alternatives are each accepted:
  *   the maid / housemaid           → ["the maid", "housemaid"]
@@ -110,21 +110,6 @@ function getAcceptableAnswers(answer: string): string[] {
 
 export type AnswerResult = 'correct' | 'partial' | 'wrong';
 
-function differsOnlyByFinalS(value: string, expected: string): boolean {
-    const actualWords = value.match(/\p{L}+/gu) ?? [];
-    const expectedWords = expected.match(/\p{L}+/gu) ?? [];
-    if (actualWords.length !== expectedWords.length) return false;
-
-    let changed = 0;
-    for (let i = 0; i < actualWords.length; i++) {
-        if (actualWords[i] === expectedWords[i]) continue;
-        const shorter = actualWords[i].length < expectedWords[i].length ? actualWords[i] : expectedWords[i];
-        const longer = actualWords[i].length > expectedWords[i].length ? actualWords[i] : expectedWords[i];
-        if (shorter.length < 3 || longer !== `${shorter}s` || ++changed > 1) return false;
-    }
-    return changed === 1;
-}
-
 function withoutSymbols(value: string): string {
     return value.replace(/\s*[\p{P}\p{S}]+\s*/gu, '').trim();
 }
@@ -142,12 +127,10 @@ function matchesSymbolSpacing(value: string, expected: string): boolean {
 export function gradeAnswer(userAnswer: string, answer: string): AnswerResult {
     const acceptable = getAcceptableAnswers(answer);
     const normalized = normalize(userAnswer);
-    if (acceptable.includes(userAnswer.trim())) return 'correct';
-    const normalizedForms = acceptable.map(normalize);
-    if (normalizedForms.includes(normalized)) return 'partial';
+    if (acceptable.includes(normalized)) return 'correct';
     const letters = withoutSymbols(normalized);
-    if (letters && normalizedForms.some(form =>
-        withoutSymbols(form) === letters || matchesSymbolSpacing(normalized, form) || differsOnlyByFinalS(normalized, form)
+    if (letters && acceptable.some(form =>
+        withoutSymbols(form) === letters || matchesSymbolSpacing(normalized, form)
     )) return 'partial';
     return 'wrong';
 }
