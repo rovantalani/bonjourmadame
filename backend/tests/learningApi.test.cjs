@@ -18,6 +18,7 @@ function fixture(language) {
     const phrases = { ...source.phrases[0], id: 'shared', title: `${language} phrases` };
     const reading = { ...source.reading[0], moduleId: 'shared', title: `${language} reading` };
     return {
+        exams: [],
         courses: [{ ...source.courses[0], title: `${language} course` }],
         vocabulary: { shared: Array(language === 'fr' ? 1 : 2).fill(word), [`${language}-only`]: [word] },
         modules: [{ ...source.modules[0], id: 'shared', title: `${language} module` }],
@@ -138,5 +139,35 @@ test('unknown routes and prototype property IDs return JSON 404 in both language
             }
         }
         await get(`${prefix}/unknown-route`, 404);
+    }
+});
+
+test('unit exams return demos, drafts, and JSON 404s for invalid units without language fallback', async () => {
+    for (const [language, unit, count] of [['fr', 1, 5], ['fr', 2, 5], ['en', 3, 5], ['en', 1, 0], ['fr', 7, 0], ['fr', 'final', 7], ['en', 'final', 5]]) {
+        const response = await fetch(`${base}/api/learning/${language}/exams/a1/${unit}`);
+        assert.equal(response.status, 200);
+        const exam = await response.json();
+        assert.equal(exam.questions.length, count);
+        assert.equal(exam.isDemo, count > 0);
+        assert.equal(exam.unit, unit);
+    }
+    for (const path of ['fr/exams/invalid/1', 'fr/exams/a1/999', 'fr/exams/invalid/final', 'fr/exams/a1/8', 'en/exams/a1/4', 'fr/exams/a1/0', 'fr/exams/a1/01', 'fr/exams/a1/1.0', 'fr/exams/a1/__proto__']) {
+        const response = await fetch(`${base}/api/learning/${path}`);
+        assert.equal(response.status, 404, path);
+        assert.ok((await response.json()).error);
+    }
+    const unsupported = await fetch(`${base}/api/learning/de/exams/a1/1`);
+    assert.equal(unsupported.status, 400);
+    assert.ok((await unsupported.json()).error);
+});
+
+test('levels without authored final questions return a draft final exam', async () => {
+    for (const language of ['fr', 'en']) {
+        const response = await fetch(`${base}/api/learning/${language}/exams/a2/final`);
+        assert.equal(response.status, 200);
+        const exam = await response.json();
+        assert.equal(exam.unit, 'final');
+        assert.equal(exam.questions.length, 0);
+        assert.equal(exam.isDemo, false);
     }
 });

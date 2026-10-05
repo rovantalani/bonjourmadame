@@ -23,7 +23,7 @@ test('French A1 readings and their vocabulary follow the seven-unit syllabus', (
     const titles = ['Faire connaissance', 'La vie quotidienne', 'La maison et le quartier',
         'Manger et faire les courses', 'Loisirs et vie sociale', 'Se déplacer et voyager', 'La vie en France'];
     const course = courses('fr').find(item => item.level === 'A1');
-    assert.deepEqual(Array.from(course.units, unit => unit.title), titles);
+    assert.deepEqual(Array.from(course.units.filter(unit => unit.kind !== 'final-exam'), unit => unit.title), titles);
     const passages = learningContent.fr.reading;
     const modules = new Map(learningContent.fr.modules.map(module => [module.id, module]));
     for (let unit = 1; unit <= 7; unit++) {
@@ -105,6 +105,8 @@ for (const language of ['fr', 'en']) {
         const seen = new Set();
         for (const course of curriculum) {
             for (const step of course.steps) {
+                // Exams have their own placement and authored-question checks.
+                if (step.type === 'exams') continue;
                 const key = `${step.type}:${step.contentId}`;
                 assert(!seen.has(key), `${language}: repeated course module ${key}`);
                 seen.add(key);

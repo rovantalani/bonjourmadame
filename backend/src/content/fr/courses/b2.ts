@@ -12,6 +12,7 @@ export const courseB2: Course = {
             { number: 3, title: 'Unit 3 — Français Professionnel' },
             { number: 4, title: 'Unit 4 — Textes Authentiques' },
             { number: 5, title: 'Unit 5 — Maîtrise de la Complexité' },
+            { number: 6, title: 'FINAL EXAM', kind: 'final-exam' },
         ],
         steps: [
             // Unit 1 — Grammaire Complexe (7 steps)
@@ -22,6 +23,7 @@ export const courseB2: Course = {
             { id: 'b2-business',              title: 'Business & Economy',             module: 'vocabulary', type: 'vocabulary', contentId: 'business-economy',              path: '/vocabulary/business-economy',                    unit: 1 },
             { id: 'b2-passive',               title: 'Passive Voice',                  module: 'lectures', type: 'grammar',    contentId: 'passive-voice',                 path: '/lectures/grammar/passive-voice',                  unit: 1 },
             { id: 'b2-reading-education',     title: 'Reading: L\'École de la République', module: 'lectures', type: 'reading', contentId: 'b2-article-education',         path: '/lectures/reading/b2-article-education',                   unit: 1 },
+            { id: 'b2-exam-1', title: 'Unit 1 exam', module: 'exams', type: 'exams', contentId: 'b2-exam-1', path: '/exams/1', unit: 1, available: false, isDemo: false },
             // Unit 2 — Expression Nuancée (7 steps)
             { id: 'b2-reported',              title: 'Reported Speech',                module: 'lectures', type: 'grammar',    contentId: 'reported-speech',               path: '/lectures/grammar/reported-speech',                unit: 2 },
             { id: 'b2-media-journalism',      title: 'Media & Journalism',             module: 'vocabulary', type: 'vocabulary', contentId: 'media-journalism',              path: '/vocabulary/media-journalism',                    unit: 2 },
@@ -30,6 +32,7 @@ export const courseB2: Course = {
             { id: 'b2-science-tech',          title: 'Science & Technology',           module: 'vocabulary', type: 'vocabulary', contentId: 'science-technology',            path: '/vocabulary/science-technology',                  unit: 2 },
             { id: 'b2-debating',              title: 'Debating & Persuading',          module: 'lectures', type: 'phrases',    contentId: 'debating-persuading',           path: '/lectures/phrases/debating-persuading',                    unit: 2 },
             { id: 'b2-reading-ecologie',      title: 'Reading: Nucléaire ou Renouvelable', module: 'lectures', type: 'reading', contentId: 'b2-debat-ecologie',            path: '/lectures/reading/b2-debat-ecologie',                      unit: 2 },
+            { id: 'b2-exam-2', title: 'Unit 2 exam', module: 'exams', type: 'exams', contentId: 'b2-exam-2', path: '/exams/2', unit: 2, available: false, isDemo: false },
             // Unit 3 — Français Professionnel (6 steps)
             { id: 'b2-concession',            title: 'Concession & Opposition',        module: 'lectures', type: 'grammar',    contentId: 'concession-opposition',         path: '/lectures/grammar/concession-opposition',          unit: 3 },
             { id: 'b2-work-pro',              title: 'Professional French',            module: 'lectures', type: 'phrases',    contentId: 'work-professional',             path: '/lectures/phrases/work-professional',                      unit: 3 },
@@ -37,6 +40,7 @@ export const courseB2: Course = {
             { id: 'b2-nominalisation',        title: 'La Nominalisation',              module: 'lectures', type: 'grammar',    contentId: 'nominalisation',                path: '/lectures/grammar/nominalisation',                 unit: 3 },
             { id: 'b2-formal-correspondence', title: 'Formal Correspondence',          module: 'lectures', type: 'phrases',    contentId: 'formal-correspondence',         path: '/lectures/phrases/formal-correspondence',                  unit: 3 },
             { id: 'b2-reading-lettre',        title: 'Reading: Lettre Ouverte',        module: 'lectures', type: 'reading',    contentId: 'b2-lettre-ouverte',             path: '/lectures/reading/b2-lettre-ouverte',                      unit: 3 },
+            { id: 'b2-exam-3', title: 'Unit 3 exam', module: 'exams', type: 'exams', contentId: 'b2-exam-3', path: '/exams/3', unit: 3, available: false, isDemo: false },
             // Unit 4 — Textes Authentiques (6 steps)
             { id: 'b2-adv-verbs',             title: 'Advanced Irregular Verbs',       module: 'verbs', type: 'verbs',      contentId: 'b2',      path: '/verbs/b2',               unit: 4 },
             { id: 'b2-philosophy',            title: 'Philosophy & Ethics',            module: 'vocabulary', type: 'vocabulary', contentId: 'philosophy-ethics',             path: '/vocabulary/philosophy-ethics',                   unit: 4 },
@@ -44,6 +48,7 @@ export const courseB2: Course = {
             { id: 'b2-arts',                  title: 'Arts & Criticism',               module: 'vocabulary', type: 'vocabulary', contentId: 'arts-and-criticism',            path: '/vocabulary/arts-and-criticism',                  unit: 4 },
             { id: 'b2-emotions-reactions',    title: 'Emotions & Reactions',           module: 'lectures', type: 'phrases',    contentId: 'emotions-reactions',            path: '/lectures/phrases/emotions-reactions',                     unit: 4 },
             { id: 'b2-reading-chronique',     title: 'Reading: Réseaux Sociaux',       module: 'lectures', type: 'reading',    contentId: 'b2-chronique-societale',        path: '/lectures/reading/b2-chronique-societale',                 unit: 4 },
+            { id: 'b2-exam-4', title: 'Unit 4 exam', module: 'exams', type: 'exams', contentId: 'b2-exam-4', path: '/exams/4', unit: 4, available: false, isDemo: false },
             // Unit 5 — Maîtrise de la Complexité (7 steps)
             { id: 'b2-subj-vs-indic',         title: 'Subjonctif ou Indicatif ?',      module: 'lectures', type: 'grammar',    contentId: 'subjunctive-vs-indicative',     path: '/lectures/grammar/subjunctive-vs-indicative',      unit: 5 },
             { id: 'b2-urban-society',         title: 'Urban Society',                  module: 'vocabulary', type: 'vocabulary', contentId: 'urban-society',                 path: '/vocabulary/urban-society',                       unit: 5 },
@@ -52,5 +57,8 @@ export const courseB2: Course = {
             { id: 'b2-reading-nouvelles',     title: 'Reading: Le Retour',             module: 'lectures', type: 'reading',    contentId: 'b2-nouvelles-francophones',     path: '/lectures/reading/b2-nouvelles-francophones',               unit: 5 },
             { id: 'b2-reading-intellectuel',  title: 'Reading: Entretien avec une Philosophe', module: 'lectures', type: 'reading', contentId: 'b2-interview-intellectuel', path: '/lectures/reading/b2-interview-intellectuel',             unit: 5 },
             { id: 'b2-reading-science',       title: 'Reading: L\'IA et la Médecine',  module: 'lectures', type: 'reading',    contentId: 'b2-article-scientifique-vulgarise', path: '/lectures/reading/b2-article-scientifique-vulgarise',  unit: 5 },
+            { id: 'b2-exam-5', title: 'Unit 5 exam', module: 'exams', type: 'exams', contentId: 'b2-exam-5', path: '/exams/5', unit: 5, available: false, isDemo: false },
+            // Level exam
+            { id: 'b2-exam-final', title: 'B2 final exam', module: 'exams', type: 'exams', contentId: 'b2-exam-final', path: '/exams/final', unit: 6, available: false, isDemo: false },
         ],
     };

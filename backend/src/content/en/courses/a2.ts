@@ -10,6 +10,7 @@ export const courseA2: Course = {
             { number: 1, title: 'Monde & Personnes' },
             { number: 2, title: 'Passé & Futur' },
             { number: 3, title: 'Interactions Sociales' },
+            { number: 4, title: 'FINAL EXAM', kind: 'final-exam' },
         ],
         steps: [
             // Unit 1 — Monde & Personnes
@@ -21,6 +22,7 @@ export const courseA2: Course = {
             { id: 'a2en-personality',     title: 'Personnalité & Caractère',     module: 'vocabulary', type: 'vocabulary', contentId: 'personality-character',   path: '/vocabulary/personality-character',    unit: 1 },
             { id: 'a2en-celebrations',    title: 'Fêtes & Événements',           module: 'vocabulary', type: 'vocabulary', contentId: 'celebrations-events',     path: '/vocabulary/celebrations-events',      unit: 1 },
             { id: 'a2en-seasons-act',     title: 'Saisons & Activités',          module: 'vocabulary', type: 'vocabulary', contentId: 'seasons-activities',      path: '/vocabulary/seasons-activities',       unit: 1 },
+            { id: 'a2-exam-1', title: 'Examen de l’unité 1', module: 'exams', type: 'exams', contentId: 'a2-exam-1', path: '/exams/1', unit: 1, available: false, isDemo: false },
             // Unit 2 — Passé & Futur
             { id: 'a2en-past',            title: 'Les Temps du Passé',           module: 'lectures', type: 'grammar',    contentId: 'en-past-tenses',          path: '/lectures/grammar/en-past-tenses',     unit: 2 },
             { id: 'a2en-present-perf',    title: 'Le Present Perfect',           module: 'lectures', type: 'grammar',    contentId: 'en-present-perfect',      path: '/lectures/grammar/en-present-perfect', unit: 2 },
@@ -28,6 +30,7 @@ export const courseA2: Course = {
             { id: 'a2en-comparatives',    title: 'Comparatifs & Superlatifs',    module: 'lectures', type: 'grammar',    contentId: 'en-comparatives',         path: '/lectures/grammar/en-comparatives',    unit: 2 },
             { id: 'a2en-todo',            title: 'Verbe : to do',                module: 'verbs', type: 'verbs',      contentId: 'to-do',                   path: '/verbs/to-do/table',                   unit: 2 },
             { id: 'a2en-reading-london',  title: 'Lecture : A Weekend in London',module: 'lectures', type: 'reading',    contentId: 'a2en-weekend-trip',       path: '/lectures/reading/a2en-weekend-trip',  unit: 2 },
+            { id: 'a2-exam-2', title: 'Examen de l’unité 2', module: 'exams', type: 'exams', contentId: 'a2-exam-2', path: '/exams/2', unit: 2, available: false, isDemo: false },
             // Unit 3 — Interactions Sociales
             { id: 'a2en-shopping',        title: 'Shopping & Argent',            module: 'vocabulary', type: 'vocabulary', contentId: 'shopping-money',          path: '/vocabulary/shopping-money',           unit: 3 },
             { id: 'a2en-animals',         title: 'Les Animaux',                  module: 'vocabulary', type: 'vocabulary', contentId: 'animals',                 path: '/vocabulary/animals',                  unit: 3 },
@@ -53,5 +56,8 @@ export const courseA2: Course = {
             { id: 'a2en-reading-concert', title: 'Lecture : The Concert',         module: 'lectures', type: 'reading',    contentId: 'a2en-the-concert',        path: '/lectures/reading/a2en-the-concert',   unit: 3 },
             { id: 'a2en-reading-moving',  title: 'Lecture : Moving House',        module: 'lectures', type: 'reading',    contentId: 'a2en-moving-house',       path: '/lectures/reading/a2en-moving-house',  unit: 3 },
             { id: 'a2en-reading-summer',  title: 'Lecture : My First Summer Job', module: 'lectures', type: 'reading',    contentId: 'a2en-summer-job',         path: '/lectures/reading/a2en-summer-job',    unit: 3 },
+            { id: 'a2-exam-3', title: 'Examen de l’unité 3', module: 'exams', type: 'exams', contentId: 'a2-exam-3', path: '/exams/3', unit: 3, available: false, isDemo: false },
+            // Level exam
+            { id: 'a2-exam-final', title: 'Examen final A2', module: 'exams', type: 'exams', contentId: 'a2-exam-final', path: '/exams/final', unit: 4, available: false, isDemo: false },
         ],
     };

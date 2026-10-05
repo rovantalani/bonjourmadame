@@ -12,6 +12,7 @@ export const courseC1: Course = {
             { number: 3, title: 'Nuanced Language' },
             { number: 4, title: 'Culture & Literature' },
             { number: 5, title: 'Full Mastery & Review' },
+            { number: 6, title: 'FINAL EXAM', kind: 'final-exam' },
         ],
         steps: [
             // Unit 1 — Register & Modality
@@ -22,6 +23,7 @@ export const courseC1: Course = {
             { id: 'c1-idioms',            title: 'Idioms & Expressions',         module: 'vocabulary', type: 'vocabulary', contentId: 'idioms-expressions',         path: '/vocabulary/idioms-expressions',              unit: 1 },
             { id: 'c1-academic-disc',     title: 'Academic Discourse',           module: 'lectures', type: 'phrases',    contentId: 'academic-discourse',         path: '/lectures/phrases/academic-discourse',                 unit: 1 },
             { id: 'c1-reading-pol',       title: 'Reading: Europe\'s Tensions',  module: 'lectures', type: 'reading',    contentId: 'c1-discours-politique',      path: '/lectures/reading/c1-discours-politique',              unit: 1 },
+            { id: 'c1-exam-1', title: 'Unit 1 exam', module: 'exams', type: 'exams', contentId: 'c1-exam-1', path: '/exams/1', unit: 1, available: false, isDemo: false },
             // Unit 2 — Academic Discourse
             { id: 'c1-inversion',         title: 'Literary Inversion',           module: 'lectures', type: 'grammar',    contentId: 'inversion-literary',         path: '/lectures/grammar/inversion-literary',         unit: 2 },
             { id: 'c1-reported-adv',      title: 'Advanced Reported Speech',     module: 'lectures', type: 'grammar',    contentId: 'reported-speech-advanced',   path: '/lectures/grammar/reported-speech-advanced',   unit: 2 },
@@ -30,6 +32,7 @@ export const courseC1: Course = {
             { id: 'c1-intellectual-deb',  title: 'Intellectual Debate',          module: 'lectures', type: 'phrases',    contentId: 'intellectual-debate',        path: '/lectures/phrases/intellectual-debate',                unit: 2 },
             { id: 'c1-reading-philo',     title: 'Reading: On Freedom',          module: 'lectures', type: 'reading',    contentId: 'c1-article-philosophique',   path: '/lectures/reading/c1-article-philosophique',           unit: 2 },
             { id: 'c1-reading-identite',  title: 'Reading: Identity',            module: 'lectures', type: 'reading',    contentId: 'c1-essai-identite',          path: '/lectures/reading/c1-essai-identite',                  unit: 2 },
+            { id: 'c1-exam-2', title: 'Unit 2 exam', module: 'exams', type: 'exams', contentId: 'c1-exam-2', path: '/exams/2', unit: 2, available: false, isDemo: false },
             // Unit 3 — Nuanced Language
             { id: 'c1-hypothetical',      title: 'Hypothetical Past',            module: 'lectures', type: 'grammar',    contentId: 'hypothetical-past',          path: '/lectures/grammar/hypothetical-past',          unit: 3 },
             { id: 'c1-negation-adv',      title: 'Advanced Negation',            module: 'lectures', type: 'grammar',    contentId: 'advanced-negation-literary', path: '/lectures/grammar/advanced-negation-literary', unit: 3 },
@@ -38,6 +41,7 @@ export const courseC1: Course = {
             { id: 'c1-literary',          title: 'Literary & Abstract Vocab',    module: 'vocabulary', type: 'vocabulary', contentId: 'literary-abstract',          path: '/vocabulary/literary-abstract',               unit: 3 },
             { id: 'c1-emotion-subtly',    title: 'Expressing Emotion Subtly',    module: 'lectures', type: 'phrases',    contentId: 'expressing-emotion-subtly',  path: '/lectures/phrases/expressing-emotion-subtly',          unit: 3 },
             { id: 'c1-reading-social',    title: 'Reading: Medical Deserts',     module: 'lectures', type: 'reading',    contentId: 'c1-reportage-social',        path: '/lectures/reading/c1-reportage-social',                unit: 3 },
+            { id: 'c1-exam-3', title: 'Unit 3 exam', module: 'exams', type: 'exams', contentId: 'c1-exam-3', path: '/exams/3', unit: 3, available: false, isDemo: false },
             // Unit 4 — Culture & Literature
             { id: 'c1-history',           title: 'History & Civilisation',       module: 'vocabulary', type: 'vocabulary', contentId: 'history-civilisation',       path: '/vocabulary/history-civilisation',            unit: 4 },
             { id: 'c1-aesthetics',        title: 'Aesthetics & Criticism',       module: 'vocabulary', type: 'vocabulary', contentId: 'aesthetics-criticism',       path: '/vocabulary/aesthetics-criticism',            unit: 4 },
@@ -46,6 +50,7 @@ export const courseC1: Course = {
             { id: 'c1-reading-camus',     title: 'Reading: Camus',               module: 'lectures', type: 'reading',    contentId: 'c1-camus-etranger',          path: '/lectures/reading/c1-camus-etranger',                  unit: 4 },
             { id: 'c1-reading-voltaire',  title: 'Reading: Voltaire',            module: 'lectures', type: 'reading',    contentId: 'c1-voltaire-candide',        path: '/lectures/reading/c1-voltaire-candide',                unit: 4 },
             { id: 'c1-reading-ernaux',    title: 'Reading: Ernaux',              module: 'lectures', type: 'reading',    contentId: 'c1-roman-contemporain',      path: '/lectures/reading/c1-roman-contemporain',              unit: 4 },
+            { id: 'c1-exam-4', title: 'Unit 4 exam', module: 'exams', type: 'exams', contentId: 'c1-exam-4', path: '/exams/4', unit: 4, available: false, isDemo: false },
             // Unit 5 — Full Mastery & Review
             { id: 'c1-proverbs',          title: 'Proverbs & Sayings',           module: 'lectures', type: 'phrases',    contentId: 'proverbs-sayings',           path: '/lectures/phrases/proverbs-sayings',                   unit: 5 },
             { id: 'c1-nuanced-adj',       title: 'Nuanced Adjectives',           module: 'vocabulary', type: 'vocabulary', contentId: 'nuanced-adjectives',         path: '/vocabulary/nuanced-adjectives',              unit: 5 },
@@ -53,5 +58,8 @@ export const courseC1: Course = {
             { id: 'c1-conditionnel-passe', title: 'Le Conditionnel Passé',       module: 'lectures', type: 'grammar',    contentId: 'conditionnel-passe',         path: '/lectures/grammar/conditionnel-passe',         unit: 5 },
             { id: 'c1-connecteurs',       title: 'Connecteurs Logiques',         module: 'lectures', type: 'grammar',    contentId: 'connecteurs-logiques',       path: '/lectures/grammar/connecteurs-logiques',       unit: 5 },
             { id: 'c1-reading-droit',     title: 'Reading: The Right to Be Forgotten', module: 'lectures', type: 'reading', contentId: 'c1-article-presse-specialisee', path: '/lectures/reading/c1-article-presse-specialisee', unit: 5 },
+            { id: 'c1-exam-5', title: 'Unit 5 exam', module: 'exams', type: 'exams', contentId: 'c1-exam-5', path: '/exams/5', unit: 5, available: false, isDemo: false },
+            // Level exam
+            { id: 'c1-exam-final', title: 'C1 final exam', module: 'exams', type: 'exams', contentId: 'c1-exam-final', path: '/exams/final', unit: 6, available: false, isDemo: false },
         ],
     };

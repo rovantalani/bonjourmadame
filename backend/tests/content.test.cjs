@@ -9,7 +9,7 @@ test('course steps use valid modules, lecture types and matching content paths',
             for (const step of course.steps) {
                 assert(!ids.has(step.id), `Duplicate step: ${step.id}`);
                 ids.add(step.id);
-                assert(['vocabulary', 'verbs', 'lectures'].includes(step.module));
+                assert(['vocabulary', 'verbs', 'lectures', 'exams'].includes(step.module));
                 assert(step.path.startsWith(`/${step.module}/`), step.path);
                 if (step.module === 'lectures') {
                     assert(['grammar', 'phrases', 'reading'].includes(step.type));

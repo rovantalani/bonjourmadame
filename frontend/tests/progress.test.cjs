@@ -177,3 +177,35 @@ test('new progress never silently defaults to French without a selected mode', a
     await assert.rejects(words.syncAnswerToApi('shared:1', 'shared', true), /Select a learning language/);
     assert.equal(calls.length, 0);
 });
+
+test('draft exams do not count or block Continue; playable exams require a pass', () => {
+    const { progress, setMode } = setup();
+    const draft = { id: 'draft', module: 'exams', available: false, path: '/exams/1' };
+    const live = { id: 'live', module: 'exams', available: true, path: '/exams/2' };
+    const course = { level: 'A1', steps: [draft, live] };
+    assert.equal(progress.getCourseProgress(course).total, 1);
+    assert.equal(progress.getNextStep(course).id, 'live');
+    const examPath = '/courses/a1/exams/2';
+    progress.setContentStatus(examPath, 'complete');
+    assert.equal(progress.getContentStatus(examPath), 'not-started');
+    progress.recordQuizPass(examPath);
+    progress.setContentStatus(examPath, 'complete');
+    assert.equal(progress.getCourseProgress(course).pct, 100);
+    assert.equal(progress.getNextStep(course), null);
+    setMode('learn-english');
+    assert.equal(progress.getContentStatus(examPath), 'not-started');
+});
+
+test('final exam completion is separate from unit exams and other levels', () => {
+    const { progress, setMode } = setup();
+    const path = '/courses/a1/exams/final';
+    progress.setContentStatus(path, 'complete');
+    assert.equal(progress.getContentStatus(path), 'not-started');
+    progress.recordQuizPass(path);
+    progress.setContentStatus(path, 'complete');
+    assert.equal(progress.getContentStatus(path), 'complete');
+    assert.equal(progress.hasPassedQuiz('/courses/a1/exams/1'), false);
+    assert.equal(progress.hasPassedQuiz('/courses/a2/exams/final'), false);
+    setMode('learn-english');
+    assert.equal(progress.getContentStatus(path), 'not-started');
+});

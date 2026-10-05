@@ -1,8 +1,9 @@
-export type ModuleType = 'vocabulary' | 'verbs' | 'lectures';
+export type ModuleType = 'vocabulary' | 'verbs' | 'lectures' | 'exams';
 export type LectureType = 'grammar' | 'phrases' | 'reading';
 export type StepType = Exclude<ModuleType, 'lectures'> | LectureType;
 
 export interface CourseUnit {
+    kind?: 'final-exam';
     number: number;
     title: string;
 }
@@ -18,6 +19,7 @@ interface CourseStepBase {
 export type CourseStep = CourseStepBase & (
     | { module: 'vocabulary'; type: 'vocabulary' }
     | { module: 'verbs'; type: 'verbs' }
+    | { module: 'exams'; type: 'exams'; available: boolean; isDemo: boolean }
     | { module: 'lectures'; type: LectureType }
 );
 

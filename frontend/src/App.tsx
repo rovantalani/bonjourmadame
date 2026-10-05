@@ -23,6 +23,7 @@ import PhraseQuiz from './pages/lectures/phrases/PhraseQuiz';
 import ReviewQueue from './pages/vocabulary/ReviewQueue';
 import ReadingPassage from './pages/lectures/reading/ReadingPassage';
 import Courses from './pages/Courses';
+import UnitExam from './pages/UnitExam';
 import CourseRoadmap from './pages/CourseRoadmap';
 import Verbs from './pages/verbs/Verbs';
 import Lectures from './pages/lectures/Lectures';
@@ -115,6 +116,7 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path="courses" element={<Courses />} />
                         <Route path="courses/:level" element={<CourseRoadmap />} />
+                        <Route path="courses/:level/exams/:unit" element={<UnitExam />} />
                         <Route path="courses/:level/vocabulary" element={<Vocabulary />} />
                         <Route path="courses/:level/vocabulary/:moduleId" element={<VocabularyQuiz />} />
                         <Route path="courses/:level/verbs" element={<Verbs />} />

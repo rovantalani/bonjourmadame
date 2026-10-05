@@ -10,6 +10,7 @@ export const courseA1: Course = {
             { number: 1, title: 'Premiers Mots' },
             { number: 2, title: 'Grammaire Fondamentale' },
             { number: 3, title: 'Vie Quotidienne' },
+            { number: 4, title: 'FINAL EXAM', kind: 'final-exam' },
         ],
         steps: [
             // Unit 1 — Premiers Mots
@@ -21,6 +22,7 @@ export const courseA1: Course = {
             { id: 'a1en-nationalities',   title: 'Nationalités & Pays',           module: 'vocabulary', type: 'vocabulary', contentId: 'nationalities',           path: '/vocabulary/nationalities',            unit: 1 },
             { id: 'a1en-phrases-intro',   title: 'Se présenter',                  module: 'lectures', type: 'phrases',    contentId: 'introducing-yourself',    path: '/lectures/phrases/introducing-yourself', unit: 1 },
             { id: 'a1en-phrases-conv',    title: 'Conversation quotidienne',      module: 'lectures', type: 'phrases',    contentId: 'everyday-conversation',   path: '/lectures/phrases/everyday-conversation', unit: 1 },
+            { id: 'a1-exam-1', title: 'Examen de l’unité 1', module: 'exams', type: 'exams', contentId: 'a1-exam-1', path: '/exams/1', unit: 1, available: false, isDemo: false },
             // Unit 2 — Grammaire Fondamentale
             { id: 'a1en-articles',        title: 'Les Articles en Anglais',       module: 'lectures', type: 'grammar',    contentId: 'en-articles',             path: '/lectures/grammar/en-articles',        unit: 2 },
             { id: 'a1en-present',         title: 'Le Présent Simple et Continu',  module: 'lectures', type: 'grammar',    contentId: 'en-present-simple',       path: '/lectures/grammar/en-present-simple',  unit: 2 },
@@ -30,6 +32,7 @@ export const courseA1: Course = {
             { id: 'a1en-can',             title: 'Can / Can\'t',                  module: 'lectures', type: 'grammar',    contentId: 'en-can-modals',           path: '/lectures/grammar/en-can-modals',      unit: 2 },
             { id: 'a1en-tobe',            title: 'Verbe : to be',                 module: 'verbs', type: 'verbs',      contentId: 'to-be',                   path: '/verbs/to-be/table',                   unit: 2 },
             { id: 'a1en-tohave',          title: 'Verbe : to have',               module: 'verbs', type: 'verbs',      contentId: 'to-have',                 path: '/verbs/to-have/table',                 unit: 2 },
+            { id: 'a1-exam-2', title: 'Examen de l’unité 2', module: 'exams', type: 'exams', contentId: 'a1-exam-2', path: '/exams/2', unit: 2, available: false, isDemo: false },
             // Unit 3 — Vie Quotidienne
             { id: 'a1en-food',            title: 'Nourriture & Boissons',         module: 'vocabulary', type: 'vocabulary', contentId: 'food-drinks',             path: '/vocabulary/food-drinks',              unit: 3 },
             { id: 'a1en-body',            title: 'Corps & Santé',                 module: 'vocabulary', type: 'vocabulary', contentId: 'body-health',             path: '/vocabulary/body-health',              unit: 3 },
@@ -55,5 +58,8 @@ export const courseA1: Course = {
             { id: 'a1en-reading-zoo',     title: 'Lecture : A Visit to the Zoo',  module: 'lectures', type: 'reading',    contentId: 'a1en-at-the-zoo',         path: '/lectures/reading/a1en-at-the-zoo',    unit: 3 },
             { id: 'a1en-reading-rainy',   title: 'Lecture : A Rainy Day',         module: 'lectures', type: 'reading',    contentId: 'a1en-a-rainy-day',        path: '/lectures/reading/a1en-a-rainy-day',   unit: 3 },
             { id: 'a1en-reading-myschool',title: 'Lecture : My School',           module: 'lectures', type: 'reading',    contentId: 'a1en-my-school',          path: '/lectures/reading/a1en-my-school',     unit: 3 },
+            { id: 'a1-exam-3', title: 'Examen de l’unité 3', module: 'exams', type: 'exams', contentId: 'a1-exam-3', path: '/exams/3', unit: 3, available: true, isDemo: true },
+            // Level exam
+            { id: 'a1-exam-final', title: 'Examen final A1', module: 'exams', type: 'exams', contentId: 'a1-exam-final', path: '/exams/final', unit: 4, available: true, isDemo: true },
         ],
     };
