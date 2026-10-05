@@ -23,6 +23,7 @@ import PhraseQuiz from './pages/lectures/phrases/PhraseQuiz';
 import ReviewQueue from './pages/vocabulary/ReviewQueue';
 import ReadingPassage from './pages/lectures/reading/ReadingPassage';
 import Courses from './pages/Courses';
+import Exams from './pages/Exams';
 import UnitExam from './pages/UnitExam';
 import CourseRoadmap from './pages/CourseRoadmap';
 import Verbs from './pages/verbs/Verbs';
@@ -89,9 +90,9 @@ function LearningSession({ language }: { language: TargetLanguage }) {
     return (
         <LearningContext.Provider value={{ ...curriculum, language }}>
             <AuthGate>
-                <div className="App">
+                <div className="App learning-app">
                     <Nav />
-                    <Outlet />
+                    <div id="learning-content" tabIndex={-1}><Outlet /></div>
                 </div>
             </AuthGate>
         </LearningContext.Provider>
@@ -116,6 +117,7 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path="courses" element={<Courses />} />
                         <Route path="courses/:level" element={<CourseRoadmap />} />
+                        <Route path="courses/:level/exams" element={<Exams />} />
                         <Route path="courses/:level/exams/:unit" element={<UnitExam />} />
                         <Route path="courses/:level/vocabulary" element={<Vocabulary />} />
                         <Route path="courses/:level/vocabulary/:moduleId" element={<VocabularyQuiz />} />
