@@ -33,7 +33,7 @@ export default function Nav() {
         </Link>
     );
     const contents = () => <>
-        <Link to={learningPath(language, '/')} className="sidebar-brand" onClick={() => drawer.current?.close()}>
+        <Link to={learningPath(language, base)} className="sidebar-brand" onClick={() => drawer.current?.close()}>
             <img src="/logo_no_text.png" alt="" /><span>Bonjour<br /><strong>Madame</strong><span className="sidebar-brand-dot">.</span></span>
         </Link>
         <nav className="sidebar-navigation" aria-label={fr ? 'Navigation du cours' : 'Course navigation'}>

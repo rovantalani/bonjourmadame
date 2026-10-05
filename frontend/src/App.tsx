@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, useLocation, 
 import { useEffect, useLayoutEffect, useState, type ReactNode } from 'react';
 import './App.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import { LearningContext, type Curriculum } from './context/LearningContext';
+import { LearningContext, useLearning, type Curriculum } from './context/LearningContext';
 import { loadCurriculum } from './utils/loadCurriculum';
 import { loadLearningMode, saveLearningMode, type TargetLanguage } from './utils/settings';
+import { getActiveCourse } from './utils/courseProgress';
 import { learningPath } from './utils/learningRoutes';
 import Nav from './components/Nav';
-import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
@@ -35,6 +35,12 @@ function AuthGate({ children }: { children: ReactNode }) {
     if (loading) return null;
     if (!user && !isGuest) return <Navigate to="/login" replace />;
     return <>{children}</>;
+}
+
+function CourseOverviewRedirect() {
+    const { language, courses } = useLearning();
+    const course = courses.find(item => item.level === getActiveCourse()) ?? courses[0];
+    return <Navigate to={learningPath(language, course ? `/courses/${course.level.toLowerCase()}` : '/courses')} replace />;
 }
 
 function LegacyRedirect() {
@@ -114,7 +120,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/learn/:targetLanguage" element={<LearningRoot />}>
-                        <Route index element={<Home />} />
+                        <Route index element={<CourseOverviewRedirect />} />
                         <Route path="courses" element={<Courses />} />
                         <Route path="courses/:level" element={<CourseRoadmap />} />
                         <Route path="courses/:level/exams" element={<Exams />} />
