@@ -1,9 +1,9 @@
 import { useLearningNavigate as useNavigate } from '../hooks/useLearningNavigation';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { BookOpenIcon } from '../components/icons';
 import ModuleTags from '../components/ModuleTags';
 import ProgressFlower from '../components/ProgressFlower';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { useCourses } from '../utils/modeHelpers';
 import {
     getStepStatus,
@@ -24,7 +24,12 @@ export default function CourseRoadmap() {
     const t = useT();
     const { language } = useLearning();
     const courses = useCourses();
-    const [showAll, setShowAll] = useState(false);
+    const [params, setParams] = useSearchParams();
+    const showAll = params.get('units') === 'all';
+    const setShowAll = () => setParams(showAll ? {} : { units: 'all' });
+    useEffect(() => {
+        if (showAll) document.getElementById('course-all-units')?.scrollIntoView({ block: 'start' });
+    }, [showAll, level]);
     const fr = language === 'en';
 
     const course = courses.find(c => c.level.toLowerCase() === level?.toLowerCase());
@@ -140,7 +145,7 @@ export default function CourseRoadmap() {
             </section>}
 
             <section className="ov-explore" aria-labelledby="explore-title">
-                <div className="ov-explore-heading"><div className="ov-explore-icon"><BookOpenIcon size={24} /></div><div><h2 id="explore-title">{fr ? 'Tout le cours, à portée de main.' : 'Your whole course, always here.'}</h2><p>{fr ? 'Revoir une leçon ou explorer une autre unité.' : 'Revisit a lesson or explore another unit at your own pace.'}</p></div><button className="ov-text-button" type="button" aria-expanded={showAll} aria-controls="course-all-units" onClick={() => setShowAll(value => !value)}>{showAll ? (fr ? 'Masquer les unités' : 'Hide units') : (fr ? 'Voir toutes les unités' : 'View all units')}<span aria-hidden="true">{showAll ? '−' : '+'}</span></button></div>
+                <div className="ov-explore-heading"><div className="ov-explore-icon"><BookOpenIcon size={24} /></div><div><h2 id="explore-title">{fr ? 'Tout le cours, à portée de main.' : 'Your whole course, always here.'}</h2><p>{fr ? 'Revoir une leçon ou explorer une autre unité.' : 'Revisit a lesson or explore another unit at your own pace.'}</p></div><button className="ov-text-button" type="button" aria-expanded={showAll} aria-controls="course-all-units" onClick={() => setShowAll()}>{showAll ? (fr ? 'Masquer les unités' : 'Hide units') : (fr ? 'Voir toutes les unités' : 'View all units')}<span aria-hidden="true">{showAll ? '−' : '+'}</span></button></div>
                 <div id="course-all-units" hidden={!showAll} className="ov-all-units">
                     {units.length ? units.map(unit => {
                         const steps = course.steps.filter(step => step.unit === unit.number);

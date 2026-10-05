@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, useLocation, 
 import { useEffect, useLayoutEffect, useState, type ReactNode } from 'react';
 import './App.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import { LearningContext, type Curriculum } from './context/LearningContext';
+import { LearningContext, useLearning, type Curriculum } from './context/LearningContext';
 import { loadCurriculum } from './utils/loadCurriculum';
 import { loadLearningMode, saveLearningMode, type TargetLanguage } from './utils/settings';
+import { getActiveCourse } from './utils/courseProgress';
 import { learningPath } from './utils/learningRoutes';
 import Nav from './components/Nav';
-import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
@@ -23,6 +23,7 @@ import PhraseQuiz from './pages/lectures/phrases/PhraseQuiz';
 import ReviewQueue from './pages/vocabulary/ReviewQueue';
 import ReadingPassage from './pages/lectures/reading/ReadingPassage';
 import Courses from './pages/Courses';
+import Exams from './pages/Exams';
 import UnitExam from './pages/UnitExam';
 import CourseRoadmap from './pages/CourseRoadmap';
 import Verbs from './pages/verbs/Verbs';
@@ -34,6 +35,12 @@ function AuthGate({ children }: { children: ReactNode }) {
     if (loading) return null;
     if (!user && !isGuest) return <Navigate to="/login" replace />;
     return <>{children}</>;
+}
+
+function CourseOverviewRedirect() {
+    const { language, courses } = useLearning();
+    const course = courses.find(item => item.level === getActiveCourse()) ?? courses[0];
+    return <Navigate to={learningPath(language, course ? `/courses/${course.level.toLowerCase()}` : '/courses')} replace />;
 }
 
 function LegacyRedirect() {
@@ -89,9 +96,9 @@ function LearningSession({ language }: { language: TargetLanguage }) {
     return (
         <LearningContext.Provider value={{ ...curriculum, language }}>
             <AuthGate>
-                <div className="App">
+                <div className="App learning-app">
                     <Nav />
-                    <Outlet />
+                    <div id="learning-content" tabIndex={-1}><Outlet /></div>
                 </div>
             </AuthGate>
         </LearningContext.Provider>
@@ -113,9 +120,10 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/learn/:targetLanguage" element={<LearningRoot />}>
-                        <Route index element={<Home />} />
+                        <Route index element={<CourseOverviewRedirect />} />
                         <Route path="courses" element={<Courses />} />
                         <Route path="courses/:level" element={<CourseRoadmap />} />
+                        <Route path="courses/:level/exams" element={<Exams />} />
                         <Route path="courses/:level/exams/:unit" element={<UnitExam />} />
                         <Route path="courses/:level/vocabulary" element={<Vocabulary />} />
                         <Route path="courses/:level/vocabulary/:moduleId" element={<VocabularyQuiz />} />

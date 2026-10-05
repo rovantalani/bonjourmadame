@@ -1,8 +1,8 @@
 import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import ModuleTags from '../../components/ModuleTags';
 import ProgressFlower from '../../components/ProgressFlower';
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { useCourses } from '../../utils/modeHelpers';
 import { isLectureStep, type LectureType } from '../../data/courseTypes';
 import { getStepStatus, markStepVisited } from '../../utils/courseProgress';
@@ -33,7 +33,10 @@ export default function Lectures() {
     const navigate = useNavigate();
     const t = useT();
     const courses = useCourses();
-    const [filter, setFilter] = useState<LectureFilter>('all');
+    const [params, setParams] = useSearchParams();
+    const value = params.get('type');
+    const filter: LectureFilter = value === 'grammar' || value === 'phrases' || value === 'reading' ? value : 'all';
+    const setFilter = (next: LectureFilter) => setParams(next === 'all' ? {} : { type: next });
 
     const activeCourse = courses.find(c => c.level.toLowerCase() === (level ?? ''));
     const allLectureSteps = activeCourse?.steps.filter(isLectureStep) ?? [];
