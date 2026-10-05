@@ -49,11 +49,18 @@ export default function Nav() {
             <p className="sidebar-section-label">{fr ? 'VOTRE PARCOURS' : 'YOUR LEARNING PATH'}</p>
             {entry(base, t.nav.overview, CompassIcon, pathname === base && !showUnits)}
             {entry(`${base}?units=all`, fr ? 'Unités' : 'Units', BookOpenIcon, pathname === base && showUnits)}
-            <p className="sidebar-section-label sidebar-section-label--lessons">{fr ? 'LEÇONS' : 'LESSONS'}</p>
-            {entry(`${base}/lectures?type=grammar`, t.roadmap.types.grammar, PenIcon, pathname.includes('/lectures/grammar') || pathname === `${base}/lectures` && filter === 'grammar', true)}
-            {entry(`${base}/lectures?type=phrases`, t.roadmap.types.phrases, MessageIcon, pathname.includes('/lectures/phrases') || pathname === `${base}/lectures` && filter === 'phrases', true)}
-            {entry(`${base}/lectures?type=reading`, t.roadmap.types.reading, BookOpenIcon, pathname.includes('/lectures/reading') || pathname === `${base}/lectures` && filter === 'reading', true)}
-            {entry(`${base}/lectures`, fr ? 'Toutes les leçons' : 'All lessons', BookOpenIcon, pathname === `${base}/lectures` && !['grammar', 'phrases', 'reading'].includes(filter ?? ''), true)}
+            <div className="sidebar-lessons">
+                {entry(`${base}/lectures`, fr ? 'Leçons' : 'Lessons', BookOpenIcon,
+                    pathname === `${base}/lectures` && !['grammar', 'phrases', 'reading'].includes(filter ?? ''))}
+                <ul className="sidebar-submenu" aria-label={fr ? 'Catégories de leçons' : 'Lesson categories'}>
+                    <li>{entry(`${base}/lectures?type=grammar`, t.roadmap.types.grammar, PenIcon,
+                        pathname.includes('/lectures/grammar') || pathname === `${base}/lectures` && filter === 'grammar', true)}</li>
+                    <li>{entry(`${base}/lectures?type=phrases`, t.roadmap.types.phrases, MessageIcon,
+                        pathname.includes('/lectures/phrases') || pathname === `${base}/lectures` && filter === 'phrases', true)}</li>
+                    <li>{entry(`${base}/lectures?type=reading`, t.roadmap.types.reading, BookOpenIcon,
+                        pathname.includes('/lectures/reading') || pathname === `${base}/lectures` && filter === 'reading', true)}</li>
+                </ul>
+            </div>
             <div className="sidebar-divider" />
             {entry(`${base}/vocabulary`, t.nav.vocabulary, BookIcon, pathname.includes('/vocabulary'))}
             {entry(`${base}/verbs`, t.nav.verbs, PenIcon, pathname.includes('/verbs'))}
