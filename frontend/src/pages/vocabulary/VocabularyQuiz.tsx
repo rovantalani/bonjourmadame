@@ -253,6 +253,7 @@ export default function VocabularyQuiz() {
                             onKeyDown={e => {
                                 if (e.key !== 'Enter' || e.repeat || e.nativeEvent.isComposing) return;
                                 e.preventDefault();
+                                e.stopPropagation();
                                 if (e.currentTarget.value.trim()) handleSubmit();
                                 else handleSkip();
                             }}
