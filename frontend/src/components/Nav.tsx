@@ -36,15 +36,6 @@ export default function Nav() {
         <Link to={learningPath(language, '/')} className="sidebar-brand" onClick={() => drawer.current?.close()}>
             <img src="/logo_no_text.png" alt="" /><span>Bonjour<br /><strong>Madame</strong><span className="sidebar-brand-dot">.</span></span>
         </Link>
-        <div className="sidebar-course">
-            <label>{fr ? 'VOTRE COURS D’ANGLAIS' : 'YOUR FRENCH COURSE'}
-                <select aria-label={fr ? 'Changer de niveau' : 'Change course level'} value={course?.level ?? 'A1'} onChange={event => {
-                    setActiveCourse(event.target.value);
-                    navigate(`/courses/${event.target.value.toLowerCase()}`);
-                    drawer.current?.close();
-                }}>{courses.map(item => <option key={item.level} value={item.level}>{item.level} — {item.title}</option>)}</select>
-            </label>
-        </div>
         <nav className="sidebar-navigation" aria-label={fr ? 'Navigation du cours' : 'Course navigation'}>
             <p className="sidebar-section-label">{fr ? 'VOTRE PARCOURS' : 'YOUR LEARNING PATH'}</p>
             {entry(base, t.nav.overview, CompassIcon, pathname === base && !showUnits)}
@@ -67,6 +58,15 @@ export default function Nav() {
             {entry(`${base}/exams`, fr ? 'Examens' : 'Exams', BookOpenIcon, pathname.includes('/exams'))}
         </nav>
         <footer className="sidebar-footer">
+            <div className="sidebar-course">
+                <label>{fr ? 'VOTRE COURS D’ANGLAIS' : 'YOUR FRENCH COURSE'}
+                    <select aria-label={fr ? 'Changer de niveau' : 'Change course level'} value={course?.level ?? 'A1'} onChange={event => {
+                        setActiveCourse(event.target.value);
+                        navigate(`/courses/${event.target.value.toLowerCase()}`);
+                        drawer.current?.close();
+                    }}>{courses.map(item => <option key={item.level} value={item.level}>{item.level} — {item.title}</option>)}</select>
+                </label>
+            </div>
             {entry('/settings', t.settings.title, SettingsIcon, pathname === '/settings')}
             <button type="button" className="sidebar-link" onClick={toggle}>
                 {dark ? <SunIcon size={18} /> : <MoonIcon size={18} />}<span>{dark ? (fr ? 'Mode clair' : 'Light mode') : (fr ? 'Mode sombre' : 'Dark mode')}</span>
