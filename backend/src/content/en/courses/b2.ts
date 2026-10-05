@@ -10,6 +10,7 @@ export const courseB2: Course = {
             { number: 1, title: 'Monde & Société' },
             { number: 2, title: 'Grammaire de Précision' },
             { number: 3, title: 'Registre & Argumentation' },
+            { number: 4, title: 'FINAL EXAM', kind: 'final-exam' },
         ],
         steps: [
             // Unit 1 — Monde & Société
@@ -20,6 +21,7 @@ export const courseB2: Course = {
             { id: 'b2en-philosophy',      title: 'Philosophie & Éthique',        module: 'vocabulary', type: 'vocabulary', contentId: 'philosophy-ethics',       path: '/vocabulary/philosophy-ethics',        unit: 1 },
             { id: 'b2en-business',        title: 'Affaires & Économie',          module: 'vocabulary', type: 'vocabulary', contentId: 'business-economy',        path: '/vocabulary/business-economy',         unit: 1 },
             { id: 'b2en-reading-digital', title: 'Lecture : Education in the Digital Age', module: 'lectures', type: 'reading', contentId: 'b2en-digital-education', path: '/lectures/reading/b2en-digital-education', unit: 1 },
+            { id: 'b2-exam-1', title: 'Examen de l’unité 1', module: 'exams', type: 'exams', contentId: 'b2-exam-1', path: '/exams/1', unit: 1, available: false, isDemo: false },
             // Unit 2 — Grammaire de Précision
             { id: 'b2en-false-friends',   title: 'Les Faux Amis',                module: 'lectures', type: 'grammar',    contentId: 'en-false-friends',        path: '/lectures/grammar/en-false-friends',   unit: 2 },
             { id: 'b2en-word-order',      title: "L'Ordre des Mots",             module: 'lectures', type: 'grammar',    contentId: 'en-word-order',           path: '/lectures/grammar/en-word-order',      unit: 2 },
@@ -41,7 +43,11 @@ export const courseB2: Course = {
             { id: 'b2en-reading-urban',   title: 'Lecture : Nature in Cities',   module: 'lectures', type: 'reading',    contentId: 'b2en-urban-nature',       path: '/lectures/reading/b2en-urban-nature',  unit: 3 },
             { id: 'b2en-reading-space',   title: 'Lecture : Space Exploration',  module: 'lectures', type: 'reading',    contentId: 'b2en-space-exploration',  path: '/lectures/reading/b2en-space-exploration', unit: 2 },
             { id: 'b2en-reading-money',   title: 'Lecture : The Future of Money', module: 'lectures', type: 'reading',   contentId: 'b2en-future-of-money',    path: '/lectures/reading/b2en-future-of-money', unit: 2 },
+            { id: 'b2-exam-2', title: 'Examen de l’unité 2', module: 'exams', type: 'exams', contentId: 'b2-exam-2', path: '/exams/2', unit: 2, available: false, isDemo: false },
             { id: 'b2en-reading-tourism', title: 'Lecture : Overtourism',        module: 'lectures', type: 'reading',    contentId: 'b2en-overtourism',        path: '/lectures/reading/b2en-overtourism',   unit: 3 },
             { id: 'b2en-reading-genetics',title: 'Lecture : Ethics of Genetic Engineering', module: 'lectures', type: 'reading', contentId: 'b2en-genetic-ethics', path: '/lectures/reading/b2en-genetic-ethics', unit: 3 },
+            { id: 'b2-exam-3', title: 'Examen de l’unité 3', module: 'exams', type: 'exams', contentId: 'b2-exam-3', path: '/exams/3', unit: 3, available: false, isDemo: false },
+            // Level exam
+            { id: 'b2-exam-final', title: 'Examen final B2', module: 'exams', type: 'exams', contentId: 'b2-exam-final', path: '/exams/final', unit: 4, available: false, isDemo: false },
         ],
     };

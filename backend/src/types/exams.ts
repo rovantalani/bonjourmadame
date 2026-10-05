@@ -12,7 +12,7 @@ export interface ExamQuestion {
 
 export interface UnitExam {
     level: CourseLevel;
-    unit: number;
+    unit: number | 'final';
     isDemo: boolean;
     passPercent: number;
     questions: ExamQuestion[];

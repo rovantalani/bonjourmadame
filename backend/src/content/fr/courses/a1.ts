@@ -14,6 +14,7 @@ export const courseA1: Course = {
             { number: 5, title: 'Loisirs et vie sociale' },
             { number: 6, title: 'Se déplacer et voyager' },
             { number: 7, title: 'La vie en France' },
+            { number: 8, title: 'FINAL EXAM', kind: 'final-exam' },
         ],
         steps: [
             // Unit 1 — Faire connaissance
@@ -32,6 +33,7 @@ export const courseA1: Course = {
             { id: 'a1-reading-mon-ami-thomas', title: 'Reading: Mon Ami Thomas', module: 'lectures', type: 'reading', contentId: 'a1-mon-ami-thomas', path: '/lectures/reading/a1-mon-ami-thomas', unit: 1 },
             { id: 'a1-reading-vocab-la-famille-martin', title: 'Vocabulary: La Famille Martin', module: 'vocabulary', type: 'vocabulary', contentId: 'a1-la-famille-martin', path: '/vocabulary/a1-la-famille-martin', unit: 1 },
             { id: 'a1-famille-martin',  title: 'Reading: La Famille Martin',     module: 'lectures', type: 'reading',    contentId: 'a1-la-famille-martin',       path: '/lectures/reading/a1-la-famille-martin',             unit: 1 },
+            { id: 'a1-exam-1', title: 'Unit 1 exam', module: 'exams', type: 'exams', contentId: 'a1-exam-1', path: '/exams/1', unit: 1, available: true, isDemo: true },
             // Unit 2 — La vie quotidienne
             { id: 'a1-numbers',         title: 'Numbers 1–100',                  module: 'vocabulary', type: 'vocabulary', contentId: 'numbers-time',               path: '/vocabulary/numbers-time',                  unit: 2 },
             { id: 'a1-days-months',     title: 'Days & Months',                  module: 'vocabulary', type: 'vocabulary', contentId: 'days-months',                path: '/vocabulary/days-months',                   unit: 2 },
@@ -51,6 +53,7 @@ export const courseA1: Course = {
             { id: 'a1-reading-une-journee-au-travail', title: 'Reading: Une Journée au Travail', module: 'lectures', type: 'reading', contentId: 'a1-une-journee-au-travail', path: '/lectures/reading/a1-une-journee-au-travail', unit: 2 },
             { id: 'a1-reading-vocab-apres-le-travail', title: 'Vocabulary: Après le Travail', module: 'vocabulary', type: 'vocabulary', contentId: 'a1-apres-le-travail', path: '/vocabulary/a1-apres-le-travail', unit: 2 },
             { id: 'a1-reading-apres-le-travail', title: 'Reading: Après le Travail', module: 'lectures', type: 'reading', contentId: 'a1-apres-le-travail', path: '/lectures/reading/a1-apres-le-travail', unit: 2 },
+            { id: 'a1-exam-2', title: 'Unit 2 exam', module: 'exams', type: 'exams', contentId: 'a1-exam-2', path: '/exams/2', unit: 2, available: true, isDemo: true },
             // Unit 3 — La maison et le quartier
             { id: 'a1-family',          title: 'Family & Relationships',         module: 'vocabulary', type: 'vocabulary', contentId: 'family-relationships',       path: '/vocabulary/family-relationships',           unit: 3 },
             { id: 'a1-possessives',     title: 'Possessive Adjectives',          module: 'lectures', type: 'grammar',    contentId: 'possessive-adjectives',      path: '/lectures/grammar/possessive-adjectives',    unit: 3 },
@@ -68,6 +71,7 @@ export const courseA1: Course = {
             { id: 'a1-reading-mon-quartier', title: 'Reading: Mon Quartier', module: 'lectures', type: 'reading', contentId: 'a1-mon-quartier', path: '/lectures/reading/a1-mon-quartier', unit: 3 },
             { id: 'a1-reading-vocab-une-promenade-dans-le-quartier', title: 'Vocabulary: Une Promenade dans le Quartier', module: 'vocabulary', type: 'vocabulary', contentId: 'a1-une-promenade-dans-le-quartier', path: '/vocabulary/a1-une-promenade-dans-le-quartier', unit: 3 },
             { id: 'a1-reading-une-promenade-dans-le-quartier', title: 'Reading: Une Promenade dans le Quartier', module: 'lectures', type: 'reading', contentId: 'a1-une-promenade-dans-le-quartier', path: '/lectures/reading/a1-une-promenade-dans-le-quartier', unit: 3 },
+            { id: 'a1-exam-3', title: 'Unit 3 exam', module: 'exams', type: 'exams', contentId: 'a1-exam-3', path: '/exams/3', unit: 3, available: false, isDemo: false },
             // Unit 4 — Manger et faire les courses
             { id: 'a1-food',            title: 'Food & Drinks',                  module: 'vocabulary', type: 'vocabulary', contentId: 'food-drinks',                path: '/vocabulary/food-drinks',                   unit: 4 },
             { id: 'a1-partitive',       title: 'Partitive Articles',             module: 'lectures', type: 'grammar',    contentId: 'partitive-articles',         path: '/lectures/grammar/partitive-articles',       unit: 4 },
@@ -81,6 +85,7 @@ export const courseA1: Course = {
             { id: 'a1-reading-a-la-boulangerie', title: 'Reading: À la Boulangerie', module: 'lectures', type: 'reading', contentId: 'a1-a-la-boulangerie', path: '/lectures/reading/a1-a-la-boulangerie', unit: 4 },
             { id: 'a1-reading-vocab-au-restaurant', title: 'Vocabulary: Au Restaurant', module: 'vocabulary', type: 'vocabulary', contentId: 'a1-au-restaurant', path: '/vocabulary/a1-au-restaurant', unit: 4 },
             { id: 'a1-reading-au-restaurant', title: 'Reading: Au Restaurant', module: 'lectures', type: 'reading', contentId: 'a1-au-restaurant', path: '/lectures/reading/a1-au-restaurant', unit: 4 },
+            { id: 'a1-exam-4', title: 'Unit 4 exam', module: 'exams', type: 'exams', contentId: 'a1-exam-4', path: '/exams/4', unit: 4, available: false, isDemo: false },
             // Unit 5 — Loisirs et vie sociale
             { id: 'a1-modals',          title: 'Vouloir, Pouvoir, Devoir',       module: 'lectures', type: 'grammar',    contentId: 'vouloir-pouvoir-devoir',      path: '/lectures/grammar/vouloir-pouvoir-devoir',   unit: 5 },
             { id: 'a1-questions',       title: 'Asking Questions',               module: 'lectures', type: 'grammar',    contentId: 'questions',                  path: '/lectures/grammar/questions',                unit: 5 },
@@ -94,6 +99,7 @@ export const courseA1: Course = {
             { id: 'a1-reading-une-soiree-entre-amis', title: 'Reading: Une Soirée Entre Amis', module: 'lectures', type: 'reading', contentId: 'a1-une-soiree-entre-amis', path: '/lectures/reading/a1-une-soiree-entre-amis', unit: 5 },
             { id: 'a1-reading-vocab-tu-viens-samedi', title: 'Vocabulary: Tu Viens Samedi ?', module: 'vocabulary', type: 'vocabulary', contentId: 'a1-tu-viens-samedi', path: '/vocabulary/a1-tu-viens-samedi', unit: 5 },
             { id: 'a1-reading-tu-viens-samedi', title: 'Reading: Tu Viens Samedi ?', module: 'lectures', type: 'reading', contentId: 'a1-tu-viens-samedi', path: '/lectures/reading/a1-tu-viens-samedi', unit: 5 },
+            { id: 'a1-exam-5', title: 'Unit 5 exam', module: 'exams', type: 'exams', contentId: 'a1-exam-5', path: '/exams/5', unit: 5, available: false, isDemo: false },
             // Unit 6 — Se déplacer et voyager
             { id: 'a1-aller',           title: 'Verb: aller',                    module: 'verbs', type: 'verbs',      contentId: 'aller',                      path: '/verbs/aller/table',                       unit: 6 },
             { id: 'a1-transport',       title: 'Transport & Travel',             module: 'vocabulary', type: 'vocabulary', contentId: 'transport-basics',           path: '/vocabulary/transport-basics',              unit: 6 },
@@ -107,6 +113,7 @@ export const courseA1: Course = {
             { id: 'a1-reading-a-la-gare', title: 'Reading: À la Gare', module: 'lectures', type: 'reading', contentId: 'a1-a-la-gare', path: '/lectures/reading/a1-a-la-gare', unit: 6 },
             { id: 'a1-reading-vocab-un-week-end-a-lyon', title: 'Vocabulary: Un Week-end à Lyon', module: 'vocabulary', type: 'vocabulary', contentId: 'a1-un-week-end-a-lyon', path: '/vocabulary/a1-un-week-end-a-lyon', unit: 6 },
             { id: 'a1-reading-un-week-end-a-lyon', title: 'Reading: Un Week-end à Lyon', module: 'lectures', type: 'reading', contentId: 'a1-un-week-end-a-lyon', path: '/lectures/reading/a1-un-week-end-a-lyon', unit: 6 },
+            { id: 'a1-exam-6', title: 'Unit 6 exam', module: 'exams', type: 'exams', contentId: 'a1-exam-6', path: '/exams/6', unit: 6, available: false, isDemo: false },
             // Unit 7 — La vie en France
             { id: 'a1-body-health',     title: 'Body & Health',                  module: 'vocabulary', type: 'vocabulary', contentId: 'body-health',                path: '/vocabulary/body-health',                   unit: 7 },
             { id: 'a1-seasons',         title: 'Seasons & Weather',              module: 'vocabulary', type: 'vocabulary', contentId: 'seasons-weather',            path: '/vocabulary/seasons-weather',               unit: 7 },
@@ -119,5 +126,8 @@ export const courseA1: Course = {
             { id: 'a1-reading-mes-premieres-semaines-en-france', title: 'Reading: Mes Premières Semaines en France', module: 'lectures', type: 'reading', contentId: 'a1-mes-premieres-semaines-en-france', path: '/lectures/reading/a1-mes-premieres-semaines-en-france', unit: 7 },
             { id: 'a1-reading-vocab-un-week-end-a-la-campagne', title: 'Vocabulary: Un Week-end à la Campagne', module: 'vocabulary', type: 'vocabulary', contentId: 'a1-un-week-end-a-la-campagne', path: '/vocabulary/a1-un-week-end-a-la-campagne', unit: 7 },
             { id: 'a1-reading-un-week-end-a-la-campagne', title: 'Reading: Un Week-end à la Campagne', module: 'lectures', type: 'reading', contentId: 'a1-un-week-end-a-la-campagne', path: '/lectures/reading/a1-un-week-end-a-la-campagne', unit: 7 },
+            { id: 'a1-exam-7', title: 'Unit 7 exam', module: 'exams', type: 'exams', contentId: 'a1-exam-7', path: '/exams/7', unit: 7, available: false, isDemo: false },
+            // Level exam
+            { id: 'a1-exam-final', title: 'A1 final exam', module: 'exams', type: 'exams', contentId: 'a1-exam-final', path: '/exams/final', unit: 8, available: true, isDemo: true },
         ],
     };

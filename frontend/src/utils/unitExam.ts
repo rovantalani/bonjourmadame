@@ -11,7 +11,7 @@ export interface ExamQuestion {
 }
 export interface ExamData {
     level: string;
-    unit: number;
+    unit: number | 'final';
     isDemo: boolean;
     passPercent: number;
     questions: ExamQuestion[];

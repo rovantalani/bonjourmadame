@@ -10,6 +10,7 @@ export const courseB1: Course = {
             { number: 1, title: 'Monde Moderne' },
             { number: 2, title: 'Structures Avancées' },
             { number: 3, title: 'Fluence & Expression' },
+            { number: 4, title: 'FINAL EXAM', kind: 'final-exam' },
         ],
         steps: [
             // Unit 1 — Monde Moderne
@@ -20,6 +21,7 @@ export const courseB1: Course = {
             { id: 'b1en-relationships',   title: 'Relations Sociales',           module: 'vocabulary', type: 'vocabulary', contentId: 'relationships-social',    path: '/vocabulary/relationships-social',     unit: 1 },
             { id: 'b1en-housing',         title: 'Logement & Vie urbaine',       module: 'vocabulary', type: 'vocabulary', contentId: 'housing-urban',           path: '/vocabulary/housing-urban',            unit: 1 },
             { id: 'b1en-reading-social',  title: 'Lecture : Social Media',       module: 'lectures', type: 'reading',    contentId: 'b1en-social-media',       path: '/lectures/reading/b1en-social-media',  unit: 1 },
+            { id: 'b1-exam-1', title: 'Examen de l’unité 1', module: 'exams', type: 'exams', contentId: 'b1-exam-1', path: '/exams/1', unit: 1, available: false, isDemo: false },
             // Unit 2 — Structures Avancées
             { id: 'b1en-prepositions',    title: 'Les Prépositions Anglaises',   module: 'lectures', type: 'grammar',    contentId: 'en-prepositions',         path: '/lectures/grammar/en-prepositions',    unit: 2 },
             { id: 'b1en-conditionals',    title: 'Conditionnels 1 & 2',          module: 'lectures', type: 'grammar',    contentId: 'en-conditionals-1-2',     path: '/lectures/grammar/en-conditionals-1-2', unit: 2 },
@@ -36,6 +38,7 @@ export const courseB1: Course = {
             { id: 'b1en-reading-volunteer', title: 'Lecture : Why People Volunteer', module: 'lectures', type: 'reading', contentId: 'b1en-volunteering',     path: '/lectures/reading/b1en-volunteering',  unit: 3 },
             { id: 'b1en-reading-langlearn', title: 'Lecture : Benefits of Learning a Language', module: 'lectures', type: 'reading', contentId: 'b1en-learning-language', path: '/lectures/reading/b1en-learning-language', unit: 2 },
             { id: 'b1en-reading-food',    title: 'Lecture : The Future of Food',  module: 'lectures', type: 'reading',    contentId: 'b1en-future-of-food',     path: '/lectures/reading/b1en-future-of-food', unit: 2 },
+            { id: 'b1-exam-2', title: 'Examen de l’unité 2', module: 'exams', type: 'exams', contentId: 'b1-exam-2', path: '/exams/2', unit: 2, available: false, isDemo: false },
             { id: 'b1en-reading-citycountry', title: 'Lecture : City or Country?', module: 'lectures', type: 'reading',   contentId: 'b1en-city-vs-country',    path: '/lectures/reading/b1en-city-vs-country', unit: 3 },
             { id: 'b1en-reading-music',   title: 'Lecture : The Power of Music',  module: 'lectures', type: 'reading',    contentId: 'b1en-power-of-music',     path: '/lectures/reading/b1en-power-of-music', unit: 3 },
             // Unit 3 — Fluence & Expression
@@ -49,5 +52,8 @@ export const courseB1: Course = {
             { id: 'b1en-phrases-work',    title: 'Parler de son travail',        module: 'lectures', type: 'phrases',    contentId: 'talking-about-work',      path: '/lectures/phrases/talking-about-work', unit: 3 },
             { id: 'b1en-customer',        title: 'Service client',               module: 'lectures', type: 'phrases',    contentId: 'customer-service',        path: '/lectures/phrases/customer-service',   unit: 3 },
             { id: 'b1en-phrases-health2', title: 'Santé & Mode de vie',          module: 'lectures', type: 'phrases',    contentId: 'health-lifestyle-phrases', path: '/lectures/phrases/health-lifestyle-phrases', unit: 3 },
+            { id: 'b1-exam-3', title: 'Examen de l’unité 3', module: 'exams', type: 'exams', contentId: 'b1-exam-3', path: '/exams/3', unit: 3, available: false, isDemo: false },
+            // Level exam
+            { id: 'b1-exam-final', title: 'Examen final B1', module: 'exams', type: 'exams', contentId: 'b1-exam-final', path: '/exams/final', unit: 4, available: false, isDemo: false },
         ],
     };

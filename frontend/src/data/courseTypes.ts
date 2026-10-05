@@ -3,6 +3,7 @@ export type LectureType = 'grammar' | 'phrases' | 'reading';
 export type StepType = Exclude<ModuleType, 'lectures'> | LectureType;
 
 export interface CourseUnit {
+    kind?: 'final-exam';
     number: number;
     title: string;
 }

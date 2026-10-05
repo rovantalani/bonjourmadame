@@ -1,6 +1,7 @@
 export type CourseLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
 export interface CourseUnit {
+    kind?: 'final-exam';
     number: number;
     title: string;
 }

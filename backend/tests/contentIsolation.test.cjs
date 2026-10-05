@@ -67,11 +67,14 @@ for (const language of ['fr', 'en']) {
         const verbById = verbs.verbById ?? verbs.verbByIdEN;
         const verbGroups = verbs.verbGroups ?? verbs.verbGroupsEN;
         const helpers = verbs.helperVerbsDataFR ?? verbs.helperVerbsDataEN;
+        const exams = require(`../dist/content/${language}/exams`).unitExams;
         const missing = [];
         for (const course of courses(language)) {
             for (const step of course.steps) {
                 const id = step.contentId;
                 const found = {
+                    exams: !step.available || exams.some(exam => exam.level === course.level &&
+                        String(exam.unit) === step.path.split('/').at(-1) && exam.questions.length),
                     vocabulary: vocabulary[id] && modules.some(module => module.id === id),
                     grammar: grammar.some(lesson => lesson.id === id),
                     phrases: phrases.some(category => category.id === id),

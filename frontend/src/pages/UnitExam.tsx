@@ -10,7 +10,7 @@ export default function UnitExam() {
     const { level = '', unit = '' } = useParams();
     const { language, courses } = useLearning();
     return <ExamAttempt key={`${language}/${level}/${unit}`} language={language} level={level} unit={unit}
-        unitTitle={courses.find(course => course.level.toLowerCase() === level.toLowerCase())?.units?.find(item => String(item.number) === unit)?.title} />;
+        unitTitle={courses.find(course => course.level.toLowerCase() === level.toLowerCase())?.units?.find(item => unit === 'final' ? item.kind === 'final-exam' : String(item.number) === unit)?.title} />;
 }
 
 function ExamAttempt({ language, level, unit, unitTitle }: {
@@ -24,7 +24,9 @@ function ExamAttempt({ language, level, unit, unitTitle }: {
     const [answers, setAnswers] = useState<Record<string, string>>({});
     const [result, setResult] = useState<ReturnType<typeof scoreExam> | null>(null);
     const resultHeading = useRef<HTMLHeadingElement>(null);
-    const title = french ? `Examen de l’unité ${unit}` : `Unit ${unit} exam`;
+    const isFinal = unit === 'final';
+    const title = isFinal ? (french ? `Examen final ${level.toUpperCase()}` : `${level.toUpperCase()} final exam`) :
+        (french ? `Examen de l’unité ${unit}` : `Unit ${unit} exam`);
     const coursePath = `/courses/${level.toLowerCase()}`;
 
     useEffect(() => {
@@ -68,8 +70,10 @@ function ExamAttempt({ language, level, unit, unitTitle }: {
         <h1>{title}</h1>
         <p className="subtitle">{unitTitle}</p>
         {exam.isDemo && <p className="exam-notice">{french ?
-            'Examen de démonstration : ces questions illustrent le format, sans couvrir toute l’unité.' :
-            'Demo exam: these sample questions show the format and do not cover the whole unit.'}</p>}
+            (isFinal ? 'Examen de démonstration : ces questions illustrent le format, sans couvrir tout le niveau.' :
+                'Examen de démonstration : ces questions illustrent le format, sans couvrir toute l’unité.') :
+            (isFinal ? 'Demo exam: these sample questions show the format and do not cover the whole level.' :
+                'Demo exam: these sample questions show the format and do not cover the whole unit.')}</p>}
         {!exam.questions.length ? <><p>{french ? 'Bientôt disponible.' : 'Coming soon.'}</p>{back}</> : result ? <>
             <h2 ref={resultHeading} tabIndex={-1}>{result.correct}/{exam.questions.length} · {Math.round(result.percent)}%</h2>
             <p role="status">{result.passed ?

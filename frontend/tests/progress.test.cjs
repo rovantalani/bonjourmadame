@@ -169,3 +169,17 @@ test('draft exams do not count or block Continue; playable exams require a pass'
     setMode('learn-english');
     assert.equal(progress.getContentStatus(examPath), 'not-started');
 });
+
+test('final exam completion is separate from unit exams and other levels', () => {
+    const { progress, setMode } = setup();
+    const path = '/courses/a1/exams/final';
+    progress.setContentStatus(path, 'complete');
+    assert.equal(progress.getContentStatus(path), 'not-started');
+    progress.recordQuizPass(path);
+    progress.setContentStatus(path, 'complete');
+    assert.equal(progress.getContentStatus(path), 'complete');
+    assert.equal(progress.hasPassedQuiz('/courses/a1/exams/1'), false);
+    assert.equal(progress.hasPassedQuiz('/courses/a2/exams/final'), false);
+    setMode('learn-english');
+    assert.equal(progress.getContentStatus(path), 'not-started');
+});

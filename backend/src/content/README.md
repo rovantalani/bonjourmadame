@@ -6,24 +6,34 @@ Every module still has its own `level` and `unit`. The file location and the mod
 
 Vocabulary modules keep their label, placement, and words in the same object. Some reading passages also have word lists that are not standalone vocabulary modules. Those lists are in `readingWordsA1`, `readingWordsA2`, and so on, in the matching vocabulary level file.
 
-## Unit exams
+## Unit and level exams
 
-Every unit gets an exam entry automatically when the backend serves the course.
-An entry without questions shows “Coming soon” and does not count towards progress.
-The course sync command still orders lessons; it does not generate exam questions.
+Course files list both lesson steps and exam steps in their intended order. Each
+lesson unit ends with its unit exam. Each level ends with a separate `FINAL EXAM`
+unit containing its level exam. Exams have the same `module: 'exams'` and
+`type: 'exams'`; the final exam uses the stable path `/exams/final`.
 
-Teachers write exams in `fr/exams/a1.ts` or `en/exams/a1.ts` (and separate level
+Teachers write questions in `fr/exams/a1.ts` or `en/exams/a1.ts` (and separate level
 files as needed), then export their arrays through `exams/index.ts`. Each exam
-belongs to exactly one `level` and `unit`. Do not add exam steps to course files.
+belongs to one `level` and a numeric `unit`. Level exams use `unit: 'final'`, with
+separate files such as `fr/exams/final.a1.ts`; their questions may reference any
+lesson unit in that level.
+
+The corresponding course step sets `available` and `isDemo`. When questions are
+ready, set `available: true` and keep `isDemo` consistent with the question file.
+Unavailable exams show “Coming soon” and do not count towards progress. When adding
+lessons to a course, place them before that unit's exam. Exam questions are authored
+by teachers, not generated from lessons.
 
 Set `passPercent` (currently 80), `isDemo`, and `questions`. Each question needs a
-unique `id`, a `sourceStepId` from that same unit, a `prompt`, accepted `answers`,
+unique `id`, a `sourceStepId` from that same unit (or any lesson unit in the same
+level for final exams), a `prompt`, accepted `answers`,
 and an `explanation`. Add `context` for reading excerpts, or `options` for multiple
 choice. With options, accepted answers must be exact option strings. Written
 answers use the same spelling, punctuation and accent tolerance as lesson quizzes.
 
 The included demos illustrate different lesson types and are labelled in the app;
-they are not complete assessments of those units. Set `isDemo: false` after writing
+they are not complete assessments of those units or levels. Set `isDemo: false` after writing
 a full exam. Exams show scores and corrections after submission. Passing records
 completion in the learner's current local progress; a retry starts a fresh attempt.
 Answers are delivered to the browser, like existing lesson quizzes. These are

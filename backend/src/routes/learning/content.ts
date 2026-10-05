@@ -18,8 +18,10 @@ export function createContentRouter(content: LearningContent): Router {
     });
     router.get('/exams/:level/:unit', (req, res) => {
         const course = content.courses.find(item => item.level.toLowerCase() === req.params.level.toLowerCase());
-        const unit = Number(req.params.unit);
-        if (!/^[1-9]\d*$/.test(req.params.unit) || !course?.units?.some(item => item.number === unit)) {
+        const unit = req.params.unit === 'final' ? 'final' : Number(req.params.unit);
+        const validUnit = unit === 'final' ? !!course :
+            /^[1-9]\d*$/.test(req.params.unit) && course?.units?.some(item => item.number === unit && item.kind !== 'final-exam');
+        if (!course || !validUnit) {
             res.status(404).json({ error: 'Unit not found' }); return;
         }
         const exam = content.exams.find(item => item.level === course.level && item.unit === unit);
