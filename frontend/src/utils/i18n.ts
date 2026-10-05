@@ -6,7 +6,6 @@ import { loadLearningMode, type LearningMode } from './settings';
 interface Translations {
     progressFlower: {
         'not-started': string; visited: string; complete: string;
-        markComplete: string; undo: string;
     };
     nav: {
         home: string; courses: string; vocabulary: string;
@@ -146,7 +145,7 @@ interface Translations {
 // ─── English ──────────────────────────────────────────────────────────────────
 
 const EN: Translations = {
-    progressFlower: { 'not-started': 'Not started', visited: 'In progress', complete: 'Completed', markComplete: 'Mark complete', undo: 'Mark as in progress' },
+    progressFlower: { 'not-started': 'Not started', visited: 'In progress', complete: 'Completed' },
     nav: {
         home: 'Home', courses: 'Courses', vocabulary: 'Vocabulary',
         verbs: 'Verbs', lectures: 'Lectures', overview: 'Overview',
@@ -292,7 +291,7 @@ const EN: Translations = {
 // ─── French ───────────────────────────────────────────────────────────────────
 
 const FR: Translations = {
-    progressFlower: { 'not-started': 'Pas encore commencé', visited: 'En cours', complete: 'Terminé', markComplete: 'Marquer comme terminé', undo: 'Marquer comme en cours' },
+    progressFlower: { 'not-started': 'Pas encore commencé', visited: 'En cours', complete: 'Terminé' },
     nav: {
         home: 'Accueil', courses: 'Cours', vocabulary: 'Vocabulaire',
         verbs: 'Verbes', lectures: 'Leçons', overview: 'Aperçu',

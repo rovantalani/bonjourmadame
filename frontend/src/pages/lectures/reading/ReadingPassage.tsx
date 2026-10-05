@@ -284,7 +284,7 @@ export default function ReadingPassage() {
                     ))}
                 </ul>
             </div>
-            <LearningCompletion />
+            <LearningCompletion completeOnView />
         </main>
     );
 }
