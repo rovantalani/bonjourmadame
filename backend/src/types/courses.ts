@@ -16,6 +16,7 @@ type CourseStepBase = {
 export type CourseStep = CourseStepBase & (
     | { module: 'vocabulary'; type: 'vocabulary' }
     | { module: 'verbs'; type: 'verbs' }
+    | { module: 'exams'; type: 'exams'; available: boolean; isDemo: boolean }
     | { module: 'lectures'; type: 'grammar' | 'phrases' | 'reading' }
 );
 

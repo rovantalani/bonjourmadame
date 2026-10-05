@@ -266,3 +266,6 @@
     .cr-step-btn { gap: 0.65rem; padding: 0.75rem 0.85rem; }
 
 }
+
+.cr-step-btn:disabled { cursor: default; opacity: 0.6; }
+.cr-step-body small { color: var(--text-2); }

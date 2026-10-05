@@ -1,4 +1,4 @@
-export type ModuleType = 'vocabulary' | 'verbs' | 'lectures';
+export type ModuleType = 'vocabulary' | 'verbs' | 'lectures' | 'exams';
 export type LectureType = 'grammar' | 'phrases' | 'reading';
 export type StepType = Exclude<ModuleType, 'lectures'> | LectureType;
 
@@ -18,6 +18,7 @@ interface CourseStepBase {
 export type CourseStep = CourseStepBase & (
     | { module: 'vocabulary'; type: 'vocabulary' }
     | { module: 'verbs'; type: 'verbs' }
+    | { module: 'exams'; type: 'exams'; available: boolean; isDemo: boolean }
     | { module: 'lectures'; type: LectureType }
 );
 

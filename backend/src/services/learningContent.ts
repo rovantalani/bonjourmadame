@@ -3,6 +3,8 @@ import type { GrammarLesson } from '../types/lectures/grammar';
 import type { PhraseCategory } from '../types/lectures/phrases';
 import type { ReadingPassage } from '../types/lectures/reading';
 import type { HelperVerbFR, HelperVerbEN, VerbEntry, VerbGroup } from '../types/verbs';
+import type { UnitExam } from '../types/exams';
+import { withUnitExams } from './unitExams';
 import type { Course } from '../types/courses';
 import * as frenchContent from '../content/fr';
 import * as englishContent from '../content/en';
@@ -11,6 +13,7 @@ export type TargetLanguage = 'fr' | 'en';
 
 export interface LearningContent {
     courses: Course[];
+    exams: UnitExam[];
     vocabulary: VocabularyData;
     modules: { id: string; title: string; description: string; icon: string; color: string }[];
     grammar: GrammarLesson[];
@@ -27,7 +30,8 @@ export interface LearningContent {
 // import each other, and request handlers receive only the selected catalog.
 export const learningContent: Record<TargetLanguage, LearningContent> = {
     fr: {
-        courses: frenchContent.COURSES,
+        courses: withUnitExams(frenchContent.COURSES, frenchContent.unitExams, 'fr'),
+        exams: frenchContent.unitExams,
         vocabulary: frenchContent.vocabularyData,
         modules: frenchContent.vocabularyModules,
         grammar: frenchContent.grammarLessons,
@@ -40,7 +44,8 @@ export const learningContent: Record<TargetLanguage, LearningContent> = {
         helpers: frenchContent.helperVerbsDataFR,
     },
     en: {
-        courses: englishContent.COURSES_EN,
+        courses: withUnitExams(englishContent.COURSES_EN, englishContent.unitExams, 'en'),
+        exams: englishContent.unitExams,
         vocabulary: englishContent.vocabularyDataEN,
         modules: englishContent.vocabularyModulesEN,
         grammar: englishContent.grammarLessonsEN,

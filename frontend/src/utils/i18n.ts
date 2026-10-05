@@ -51,7 +51,7 @@ interface Translations {
         continueLabel: string;
         resumeBtn: string;
         allDone: string;
-        types: { vocabulary: string; grammar: string; verbs: string; phrases: string; reading: string };
+        types: { vocabulary: string; grammar: string; verbs: string; phrases: string; reading: string; exams: string };
     };
     quiz: {
         partialWarning: string;
@@ -195,7 +195,7 @@ const EN: Translations = {
         continueLabel: 'Continue learning',
         resumeBtn: 'Continue →',
         allDone: 'Course complete — great work!',
-        types: { vocabulary: 'Vocabulary', grammar: 'Grammar', verbs: 'Verbs', phrases: 'Phrases', reading: 'Reading' },
+        types: { vocabulary: 'Vocabulary', grammar: 'Grammar', verbs: 'Verbs', phrases: 'Phrases', reading: 'Reading', exams: 'Exam' },
     },
     quiz: {
         partialWarning: 'You passed, but check the spelling, capitals, and punctuation. Counted as correct.',
@@ -341,7 +341,7 @@ const FR: Translations = {
         continueLabel: 'Poursuivre votre apprentissage',
         resumeBtn: 'Continuer →',
         allDone: 'Cours terminé — félicitations !',
-        types: { vocabulary: 'Vocabulaire', grammar: 'Grammaire', verbs: 'Verbes', phrases: 'Expressions', reading: 'Lecture' },
+        types: { vocabulary: 'Vocabulaire', grammar: 'Grammaire', verbs: 'Verbes', phrases: 'Expressions', reading: 'Lecture', exams: 'Examen' },
     },
     quiz: {
         partialWarning: 'Réponse acceptée, mais vérifiez l’orthographe, les majuscules et la ponctuation. Comptée comme correcte.',

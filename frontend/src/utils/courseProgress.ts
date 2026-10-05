@@ -18,7 +18,7 @@ function loadContentProgress(): Record<string, StepStatus> {
 }
 
 export function requiresQuiz(path: string): boolean {
-    return /\/(vocabulary|verbs)\//.test(path) || /\/lectures\/(phrases|grammar)\//.test(path);
+    return /\/(vocabulary|verbs|exams)\//.test(path) || /\/lectures\/(phrases|grammar)\//.test(path);
 }
 
 export function hasPassedQuiz(path: string): boolean {
@@ -92,12 +92,14 @@ export function getCourseProgress(course: Course): CourseProgress {
     let completed    = 0;
     let visitedCount = 0;
     for (const step of course.steps) {
+        if (step.module === 'exams' && !step.available) continue;
         const s = getStepStatus(step, course.level);
         if (s === 'complete')      completed++;
         else if (s === 'visited')  visitedCount++;
     }
-    const pct = course.steps.length > 0 ? Math.round((completed / course.steps.length) * 100) : 0;
-    return { completed, visited: visitedCount, total: course.steps.length, pct };
+    const total = course.steps.filter(step => step.module !== 'exams' || step.available).length;
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+    return { completed, visited: visitedCount, total, pct };
 }
 
 export function getActiveCourse(): string | null {
@@ -111,6 +113,7 @@ export function setActiveCourse(level: string): void {
 
 export function getNextStep(course: Course): CourseStep | null {
     for (const step of course.steps) {
+        if (step.module === 'exams' && !step.available) continue;
         if (getStepStatus(step, course.level) !== 'complete') return step;
     }
     return null;

@@ -16,6 +16,15 @@ export function createContentRouter(content: LearningContent): Router {
     router.get('/courses', (_req, res) => {
         res.json(content.courses);
     });
+    router.get('/exams/:level/:unit', (req, res) => {
+        const course = content.courses.find(item => item.level.toLowerCase() === req.params.level.toLowerCase());
+        const unit = Number(req.params.unit);
+        if (!/^[1-9]\d*$/.test(req.params.unit) || !course?.units?.some(item => item.number === unit)) {
+            res.status(404).json({ error: 'Unit not found' }); return;
+        }
+        const exam = content.exams.find(item => item.level === course.level && item.unit === unit);
+        res.json(exam ?? { level: course.level, unit, isDemo: false, passPercent: 80, questions: [] });
+    });
     router.get('/courses/:level', (req, res) => {
         const course = content.courses.find(item => item.level.toLowerCase() === req.params.level.toLowerCase());
         if (!course) { res.status(404).json({ error: 'Course not found' }); return; }

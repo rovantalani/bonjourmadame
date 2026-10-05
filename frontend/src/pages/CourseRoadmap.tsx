@@ -12,6 +12,7 @@ import {
     markStepVisited,
 } from '../utils/courseProgress';
 import type { CourseStep } from '../data/courseTypes';
+import { useLearning } from '../context/LearningContext';
 import { useT } from '../utils/i18n';
 import './CourseRoadmap.css';
 
@@ -19,6 +20,7 @@ export default function CourseRoadmap() {
     const { level } = useParams<{ level: string }>();
     const navigate  = useNavigate();
     const t = useT();
+    const { language } = useLearning();
     const courses = useCourses();
 
     const course = courses.find(c => c.level.toLowerCase() === level?.toLowerCase());
@@ -43,11 +45,16 @@ export default function CourseRoadmap() {
                     className="cr-step-btn"
                     onClick={() => handleStepClick(step.path, step.id)}
                     type="button"
+                    disabled={step.module === 'exams' && !step.available}
                 >
                     <span className="cr-node cr-node--todo">{index + 1}</span>
                     <div className="cr-step-body">
                         <span className="cr-step-title">{step.title}</span>
                         <ModuleTags step={step} />
+                        {step.module === 'exams' && <small>
+                            {!step.available ? (language === 'en' ? 'Bientôt disponible' : 'Coming soon') :
+                                step.isDemo ? (language === 'en' ? 'Examen de démonstration' : 'Demo exam') : null}
+                        </small>}
                     </div>
                     <ProgressFlower status={status} />
                     <span className="cr-step-arrow">›</span>
