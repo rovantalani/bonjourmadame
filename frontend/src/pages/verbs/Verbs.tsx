@@ -9,11 +9,10 @@ import { useT } from '../../utils/i18n';
 import { UserIcon, TagIcon, PenIcon, ArrowRightIcon, ArrowLeftIcon } from '../../components/icons/index';
 import type { SVGProps } from 'react';
 import './Verbs.css';
+import '../../components/NotebookCards.css';
 
 type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
 
-const VERB_COLOR    = 'var(--verb)';
-const VERB_COLOR_BG = 'var(--verb-soft)';
 
 const TYPE_ORDER = ['-ER', '-IR', '-RE', 'Regular', 'Irregular'];
 
@@ -67,9 +66,11 @@ function VerbGrid({ verbs, level, navigate, learnLabel, quizLabel, newTensesLabe
 }) {
     if (verbs.length === 0) return null;
     return (
-        <div className="verb-grid">
-            {verbs.map(verb => (
-                <div key={verb.id} className={`verb-card${verb.newTenses ? ' verb-card--new-tenses' : ''}`}>
+        <div className="notebook-grid verb-grid">
+            {verbs.map((verb, index) => (
+                <div key={verb.id} className={`notebook-card verb-card${verb.newTenses ? ' verb-card--new-tenses' : ''}`}>
+                    <span className="notebook-tab" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="notebook-illustration"><PenIcon size={32} aria-hidden="true" /></span>
                     {verb.newTenses && (
                         <span className="verb-new-tenses"><span aria-hidden="true">✦</span> {newTensesLabel}</span>
                     )}
@@ -80,15 +81,13 @@ function VerbGrid({ verbs, level, navigate, learnLabel, quizLabel, newTensesLabe
                     <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${verb.id}/learn`)} />
                     <div className="verb-actions">
                         <button
-                            className="btn"
-                            style={{ border: '1.5px solid var(--tag-verbs-text)', color: 'var(--tag-verbs-text)', background: 'var(--surface)', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
+                            className="notebook-action"
                             onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/learn`)}
                         >
                             {learnLabel}
                         </button>
                         <button
-                            className="btn"
-                            style={{ backgroundColor: 'var(--tag-verbs-bg)', color: 'var(--tag-verbs-text)', padding: '0.45rem 0.9rem', fontSize: '0.82rem' }}
+                            className="notebook-action"
                             onClick={() => navigate(`/courses/${level}/verbs/${verb.id}/quiz`)}
                         >
                             {quizLabel}
@@ -107,7 +106,7 @@ export default function Verbs() {
     const { helpers, language } = useLearning();
     const isEN = language === 'en';
     const icons = { user: UserIcon, tag: TagIcon, pen: PenIcon, right: ArrowRightIcon, left: ArrowLeftIcon };
-    const helperVerbs = helpers.map(helper => ({ ...helper, Icon: icons[helper.icon] as IconFC, color: VERB_COLOR, bg: VERB_COLOR_BG }));
+    const helperVerbs = helpers.map(helper => ({ ...helper, Icon: icons[helper.icon] as IconFC }));
 
     const [data, setData] = useState<CourseVerbsData | null>(null);
     const [loading, setLoading] = useState(true);
@@ -147,9 +146,10 @@ export default function Verbs() {
     }
 
     return (
-        <main className="page verbs-page">
+        <main className="page verbs-page notebook-page">
             <header className="page-header verbs-page-header">
                 <div className="verbs-page-intro">
+                    <span className="notebook-eyebrow">{level?.toUpperCase()} / {isEN ? 'CARNET DE VERBES' : 'VERB NOTEBOOK'}</span>
                     <h1>{t.verbs.title}</h1>
                     <p className="subtitle">{t.verbs.subtitle}</p>
                 </div>
@@ -161,13 +161,13 @@ export default function Verbs() {
                     <input
                         type="search"
                         className="verbs-search"
-                        aria-label={isEN ? 'Search verbs' : 'Rechercher un verbe'}
-                        placeholder={isEN ? 'Find a verb…' : 'Trouver un verbe…'}
+                        aria-label={isEN ? 'Rechercher un verbe' : 'Search verbs'}
+                        placeholder={isEN ? 'Trouver un verbe…' : 'Find a verb…'}
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                     />
                     {search && (
-                        <button className="verbs-search-clear" type="button" onClick={() => setSearch('')} aria-label={isEN ? 'Clear search' : 'Effacer la recherche'}>
+                        <button className="verbs-search-clear" type="button" onClick={() => setSearch('')} aria-label={isEN ? 'Effacer la recherche' : 'Clear search'}>
                             ×
                         </button>
                     )}
@@ -182,21 +182,21 @@ export default function Verbs() {
                         <section key={type} className="verbs-section">
                             <h2 className="verbs-section-title">{type}</h2>
                             {type === 'Irregular' && filteredHelpers.length > 0 && (
-                                <div className="verbs-helper-grid">
-                                    {filteredHelpers.map(v => (
+                                <div className="notebook-grid verbs-helper-grid">
+                                    {filteredHelpers.map((v, index) => (
                                         <button
                                             key={v.id}
-                                            className="verbs-helper-card"
-                                            style={{ borderTopColor: v.color }}
+                                            className="notebook-card verbs-helper-card"
                                             onClick={() => navigate(`/courses/${level}/verbs/${v.id}/table`)}
                                             type="button"
                                         >
-                                            <span className="verbs-helper-icon" style={{ backgroundColor: v.bg, color: v.color }}><v.Icon size={20} /></span>
+                                            <span className="notebook-tab" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                                            <span className="notebook-illustration"><v.Icon size={32} aria-hidden="true" /></span>
                                             <span className="verb-row-body">
-                                            <span className="verbs-helper-title" style={{ color: v.color }}>{v.title}</span>
+                                            <span className="verbs-helper-title">{v.title}</span>
                                             <span className="verbs-helper-translation">{v.translation}</span>
                                             </span>
-                                            <ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${v.id}/table`)} />
+                                            <span className="notebook-footer"><span>{isEN ? 'Tableau de conjugaison' : 'Conjugation table'}</span><ProgressFlower status={getContentStatus(`/courses/${level}/verbs/${v.id}/table`)} /><span aria-hidden="true">↗</span></span>
                                         </button>
                                     ))}
                                 </div>
