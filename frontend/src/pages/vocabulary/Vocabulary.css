@@ -1,7 +1,8 @@
 .vocabulary-notebook { max-width: 1180px; }
 .vocabulary-notebook .page-header { margin-bottom: 2.8rem; }
 .vocab-eyebrow { display: block; margin-bottom: .7rem; color: var(--text-3); font-size: .65rem; letter-spacing: .13em; }
-.vocab-units { display: grid; gap: 2.8rem; }
+.vocab-units { display: grid; gap: 1.7rem; }
+.vocab-unit + .vocab-unit { border-top: 1px solid var(--border); padding-top: 1.7rem; }
 .vocab-unit-heading { display: flex; align-items: baseline; gap: .75rem; margin-bottom: 1.6rem; }
 .vocab-unit-number { color: var(--accent-text); font-family: var(--font-serif); font-size: 1.3rem; font-style: italic; }
 .vocab-unit-heading h2 { margin: 0; font-size: 1rem; font-weight: 500; color: var(--text-1); }
