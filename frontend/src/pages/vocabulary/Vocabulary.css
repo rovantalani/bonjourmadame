@@ -1,66 +1,30 @@
-/* Compact lesson rows, aligned with the overview and lectures. */
-.vocab-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 680px;
+.vocabulary-notebook { max-width: 1180px; }
+.vocabulary-notebook .page-header { margin-bottom: 2.8rem; }
+.vocab-eyebrow { display: block; margin-bottom: .7rem; color: var(--text-3); font-size: .65rem; letter-spacing: .13em; }
+.vocab-units { display: grid; gap: 2.8rem; }
+.vocab-unit-heading { display: flex; align-items: baseline; gap: .75rem; margin-bottom: 1.6rem; }
+.vocab-unit-number { color: var(--accent-text); font-family: var(--font-serif); font-size: 1.3rem; font-style: italic; }
+.vocab-unit-heading h2 { margin: 0; font-size: 1rem; font-weight: 500; color: var(--text-1); }
+.vocab-unit-count { margin-left: auto; font-size: .7rem; color: var(--text-3); }
+.vocab-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem 1.1rem; }
+.vocab-card { position: relative; display: flex; flex-direction: column; align-items: stretch; min-height: 185px; padding: 1.25rem 1.2rem .85rem; background: color-mix(in srgb, var(--surface) 96%, #e6d4ae); border: 1px solid var(--border); border-radius: 3px 14px 14px 14px; text-align: left; cursor: pointer; font: inherit; box-shadow: 0 3px 0 -1px var(--bg), 0 4px 0 -1px var(--border); transition: transform .16s ease, box-shadow .16s ease; }
+.vocab-card-tab { position: absolute; top: -12px; left: 1.15rem; padding: .2rem .6rem; background: var(--tag-vocabulary-bg); color: var(--tag-vocabulary-text); border-radius: 4px 4px 2px 2px; font-size: .65rem; letter-spacing: .07em; }
+.vocab-card-top { display: flex; align-items: center; gap: .7rem; margin: .2rem 0 .85rem; }
+.vocab-card-illustration { display: grid; place-items: center; flex-shrink: 0; width: 45px; height: 44px; color: var(--accent-text); }
+.vocab-card-kind { color: var(--text-3); font-size: .65rem; line-height: 1.5; max-width: 110px; }
+.vocab-card-title { color: var(--text-1); font-size: 1rem; font-weight: 500; line-height: 1.45; margin-bottom: 1.1rem; overflow-wrap: anywhere; }
+.vocab-card-footer { display: flex; align-items: center; gap: .4rem; margin-top: auto; padding-top: .65rem; border-top: 1px dashed var(--border); }
+.vocab-card-badge { font-size: .7rem; color: var(--text-3); }
+.vocab-card-progress { display: flex; align-items: center; gap: .1rem; margin-left: auto; font-size: .62rem; color: var(--text-2); }
+.vocab-card-arrow { margin-left: .3rem; font-size: 1rem; color: var(--accent-text); }
+.vocab-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgb(55 32 40 / 7%); }
+.vocab-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 1050px) { .vocab-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) {
+    .vocab-grid { grid-template-columns: 1fr; }
+    .vocab-card { min-height: 165px; }
+    .vocab-unit-heading { flex-wrap: wrap; gap: .5rem; }
+    .vocab-unit-heading h2 { flex: 1; }
+    .vocab-unit-count { width: 100%; margin-left: 2rem; }
 }
-
-.vocab-card {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--tag-vocabulary-text);
-    border-radius: var(--r-lg);
-    text-align: left;
-    cursor: pointer;
-    transition: box-shadow var(--t-base) var(--ease), transform var(--t-fast) var(--ease);
-}
-.vocab-card:hover { box-shadow: var(--shadow-md); transform: translateX(2px); }
-.vocab-card:active { transform: translateX(0); }
-.vocab-card:focus-visible, .vocab-card-action-btn:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-}
-.vocab-card-icon-circle {
-    display: grid;
-    place-items: center;
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--tag-vocabulary-bg);
-}
-.vocab-card-icon { font-size: 1.35rem; line-height: 1; }
-.vocab-card-body { display: flex; flex-direction: column; gap: 0.25rem; flex: 1; min-width: 0; }
-.vocab-card-title { font-size: 0.97rem; font-weight: 600; color: var(--text-1); line-height: 1.4; overflow-wrap: anywhere; }
-.vocab-card-badge { font-size: 0.75rem; color: var(--text-3); }
-.vocab-card-arrow { font-size: 1.3rem; color: var(--text-3); }
-.vocab-card--reading { flex-wrap: wrap; cursor: default; }
-.vocab-card--reading:hover { transform: none; }
-.vocab-card-actions { display: flex; gap: 0.5rem; width: 100%; padding-left: calc(40px + 0.9rem); }
-.vocab-card-action-btn {
-    padding: 0.45rem 0.9rem;
-    min-height: 36px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    border-radius: var(--r-md);
-    border: 1px solid var(--border);
-    background: var(--tag-vocabulary-bg);
-    color: var(--tag-vocabulary-text);
-    cursor: pointer;
-}
-.vocab-card-action-btn:hover { background: var(--surface-2); }
-.vocab-card-action-btn--read { background: transparent; }
-@media (max-width: 480px) {
-    .vocab-card { gap: 0.65rem; padding: 0.75rem 0.85rem; }
-    .vocab-card-actions { padding-left: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .vocab-card { transition: none; }
-    .vocab-card:hover { transform: none; }
-}
+@media (prefers-reduced-motion: reduce) { .vocab-card { transition: none; } .vocab-card:hover { transform: none; } }
