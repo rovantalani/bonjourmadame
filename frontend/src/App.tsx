@@ -7,6 +7,7 @@ import { loadCurriculum } from './utils/loadCurriculum';
 import { loadLearningMode, saveLearningMode, type TargetLanguage } from './utils/settings';
 import { getActiveCourse } from './utils/courseProgress';
 import { learningPath } from './utils/learningRoutes';
+import CourseFlow from './components/CourseFlow';
 import Nav from './components/Nav';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -98,7 +99,7 @@ function LearningSession({ language }: { language: TargetLanguage }) {
             <AuthGate>
                 <div className="App learning-app">
                     <Nav />
-                    <div id="learning-content" tabIndex={-1}><Outlet /></div>
+                    <div id="learning-content" tabIndex={-1}><CourseFlow><Outlet /></CourseFlow></div>
                 </div>
             </AuthGate>
         </LearningContext.Provider>

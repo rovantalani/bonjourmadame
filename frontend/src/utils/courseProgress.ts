@@ -54,6 +54,7 @@ export function setContentStatus(path: string, status: StepStatus): void {
     data[contentKey(path)] = status;
     delete data[legacyContentKey(path)];
     localStorage.setItem(`contentProgress:${loadLearningMode() ?? 'learn-french'}`, JSON.stringify(data));
+    window.dispatchEvent(new Event('courseProgressChanged'));
 }
 
 export function completeLesson(path: string): void {
@@ -124,10 +125,34 @@ export function setActiveCourse(level: string): void {
     window.dispatchEvent(new CustomEvent('activeCourseChanged', { detail: level }));
 }
 
+interface CourseResume { stepId: string; path: string }
+
+function loadCourseResume(course: Course): CourseResume | null {
+    try {
+        const value = JSON.parse(localStorage.getItem(learningStorageKey(`courseResume:${course.level}`)) || 'null');
+        return value && typeof value.stepId === 'string' && typeof value.path === 'string' ? value : null;
+    } catch { return null; }
+}
+
+export function rememberCourseStep(course: Course, step: CourseStep, path: string): void {
+    localStorage.setItem(learningStorageKey(`courseResume:${course.level}`), JSON.stringify({ stepId: step.id, path: unscopedPath(path) }));
+}
+
+export function getCourseResumePath(course: Course, step: CourseStep): string {
+    const path = `/courses/${course.level.toLowerCase()}${step.path}`;
+    const resume = loadCourseResume(course);
+    return resume?.stepId === step.id && contentKey(resume.path) === contentKey(path)
+        && getStepStatus(step, course.level) !== 'complete' ? resume.path : path;
+}
+
+export function getUpcomingSteps(course: Course): CourseStep[] {
+    const steps = course.steps.filter(step => step.module !== 'exams' || step.available);
+    const resume = loadCourseResume(course);
+    const index = steps.findIndex(step => step.id === resume?.stepId);
+    const ordered = index < 0 ? steps : [...steps.slice(index), ...steps.slice(0, index)];
+    return ordered.filter(step => getStepStatus(step, course.level) !== 'complete');
+}
+
 export function getNextStep(course: Course): CourseStep | null {
-    for (const step of course.steps) {
-        if (step.module === 'exams' && !step.available) continue;
-        if (getStepStatus(step, course.level) !== 'complete') return step;
-    }
-    return null;
+    return getUpcomingSteps(course)[0] ?? null;
 }

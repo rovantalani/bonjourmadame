@@ -38,7 +38,7 @@ test('French A1 readings and their vocabulary follow the seven-unit syllabus', (
             assert.equal(module.level, 'A1');
             assert.equal(vocabularyData[id]?.length, 15, `vocabulary words for ${id}`);
             const readingIndex = course.steps.findIndex(step => step.type === 'reading' && step.contentId === id);
-            const vocabularyStep = course.steps[readingIndex - 1];
+            const vocabularyStep = course.steps[readingIndex + 1];
             assert.equal(vocabularyStep?.type, 'vocabulary');
             assert.equal(vocabularyStep?.contentId, id);
         }
