@@ -209,3 +209,36 @@ test('final exam completion is separate from unit exams and other levels', () =>
     setMode('learn-english');
     assert.equal(progress.getContentStatus(path), 'not-started');
 });
+
+test('Continue resumes an unfinished module and its quiz screen, then advances after completion', () => {
+    const { progress } = setup();
+    const course = { level: 'A1', steps: [
+        { id: 'first', module: 'vocabulary', path: '/vocabulary/first' },
+        { id: 'phrase', module: 'lectures', path: '/lectures/phrases/hello' },
+        { id: 'next', module: 'lectures', path: '/lectures/reading/story' },
+    ] };
+    const quizPath = '/learn/fr/courses/a1/lectures/phrases/hello/quiz';
+    progress.rememberCourseStep(course, course.steps[1], quizPath);
+    assert.equal(progress.getNextStep(course).id, 'phrase');
+    assert.equal(progress.getCourseResumePath(course, course.steps[1]), '/courses/a1/lectures/phrases/hello/quiz');
+    assert.equal(progress.getStepStatus(course.steps[1], 'A1'), 'not-started');
+    progress.completeLesson(quizPath);
+    assert.equal(progress.getNextStep(course).id, 'next');
+    progress.completeLesson('/courses/a1/lectures/reading/story');
+    assert.equal(progress.getNextStep(course).id, 'first', 'Earlier unfinished work remains available');
+});
+
+test('resume records are isolated by language and level and ignore removed modules and invalid paths', () => {
+    const { progress, setMode, localStorage } = setup();
+    const steps = [{ id: 'one', path: '/vocabulary/one' }, { id: 'two', path: '/vocabulary/two' }];
+    const course = { level: 'A1', steps };
+    progress.rememberCourseStep(course, steps[1], '/courses/a1/vocabulary/two');
+    assert.equal(progress.getNextStep(course).id, 'two');
+    assert.equal(progress.getNextStep({ ...course, level: 'A2' }).id, 'one');
+    setMode('learn-english');
+    assert.equal(progress.getNextStep(course).id, 'one');
+    setMode('learn-french');
+    localStorage.setItem('courseResume:A1:learn-french', JSON.stringify({ stepId: 'two', path: '/courses/a2/vocabulary/two' }));
+    assert.equal(progress.getCourseResumePath(course, steps[1]), '/courses/a1/vocabulary/two');
+    assert.equal(progress.getNextStep({ ...course, steps: [steps[0]] }).id, 'one');
+});

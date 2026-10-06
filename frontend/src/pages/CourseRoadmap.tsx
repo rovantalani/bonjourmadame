@@ -9,6 +9,8 @@ import {
     getStepStatus,
     getCourseProgress,
     getNextStep,
+    getCourseResumePath,
+    getUpcomingSteps,
     getActiveCourse,
     setActiveCourse,
     markStepVisited,
@@ -40,10 +42,10 @@ export default function CourseRoadmap() {
     const nextStep  = getNextStep(course);
     const hasStarted = progress.completed + progress.visited > 0;
 
-    const handleStepClick = (path: string, stepId: string) => {
+    const handleStepClick = (path: string, stepId: string, resume = false) => {
         setActiveCourse(course.level);
         markStepVisited(stepId);
-        navigate(`/courses/${level}${path}`);
+        navigate(resume && nextStep ? getCourseResumePath(course, nextStep) : `/courses/${level}${path}`);
     };
 
     const renderStepItem = (step: CourseStep, index: number, isLast: boolean) => {
@@ -82,7 +84,7 @@ export default function CourseRoadmap() {
         const value = getCourseProgress({ ...course, steps: course.steps.filter(step => step.unit === unit.number) });
         return value.total > 0 && value.completed === value.total;
     }).length;
-    const upcoming = course.steps.filter(step => (step.module !== 'exams' || step.available) && getStepStatus(step, course.level) !== 'complete').slice(0, 3);
+    const upcoming = getUpcomingSteps(course).slice(0, 3);
     const unitTitle = currentUnit?.title.replace(/^Unit \d+\s*[—–-]\s*/, '') ?? course.title;
     const unitLabel = currentUnit?.kind === 'final-exam' ? 'FINAL EXAM' : `${fr ? 'UNITÉ' : 'UNIT'} ${String(currentUnit?.number ?? 1).padStart(2, '0')}`;
 
@@ -108,7 +110,7 @@ export default function CourseRoadmap() {
                         <p>{nextStep ? Array.from(new Set(unitSteps.filter(step => step.module !== 'exams').map(step => t.roadmap.types[step.type]))).join(' · ') : (fr ? 'Toutes les activités disponibles sont terminées. Vous pouvez les revoir à tout moment.' : 'You’ve completed every available activity. Revisit any lesson whenever you like.')}</p>
                     </div>
                     <div className="ov-chapter-action">
-                        {nextStep ? <button className="ov-continue" type="button" onClick={() => handleStepClick(nextStep.path, nextStep.id)}>
+                        {nextStep ? <button className="ov-continue" type="button" onClick={() => handleStepClick(nextStep.path, nextStep.id, true)}>
                             {hasStarted ? (fr ? 'Continuer le cours' : 'Continue course') : (fr ? 'Commencer le cours' : 'Start course')} <span aria-hidden="true">→</span>
                         </button> : <button className="ov-continue" type="button" onClick={() => navigate('/courses')}>
                             {fr ? 'Explorer les niveaux' : 'Explore the levels'} <span aria-hidden="true">→</span>
