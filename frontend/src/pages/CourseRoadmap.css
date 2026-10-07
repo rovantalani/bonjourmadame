@@ -1,133 +1,3 @@
-/* ── Step list ── */
-.cr-steps {
-    list-style: none;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.cr-step {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.cr-connector {
-    position: absolute;
-    left: 1.1rem;
-    top: 3rem;
-    bottom: 0;
-    width: 2px;
-    background: var(--border);
-    z-index: 0;
-}
-
-.cr-step--complete .cr-connector { background: var(--verb-soft); }
-.cr-step--visited  .cr-connector { background: var(--border); }
-
-/* ── Step button ── */
-.cr-step-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    width: 100%;
-    text-align: left;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--r-lg);
-    padding: 0.85rem 1rem;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    transition: border-color var(--t-fast) var(--ease),
-                box-shadow var(--t-base) var(--ease),
-                transform var(--t-fast) var(--ease);
-}
-
-.cr-step-btn:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-md);
-    transform: translateX(2px);
-}
-
-.cr-step--complete .cr-step-btn {
-    background: var(--verb-soft);
-    border-color: var(--verb);
-}
-
-/* ── Lesson number ── */
-.cr-node {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    font-size: 0.78rem;
-    font-weight: 700;
-    font-family: var(--font-ui);
-    flex-shrink: 0;
-    border: 2px solid currentColor;
-}
-
-.cr-node--todo {
-    color: var(--text-3);
-    background: var(--surface-2);
-    border-color: var(--border);
-}
-
-/* ── Step body ── */
-.cr-step-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    min-width: 0;
-}
-
-.cr-step-title {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-1);
-    line-height: 1.3;
-}
-
-/* ── Type badge pill ── */
-
-/* ── Chevron ── */
-.cr-step-arrow {
-    font-size: 1.3rem;
-    color: var(--text-3);
-    font-weight: 300;
-    flex-shrink: 0;
-}
-
-/* ── Unit grouping ── */
-.cr-unit {
-    margin-bottom: 2rem;
-}
-
-.cr-unit-title {
-    font-size: 0.7rem;
-    font-weight: 700;
-    font-family: var(--font-ui);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-3);
-    padding: 0 0.25rem;
-    margin-bottom: 0.75rem;
-}
-
-@media (max-width: 480px) {
-    .cr-step-btn { gap: 0.65rem; padding: 0.75rem 0.85rem; }
-
-}
-
-.cr-step-btn:disabled { cursor: default; opacity: 0.6; }
-.cr-step-body small { color: var(--text-2); }
-
 /* The overview is a course front page; the complete index stays one click away. */
 .course-overview { max-width: 1180px; padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 5rem; }
 .ov-heading { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; margin-bottom: 2.6rem; }
@@ -196,18 +66,31 @@
 .ov-next-arrow { margin-left: .6rem; font-size: 1.15rem; color: var(--text-2); }
 .ov-explore { margin-top: 2rem; border-top: 1px solid var(--border-light); }
 .ov-explore-heading { display: flex; align-items: center; gap: 1rem; padding: 1.6rem 0; }
-.ov-explore-icon { color: var(--text-2); display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border: 1px solid var(--border); border-radius: 10px; }
-.ov-explore-heading h2 { font-size: .9rem; font-weight: 500; }
-.ov-explore-heading p { font-size: .75rem; color: var(--text-2); margin-top: .35rem; line-height: 1.5; }
+.ov-explore-heading h2 { font-size: .95rem; font-weight: 500; }
 .ov-explore-heading .ov-text-button { margin-left: auto; }
 .ov-unit-disclosure { border-top: 1px solid var(--border); }
-.ov-unit-disclosure > summary { cursor: pointer; display: flex; align-items: center; gap: 1rem; padding: 1.1rem .5rem; }
-.ov-unit-disclosure > summary::after { content: '+'; margin-left: .5rem; color: var(--text-2); }
-.ov-unit-disclosure[open] > summary::after { content: '−'; }
-.ov-unit-disclosure > summary > span { color: var(--text-2); font: .75rem var(--font-mono); }
-.ov-unit-disclosure > summary > strong { flex: 1; font-size: .85rem; font-weight: 500; }
-.ov-unit-disclosure > summary > small { color: var(--text-2); font-size: .7rem; }
-.ov-unit-disclosure .cr-steps { padding: .5rem 0 1.5rem; }
+.ov-unit-disclosure > summary { cursor: pointer; display: flex; align-items: center; gap: 1rem; padding: 1.3rem .35rem; list-style: none; }
+.ov-unit-disclosure > summary::-webkit-details-marker { display: none; }
+.ov-unit-number { display: flex; width: 1.7rem; flex-shrink: 0; color: var(--accent-text); font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; }
+.ov-unit-disclosure > summary > strong { flex: 1; font-size: .9rem; font-weight: 500; }
+.ov-unit-completion { display: flex; align-items: center; gap: .4rem; color: var(--text-3); }
+.ov-unit-completion small { font-size: .7rem; }
+.ov-unit-chevron { flex-shrink: 0; color: var(--text-2); transition: transform .15s; }
+.ov-unit-disclosure[open] .ov-unit-chevron { transform: rotate(180deg); }
+.cr-steps { list-style: none; margin: 0 0 1.4rem 2.7rem; padding: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 3px 10px 10px 10px; background: color-mix(in srgb, var(--surface) 96%, #e6d4ae); }
+.cr-step + .cr-step { border-top: 1px solid var(--border); }
+.cr-step-btn { display: flex; align-items: center; gap: .8rem; width: 100%; padding: .9rem 1.25rem; border: none; border-radius: 0; background: transparent; text-align: left; font: inherit; cursor: pointer; }
+.cr-step-btn:hover:not(:disabled) { background: color-mix(in srgb, var(--accent-light) 35%, transparent); }
+.cr-step-btn:disabled { cursor: default; color: var(--text-3); }
+.cr-step-icon { display: flex; flex-shrink: 0; color: var(--accent-text); }
+.cr-step-body { display: flex; flex: 1; flex-direction: column; gap: .3rem; min-width: 0; }
+.cr-step-title { color: var(--text-1); font-size: .85rem; line-height: 1.5; overflow-wrap: anywhere; }
+.cr-step-meta { display: flex; flex-wrap: wrap; gap: .4rem .8rem; font-size: .65rem; color: var(--text-3); }
+.cr-step--current .cr-step-title, .cr-continue-label { color: var(--accent-text); }
+.cr-step-arrow { color: var(--accent-text); opacity: 0; }
+.cr-step-btn:hover .cr-step-arrow, .cr-step-btn:focus-visible .cr-step-arrow { opacity: 1; }
+.cr-step-btn:disabled .cr-step-arrow { visibility: hidden; }
+.cr-step--exam:not(:first-child) { margin-top: .7rem; padding-top: .35rem; }
 .ov-set-active { margin-top: 1rem; }
 .course-overview button:focus-visible, .ov-unit-disclosure summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .ov-next-list button:focus-visible { outline-offset: -3px; }
@@ -243,9 +126,23 @@
     .ov-next-step .module-tags { margin-left: 2.7rem; }
     .ov-next-arrow { margin-left: auto; }
     .ov-explore-heading { flex-wrap: wrap; gap: .8rem; }
-    .ov-explore-heading > div:nth-child(2) { flex: 1; }
-    .ov-explore-heading .ov-text-button { margin-left: 3.6rem; padding-top: 0; }
+    .ov-explore-heading .ov-text-button { margin-left: auto; }
+    .ov-unit-disclosure > summary { display: grid; grid-template-columns: 24px minmax(0, 1fr) 16px; gap: .35rem .6rem; }
+    .ov-unit-number { grid-column: 1; grid-row: 1 / 3; }
+    .ov-unit-disclosure > summary > strong { grid-column: 2; }
+    .ov-unit-completion { grid-column: 2; }
+    .ov-unit-chevron { grid-column: 3; grid-row: 1 / 3; }
+    .cr-steps { margin-left: .5rem; }
+    .cr-step-btn { gap: .55rem; padding-inline: .9rem; }
+    .cr-step-arrow { opacity: .6; }
 }
 @media (prefers-reduced-motion: reduce) {
     .course-overview *, .course-overview *::after { transition: none !important; }
 }
+
+.cr-step--complete .cr-step-btn { background: color-mix(in srgb, var(--accent-light) 42%, transparent); }
+.cr-step--complete .cr-step-btn:hover { background: color-mix(in srgb, var(--accent-light) 65%, transparent); }
+.cr-step-progress { display: inline-flex; align-items: center; gap: .3rem; flex-shrink: 0; }
+.cr-done-label { color: var(--accent-text); font-size: .65rem; white-space: nowrap; }
+
+.course-overview .cr-step-btn:focus-visible { outline-offset: -3px; }

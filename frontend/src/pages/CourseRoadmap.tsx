@@ -1,6 +1,6 @@
 import { useLearningNavigate as useNavigate } from '../hooks/useLearningNavigation';
 import { useEffect } from 'react';
-import { BookOpenIcon } from '../components/icons';
+import { BookOpenIcon, PenIcon, MessageIcon, TextIcon, StarIcon } from '../components/icons';
 import ModuleTags from '../components/ModuleTags';
 import ProgressFlower from '../components/ProgressFlower';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -48,31 +48,26 @@ export default function CourseRoadmap() {
         navigate(resume && nextStep ? getCourseResumePath(course, nextStep) : `/courses/${level}${path}`);
     };
 
-    const renderStepItem = (step: CourseStep, index: number, isLast: boolean) => {
+    const renderStepItem = (step: CourseStep) => {
         const status = getStepStatus(step, level);
-        return (
-            <li key={step.id} className={`cr-step cr-step--${status}`}>
-                {!isLast && <span className="cr-connector" />}
-                <button
-                    className="cr-step-btn"
-                    onClick={() => handleStepClick(step.path, step.id)}
-                    type="button"
-                    disabled={step.module === 'exams' && !step.available}
-                >
-                    <span className="cr-node cr-node--todo">{index + 1}</span>
-                    <div className="cr-step-body">
-                        <span className="cr-step-title">{step.title}</span>
-                        <ModuleTags step={step} />
-                        {step.module === 'exams' && <small>
-                            {!step.available ? (language === 'en' ? 'Bientôt disponible' : 'Coming soon') :
-                                step.isDemo ? (language === 'en' ? 'Examen de démonstration' : 'Demo exam') : null}
-                        </small>}
-                    </div>
+        const current = step.id === nextStep?.id;
+        const Icon = step.module === 'exams' ? StarIcon : step.type === 'reading' ? BookOpenIcon : step.type === 'phrases' ? MessageIcon : step.module === 'vocabulary' ? TextIcon : PenIcon;
+        return <li key={step.id} className={`cr-step${status === 'complete' ? ' cr-step--complete' : ''}${step.module === 'exams' ? ' cr-step--exam' : ''}${current ? ' cr-step--current' : ''}`}>
+            <button className="cr-step-btn" onClick={() => handleStepClick(step.path, step.id, current)} type="button" disabled={step.module === 'exams' && !step.available}>
+                <span className="cr-step-icon"><Icon size={20} aria-hidden="true" /></span>
+                <span className="cr-step-body">
+                    <span className="cr-step-title">{step.title}</span>
+                    <span className="cr-step-meta">{t.roadmap.types[step.type]}{current && <span className="cr-continue-label">{fr ? 'Reprendre ici' : 'Continue here'}</span>}
+                        {step.module === 'exams' && <span>{!step.available ? (fr ? 'Bientôt disponible' : 'Coming soon') : step.isDemo ? (fr ? 'Examen de démonstration' : 'Demo exam') : null}</span>}
+                    </span>
+                </span>
+                <span className="cr-step-progress">
+                    {status === 'complete' && <span className="cr-done-label">{fr ? 'Terminé' : 'Done'}</span>}
                     <ProgressFlower status={status} />
-                    <span className="cr-step-arrow">›</span>
-                </button>
-            </li>
-        );
+                </span>
+                <span className="cr-step-arrow" aria-hidden="true">→</span>
+            </button>
+        </li>;
     };
 
     const units = course.units ?? [];
@@ -147,13 +142,20 @@ export default function CourseRoadmap() {
             </section>}
 
             <section className="ov-explore" aria-labelledby="explore-title">
-                <div className="ov-explore-heading"><div className="ov-explore-icon"><BookOpenIcon size={24} /></div><div><h2 id="explore-title">{fr ? 'Tout le cours, à portée de main.' : 'Your whole course, always here.'}</h2><p>{fr ? 'Revoir une leçon ou explorer une autre unité.' : 'Revisit a lesson or explore another unit at your own pace.'}</p></div><button className="ov-text-button" type="button" aria-expanded={showAll} aria-controls="course-all-units" onClick={() => setShowAll()}>{showAll ? (fr ? 'Masquer les unités' : 'Hide units') : (fr ? 'Voir toutes les unités' : 'View all units')}<span aria-hidden="true">{showAll ? '−' : '+'}</span></button></div>
+                <div className="ov-explore-heading"><h2 id="explore-title">{fr ? 'Unités du cours' : 'Course units'}</h2><button className="ov-text-button" type="button" aria-expanded={showAll} aria-controls="course-all-units" onClick={() => setShowAll()}>{showAll ? (fr ? 'Masquer les unités' : 'Hide units') : (fr ? 'Voir toutes les unités' : 'Show all units')}</button></div>
                 <div id="course-all-units" hidden={!showAll} className="ov-all-units">
                     {units.length ? units.map(unit => {
                         const steps = course.steps.filter(step => step.unit === unit.number);
                         const unitValue = getCourseProgress({ ...course, steps });
-                        return <details key={unit.number} className="ov-unit-disclosure"><summary><span>{unit.kind === 'final-exam' ? '✧' : String(unit.number).padStart(2, '0')}</span><strong>{unit.title}</strong><small>{unitValue.completed} / {unitValue.total}</small></summary><ol className="cr-steps">{steps.map((step, i) => renderStepItem(step, i, i === steps.length - 1))}</ol></details>;
-                    }) : <ol className="cr-steps">{course.steps.map((step, i) => renderStepItem(step, i, i === course.steps.length - 1))}</ol>}
+                        const complete = unitValue.total > 0 && unitValue.completed === unitValue.total;
+                        return <details key={unit.number} className="ov-unit-disclosure">
+                            <summary><span className="ov-unit-number">{unit.kind === 'final-exam' ? <StarIcon size={18} aria-hidden="true" /> : String(unit.number).padStart(2, '0')}</span><strong>{unit.title}</strong>
+                                <span className="ov-unit-completion"><small>{unitValue.completed} / {unitValue.total} {fr ? 'terminés' : 'completed'}</small>{complete && <ProgressFlower status="complete" />}</span>
+                                <svg className="ov-unit-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+                            </summary>
+                            <ol className="cr-steps">{steps.map(renderStepItem)}</ol>
+                        </details>;
+                    }) : <ol className="cr-steps">{course.steps.map(renderStepItem)}</ol>}
                 </div>
             </section>
             {!isActive && <button className="ov-text-button ov-set-active" type="button" onClick={() => { setActiveCourse(course.level); navigate(`/courses/${course.level.toLowerCase()}`); }}>{t.roadmap.setActive} →</button>}
