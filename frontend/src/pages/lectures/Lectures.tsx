@@ -1,5 +1,5 @@
 import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
-import ModuleTags from '../../components/ModuleTags';
+import { useLearning } from '../../context/LearningContext';
 import ProgressFlower from '../../components/ProgressFlower';
 import React from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -10,12 +10,6 @@ import { useT } from '../../utils/i18n';
 import { PenIcon, MessageIcon, BookOpenIcon } from '../../components/icons/index';
 import type { SVGProps } from 'react';
 import './Lectures.css';
-
-const TYPE_COLOR: Record<LectureType, string> = {
-    grammar:    'var(--tag-grammar-text)',
-    phrases:    'var(--tag-phrases-text)',
-    reading:    'var(--tag-reading-text)',
-};
 
 type IconFC = React.FC<SVGProps<SVGSVGElement> & { size?: number }>;
 const TYPE_ICON: Record<LectureType, IconFC> = {
@@ -32,6 +26,8 @@ export default function Lectures() {
     const { level } = useParams<{ level: string }>();
     const navigate = useNavigate();
     const t = useT();
+    const { language } = useLearning();
+    const fr = language === 'en';
     const courses = useCourses();
     const [params, setParams] = useSearchParams();
     const value = params.get('type');
@@ -44,26 +40,33 @@ export default function Lectures() {
         ? allLectureSteps
         : allLectureSteps.filter(s => s.type === filter);
 
+    const groups = [...new Set(allLectureSteps.map(step => step.unit))].map(unit => ({
+        unit,
+        title: activeCourse?.units?.find(item => item.number === unit)?.title,
+        steps: lectureSteps.filter(step => step.unit === unit),
+    })).filter(group => group.steps.length > 0);
+
     const filterLabel = (f: LectureFilter) =>
         f === 'all' ? t.lectures.all : t.roadmap.types[f];
 
     return (
-        <main className="page">
+        <main className="page lesson-contents">
             <header className="page-header">
-                <h1>{t.lectures.title}</h1>
+                <span className="contents-eyebrow">{activeCourse?.level} / {fr ? 'TABLE DES MATIÈRES' : 'TABLE OF CONTENTS'}</span>
+                <h1>{fr ? 'Leçons' : 'Lessons'}</h1>
                 <p className="subtitle">{t.lectures.subtitle}</p>
             </header>
 
-            <div className="lectures-filters" role="group" aria-label="Filter lectures">
+            <div className="lectures-filters" role="group" aria-label={fr ? 'Filtrer les leçons' : 'Filter lessons'}>
                 {FILTERS.map(f => (
                     <button
                         key={f}
                         type="button"
                         className={`lectures-filter-pill${filter === f ? ' lectures-filter-pill--active' : ''}`}
-                        style={filter === f && f !== 'all' ? { backgroundColor: `var(--tag-${f}-bg)`, borderColor: TYPE_COLOR[f], color: `var(--tag-${f}-text)` } : undefined}
+                        aria-pressed={filter === f}
                         onClick={() => setFilter(f)}
                     >
-                        {f !== 'all' && (() => { const Icon = TYPE_ICON[f]; return <Icon size={14} style={{ verticalAlign: 'middle', marginRight: 4 }} />; })()}
+                        {f !== 'all' && (() => { const Icon = TYPE_ICON[f]; return <Icon size={14} aria-hidden="true" />; })()}
                         {filterLabel(f)}
                     </button>
                 ))}
@@ -72,30 +75,29 @@ export default function Lectures() {
             {lectureSteps.length === 0 ? (
                 <p className="lectures-empty">{t.lectures.empty}</p>
             ) : (
-                <div className="lectures-list">
-                    {lectureSteps.map(step => {
-                        const status = getStepStatus(step, level);
-                        const color = TYPE_COLOR[step.type];
-
-                        return (
-                            <button
-                                key={step.id}
-                                className={`lecture-card lecture-card--${status}`}
-                                style={{ borderLeftColor: color }}
-                                onClick={() => { markStepVisited(step.id); navigate(`/courses/${level}${step.path}`); }}
-                                type="button"
-                            >
-                                <div className="lecture-body">
-                                    <span className="lecture-title">{step.title}</span>
-                                    <ModuleTags step={step} showModule={false} />
-                                </div>
-
-                                <ProgressFlower status={status} />
-
-                                <span className="lecture-arrow">›</span>
-                            </button>
-                        );
-                    })}
+                <div className="contents-units">
+                    {groups.map(group => <section className="contents-unit" key={group.unit ?? 'other'} aria-labelledby={`contents-unit-${group.unit ?? 'other'}`}>
+                        <header className="contents-unit-heading">
+                            <span className="contents-unit-number">{group.unit === undefined ? '—' : String(group.unit).padStart(2, '0')}</span>
+                            <h2 id={`contents-unit-${group.unit ?? 'other'}`}>{group.title ?? (fr ? 'Leçons' : 'Lessons')}</h2>
+                            <span className="contents-count">{group.steps.length} {fr ? 'leçons' : 'lessons'}</span>
+                        </header>
+                        <ol className="contents-paper">
+                            {group.steps.map(step => {
+                                const Icon = TYPE_ICON[step.type];
+                                const title = step.title.replace(/^(Reading|Grammar|Phrases|Lecture|Grammaire)\s*:\s*/i, '');
+                                return <li key={step.id}>
+                                    <button className="contents-row" onClick={() => { markStepVisited(step.id); navigate(`/courses/${level}${step.path}`); }} type="button">
+                                        <span className="contents-icon"><Icon size={20} aria-hidden="true" /></span>
+                                        <span className="contents-title">{title}</span>
+                                        <span className="contents-category">{t.roadmap.types[step.type]}</span>
+                                        <ProgressFlower status={getStepStatus(step, level)} />
+                                        <span className="contents-arrow" aria-hidden="true">→</span>
+                                    </button>
+                                </li>;
+                            })}
+                        </ol>
+                    </section>)}
                 </div>
             )}
         </main>
