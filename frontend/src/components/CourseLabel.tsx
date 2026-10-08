@@ -1,0 +1,10 @@
+import { useParams } from 'react-router-dom';
+import { useLearning } from '../context/LearningContext';
+import './CourseLabel.css';
+
+export default function CourseLabel() {
+    const { level } = useParams();
+    const { courses } = useLearning();
+    const course = courses.find(item => item.level.toLowerCase() === level?.toLowerCase());
+    return course ? <p className="course-label">{course.level} · {course.title}</p> : null;
+}

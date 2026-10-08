@@ -1,3 +1,4 @@
+import CourseLabel from '../components/CourseLabel';
 import { useParams } from 'react-router-dom';
 import { useLearning } from '../context/LearningContext';
 import { useLearningNavigate } from '../hooks/useLearningNavigation';
@@ -15,7 +16,7 @@ export default function Exams() {
     if (!course) return <main className="page"><p>{fr ? 'Cours introuvable.' : 'Course not found.'}</p></main>;
     const exams = course.steps.filter(step => step.module === 'exams');
     return <main className="page notebook-page">
-        <header className="page-header"><p className="notebook-eyebrow">{course.level} · {course.title}</p>
+        <header className="page-header"><CourseLabel />
             <h1>{fr ? 'Examens' : 'Exams'}</h1><p className="subtitle">{fr ? 'Révisez chaque unité, puis faites le bilan du niveau avec l’examen final.' : 'Review each unit, then bring it all together in the final exam.'}</p>
         </header>
         <div className="notebook-grid">{exams.map((step, index) => <button key={step.id} type="button" className="notebook-card exam-notebook-card" disabled={!step.available}

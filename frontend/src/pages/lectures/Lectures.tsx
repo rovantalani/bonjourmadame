@@ -1,3 +1,4 @@
+import CourseLabel from '../../components/CourseLabel';
 import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import { useLearning } from '../../context/LearningContext';
 import ProgressFlower from '../../components/ProgressFlower';
@@ -52,7 +53,7 @@ export default function Lectures() {
     return (
         <main className="page lesson-contents">
             <header className="page-header">
-                <span className="contents-eyebrow">{activeCourse?.level} / {fr ? 'TABLE DES MATIÈRES' : 'TABLE OF CONTENTS'}</span>
+                <CourseLabel />
                 <h1>{fr ? 'Leçons' : 'Lessons'}</h1>
                 <p className="subtitle">{t.lectures.subtitle}</p>
             </header>

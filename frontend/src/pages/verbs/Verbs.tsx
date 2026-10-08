@@ -1,3 +1,4 @@
+import CourseLabel from '../../components/CourseLabel';
 import { useLearning } from '../../context/LearningContext';
 import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import { normalizeSearch } from '../../utils/search';
@@ -149,7 +150,7 @@ export default function Verbs() {
         <main className="page verbs-page notebook-page">
             <header className="page-header verbs-page-header">
                 <div className="verbs-page-intro">
-                    <span className="notebook-eyebrow">{level?.toUpperCase()} / {isEN ? 'CARNET DE VERBES' : 'VERB NOTEBOOK'}</span>
+                    <CourseLabel />
                     <h1>{t.verbs.title}</h1>
                     <p className="subtitle">{t.verbs.subtitle}</p>
                 </div>
