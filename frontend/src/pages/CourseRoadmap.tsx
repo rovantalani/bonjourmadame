@@ -93,7 +93,7 @@ export default function CourseRoadmap() {
         <main className="page course-overview" key={course.level}>
             <header className="ov-heading">
                 <div>
-                    <CourseLabel />
+                    <CourseLabel title={fr ? 'Votre parcours en anglais' : 'Your French course'} />
                     <h1>{fr ? 'Votre prochain chapitre.' : 'Your next chapter.'}</h1>
                     <p className="ov-intro">{fr ? 'Votre progression et les prochaines étapes du cours.' : 'Your progress and what to study next.'}</p>
                 </div>

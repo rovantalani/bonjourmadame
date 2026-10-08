@@ -53,7 +53,7 @@ export default function Lectures() {
     return (
         <main className="page lesson-contents">
             <header className="page-header">
-                <CourseLabel />
+                <CourseLabel title={fr ? 'Table des matières' : 'Table of contents'} />
                 <h1>{fr ? 'Leçons' : 'Lessons'}</h1>
                 <p className="subtitle">{t.lectures.subtitle}</p>
             </header>
