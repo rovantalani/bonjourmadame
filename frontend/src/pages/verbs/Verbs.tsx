@@ -150,7 +150,7 @@ export default function Verbs() {
         <main className="page verbs-page notebook-page">
             <header className="page-header verbs-page-header">
                 <div className="verbs-page-intro">
-                    <CourseLabel title={isEN ? 'Carnet de verbes' : 'Verb notebook'} />
+                    <CourseLabel title={isEN ? 'Verbes' : 'Verbs'} />
                     <h1>{t.verbs.title}</h1>
                     <p className="subtitle">{t.verbs.subtitle}</p>
                 </div>

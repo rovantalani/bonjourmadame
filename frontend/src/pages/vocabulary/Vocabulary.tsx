@@ -49,7 +49,7 @@ export default function Vocabulary() {
     return (
         <main className="page vocabulary-notebook">
             <header className="page-header">
-                <CourseLabel title={fr ? 'Carnet de mots' : 'Word notebook'} />
+                <CourseLabel title={fr ? 'Vocabulaire' : 'Vocabulary'} />
                 <h1>{t.vocabulary.title}</h1>
                 <p className="subtitle">{fr ? 'Des mots à découvrir, une collection à la fois.' : 'Discover new words, one collection at a time.'}</p>
             </header>
