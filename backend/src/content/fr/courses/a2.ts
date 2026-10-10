@@ -24,7 +24,7 @@ export const courseA2: Course = {
             { id: 'a2-daily-routine',     title: 'Daily Routine',                 module: 'lectures', type: 'phrases',    contentId: 'daily-routine',             path: '/lectures/phrases/daily-routine',                         unit: 1 },
             { id: 'a2-reading-journee',   title: 'Reading: La Journée de Clara',  module: 'lectures', type: 'reading',    contentId: 'a2-une-journee-typique',     path: '/lectures/reading/a2-une-journee-typique',                unit: 1 },
             { id: 'a2-exam-1', title: 'Unit 1 exam', module: 'exams', type: 'exams', contentId: 'a2-exam-1', path: '/exams/1', unit: 1, available: false, isDemo: false },
-            // Unit 2 — Achats & Goûts (8 steps)
+            // Unit 2 — Achats & Goûts (10 steps)
             { id: 'a2-shopping',          title: 'Shopping & Money',              module: 'vocabulary', type: 'vocabulary', contentId: 'shopping-money',             path: '/vocabulary/shopping-money',                     unit: 2 },
             { id: 'a2-adjectives',        title: 'Adjective Agreement',           module: 'lectures', type: 'grammar',    contentId: 'adjective-agreement',        path: '/lectures/grammar/adjective-agreement',           unit: 2 },
             { id: 'a2-comparatives',      title: 'Comparatives & Superlatives',   module: 'lectures', type: 'grammar',    contentId: 'comparatives-superlatives',  path: '/lectures/grammar/comparatives-superlatives',     unit: 2 },
@@ -33,6 +33,8 @@ export const courseA2: Course = {
             { id: 'a2-animals',           title: 'Animals',                       module: 'vocabulary', type: 'vocabulary', contentId: 'animals',                    path: '/vocabulary/animals',                            unit: 2 },
             { id: 'a2-imperative',        title: 'The Imperative Mood',           module: 'lectures', type: 'grammar',    contentId: 'imperative-mood',            path: '/lectures/grammar/imperative-mood',               unit: 2 },
             { id: 'a2-market-phrases',    title: 'At the Market',                 module: 'lectures', type: 'phrases',    contentId: 'at-the-market',              path: '/lectures/phrases/at-the-market',                         unit: 2 },
+            { id: 'a2-un-cadeau-pour-lucie-reading', title: 'Reading: Un cadeau pour Lucie', module: 'lectures', type: 'reading', contentId: 'a2-un-cadeau-pour-lucie', path: '/lectures/reading/a2-un-cadeau-pour-lucie', unit: 2 },
+            { id: 'a2-un-cadeau-pour-lucie-vocabulary', title: 'Vocabulary: Un cadeau pour Lucie', module: 'vocabulary', type: 'vocabulary', contentId: 'a2-un-cadeau-pour-lucie', path: '/vocabulary/a2-un-cadeau-pour-lucie', unit: 2 },
             { id: 'a2-exam-2', title: 'Unit 2 exam', module: 'exams', type: 'exams', contentId: 'a2-exam-2', path: '/exams/2', unit: 2, available: false, isDemo: false },
             // Unit 3 — Voyages & Nature (7 steps)
             { id: 'a2-weather',           title: 'Weather & Nature',              module: 'vocabulary', type: 'vocabulary', contentId: 'weather-nature',             path: '/vocabulary/weather-nature',                     unit: 3 },
@@ -43,7 +45,7 @@ export const courseA2: Course = {
             { id: 'a2-regular-verbs',     title: 'Regular Verbs',                 module: 'verbs', type: 'verbs',      contentId: 'a2',              path: '/verbs/a2',                         unit: 3 },
             { id: 'a2-reading-bretagne',  title: 'Reading: Vacances en Bretagne', module: 'lectures', type: 'reading',    contentId: 'a2-vacances-en-bretagne',    path: '/lectures/reading/a2-vacances-en-bretagne',               unit: 3 },
             { id: 'a2-exam-3', title: 'Unit 3 exam', module: 'exams', type: 'exams', contentId: 'a2-exam-3', path: '/exams/3', unit: 3, available: false, isDemo: false },
-            // Unit 4 — Vie Sociale (9 steps)
+            // Unit 4 — Vie Sociale (11 steps)
             { id: 'a2-sports',            title: 'Sports & Hobbies',              module: 'vocabulary', type: 'vocabulary', contentId: 'sports-hobbies',             path: '/vocabulary/sports-hobbies',                     unit: 4 },
             { id: 'a2-indirect-object',   title: 'Indirect Object Pronouns',      module: 'lectures', type: 'grammar',    contentId: 'indirect-object-pronouns',   path: '/lectures/grammar/indirect-object-pronouns',      unit: 4 },
             { id: 'a2-health-doctor',     title: 'Health & Doctor',               module: 'vocabulary', type: 'vocabulary', contentId: 'health-doctor',              path: '/vocabulary/health-doctor',                      unit: 4 },
@@ -53,6 +55,8 @@ export const courseA2: Course = {
             { id: 'a2-on-phone',          title: 'On the Phone',                  module: 'lectures', type: 'phrases',    contentId: 'on-the-phone',               path: '/lectures/phrases/on-the-phone',                          unit: 4 },
             { id: 'a2-conditionnel',      title: 'Polite Conditionals',           module: 'lectures', type: 'grammar',    contentId: 'conditionnel-intro',         path: '/lectures/grammar/conditionnel-intro',            unit: 4 },
             { id: 'a2-making-plans',      title: 'Making Plans',                  module: 'lectures', type: 'phrases',    contentId: 'making-plans',               path: '/lectures/phrases/making-plans',                          unit: 4 },
+            { id: 'a2-un-diner-entre-amis-reading', title: 'Reading: Un dîner entre amis', module: 'lectures', type: 'reading', contentId: 'a2-un-diner-entre-amis', path: '/lectures/reading/a2-un-diner-entre-amis', unit: 4 },
+            { id: 'a2-un-diner-entre-amis-vocabulary', title: 'Vocabulary: Un dîner entre amis', module: 'vocabulary', type: 'vocabulary', contentId: 'a2-un-diner-entre-amis', path: '/vocabulary/a2-un-diner-entre-amis', unit: 4 },
             { id: 'a2-exam-4', title: 'Unit 4 exam', module: 'exams', type: 'exams', contentId: 'a2-exam-4', path: '/exams/4', unit: 4, available: false, isDemo: false },
             // Unit 5 — Personnes & Bilan (10 steps)
             { id: 'a2-reflexive-basics',  title: 'Reflexive Verbs',               module: 'lectures', type: 'grammar',    contentId: 'reflexive-verbs-basics',     path: '/lectures/grammar/reflexive-verbs-basics',        unit: 5 },
