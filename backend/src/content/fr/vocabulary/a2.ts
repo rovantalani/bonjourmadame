@@ -1,5 +1,36 @@
 import type { VocabularyModule, VocabularyData, VocabularyWord } from '../../../types/vocabulary';
 
+const giftReadingWords: VocabularyWord[] = [
+    { id: 1, english: "a gift", french: "un cadeau" },
+    { id: 2, english: "a birthday", french: "un anniversaire" },
+    { id: 3, english: "a budget", french: "un budget" },
+    { id: 4, english: "useful", french: "utile" },
+    { id: 5, english: "a shop assistant (female)", french: "une vendeuse" },
+    { id: 6, english: "a model / design", french: "un modèle" },
+    { id: 7, english: "cheaper", french: "moins cher" },
+    { id: 8, english: "a pocket", french: "une poche" },
+    { id: 9, english: "a fastening / closure", french: "une fermeture" },
+    { id: 10, english: "the checkout", french: "la caisse" },
+    { id: 11, english: "a receipt", french: "le ticket de caisse" },
+    { id: 12, english: "to exchange", french: "échanger" },
+
+];
+
+const dinnerReadingWords: VocabularyWord[] = [
+    { id: 1, english: "free / available", french: "libre" },
+    { id: 2, english: "an invitation", french: "une invitation" },
+    { id: 3, english: "to bring", french: "apporter" },
+    { id: 4, english: "a shopping list", french: "la liste des courses" },
+    { id: 5, english: "a dish", french: "un plat" },
+    { id: 6, english: "meat", french: "la viande" },
+    { id: 7, english: "vegetarian", french: "végétarien" },
+    { id: 8, english: "to tidy", french: "ranger" },
+    { id: 9, english: "to set the table", french: "mettre la table" },
+    { id: 10, english: "to be a little late", french: "avoir un peu de retard" },
+    { id: 11, english: "guests", french: "les invités" },
+    { id: 12, english: "a board game", french: "un jeu de société" },
+];
+
 export const modulesA2: (VocabularyModule & { words: VocabularyWord[] })[] = [
     { level: 'A2', unit: 1,  id: 'work-professions',    title: 'Work & Professions',      titleFR: 'Travail & Professions',      description: 'Navigate the workplace in French',                               descriptionFR: 'Naviguer le monde du travail en français',                      icon: '💼', color: '#F97316', wordCount: 0, words: [
         { id: 1, english: 'a trade / occupation / job', french: 'un métier' },
@@ -265,10 +296,29 @@ export const modulesA2: (VocabularyModule & { words: VocabularyWord[] })[] = [
         { id: 19, english: 'a cancellation',                 french: 'une annulation' },
         { id: 20, english: 'a refund',                       french: 'un remboursement' },
     ] },
+    {
+        level: 'A2', unit: 2, id: "a2-un-cadeau-pour-lucie",
+        title: "Reading Vocabulary: Un cadeau pour Lucie",
+        titleFR: "Vocabulaire de lecture : Un cadeau pour Lucie",
+        description: "Words from the reading “Un cadeau pour Lucie”.",
+        descriptionFR: "Vocabulaire du texte « Un cadeau pour Lucie ».",
+        icon: '📚', color: '#2563EB', wordCount: 0, words: giftReadingWords,
+    },
+    {
+        level: 'A2', unit: 4, id: "a2-un-diner-entre-amis",
+        title: "Reading Vocabulary: Un dîner entre amis",
+        titleFR: "Vocabulaire de lecture : Un dîner entre amis",
+        description: "Words from the reading “Un dîner entre amis”.",
+        descriptionFR: "Vocabulaire du texte « Un dîner entre amis ».",
+        icon: '📚', color: '#2563EB', wordCount: 0, words: dinnerReadingWords,
+    },
+
 ];
 
 // Word lists attached to readings that are not standalone vocabulary modules.
 export const readingWordsA2: VocabularyData = {
+    "a2-un-cadeau-pour-lucie": giftReadingWords,
+    "a2-un-diner-entre-amis": dinnerReadingWords,
     'a2-une-journee-typique': [
         { id: 1, english: 'a student', french: 'une étudiante' },
         { id: 2, english: 'as usual', french: 'comme d\'habitude' },
