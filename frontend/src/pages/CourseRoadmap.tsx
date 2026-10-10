@@ -1,3 +1,4 @@
+import CourseLabel from '../components/CourseLabel';
 import { useLearningNavigate as useNavigate } from '../hooks/useLearningNavigation';
 import { useEffect } from 'react';
 import { BookOpenIcon } from '../components/icons';
@@ -92,7 +93,7 @@ export default function CourseRoadmap() {
         <main className="page course-overview" key={course.level}>
             <header className="ov-heading">
                 <div>
-                    <p className="ov-eyebrow">{fr ? 'VOTRE PARCOURS EN ANGLAIS' : 'YOUR FRENCH COURSE'} <span> / </span> {course.level}</p>
+                    <CourseLabel title={fr ? 'Vue d’ensemble' : 'Overview'} />
                     <h1>{fr ? 'Votre prochain chapitre.' : 'Your next chapter.'}</h1>
                     <p className="ov-intro">{fr ? 'Votre progression et les prochaines étapes du cours.' : 'Your progress and what to study next.'}</p>
                 </div>

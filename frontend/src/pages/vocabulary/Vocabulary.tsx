@@ -1,3 +1,4 @@
+import CourseLabel from '../../components/CourseLabel';
 import { useLearning } from '../../context/LearningContext';
 import { useLearningNavigate as useNavigate } from '../../hooks/useLearningNavigation';
 import VocabularyIllustration from './VocabularyIllustration';
@@ -48,7 +49,7 @@ export default function Vocabulary() {
     return (
         <main className="page vocabulary-notebook">
             <header className="page-header">
-                <span className="vocab-eyebrow">{activeCourse?.level} / {fr ? 'CARNET DE MOTS' : 'WORD NOTEBOOK'}</span>
+                <CourseLabel title={fr ? 'Vocabulaire' : 'Vocabulary'} />
                 <h1>{t.vocabulary.title}</h1>
                 <p className="subtitle">{fr ? 'Des mots à découvrir, une collection à la fois.' : 'Discover new words, one collection at a time.'}</p>
             </header>
