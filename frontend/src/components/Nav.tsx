@@ -55,6 +55,7 @@ export default function Nav() {
             </div>
             {entry(`${base}/vocabulary`, t.nav.vocabulary, BookIcon, pathname.includes('/vocabulary'))}
             {entry(`${base}/verbs`, t.nav.verbs, PenIcon, pathname.includes('/verbs'))}
+            {entry('/writing-preview', fr ? 'Écriture · aperçu' : 'Writing · preview', PenIcon, pathname === '/writing-preview')}
             {entry(`${base}/exams`, fr ? 'Examens' : 'Exams', BookOpenIcon, pathname.includes('/exams'))}
         </nav>
         <footer className="sidebar-footer">
