@@ -46,3 +46,6 @@ function sample(language: 'fr' | 'en'): { lesson: WritingLesson; review: Writing
     } };
 }
 export const writingSamples = { fr: sample('fr'), en: sample('en') };
+
+/** The overview and detail route resolve the same language-owned exercise catalog. */
+export const writingExercises = { fr: [writingSamples.fr], en: [writingSamples.en] };

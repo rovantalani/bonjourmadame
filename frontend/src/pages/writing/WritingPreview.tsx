@@ -1,12 +1,23 @@
 import { useRef, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { learningPath } from '../../utils/learningRoutes';
 import { useLearning } from '../../context/LearningContext';
 import type { WritingCorrection } from '../../types/writing';
-import { writingSamples } from './samples';
+import { writingExercises } from './samples';
+import type { WritingLesson, WritingReview } from '../../types/writing';
 import './WritingPreview.css';
 
 export default function WritingPreview() {
     const { language } = useLearning();
-    const { lesson, review } = writingSamples[language];
+    const { level, exerciseId } = useParams<{ level: string; exerciseId: string }>();
+    const exercise = writingExercises[language].find(item => item.lesson.id === exerciseId && item.lesson.level.toLowerCase() === level);
+    const back = <Link className="writing-back" to={learningPath(language, `/courses/${level}/writing`)}>← {language === 'en' ? 'Tous les exercices d’écriture' : 'All writing exercises'}</Link>;
+    if (!exercise) return <main className="writing-page">{back}<h1>{language === 'en' ? 'Exercice introuvable' : 'Exercise not found'}</h1></main>;
+    return <WritingExercise key={`${language}:${exercise.lesson.id}`} lesson={exercise.lesson} review={exercise.review} back={back} />;
+}
+
+function WritingExercise({ lesson, review, back }: { lesson: WritingLesson; review: WritingReview; back: React.ReactNode }) {
+    const language = lesson.targetLanguage;
     const fr = review.feedbackLanguage === 'fr';
     const [draft, setDraft] = useState(review.originalText);
     const [reviewing, setReviewing] = useState(false);
@@ -39,7 +50,8 @@ export default function WritingPreview() {
     textParts.push(review.originalText.slice(cursor));
 
     return <main className="writing-page">
-        <header><p className="writing-eyebrow">{fr ? 'ATELIER D’ÉCRITURE' : 'WRITING WORKSHOP'} · A1</p><h1>{lesson.title}</h1>
+        {back}
+        <header><p className="writing-eyebrow">{fr ? 'ATELIER D’ÉCRITURE' : 'WRITING WORKSHOP'} · {lesson.level}</p><h1>{lesson.title}</h1>
             <p className="writing-intro">{fr ? 'Écrivez, observez les corrections, puis essayez à nouveau.' : 'Write, explore the corrections, and try again.'}</p></header>
         <aside className="writing-notice">{fr ? 'Aperçu interactif : les corrections sont préparées pour le texte exemple uniquement. Votre brouillon reste sur cette page et n’est pas enregistré.' : 'Interactive preview: feedback is prepared for the sample text only. Your draft stays on this page and is not saved.'}</aside>
         <section className="writing-prompt" aria-labelledby="writing-prompt-title">

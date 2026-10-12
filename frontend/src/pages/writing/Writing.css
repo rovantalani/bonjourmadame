@@ -1,0 +1,6 @@
+.writing-unit { margin-top: 28px; }
+.writing-unit-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+.writing-unit-heading h2 { font-size: 1rem; font-weight: 500; }
+.writing-unit-number { font-size: .7rem; color: var(--text-3); font-family: var(--font-mono); }
+.writing-exercise-card .notebook-description { line-height: 1.6; }
+.writing-empty { color: var(--text-2); font-size: .9rem; margin-top: 24px; }

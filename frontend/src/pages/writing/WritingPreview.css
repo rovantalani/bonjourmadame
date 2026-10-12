@@ -70,3 +70,6 @@
     .writing-section-heading { flex-wrap: wrap; gap: 8px; }
     .writing-dialog { width: 100%; max-width: 100%; margin: auto 0 0; border-radius: 20px 20px 0 0; padding: 24px 24px max(24px, env(safe-area-inset-bottom)); }
 }
+
+.writing-back { display: inline-block; margin-bottom: 24px; font-size: .8rem; color: var(--text-2); }
+.writing-back:hover { color: var(--accent-text); }
