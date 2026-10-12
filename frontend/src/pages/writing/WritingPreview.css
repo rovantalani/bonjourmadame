@@ -73,3 +73,6 @@
 
 .writing-back { display: inline-block; margin-bottom: 24px; font-size: .8rem; color: var(--text-2); }
 .writing-back:hover { color: var(--accent-text); }
+
+.writing-general-feedback { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--border); }
+.writing-general-feedback h3 { font-size: .85rem; }

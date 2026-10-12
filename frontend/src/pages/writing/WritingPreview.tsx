@@ -101,6 +101,10 @@ function WritingExercise({ lesson, review, back }: { lesson: WritingLesson; revi
             </div>
             <h2 id="writing-notes-title">{fr ? 'Remarques générales' : 'Overall notes'}</h2>
             <ul>{review.overallNotes.map(note => <li key={note}>{note}</li>)}</ul>
+            {review.unplacedCorrections.length > 0 && <div className="writing-general-feedback">
+                <h3>{fr ? 'Autres remarques' : 'Additional notes'}</h3>
+                <ul>{review.unplacedCorrections.map((note, index) => <li key={index}>{note.explanation}</li>)}</ul>
+            </div>}
         </aside></>}
 
         <dialog ref={dialog} className="writing-dialog" aria-label={fr ? 'Détail de la correction' : 'Correction details'} onClose={() => opener.current?.focus()} onClick={event => { if (event.target === event.currentTarget) dialog.current?.close(); }}>

@@ -33,4 +33,15 @@ export interface WritingReview {
     /** Overall rating out of five; illustrative for sample reviews. */
     rating: 1 | 2 | 3 | 4 | 5;
     overallNotes: string[];
+    /** Feedback that could not be safely attached to a specific passage. */
+    unplacedCorrections: Array<{
+        kind: WritingCorrection['kind'];
+        original: string;
+        replacement: string;
+        prefix: string;
+        suffix: string;
+        category: string;
+        explanation: string;
+        reason: 'not-found' | 'ambiguous' | 'overlap' | 'invalid-edit' | 'unsafe-boundary';
+    }>;
 }

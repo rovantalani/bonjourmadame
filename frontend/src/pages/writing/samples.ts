@@ -34,6 +34,7 @@ function sample(language: 'fr' | 'en'): { lesson: WritingLesson; review: Writing
     };
     return { lesson, review: { lessonId: lesson.id, originalText, feedbackLanguage: french ? 'en' : 'fr', corrections,
         rating: 4,
+        unplacedCorrections: [],
         overallNotes: french ? [
             'Avoir expresses age, and je becomes j’ before a vowel sound or silent h.',
             'Un was added before café; the repeated avec was removed.',
