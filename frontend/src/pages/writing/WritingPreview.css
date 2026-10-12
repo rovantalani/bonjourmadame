@@ -1,0 +1,75 @@
+.writing-page { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; color: var(--text-1); font-size: .85rem; }
+.writing-page h1 { font-size: clamp(1.5rem, 3vw, 1.85rem); margin: 8px 0 12px; letter-spacing: -.04em; }
+.writing-eyebrow { font-size: .65rem; letter-spacing: .13em; font-weight: 600; color: var(--accent-text); }
+.writing-intro, .writing-help { color: var(--text-2); line-height: 1.6; }
+.writing-notice { margin: 24px 0; padding: 10px 14px; background: var(--surface-3); border-radius: 4px; font-size: .75rem; line-height: 1.6; }
+/* Match the notebook cards used throughout the course pages. */
+.writing-prompt, .writing-paper, .writing-assessment { padding: 20px 24px; background: color-mix(in srgb, var(--surface) 96%, #e6d4ae); border: 1px solid var(--border); border-radius: 3px 14px 14px 14px; box-shadow: 0 3px 0 -1px var(--bg), 0 4px 0 -1px var(--border); }
+.writing-prompt { margin: 0 0 24px; }
+.writing-prompt-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.writing-word-target { padding: 4px 8px; border-radius: 4px; background: var(--accent-light); color: var(--text-2); font-size: .75rem; white-space: nowrap; }
+.writing-prompt h2 { max-width: 640px; margin: 14px 0 16px; font-size: 1rem; font-weight: 500; line-height: 1.65; letter-spacing: -.02em; text-wrap: pretty; }
+.writing-prompt-focus { border-top: 1px dashed var(--border); padding-top: 12px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px 20px; }
+.writing-prompt-focus > p { color: var(--text-2); font-size: .8rem; font-weight: 600; }
+.writing-prompt-focus ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 0; margin: 0; }
+.writing-prompt-focus li { display: flex; align-items: baseline; gap: 8px; font-size: .8rem; line-height: 1.6; color: var(--text-2); }
+.writing-prompt-focus li::before { content: '•'; color: var(--accent); }
+.writing-assessment ul { padding-left: 22px; margin-top: 12px; line-height: 1.8; }
+.writing-section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; }
+.writing-section-heading h2, .writing-section-heading label { font-size: 1rem; font-weight: 500; }
+.writing-section-heading span { font-size: .8rem; color: var(--text-2); white-space: nowrap; }
+.writing-page textarea { width: 100%; min-height: 240px; resize: vertical; border: 1px solid var(--border-light); border-radius: 4px; padding: 16px; background: var(--bg); color: var(--text-1); font: inherit; font-size: 1rem; line-height: 1.8; margin: 8px 0 12px; }
+.writing-page button { font: inherit; cursor: pointer; }
+.writing-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 8px; }
+.writing-actions button { padding: 10px 14px; font-size: .8rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--text-1); }
+.writing-actions .writing-primary { background: var(--accent); color: var(--accent-foreground); border-color: var(--accent); }
+.writing-actions button:disabled { opacity: .5; cursor: not-allowed; }
+.writing-review-tools { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.writing-help-menu { position: relative; }
+.writing-help-menu summary { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--border-light); border-radius: 50%; color: var(--text-2); background: var(--surface); cursor: pointer; font-weight: 700; list-style: none; }
+.writing-help-menu summary::-webkit-details-marker { display: none; }
+.writing-help-menu summary:hover, .writing-help-menu[open] summary { color: var(--accent-text); background: var(--surface-3); }
+.writing-help-menu summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.writing-legend { position: absolute; z-index: 5; right: 0; top: calc(100% + 10px); width: min(300px, calc(100vw - 66px)); padding: 20px; border: 1px solid var(--border-light); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-lg); font-size: .85rem; line-height: 1.6; }
+.writing-legend p { margin-top: 14px; }
+.writing-section-heading .writing-legend span { display: block; white-space: normal; }
+.writing-section-heading .writing-legend .writing-optional { color: #24639d; }
+.writing-legend del, .writing-mark { color: #b32935; }
+.writing-optional { color: #24639d; text-decoration: underline dotted; text-underline-offset: 5px; }
+.writing-annotated { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 1rem; line-height: 2; margin: 20px 0; }
+.writing-page .writing-mark { display: inline; padding: 3px 1px; border: 0; border-radius: 3px; background: #b3293510; font: inherit; line-height: inherit; text-align: inherit; }
+.writing-mark del { text-decoration-thickness: 2px; }
+.writing-page .writing-mark--suggestion { color: #24639d; background: #24639d0c; text-decoration: underline dotted; text-underline-offset: 6px; }
+.writing-page .writing-mark--insertion, .writing-insertion-example { background: #b3293524; color: #b32935; font-weight: 700; border-radius: 3px; }
+.writing-insertion-example { padding: 2px 4px; }
+[data-theme="dark"] .writing-page .writing-mark--insertion, [data-theme="dark"] .writing-insertion-example { background: #ff9caa26; color: #ff9caa; }
+.writing-page button:focus-visible, .writing-page textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.writing-all { margin-top: 24px; }
+.writing-all article { padding: 20px 0; border-top: 1px solid var(--border); line-height: 1.7; }
+.writing-replacement { margin: 14px 0; font-size: 1rem; white-space: pre-wrap; }
+.writing-replacement del { color: #b32935; margin-right: 12px; }
+.writing-replacement ins { color: var(--success); text-decoration: none; font-weight: 700; }
+.writing-assessment { margin-top: 24px; line-height: 1.65; }
+.writing-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.writing-stars { display: flex; gap: 5px; font-size: 1.25rem; line-height: 1; color: var(--border-light); }
+.writing-stars .is-filled { color: var(--accent); }
+.writing-rating strong { font-size: .85rem; color: var(--text-1); }
+.writing-assessment h2 { font-size: .9rem; font-weight: 600; }
+.writing-assessment li { padding-left: 4px; margin-top: 8px; color: var(--text-2); }
+.writing-dialog { margin: auto; width: min(460px, calc(100% - 32px)); padding: 24px; border: 1px solid var(--border); border-radius: 3px 14px 14px 14px; background: var(--surface); color: var(--text-1); box-shadow: var(--shadow-lg); line-height: 1.7; }
+.writing-dialog h3, .writing-all h3 { font-size: 1rem; }
+.writing-dialog::backdrop { background: #20121a55; }
+.writing-dialog-close { float: right; border: 0; background: var(--surface-3); color: var(--text-1); width: 36px; height: 36px; border-radius: 50%; font-size: 1.5rem !important; }
+[data-theme="dark"] .writing-mark, [data-theme="dark"] .writing-legend del, [data-theme="dark"] .writing-replacement del { color: #ff9caa; }
+[data-theme="dark"] .writing-page .writing-mark--suggestion, [data-theme="dark"] .writing-optional { color: #98caff; }
+@media (max-width: 600px) {
+    .writing-page { padding: 24px 16px 48px; }
+    .writing-paper, .writing-assessment, .writing-prompt { padding: 20px 16px; }
+    .writing-prompt-focus { display: block; }
+    .writing-prompt-focus ul { display: grid; gap: 6px; margin-top: 8px; }
+    .writing-section-heading { flex-wrap: wrap; gap: 8px; }
+    .writing-dialog { width: 100%; max-width: 100%; margin: auto 0 0; border-radius: 20px 20px 0 0; padding: 24px 24px max(24px, env(safe-area-inset-bottom)); }
+}
+
+.writing-back { display: inline-block; margin-bottom: 24px; font-size: .8rem; color: var(--text-2); }
+.writing-back:hover { color: var(--accent-text); }

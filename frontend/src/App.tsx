@@ -30,6 +30,8 @@ import CourseRoadmap from './pages/CourseRoadmap';
 import Verbs from './pages/verbs/Verbs';
 import Lectures from './pages/lectures/Lectures';
 import Settings from './pages/Settings';
+import WritingPreview from './pages/writing/WritingPreview';
+import Writing from './pages/writing/Writing';
 
 function AuthGate({ children }: { children: ReactNode }) {
     const { user, isGuest, loading } = useAuth();
@@ -138,6 +140,9 @@ function App() {
                         <Route path="courses/:level/lectures/phrases/:categoryId" element={<PhraseDetail />} />
                         <Route path="courses/:level/lectures/phrases/:categoryId/quiz" element={<PhraseQuiz />} />
                         <Route path="courses/:level/lectures/reading/:moduleId" element={<ReadingPassage />} />
+                        <Route path="courses/:level/writing" element={<Writing />} />
+                        <Route path="courses/:level/writing/:exerciseId" element={<WritingPreview />} />
+                        <Route path="writing-preview" element={<Navigate to="../courses/a1/writing" replace />} />
                         <Route path="review-queue" element={<ReviewQueue />} />
                         <Route path="stats" element={<Navigate to=".." replace />} />
                         <Route path="settings" element={<Settings />} />
