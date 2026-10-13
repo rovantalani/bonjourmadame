@@ -133,3 +133,17 @@ Missing or unsupported target languages return JSON `400`. Content absent from t
 Progress requests use `/api/progress/fr` or `/api/progress/en`, followed by `/word`, `/session`, or `/due` where applicable. Database reads and writes are scoped by account and language. Local mastery, history, review queues, visited steps, and active course are also language-scoped; existing completion keys remain unchanged.
 
 Deploy backend and frontend together. The existing schema setup adds the language column and updates the keys. Old unclassified database rows remain untouched under `legacy` (not accessible through the language APIs); unscoped browser keys are left untouched. No guest-import changes or migration framework are included.
+
+## AI writing feedback
+
+Writing opens a level-specific exercise overview. Guests and signed-in learners can submit text for teacher-style annotations and an overall rating, or view the corrected sample. Sign-in is not required. The current catalog contains one A1 exercise per language.
+
+Local backend configuration is in `backend/.env` (ignored by Git); `backend/.env.example` is the committed template. Add `OPENAI_API_KEY`, then restart the backend. Never use a `VITE_` variable for it. Backend startup loads this file before other modules regardless of the launch directory. Writing feedback does not need `DATABASE_URL` or `JWT_SECRET`; those settings are only needed for account features.
+
+`OPENAI_WRITING_MODEL` defaults to `gpt-6-luna`. Default allowances are 10 reviews per visitor network address per UTC day, 50 per calendar month, and 5,000 across the server per month. Configure `WRITING_DAILY_LIMIT`, `WRITING_MONTHLY_LIMIT`, and `WRITING_GLOBAL_MONTHLY_LIMIT`; zero blocks new reviews. These are request caps, not monetary budgets. Each call has a 45-second timeout and 4,000 output-token maximum. Failed admitted calls count. Completed duplicate requests reuse feedback without another AI call.
+
+Usage and completed feedback are held in server memory, cleared on restart or at a new UTC month. Limits apply to one server process; multiple instances need shared guest-compatible storage. Visitors sharing an address share the allowance. Forwarded IP headers are not trusted by default. No writing is persisted to PostgreSQL. Drafts remain in the current editor and are not saved across navigation.
+
+Text is sent to OpenAI only when the learner presses Get feedback. The API uses `store: false`; this does not guarantee zero provider retention. Feedback is AI-generated and teaching quality should be checked before rollout. Writing completion and history UI are not implemented yet.
+
+Run `npm test --prefix backend` and `npm test --prefix frontend`. Provider tests are mocked and spend no credits. To try locally, run `npm run dev`, choose Continue as guest, open French or English A1 → Writing, enter a response and press Get feedback.

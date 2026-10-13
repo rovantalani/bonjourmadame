@@ -1,25 +1,35 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { learningPath } from '../../utils/learningRoutes';
 import { useLearning } from '../../context/LearningContext';
 import type { WritingCorrection } from '../../types/writing';
-import { writingExercises } from './samples';
+import { writingSamples } from './samples';
+import { useWritingLessons } from './useWritingLessons';
 import type { WritingLesson, WritingReview } from '../../types/writing';
 import './WritingPreview.css';
 
 export default function WritingPreview() {
     const { language } = useLearning();
     const { level, exerciseId } = useParams<{ level: string; exerciseId: string }>();
-    const exercise = writingExercises[language].find(item => item.lesson.id === exerciseId && item.lesson.level.toLowerCase() === level);
+    const { lessons, loading, failed, reload } = useWritingLessons(language);
+    const lesson = lessons.find(item => item.id === exerciseId && item.level.toLowerCase() === level);
     const back = <Link className="writing-back" to={learningPath(language, `/courses/${level}/writing`)}>← {language === 'en' ? 'Tous les exercices d’écriture' : 'All writing exercises'}</Link>;
-    if (!exercise) return <main className="writing-page">{back}<h1>{language === 'en' ? 'Exercice introuvable' : 'Exercise not found'}</h1></main>;
-    return <WritingExercise key={`${language}:${exercise.lesson.id}`} lesson={exercise.lesson} review={exercise.review} back={back} />;
+    if (loading) return <main className="writing-page"><p role="status">{language === 'en' ? 'Chargement…' : 'Loading…'}</p></main>;
+    if (failed) return <main className="writing-page">{back}<p role="alert">{language === 'en' ? 'Impossible de charger l’exercice.' : 'Could not load this exercise.'}</p><button type="button" onClick={reload}>{language === 'en' ? 'Réessayer' : 'Retry'}</button></main>;
+    if (!lesson) return <main className="writing-page">{back}<h1>{language === 'en' ? 'Exercice introuvable' : 'Exercise not found'}</h1></main>;
+    return <WritingExercise key={`${language}:${lesson.id}`} lesson={lesson} sampleReview={writingSamples[language].review} back={back} />;
 }
 
-function WritingExercise({ lesson, review, back }: { lesson: WritingLesson; review: WritingReview; back: React.ReactNode }) {
+function WritingExercise({ lesson, sampleReview, back }: { lesson: WritingLesson; sampleReview: WritingReview; back: React.ReactNode }) {
     const language = lesson.targetLanguage;
-    const fr = review.feedbackLanguage === 'fr';
-    const [draft, setDraft] = useState(review.originalText);
+    const fr = language === 'en';
+    const [review, setReview] = useState(sampleReview);
+    const [isSample, setIsSample] = useState(false);
+    const [busy, setBusy] = useState(false);
+    const [error, setError] = useState('');
+    const request = useRef<AbortController | null>(null);
+    useEffect(() => () => request.current?.abort(), []);
+    const [draft, setDraft] = useState('');
     const [reviewing, setReviewing] = useState(false);
     const [showAll, setShowAll] = useState(false);
     const [selected, setSelected] = useState<WritingCorrection | null>(null);
@@ -28,7 +38,33 @@ function WritingExercise({ lesson, review, back }: { lesson: WritingLesson; revi
     const heading = useRef<HTMLHeadingElement>(null);
     const opener = useRef<HTMLButtonElement | null>(null);
     const words = draft.trim() ? draft.trim().split(/\s+/u).length : 0;
-    const exactSample = draft === review.originalText;
+    async function submit() {
+        if (!draft.trim() || request.current) return;
+        const controller = new AbortController();
+        request.current = controller;
+        setBusy(true); setError('');
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE ?? ''}/api/writing/${language}/lessons/${lesson.id}/review`, {
+                method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.any([controller.signal, AbortSignal.timeout(60000)]),
+                body: JSON.stringify({ text: draft, feedbackLanguage: fr ? 'fr' : 'en' }),
+            });
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.code ?? 'service_unavailable');
+            if (controller.signal.aborted) return;
+            setReview(data as WritingReview); setIsSample(false); setReviewing(true); setShowAll(false);
+            requestAnimationFrame(() => heading.current?.focus());
+        } catch (failure) {
+            if (controller.signal.aborted) return;
+            const code = failure instanceof Error ? failure.message : '';
+            const messages: Record<string, [string, string]> = {
+                not_configured: ['Writing feedback is not enabled yet. Your text is still here.', 'La correction n’est pas encore activée. Votre texte est conservé ici.'],
+                usage_limit: ['You have reached your writing review allowance. Please try again later.', 'Vous avez atteint votre quota de corrections. Réessayez plus tard.'],
+                already_processing: ['This text is already being reviewed. Wait a moment, then retry.', 'Ce texte est déjà en cours de correction. Patientez, puis réessayez.'],
+                evaluation_refused: ['This text could not be reviewed. Please revise it and try again.', 'Ce texte n’a pas pu être corrigé. Modifiez-le et réessayez.'],
+            };
+            setError((messages[code] ?? ['Could not get feedback. Your text is still here; please retry.', 'La correction a échoué. Votre texte est conservé ; réessayez.'])[fr ? 1 : 0]);
+        } finally { if (!controller.signal.aborted) { setBusy(false); request.current = null; } }
+    }
     const label = (c: WritingCorrection) => c.kind === 'insertion' ? (fr ? 'Mot manquant' : 'Missing word') : c.kind === 'deletion' ? (fr ? 'Supprimer' : 'Remove') : c.kind === 'suggestion' ? (fr ? 'Suggestion facultative' : 'Optional suggestion') : (fr ? 'Correction' : 'Correction');
     const card = (c: WritingCorrection) => <>
         <p className="writing-eyebrow">{c.category}</p>
@@ -53,7 +89,7 @@ function WritingExercise({ lesson, review, back }: { lesson: WritingLesson; revi
         {back}
         <header><p className="writing-eyebrow">{fr ? 'ATELIER D’ÉCRITURE' : 'WRITING WORKSHOP'} · {lesson.level}</p><h1>{lesson.title}</h1>
             <p className="writing-intro">{fr ? 'Écrivez, observez les corrections, puis essayez à nouveau.' : 'Write, explore the corrections, and try again.'}</p></header>
-        <aside className="writing-notice">{fr ? 'Aperçu interactif : les corrections sont préparées pour le texte exemple uniquement. Votre brouillon reste sur cette page et n’est pas enregistré.' : 'Interactive preview: feedback is prepared for the sample text only. Your draft stays on this page and is not saved.'}</aside>
+
         <section className="writing-prompt" aria-labelledby="writing-prompt-title">
             <div className="writing-prompt-header">
                 <p className="writing-eyebrow">{fr ? 'À VOUS D’ÉCRIRE' : 'YOUR WRITING TASK'}</p>
@@ -67,12 +103,14 @@ function WritingExercise({ lesson, review, back }: { lesson: WritingLesson; revi
         </section>
         {!reviewing ? <section className="writing-paper">
             <div className="writing-section-heading"><label htmlFor="writing-draft">{fr ? 'Votre texte' : 'Your text'}</label><span>{words} {fr ? 'mots' : 'words'}</span></div>
-            <textarea ref={editor} id="writing-draft" lang={language} value={draft} onChange={event => setDraft(event.target.value)} spellCheck={false} aria-describedby="writing-sample-help" />
-            <p id="writing-sample-help" className="writing-help">{exactSample ? (fr ? 'Explorez les corrections du texte exemple.' : 'Explore the teacher-style corrections on this sample.') : (fr ? 'La correction de textes libres sera disponible à une prochaine étape. Rechargez l’exemple pour voir les corrections.' : 'Feedback on your own writing is coming in a later step. Restore the sample to explore its corrections.')}</p>
-            <div className="writing-actions"><button className="writing-primary" disabled={!exactSample} onClick={() => { setReviewing(true); requestAnimationFrame(() => heading.current?.focus()); }}>{fr ? 'Voir les corrections de l’exemple' : 'Review sample text'}</button>
-                {!exactSample && <button onClick={() => { setDraft(review.originalText); editor.current?.focus(); }}>{fr ? 'Restaurer le texte exemple' : 'Restore sample text'}</button>}</div>
+            <textarea ref={editor} id="writing-draft" lang={language} maxLength={6000} disabled={busy} value={draft} onChange={event => setDraft(event.target.value)} spellCheck={false} aria-describedby="writing-sample-help" />
+            <p id="writing-sample-help" className="writing-help">{fr ? 'Votre texte est envoyé à OpenAI pour correction. Les retours sont générés par une IA. Votre brouillon reste sur cette page.' : 'Your text is sent to OpenAI for feedback. Corrections are AI-generated. Your draft stays on this page.'}</p>
+            {error && <p className="writing-error" role="alert">{error}</p>}
+            <div className="writing-actions"><button className="writing-primary" disabled={busy || !draft.trim()} onClick={submit}>{busy ? (fr ? 'Correction en cours…' : 'Reviewing…') : error ? (fr ? 'Réessayer' : 'Retry feedback') : (fr ? 'Corriger mon texte' : 'Get feedback')}</button>
+                <button disabled={busy} onClick={() => { setReview(sampleReview); setIsSample(true); setReviewing(true); setShowAll(false); requestAnimationFrame(() => heading.current?.focus()); }}>{fr ? 'Voir un exemple corrigé' : 'See a corrected example'}</button></div>
+            {busy && <p role="status" className="writing-help">{fr ? 'Votre correction sera prête dans quelques instants.' : 'Your feedback will be ready shortly.'}</p>}
         </section> : <><section className="writing-paper">
-            <div className="writing-section-heading"><h2 ref={heading} tabIndex={-1}>{fr ? 'Votre texte corrigé' : 'Your writing, reviewed'}</h2><div className="writing-review-tools"><span>{review.corrections.length} {fr ? 'annotations' : 'annotations'}</span>
+            <div className="writing-section-heading"><h2 ref={heading} tabIndex={-1}>{isSample ? (fr ? 'Exemple corrigé' : 'Sample review') : (fr ? 'Votre texte corrigé' : 'Your writing, reviewed')}</h2><div className="writing-review-tools"><span>{review.corrections.length} {fr ? 'annotations' : 'annotations'}</span>
                 <details className="writing-help-menu" onKeyDown={event => {
                     if (event.key === 'Escape') {
                         event.currentTarget.open = false;
@@ -91,7 +129,7 @@ function WritingExercise({ lesson, review, back }: { lesson: WritingLesson; revi
             <p className="writing-help">{fr ? 'Cliquez sur une annotation pour comprendre la correction.' : 'Click a marked passage to see the correction and why it matters.'}</p>
             <p className="writing-annotated" lang={language}>{textParts}</p>
             <div className="writing-actions"><button aria-expanded={showAll} aria-controls="writing-all" onClick={() => setShowAll(!showAll)}>{showAll ? (fr ? 'Masquer les corrections' : 'Hide all corrections') : (fr ? 'Voir toutes les corrections' : 'Show all corrections')}</button>
-                <button className="writing-primary" onClick={() => { setReviewing(false); setShowAll(false); requestAnimationFrame(() => editor.current?.focus()); }}>{fr ? 'Retravailler mon texte' : 'Revise my text'}</button></div>
+                <button className="writing-primary" onClick={() => { setReviewing(false); setShowAll(false); requestAnimationFrame(() => editor.current?.focus()); }}>{isSample ? (fr ? 'Revenir à mon texte' : 'Back to my writing') : (fr ? 'Retravailler mon texte' : 'Revise my text')}</button></div>
             <div id="writing-all" hidden={!showAll} className="writing-all">{review.corrections.map(c => <article key={c.id}>{card(c)}</article>)}</div>
         </section>
         <aside className="writing-assessment" aria-labelledby="writing-notes-title">
