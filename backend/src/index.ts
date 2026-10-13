@@ -1,14 +1,14 @@
+import './env';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import dotenv from 'dotenv';
 import path from 'path';
 import { migrate } from './db/migrate';
 import authRouter from './routes/auth';
 import progressRouter from './routes/progress';
 import learningRouter from './routes/learning';
+import writingRouter from './routes/writing';
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -31,6 +31,7 @@ app.get('/api/health', (req: Request, res: Response) => {
 
 // Explicit target-language API.
 app.use('/api/learning', learningRouter);
+app.use('/api/writing', writingRouter);
 
 // Keep retired or unknown API paths from falling through to the SPA response.
 app.use('/api', (_req: Request, res: Response) => {
