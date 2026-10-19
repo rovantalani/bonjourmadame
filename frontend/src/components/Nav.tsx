@@ -6,7 +6,7 @@ import { useTheme } from '../hooks/useTheme';
 import { useT } from '../utils/i18n';
 import { getActiveCourse, setActiveCourse } from '../utils/courseProgress';
 import { learningPath } from '../utils/learningRoutes';
-import { BookIcon, BookOpenIcon, PenIcon, CompassIcon, SettingsIcon, SunIcon, MoonIcon, MessageIcon, RefreshIcon } from './icons';
+import { BookIcon, BookOpenIcon, PenIcon, CompassIcon, SettingsIcon, SunIcon, MoonIcon, MessageIcon, RefreshIcon, MicIcon } from './icons';
 import './Nav.css';
 
 export default function Nav() {
@@ -56,6 +56,7 @@ export default function Nav() {
             {entry(`${base}/vocabulary`, t.nav.vocabulary, BookIcon, pathname.includes('/vocabulary'))}
             {entry(`${base}/verbs`, t.nav.verbs, RefreshIcon, pathname.includes('/verbs'))}
             {entry(`${base}/writing`, fr ? 'Écriture' : 'Writing', PenIcon, pathname.startsWith(`${base}/writing`))}
+            {entry(`${base}/speaking`, fr ? 'Expression orale' : 'Speaking', MicIcon, pathname.startsWith(`${base}/speaking`))}
             {entry(`${base}/exams`, fr ? 'Examens' : 'Exams', BookOpenIcon, pathname.includes('/exams'))}
         </nav>
         <footer className="sidebar-footer">
