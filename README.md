@@ -157,8 +157,12 @@ with four short phrases. Listen using the browser's speech voice, record up to
 phrases or leaving the exercise; no audio is uploaded or persisted.
 
 The public `/api/speaking/:language/lessons` catalog needs neither sign-in nor
-Azure credentials. Feedback previews are labelled samples, independent of the
-user's recording. The review endpoint returns `503 assessment_unavailable` until
+Azure credentials. The practice card shows the example above a second sentence for recording.
+A compact list on the left selects phrases (collapsed on mobile). Local browser
+speech recognition highlights detected words when an on-device language pack is
+already available. No cloud fallback or automatic language download is used.
+Highlights are transcript matches, not pronunciation scores; no flowers or
+automatic progression are awarded before assessment is connected. The review endpoint returns `503 assessment_unavailable` until
 assessment is implemented. Azure integration, bounded audio decoding/upload
 validation, usage controls, and rating calibration remain for the next stage.
 Browser speech voices vary by device; reviewed example clips can replace them.
