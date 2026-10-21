@@ -147,3 +147,22 @@ Usage and completed feedback are held in server memory, cleared on restart or at
 Text is sent to OpenAI only when the learner presses Get feedback. The API uses `store: false`; this does not guarantee zero provider retention. Feedback is AI-generated and teaching quality should be checked before rollout. Writing completion and history UI are not implemented yet.
 
 Run `npm test --prefix backend` and `npm test --prefix frontend`. Provider tests are mocked and spend no credits. To try locally, run `npm run dev`, choose Continue as guest, open French or English A1 → Writing, enter a response and press Get feedback.
+
+### Speaking practice (recording preview)
+
+Open **Speaking** from an A1 course. French and English each have two exercises
+with four short phrases. Listen using the browser's speech voice, record up to
+20 seconds, then replay, discard or re-record. Microphone access requires HTTPS
+(or localhost). Recordings stay in browser memory and are released when changing
+phrases or leaving the exercise; no audio is uploaded or persisted.
+
+The public `/api/speaking/:language/lessons` catalog needs neither sign-in nor
+Azure credentials. The practice card shows the example above a second sentence for recording.
+A compact list on the left selects phrases (collapsed on mobile). Local browser
+speech recognition highlights detected words when an on-device language pack is
+already available. No cloud fallback or automatic language download is used.
+Highlights are transcript matches, not pronunciation scores; no flowers or
+automatic progression are awarded before assessment is connected. The review endpoint returns `503 assessment_unavailable` until
+assessment is implemented. Azure integration, bounded audio decoding/upload
+validation, usage controls, and rating calibration remain for the next stage.
+Browser speech voices vary by device; reviewed example clips can replace them.
