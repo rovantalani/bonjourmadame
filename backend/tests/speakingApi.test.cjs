@@ -14,9 +14,10 @@ test('guests can load French and English speaking exercises without scores', asy
         const response = await fetch(`${base}/${language}/lessons`);
         assert.equal(response.status, 200);
         const lessons = await response.json();
-        assert.equal(lessons.length, 2);
+        assert.equal(lessons.filter(lesson => lesson.level === 'A1').length, 2);
+        assert.equal(lessons.filter(lesson => lesson.level === 'A2').length, language === 'fr' ? 7 : 0);
         for (const lesson of lessons) {
-            assert.equal(lesson.phrases.length, 4);
+            assert(lesson.phrases.length >= 4);
             assert.equal(lesson.rating, undefined);
             assert(lesson.phrases.every(phrase => phrase.text && phrase.translation));
         }
