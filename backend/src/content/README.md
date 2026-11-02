@@ -38,3 +38,21 @@ a full exam. Exams show scores and corrections after submission. Passing records
 completion in the learner's current local progress; a retry starts a fresh attempt.
 Answers are delivered to the browser, like existing lesson quizzes. These are
 practice exams, not secure certification tests.
+
+## French A2 replacement
+
+French A2 now contains seven teaching units and a final exam, with paired reading
+and vocabulary modules, grammar, phrases and verbs. Unit/final exams contain 122
+questions in total. Writing and speaking each have seven A2 activities, available
+through their own overview pages; the course roadmap currently supports neither
+activity type. Speaking assessment remains a separate, unfinished integration.
+
+Content originates from the supplied `French_A2` package and was adapted to the
+repository's level filenames. Integration corrects reflexive verb elisions and
+an exam answer, expands selected accepted answers, and gives colliding grammar
+and verb entries unique A2 IDs. The replaced past-tense comparison lesson also
+gets a new ID, so its previous quiz completion cannot complete the new lesson.
+Existing learner data is retained. New module IDs start fresh; the unchanged
+voir/dire/partir identities retain any existing verb practice history. Removed
+lesson bookmarks may no longer resolve. English and other French levels retain
+their content. This is a course practice assessment, not DELF certification.

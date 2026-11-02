@@ -52,7 +52,8 @@ for (const language of ['fr', 'en']) {
             assert.equal(finalStep.unit, finalUnit.number);
             assert.equal(finalStep.path, '/exams/final');
             assert.equal(course.steps.filter(step => step.unit === finalUnit.number).length, 1);
-            assert.equal(finalStep.available, course.level === 'A1');
+            const authored = learningContent[language].exams.find(exam => exam.level === course.level && exam.unit === 'final');
+            assert.equal(finalStep.available, !!authored?.questions.length);
             const raw = require(`../dist/content/${language}/courses`);
             assert.deepEqual(course, (raw.COURSES ?? raw.COURSES_EN).find(item => item.level === course.level));
         }
