@@ -1,124 +1,144 @@
 import type { ReadingPassage } from '../../../types/lectures/reading';
 
 export const readingA2: ReadingPassage[] = [
-    {
-        level: 'A2', unit: 2,
-        moduleId: 'a2en-weekend-trip',
-        title: 'A Weekend in London',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'Last weekend, my friend Clara and I travelled to London by train. It was Clara\'s first time in the city, so I wanted to show her all the famous sights. We left early on Saturday morning and arrived at St Pancras station just after nine o\'clock.',
-            'Our first stop was the Tower of London. We queued for about twenty minutes, but it was worth it — the Crown Jewels were spectacular. Afterwards, we walked across Tower Bridge and took lots of photos. By lunchtime, we were hungry, so we found a little café near the South Bank and had fish and chips.',
-            'In the afternoon, we visited the Tate Modern art gallery. I have always loved modern art, but Clara was not so sure at first. By the end, though, she said it was one of the most interesting places she had ever been. We ended the day with a boat trip along the Thames and watched the sun set behind the London Eye.',
-            'On Sunday morning, we explored Borough Market before catching our train home. Clara bought some cheese and a jar of local honey. "I have to come back," she said on the way home. I completely agreed.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-job-interview',
-        title: 'Sophie\'s Job Interview',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'Sophie had been looking for a new job for two months when she finally got a call from a marketing company in Bristol. They invited her for an interview the following Thursday. She felt excited but also very nervous.',
-            'The night before the interview, Sophie prepared carefully. She read everything about the company, chose her best suit and practised answering common interview questions in front of the mirror. She went to bed early so she would feel rested in the morning.',
-            'On the day of the interview, Sophie arrived ten minutes early. The office was modern and bright. The manager, a friendly woman called Ms Park, asked her about her experience and her strengths. Sophie spoke clearly and gave good examples. She also asked a few questions about the team.',
-            'Two days later, Ms Park called Sophie to offer her the job. Sophie said yes immediately. She started the following Monday. It was a new beginning, and she felt ready for the challenge.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-shopping-trip',
-        title: 'A Shopping Trip',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'Last Saturday, Maria went shopping in the city centre with her friend Nadia. They wanted to buy some new clothes for the summer. The shops were busy because there was a big sale, and many things were cheaper than usual.',
-            'First, they went to a clothes shop. Maria tried on three dresses. The blue one was too big, and the red one was too expensive. In the end, she chose a green dress that fitted her perfectly. Nadia bought a pair of jeans and a white T-shirt.',
-            'After shopping, they were hungry, so they went to a small café. They ordered sandwiches and fresh orange juice. They talked about their plans for the holidays. Maria wanted to visit her grandparents by the sea.',
-            'In the afternoon, they took the bus home. Maria was tired but happy. "That was a great day," she said. "Yes," Nadia replied, "but I spent too much money!" They both laughed and agreed to go again next month.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-holiday-plans',
-        title: 'Planning a Holiday',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'Tom and his wife Sarah were planning their summer holiday. They both worked hard all year, so they wanted to relax in a quiet place. Last year, they went to a busy city, but this time they decided to do something different.',
-            'They looked at many websites and read about different countries. Sarah wanted to go to the mountains because she loved walking and fresh air. Tom preferred the beach because he wanted to swim and read books in the sun.',
-            'In the end, they found the perfect solution. They chose a small village near the coast, with mountains close by. There was a beautiful beach, and there were also good walking paths in the hills. The hotel had excellent reviews and a nice swimming pool.',
-            'They booked the flights and the hotel for two weeks in July. Sarah started making a list of things to pack. Tom downloaded some new books to read. They were both very excited. It was going to be their best holiday yet.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-new-flatmate',
-        title: 'A New Flatmate',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'When Daniel moved to a new city for university, he needed somewhere to live. The rooms in the student halls were very expensive, so he decided to share a flat with other students. He found an advert online for a room in a flat near the campus.',
-            'He sent a message and arranged to visit the flat. It was on the third floor of an old building. The room was small but bright, with a big window. The kitchen was clean, and there was a comfortable living room. Two other students already lived there.',
-            'Daniel met his future flatmates, Pablo and Yuki. Pablo was from Spain and studied engineering. Yuki was from Japan and studied art. They were both friendly and welcoming. They showed him around and explained the rules of the flat.',
-            'Daniel decided to take the room. He moved in the following week. At first, he felt a little shy, but soon he became good friends with Pablo and Yuki. They cooked dinner together and helped each other with their studies. He was glad he had chosen to share a flat.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-lost-in-town',
-        title: 'Lost in a New Town',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'When Lena arrived in Edinburgh for the first time, she felt both excited and a little worried. She had a map on her phone, but the battery died just as she left the station. She needed to find her hotel, but she did not know which way to go.',
-            'She decided to ask for help. A friendly old man was sitting on a bench, reading a newspaper. "Excuse me," she said. "Could you tell me the way to Queen Street?" The man smiled and explained that she had to go straight on and then turn left at the second traffic light.',
-            'Lena thanked him and followed his directions. However, after ten minutes, she still could not find the street. She asked a young woman in a shop, who kindly walked with her to the corner and pointed to the hotel just across the road.',
-            'Finally, Lena reached her hotel. She was tired but relieved. That evening, she realised that getting lost was not so bad after all. She had met two kind strangers and seen parts of the city she would never have discovered on her own.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-cooking-dinner',
-        title: 'Cooking Dinner for Friends',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'Last Friday, Marco invited three friends to his flat for dinner. He wanted to cook a traditional Italian meal because his grandmother had taught him many recipes when he was a child. He decided to make pasta with tomato sauce and a fresh salad.',
-            'In the afternoon, he went to the supermarket to buy the ingredients. He bought tomatoes, garlic, onions, fresh basil and a good piece of cheese. He also chose a bottle of red wine to share with his guests. Everything was ready by five o\'clock.',
-            'Cooking was not as easy as he expected. The sauce needed more salt, and he almost burned the garlic. Luckily, he tasted the food several times and managed to fix his mistakes. When his friends arrived at eight, the flat smelled wonderful.',
-            'His friends loved the meal. They ate everything and asked for the recipe. "You should open a restaurant!" one of them joked. Marco was very proud. Cooking for the people he loved made him feel happy, and the evening was a great success.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-the-concert',
-        title: 'The Concert',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'Amelia loved music more than anything. When she heard that her favourite band was coming to her city, she could hardly believe it. She bought two tickets immediately, one for herself and one for her brother, Jack.',
-            'On the day of the concert, they arrived early to get a good place near the stage. The stadium was enormous, and thousands of people were already there. The atmosphere was electric, and everyone was talking excitedly about the show.',
-            'When the band finally came on stage, the crowd cheered loudly. Amelia knew every song and sang along with all her heart. The lights, the music and the energy of the crowd made it an unforgettable experience. Jack, who was not a big fan at first, enjoyed it too.',
-            'After the concert, they walked home through the busy streets, still humming the songs. "Thank you for taking me," Jack said. Amelia smiled. It had been one of the best nights of her life, and she knew she would remember it for a long time.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-moving-house',
-        title: 'Moving House',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'The Robinson family had lived in the same small flat for ten years. As the children grew older, the flat started to feel too small. After a long search, the parents finally found a bigger house with a garden in a quiet neighbourhood.',
-            'Moving day was very busy. They packed all their belongings into dozens of boxes. The removal van arrived early in the morning, and everyone helped to carry the furniture. The children were sad to leave their old home, but also excited about the new one.',
-            'When they arrived at the new house, there was a lot to do. They had to unpack the boxes, clean the rooms and decide where to put everything. It took several days before the house began to feel like home.',
-            'A week later, the new neighbours came to say hello and brought a homemade cake. The children made friends with the family next door. Slowly but surely, the empty house was filled with laughter and memories. The Robinsons knew they had made the right decision.',
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        moduleId: 'a2en-summer-job',
-        title: 'My First Summer Job',
-        source: 'Original text — Level A2',
-        paragraphs: [
-            'During the summer holidays, when I was seventeen, I decided to get my first job. I wanted to earn some money and gain a little experience. After asking in several places, I found work as a waiter in a small café by the sea.',
-            'At first, the job was difficult. I had to remember many orders, carry heavy trays and stay polite even when customers were rude. On my very first day, I dropped a glass of orange juice and felt terribly embarrassed. My manager, however, was patient and encouraging.',
-            'As the weeks passed, I became much more confident. I learned how to talk to customers, work quickly under pressure and cooperate with my colleagues. The other waiters were friendly, and we often laughed together during our breaks. The time passed quickly.',
-            'By the end of the summer, I had saved enough money to buy a new bicycle. More importantly, I had learned the value of hard work and teamwork. That first job taught me lessons that no classroom could, and I will always remember it with pride.',
-        ],
-    },
+    { level: "A2", unit: 1, moduleId: "a2en-a-different-morning", title: "A Different Morning", source: "Original English text — CEFR A2", paragraphs: [
+        "Lucy describes a recent change in Bristol. \"I start a new morning routine.\" At first, the plan seemed simple. There were several details to organise, and not everything happened as expected.",
+        "The main difficulty was clear: I used to rush to work. Instead of giving up, the speaker looked for a practical solution. \"I prepare breakfast the night before.\" This meant asking questions and changing the original plan.",
+        "In the end, my mornings are calmer. The experience was useful because it showed that a small change can make everyday life easier. The speaker would recommend preparing carefully next time.",
+    ] },
+    { level: "A2", unit: 1, moduleId: "a2en-working-from-home", title: "Working from Home", source: "Original English text — CEFR A2", paragraphs: [
+        "An everyday experience in Manchester became more interesting than expected. I work from home twice a week. The narrator had already made a plan and hoped that everything would be straightforward.",
+        "However, my family sometimes interrupts me. Several people had different ideas about what to do. The narrator explains: \"I arrange quiet working hours.\" That decision made the situation easier to manage.",
+        "Finally, I concentrate more easily. Looking back, the narrator remembers the difficulty but also the people who helped. It was an experience worth sharing.",
+    ] },
+    { level: "A2", unit: 1, moduleId: "a2en-the-new-fitness-class", title: "The New Fitness Class", source: "Original English text — CEFR A2", paragraphs: [
+        "In Leeds, Amira had an ordinary plan: I join a weekly exercise class. The day began well, and there was enough time to enjoy the activity.",
+        "Later, something unexpected happened. I feel tired after work. The narrator decided to take action rather than wait: \"I go with a friend for motivation.\" Other people were willing to help.",
+        "Thanks to that choice, I keep going every week. The narrator learned that it is useful to explain a problem clearly and listen to advice.",
+    ] },
+    { level: "A2", unit: 1, moduleId: "a2en-life-in-a-shared-flat", title: "Life in a Shared Flat", source: "Original English text — CEFR A2", paragraphs: [
+        "The story takes place in Liverpool. Ben wanted a successful day and explains: \"I share a flat with two students.\" There were a few things to prepare before leaving.",
+        "Then a complication appeared: we have different habits. The original idea was no longer the easiest one. We agree on cleaning days. The change took some time, but it was possible.",
+        "Eventually, we live more comfortably. The result was better than the narrator had expected, and next time they will make a similar plan.",
+    ] },
+    { level: "A2", unit: 2, moduleId: "a2en-a-surprising-birthday", title: "A Surprising Birthday", source: "Original English text — CEFR A2", paragraphs: [
+        "Ruby describes a recent change in Nottingham. \"I organise a surprise birthday meal.\" At first, the plan seemed simple. There were several details to organise, and not everything happened as expected.",
+        "The main difficulty was clear: the guest of honour arrives early. Instead of giving up, the speaker looked for a practical solution. \"We ask her to wait outside.\" This meant asking questions and changing the original plan.",
+        "In the end, the surprise works. The experience was useful because it showed that a small change can make everyday life easier. The speaker would recommend preparing carefully next time.",
+    ] },
+    { level: "A2", unit: 2, moduleId: "a2en-my-first-job", title: "My First Job", source: "Original English text — CEFR A2", paragraphs: [
+        "An everyday experience in York became more interesting than expected. I remember my first summer job. The narrator had already made a plan and hoped that everything would be straightforward.",
+        "However, I made mistakes at the beginning. Several people had different ideas about what to do. The narrator explains: \"My manager showed me what to do.\" That decision made the situation easier to manage.",
+        "Finally, I became more confident. Looking back, the narrator remembers the difficulty but also the people who helped. It was an experience worth sharing.",
+    ] },
+    { level: "A2", unit: 2, moduleId: "a2en-a-lost-wallet", title: "A Lost Wallet", source: "Original English text — CEFR A2", paragraphs: [
+        "In Cardiff, Hana had an ordinary plan: I lose my wallet on a train. The day began well, and there was enough time to enjoy the activity.",
+        "Later, something unexpected happened. I cannot pay for my ticket. The narrator decided to take action rather than wait: \"A passenger helps me contact the staff.\" Other people were willing to help.",
+        "Thanks to that choice, I get my wallet back. The narrator learned that it is useful to explain a problem clearly and listen to advice.",
+    ] },
+    { level: "A2", unit: 2, moduleId: "a2en-an-old-school-friend", title: "An Old School Friend", source: "Original English text — CEFR A2", paragraphs: [
+        "The story takes place in Cambridge. Charlie wanted a successful day and explains: \"I meet a school friend again.\" There were a few things to prepare before leaving.",
+        "Then a complication appeared: we have not spoken for years. The original idea was no longer the easiest one. We talk about our childhood. The change took some time, but it was possible.",
+        "Eventually, we decide to stay in touch. The result was better than the narrator had expected, and next time they will make a similar plan.",
+    ] },
+    { level: "A2", unit: 3, moduleId: "a2en-a-weekend-in-edinburgh", title: "A Weekend in Edinburgh", source: "Original English text — CEFR A2", paragraphs: [
+        "Ella describes a recent change in Edinburgh. \"I visit the castle and old streets.\" At first, the plan seemed simple. There were several details to organise, and not everything happened as expected.",
+        "The main difficulty was clear: the weather changes quickly. Instead of giving up, the speaker looked for a practical solution. \"I borrow a raincoat.\" This meant asking questions and changing the original plan.",
+        "In the end, I enjoy the visit. The experience was useful because it showed that a small change can make everyday life easier. The speaker would recommend preparing carefully next time.",
+    ] },
+    { level: "A2", unit: 3, moduleId: "a2en-the-late-train", title: "The Late Train", source: "Original English text — CEFR A2", paragraphs: [
+        "An everyday experience in the railway station became more interesting than expected. I travel to see my uncle. The narrator had already made a plan and hoped that everything would be straightforward.",
+        "However, the train is delayed by an hour. Several people had different ideas about what to do. The narrator explains: \"I send a message to my uncle.\" That decision made the situation easier to manage.",
+        "Finally, he meets me later. Looking back, the narrator remembers the difficulty but also the people who helped. It was an experience worth sharing.",
+    ] },
+    { level: "A2", unit: 3, moduleId: "a2en-a-night-at-the-hostel", title: "A Night at the Hostel", source: "Original English text — CEFR A2", paragraphs: [
+        "In Dublin, Nora had an ordinary plan: I stay in a youth hostel. The day began well, and there was enough time to enjoy the activity.",
+        "Later, something unexpected happened. The room is noisy at night. The narrator decided to take action rather than wait: \"I ask for a quieter room.\" Other people were willing to help.",
+        "Thanks to that choice, I sleep well. The narrator learned that it is useful to explain a problem clearly and listen to advice.",
+    ] },
+    { level: "A2", unit: 3, moduleId: "a2en-a-local-festival", title: "A Local Festival", source: "Original English text — CEFR A2", paragraphs: [
+        "The story takes place in a Welsh town. Liam wanted a successful day and explains: \"I discover a traditional festival.\" There were a few things to prepare before leaving.",
+        "Then a complication appeared: I do not understand the schedule. The original idea was no longer the easiest one. A volunteer explains the events. The change took some time, but it was possible.",
+        "Eventually, I watch a wonderful performance. The result was better than the narrator had expected, and next time they will make a similar plan.",
+    ] },
+    { level: "A2", unit: 4, moduleId: "a2en-two-flats-to-choose-from", title: "Two Flats to Choose From", source: "Original English text — CEFR A2", paragraphs: [
+        "Sofia describes a recent change in a city neighbourhood. \"I compare two flats.\" At first, the plan seemed simple. There were several details to organise, and not everything happened as expected.",
+        "The main difficulty was clear: one flat costs more than the other. Instead of giving up, the speaker looked for a practical solution. \"I look at transport and bills.\" This meant asking questions and changing the original plan.",
+        "In the end, I make a sensible choice. The experience was useful because it showed that a small change can make everyday life easier. The speaker would recommend preparing carefully next time.",
+    ] },
+    { level: "A2", unit: 4, moduleId: "a2en-the-broken-headphones", title: "The Broken Headphones", source: "Original English text — CEFR A2", paragraphs: [
+        "An everyday experience in an electronics shop became more interesting than expected. I buy headphones online. The narrator had already made a plan and hoped that everything would be straightforward.",
+        "However, they stop working after two days. Several people had different ideas about what to do. The narrator explains: \"I explain the fault to the shop.\" That decision made the situation easier to manage.",
+        "Finally, I receive a replacement. Looking back, the narrator remembers the difficulty but also the people who helped. It was an experience worth sharing.",
+    ] },
+    { level: "A2", unit: 4, moduleId: "a2en-an-appointment-at-the-bank", title: "An Appointment at the Bank", source: "Original English text — CEFR A2", paragraphs: [
+        "In the town centre, Elise had an ordinary plan: I need to open a bank account. The day began well, and there was enough time to enjoy the activity.",
+        "Later, something unexpected happened. I forget one document. The narrator decided to take action rather than wait: \"The clerk offers another appointment.\" Other people were willing to help.",
+        "Thanks to that choice, I return with the documents. The narrator learned that it is useful to explain a problem clearly and listen to advice.",
+    ] },
+    { level: "A2", unit: 4, moduleId: "a2en-a-new-neighbourhood", title: "A New Neighbourhood", source: "Original English text — CEFR A2", paragraphs: [
+        "The story takes place in a busy district. Noah wanted a successful day and explains: \"I move to a different area.\" There were a few things to prepare before leaving.",
+        "Then a complication appeared: I do not know the local services. The original idea was no longer the easiest one. I explore the streets and shops. The change took some time, but it was possible.",
+        "Eventually, I begin to feel at home. The result was better than the narrator had expected, and next time they will make a similar plan.",
+    ] },
+    { level: "A2", unit: 5, moduleId: "a2en-an-unexpected-invitation", title: "An Unexpected Invitation", source: "Original English text — CEFR A2", paragraphs: [
+        "Ivy describes a recent change in a community centre. \"I receive an invitation to a party.\" At first, the plan seemed simple. There were several details to organise, and not everything happened as expected.",
+        "The main difficulty was clear: I already have plans. Instead of giving up, the speaker looked for a practical solution. \"I suggest another time to meet.\" This meant asking questions and changing the original plan.",
+        "In the end, my friends understand. The experience was useful because it showed that a small change can make everyday life easier. The speaker would recommend preparing carefully next time.",
+    ] },
+    { level: "A2", unit: 5, moduleId: "a2en-a-difficult-conversation", title: "A Difficult Conversation", source: "Original English text — CEFR A2", paragraphs: [
+        "An everyday experience in our shared flat became more interesting than expected. I disagree with my roommate. The narrator had already made a plan and hoped that everything would be straightforward.",
+        "However, we both feel upset. Several people had different ideas about what to do. The narrator explains: \"I explain my feelings calmly.\" That decision made the situation easier to manage.",
+        "Finally, we find a fair solution. Looking back, the narrator remembers the difficulty but also the people who helped. It was an experience worth sharing.",
+    ] },
+    { level: "A2", unit: 5, moduleId: "a2en-a-visit-to-the-doctor", title: "A Visit to the Doctor", source: "Original English text — CEFR A2", paragraphs: [
+        "In the medical clinic, Zara had an ordinary plan: I have a headache and a cough. The day began well, and there was enough time to enjoy the activity.",
+        "Later, something unexpected happened. I worry about missing work. The narrator decided to take action rather than wait: \"The doctor recommends rest.\" Other people were willing to help.",
+        "Thanks to that choice, I feel better after a few days. The narrator learned that it is useful to explain a problem clearly and listen to advice.",
+    ] },
+    { level: "A2", unit: 5, moduleId: "a2en-the-community-garden", title: "The Community Garden", source: "Original English text — CEFR A2", paragraphs: [
+        "The story takes place in my neighbourhood. Theo wanted a successful day and explains: \"We start a small garden project.\" There were a few things to prepare before leaving.",
+        "Then a complication appeared: not everyone has time to help. The original idea was no longer the easiest one. We share the tasks. The change took some time, but it was possible.",
+        "Eventually, neighbours get to know each other. The result was better than the narrator had expected, and next time they will make a similar plan.",
+    ] },
+    { level: "A2", unit: 6, moduleId: "a2en-my-training-course", title: "My Training Course", source: "Original English text — CEFR A2", paragraphs: [
+        "Mina describes a recent change in a training centre. \"I begin a part-time course.\" At first, the plan seemed simple. There were several details to organise, and not everything happened as expected.",
+        "The main difficulty was clear: the timetable clashes with work. Instead of giving up, the speaker looked for a practical solution. \"I talk to the course leader.\" This meant asking questions and changing the original plan.",
+        "In the end, we adjust my schedule. The experience was useful because it showed that a small change can make everyday life easier. The speaker would recommend preparing carefully next time.",
+    ] },
+    { level: "A2", unit: 6, moduleId: "a2en-applying-for-a-job", title: "Applying for a Job", source: "Original English text — CEFR A2", paragraphs: [
+        "An everyday experience in a local hotel became more interesting than expected. I apply for a reception job. The narrator had already made a plan and hoped that everything would be straightforward.",
+        "However, I do not have much experience. Several people had different ideas about what to do. The narrator explains: \"I describe my language skills.\" That decision made the situation easier to manage.",
+        "Finally, I receive an interview invitation. Looking back, the narrator remembers the difficulty but also the people who helped. It was an experience worth sharing.",
+    ] },
+    { level: "A2", unit: 6, moduleId: "a2en-a-busy-internship", title: "A Busy Internship", source: "Original English text — CEFR A2", paragraphs: [
+        "In a design studio, Priya had an ordinary plan: I complete a short internship. The day began well, and there was enough time to enjoy the activity.",
+        "Later, something unexpected happened. I have several deadlines. The narrator decided to take action rather than wait: \"My supervisor helps me plan.\" Other people were willing to help.",
+        "Thanks to that choice, I finish the project. The narrator learned that it is useful to explain a problem clearly and listen to advice.",
+    ] },
+    { level: "A2", unit: 6, moduleId: "a2en-learning-online", title: "Learning Online", source: "Original English text — CEFR A2", paragraphs: [
+        "The story takes place in my home office. Leo wanted a successful day and explains: \"I study English on a website.\" There were a few things to prepare before leaving.",
+        "Then a complication appeared: some instructions are confusing. The original idea was no longer the easiest one. I ask a question in the forum. The change took some time, but it was possible.",
+        "Eventually, another learner explains them. The result was better than the narrator had expected, and next time they will make a similar plan.",
+    ] },
+    { level: "A2", unit: 7, moduleId: "a2en-a-film-worth-seeing", title: "A Film Worth Seeing", source: "Original English text — CEFR A2", paragraphs: [
+        "Mae describes a recent change in the local cinema. \"I watch an independent film.\" At first, the plan seemed simple. There were several details to organise, and not everything happened as expected.",
+        "The main difficulty was clear: my friend prefers comedies. Instead of giving up, the speaker looked for a practical solution. \"I explain why the story matters.\" This meant asking questions and changing the original plan.",
+        "In the end, my friend decides to watch it. The experience was useful because it showed that a small change can make everyday life easier. The speaker would recommend preparing carefully next time.",
+    ] },
+    { level: "A2", unit: 7, moduleId: "a2en-plans-for-the-summer", title: "Plans for the Summer", source: "Original English text — CEFR A2", paragraphs: [
+        "An everyday experience in the Scottish Highlands became more interesting than expected. I plan a walking holiday. The narrator had already made a plan and hoped that everything would be straightforward.",
+        "However, the weather may be poor. Several people had different ideas about what to do. The narrator explains: \"We prepare an indoor alternative.\" That decision made the situation easier to manage.",
+        "Finally, the trip looks promising. Looking back, the narrator remembers the difficulty but also the people who helped. It was an experience worth sharing.",
+    ] },
+    { level: "A2", unit: 7, moduleId: "a2en-a-greener-street", title: "A Greener Street", source: "Original English text — CEFR A2", paragraphs: [
+        "In my town, Maya had an ordinary plan: our neighbours want more trees. The day began well, and there was enough time to enjoy the activity.",
+        "Later, something unexpected happened. Some residents worry about parking. The narrator decided to take action rather than wait: \"We discuss different solutions.\" Other people were willing to help.",
+        "Thanks to that choice, the council agrees to plant trees. The narrator learned that it is useful to explain a problem clearly and listen to advice.",
+    ] },
+    { level: "A2", unit: 7, moduleId: "a2en-starting-a-new-hobby", title: "Starting a New Hobby", source: "Original English text — CEFR A2", paragraphs: [
+        "The story takes place in the sports centre. Finn wanted a successful day and explains: \"I want to learn climbing.\" There were a few things to prepare before leaving.",
+        "Then a complication appeared: I am worried about heights. The original idea was no longer the easiest one. I book a beginner session. The change took some time, but it was possible.",
+        "Eventually, I feel proud of my progress. The result was better than the narrator had expected, and next time they will make a similar plan.",
+    ] },
 ];

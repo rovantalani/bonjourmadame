@@ -242,3 +242,23 @@ test('resume records are isolated by language and level and ignore removed modul
     assert.equal(progress.getCourseResumePath(course, steps[1]), '/courses/a1/vocabulary/two');
     assert.equal(progress.getNextStep({ ...course, steps: [steps[0]] }).id, 'one');
 });
+
+test('replaced English exams require a fresh pass while preserving previous records and French progress', () => {
+    const { progress, localStorage, setMode } = setup();
+    const path = '/courses/a1/exams/1';
+    const englishOld = JSON.stringify({ [path]: 'complete' });
+    localStorage.setItem('contentProgress:learn-english', englishOld);
+    localStorage.setItem('passedQuizzes:learn-english', JSON.stringify([path]));
+    progress.completeLesson(path);
+    assert.equal(progress.getContentStatus(path), 'complete');
+    setMode('learn-english');
+    assert.equal(progress.hasPassedQuiz(path), false);
+    assert.notEqual(progress.getContentStatus(path), 'complete');
+    assert.equal(localStorage.getItem('contentProgress:learn-english'), englishOld);
+    progress.completeLesson(path);
+    assert.equal(progress.getContentStatus(path), 'complete');
+    assert.equal(progress.hasPassedQuiz('/learn/en' + path), true);
+    assert.equal(JSON.parse(localStorage.getItem('contentProgress:learn-english'))[path], 'complete');
+    setMode('learn-french');
+    assert.equal(progress.getContentStatus(path), 'complete');
+});

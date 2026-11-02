@@ -86,3 +86,35 @@ advanced topics do not establish full CEFR coverage or official DELF/DALF
 assessment equivalence. Linguistic review checked conjugation patterns and
 sampled examples, prompts and answer keys; independent teacher review is still
 useful for difficulty calibration and alternative interpretations.
+
+## English A1–C2 replacement
+
+The supplied `English_A1_to_C2_Complete` package replaces all six English levels,
+including A1. Each level contains seven teaching units and a final exam (114
+steps), 28 readings, 42 vocabulary modules, 19 grammar lessons, seven phrase
+categories, seven writing tasks and seven speaking activities. A1 has eight verbs
+plus the two core helpers; other levels have ten verbs. Each level has 75 unit
+exam questions plus 28 final questions (103 total; 618 across all levels).
+
+The package's first-person present column incorrectly used `am` for ordinary
+verbs and `have`; integration corrects all 59 affected rows and retains `I am`
+for `be`. Grammar cloze hints provide the translated meaning of the studied
+expression. Reading assessment prompts explicitly request words from the text,
+and their accepted excerpts are checked against the referenced passages. Writing
+reference texts are shown and sent as trusted lesson context, using the shared
+writing-source support already present for French.
+
+New `a1en-` … `c2en-` content IDs keep levels separate. English exam URLs remain
+stable, but their local completion/pass keys are revisioned so passing an old A1
+demo does not complete its full replacement. Older records are preserved; new
+module IDs start fresh and old module bookmarks may stop resolving. French
+content is unchanged. Speaking assessment remains a separate integration; writing
+and speaking continue to use their own overview pages.
+
+Review covered repository types, links, ordering, translations/examples sampled
+across levels, conjugation patterns and answer-source consistency. The readings
+use repeated teaching templates, particularly at beginner levels, and grammar
+and translation exercises target studied expressions rather than all valid
+paraphrases. This is guided course practice, not independently certified CEFR
+coverage or a complete Cambridge/IELTS assessment. Editorial review remains useful
+for text variety, alternative answers and difficulty calibration.

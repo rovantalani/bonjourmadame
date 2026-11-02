@@ -5,6 +5,10 @@ const express = require('express');
 const { pool } = require('../dist/db/client');
 const auth = require('../dist/middleware/auth');
 let server, base;
+// Shared IDs are a deliberate fixture, independent of authored module names.
+const { learningContent } = require('../dist/services/learningContent');
+learningContent.en.vocabulary['greetings-basics'] = structuredClone(learningContent.fr.vocabulary['greetings-basics']);
+learningContent.en.modules.push(structuredClone(learningContent.fr.modules.find(module => module.id === 'greetings-basics')));
 const saved = new Map();
 const sessions = [];
 auth.requireAuth = (req, _res, next) => { req.userId = Number(req.headers['x-test-user'] || 1); next(); };

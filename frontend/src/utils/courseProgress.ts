@@ -9,8 +9,18 @@ const VISITED_KEY     = 'courseStepVisited';
 const ACTIVE_COURSE_KEY = 'activeCourse';
 
 // Verb tables, lessons and quizzes share a flower within the same course.
-function contentKey(path: string): string {
+function normalizedContentPath(path: string): string {
     return unscopedPath(path).replace(/\/(learn|table|quiz)\/?$/, '').replace(/\/$/, '');
+}
+
+// Replacing English demo exams must not reuse their old pass records. Keep old
+// records intact and write revised exam evidence under a new storage identity.
+function contentKey(path: string): string {
+    const key = normalizedContentPath(path);
+    if (loadLearningMode() === 'learn-english' && /\/exams\//.test(key) && !key.endsWith('@english-course-v2')) {
+        return `${key}@english-course-v2`;
+    }
+    return key;
 }
 
 function legacyContentKey(path: string): string {
@@ -30,7 +40,7 @@ export function requiresQuiz(path: string): boolean {
 export function hasPassedQuiz(path: string): boolean {
     try {
         const passed: string[] = JSON.parse(localStorage.getItem(`passedQuizzes:${loadLearningMode() ?? 'learn-french'}`) || '[]');
-        return passed.some(saved => contentKey(saved) === contentKey(path));
+        return passed.some(saved => normalizedContentPath(saved) === contentKey(path));
     } catch { return false; }
 }
 

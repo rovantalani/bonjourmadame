@@ -1,69 +1,38 @@
 import type { UnitExam } from '../../../types/exams';
 
-// Sample level exam. Teachers can replace it with a complete assessment.
-export const finalExamsA1: UnitExam[] = [
-    {
-        "level": "A1",
-        "unit": "final",
-        "isDemo": true,
-        "passPercent": 80,
-        "questions": [
-            {
-                "id": "greeting",
-                "sourceStepId": "a1en-greetings",
-                "prompt": "Écrivez « bonjour » en anglais.",
-                "answers": [
-                    "hello"
-                ],
-                "explanation": "Hello signifie bonjour."
-            },
-            {
-                "id": "article",
-                "sourceStepId": "a1en-articles",
-                "prompt": "Choisissez le bon article : ___ apple.",
-                "options": [
-                    "a",
-                    "an",
-                    "the a"
-                ],
-                "answers": [
-                    "an"
-                ],
-                "explanation": "On utilise an devant un son voyelle : an apple."
-            },
-            {
-                "id": "verb",
-                "sourceStepId": "a1en-tobe",
-                "prompt": "Complétez avec to be : She ___ a teacher.",
-                "answers": [
-                    "is"
-                ],
-                "explanation": "Au présent, to be devient is avec she."
-            },
-            {
-                "id": "cafe",
-                "sourceStepId": "a1en-phrases-cafe",
-                "prompt": "Choisissez la demande polie au café.",
-                "options": [
-                    "A coffee, please.",
-                    "A coffee, yesterday.",
-                    "A coffee, never."
-                ],
-                "answers": [
-                    "A coffee, please."
-                ],
-                "explanation": "Please signifie s’il vous plaît."
-            },
-            {
-                "id": "reading",
-                "sourceStepId": "a1en-reading-city",
-                "context": "My name is Lucy. I live in a city called Greenford. It is not a big city, but I love it. There is a park near my house.",
-                "prompt": "Dans quelle ville Lucy habite-t-elle ?",
-                "answers": [
-                    "Greenford"
-                ],
-                "explanation": "Lucy dit : I live in a city called Greenford."
-            }
-        ]
-    }
-];
+export const finalExamA1: UnitExam = {
+    level: "A1",
+    unit: 'final',
+    isDemo: false,
+    passPercent: 80,
+    questions: [
+        { id: "a1en-final-u1-reading-1", sourceStepId: "a1en-reading-a1en-a-new-classmate", context: "My name is Mia. Today I am in a language class. I meet a student called Leo. I like talking to people and learning new things.\n\nThis is an important day for me. I do not know his name. I do not know what to do at first. Then I have an idea: I say hello and ask his name.\n\nWe sit together. I am happy about this. It is a simple day, but I learn something new. I can tell my family about it.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I say hello and ask his name"], explanation: "Le texte indique : I say hello and ask his name." },
+        { id: "a1en-final-u1-reading-3", sourceStepId: "a1en-reading-a1en-a-postcard-from-london", context: "My name is Lina, and this is my story. I am in London. I visit my aunt. I look around and see many interesting things.\n\nI need a little help today. I do not know the city. I stop and think. I write a postcard to my friend. It is not difficult when we work together.\n\nMy friend learns about my trip. The afternoon is nice. I enjoy spending time here.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I write a postcard to my friend"], explanation: "Le texte indique : I write a postcard to my friend." },
+        { id: "a1en-final-u1-grammar-1", sourceStepId: "a1en-grammar-a1en-to-be-affirmative", prompt: "Complétez la phrase en anglais : I ___ a student.", answers: ["am"], explanation: "Be s’accorde avec le sujet : am, is ou are." },
+        { id: "a1en-final-u1-vocab-1", sourceStepId: "a1en-vocabulary-a1en-introductions-and-personal-information-1", prompt: "Traduisez en anglais : nom de famille", answers: ["surname"], explanation: "nom de famille signifie surname." },
+        { id: "a1en-final-u2-reading-1", sourceStepId: "a1en-reading-a1en-a-busy-monday", context: "My name is Emma. Today I am in my home. I get up early for work. I like talking to people and learning new things.\n\nThis is an important day for me. I have little time for breakfast. I do not know what to do at first. Then I have an idea: I prepare my bag in the evening.\n\nI arrive on time. I am happy about this. It is a simple day, but I learn something new. I can tell my family about it.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I prepare my bag in the evening"], explanation: "Le texte indique : I prepare my bag in the evening." },
+        { id: "a1en-final-u2-reading-3", sourceStepId: "a1en-reading-a1en-an-afternoon-at-home", context: "My name is Olivia, and this is my story. I am in my flat. I do homework after lunch. I look around and see many interesting things.\n\nI need a little help today. My brother wants to play. I stop and think. I finish my work first. It is not difficult when we work together.\n\nWe play a game together. The afternoon is nice. I enjoy spending time here.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I finish my work first"], explanation: "Le texte indique : I finish my work first." },
+        { id: "a1en-final-u2-grammar-1", sourceStepId: "a1en-grammar-a1en-present-simple-affirmative", prompt: "Complétez la phrase en anglais : He ___ in a café.", answers: ["works"], explanation: "À la troisième personne du singulier, ajouter généralement -s." },
+        { id: "a1en-final-u2-vocab-1", sourceStepId: "a1en-vocabulary-a1en-routines-times-and-everyday-activities-1", prompt: "Traduisez en anglais : soir", answers: ["evening"], explanation: "soir signifie evening." },
+        { id: "a1en-final-u3-reading-1", sourceStepId: "a1en-reading-a1en-our-small-flat", context: "My name is Ella. Today I am in a city centre. I live with my parents and sister. I like talking to people and learning new things.\n\nThis is an important day for me. Our kitchen is very small. I do not know what to do at first. Then I have an idea: we use a big table in the living room.\n\nWe eat together every evening. I am happy about this. It is a simple day, but I learn something new. I can tell my family about it.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["we use a big table in the living room"], explanation: "Le texte indique : we use a big table in the living room." },
+        { id: "a1en-final-u3-reading-3", sourceStepId: "a1en-reading-a1en-a-room-for-me", context: "My name is Sophie, and this is my story. I am in my new house. I get my own bedroom. I look around and see many interesting things.\n\nI need a little help today. My furniture is old. I stop and think. I move my desk near the window. It is not difficult when we work together.\n\nThe room feels bright. The afternoon is nice. I enjoy spending time here.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I move my desk near the window"], explanation: "Le texte indique : I move my desk near the window." },
+        { id: "a1en-final-u3-grammar-1", sourceStepId: "a1en-grammar-a1en-there-is-there-are", prompt: "Complétez la phrase en anglais : There ___ two bedrooms.", answers: ["are"], explanation: "There is au singulier et there are au pluriel." },
+        { id: "a1en-final-u3-vocab-1", sourceStepId: "a1en-vocabulary-a1en-family-members-homes-and-location-1", prompt: "Traduisez en anglais : grand-parent", answers: ["grandparent"], explanation: "grand-parent signifie grandparent." },
+        { id: "a1en-final-u4-reading-1", sourceStepId: "a1en-reading-a1en-lunch-at-the-cafe", context: "My name is Ava. Today I am in a small café. I order soup and bread. I like talking to people and learning new things.\n\nThis is an important day for me. The café is crowded. I do not know what to do at first. Then I have an idea: I wait for a table.\n\nThe waiter brings my lunch. I am happy about this. It is a simple day, but I learn something new. I can tell my family about it.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I wait for a table"], explanation: "Le texte indique : I wait for a table." },
+        { id: "a1en-final-u4-reading-3", sourceStepId: "a1en-reading-a1en-the-birthday-cake", context: "My name is Grace, and this is my story. I am in a bakery. I choose a cake for my brother. I look around and see many interesting things.\n\nI need a little help today. I do not know the price. I stop and think. I ask the shop assistant. It is not difficult when we work together.\n\nThe cake is within my budget. The afternoon is nice. I enjoy spending time here.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I ask the shop assistant"], explanation: "Le texte indique : I ask the shop assistant." },
+        { id: "a1en-final-u4-grammar-1", sourceStepId: "a1en-grammar-a1en-countable-and-uncountable", prompt: "Complétez la phrase en anglais : We need ___ rice.", answers: ["some"], explanation: "Some s’utilise avec les pluriels ou les indénombrables en affirmation." },
+        { id: "a1en-final-u4-vocab-1", sourceStepId: "a1en-vocabulary-a1en-food-shopping-and-polite-requests-1", prompt: "Traduisez en anglais : déjeuner", answers: ["lunch"], explanation: "déjeuner signifie lunch." },
+        { id: "a1en-final-u5-reading-1", sourceStepId: "a1en-reading-a1en-football-in-the-park", context: "My name is Lily. Today I am in the local park. I play football with friends. I like talking to people and learning new things.\n\nThis is an important day for me. We have only one ball. I do not know what to do at first. Then I have an idea: we make two small teams.\n\nEveryone enjoys the game. I am happy about this. It is a simple day, but I learn something new. I can tell my family about it.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["we make two small teams"], explanation: "Le texte indique : we make two small teams." },
+        { id: "a1en-final-u5-reading-3", sourceStepId: "a1en-reading-a1en-my-favourite-music", context: "My name is Nina, and this is my story. I am in my bedroom. I listen to music after school. I look around and see many interesting things.\n\nI need a little help today. My friend likes different songs. I stop and think. We share a playlist. It is not difficult when we work together.\n\nWe discover new artists. The afternoon is nice. I enjoy spending time here.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["we share a playlist"], explanation: "Le texte indique : we share a playlist." },
+        { id: "a1en-final-u5-grammar-1", sourceStepId: "a1en-grammar-a1en-like-ing", prompt: "Complétez la phrase en anglais : I enjoy ___ novels.", answers: ["reading"], explanation: "Après enjoy, l’activité se présente avec le verbe en -ing." },
+        { id: "a1en-final-u5-vocab-1", sourceStepId: "a1en-vocabulary-a1en-hobbies-and-simple-social-invitations-1", prompt: "Traduisez en anglais : film", answers: ["film"], explanation: "film signifie film." },
+        { id: "a1en-final-u6-reading-1", sourceStepId: "a1en-reading-a1en-at-the-train-station", context: "My name is Maya. Today I am in the railway station. I want a ticket to Oxford. I like talking to people and learning new things.\n\nThis is an important day for me. I cannot find the ticket machine. I do not know what to do at first. Then I have an idea: I ask a member of staff.\n\nI buy a return ticket. I am happy about this. It is a simple day, but I learn something new. I can tell my family about it.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I ask a member of staff"], explanation: "Le texte indique : I ask a member of staff." },
+        { id: "a1en-final-u6-reading-3", sourceStepId: "a1en-reading-a1en-a-rainy-holiday", context: "My name is Clara, and this is my story. I am in a seaside town. I visit the beach with my family. I look around and see many interesting things.\n\nI need a little help today. The weather is rainy. I stop and think. We visit a small aquarium. It is not difficult when we work together.\n\nWe have a fun day. The afternoon is nice. I enjoy spending time here.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["we visit a small aquarium"], explanation: "Le texte indique : we visit a small aquarium." },
+        { id: "a1en-final-u6-grammar-1", sourceStepId: "a1en-grammar-a1en-imperatives", prompt: "Complétez la phrase en anglais : ___ left at the bank.", answers: ["Turn"], explanation: "L’impératif anglais utilise la base verbale sans sujet." },
+        { id: "a1en-final-u6-vocab-1", sourceStepId: "a1en-vocabulary-a1en-transport-directions-and-weather-1", prompt: "Traduisez en anglais : billet", answers: ["ticket"], explanation: "billet signifie ticket." },
+        { id: "a1en-final-u7-reading-1", sourceStepId: "a1en-reading-a1en-my-english-class", context: "My name is Holly. Today I am in the classroom. I practise English every morning. I like talking to people and learning new things.\n\nThis is an important day for me. Some words are difficult. I do not know what to do at first. Then I have an idea: I ask the teacher for examples.\n\nI understand the lesson. I am happy about this. It is a simple day, but I learn something new. I can tell my family about it.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["I ask the teacher for examples"], explanation: "Le texte indique : I ask the teacher for examples." },
+        { id: "a1en-final-u7-reading-3", sourceStepId: "a1en-reading-a1en-a-plan-for-sunday", context: "My name is Isla, and this is my story. I am in my town. I want to visit the art market. I look around and see many interesting things.\n\nI need a little help today. My cousin is not free in the morning. I stop and think. We plan an afternoon visit. It is not difficult when we work together.\n\nWe can go together. The afternoon is nice. I enjoy spending time here.", prompt: "Quelle réaction est décrite dans ce texte ? Recopiez les mots du texte qui décrivent cette réaction.", answers: ["we plan an afternoon visit"], explanation: "Le texte indique : we plan an afternoon visit." },
+        { id: "a1en-final-u7-grammar-1", sourceStepId: "a1en-grammar-a1en-going-to-plans", prompt: "Complétez la phrase en anglais : We ___ visit a museum.", answers: ["are going to"], explanation: "Be going to + base verbale exprime un projet décidé." },
+        { id: "a1en-final-u7-vocab-1", sourceStepId: "a1en-vocabulary-a1en-school-jobs-and-simple-future-plans-1", prompt: "Traduisez en anglais : matière", answers: ["subject"], explanation: "matière signifie subject." },
+    ],
+};

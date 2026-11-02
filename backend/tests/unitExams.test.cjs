@@ -15,7 +15,7 @@ for (const language of ['fr', 'en']) {
                 assert.equal(exams[0].available, !!authored?.questions.length);
                 assert.equal(exams[0].isDemo, authored?.isDemo ?? false);
                 assert.equal(exams[0].path, unit.kind === 'final-exam' ? '/exams/final' : `/exams/${unit.number}`);
-                assert.equal(exams[0].contentId, `${course.level.toLowerCase()}-exam-${unit.kind === 'final-exam' ? 'final' : unit.number}`);
+                assert.equal(exams[0].contentId, `${course.level.toLowerCase()}${language === 'en' ? 'en' : ''}-exam-${unit.kind === 'final-exam' ? 'final' : unit.number}`);
             }
         }
     });

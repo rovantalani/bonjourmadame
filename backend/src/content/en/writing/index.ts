@@ -1,8 +1,8 @@
-import type { WritingLesson } from '../../../types/writing';
-export const englishWritingLessons: WritingLesson[] = [{
-    id: 'en-writing-preview', targetLanguage: 'en', level: 'A1', unit: 1,
-    title: 'Quelques mots sur moi',
-    prompt: 'Présentez-vous. Décrivez votre logement, votre travail et ce que vous aimez faire avec vos amis.',
-    suggestedWords: { min: 30, max: 60 },
-    learningObjectives: ['Se présenter au présent', 'Décrire ses activités quotidiennes'],
-}];
+import { englishWritingLessonsA1 } from './a1';
+import { englishWritingLessonsA2 } from './a2';
+import { englishWritingLessonsB1 } from './b1';
+import { englishWritingLessonsB2 } from './b2';
+import { englishWritingLessonsC1 } from './c1';
+import { englishWritingLessonsC2 } from './c2';
+
+export const englishWritingLessons = [...englishWritingLessonsA1, ...englishWritingLessonsA2, ...englishWritingLessonsB1, ...englishWritingLessonsB2, ...englishWritingLessonsC1, ...englishWritingLessonsC2];

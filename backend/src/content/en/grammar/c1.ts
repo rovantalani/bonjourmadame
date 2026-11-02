@@ -1,246 +1,232 @@
 import type { GrammarLesson } from '../../../types/lectures/grammar';
 
 export const grammarC1: GrammarLesson[] = [
-    {
-        unit: 1,
-        id: 'en-register-formal-informal',
-        title: 'Registre formel et informel en anglais',
-        level: 'C1',
-        description: "Shall we begin? / Let's start! Maîtrisez les différences de registre en anglais écrit et oral — formulations soutenues, neutres et familières.",
-        icon: '🎩',
-        color: '#7C3AED',
-        sections: [
-            {
-                title: 'Choisir le bon registre',
-                explanation: "En anglais, le registre dépend du contexte : une lettre de motivation, un email entre amis ou un rapport scientifique n'utilisent pas le même vocabulaire ni les mêmes structures. Le registre formel privilégie le vocabulaire latin/français, les structures passives et les phrases longues. Le registre informel utilise des contractions, des phrasal verbs et un vocabulaire anglo-saxon court.",
-                examples: [
-                    { french: 'Formel : I would like to request assistance. / Informel : Can you help me?', english: 'Formel : Je souhaite demander de l\'aide. / Informel : Tu peux m\'aider ?' },
-                    { french: 'Formel : We regret to inform you that… / Informel : Sorry, but…', english: 'Formel : Nous avons le regret de vous informer que… / Informel : Désolé, mais…' },
-                    { french: 'Formel : commence → begin/commence ; Informel : start, kick off', english: 'Commencer' },
-                    { french: 'Formel : The meeting was postponed. / Informel : We pushed the meeting back.', english: 'La réunion a été reportée. (passif formel vs. phrasal verb informel)' },
-                ],
-            },
-            {
-                title: 'Contractions et formes complètes',
-                explanation: "Les contractions (I'm, she's, they've, won't, can't) sont la marque du registre informel et oral. Dans un texte formel écrit — essai, rapport, lettre officielle — on développe toujours les formes complètes : I am, she is, they have, will not, cannot. L'usage de contractions dans un écrit formel est perçu comme négligent ou non professionnel.",
-                examples: [
-                    { french: 'I am writing to enquire about… (formel, pas de contraction)', english: 'Je vous écris pour me renseigner sur…' },
-                    { french: 'I\'m writing to ask about… (informel)', english: 'Je vous écris pour demander…' },
-                    { french: 'This cannot be accepted under any circumstances. (formel)', english: 'Cela ne peut en aucun cas être accepté.' },
-                    { french: 'It isn\'t something we can ignore. (neutre/informel)', english: 'Ce n\'est pas quelque chose que nous pouvons ignorer.' },
-                ],
-            },
-            {
-                title: 'Registre professionnel et académique',
-                explanation: "Dans les emails professionnels et les essais académiques, certaines formules sont incontournables. Pour ouvrir : I am writing with regard to… / I am pleased to inform you… Pour clore : I look forward to hearing from you. / Please do not hesitate to contact me. Dans un essai : This essay will argue… / It can be concluded that… L'objectif est toujours de paraître mesuré, précis et respectueux.",
-                examples: [
-                    { french: 'I am writing with regard to your recent application.', english: 'Je vous écris au sujet de votre récente candidature.' },
-                    { french: 'I look forward to hearing from you at your earliest convenience.', english: 'Dans l\'attente de votre réponse dans les meilleurs délais.' },
-                    { french: 'This essay will examine the causes of climate change.', english: 'Cet essai examinera les causes du changement climatique.' },
-                    { french: 'It can be argued that technological progress has both benefits and drawbacks.', english: 'On peut soutenir que le progrès technologique présente à la fois des avantages et des inconvénients.' },
-                ],
-            },
-        ],
-        exercises: [
-            { sentence: 'Formal letter opening: I ___ writing to enquire about the position.', answer: 'am', hint: 'Pas de contraction dans un écrit formel → I am, pas I\'m' },
-            { sentence: 'Make formal: "We can\'t do this." → We ___ do this.', answer: 'cannot', hint: 'Cannot (un seul mot) est la forme formelle de can\'t' },
-            { sentence: 'Formal closing: I look forward ___ hearing from you.', answer: 'to', hint: 'Look forward to + V-ing — tournure formelle standard' },
-            { sentence: 'Academic style: ___ ___ be argued that prices will rise. (on peut soutenir)', answer: 'It can', hint: 'It can be argued that… — formule académique impersonnelle' },
-            { sentence: 'Formal synonym of "get": to ___ (obtenir)', answer: 'obtain', hint: 'Obtain (latin) est plus formel que get (saxon)' },
-        ],
-    },
-    {
-        unit: 1,
-        id: 'en-subjunctive-mood',
-        title: 'Le Subjonctif en anglais',
-        level: 'C1',
-        description: "If I were you… / I suggest that he be present. Le subjonctif anglais — plus discret qu'en français mais bien vivant dans le registre soutenu.",
-        icon: '🌀',
-        color: '#6D28D9',
-        sections: [
-            {
-                title: 'Le subjonctif passé : were au lieu de was',
-                explanation: "Le subjonctif passé utilise were pour toutes les personnes (y compris I et he/she/it), jamais was. C'est l'une des différences les plus visibles avec le français : « if I were rich » traduit « si j'étais riche ». Cette forme s'utilise avec les hypothèses irréelles au présent/futur et les expressions de souhait. Dans l'anglais informel parlé, was est parfois accepté, mais were reste la forme correcte dans un registre soutenu.",
-                examples: [
-                    { french: 'If I were you, I would apologise. (conseil)', english: 'À ta place, je m\'excuserais.' },
-                    { french: 'I wish I were taller. (souhait irréel)', english: 'J\'aimerais être plus grand.' },
-                    { french: 'She acts as if she were the boss.', english: 'Elle se comporte comme si elle était la patronne.' },
-                    { french: 'If he were here, he would know what to do.', english: 'S\'il était là, il saurait quoi faire.' },
-                ],
-            },
-            {
-                title: 'Le subjonctif présent : la base verbale',
-                explanation: "Le subjonctif présent utilise la base verbale sans marque de personne (be, go, have, etc.). On le trouve surtout après des verbes exprimant une recommandation, une demande ou une exigence : suggest, recommend, insist, demand, require, propose. La structure est : verbe + that + sujet + base verbale. Ce subjonctif est plus courant en anglais américain ; l'anglais britannique préfère parfois should + infinitif.",
-                examples: [
-                    { french: 'I suggest that he be present at the meeting.', english: 'Je suggère qu\'il soit présent à la réunion.' },
-                    { french: 'The board demands that she resign immediately.', english: 'Le conseil exige qu\'elle démissionne immédiatement.' },
-                    { french: 'It is essential that every student submit the form.', english: 'Il est essentiel que chaque étudiant soumette le formulaire.' },
-                    { french: 'They recommended that the report be reviewed.', english: 'Ils ont recommandé que le rapport soit relu.' },
-                ],
-            },
-            {
-                title: 'Expressions figées avec le subjonctif',
-                explanation: "Plusieurs expressions idiomatiques utilisent encore le subjonctif dans un anglais figé ou littéraire : God save the Queen, Long live the King, Be that as it may, Come what may, So be it, Suffice it to say. Ces formules sont souvent utilisées dans les discours, les textes politiques ou les expressions proverbiales. Elles s'apprennent comme des unités lexicales.",
-                examples: [
-                    { french: 'God save the King! (subjonctif → God may save the King)', english: 'Que Dieu protège le Roi !' },
-                    { french: 'Be that as it may, we must proceed.', english: 'Quoi qu\'il en soit, nous devons continuer.' },
-                    { french: 'Come what may, I will stand by you.', english: 'Quoi qu\'il arrive, je serai à tes côtés.' },
-                    { french: 'Suffice it to say that the result was disappointing.', english: 'Il suffit de dire que le résultat était décevant.' },
-                ],
-            },
-        ],
-        exercises: [
-            { sentence: 'If I ___ (be) you, I would reconsider. (hypothèse irréelle)', answer: 'were', hint: 'Subjonctif passé : were pour toutes les personnes dans les hypothèses irréelles' },
-            { sentence: 'I wish she ___ (be) here with us now. (souhait irréel)', answer: 'were', hint: 'I wish + subjonctif passé (were, not was) pour un souhait irréel au présent' },
-            { sentence: 'The doctor recommends that he ___ (rest) for a week.', answer: 'rest', hint: 'Subjonctif présent après recommend that → base verbale sans -s' },
-            { sentence: 'She acts as ___ she ___ (be) the only expert. (comme si)', answer: 'if / were', hint: 'As if + subjonctif passé (were) pour une comparaison hypothétique' },
-            { sentence: '___ that ___ ___, the decision has been made. (quoi qu\'il en soit)', answer: 'Be / it / may', hint: 'Be that as it may — expression figée avec subjonctif' },
-        ],
-    },
-    {
-        unit: 2,
-        id: 'en-reported-speech-advanced',
-        title: 'Discours rapporté avancé',
-        level: 'C1',
-        description: "He denied having taken it. / She urged them to act. Au-delà du say/tell — les verbes de communication complexes et les structures avancées du discours indirect.",
-        icon: '🗣️',
-        color: '#0891B2',
-        sections: [
-            {
-                title: 'Les verbes de communication spécialisés',
-                explanation: "Au niveau avancé, on remplace les verbes génériques said/told par des verbes qui précisent l'acte de parole : admit, deny, warn, advise, urge, insist, suggest, complain, boast, threaten, refuse, offer, promise, agree. Ces verbes entraînent différentes structures grammaticales : + that-clause, + V-ing, + to-infinitive ou + object + to-infinitive.",
-                examples: [
-                    { french: 'He admitted stealing the money. (+ V-ing)', english: 'Il a admis avoir volé l\'argent.' },
-                    { french: 'She denied having been there. (+ V-ing)', english: 'Elle a nié s\'y être trouvée.' },
-                    { french: 'He warned us not to touch the wire. (+ object + not to-inf)', english: 'Il nous a avertis de ne pas toucher le fil.' },
-                    { french: 'They urged the government to take action. (+ object + to-inf)', english: 'Ils ont pressé le gouvernement d\'agir.' },
-                    { french: 'She boasted that she had won three medals.', english: 'Elle s\'est vantée d\'avoir remporté trois médailles.' },
-                ],
-            },
-            {
-                title: 'Backshift optionnel et vérités universelles',
-                explanation: "Le backshift (recul des temps) n'est pas toujours obligatoire. On peut ne pas effectuer de backshift si : (1) la situation est encore vraie au moment de la parole ; (2) on rapporte des paroles récentes ; (3) on rapporte une vérité générale ou scientifique. Le maintien du temps présent donne une impression d'immédiateté ou de vérité permanente.",
-                examples: [
-                    { french: 'He said the Earth revolves around the Sun. (vérité scientifique → pas de backshift)', english: 'Il a dit que la Terre tourne autour du Soleil.' },
-                    { french: 'She said she is still working on the project. (encore vrai)', english: 'Elle a dit qu\'elle travaille encore sur le projet.' },
-                    { french: 'He said he had just arrived. (passé récent, backshift respecté)', english: 'Il a dit qu\'il venait d\'arriver.' },
-                    { french: 'They said Paris is the capital of France. (fait permanent)', english: 'Ils ont dit que Paris est la capitale de la France.' },
-                ],
-            },
-            {
-                title: 'Rapporter des questions et des ordres avancés',
-                explanation: "Pour rapporter des questions rhétoriques, des exclamations ou des ordres complexes, on doit choisir la bonne structure. Les exclamations rapportées utilisent souvent what ou how : She exclaimed what a beautiful view it was. Les ordres se rapportent avec told + object + to-inf ou ordered. Les questions rhétoriques deviennent des propositions introduites par what, why, how, etc.",
-                examples: [
-                    { french: '"What a wonderful idea!" → She exclaimed what a wonderful idea it was.', english: '« Quelle merveilleuse idée ! » → Elle s\'est exclamée que c\'était une merveilleuse idée.' },
-                    { french: '"Don\'t lie to me!" → He ordered me not to lie to him.', english: '« Ne me mens pas ! » → Il m\'a ordonné de ne pas lui mentir.' },
-                    { french: '"Why bother?" → He wondered why he should bother.', english: '« Pourquoi s\'en donner la peine ? » → Il se demandait pourquoi il se donnerait la peine.' },
-                    { french: '"How did she manage it?" → She asked how she had managed it.', english: '« Comment a-t-elle réussi ? » → Elle a demandé comment elle y était parvenue.' },
-                ],
-            },
-        ],
-        exercises: [
-            { sentence: 'He ___ stealing the jewels. (nier + V-ing)', answer: 'denied', hint: 'deny + V-ing (gerondif), pas d\'infinitif' },
-            { sentence: 'She ___ us to arrive before 8 o\'clock. (avertir + objet + to-inf)', answer: 'warned', hint: 'warn + object + (not) to-infinitive' },
-            { sentence: '"I will help." → He ___ to help. (promettre)', answer: 'promised', hint: 'promise + to-infinitive pour rapporter une promesse' },
-            { sentence: 'She ___ that the project was too expensive. (se plaindre)', answer: 'complained', hint: 'complain + that-clause pour rapporter une plainte' },
-            { sentence: 'The teacher ___ us not to use dictionaries. (interdire/ordonner)', answer: 'told', hint: 'tell + object + not to-infinitive pour rapporter un ordre négatif' },
-        ],
-    },
-    {
-        unit: 3,
-        id: 'en-advanced-negation',
-        title: 'Négation avancée et structures emphatiques',
-        level: 'C1',
-        description: "Never have I seen… / Not until then did they realise… Les structures de négation avancées qui donnent force et élégance à l'anglais soutenu.",
-        icon: '❌',
-        color: '#DC2626',
-        sections: [
-            {
-                title: 'Inversion avec les adverbiaux négatifs',
-                explanation: "Quand un adverbe de sens négatif est placé en tête de phrase pour l'emphase, l'ordre sujet-verbe s'inverse (comme en français dans le style soutenu). Les principaux adverbiaux qui déclenchent cette inversion : Never, Rarely, Seldom, Not only… but also, No sooner… than, Hardly/Scarcely… when, Under no circumstances, At no time, Not until, In no way. Cette structure est typique du style formel, journalistique et littéraire.",
-                examples: [
-                    { french: 'Never have I witnessed such courage. (jamais je n\'ai vu)', english: 'Je n\'ai jamais été témoin d\'un tel courage.' },
-                    { french: 'Rarely does she make mistakes. (rarement elle se trompe)', english: 'Elle fait rarement des erreurs.' },
-                    { french: 'Not only did he lie, but he also stole.', english: 'Non seulement il a menti, mais il a aussi volé.' },
-                    { french: 'Under no circumstances should you sign this document.', english: 'En aucun cas vous ne devriez signer ce document.' },
-                    { french: 'No sooner had she left than the phone rang.', english: 'À peine était-elle partie que le téléphone sonna.' },
-                ],
-            },
-            {
-                title: 'Hardly, scarcely, barely',
-                explanation: "Hardly, scarcely et barely expriment une quantité ou un degré presque nul. Ils sont grammaticalement négatifs (on ne les cumule pas avec not). Ils s'emploient aussi dans des structures d'inversion : Hardly had I arrived when the meeting started. Barely diffère de hardly et scarcely par une légère nuance d'intensité moindre plutôt que de temps.",
-                examples: [
-                    { french: 'I can hardly believe what happened. (à peine, difficilement)', english: 'J\'arrive à peine à croire ce qui s\'est passé.' },
-                    { french: 'She barely spoke a word all evening.', english: 'Elle a à peine dit un mot de toute la soirée.' },
-                    { french: 'Scarcely had we sat down when the alarm went off.', english: 'Nous venions à peine de nous asseoir quand l\'alarme se déclencha.' },
-                    { french: 'There is hardly any milk left. (= presque pas)', english: 'Il ne reste presque plus de lait.' },
-                ],
-            },
-            {
-                title: 'Doubles négations et négation partielle',
-                explanation: "La double négation est incorrecte en anglais standard (I don't know nothing = I don't know anything). En revanche, la négation partielle avec not entirely, not always, not necessarily, not quite permet d'exprimer des nuances subtiles. Neither… nor relie deux éléments tous les deux niés. None/nobody/nothing + positive verb est la forme correcte.",
-                examples: [
-                    { french: 'Neither the manager nor the staff was informed. (ni… ni…)', english: 'Ni le directeur ni le personnel n\'ont été informés.' },
-                    { french: 'This is not entirely correct. (pas tout à fait)', english: 'Ce n\'est pas tout à fait exact.' },
-                    { french: 'The results are not necessarily surprising.', english: 'Les résultats ne sont pas nécessairement surprenants.' },
-                    { french: 'None of the proposals were accepted. (aucun)', english: 'Aucune des propositions n\'a été acceptée.' },
-                ],
-            },
-        ],
-        exercises: [
-            { sentence: '___ have I seen such a beautiful sunset. (jamais → inversion)', answer: 'Never', hint: 'Never en tête de phrase → inversion auxiliaire + sujet' },
-            { sentence: 'No sooner ___ ___ arrived than it started to rain. (à peine venait-il d\'arriver)', answer: 'had he', hint: 'No sooner had + sujet + PP → inversion et past perfect' },
-            { sentence: 'She ___ speak any English when she arrived. (à peine)', answer: 'barely', hint: 'barely = à peine (quantité/degré), grammaticalement négatif' },
-            { sentence: '___ ___ did he fail the exam, but he also lost his scholarship. (non seulement)', answer: 'Not only', hint: 'Not only… but also — structure corrélative avec inversion' },
-            { sentence: '___ ___ circumstances should you reveal this information. (en aucun cas)', answer: 'Under no', hint: 'Under no circumstances → inversion avec should' },
-        ],
-    },
-    {
-        unit: 3,
-        id: 'en-participle-constructions',
-        title: 'Constructions participiales',
-        level: 'C1',
-        description: "Having finished the report, she left the office. / Written in 1848, the novel still resonates. Les constructions participiales pour un anglais élégant et dense.",
-        icon: '🔩',
-        color: '#059669',
-        sections: [
-            {
-                title: 'Le participe présent (-ing) en apposition',
-                explanation: "Le participe présent peut former une proposition participiale qui remplace une proposition circonstancielle (de temps, de cause, de manière). Il se place en début, en milieu ou en fin de phrase. Le sujet de la participiale et celui de la principale doivent être identiques (erreur fréquente : le participe non relié = dangling participle). Ces constructions condensent l'information et donnent un style soutenu.",
-                examples: [
-                    { french: 'Leaving the office, she noticed an umbrella. (en quittant)', english: 'En quittant le bureau, elle remarqua un parapluie.' },
-                    { french: 'Feeling exhausted, he decided to rest. (comme il se sentait épuisé)', english: 'Se sentant épuisé, il décida de se reposer.' },
-                    { french: 'She smiled, realising she had won. (en réalisant)', english: 'Elle sourit, se rendant compte qu\'elle avait gagné.' },
-                    { french: 'Having lived in Paris, she spoke fluent French. (ayant vécu à Paris)', english: 'Ayant vécu à Paris, elle parlait couramment français.' },
-                ],
-            },
-            {
-                title: 'Le participe passé en apposition',
-                explanation: "Le participe passé (form -ed ou irrégulier) peut aussi former une proposition participiale. Il exprime souvent une relation passive ou antérieure à l'action principale. On le trouve aussi dans les résultats et descriptions. Written in 1984 signifie « qui a été écrit en 1984 ». Ce type de construction est très courant en anglais académique et journalistique.",
-                examples: [
-                    { french: 'Written in 1851, Moby Dick remains a masterpiece.', english: 'Écrit en 1851, Moby Dick demeure un chef-d\'œuvre.' },
-                    { french: 'Exhausted by the journey, they went straight to bed.', english: 'Épuisés par le voyage, ils allèrent directement se coucher.' },
-                    { french: 'The report, submitted last week, has been reviewed.', english: 'Le rapport, soumis la semaine dernière, a été examiné.' },
-                    { french: 'Confronted with the evidence, he admitted his mistake.', english: 'Confronté aux preuves, il admit son erreur.' },
-                ],
-            },
-            {
-                title: 'Having + participe passé (antériorité)',
-                explanation: "La forme having + participe passé marque une action antérieure à celle de la principale. C'est l'équivalent du gérondif passé français : « ayant terminé… ». Cette construction est très caractéristique du registre formel et littéraire anglais. Attention : comme toujours avec les participiales, le sujet doit être le même dans les deux propositions.",
-                examples: [
-                    { french: 'Having finished the exam, he handed in his paper.', english: 'Ayant terminé l\'examen, il rendit sa copie.' },
-                    { french: 'Having lived abroad for ten years, she understood other cultures well.', english: 'Ayant vécu à l\'étranger pendant dix ans, elle comprenait bien les autres cultures.' },
-                    { french: 'Not having received a reply, she sent a reminder.', english: 'N\'ayant pas reçu de réponse, elle envoya un rappel.' },
-                    { french: 'Having been warned, they took all necessary precautions.', english: 'Ayant été avertis, ils prirent toutes les précautions nécessaires.' },
-                ],
-            },
-        ],
-        exercises: [
-            { sentence: '___ the letter, she sealed the envelope. (après avoir écrit)', answer: 'Having written', hint: 'Antériorité → Having + participe passé' },
-            { sentence: '___ in the 19th century, the building still stands today. (construit)', answer: 'Built', hint: 'Participe passé en apposition pour une relation passive/antérieure' },
-            { sentence: '___ tired from the journey, she fell asleep immediately. (se sentant)', answer: 'Feeling', hint: 'Participe présent de cause : Feeling tired = comme elle se sentait fatiguée' },
-            { sentence: 'Not ___ (receive) an answer, he called them directly.', answer: 'having received', hint: 'Participe passé négatif avec antériorité → Not having received' },
-            { sentence: 'The results, ___ (announce) yesterday, surprised everyone.', answer: 'announced', hint: 'Participe passé en apposition intercalé → announced yesterday (qui ont été annoncés)' },
-        ],
-    },
+    { level: "C1", unit: 1, id: "c1en-inversion-after-restrictive-adverbs", title: "Inversion after restrictive adverbs", description: "Only then / not until provoquent une inversion emphatique.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Only then / not until provoquent une inversion emphatique.", examples: [
+            { french: "Only then did the committee grasp the implications.", english: "Ce n’est qu’alors que la commission a compris les implications." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Only then / not until provoquent une inversion emphatique.", examples: [
+            { french: "The wording carries an implicit assumption.", english: "La formulation comporte une supposition implicite.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___ the committee grasp the implications.", answer: "Only then did", hint: "Sens de l’expression étudiée : Ce n’est qu’alors que la commission a compris les implications." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Ce n’est qu’alors que la commission a compris les implications.", answer: "Only then did the committee grasp the implications.", hint: "Inversion after restrictive adverbs" },
+        { sentence: "Repérez la structure travaillée dans la phrase : Only then did the committee grasp the implications.", answer: "Only then did", hint: "Only then / not until provoquent une inversion emphatique." },
+    ] },
+    { level: "C1", unit: 1, id: "c1en-cleft-sentences", title: "Cleft sentences", description: "Les phrases clivées mettent un élément précis en relief.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Les phrases clivées mettent un élément précis en relief.", examples: [
+            { french: "What matters most is the distribution of costs.", english: "Ce qui importe le plus, c’est la répartition des coûts." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Les phrases clivées mettent un élément précis en relief.", examples: [
+            { french: "The wording carries an implicit assumption.", english: "La formulation comporte une supposition implicite.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___ the distribution of costs.", answer: "What matters most is", hint: "Sens de l’expression étudiée : Ce qui importe le plus, c’est la répartition des coûts." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Ce qui importe le plus, c’est la répartition des coûts.", answer: "What matters most is the distribution of costs.", hint: "Cleft sentences" },
+        { sentence: "Repérez la structure travaillée dans la phrase : What matters most is the distribution of costs.", answer: "What matters most is", hint: "Les phrases clivées mettent un élément précis en relief." },
+    ] },
+    { level: "C1", unit: 1, id: "c1en-evaluative-stance-markers", title: "Evaluative stance markers", description: "Arguably annonce une appréciation ouverte à discussion.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Arguably annonce une appréciation ouverte à discussion.", examples: [
+            { french: "Arguably, the decision was premature.", english: "On peut soutenir que la décision était prématurée." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Arguably annonce une appréciation ouverte à discussion.", examples: [
+            { french: "The wording carries an implicit assumption.", english: "La formulation comporte une supposition implicite.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___, the decision was premature.", answer: "Arguably", hint: "Sens de l’expression étudiée : On peut soutenir que la décision était prématurée." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : On peut soutenir que la décision était prématurée.", answer: "Arguably, the decision was premature.", hint: "Evaluative stance markers" },
+        { sentence: "Repérez la structure travaillée dans la phrase : Arguably, the decision was premature.", answer: "Arguably", hint: "Arguably annonce une appréciation ouverte à discussion." },
+    ] },
+    { level: "C1", unit: 2, id: "c1en-hedging-in-academic-prose", title: "Hedging in academic prose", description: "Les verbes prudents évitent de surestimer la portée des résultats.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Les verbes prudents évitent de surestimer la portée des résultats.", examples: [
+            { french: "The results appear to suggest a weak association.", english: "Les résultats semblent indiquer une faible association." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Les verbes prudents évitent de surestimer la portée des résultats.", examples: [
+            { french: "The proposal raises questions of legitimacy.", english: "La proposition soulève des questions de légitimité.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The results ___ a weak association.", answer: "appear to suggest", hint: "Sens de l’expression étudiée : Les résultats semblent indiquer une faible association." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Les résultats semblent indiquer une faible association.", answer: "The results appear to suggest a weak association.", hint: "Hedging in academic prose" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The results appear to suggest a weak association.", answer: "appear to suggest", hint: "Les verbes prudents évitent de surestimer la portée des résultats." },
+    ] },
+    { level: "C1", unit: 2, id: "c1en-advanced-reporting-patterns", title: "Advanced reporting patterns", description: "La structure passive de reportage attribue sans confirmer directement.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "La structure passive de reportage attribue sans confirmer directement.", examples: [
+            { french: "The minister is understood to have resigned.", english: "Il semblerait que le ministre ait démissionné." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : La structure passive de reportage attribue sans confirmer directement.", examples: [
+            { french: "The proposal raises questions of legitimacy.", english: "La proposition soulève des questions de légitimité.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The minister ___ resigned.", answer: "is understood to have", hint: "Sens de l’expression étudiée : Il semblerait que le ministre ait démissionné." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Il semblerait que le ministre ait démissionné.", answer: "The minister is understood to have resigned.", hint: "Advanced reporting patterns" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The minister is understood to have resigned.", answer: "is understood to have", hint: "La structure passive de reportage attribue sans confirmer directement." },
+    ] },
+    { level: "C1", unit: 2, id: "c1en-concession-with-even-though-while", title: "Concession with even though / while", description: "While peut introduire une concession argumentée.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "While peut introduire une concession argumentée.", examples: [
+            { french: "While the reform improved access, it raised costs.", english: "Bien que la réforme ait amélioré l’accès, elle a augmenté les coûts." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : While peut introduire une concession argumentée.", examples: [
+            { french: "The proposal raises questions of legitimacy.", english: "La proposition soulève des questions de légitimité.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___ the reform improved access, it raised costs.", answer: "While", hint: "Sens de l’expression étudiée : Bien que la réforme ait amélioré l’accès, elle a augmenté les coûts." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Bien que la réforme ait amélioré l’accès, elle a augmenté les coûts.", answer: "While the reform improved access, it raised costs.", hint: "Concession with even though / while" },
+        { sentence: "Repérez la structure travaillée dans la phrase : While the reform improved access, it raised costs.", answer: "While", hint: "While peut introduire une concession argumentée." },
+    ] },
+    { level: "C1", unit: 3, id: "c1en-counterfactual-past-modals", title: "Counterfactual past modals", description: "Could/might have + participe passé envisage un passé alternatif.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Could/might have + participe passé envisage un passé alternatif.", examples: [
+            { french: "The outcome could have been different.", english: "Le résultat aurait pu être différent." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Could/might have + participe passé envisage un passé alternatif.", examples: [
+            { french: "The findings are suggestive rather than conclusive.", english: "Les résultats sont indicatifs plutôt que concluants.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The outcome ___ different.", answer: "could have been", hint: "Sens de l’expression étudiée : Le résultat aurait pu être différent." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Le résultat aurait pu être différent.", answer: "The outcome could have been different.", hint: "Counterfactual past modals" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The outcome could have been different.", answer: "could have been", hint: "Could/might have + participe passé envisage un passé alternatif." },
+    ] },
+    { level: "C1", unit: 3, id: "c1en-distancing-constructions", title: "Distancing constructions", description: "La tournure impersonnelle évite une attribution trop directe.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "La tournure impersonnelle évite une attribution trop directe.", examples: [
+            { french: "It has been argued that the method is unreliable.", english: "Il a été avancé que la méthode n’est pas fiable." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : La tournure impersonnelle évite une attribution trop directe.", examples: [
+            { french: "The findings are suggestive rather than conclusive.", english: "Les résultats sont indicatifs plutôt que concluants.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___ the method is unreliable.", answer: "It has been argued that", hint: "Sens de l’expression étudiée : Il a été avancé que la méthode n’est pas fiable." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Il a été avancé que la méthode n’est pas fiable.", answer: "It has been argued that the method is unreliable.", hint: "Distancing constructions" },
+        { sentence: "Repérez la structure travaillée dans la phrase : It has been argued that the method is unreliable.", answer: "It has been argued that", hint: "La tournure impersonnelle évite une attribution trop directe." },
+    ] },
+    { level: "C1", unit: 3, id: "c1en-complex-noun-phrases", title: "Complex noun phrases", description: "Les groupes nominaux denses condensent plusieurs relations.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Les groupes nominaux denses condensent plusieurs relations.", examples: [
+            { french: "The long-term impact assessment remains incomplete.", english: "L’évaluation des effets à long terme reste incomplète." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Les groupes nominaux denses condensent plusieurs relations.", examples: [
+            { french: "The findings are suggestive rather than conclusive.", english: "Les résultats sont indicatifs plutôt que concluants.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The ___ remains incomplete.", answer: "long-term impact assessment", hint: "Sens de l’expression étudiée : L’évaluation des effets à long terme reste incomplète." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : L’évaluation des effets à long terme reste incomplète.", answer: "The long-term impact assessment remains incomplete.", hint: "Complex noun phrases" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The long-term impact assessment remains incomplete.", answer: "long-term impact assessment", hint: "Les groupes nominaux denses condensent plusieurs relations." },
+    ] },
+    { level: "C1", unit: 4, id: "c1en-subjunctive-in-formal-english", title: "Subjunctive in formal English", description: "Le subjonctif formel conserve la base verbale après certains verbes.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Le subjonctif formel conserve la base verbale après certains verbes.", examples: [
+            { french: "They recommended that she be appointed.", english: "Ils ont recommandé qu’elle soit nommée." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Le subjonctif formel conserve la base verbale après certains verbes.", examples: [
+            { french: "Its ambiguity is arguably deliberate.", english: "Son ambiguïté est sans doute délibérée.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "They recommended that she ___ appointed.", answer: "be", hint: "Sens de l’expression étudiée : Ils ont recommandé qu’elle soit nommée." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Ils ont recommandé qu’elle soit nommée.", answer: "They recommended that she be appointed.", hint: "Subjunctive in formal English" },
+        { sentence: "Repérez la structure travaillée dans la phrase : They recommended that she be appointed.", answer: "be", hint: "Le subjonctif formel conserve la base verbale après certains verbes." },
+    ] },
+    { level: "C1", unit: 4, id: "c1en-fronting-for-emphasis", title: "Fronting for emphasis", description: "L’antéposition organise la progression informationnelle.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "L’antéposition organise la progression informationnelle.", examples: [
+            { french: "More significant still was the loss of trust.", english: "Plus importante encore était la perte de confiance." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : L’antéposition organise la progression informationnelle.", examples: [
+            { french: "The work resists a single interpretation.", english: "L’œuvre résiste à une interprétation unique.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___ was the loss of trust.", answer: "More significant still", hint: "Sens de l’expression étudiée : Plus importante encore était la perte de confiance." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Plus importante encore était la perte de confiance.", answer: "More significant still was the loss of trust.", hint: "Fronting for emphasis" },
+        { sentence: "Repérez la structure travaillée dans la phrase : More significant still was the loss of trust.", answer: "More significant still", hint: "L’antéposition organise la progression informationnelle." },
+    ] },
+    { level: "C1", unit: 4, id: "c1en-adverbial-clauses-of-condition", title: "Adverbial clauses of condition", description: "Provided that introduit une condition restrictive.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Provided that introduit une condition restrictive.", examples: [
+            { french: "Provided that the data are reliable, we can proceed.", english: "Pourvu que les données soient fiables, nous pouvons avancer." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Provided that introduit une condition restrictive.", examples: [
+            { french: "The work resists a single interpretation.", english: "L’œuvre résiste à une interprétation unique.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___ the data are reliable, we can proceed.", answer: "Provided that", hint: "Sens de l’expression étudiée : Pourvu que les données soient fiables, nous pouvons avancer." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Pourvu que les données soient fiables, nous pouvons avancer.", answer: "Provided that the data are reliable, we can proceed.", hint: "Adverbial clauses of condition" },
+        { sentence: "Repérez la structure travaillée dans la phrase : Provided that the data are reliable, we can proceed.", answer: "Provided that", hint: "Provided that introduit une condition restrictive." },
+    ] },
+    { level: "C1", unit: 5, id: "c1en-ellipsis-and-substitution", title: "Ellipsis and substitution", description: "L’ellipse évite la répétition d’un prédicat récupérable.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "L’ellipse évite la répétition d’un prédicat récupérable.", examples: [
+            { french: "Some supported the proposal; others did not.", english: "Certains soutenaient la proposition, d’autres non." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : L’ellipse évite la répétition d’un prédicat récupérable.", examples: [
+            { french: "The benefits are unevenly distributed.", english: "Les avantages sont inégalement répartis.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "Some supported the proposal; others ___.", answer: "did not", hint: "Sens de l’expression étudiée : Certains soutenaient la proposition, d’autres non." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Certains soutenaient la proposition, d’autres non.", answer: "Some supported the proposal; others did not.", hint: "Ellipsis and substitution" },
+        { sentence: "Repérez la structure travaillée dans la phrase : Some supported the proposal; others did not.", answer: "did not", hint: "L’ellipse évite la répétition d’un prédicat récupérable." },
+    ] },
+    { level: "C1", unit: 5, id: "c1en-complex-relative-references", title: "Complex relative references", description: "Préposition + which crée un registre soutenu.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Préposition + which crée un registre soutenu.", examples: [
+            { french: "The grounds on which the decision rested were unclear.", english: "Les fondements sur lesquels reposait la décision étaient flous." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Préposition + which crée un registre soutenu.", examples: [
+            { french: "The benefits are unevenly distributed.", english: "Les avantages sont inégalement répartis.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The grounds ___ the decision rested were unclear.", answer: "on which", hint: "Sens de l’expression étudiée : Les fondements sur lesquels reposait la décision étaient flous." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Les fondements sur lesquels reposait la décision étaient flous.", answer: "The grounds on which the decision rested were unclear.", hint: "Complex relative references" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The grounds on which the decision rested were unclear.", answer: "on which", hint: "Préposition + which crée un registre soutenu." },
+    ] },
+    { level: "C1", unit: 5, id: "c1en-nominal-style-and-verbal-style", title: "Nominal style and verbal style", description: "Un nom abstrait peut transformer une action en objet de discussion.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Un nom abstrait peut transformer une action en objet de discussion.", examples: [
+            { french: "The panel called for a reassessment.", english: "La commission a demandé une réévaluation." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Un nom abstrait peut transformer une action en objet de discussion.", examples: [
+            { french: "The benefits are unevenly distributed.", english: "Les avantages sont inégalement répartis.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The panel called for a ___.", answer: "reassessment", hint: "Sens de l’expression étudiée : La commission a demandé une réévaluation." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : La commission a demandé une réévaluation.", answer: "The panel called for a reassessment.", hint: "Nominal style and verbal style" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The panel called for a reassessment.", answer: "reassessment", hint: "Un nom abstrait peut transformer une action en objet de discussion." },
+    ] },
+    { level: "C1", unit: 6, id: "c1en-metadiscourse-signposting", title: "Metadiscourse: signposting", description: "Les marqueurs métadiscursifs signalent les étapes du raisonnement.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Les marqueurs métadiscursifs signalent les étapes du raisonnement.", examples: [
+            { french: "Taken together, these findings justify caution.", english: "Pris ensemble, ces résultats invitent à la prudence." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Les marqueurs métadiscursifs signalent les étapes du raisonnement.", examples: [
+            { french: "The misunderstanding is rooted in different norms.", english: "Le malentendu s’enracine dans des normes différentes.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___, these findings justify caution.", answer: "Taken together", hint: "Sens de l’expression étudiée : Pris ensemble, ces résultats invitent à la prudence." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Pris ensemble, ces résultats invitent à la prudence.", answer: "Taken together, these findings justify caution.", hint: "Metadiscourse: signposting" },
+        { sentence: "Repérez la structure travaillée dans la phrase : Taken together, these findings justify caution.", answer: "Taken together", hint: "Les marqueurs métadiscursifs signalent les étapes du raisonnement." },
+    ] },
+    { level: "C1", unit: 6, id: "c1en-epistemic-modality", title: "Epistemic modality", description: "May well marque une probabilité forte sans certitude.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "May well marque une probabilité forte sans certitude.", examples: [
+            { french: "The evidence may well be incomplete.", english: "Il se peut fort bien que les preuves soient incomplètes." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : May well marque une probabilité forte sans certitude.", examples: [
+            { french: "The misunderstanding is rooted in different norms.", english: "Le malentendu s’enracine dans des normes différentes.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The evidence ___ be incomplete.", answer: "may well", hint: "Sens de l’expression étudiée : Il se peut fort bien que les preuves soient incomplètes." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Il se peut fort bien que les preuves soient incomplètes.", answer: "The evidence may well be incomplete.", hint: "Epistemic modality" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The evidence may well be incomplete.", answer: "may well", hint: "May well marque une probabilité forte sans certitude." },
+    ] },
+    { level: "C1", unit: 7, id: "c1en-synthesis-with-concession", title: "Synthesis with concession", description: "Notwithstanding est un connecteur formel de concession.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Notwithstanding est un connecteur formel de concession.", examples: [
+            { french: "Notwithstanding these objections, the proposal stands.", english: "Malgré ces objections, la proposition tient." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Notwithstanding est un connecteur formel de concession.", examples: [
+            { french: "Taken together, the reports support a cautious conclusion.", english: "Pris ensemble, les rapports étayent une conclusion prudente.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "___ these objections, the proposal stands.", answer: "Notwithstanding", hint: "Sens de l’expression étudiée : Malgré ces objections, la proposition tient." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : Malgré ces objections, la proposition tient.", answer: "Notwithstanding these objections, the proposal stands.", hint: "Synthesis with concession" },
+        { sentence: "Repérez la structure travaillée dans la phrase : Notwithstanding these objections, the proposal stands.", answer: "Notwithstanding", hint: "Notwithstanding est un connecteur formel de concession." },
+    ] },
+    { level: "C1", unit: 7, id: "c1en-qualified-conclusions", title: "Qualified conclusions", description: "Insofar as restreint explicitement la portée d’un constat.", icon: "📖", color: "#2563EB", sections: [
+        { title: "Règle et emploi", explanation: "Insofar as restreint explicitement la portée d’un constat.", examples: [
+            { french: "The conclusion holds insofar as the assumptions are valid.", english: "La conclusion tient dans la mesure où les hypothèses sont valides." },
+        ] },
+        { title: "Repérer la forme en contexte", explanation: "Expression de communication tirée de l’unité. Comparez le registre et la construction avec la règle : Insofar as restreint explicitement la portée d’un constat.", examples: [
+            { french: "Taken together, the reports support a cautious conclusion.", english: "Pris ensemble, les rapports étayent une conclusion prudente.", note: "Exemple de communication à comparer avec la règle." },
+        ] },
+    ], exercises: [
+        { sentence: "The conclusion holds ___ the assumptions are valid.", answer: "insofar as", hint: "Sens de l’expression étudiée : La conclusion tient dans la mesure où les hypothèses sont valides." },
+        { sentence: "Traduisez en reprenant l’expression de la leçon : La conclusion tient dans la mesure où les hypothèses sont valides.", answer: "The conclusion holds insofar as the assumptions are valid.", hint: "Qualified conclusions" },
+        { sentence: "Repérez la structure travaillée dans la phrase : The conclusion holds insofar as the assumptions are valid.", answer: "insofar as", hint: "Insofar as restreint explicitement la portée d’un constat." },
+    ] },
 ];
