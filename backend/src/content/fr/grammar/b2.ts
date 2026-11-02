@@ -2,578 +2,364 @@ import type { GrammarLesson } from '../../../types/lectures/grammar';
 
 export const grammarB2: GrammarLesson[] = [
     {
-        unit: 1,
-        id: 'subjunctive-advanced',
-        title: 'Subjonctif Avancé',
-        level: 'B2',
-        description: 'Advanced subjunctive — conjunctions, avoiding with infinitive, and literary uses',
-        icon: '🌀',
-        color: '#D97706',
+        level: "B2", unit: 1, id: "b2-la-mise-en-relief-cest-qui-que", title: "La mise en relief : c’est… qui / que", description: "C’est... qui highlights the subject; c’est... que highlights a complement.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Conjunctions Always Triggering the Subjunctive',
-                explanation: 'These conjunctions always require the subjunctive — memorise the list.',
-                examples: [
-                    { french: 'bien que / quoique (+ subj.)', english: 'although' },
-                    { french: 'à moins que (+ subj.)', english: 'unless' },
-                    { french: 'pour que / afin que (+ subj.)', english: 'so that / in order that' },
-                    { french: 'avant que (+ subj.)', english: 'before' },
-                    { french: 'de peur que / de crainte que (+ subj.)', english: 'for fear that' },
-                    { french: 'jusqu\'à ce que (+ subj.)', english: 'until' },
-                ],
-            },
-            {
-                title: 'Subjunctive vs Infinitive',
-                explanation: 'When both clauses share the same subject, use an infinitive construction instead of que + subjunctive.',
-                examples: [
-                    { french: 'Je pars avant qu\'il arrive. (different subjects)', english: 'I\'m leaving before he arrives.' },
-                    { french: 'Je pars avant d\'arriver à destination. (same subject)', english: 'I\'m leaving before reaching my destination.' },
-                    { french: 'Il veut que tu réussisses. (different)', english: 'He wants you to succeed.' },
-                    { french: 'Il veut réussir. (same subject)', english: 'He wants to succeed.' },
-                ],
-            },
-            {
-                title: 'Subjunctive After Superlatives and Restrictive Expressions',
-                explanation: 'The subjunctive is used after superlatives and le seul, le premier, le dernier when expressing a subjective opinion.',
-                examples: [
-                    { french: 'C\'est le meilleur film que j\'aie jamais vu.', english: 'It\'s the best film I\'ve ever seen.' },
-                    { french: 'C\'est la seule solution qui soit acceptable.', english: 'It\'s the only solution that is acceptable.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "C’est... qui highlights the subject; c’est... que highlights a complement.", examples: [
+                { french: "C'est Léa qui a proposé la solution.", english: "It was Léa who proposed the solution" },
+                { french: "C'est ce projet que nous soutenons.", english: "It is this project that we support" },
+            ] },
+            { title: "Nuance and context", explanation: "What is foregrounded depends on the information treated as new or contrastive.", examples: [
+                { french: "Ce sont les habitants qui ont voté.", english: "It is the residents who voted" },
+                { french: "C'est demain que la réunion aura lieu.", english: "It is tomorrow that the meeting will take place" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Bien qu\'il ___ (être) fatigué, il a continué.', answer: 'soit', hint: 'bien que always triggers subjunctive' },
-            { sentence: 'Je partirai à moins qu\'il ___ (pleuvoir).', answer: 'pleuve', hint: 'à moins que → subjunctive; pleuvoir → pleuve' },
-            { sentence: 'Appelle-moi avant qu\'elle ___ (arriver).', answer: 'arrive', hint: 'avant que → subjunctive' },
-            { sentence: 'Il travaille pour que ses enfants ___ (pouvoir) étudier.', answer: 'puissent', hint: 'pour que → subjunctive; pouvoir → puissent' },
-            { sentence: 'C\'est la chose la plus étrange que j\' ___ (voir) de ma vie.', answer: 'aie vue', hint: 'superlative → subjunctive; past subjunctive of voir; agreement with la chose' },
-            { sentence: 'Je veux ___ (partir) avant la foule. (same subject → infinitive)', answer: 'partir', hint: 'same subject → use infinitive, not que + subj.' },
+            { sentence: "C'est Léa ___ a proposé la solution.", answer: "qui", hint: "Expression étudiée : It was Léa who proposed the solution" },
+            { sentence: "C'est ce projet ___ nous soutenons.", answer: "que", hint: "Expression étudiée : It is this project that we support" },
+            { sentence: "___ les habitants qui ont voté.", answer: "Ce sont", hint: "Expression étudiée : It is the residents who voted" },
+            { sentence: "C'est demain ___ la réunion aura lieu.", answer: "que", hint: "Expression étudiée : It is tomorrow that the meeting will take place" },
         ],
     },
     {
-        unit: 1,
-        id: 'si-clauses-type2-3',
-        title: 'Si : Hypothèses et Regrets',
-        level: 'B2',
-        description: 'Type 2 (unlikely) and Type 3 (impossible/past regret) si-clauses',
-        icon: '🔀',
-        color: '#D97706',
+        level: "B2", unit: 1, id: "b2-les-relatifs-composes", title: "Les relatifs composés", description: "Use lequel/laquelle/lesquels/lesquelles after prepositions referring to things.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Type 2 — Unlikely Hypothesis (Present/Future)',
-                explanation: 'Si + imparfait → conditionnel présent. For things that are unlikely, hypothetical, or contrary to present reality.',
-                examples: [
-                    { french: 'Si j\'avais le temps, je voyagerais plus.', english: 'If I had the time (but I don\'t), I would travel more.' },
-                    { french: 'Si elle était riche, elle achèterait une maison.', english: 'If she were rich, she would buy a house.' },
-                    { french: 'Si nous partions maintenant, nous arriverions à temps.', english: 'If we left now, we would arrive in time.' },
-                ],
-            },
-            {
-                title: 'Type 3 — Past Regret (Impossible Condition)',
-                explanation: 'Si + plus-que-parfait → conditionnel passé. For things that didn\'t happen — regrets, counterfactuals.',
-                examples: [
-                    { french: 'Si j\'avais étudié, j\'aurais réussi.', english: 'If I had studied, I would have passed.' },
-                    { french: 'Si elle était venue, elle aurait vu ça.', english: 'If she had come, she would have seen that.' },
-                    { french: 'Si tu n\'avais pas attendu, tu n\'aurais pas manqué le train.', english: 'If you hadn\'t waited, you wouldn\'t have missed the train.' },
-                ],
-            },
-            {
-                title: 'Mixed Si-Clauses',
-                explanation: 'A past condition can produce a present result, or a present condition can produce a past-regret-style result.',
-                examples: [
-                    { french: 'Si j\'avais accepté ce poste, je serais riche aujourd\'hui.', english: 'If I had taken that job, I would be rich today.' },
-                    { french: 'Si tu étais plus prudent, tu n\'aurais pas perdu tes clés hier.', english: 'If you were more careful, you wouldn\'t have lost your keys yesterday.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Use lequel/laquelle/lesquels/lesquelles after prepositions referring to things.", examples: [
+                { french: "Le projet auquel je participe avance.", english: "The project in which I participate is progressing" },
+                { french: "La question sur laquelle nous travaillons est complexe.", english: "The question on which we work is complex" },
+            ] },
+            { title: "Nuance and context", explanation: "With à and de, use contracted forms auquel, auxquels, duquel and related forms.", examples: [
+                { french: "Voici les moyens grâce auxquels nous agissons.", english: "These are the means thanks to which we act" },
+                { french: "C'est le point à partir duquel nous organisons le débat.", english: "This is the point from which we discuss" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Si j\'avais le temps, je ___ (lire) plus. (type 2)', answer: 'lirais', hint: 'si + imparfait → conditionnel présent' },
-            { sentence: 'Si elle ___ (être) médecin, elle gagnerait mieux sa vie. (type 2)', answer: 'était', hint: 'si-clause takes imparfait' },
-            { sentence: 'Si nous ___ (partir) plus tôt, nous n\'aurions pas raté l\'avion. (type 3)', answer: 'étions partis', hint: 'si + plus-que-parfait; partir uses être' },
-            { sentence: 'Il n\'aurait pas échoué s\'il ___ (travailler) davantage. (type 3)', answer: 'avait travaillé', hint: 'plus-que-parfait: avait + past participle' },
-            { sentence: 'Si tu avais pris le train, tu ___ (arriver) à l\'heure. (type 3)', answer: 'serais arrivé(e)', hint: 'conditionnel passé; arriver uses être' },
-            { sentence: 'Si j\'avais accepté cet emploi, je ___ (être) directeur aujourd\'hui. (mixed)', answer: 'serais', hint: 'past condition → present result: conditionnel présent' },
+            { sentence: "Le projet ___ je participe avance.", answer: "auquel", hint: "Expression étudiée : The project in which I participate is progressing" },
+            { sentence: "La question ___ nous travaillons est complexe.", answer: "sur laquelle", hint: "Expression étudiée : The question on which we work is complex" },
+            { sentence: "Voici les moyens ___ nous agissons.", answer: "grâce auxquels", hint: "Expression étudiée : These are the means thanks to which we act" },
+            { sentence: "C'est le point ___ nous organisons le débat.", answer: "à partir duquel", hint: "Expression étudiée : This is the point from which we discuss" },
         ],
     },
     {
-        unit: 2,
-        id: 'emphasis-cleft-sentences',
-        title: 'L\'Emphase et la Mise en Relief',
-        level: 'B2',
-        description: 'Cleft sentences, stressed pronouns, and other emphasis structures',
-        icon: '🔦',
-        color: '#D97706',
+        level: "B2", unit: 1, id: "b2-comparer-avec-precision", title: "Comparer avec précision", description: "Use bien plus, nettement moins and autant to grade comparisons.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'C\'est…qui / C\'est…que',
-                explanation: 'The most common cleft structure. Use qui when emphasising a subject, que when emphasising an object or time/place.',
-                examples: [
-                    { french: 'C\'est Marie qui a appelé. (subject focus)', english: 'It was Marie who called.' },
-                    { french: 'C\'est lui que j\'admire. (object focus)', english: 'It\'s him (that) I admire.' },
-                    { french: 'C\'est hier que j\'ai appris la nouvelle.', english: 'It was yesterday that I heard the news.' },
-                ],
-            },
-            {
-                title: 'Stressed Pronouns and Ne…que',
-                explanation: 'Stressed pronouns (moi, toi, lui, elle, nous, vous, eux, elles) add emphasis. Ne…que means "only" and focuses on the restricted element.',
-                examples: [
-                    { french: 'Moi, je comprends. / Lui, il ne comprend pas.', english: 'I understand. / He doesn\'t.' },
-                    { french: 'C\'est moi qui ai fait ça.', english: 'It was me who did that.' },
-                    { french: 'Je ne travaille que le matin.', english: 'I only work in the morning.' },
-                ],
-            },
-            {
-                title: 'Tout, Même, Seul for Emphasis',
-                explanation: 'These words add intensity or contrast.',
-                examples: [
-                    { french: 'Tout le monde sait ça.', english: 'Everyone knows that.' },
-                    { french: 'C\'est exactement la même chose.', english: 'It\'s exactly the same thing.' },
-                    { french: 'Il est venu seul.', english: 'He came alone / by himself.' },
-                    { french: 'Elle a tout compris.', english: 'She understood everything.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Use bien plus, nettement moins and autant to grade comparisons.", examples: [
+                { french: "Cette solution est nettement plus coûteuse.", english: "This solution is substantially more expensive" },
+                { french: "Nous avons autant de demandes que l'an dernier.", english: "We have as many requests as last year" },
+            ] },
+            { title: "Nuance and context", explanation: "Distinguish comparable quantities from evaluations of degree to avoid overstating conclusions.", examples: [
+                { french: "Il y a beaucoup moins d'attente.", english: "There is much less waiting" },
+                { french: "Le résultat est à peine meilleur.", english: "The result is barely better" },
+            ] },
         ],
         exercises: [
-            { sentence: '___ Marie ___ a gagné le prix. (cleft — subject)', answer: "C'est…qui", hint: "c'est + subject + qui" },
-            { sentence: '___ lui ___ j\'ai choisi. (cleft — object)', answer: "C'est…que", hint: "c'est + object + que" },
-            { sentence: 'Je ne bois ___ de l\'eau. (only)', answer: 'que', hint: 'ne…que = only' },
-            { sentence: '___ lui, il ne travaille jamais. (stressed pronoun + contrast)', answer: 'Lui', hint: 'stressed pronoun at front for contrast' },
-            { sentence: 'C\'est ___ qui avons décidé. (we — stressed)', answer: 'nous', hint: "c'est nous qui… (not c'est on qui)" },
-            { sentence: '___ hier ___ il est arrivé. (time focus)', answer: "C'est…que", hint: 'time/place emphasis → que' },
+            { sentence: "Cette solution est ___ coûteuse.", answer: "nettement plus", hint: "Expression étudiée : This solution is substantially more expensive" },
+            { sentence: "Nous avons ___ de demandes que l'an dernier.", answer: "autant", hint: "Expression étudiée : We have as many requests as last year" },
+            { sentence: "Il y a ___ d'attente.", answer: "beaucoup moins", hint: "Expression étudiée : There is much less waiting" },
+            { sentence: "Le résultat est ___ meilleur.", answer: "à peine", hint: "Expression étudiée : The result is barely better" },
         ],
     },
     {
-        unit: 3,
-        id: 'concession-opposition',
-        title: 'La Concession et l\'Opposition',
-        level: 'B2',
-        description: 'Structures for acknowledging a point while arguing against it',
-        icon: '⚔️',
-        color: '#D97706',
+        level: "B2", unit: 2, id: "b2-hypothese-irreelle-au-present", title: "Hypothèse irréelle au présent", description: "Si + imperfect sets a hypothetical condition; the present conditional states its result.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Concession with Subjunctive',
-                explanation: 'Bien que and quoique require the subjunctive. Même si takes the indicative.',
-                examples: [
-                    { french: 'Bien que ce soit difficile, je continuerai.', english: 'Although it\'s difficult, I will continue.' },
-                    { french: 'Quoiqu\'il soit fatigué, il travaille.', english: 'Although he\'s tired, he works.' },
-                    { french: 'Même si je suis fatigué, je continuerai.', english: 'Even if I\'m tired, I will continue.' },
-                ],
-            },
-            {
-                title: 'Conjunctions and Adverbs of Opposition',
-                explanation: 'These link ideas with a contrasting or concessive relationship.',
-                examples: [
-                    { french: 'cependant / néanmoins / pourtant', english: 'however / nevertheless / yet' },
-                    { french: 'en revanche / par contre', english: 'on the other hand / by contrast' },
-                    { french: 'malgré + noun', english: 'despite (+ noun)' },
-                    { french: 'certes…mais', english: 'admittedly…but' },
-                ],
-            },
-            {
-                title: 'Avoir Beau + Infinitif',
-                explanation: 'Avoir beau + infinitive expresses a futile effort — "no matter how much one does X, it doesn\'t change Y".',
-                examples: [
-                    { french: 'Il a beau travailler, il ne réussit pas.', english: 'No matter how hard he works, he doesn\'t succeed.' },
-                    { french: 'J\'ai beau lui expliquer, il ne comprend pas.', english: 'However much I explain, he doesn\'t understand.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Si + imperfect sets a hypothetical condition; the present conditional states its result.", examples: [
+                { french: "Si l'entreprise embauchait, elle réduirait la charge.", english: "If the company hired, it would reduce workload" },
+                { french: "Nous pourrions agir si nous avions les moyens.", english: "We could act if we had the means" },
+            ] },
+            { title: "Nuance and context", explanation: "This construction may express an imagined alternative rather than a realistic prediction.", examples: [
+                { french: "Si les horaires changeaient, cela faciliterait la vie.", english: "If hours changed, it would make life easier" },
+                { french: "Si je dirigeais l'équipe, je consulterais les salariés.", english: "If I led the team, I would consult employees" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Bien qu\'il ___ (pleuvoir), nous sommes sortis.', answer: 'pleuve', hint: 'bien que → subjunctive' },
-            { sentence: 'Même si c\'est cher, ___ (acheter)- le ! (imperative)', answer: 'achète', hint: 'même si → indicative; imperative in result' },
-            { sentence: 'Il est parti. ___, il a laissé un message. (however)', answer: 'Cependant / Néanmoins / Pourtant', hint: 'any of the three opposition adverbs work' },
-            { sentence: '___ ses efforts, il n\'a pas réussi. (despite + noun)', answer: 'Malgré', hint: 'malgré + noun (no verb)' },
-            { sentence: '___ ce soit vrai, je reste sceptique. (admittedly…but structure)', answer: 'Certes', hint: 'certes…mais: certes introduces the concession' },
-            { sentence: 'Elle a ___ chercher, elle n\'a pas trouvé. (however much she searched)', answer: 'beau', hint: 'avoir beau + infinitif = futile effort' },
+            { sentence: "Si l'entreprise embauchait, elle ___ la charge.", answer: "réduirait", hint: "Expression étudiée : If the company hired, it would reduce workload" },
+            { sentence: "Nous ___ agir si nous avions les moyens.", answer: "pourrions", hint: "Expression étudiée : We could act if we had the means" },
+            { sentence: "Si les horaires changeaient, cela ___ la vie.", answer: "faciliterait", hint: "Expression étudiée : If hours changed, it would make life easier" },
+            { sentence: "___ je dirigeais l'équipe, je consulterais les salariés.", answer: "Si", hint: "Expression étudiée : If I led the team, I would consult employees" },
         ],
     },
     {
-        unit: 3,
-        id: 'nominalisation',
-        title: 'La Nominalisation',
-        level: 'B2',
-        description: 'Converting verbs and adjectives into nouns for formal written register',
-        icon: '📝',
-        color: '#D97706',
+        level: "B2", unit: 2, id: "b2-hypothese-passee-si-plus-que-parfait", title: "Hypothèse passée : si + plus-que-parfait", description: "Use si + pluperfect with the past conditional for unrealized events in the past.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Why Nominalisation?',
-                explanation: 'Formal French (journalism, academic writing, official reports) prefers noun-heavy phrases over verb-heavy ones. This creates a more abstract, authoritative tone.',
-                examples: [
-                    { french: 'Informal: Les gens consomment trop de sucre.', english: 'People consume too much sugar.' },
-                    { french: 'Formal: La consommation excessive de sucre est préoccupante.', english: 'Excessive sugar consumption is concerning.' },
-                ],
-            },
-            {
-                title: 'Common Nominalisation Suffixes',
-                explanation: 'Verbs and adjectives become nouns via these suffixes.',
-                examples: [
-                    { french: '-tion / -sion : améliorer → l\'amélioration', english: 'to improve → improvement' },
-                    { french: '-ment : développer → le développement', english: 'to develop → development' },
-                    { french: '-age : former → la formation', english: 'to train → training' },
-                    { french: '-ure : couvrir → la couverture', english: 'to cover → coverage' },
-                    { french: '-ance / -ence : croître → la croissance', english: 'to grow → growth' },
-                ],
-            },
-            {
-                title: 'Nominalisation in Practice',
-                explanation: 'Rewrite by: (1) nominalising the main verb; (2) making the subject a complement; (3) using être or a formal verb.',
-                examples: [
-                    { french: 'Le gouvernement a décidé → La décision du gouvernement', english: 'The government decided → The government\'s decision' },
-                    { french: 'Les prix augmentent → La hausse des prix', english: 'Prices are rising → The rise in prices' },
-                    { french: 'Les étudiants protestent → La protestation des étudiants', english: 'Students are protesting → The student protest' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Use si + pluperfect with the past conditional for unrealized events in the past.", examples: [
+                { french: "Si j'avais su, je serais venu plus tôt.", english: "If I had known, I would have come earlier" },
+                { french: "Elle aurait accepté si on lui avait expliqué.", english: "She would have accepted if it had been explained" },
+            ] },
+            { title: "Nuance and context", explanation: "Distinguish the hypothetical result from what actually happened.", examples: [
+                { french: "Si vous aviez demandé, nous aurions répondu.", english: "If you had asked, we would have replied" },
+                { french: "Si l'équipe avait testé le logiciel, elle aurait corrigé l'erreur.", english: "If the team had tested it, it would have fixed the error" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Nominaliser : produire → ___', answer: 'la production', hint: '-tion suffix' },
-            { sentence: 'Nominaliser : investir → ___', answer: "l'investissement", hint: '-ment suffix' },
-            { sentence: 'Reformuler en registre formel : Les entreprises embauchent.', answer: "Le recrutement des entreprises / L'embauche par les entreprises est en hausse.", hint: 'nominalise the verb embaucher → le recrutement / l\'embauche' },
-            { sentence: 'Nominaliser : croître → ___', answer: 'la croissance', hint: '-ance suffix (irregular)' },
-            { sentence: 'Reformuler : La pollution augmente. → ___ de la pollution est préoccupant(e).', answer: "L'augmentation / La hausse", hint: 'augmenter → l\'augmentation / la hausse' },
-            { sentence: 'Nominaliser : réformer → ___', answer: 'la réforme', hint: 'irregular: réforme (not réformation)' },
+            { sentence: "Si j'avais su, je ___ plus tôt.", answer: "serais venu", hint: "Expression étudiée : If I had known, I would have come earlier" },
+            { sentence: "Elle ___ si on lui avait expliqué.", answer: "aurait accepté", hint: "Expression étudiée : She would have accepted if it had been explained" },
+            { sentence: "Si vous aviez demandé, nous ___.", answer: "aurions répondu", hint: "Expression étudiée : If you had asked, we would have replied" },
+            { sentence: "___ l'équipe avait testé le logiciel, elle aurait corrigé l'erreur.", answer: "Si", hint: "Expression étudiée : If the team had tested it, it would have fixed the error" },
         ],
     },
     {
-        unit: 4,
-        id: 'infinitive-constructions',
-        title: 'Les Constructions Infinitives',
-        level: 'B2',
-        description: 'après avoir/être, avant de, sans, pour, au lieu de — complex action sequences',
-        icon: '⛓️',
-        color: '#D97706',
+        level: "B2", unit: 2, id: "b2-le-passif-dans-differents-temps", title: "Le passif dans différents temps", description: "Combine être with past participles in several tenses and agree the participle with the subject.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Après Avoir / Après Être + Past Participle',
-                explanation: 'Use après avoir/être + past participle to express an action completed before the main clause. The subject of both clauses must be the same.',
-                examples: [
-                    { french: 'Après avoir mangé, il est sorti.', english: 'After eating (having eaten), he went out.' },
-                    { french: 'Après être arrivée, elle a appelé.', english: 'After arriving, she called.' },
-                    { french: 'Après s\'être lavé les mains, il a cuisiné.', english: 'After washing his hands, he cooked.' },
-                ],
-            },
-            {
-                title: 'Avant de, Sans, Pour, Au Lieu de + Infinitive',
-                explanation: 'These prepositions are followed by the infinitive (present). Same-subject rule applies.',
-                examples: [
-                    { french: 'Il est parti sans dire au revoir.', english: 'He left without saying goodbye.' },
-                    { french: 'Elle travaille pour subvenir à ses besoins.', english: 'She works to support herself.' },
-                    { french: 'Au lieu de te plaindre, agis !', english: 'Instead of complaining, do something!' },
-                    { french: 'Avant de signer, lisez le contrat.', english: 'Before signing, read the contract.' },
-                ],
-            },
-            {
-                title: 'The Same-Subject Rule',
-                explanation: 'All these infinitive constructions require the same subject in both clauses. If subjects differ, use a full subordinate clause.',
-                examples: [
-                    { french: 'Avant de partir, il a fermé la porte. (same subject ✓)', english: 'Before leaving, he locked the door.' },
-                    { french: 'Avant qu\'elle parte, il a fermé la porte. (different subjects ✓)', english: 'Before she left, he locked the door.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Combine être with past participles in several tenses and agree the participle with the subject.", examples: [
+                { french: "Les dossiers seront examinés lundi.", english: "The files will be reviewed Monday" },
+                { french: "La réunion avait été reportée.", english: "The meeting had been postponed" },
+            ] },
+            { title: "Nuance and context", explanation: "Passive constructions foreground the affected participant; an agent with par is optional.", examples: [
+                { french: "Les conditions ont été modifiées.", english: "The conditions were changed" },
+                { french: "Une procédure serait appliquée si besoin.", english: "A procedure would be applied if needed" },
+            ] },
         ],
         exercises: [
-            { sentence: '___ avoir fini, il est allé se coucher.', answer: 'Après', hint: 'après avoir + past participle' },
-            { sentence: 'Elle est rentrée ___ être passée à la pharmacie.', answer: 'après', hint: 'après être + past participle; passer uses avoir but here reflexive context' },
-            { sentence: 'Il est parti ___ prévenir personne. (without)', answer: 'sans', hint: 'sans + infinitive' },
-            { sentence: 'Tu dois lire ___ de signer. (before)', answer: 'avant', hint: 'avant de + infinitive' },
-            { sentence: '___ de faire ça, pourquoi ne pas essayer autrement ? (instead of)', answer: 'Au lieu', hint: 'au lieu de + infinitive' },
-            { sentence: 'Il travaille dur ___ réaliser son rêve. (in order to)', answer: 'pour', hint: 'pour + infinitive = in order to' },
+            { sentence: "Les dossiers ___ lundi.", answer: "seront examinés", hint: "Expression étudiée : The files will be reviewed Monday" },
+            { sentence: "La réunion ___.", answer: "avait été reportée", hint: "Expression étudiée : The meeting had been postponed" },
+            { sentence: "Les conditions ___.", answer: "ont été modifiées", hint: "Expression étudiée : The conditions were changed" },
+            { sentence: "Une procédure ___ si besoin.", answer: "serait appliquée", hint: "Expression étudiée : A procedure would be applied if needed" },
         ],
     },
     {
-        unit: 5,
-        id: 'subjunctive-vs-indicative',
-        title: 'Subjonctif ou Indicatif ?',
-        level: 'B2',
-        description: 'Verbs that change meaning depending on whether they take the subjunctive or indicative',
-        icon: '⚖️',
-        color: '#D97706',
+        level: "B2", unit: 3, id: "b2-discours-indirect-et-concordance", title: "Discours indirect et concordance", description: "In past reported speech, present commonly shifts to imperfect, future to conditional, and passé composé to pluperfect.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Croire que, Penser que, Trouver que',
-                explanation: 'In affirmative sentences → indicative (certainty). In negative or interrogative → subjunctive (doubt introduced).',
-                examples: [
-                    { french: 'Je crois qu\'il a raison. (affirmative → indicatif)', english: 'I think he\'s right.' },
-                    { french: 'Je ne crois pas qu\'il ait raison. (negative → subjonctif)', english: 'I don\'t think he\'s right.' },
-                    { french: 'Croyez-vous qu\'il soit venu ? (interrogative → subjonctif)', english: 'Do you think he came?' },
-                ],
-            },
-            {
-                title: 'Espérer que',
-                explanation: 'Espérer que takes the indicative — even though it expresses hope (which is subjective). This is an exception to the expectation.',
-                examples: [
-                    { french: 'J\'espère qu\'il viendra. (indicatif futur — NOT subjonctif)', english: 'I hope he will come.' },
-                    { french: 'J\'espère qu\'elle est arrivée. (indicatif passé composé)', english: 'I hope she has arrived.' },
-                ],
-            },
-            {
-                title: 'Il semble que vs Il me semble que',
-                explanation: 'Il semble que → subjunctive (impersonal, uncertain). Il me semble que → indicative (personal, felt as certain).',
-                examples: [
-                    { french: 'Il semble qu\'il soit parti. (subjonctif)', english: 'It seems (that) he has left.' },
-                    { french: 'Il me semble qu\'il est parti. (indicatif)', english: 'It seems to me (that) he has left.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "In past reported speech, present commonly shifts to imperfect, future to conditional, and passé composé to pluperfect.", examples: [
+                { french: "Elle a déclaré qu'elle était prête.", english: "She stated she was ready" },
+                { french: "Il a dit qu'il viendrait ensuite.", english: "He said he would come later" },
+            ] },
+            { title: "Nuance and context", explanation: "Shift personal and temporal references consistently with the speaker’s viewpoint.", examples: [
+                { french: "Ils affirmaient qu'ils avaient vérifié la source.", english: "They claimed they had checked the source" },
+                { french: "Le témoin a expliqué qu'il ne savait pas.", english: "The witness explained that he did not know" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Je crois qu\'il ___ (venir) demain. (affirmative)', answer: 'viendra', hint: 'affirmative croire → indicatif futur' },
-            { sentence: 'Je ne pense pas qu\'il ___ (avoir) raison. (negative)', answer: 'ait', hint: 'negative penser → subjonctif' },
-            { sentence: 'J\'espère qu\'elle ___ (réussir). (futur)', answer: 'réussira', hint: 'espérer que → always indicatif' },
-            { sentence: 'Il semble qu\'il ___ (être) malade. (impersonal)', answer: 'soit', hint: 'il semble que (impersonal) → subjonctif' },
-            { sentence: 'Il me semble qu\'elle ___ (comprendre). (personal)', answer: 'comprend', hint: 'il me semble que → indicatif' },
-            { sentence: 'Pensez-vous qu\'il ___ (partir) ? (interrogative)', answer: 'soit parti', hint: 'interrogative penser → subjonctif; past subjunctive' },
+            { sentence: "Elle a déclaré qu'elle ___ prête.", answer: "était", hint: "Expression étudiée : She stated she was ready" },
+            { sentence: "Il a dit qu'il ___ ensuite.", answer: "viendrait", hint: "Expression étudiée : He said he would come later" },
+            { sentence: "Ils affirmaient qu'ils ___ la source.", answer: "avaient vérifié", hint: "Expression étudiée : They claimed they had checked the source" },
+            { sentence: "Le témoin a expliqué qu'il ___.", answer: "ne savait pas", hint: "Expression étudiée : The witness explained that he did not know" },
         ],
     },
     {
-        unit: 1,
-        id: 'subjonctif',
-        title: 'The Subjunctive',
-        level: 'B2',
-        description: 'The subjunctive mood — expressing doubt, emotion, necessity and subjectivity',
-        icon: '🌀',
-        color: '#DC2626',
+        level: "B2", unit: 3, id: "b2-le-conditionnel-journalistique", title: "Le conditionnel journalistique", description: "The conditional can report information that is not confirmed and mark journalistic distance.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Formation',
-                explanation: 'Take the ils/elles present-tense stem, drop -ent, and add: -e, -es, -e, -ions, -iez, -ent. Être and avoir are irregular.',
-                examples: [
-                    { french: 'parler (ils parlent → parl-) → que je parle, que tu parles, qu\'il parle…', english: 'that I speak, that you speak, that he speaks…' },
-                    { french: 'finir (ils finissent → finiss-) → que je finisse…', english: 'that I finish…' },
-                    { french: 'prendre (ils prennent → prenn-) → que je prenne…', english: 'that I take…' },
-                    { french: 'être → que je sois, que tu sois, qu\'il soit, que nous soyons, que vous soyez, qu\'ils soient', english: 'that I be, that you be…' },
-                    { french: 'avoir → que j\'aie, que tu aies, qu\'il ait, que nous ayons, que vous ayez, qu\'ils aient', english: 'that I have, that you have…' },
-                ],
-            },
-            {
-                title: 'When to Use the Subjunctive',
-                explanation: 'Use the subjunctive in a subordinate clause after que when the main clause expresses: doubt, emotion, necessity, will, or impersonal expressions.',
-                examples: [
-                    { french: 'Il faut que tu viennes.', english: 'You have to come. (necessity)' },
-                    { french: 'Je veux qu\'il parte.', english: 'I want him to leave. (will)' },
-                    { french: 'Je suis content que tu sois là.', english: 'I\'m glad you\'re here. (emotion)' },
-                    { french: 'Il est important que nous sachions.', english: 'It\'s important that we know. (impersonal)' },
-                    { french: 'Je doute qu\'il ait raison.', english: 'I doubt he\'s right. (doubt)' },
-                    { french: 'Bien que ce soit difficile…', english: 'Although it\'s difficult… (concession)' },
-                    { french: 'avant que tu partes', english: 'before you leave (conjunction)' },
-                    { french: 'pour que tu comprennes', english: 'so that you understand (purpose)' },
-                ],
-            },
-            {
-                title: 'Subjunctive vs Indicative',
-                explanation: 'After verbs of belief/thought in the affirmative, use the indicative. In the negative or interrogative, use the subjunctive.',
-                examples: [
-                    { french: 'Je pense qu\'il a raison. (indicative)', english: 'I think he\'s right.' },
-                    { french: 'Je ne pense pas qu\'il ait raison. (subjunctive)', english: 'I don\'t think he\'s right.' },
-                    { french: 'Penses-tu qu\'il ait raison ? (subjunctive)', english: 'Do you think he\'s right?' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "The conditional can report information that is not confirmed and mark journalistic distance.", examples: [
+                { french: "Le projet serait abandonné selon plusieurs sources.", english: "The project has reportedly been abandoned" },
+                { french: "Deux responsables auraient quitté leur poste.", english: "Two officials are said to have left their posts" },
+            ] },
+            { title: "Nuance and context", explanation: "Distinguish reported possibility from the speaker’s own certain assertion.", examples: [
+                { french: "L'entreprise préparerait une annonce.", english: "The company is reportedly preparing an announcement" },
+                { french: "Une réunion aurait eu lieu hier.", english: "A meeting reportedly took place yesterday" },
+            ] },
         ],
         exercises: [
-            { sentence: "Il faut que tu ___. (venir, subjonctif)", answer: 'viennes', hint: 'subjonctif of venir: vienn-' },
-            { sentence: "Je veux qu'il ___. (partir, subjonctif)", answer: 'parte', hint: 'subjonctif of partir: part-' },
-            { sentence: "Je suis content que tu ___ là. (être, subjonctif)", answer: 'sois', hint: 'irregular subjonctif of être' },
-            { sentence: "Bien qu'il ___ difficile… (être, subjonctif)", answer: 'soit', hint: 'irregular subjonctif of être' },
-            { sentence: "Je ne pense pas qu'il ___ raison. (avoir, subjonctif)", answer: 'ait', hint: 'irregular subjonctif of avoir' },
-            { sentence: "Il est important que nous ___. (savoir, subjonctif)", answer: 'sachions', hint: 'irregular subjonctif of savoir: sach-' },
+            { sentence: "Le projet ___ abandonné selon plusieurs sources.", answer: "serait", hint: "Expression étudiée : The project has reportedly been abandoned" },
+            { sentence: "Deux responsables ___ leur poste.", answer: "auraient quitté", hint: "Expression étudiée : Two officials are said to have left their posts" },
+            { sentence: "L'entreprise ___ une annonce.", answer: "préparerait", hint: "Expression étudiée : The company is reportedly preparing an announcement" },
+            { sentence: "Une réunion ___ hier.", answer: "aurait eu lieu", hint: "Expression étudiée : A meeting reportedly took place yesterday" },
         ],
     },
     {
-        unit: 2,
-        id: 'gerondif',
-        title: 'Le Gérondif',
-        level: 'B2',
-        description: 'Express simultaneous actions, manner, and condition using en + present participle',
-        icon: '🔀',
-        color: '#059669',
+        level: "B2", unit: 3, id: "b2-nuancer-la-cause", title: "Nuancer la cause", description: "Differentiate parce que, puisque and dans la mesure où according to what is assumed or justified.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Formation',
-                explanation: 'Take the nous form of the present tense, remove -ons, add -ant. Then place en before it. Only three irregular stems: étant (être), ayant (avoir), sachant (savoir).',
-                examples: [
-                    { french: 'parler → nous parlons → parlant → en parlant', english: 'while speaking' },
-                    { french: 'finir → nous finissons → finissant → en finissant', english: 'while finishing' },
-                    { french: 'prendre → nous prenons → prenant → en prenant', english: 'while taking' },
-                    { french: 'être → étant → en étant', english: 'while being (irregular)' },
-                    { french: 'savoir → sachant → en sachant', english: 'knowing / by knowing (irregular)' },
-                ],
-            },
-            {
-                title: 'Simultaneous Actions',
-                explanation: 'The gérondif expresses two actions happening at the same time. Both actions must share the same subject.',
-                examples: [
-                    { french: 'Elle chante en cuisinant.', english: 'She sings while cooking.' },
-                    { french: 'Il lit le journal en mangeant.', english: 'He reads the paper while eating.' },
-                    { french: 'Je travaille en écoutant de la musique.', english: 'I work while listening to music.' },
-                    { french: 'Il conduisait en téléphonant.', english: 'He was driving while on his phone.' },
-                ],
-            },
-            {
-                title: 'Manner or Means',
-                explanation: 'The gérondif expresses how something is achieved — the means by which the main action occurs.',
-                examples: [
-                    { french: 'Il a réussi en travaillant dur.', english: 'He succeeded by working hard.' },
-                    { french: 'J\'ai appris le français en regardant des films.', english: 'I learned French by watching films.' },
-                    { french: 'Elle s\'est blessée en tombant.', english: 'She hurt herself by falling.' },
-                    { french: 'On maigrit en mangeant moins.', english: 'You lose weight by eating less.' },
-                ],
-            },
-            {
-                title: 'Condition or Time',
-                explanation: 'The gérondif can express a condition (if) or a time reference (upon, when).',
-                examples: [
-                    { french: 'En faisant attention, tu éviteras les erreurs.', english: 'If you\'re careful, you\'ll avoid mistakes.' },
-                    { french: 'En arrivant, appelez-moi.', english: 'Upon arriving, call me.' },
-                    { french: 'En partant tôt, tu éviteras les embouteillages.', english: 'By leaving early, you\'ll avoid traffic.' },
-                ],
-            },
-            {
-                title: 'Gérondif vs Participe Présent',
-                explanation: 'The gérondif (en + -ant) is adverbial and modifies the verb. The participe présent (-ant alone) is adjectival and can modify a noun, or introduce a subordinate clause.',
-                examples: [
-                    { french: 'En souriant, il répondit. (gérondif — how he replied)', english: 'Smiling, he replied.' },
-                    { french: 'Un enfant souriant. (participe présent as adj)', english: 'A smiling child.' },
-                    { french: 'Sachant cela, elle n\'est pas venue. (participe présent — causal)', english: 'Knowing that, she didn\'t come.' },
-                    { french: 'Il est entré en courant. (gérondif)', english: 'He came in running.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Differentiate parce que, puisque and dans la mesure où according to what is assumed or justified.", examples: [
+                { french: "Puisque les chiffres sont publics, comparons-les.", english: "Since the figures are public, let us compare them" },
+                { french: "La mesure est nécessaire dans la mesure où elle protège les usagers.", english: "The measure is necessary insofar as it protects users" },
+            ] },
+            { title: "Nuance and context", explanation: "Faute de and en raison de introduce nominal explanations with different implications.", examples: [
+                { french: "Faute de preuves, l'enquête continue.", english: "For lack of evidence, the inquiry continues" },
+                { french: "La séance est reportée en raison de la météo.", english: "The session is postponed because of the weather" },
+            ] },
         ],
         exercises: [
-            { sentence: "Elle chante ___ cuisinant.", answer: 'en', hint: 'gérondif = en + participe présent' },
-            { sentence: "Il a réussi ___ travaillant dur.", answer: 'en', hint: 'gérondif expresses means' },
-            { sentence: "Nous finissons → ___ant (participe présent de finir)", answer: 'finissant', hint: 'remove -ons from nous form, add -ant' },
-            { sentence: "___ arrivant, appelez-moi.", answer: 'En', hint: 'gérondif at start of sentence' },
-            { sentence: "J'apprends le français ___ regardant des films.", answer: 'en', hint: 'gérondif expresses manner' },
-            { sentence: "être → étant → ___ étant (gérondif)", answer: 'en', hint: 'all gérondifs are formed with en' },
+            { sentence: "___ les chiffres sont publics, comparons-les.", answer: "Puisque", hint: "Expression étudiée : Since the figures are public, let us compare them" },
+            { sentence: "La mesure est nécessaire ___ elle protège les usagers.", answer: "dans la mesure où", hint: "Expression étudiée : The measure is necessary insofar as it protects users" },
+            { sentence: "___ preuves, l'enquête continue.", answer: "Faute de", hint: "Expression étudiée : For lack of evidence, the inquiry continues" },
+            { sentence: "La séance est reportée ___ la météo.", answer: "en raison de", hint: "Expression étudiée : The session is postponed because of the weather" },
         ],
     },
     {
-        unit: 1,
-        id: 'passive-voice',
-        title: 'La Voix Passive',
-        level: 'B2',
-        description: 'How to form the passive, when to use it, and elegant alternatives',
-        icon: '🔁',
-        color: '#0891B2',
+        level: "B2", unit: 4, id: "b2-concession-bien-que-malgre-meme-si", title: "Concession : bien que, malgré, même si", description: "Bien que requires the subjunctive; malgré is followed by a noun phrase.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Formation',
-                explanation: 'Passive = subject + être (conjugated in the required tense) + past participle (agrees in gender/number with subject) + par/de + agent. The tense of être reflects the tense of the active sentence.',
-                examples: [
-                    { french: 'Le chat mange la souris. → La souris est mangée par le chat. (présent)', english: 'The mouse is eaten by the cat.' },
-                    { french: 'La police a arrêté le suspect. → Le suspect a été arrêté par la police. (passé composé)', english: 'The suspect was arrested by the police.' },
-                    { french: 'On construisait le pont. → Le pont était construit. (imparfait)', english: 'The bridge was being built.' },
-                    { french: 'Le jury condamnera l\'accusé. → L\'accusé sera condamné. (futur)', english: 'The accused will be condemned.' },
-                    { french: 'Ce roman a été écrit par Balzac en 1835.', english: 'This novel was written by Balzac in 1835.' },
-                ],
-            },
-            {
-                title: 'Par vs De',
-                explanation: 'Use par for physical, concrete, or one-time actions. Use de for states, feelings, habitual or descriptive situations.',
-                examples: [
-                    { french: 'La ville a été détruite par les bombes.', english: 'The city was destroyed by bombs. (par — physical action)' },
-                    { french: 'Il est respecté de tous ses collègues.', english: 'He is respected by all his colleagues. (de — state)' },
-                    { french: 'Elle est entourée de fleurs.', english: 'She is surrounded by flowers. (de — descriptive state)' },
-                    { french: 'Le président a été applaudi par la foule.', english: 'The president was applauded by the crowd. (par — concrete action)' },
-                ],
-            },
-            {
-                title: 'Passive Across Tenses',
-                explanation: 'Any tense of être can be used. The past participle always agrees with the subject.',
-                examples: [
-                    { french: 'Elle est invitée. (présent)', english: 'She is invited.' },
-                    { french: 'Elle a été invitée. (passé composé)', english: 'She was invited.' },
-                    { french: 'Elle sera invitée. (futur)', english: 'She will be invited.' },
-                    { french: 'Elle aurait été invitée. (conditionnel passé)', english: 'She would have been invited.' },
-                ],
-            },
-            {
-                title: 'Avoiding the Passive',
-                explanation: 'In spoken French, the passive is often avoided. Three common alternatives: on + active verb; a reflexive/pronominal construction; or simply restructuring.',
-                examples: [
-                    { french: 'On vous appellera demain.', english: 'You\'ll be called tomorrow. (on instead of passive)' },
-                    { french: 'Cela se fait facilement.', english: 'That is done easily. (pronominal)' },
-                    { french: 'Ce vin se boit frais.', english: 'This wine is drunk chilled. (pronominal)' },
-                    { french: 'Ce livre se vend bien.', english: 'This book sells well. (pronominal)' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Bien que requires the subjunctive; malgré is followed by a noun phrase.", examples: [
+                { french: "Bien que le projet soit utile, il coûte cher.", english: "Although the project is useful, it is expensive" },
+                { french: "Malgré les critiques, elle maintient sa décision.", english: "Despite criticism, she maintains her decision" },
+            ] },
+            { title: "Nuance and context", explanation: "Même si uses the indicative and often highlights a plausible or real obstacle.", examples: [
+                { french: "Même si la situation s'améliore, le débat continue.", english: "Even if it improves, debate continues" },
+                { french: "Nous agirons quoique les moyens soient limités.", english: "We will act although resources are limited" },
+            ] },
         ],
         exercises: [
-            { sentence: "La souris est ___ par le chat.", answer: 'mangée', hint: 'passive présent; participe agrees with la souris (feminine)' },
-            { sentence: "Le suspect a été arrêté ___ la police.", answer: 'par', hint: 'par for a concrete, one-time physical action' },
-            { sentence: "Il est respecté ___ tous ses collègues.", answer: 'de', hint: 'de for a state or habitual relationship' },
-            { sentence: "Elle est ___. (inviter, passive passé composé, feminine)", answer: 'invitée', hint: 'passive passé composé: a été + participe; feminine agreement' },
-            { sentence: "Ce vin ___ boit frais.", answer: 'se', hint: 'pronominal construction avoids the passive' },
-            { sentence: "___ vous appellera demain. (passive avoidance with on)", answer: 'On', hint: 'on + active verb instead of passive' },
+            { sentence: "___ le projet soit utile, il coûte cher.", answer: "Bien que", hint: "Expression étudiée : Although the project is useful, it is expensive" },
+            { sentence: "___ les critiques, elle maintient sa décision.", answer: "Malgré", hint: "Expression étudiée : Despite criticism, she maintains her decision" },
+            { sentence: "___ la situation s'améliore, le débat continue.", answer: "Même si", hint: "Expression étudiée : Even if it improves, debate continues" },
+            { sentence: "Nous agirons ___ les moyens soient limités.", answer: "quoique", hint: "Expression étudiée : We will act although resources are limited" },
         ],
     },
     {
-        unit: 2,
-        id: 'reported-speech',
-        title: 'Le Discours Indirect',
-        level: 'B2',
-        description: 'Report what someone said, asked, or ordered — with the correct tense shifts',
-        icon: '💭',
-        color: '#D97706',
+        level: "B2", unit: 4, id: "b2-infinitif-present-et-infinitif-passe", title: "Infinitif présent et infinitif passé", description: "Use avoir or être in the infinitive plus the past participle to mark an action completed before another.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Statements (que)',
-                explanation: 'Direct speech uses quotation marks. Indirect speech uses que. If the reporting verb is in the present, tenses stay the same. If reporting verb is in the past, tenses shift back.',
-                examples: [
-                    { french: 'Il dit : « Je suis fatigué. » → Il dit qu\'il est fatigué.', english: 'He says he is tired. (reporting verb présent — no shift)' },
-                    { french: 'Il a dit : « Je suis fatigué. » → Il a dit qu\'il était fatigué.', english: 'He said he was tired. (reporting verb past — shift)' },
-                    { french: 'Elle déclare : « J\'ai fini. » → Elle déclare qu\'elle a fini.', english: 'She declares that she has finished. (present reporting)' },
-                    { french: 'Elle a déclaré : « J\'ai fini. » → Elle a déclaré qu\'elle avait fini.', english: 'She declared that she had finished. (past reporting)' },
-                ],
-            },
-            {
-                title: 'Tense Shifts (reporting verb in past)',
-                explanation: 'When the reporting verb is past, tenses shift back one step.',
-                examples: [
-                    { french: 'présent → imparfait: « Il travaille. » → Il a dit qu\'il travaillait.', english: 'He said he was working.' },
-                    { french: 'passé composé → plus-que-parfait: « J\'ai mangé. » → Il a dit qu\'il avait mangé.', english: 'He said he had eaten.' },
-                    { french: 'futur simple → conditionnel présent: « Je viendrai. » → Il a dit qu\'il viendrait.', english: 'He said he would come.' },
-                    { french: 'imparfait stays imparfait: « Elle dormait. » → Il a dit qu\'elle dormait.', english: 'He said she was sleeping.' },
-                    { french: 'futur antérieur → conditionnel passé: « J\'aurai fini. » → Il a dit qu\'il aurait fini.', english: 'He said he would have finished.' },
-                    { french: 'conditionnel présent stays: « Je voudrais. » → Il a dit qu\'il voudrait.', english: 'He said he would like.' },
-                ],
-            },
-            {
-                title: 'Yes/No Questions (si)',
-                explanation: 'Yes/no questions in indirect speech use si (whether). Est-ce que is dropped.',
-                examples: [
-                    { french: 'Il a demandé : « Tu viens ? » → Il a demandé si elle venait.', english: 'He asked if she was coming.' },
-                    { french: 'Elle voulait savoir : « Est-ce qu\'il a réussi ? » → Elle voulait savoir s\'il avait réussi.', english: 'She wanted to know if he had succeeded.' },
-                    { french: 'Je me demande si c\'est vrai.', english: 'I wonder whether it\'s true.' },
-                ],
-            },
-            {
-                title: 'Wh- Questions',
-                explanation: 'Question words are kept. Qu\'est-ce que becomes ce que. Qu\'est-ce qui becomes ce qui. Inversion is dropped.',
-                examples: [
-                    { french: '« Où vas-tu ? » → Il a demandé où elle allait.', english: 'He asked where she was going.' },
-                    { french: '« Comment t\'appelles-tu ? » → Il a demandé comment elle s\'appelait.', english: 'He asked what her name was.' },
-                    { french: '« Qu\'est-ce que tu veux ? » → Il a demandé ce qu\'elle voulait.', english: 'He asked what she wanted.' },
-                    { french: '« Qu\'est-ce qui se passe ? » → Il a demandé ce qui se passait.', english: 'He asked what was happening.' },
-                ],
-            },
-            {
-                title: 'Commands (de + infinitive)',
-                explanation: 'Direct commands become de + infinitive in indirect speech.',
-                examples: [
-                    { french: '« Pars ! » → Elle lui a dit de partir.', english: 'She told him to leave.' },
-                    { french: '« Ne fais pas ça ! » → Il lui a dit de ne pas faire ça.', english: 'He told her not to do that.' },
-                    { french: '« Asseyez-vous ! » → Il nous a demandé de nous asseoir.', english: 'He asked us to sit down.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Use avoir or être in the infinitive plus the past participle to mark an action completed before another.", examples: [
+                { french: "Après avoir lu le rapport, elle a répondu.", english: "After reading the report, she responded" },
+                { french: "Il regrette d'être parti trop tôt.", english: "He regrets having left too early" },
+            ] },
+            { title: "Nuance and context", explanation: "With verbs of reporting or judgment, this distinction can make chronology explicit.", examples: [
+                { french: "Ils reconnaissent avoir sous-estimé le coût.", english: "They acknowledge having underestimated the cost" },
+                { french: "Merci d'être venu si tôt.", english: "Thank you for having come so early" },
+            ] },
         ],
         exercises: [
-            { sentence: "Il a dit qu'il ___. (travailler, imparfait, tense shift)", answer: 'travaillait', hint: 'présent → imparfait after past reporting verb' },
-            { sentence: "Il a dit qu'il ___ mangé. (avoir, conditionnel, tense shift from futur)", answer: 'avait', hint: 'passé composé → plus-que-parfait after past reporting verb' },
-            { sentence: "Il a demandé ___ elle venait.", answer: 'si', hint: 'indirect yes/no question uses si' },
-            { sentence: "Il a demandé où elle ___. (aller, imparfait)", answer: 'allait', hint: 'wh-question indirect speech, tense shifts back' },
-            { sentence: "Elle lui a dit de ___. (partir)", answer: 'partir', hint: 'indirect command: dire de + infinitif' },
-            { sentence: "Il a demandé ce qu'elle ___. (vouloir, imparfait)", answer: 'voulait', hint: "Qu'est-ce que → ce que; tense shifts back to imparfait" },
+            { sentence: "Après ___ le rapport, elle a répondu.", answer: "avoir lu", hint: "Expression étudiée : After reading the report, she responded" },
+            { sentence: "Il regrette d'___ trop tôt.", answer: "être parti", hint: "Expression étudiée : He regrets having left too early" },
+            { sentence: "Ils reconnaissent ___ le coût.", answer: "avoir sous-estimé", hint: "Expression étudiée : They acknowledge having underestimated the cost" },
+            { sentence: "Merci d'___ si tôt.", answer: "être venu", hint: "Expression étudiée : Thank you for having come so early" },
+        ],
+    },
+    {
+        level: "B2", unit: 4, id: "b2-exprimer-le-but-pour-que-et-afin-que", title: "Exprimer le but : pour que et afin que", description: "Pour que and afin que introduce a clause with a subjunctive verb.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Pour que and afin que introduce a clause with a subjunctive verb.", examples: [
+                { french: "Nous adaptons le plan afin que chacun puisse venir.", english: "We adapt the plan so everyone can come" },
+                { french: "Elle explique le projet pour que les voisins comprennent.", english: "She explains the project so neighbors understand" },
+            ] },
+            { title: "Nuance and context", explanation: "When there is only one subject, use pour/afin de followed by an infinitive.", examples: [
+                { french: "Il écrit afin de clarifier sa demande.", english: "He writes in order to clarify his request" },
+                { french: "Il faut agir de façon que les coûts restent maîtrisés.", english: "We must act so costs stay controlled" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Nous adaptons le plan ___ chacun puisse venir.", answer: "afin que", hint: "Expression étudiée : We adapt the plan so everyone can come" },
+            { sentence: "Elle explique le projet ___ les voisins comprennent.", answer: "pour que", hint: "Expression étudiée : She explains the project so neighbors understand" },
+            { sentence: "Il écrit ___ clarifier sa demande.", answer: "afin de", hint: "Expression étudiée : He writes in order to clarify his request" },
+            { sentence: "Il faut agir ___ les coûts restent maîtrisés.", answer: "de façon que", hint: "Expression étudiée : We must act so costs stay controlled" },
+        ],
+    },
+    {
+        level: "B2", unit: 5, id: "b2-subjonctif-et-jugement", title: "Subjonctif et jugement", description: "Use the subjunctive after judgments of necessity, emotion or doubt.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Use the subjunctive after judgments of necessity, emotion or doubt.", examples: [
+                { french: "Il est essentiel que chacun participe.", english: "It is essential that everyone take part" },
+                { french: "Je suis ravi qu'elle réussisse.", english: "I am delighted she succeeds" },
+            ] },
+            { title: "Nuance and context", explanation: "In affirmative statements of certainty, the indicative is normally expected instead.", examples: [
+                { french: "Il est certain que le programme fonctionne.", english: "It is certain the program works" },
+                { french: "Je crains que la mesure ne suffise pas.", english: "I fear the measure may not be enough" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Il est essentiel que chacun ___.", answer: "participe", hint: "Expression étudiée : It is essential that everyone take part" },
+            { sentence: "Je suis ravi qu'elle ___.", answer: "réussisse", hint: "Expression étudiée : I am delighted she succeeds" },
+            { sentence: "Il est certain que le programme ___.", answer: "fonctionne", hint: "Expression étudiée : It is certain the program works" },
+            { sentence: "Je crains que la mesure ne ___ pas.", answer: "suffise", hint: "Expression étudiée : I fear the measure may not be enough" },
+        ],
+    },
+    {
+        level: "B2", unit: 5, id: "b2-gerondif-et-participe-present", title: "Gérondif et participe présent", description: "En + present participle links simultaneous action or means to the same subject.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "En + present participle links simultaneous action or means to the same subject.", examples: [
+                { french: "Elle apprend en observant les collègues.", english: "She learns by observing colleagues" },
+                { french: "Les membres participant au projet sont nombreux.", english: "The members taking part are numerous" },
+            ] },
+            { title: "Nuance and context", explanation: "A bare present participle can modify a noun or introduce a circumstance, often in formal prose.", examples: [
+                { french: "Ayant peu de temps, il a résumé son avis.", english: "Having little time, he summarized his view" },
+                { french: "Nous avons avancé en comparant les données.", english: "We moved forward by comparing data" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Elle apprend ___ les collègues.", answer: "en observant", hint: "Expression étudiée : She learns by observing colleagues" },
+            { sentence: "Les membres ___ au projet sont nombreux.", answer: "participant", hint: "Expression étudiée : The members taking part are numerous" },
+            { sentence: "___ peu de temps, il a résumé son avis.", answer: "Ayant", hint: "Expression étudiée : Having little time, he summarized his view" },
+            { sentence: "Nous avons avancé ___ les données.", answer: "en comparant", hint: "Expression étudiée : We moved forward by comparing data" },
+        ],
+    },
+    {
+        level: "B2", unit: 5, id: "b2-nominalisation-et-style-formel", title: "Nominalisation et style formel", description: "Nominalizations turn actions into nouns, enabling concise abstract argument.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Nominalizations turn actions into nouns, enabling concise abstract argument.", examples: [
+                { french: "La réduction des coûts reste prioritaire.", english: "Cost reduction remains a priority" },
+                { french: "L'évaluation du projet est attendue.", english: "Evaluation of the project is expected" },
+            ] },
+            { title: "Nuance and context", explanation: "Avoid excessive chains of nominalizations when clarity requires naming actors and actions.", examples: [
+                { french: "La participation des usagers augmente.", english: "Participation by users is increasing" },
+                { french: "Le renforcement des équipes prendra du temps.", english: "Strengthening teams will take time" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "La ___ des coûts reste prioritaire.", answer: "réduction", hint: "Expression étudiée : Cost reduction remains a priority" },
+            { sentence: "L'___ du projet est attendue.", answer: "évaluation", hint: "Expression étudiée : Evaluation of the project is expected" },
+            { sentence: "La ___ des usagers augmente.", answer: "participation", hint: "Expression étudiée : Participation by users is increasing" },
+            { sentence: "Le ___ des équipes prendra du temps.", answer: "renforcement", hint: "Expression étudiée : Strengthening teams will take time" },
+        ],
+    },
+    {
+        level: "B2", unit: 6, id: "b2-le-subjonctif-passe", title: "Le subjonctif passé", description: "Use the subjunctive of avoir/être plus the past participle to refer to an action completed before the main event or judgment.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Use the subjunctive of avoir/être plus the past participle to refer to an action completed before the main event or judgment.", examples: [
+                { french: "Je suis content qu'elle ait réussi.", english: "I am happy she succeeded" },
+                { french: "Il est regrettable qu'ils soient partis.", english: "It is regrettable that they left" },
+            ] },
+            { title: "Nuance and context", explanation: "Distinguish its chronology from the present subjunctive.", examples: [
+                { french: "Je doute qu'il ait lu le dossier.", english: "I doubt he read the file" },
+                { french: "Nous sommes ravis que vous ayez accepté.", english: "We are delighted you accepted" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Je suis content qu'elle ___.", answer: "ait réussi", hint: "Expression étudiée : I am happy she succeeded" },
+            { sentence: "Il est regrettable qu'ils ___.", answer: "soient partis", hint: "Expression étudiée : It is regrettable that they left" },
+            { sentence: "Je doute qu'il ___ le dossier.", answer: "ait lu", hint: "Expression étudiée : I doubt he read the file" },
+            { sentence: "Nous sommes ravis que vous ___.", answer: "ayez accepté", hint: "Expression étudiée : We are delighted you accepted" },
+        ],
+    },
+    {
+        level: "B2", unit: 6, id: "b2-certitude-doute-et-probabilite", title: "Certitude, doute et probabilité", description: "Expressing certainty commonly selects the indicative; doubt and possibility commonly select the subjunctive.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Expressing certainty commonly selects the indicative; doubt and possibility commonly select the subjunctive.", examples: [
+                { french: "Il est évident qu'elle a raison.", english: "It is obvious she is right" },
+                { french: "Il est possible qu'il soit absent.", english: "It is possible he is absent" },
+            ] },
+            { title: "Nuance and context", explanation: "Negating or questioning a statement of certainty can change the mood required.", examples: [
+                { french: "Je ne suis pas sûr qu'ils puissent venir.", english: "I am not sure they can come" },
+                { french: "Nous pensons qu'une solution existe.", english: "We think a solution exists" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Il est évident qu'elle ___ raison.", answer: "a", hint: "Expression étudiée : It is obvious she is right" },
+            { sentence: "Il est possible qu'il ___ absent.", answer: "soit", hint: "Expression étudiée : It is possible he is absent" },
+            { sentence: "Je ne suis pas sûr qu'ils ___ venir.", answer: "puissent", hint: "Expression étudiée : I am not sure they can come" },
+            { sentence: "Nous pensons qu'une solution ___.", answer: "existe", hint: "Expression étudiée : We think a solution exists" },
+        ],
+    },
+    {
+        level: "B2", unit: 7, id: "b2-structurer-une-argumentation", title: "Structurer une argumentation", description: "En premier lieu and par ailleurs introduce organized points; en revanche marks contrast.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "En premier lieu and par ailleurs introduce organized points; en revanche marks contrast.", examples: [
+                { french: "En premier lieu, examinons les faits.", english: "First, let us examine the facts" },
+                { french: "Par ailleurs, le coût doit être évalué.", english: "Furthermore, the cost must be assessed" },
+            ] },
+            { title: "Nuance and context", explanation: "Dès lors and par conséquent infer conclusions, which should follow evidence rather than replace it.", examples: [
+                { french: "En revanche, le dispositif reste accessible.", english: "However, the system remains accessible" },
+                { french: "Dès lors, une révision semble nécessaire.", english: "Therefore, a revision seems necessary" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "___, examinons les faits.", answer: "En premier lieu", hint: "Expression étudiée : First, let us examine the facts" },
+            { sentence: "___, le coût doit être évalué.", answer: "Par ailleurs", hint: "Expression étudiée : Furthermore, the cost must be assessed" },
+            { sentence: "___, le dispositif reste accessible.", answer: "En revanche", hint: "Expression étudiée : However, the system remains accessible" },
+            { sentence: "___, une révision semble nécessaire.", answer: "Dès lors", hint: "Expression étudiée : Therefore, a revision seems necessary" },
+        ],
+    },
+    {
+        level: "B2", unit: 7, id: "b2-restriction-exclusion-et-exception", title: "Restriction, exclusion et exception", description: "Ne... que restricts the scope of a claim; sauf and hormis introduce exceptions.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Ne... que restricts the scope of a claim; sauf and hormis introduce exceptions.", examples: [
+                { french: "Il n'a consulté que trois sources.", english: "He consulted only three sources" },
+                { french: "Tous sont venus, sauf Nora.", english: "Everyone came except Nora" },
+            ] },
+            { title: "Nuance and context", explanation: "Sans que + subjunctive expresses an absence of outcome or action involving another subject.", examples: [
+                { french: "La règle s'applique, hormis quelques cas.", english: "The rule applies apart from a few cases" },
+                { french: "Il est parti sans que personne le voie.", english: "He left without anyone seeing him" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Il n'a consulté ___ trois sources.", answer: "que", hint: "Expression étudiée : He consulted only three sources" },
+            { sentence: "Tous sont venus, ___ Nora.", answer: "sauf", hint: "Expression étudiée : Everyone came except Nora" },
+            { sentence: "La règle s'applique, ___ quelques cas.", answer: "hormis", hint: "Expression étudiée : The rule applies apart from a few cases" },
+            { sentence: "Il est parti ___ personne le voie.", answer: "sans que", hint: "Expression étudiée : He left without anyone seeing him" },
         ],
     },
 ];

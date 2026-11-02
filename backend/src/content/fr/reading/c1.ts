@@ -2,109 +2,199 @@ import type { ReadingPassage } from '../../../types/lectures/reading';
 
 export const readingC1: ReadingPassage[] = [
     {
-        level: 'C1', unit: 1,
-        moduleId: 'c1-discours-politique',
-        title: 'L\'Europe face à ses contradictions',
-        source: 'Texte original — niveau C1',
+        level: 'C1', unit: 1, moduleId: "c1-ce-que-les-mots-rendent-visible", title: "Ce que les mots rendent visible", source: "Texte original — niveau C1",
         paragraphs: [
-            'L\'Union européenne se trouve aujourd\'hui à la croisée des chemins. Projet né des cendres de la Seconde Guerre mondiale, elle incarne depuis sept décennies l\'ambition d\'une paix durable et d\'une prospérité partagée. Pourtant, les crises successives — financière en 2008, migratoire en 2015, sanitaire en 2020, énergétique en 2022 — ont mis à nu les tensions structurelles entre la logique supranationale des institutions bruxelloises et la logique souveraine des États membres.',
-            'La montée des populismes, à l\'Est comme à l\'Ouest, traduit une défiance profonde à l\'égard d\'une construction perçue par une partie des citoyens comme technocratique, déconnectée des réalités nationales et indifférente aux perdants de la mondialisation. Cette fracture n\'est pas seulement politique ; elle est aussi géographique, générationnelle et sociale. Elle oppose, en gros, les métropoles globalisées aux territoires ruraux ou industriels en déclin.',
-            'Face à ces défis, deux visions s\'affrontent. La première, fédéraliste, plaide pour un approfondissement de l\'intégration : plus de compétences européennes, un budget commun renforcé, une politique étrangère unifiée. La seconde, intergouvernementale, défend le primat des nations et la nécessité d\'une Europe « à la carte », où chaque État peut moduler son degré de participation. Entre ces deux pôles, le débat est vif, souvent virulent, et rarement tranché.',
-            'Ce qui est certain, c\'est que l\'immobilisme n\'est plus une option. Dans un monde marqué par la compétition entre grandes puissances — États-Unis, Chine, Russie — l\'Europe ne peut se permettre ni la fragmentation ni la paralysie décisionnelle. La question n\'est plus de savoir si elle doit évoluer, mais comment, et à quel rythme, et au profit de qui.',
+            "Lorsqu'une institution modifie les termes par lesquels elle désigne ses usagers, le changement semble parfois purement cosmétique. Pourtant, les catégories employées orientent la manière dont un problème est compris. Parler de « bénéficiaires » plutôt que de « demandeurs » peut, par exemple, déplacer l'attention de la procédure vers le service rendu, sans pour autant transformer les conditions matérielles d'accès.",
+            "Les linguistes invités à débattre de cette question refusent deux conclusions hâtives : les mots ne déterminent pas mécaniquement nos pensées, mais ils ne sont pas non plus de simples étiquettes neutres. Leur effet dépend des contextes d'usage, des rapports de pouvoir et des pratiques qui les accompagnent. Modifier une formulation peut ouvrir une discussion nécessaire ; ce serait toutefois lui demander trop que d'y voir, à elle seule, une réforme accomplie.",
         ],
     },
     {
-        level: 'C1', unit: 2,
-        moduleId: 'c1-article-philosophique',
-        title: 'La Liberté est-elle une illusion ?',
-        source: 'Texte original — niveau C1',
+        level: 'C1', unit: 1, moduleId: "c1-la-fatigue-des-discours-exemplaires", title: "La fatigue des discours exemplaires", source: "Texte original — niveau C1",
         paragraphs: [
-            'La question de la liberté humaine est l\'une des plus anciennes et des plus débattues de toute la philosophie. Sommes-nous réellement libres de nos actes, ou obéissons-nous à des déterminismes — biologiques, sociaux, psychologiques — qui nous échappent en grande partie ? La réponse que l\'on donne à cette question n\'est pas sans conséquences : elle touche aux fondements de la morale, du droit et de la responsabilité individuelle.',
-            'Le déterminisme radical soutient que chaque action humaine est le résultat d\'une chaîne causale ininterrompue : nos gènes, notre éducation, nos expériences passées, les structures sociales dans lesquelles nous évoluons — tout cela conditionne irrémédiablement nos choix. Dans cette perspective, la liberté n\'est qu\'une fiction consolatrice, une illusion que le cerveau se raconte pour donner un sens à des mécanismes qui lui sont, en réalité, opaques.',
-            'Pourtant, la plupart d\'entre nous vivent et se comportent comme si la liberté était réelle. Nous délibérons, nous hésitons, nous regrettons. Ces expériences subjectives ont-elles une valeur philosophique, ou ne sont-elles que l\'épiphénomène d\'un déterminisme sous-jacent ? Jean-Paul Sartre, dans L\'Être et le Néant, tranchait radicalement : l\'homme est condamné à être libre. Rien — ni l\'inconscient, ni la société, ni Dieu — ne peut le dispenser du poids de son choix.',
-            'Le débat contemporain tend vers une position plus nuancée, dite compatibiliste : la liberté ne consisterait pas à échapper au déterminisme, mais à agir conformément à ses propres désirs rationnels, en l\'absence de contrainte extérieure. On est libre non pas parce que l\'on échappe aux causes, mais parce que les causes qui nous font agir sont les nôtres. Cette définition, plus modeste, réconcilie liberté et science — et c\'est peut-être le meilleur que l\'on puisse espérer.',
+            "Dans les campagnes de sensibilisation, la figure de l'individu exemplaire occupe une place croissante. On nous présente des personnes qui trient impeccablement leurs déchets, ne prennent jamais l'avion et semblent concilier sans effort responsabilité collective et réussite personnelle. L'intention paraît louable : montrer que des changements sont possibles.",
+            "Néanmoins, cette représentation peut finir par décourager ceux qui ne disposent ni du même temps ni des mêmes ressources. Elle transforme alors une question d'organisation sociale en épreuve de vertu individuelle. Certains communicants défendent une autre voie : raconter les compromis imparfaits, les obstacles concrets et les progrès collectifs. Une campagne gagnerait peut-être en crédibilité si elle renonçait à promettre une cohérence absolue et assumait la complexité des pratiques ordinaires.",
         ],
     },
     {
-        level: 'C1', unit: 4,
-        moduleId: 'c1-moliere-extract',
-        title: 'Le Misanthrope — Acte I, Scène 1 (extrait adapté)',
-        source: 'Molière, Le Misanthrope (1666) — texte adapté, niveau C1',
+        level: 'C1', unit: 1, moduleId: "c1-les-graphiques-ont-aussi-un-point-de-vue", title: "Les graphiques ont aussi un point de vue", source: "Texte original — niveau C1",
         paragraphs: [
-            'Alceste, un homme profondément épris de sincérité, entre en scène avec Philinte, son ami plus accommodant. Alceste reproche à Philinte d\'avoir salué chaleureusement un homme qu\'il connaît à peine, lui prodiguant des marques d\'affection qu\'il ne ressent pas. Pour Alceste, cette hypocrisie sociale est une forme de corruption morale que la bienséance déguise en politesse.',
-            'Philinte défend, lui, l\'usage social : il est impossible de traiter chaque homme selon son mérite réel, sous peine de vivre en guerre perpétuelle avec son entourage. Les formes de la politesse sont le lubrifiant de la vie sociale ; les respecter, c\'est faire preuve de sagesse, non de lâcheté. À cela, Alceste répond que la sagesse qui exige le mensonge n\'est qu\'une autre forme de compromission.',
-            'Cet échange pose une question universelle : vaut-il mieux être sincère et solitaire, ou sociable et compromis ? Molière ne tranche pas clairement — Alceste a de la grandeur, mais aussi du ridicule. Sa rigueur morale le rend insupportable autant qu\'admirable. La pièce est une comédie, mais ses questions sont on ne peut plus sérieuses.',
+            "Un graphique rassemble des données sous une forme que l'on suppose immédiatement lisible. Pourtant, le choix d'une échelle, d'une période de référence ou d'un indicateur ne relève jamais entièrement de la technique. Une courbe peut donner l'impression d'une hausse spectaculaire si l'axe vertical commence très près des valeurs observées ; elle peut, à l'inverse, minimiser une évolution importante lorsque l'échelle est trop large.",
+            "Cela ne signifie pas que toute visualisation soit manipulatrice. Les concepteurs sérieux explicitent leurs méthodes et indiquent ce que les chiffres ne permettent pas de conclure. Lire un graphique de manière critique exige donc une double attention : comprendre la tendance qu'il montre et interroger les décisions de représentation qui rendent cette tendance plus ou moins visible.",
         ],
     },
     {
-        level: 'C1', unit: 4,
-        moduleId: 'c1-camus-etranger',
-        title: 'L\'Étranger — Chapitre premier (extrait adapté)',
-        source: 'Albert Camus, L\'Étranger (1942) — texte adapté, niveau C1',
+        level: 'C1', unit: 1, moduleId: "c1-la-parole-experte-et-ses-frontieres", title: "La parole experte et ses frontières", source: "Texte original — niveau C1",
         paragraphs: [
-            'Aujourd\'hui, maman est morte. Ou peut-être hier, je ne sais pas. J\'ai reçu un télégramme de l\'asile : « Mère décédée. Enterrement demain. Sentiments distingués. » Cela ne veut rien dire. C\'était peut-être hier.',
-            'L\'incipit de L\'Étranger est l\'un des plus célèbres de la littérature française. En quelques phrases, Camus installe son personnage, Meursault, dans une étrangeté radicale : l\'indifférence apparente à la mort de sa propre mère. Ce n\'est pas cruauté, mais absence — une incapacité à ressentir les émotions attendues, à jouer le rôle que la société lui assigne.',
-            'Meursault est un homme du présent absolu. Il observe le monde avec une précision sensorielle intense — la chaleur du soleil, la lumière aveuglante, la fatigue physique — mais reste coupé de l\'affect et de la signification. Cette dissociation entre les sensations et le sens est le cœur du roman : un homme qui vit sans projet, sans mensonge, et qui sera condamné moins pour son crime que pour son refus d\'hypocrisie sociale.',
-            'Camus appelait cette posture philosophique l\'absurde : la confrontation entre le désir humain de sens et le silence de l\'univers. Meursault ne crie pas contre ce silence — il le vit. Et c\'est cela qui, paradoxalement, le rend à la fois étranger à la société et terriblement humain.',
+            "Dans un débat télévisé, un spécialiste peut intervenir avec autorité sur son champ de recherche, puis être invité à commenter des questions qui le dépassent. Le public distingue rarement ces deux situations. Les codes de l'expertise — vocabulaire précis, assurance, références universitaires — créent une continuité trompeuse entre compétence démontrée et opinion personnelle.",
+            "Le problème ne tient pas au fait qu'un chercheur possède des convictions. Il apparaît lorsque le statut scientifique donne à ces convictions un poids qu'elles n'auraient pas autrement. Plusieurs rédactions cherchent désormais à préciser les domaines de compétence de leurs invités. Cette précaution n'affaiblit pas la parole experte : elle en protège la valeur en rendant perceptible la frontière entre résultats établis, interprétations prudentes et prises de position.",
         ],
     },
     {
-        level: 'C1', unit: 4,
-        moduleId: 'c1-voltaire-candide',
-        title: 'Candide — Chapitre premier (extrait adapté)',
-        source: 'Voltaire, Candide ou l\'Optimisme (1759) — texte adapté, niveau C1',
+        level: 'C1', unit: 2, moduleId: "c1-les-procedures-et-la-confiance-democratique", title: "Les procédures et la confiance démocratique", source: "Texte original — niveau C1",
         paragraphs: [
-            'Candide est un jeune homme d\'une naïveté absolue, élevé dans le château du baron Thunder-ten-Tronckh. Son précepteur, le philosophe Pangloss, lui enseigne que tout va pour le mieux dans le meilleur des mondes possibles. Cette conviction, qui est une satire directe de la philosophie optimiste de Leibniz, va être mise à l\'épreuve par une succession de catastrophes.',
-            'Le roman est un conte philosophique : il utilise la légèreté du genre — les aventures rocambolesques, le rythme vif, le personnage naïf — pour délivrer une critique virulente des institutions humaines : l\'Église, la noblesse, la guerre, l\'esclavage, le colonialisme. Voltaire ne croit pas à la bonté naturelle de l\'humanité, ni à la providence divine ; il croit à la raison et à l\'action concrète.',
-            'La leçon finale du roman est restée célèbre : il faut cultiver son jardin. Cette formule n\'est pas un repli résigné, mais une invitation à agir sur ce qui est à notre portée, à travailler plutôt qu\'à philosopher abstraitement. C\'est une forme de pragmatisme philosophique avant la lettre — et un antidote à toutes les idéologies qui promettent le bonheur au prix du sacrifice présent.',
+            "Une consultation publique n'acquiert pas sa légitimité du seul fait qu'elle rassemble un grand nombre de participants. Encore faut-il que ses règles soient compréhensibles, que les contributions soient prises en considération et que les décisions finales puissent être justifiées. À défaut, la participation risque d'être perçue comme une formalité destinée à cautionner un choix déjà arrêté.",
+            "Des collectivités expérimentent la publication de réponses motivées à chaque grande proposition citoyenne. Cette transparence crée une obligation d'explication, y compris lorsque l'avis exprimé n'est pas suivi. Elle ne supprime ni les désaccords ni les arbitrages politiques, mais elle permet de distinguer une décision contestable d'une décision opaque. En démocratie, l'acceptation d'un résultat dépend aussi de la confiance accordée aux procédures qui l'ont produit.",
         ],
     },
     {
-        level: 'C1', unit: 4,
-        moduleId: 'c1-roman-contemporain',
-        title: 'Les Années — Portrait d\'une génération (extrait adapté)',
-        source: 'Annie Ernaux, Les Années (2008) — texte adapté, niveau C1',
+        level: 'C1', unit: 2, moduleId: "c1-qui-parle-au-nom-de-linteret-general", title: "Qui parle au nom de l’intérêt général ?", source: "Texte original — niveau C1",
         paragraphs: [
-            'Annie Ernaux commence Les Années par une série de photos. Non pas des photos réelles, mais des souvenirs de photos — des images mentales qui font surgir une époque, une atmosphère, une façon d\'être au monde. À travers ce procédé, elle interroge la nature même de la mémoire : collective autant qu\'individuelle, fragmentaire plutôt que linéaire, construite par le langage autant que vécue.',
-            'Le projet du roman est singulier : raconter une vie à la troisième personne, en substituant le « elle » au « je » et le « nous » au « eux ». Ce geste n\'est pas de la modestie, mais une ambition : faire de la vie d\'une femme née en 1940 le miroir d\'une génération entière. La mémoire privée devient mémoire collective ; l\'autobiographie se transforme en sociologie.',
-            'Ce qui frappe dans l\'écriture d\'Ernaux, c\'est l\'attention portée aux objets, aux publicités, aux chansons, aux mots qui datent une époque. La langue sociale — les formules figées, les expressions à la mode, les tabous linguistiques — est traitée comme un document historique. Elle dit ce que les gens pensaient sans oser le dire, ce qu\'ils voulaient sans le formuler.',
-            'Les Années est ainsi bien plus qu\'un roman autobiographique : c\'est une réflexion sur le temps qui passe, sur ce que la mémoire conserve et efface, sur la manière dont une époque façonne ceux qui la traversent — souvent à leur insu.',
+            "L'expression « intérêt général » semble offrir un critère évident pour départager les revendications. Elle devient pourtant délicate dès lors que les conséquences d'une décision sont réparties de manière inégale. Construire un équipement utile à l'ensemble d'une ville peut, par exemple, imposer des nuisances durables à un quartier particulier.",
+            "Un rapport de concertation rappelle que la recherche du bien commun ne saurait se réduire à l'addition des bénéfices attendus. Elle implique également une discussion sur ceux qui supportent les coûts, sur les compensations possibles et sur le droit des groupes concernés à participer aux choix. L'intérêt général apparaît alors moins comme une réponse déjà donnée que comme le résultat toujours provisoire d'un travail de justification publique.",
         ],
     },
     {
-        level: 'C1', unit: 2,
-        moduleId: 'c1-essai-identite',
-        title: 'Identité : entre héritage et construction de soi',
-        source: 'Texte original — niveau C1',
+        level: 'C1', unit: 2, moduleId: "c1-ladministration-et-le-droit-a-lexplication", title: "L’administration et le droit à l’explication", source: "Texte original — niveau C1",
         paragraphs: [
-            'L\'identité est l\'une des notions les plus discutées de la philosophie contemporaine. Qui suis-je ? Suis-je ce que mes origines font de moi — ma langue, ma culture, ma famille, mon histoire — ou suis-je ce que je choisis de devenir ? Cette tension entre identité reçue et identité construite traverse les débats politiques sur la nation, les questions philosophiques sur la liberté, et les expériences intimes de chacun.',
-            'Le modèle traditionnel de l\'identité est essentialiste : il suppose qu\'il existe en chacun de nous une essence stable, définie une fois pour toutes par l\'appartenance à un groupe — nation, religion, classe sociale, ethnie. Cette vision a alimenté les grandes idéologies du XX° siècle, souvent au prix de violences considérables. Elle a aussi structuré des formes légitimes d\'appartenance et de solidarité.',
-            'La pensée contemporaine privilégie une conception plus dynamique et relationnelle de l\'identité. Paul Ricœur distinguait l\'idem — ce qui reste identique dans le temps — et l\'ipse — ce à quoi on reste fidèle par engagement et promesse. L\'identité ne serait pas un donné, mais une tâche : se construire en répondant aux questions que l\'existence nous pose, en relation avec les autres.',
-            'Cette conception ouverte de l\'identité n\'exclut pas l\'héritage ; elle suppose au contraire une relation active avec lui : accepter certains héritages, en discuter d\'autres, en refuser certains. Être soi, c\'est peut-être précisément cela : habiter une histoire tout en ne s\'y laisser pas enfermer.',
+            "Pour une personne confrontée à une décision administrative défavorable, la difficulté n'est pas toujours de comprendre qu'une demande a été refusée, mais de savoir pourquoi. Une lettre remplie de références juridiques peut être irréprochable sur le plan formel tout en demeurant presque illisible pour son destinataire.",
+            "Plusieurs services publics ont engagé un travail de réécriture de leurs courriers. Le défi consiste à rendre le raisonnement accessible sans effacer les obligations légales ni les voies de recours. Les agents constatent que cette démarche exige souvent de clarifier les procédures elles-mêmes. Ainsi, l'effort de simplicité n'est pas une concession faite à des lecteurs supposés incapables : il constitue une condition de l'exercice effectif des droits.",
         ],
     },
     {
-        level: 'C1', unit: 3,
-        moduleId: 'c1-reportage-social',
-        title: 'Les déserts médicaux : une France qui souffre en silence',
-        source: 'Texte original — niveau C1',
+        level: 'C1', unit: 2, moduleId: "c1-lurgence-modifie-t-elle-les-regles-du-debat", title: "L’urgence modifie-t-elle les règles du débat ?", source: "Texte original — niveau C1",
         paragraphs: [
-            'Dans cette commune de deux mille habitants, le dernier médecin généraliste a pris sa retraite il y a trois ans. Depuis, les habitants font des heures de route pour consulter, ou renoncent purement et simplement aux soins. C\'est ce qu\'on appelle un désert médical — et ils couvrent aujourd\'hui plus de 40 % du territoire français, touchant en priorité les zones rurales et les banlieues populaires.',
-            'Le phénomène n\'est pas nouveau, mais il s\'est considérablement aggravé. La génération des médecins nés dans les années cinquante et soixante part à la retraite, et les jeunes diplômés ne les remplacent pas. Non par manque de vocation, mais parce que les incitations à s\'installer en zone sous-dotée restent insuffisantes, et parce que les nouvelles générations de médecins refusent de plus en plus le modèle du généraliste isolé, disponible sept jours sur sept, qui a prévalu pendant un demi-siècle.',
-            'Les conséquences sont graves : retard au diagnostic, renoncement aux soins, hospitalisations tardives et coûteuses. Le système français d\'assurance maladie, l\'un des plus généreux au monde sur le papier, se heurte dans les faits à cette fracture territoriale invisible. Avoir droit à des soins ne suffit pas si les soins sont inaccessibles.',
-            'Face à cette crise, les réponses politiques sont timides. Des incitations financières existent, mais peinent à convaincre. Des expériences de télémédecine se développent, avec des résultats variables. Certains plaident pour une obligation de service, d\'autres pour un numerus clausus régionalisé. Toutes ces pistes se heurtent à des résistances corporatives et à la complexité administrative de l\'organisation des soins en France.',
+            "Face à une crise, les pouvoirs publics doivent parfois décider avant que toutes les données soient disponibles. Cette contrainte nourrit une tension entre rapidité d'action et délibération démocratique. D'un côté, attendre pourrait aggraver les conséquences ; de l'autre, réduire le temps de discussion risque d'affaiblir le contrôle des décisions.",
+            "Une commission parlementaire propose que les mesures exceptionnelles comportent des objectifs explicites, une durée limitée et une évaluation indépendante. L'enjeu n'est pas de prétendre que l'incertitude pourrait être supprimée, mais de rendre les choix révisables. Une décision prise dans l'urgence gagne en légitimité lorsqu'elle prévoit les conditions dans lesquelles elle sera discutée, corrigée, voire abandonnée.",
         ],
     },
     {
-        level: 'C1', unit: 5,
-        moduleId: 'c1-article-presse-specialisee',
-        title: 'Le droit à l\'oubli numérique : entre mémoire et effacement',
-        source: 'Texte original — niveau C1',
+        level: 'C1', unit: 3, moduleId: "c1-une-decouverte-ne-nait-jamais-seule", title: "Une découverte ne naît jamais seule", source: "Texte original — niveau C1",
         paragraphs: [
-            'En 2014, la Cour de justice de l\'Union européenne rendait un arrêt historique : un citoyen espagnol pouvait demander à Google de déréférencer des résultats de recherche le concernant, au nom du droit à l\'oubli. Cette décision a ouvert une boîte de Pandore juridique et éthique dont les implications se font encore sentir une décennie plus tard.',
-            'Le droit à l\'oubli numérique repose sur une intuition simple : ce qu\'une personne a fait ou dit dans le passé ne devrait pas la définir indéfiniment. Les erreurs de jeunesse, les difficultés financières, les affaires personnelles résolues — autant de pages que l\'individu devrait avoir le droit de tourner, sans que les moteurs de recherche les maintiennent accessibles à jamais au premier venu.',
-            'Mais ce droit se heurte à un autre droit fondamental : la liberté d\'information. Les journalistes, les historiens, les chercheurs voient dans le déréférencement une menace pour la mémoire collective et la transparence démocratique. Qui décide de ce qui mérite d\'être oublié ? Google ? Un juge ? L\'intéressé lui-même ? Chaque réponse soulève de nouvelles questions.',
-            'Le Règlement Général sur la Protection des Données (RGPD), entré en vigueur en 2018, a formalisé ce droit tout en l\'encadrant. Il permet aux individus de demander l\'effacement de leurs données personnelles dans certaines conditions, mais prévoit des exceptions pour les intérêts publics, la recherche scientifique et historique. Un équilibre fragile, souvent contesté, qui reflète la difficulté à légiférer sur des questions aussi fondamentales que la mémoire et l\'identité à l\'ère numérique.',
+            "Les récits populaires attribuent souvent les découvertes scientifiques à une personnalité isolée, saisie d'une intuition décisive. Cette image simplifie une réalité faite de travaux cumulés, d'instruments collectifs et de discussions parfois conflictuelles. Les archives d'un laboratoire montrent, par exemple, que la mise au point d'une méthode a mobilisé pendant des années des techniciens rarement cités.",
+            "Certains historiens des sciences souhaitent rendre ces collaborations plus visibles. Ils ne cherchent pas à nier les contributions individuelles, mais à replacer chaque avancée dans l'écosystème qui l'a rendue possible. Une telle démarche change également la manière dont on pense la responsabilité : si la recherche est collective, la qualité de ses résultats dépend aussi de l'organisation des équipes et de la circulation des critiques.",
+        ],
+    },
+    {
+        level: 'C1', unit: 3, moduleId: "c1-peut-on-mesurer-la-creativite", title: "Peut-on mesurer la créativité ?", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Pour attribuer des financements, certaines institutions cherchent des indicateurs de créativité : nombre de projets déposés, brevets obtenus ou collaborations établies. Ces données facilitent la comparaison, mais elles ne disent pas toujours grand-chose de la qualité des idées. Un projet audacieux peut échouer à court terme tout en ouvrant une piste de recherche féconde.",
+            "Des évaluateurs recommandent donc de combiner des éléments quantitatifs avec des analyses argumentées. Ils insistent sur la nécessité d'expliciter les critères plutôt que de substituer un score à une discussion. La mesure n'est pas inutile ; elle devient problématique lorsqu'elle prétend épuiser l'objet qu'elle décrit. La créativité ne se laisse pas entièrement réduire aux traces administratives qu'elle produit.",
+        ],
+    },
+    {
+        level: 'C1', unit: 3, moduleId: "c1-des-donnees-sans-contexte", title: "Des données sans contexte", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Un observatoire publie chaque année un classement des villes selon leur qualité de vie. La méthode agrège des indicateurs aussi différents que la pollution, le coût du logement et l'offre culturelle. Le résultat semble fournir une photographie objective, mais il dépend du poids attribué à chaque dimension.",
+            "Une chercheuse remarque qu'une ville très bien classée peut rester difficile à vivre pour une famille aux revenus modestes. Elle propose donc de présenter des profils plutôt qu'un palmarès unique. Les habitants pourraient ainsi pondérer les critères selon leurs priorités. Cette solution ne produit pas une vérité définitive, mais elle reconnaît que le sens d'une comparaison varie selon la situation de ceux qui la consultent.",
+        ],
+    },
+    {
+        level: 'C1', unit: 3, moduleId: "c1-la-prudence-scientifique-comme-force", title: "La prudence scientifique comme force", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Lorsqu'un chercheur affirme que ses résultats doivent être confirmés, cette réserve est parfois interprétée comme un aveu de faiblesse. Elle est pourtant au cœur de la démarche scientifique : une conclusion solide doit résister à des tentatives de vérification indépendantes.",
+            "L'histoire d'un programme de recherche le montre. Une première étude annonçait une amélioration spectaculaire, mais d'autres équipes n'ont pas retrouvé le même effet. Loin de condamner toute l'entreprise, ces résultats ont conduit à réviser les hypothèses et à mieux contrôler les conditions d'observation. Expliquer publiquement ces corrections demande de la pédagogie. Il faut faire comprendre qu'une connaissance révisable peut être digne de confiance précisément parce qu'elle accepte l'examen critique.",
+        ],
+    },
+    {
+        level: 'C1', unit: 4, moduleId: "c1-le-musee-et-ses-absences", title: "Le musée et ses absences", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Une exposition est toujours construite à partir de choix. Les œuvres retenues donnent à voir une histoire, mais les pièces écartées en dessinent silencieusement les limites. Dans un musée consacré au design, une nouvelle commissaire a décidé de rendre visibles les contributions de métiers longtemps considérés comme secondaires : artisans, techniciennes et ouvriers de fabrication.",
+            "Cette réorientation a suscité des critiques. Certains craignent qu'une attention accrue au contexte social détourne le regard de la valeur esthétique des objets. La commissaire répond que l'étude des conditions de production n'empêche nullement l'appréciation des formes. Elle permet au contraire de comprendre pourquoi certaines signatures ont été conservées, tandis que d'autres sont restées anonymes. Le musée devient ainsi un lieu où l'on interroge la fabrication même du patrimoine.",
+        ],
+    },
+    {
+        level: 'C1', unit: 4, moduleId: "c1-la-traduction-comme-interpretation", title: "La traduction comme interprétation", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Traduire un roman ne consiste pas à remplacer mécaniquement chaque mot par son équivalent. Les rythmes, les sous-entendus, les références culturelles et les niveaux de langue imposent des choix. Une expression familière peut produire un effet de connivence dans la langue d'origine et paraître artificielle si elle est rendue trop littéralement.",
+            "Dans un entretien, une traductrice évoque les hésitations suscitées par les dialogues d'un personnage qui passe constamment du langage soutenu à l'argot. Elle a préféré recréer les contrastes plutôt que conserver des correspondances lexicales exactes. Sa démarche pose une question plus générale : faut-il être fidèle aux mots, à la voix ou à l'effet produit sur le lecteur ? La réponse dépend de l'œuvre et de la place laissée à l'interprétation.",
+        ],
+    },
+    {
+        level: 'C1', unit: 4, moduleId: "c1-le-patrimoine-vivant-nest-pas-immobile", title: "Le patrimoine vivant n’est pas immobile", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Lorsqu'une pratique culturelle est inscrite à un inventaire du patrimoine, certains s'inquiètent de la voir figée dans une forme jugée authentique. Pourtant, la transmission implique presque toujours des modifications : les interprètes changent, les techniques évoluent et de nouveaux publics donnent aux gestes un sens inattendu.",
+            "Des chercheurs travaillant avec des artisans expliquent qu'une tradition peut disparaître si elle devient impossible à adapter. Ils préfèrent documenter les transformations plutôt que désigner une version définitive. Cette approche ne nie pas l'importance de préserver des savoir-faire fragiles ; elle distingue simplement la conservation d'un objet de la vitalité d'une pratique. Maintenir une tradition vivante suppose parfois de lui laisser le droit de changer.",
+        ],
+    },
+    {
+        level: 'C1', unit: 4, moduleId: "c1-critiquer-une-uvre-sans-la-reduire", title: "Critiquer une œuvre sans la réduire", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Un roman peut être abordé sous l'angle de son intrigue, de son écriture ou de la vision du monde qu'il propose. Aucun de ces critères n'est suffisant à lui seul. Une critique qui ne résume que l'histoire risque de passer à côté de la construction des voix ; une lecture exclusivement politique peut, inversement, négliger l'expérience esthétique.",
+            "Dans un atelier, les participants ont comparé plusieurs comptes rendus du même livre. Ils ont observé que les désaccords étaient parfois dus à des attentes différentes plutôt qu'à une mauvaise compréhension. La discussion a progressé lorsqu'ils ont commencé à préciser ce qu'ils jugeaient important. Formuler un jugement nuancé, ce n'est pas refuser de choisir, mais rendre visibles les critères sur lesquels repose son appréciation.",
+        ],
+    },
+    {
+        level: 'C1', unit: 5, moduleId: "c1-croitre-autrement", title: "Croître autrement ?", source: "Texte original — niveau C1",
+        paragraphs: [
+            "La croissance économique demeure un indicateur central des politiques publiques, mais elle ne résume pas à elle seule la qualité de la vie collective. Une hausse de la production peut coexister avec une dégradation de la santé environnementale ou une augmentation des inégalités. Inversement, certaines améliorations sociales se traduisent difficilement dans les mesures économiques habituelles.",
+            "Des économistes proposent d'élargir les tableaux de bord en y intégrant la santé, l'accès au logement, la biodiversité et la répartition du temps libre. Leurs contradicteurs craignent que la multiplication des indicateurs rende les choix moins lisibles. Le débat ne porte donc pas uniquement sur la quantité de richesses produites, mais sur les objectifs auxquels les institutions décident d'accorder de la valeur.",
+        ],
+    },
+    {
+        level: 'C1', unit: 5, moduleId: "c1-la-transition-et-ses-perdants-possibles", title: "La transition et ses perdants possibles", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Une politique environnementale peut produire des bénéfices collectifs tout en imposant des coûts concentrés sur certains secteurs. Lorsque des activités industrielles ferment ou se transforment, les salariés concernés ne disposent pas nécessairement des ressources pour se reconvertir rapidement. Promettre une transition « juste » ne suffit donc pas à la rendre telle.",
+            "Un rapport recommande de prévoir les formations, les transports et les protections sociales avant la mise en œuvre des mesures les plus contraignantes. Il insiste aussi sur l'écoute des territoires, dont les besoins diffèrent. Cette approche peut ralentir certaines décisions, mais elle cherche à éviter qu'un objectif écologique soit discrédité par des inégalités qu'il aurait contribué à accentuer. La justice de la transition se mesure dans ses effets, non dans son vocabulaire.",
+        ],
+    },
+    {
+        level: 'C1', unit: 5, moduleId: "c1-la-valeur-cachee-du-temps", title: "La valeur cachée du temps", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Les débats économiques accordent une attention considérable au prix des biens et des services. Ils prennent moins souvent en compte le temps que les citoyens consacrent aux démarches administratives, aux déplacements ou à l'aide apportée à leurs proches. Or ce temps possède un coût réel, même lorsqu'il ne donne lieu à aucune transaction monétaire.",
+            "Une équipe de recherche a proposé d'intégrer ces contraintes dans l'évaluation de certains services publics. Un dispositif peu coûteux pour l'administration peut se révéler particulièrement lourd pour les usagers si son fonctionnement exige plusieurs rendez-vous. Cette réflexion invite à revoir le sens de l'efficacité : économiser des ressources institutionnelles ne revient pas toujours à améliorer la situation de ceux auxquels le service est destiné.",
+        ],
+    },
+    {
+        level: 'C1', unit: 5, moduleId: "c1-la-sobriete-entre-choix-et-contrainte", title: "La sobriété, entre choix et contrainte", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Dans certains discours, la sobriété est présentée comme un mode de vie volontaire, fondé sur la réduction des consommations superflues. Cette définition peut séduire ceux qui disposent d'une certaine marge de manœuvre. Elle paraît cependant moins évidente pour les ménages qui limitent déjà leurs dépenses par nécessité.",
+            "Une sociologue propose de distinguer sobriété choisie et privation subie, afin de ne pas transformer les difficultés économiques en vertu écologique. Elle rappelle également que les infrastructures conditionnent les comportements : il est plus facile de renoncer à la voiture lorsqu'un réseau de transports fiable existe. Une politique cohérente devrait donc associer transformations collectives et liberté de choix, plutôt que faire reposer l'effort sur les seuls individus.",
+        ],
+    },
+    {
+        level: 'C1', unit: 6, moduleId: "c1-les-identites-a-lepreuve-des-categories", title: "Les identités à l’épreuve des catégories", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Pour produire des statistiques, les institutions regroupent souvent les individus dans des catégories stables. Cette opération peut être nécessaire pour rendre certaines inégalités visibles. Pourtant, elle risque également d'effacer la diversité des trajectoires personnelles et de donner l'impression que des appartenances mouvantes sont des propriétés définitives.",
+            "Une enquête sur la mobilité internationale illustre cette difficulté : certains participants se définissent selon leur langue, d'autres selon leur lieu de naissance, d'autres encore selon plusieurs expériences à la fois. Les chercheurs ont donc choisi de permettre des réponses ouvertes et de présenter les limites de leur classification. Mesurer le social exige parfois d'accepter que les instruments de mesure simplifient la réalité qu'ils cherchent à décrire.",
+        ],
+    },
+    {
+        level: 'C1', unit: 6, moduleId: "c1-circuler-ne-signifie-pas-appartenir", title: "Circuler ne signifie pas appartenir", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Les échanges internationaux se sont intensifiés, mais la circulation des personnes, des biens et des idées ne produit pas partout le même sentiment d'ouverture. Pour certains, la mobilité constitue une occasion d'élargir leurs horizons ; pour d'autres, elle s'accompagne d'une précarité accrue et d'un éloignement des réseaux de soutien.",
+            "Une étude comparative souligne que les effets de la mobilité dépendent des ressources initiales, des droits de séjour et des possibilités d'insertion. Elle invite donc à dépasser le récit selon lequel voyager serait nécessairement émancipateur. La liberté de se déplacer devient une capacité réelle seulement lorsque les individus disposent des conditions matérielles et juridiques leur permettant d'en tirer parti sans subir de risques disproportionnés.",
+        ],
+    },
+    {
+        level: 'C1', unit: 6, moduleId: "c1-une-langue-plusieurs-publics", title: "Une langue, plusieurs publics", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Dans une organisation internationale, les documents sont souvent traduits pour permettre aux participants de travailler ensemble. Mais traduire les mots ne garantit pas que les implicites culturels soient également compris. Une consigne jugée directe dans une équipe peut sembler abrupte dans une autre ; une formule de politesse peut créer une ambiguïté sur le degré d'obligation.",
+            "Des médiateurs linguistiques recommandent d'expliciter les attentes plutôt que d'attribuer chaque malentendu à une différence de culture. Ils rappellent que les rapports hiérarchiques et les habitudes professionnelles jouent aussi un rôle. La communication interculturelle exige donc un travail d'ajustement mutuel, dans lequel personne ne possède à lui seul la définition légitime de la clarté.",
+        ],
+    },
+    {
+        level: 'C1', unit: 6, moduleId: "c1-le-savoir-circule-t-il-librement", title: "Le savoir circule-t-il librement ?", source: "Texte original — niveau C1",
+        paragraphs: [
+            "L'accès numérique aux publications scientifiques pourrait laisser croire que les connaissances circulent désormais sans frontières. Pourtant, les frais de publication, la domination de certaines langues et les inégalités d'équipement continuent de déterminer qui peut produire et consulter les travaux les plus visibles.",
+            "Un collectif de chercheurs plaide pour des infrastructures publiques de diffusion et pour une meilleure reconnaissance des revues locales. Ses membres ne rejettent pas les standards internationaux ; ils souhaitent éviter que ces standards deviennent des obstacles implicites à la diversité des questions étudiées. Rendre le savoir accessible ne consiste donc pas uniquement à ouvrir des fichiers. Cela suppose aussi de réfléchir aux conditions dans lesquelles certaines voix acquièrent de l'autorité et d'autres restent marginalisées.",
+        ],
+    },
+    {
+        level: 'C1', unit: 7, moduleId: "c1-synthetiser-sans-effacer-les-desaccords", title: "Synthétiser sans effacer les désaccords", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Un groupe de travail doit produire une note commune à partir de rapports qui ne partagent ni les mêmes méthodes ni les mêmes conclusions. La tentation serait de retenir quelques idées consensuelles et de faire disparaître les contradictions. Or une synthèse de qualité ne se contente pas de fabriquer un accord de façade.",
+            "La coordinatrice propose de distinguer trois niveaux : les constats largement partagés, les interprétations discutées et les questions encore ouvertes. Chaque proposition doit être reliée à son degré de solidité. Cette méthode rend la note moins spectaculaire, mais plus utile à la décision. Elle rappelle qu'une synthèse n'est pas une addition raccourcie de documents : c'est une représentation raisonnée des points où les sources convergent et de ceux où elles se séparent.",
+        ],
+    },
+    {
+        level: 'C1', unit: 7, moduleId: "c1-convaincre-sans-simplifier-abusivement", title: "Convaincre sans simplifier abusivement", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Dans une tribune, une argumentation efficace paraît souvent reposer sur une thèse nettement formulée et quelques exemples frappants. Cette clarté devient néanmoins trompeuse lorsque l'auteur élimine les exceptions qui pourraient fragiliser sa position. La force d'un raisonnement ne dépend pas seulement de sa capacité à persuader, mais aussi de l'honnêteté avec laquelle il traite ses limites.",
+            "Un atelier d'écriture demande aux participants de formuler leur objection la plus sérieuse avant d'y répondre. Les textes gagnent en précision, car les auteurs doivent distinguer ce qu'ils savent de ce qu'ils supposent. La nuance n'est plus un signe d'hésitation : elle devient un moyen de rendre une prise de position résistante à la discussion critique.",
+        ],
+    },
+    {
+        level: 'C1', unit: 7, moduleId: "c1-lart-de-reformuler-un-conflit", title: "L’art de reformuler un conflit", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Deux associations s'opposent sur l'usage d'un bâtiment municipal. L'une réclame des salles pour organiser des ateliers, l'autre souhaite préserver un espace de répétition musicale. Les échanges se sont durcis parce que chaque demande est présentée comme incompatible avec l'autre.",
+            "Une médiatrice propose d'abandonner provisoirement les solutions pour identifier les besoins : horaires, isolation sonore, capacité d'accueil, accès aux transports. En reformulant les positions, elle montre que certains obstacles concernent l'organisation plutôt que le principe du partage. Aucun accord n'est encore conclu, mais les participants disposent désormais d'un langage commun pour discuter. La médiation ne supprime pas les intérêts divergents ; elle transforme les termes dans lesquels ils peuvent être négociés.",
+        ],
+    },
+    {
+        level: 'C1', unit: 7, moduleId: "c1-de-largument-a-la-decision", title: "De l’argument à la décision", source: "Texte original — niveau C1",
+        paragraphs: [
+            "Une commission doit choisir entre plusieurs projets culturels, tous défendables selon des critères différents. Le premier toucherait un grand public, le second soutiendrait une pratique rare, tandis que le troisième améliorerait l'accès des habitants éloignés du centre. Aucune solution ne domine sur tous les plans.",
+            "Plutôt que d'attribuer une note unique à chaque dossier, la commission décide d'exposer publiquement les arbitrages qu'elle opère. Elle précise les critères retenus, les bénéfices sacrifiés et les incertitudes persistantes. Cette démarche ne garantit pas que la décision sera populaire. Elle permet néanmoins de la discuter sur des bases explicites, au lieu de laisser croire qu'une procédure technique aurait supprimé tout jugement politique.",
         ],
     },
 ];

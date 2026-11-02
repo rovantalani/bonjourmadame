@@ -2,233 +2,364 @@ import type { GrammarLesson } from '../../../types/lectures/grammar';
 
 export const grammarC2: GrammarLesson[] = [
     {
-        unit: 1,
-        id: 'style-and-register-mastery',
-        title: 'Style & Register Mastery',
-        level: 'C2',
-        description: 'Navigate all four registers of French — familier, courant, soutenu, and littéraire — with full control over morphology, vocabulary, and syntax',
-        icon: '🎭',
-        color: '#DC2626',
+        level: "C2", unit: 1, id: "c2-ironie-antiphrase-et-distance", title: "Ironie, antiphrase et distance", description: "Antiphrasis uses praise to communicate criticism when contextual facts disconfirm the literal words.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'The Four Registers: Markers and Signals',
-                explanation: 'French has four main registers, each with distinct vocabulary, grammar, and syntax. Familier: ne dropped, on for nous, c\'est vs il est, shortened forms (y\'a for il y a). Courant: standard written French, full negation optional. Soutenu: formal vocabulary (obtenir → avoir), subjunctive used widely, inversion in questions. Littéraire: passé simple, imparfait du subjonctif, classical syntax, no colloquialisms.',
-                examples: [
-                    { french: 'Familier: On a pas eu le temps de finir.', english: 'We didn\'t have time to finish.' },
-                    { french: 'Courant: Nous n\'avons pas eu le temps de finir.', english: 'We didn\'t have time to finish.' },
-                    { french: 'Soutenu: Nous n\'avons pas été en mesure d\'achever ce travail.', english: 'We were not in a position to complete this work.' },
-                ],
-            },
-            {
-                title: 'Lexical Register: Choosing the Right Word',
-                explanation: 'At C2 level, you command the full spectrum: commence → entame → débute (familier → courant → soutenu); j\'ai besoin de → il me faut → j\'ai nécessité de; mais → cependant → néanmoins; si → dans l\'éventualité où → au cas où. Formal vocabulary tends towards Latinate roots; informal prefers Germanic-origin or shortened forms.',
-                examples: [
-                    { french: 'Soutenu: Je souhaite vous informer de la situation.', english: 'I wish to inform you of the situation.' },
-                    { french: 'Courant: Je veux vous dire ce qui se passe.', english: 'I want to tell you what\'s happening.' },
-                    { french: 'Littéraire: Il me tarde de vous entretenir de cette affaire.', english: 'I am eager to speak with you about this matter.' },
-                ],
-            },
-            {
-                title: 'Register in Syntax: Inversion, Subordination, and Tense',
-                explanation: 'Syntactic complexity increases with register. Familier: short simple sentences, parataxis. Courant: coordinate and relative clauses. Soutenu: deep subordination, subjunctive, conditional. Littéraire: passé simple, imparfait du subjonctif, absolute constructions, literary inversion. Mastery means producing fluently in any register and moving between them deliberately.',
-                examples: [
-                    { french: 'Familier: Il est là, tu le verras.', english: 'He\'s there, you\'ll see him.' },
-                    { french: 'Courant: Il est présent, vous pourrez donc lui parler.', english: 'He is present, so you will be able to speak with him.' },
-                    { french: 'Littéraire: Il était là — nul n\'aurait pu le nier — et son regard ne laissait place à aucun doute.', english: 'He was there — no one could have denied it — and his gaze left no room for doubt.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Antiphrasis uses praise to communicate criticism when contextual facts disconfirm the literal words.", examples: [
+                { french: "Quelle admirable simplification : six formulaires au lieu de trois !", english: "What admirable simplification: six forms instead of three" },
+                { french: "Voilà une brillante idée qui bloque tout.", english: "What a brilliant idea that blocks everything" },
+            ] },
+            { title: "Nuance and context", explanation: "Distinguish irony from an ordinary negative statement; interpretation requires the gap between surface and intended meaning.", examples: [
+                { french: "Comme c'est pratique, encore une signature !", english: "How convenient, another signature" },
+                { french: "On ne saurait trop féliciter ce service pour ses délais.", english: "We cannot praise this service enough for its delays" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Transformez en registre familier: "Nous n\'avons pas eu la possibilité de terminer."', answer: 'On a pas pu finir.', hint: 'nous → on; ne dropped; possibilité → can; terminer → finir' },
-            { sentence: 'Transformez en registre soutenu: "Je veux vous parler de mon problème."', answer: 'Je souhaite vous entretenir de la difficulté à laquelle je me heurte.', hint: 'vouloir → souhaiter; parler → entretenir; problème → difficulté' },
-            { sentence: 'Quel mot familier correspond à "s\'en aller" en registre soutenu ?', answer: 'partir', hint: 'courant: partir; soutenu: s\'en aller, quitter les lieux' },
-            { sentence: 'Réécrivez au registre littéraire: "Il arriva et tout le monde se tut."', answer: 'Il arriva, et le silence se fit, comme si la salle eût retenu son souffle.', hint: 'passé simple arriva; imparfait du subjonctif eût retenu; literary expansion' },
-            { sentence: 'Transformez: "C\'est important qu\'on le sache." → registre soutenu.', answer: 'Il importe que nous en soyons informés.', hint: 'il importe que + subjonctif; en être informé = formal passive' },
-            { sentence: 'Repérez le registre: "Y\'a pas moyen qu\'il vienne."', answer: 'registre familier', hint: 'y\'a = il y a; ne dropped; moyen que = informal; pas means "no possibility"' },
+            { sentence: "Quelle ___ simplification : six formulaires au lieu de trois !", answer: "admirable", hint: "Expression étudiée : What admirable simplification: six forms instead of three" },
+            { sentence: "Voilà une ___ idée qui bloque tout.", answer: "brillante", hint: "Expression étudiée : What a brilliant idea that blocks everything" },
+            { sentence: "___, encore une signature !", answer: "Comme c'est pratique", hint: "Expression étudiée : How convenient, another signature" },
+            { sentence: "On ne saurait ___ ce service pour ses délais.", answer: "trop féliciter", hint: "Expression étudiée : We cannot praise this service enough for its delays" },
         ],
     },
     {
-        unit: 1,
-        id: 'archaic-classical-forms',
-        title: 'Archaic & Classical French Forms',
-        level: 'C2',
-        description: 'Recognize and produce passé simple, imparfait du subjonctif, and classical syntax found in literature from the 17th–20th centuries',
-        icon: '📜',
-        color: '#DC2626',
+        level: "C2", unit: 1, id: "c2-precautions-oratoires-et-litote", title: "Précautions oratoires et litote", description: "Litotes and hedges understate a claim and transfer part of the inference to the listener.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'The Passé Simple: Forms and Use',
-                explanation: 'The passé simple is the literary past tense — never used in speech, always in narrative writing. It replaces the passé composé in formal and literary texts. Regular forms: -er verbs: il chanta, -ir verbs: il finit, -re verbs: il vendit. Key irregulars: être → il fut; avoir → il eut; faire → il fit; venir → il vint; voir → il vit; savoir → il sut; pouvoir → il put; vouloir → il voulut. Plural: ils chantèrent, ils furent, ils eurent.',
-                examples: [
-                    { french: 'Il arriva à l\'aube et frappa à la porte.', english: 'He arrived at dawn and knocked at the door.' },
-                    { french: 'Elle vit une lumière au fond du couloir et s\'arrêta.', english: 'She saw a light at the end of the corridor and stopped.' },
-                    { french: 'Le roi fut informé et convoqua immédiatement son conseil.', english: 'The king was informed and immediately convened his council.' },
-                ],
-            },
-            {
-                title: 'The Imparfait du Subjonctif',
-                explanation: 'Found in formal literary French of the 18th–early 20th century, the imparfait du subjonctif replaces the present subjunctive after a past main verb in formal writing. Formation: 3rd person passé simple minus the final -t, + subjunctive endings (-sse, -sses, -ˆt, -ssions, -ssiez, -ssent). E.g. chanta → chantât; fut → fût; vînt → vînt. Recognition is required; production is literary mastery.',
-                examples: [
-                    { french: 'Il fallait qu\'il fût présent. (= soit)', english: 'It was necessary that he be present.' },
-                    { french: 'Elle voulait qu\'il vînt la retrouver.', english: 'She wanted him to come and find her.' },
-                    { french: 'Bien qu\'il eût travaillé dur, il n\'obtint rien.', english: 'Although he had worked hard, he obtained nothing.' },
-                ],
-            },
-            {
-                title: 'Classical Syntax and Archaic Constructions',
-                explanation: 'Classical French uses inverted negation (n\'est-il pas vrai ?), the pleonastic ne with comparative clauses, ellipsis of subject pronouns in consecutive clauses (Racine: Je t\'aimais inconstant, qu\'aurais-je fait, fidèle ?), absolute constructions, and a preference for long, periodically structured sentences. These are necessary for reading Molière, Racine, Corneille, and Marivaux.',
-                examples: [
-                    { french: 'N\'est-ce point là une contradiction flagrante ?', english: 'Is that not a glaring contradiction?' },
-                    { french: 'Il est plus sage qu\'on ne le croirait.', english: 'He is wiser than one would think.' },
-                    { french: 'Nous partîmes cinq cents ; mais par un prompt renfort / Nous nous vîmes trois mille en arrivant au port.', english: 'We set out five hundred; but by swift reinforcement / We found ourselves three thousand on reaching port. (Corneille)' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Litotes and hedges understate a claim and transfer part of the inference to the listener.", examples: [
+                { french: "Votre réponse n'est pas entièrement satisfaisante.", english: "Your answer is not entirely satisfactory" },
+                { french: "Il n'est pas impossible qu'une erreur se soit glissée.", english: "It is not impossible an error slipped in" },
+            ] },
+            { title: "Nuance and context", explanation: "In institutional exchanges a polite denial may become a forceful criticism in context.", examples: [
+                { french: "Je ne suis guère convaincu par cette méthode.", english: "I am hardly convinced by this method" },
+                { french: "Sans vouloir vous contredire, les chiffres diffèrent.", english: "Without wishing to contradict you, the figures differ" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Mettez "il va" au passé simple.', answer: 'il alla', hint: 'aller: passé simple → alla (like -er verbs: alla, allas, alla...)' },
-            { sentence: 'Mettez "il est" au passé simple.', answer: 'il fut', hint: 'être: passé simple → fut, fus, fut, fûmes, fûtes, furent' },
-            { sentence: 'Mettez "il vient" au passé simple.', answer: 'il vint', hint: 'venir: vins, vins, vint, vînmes, vîntes, vinrent' },
-            { sentence: 'Reconnaissez et traduisez: "Elle voulait qu\'il vînt."', answer: 'She wanted him to come. (imparfait du subjonctif of venir)', hint: 'vînt = imparfait du subjonctif de venir; replaces subjunctive présent "vienne"' },
-            { sentence: 'Identifiez la forme: "Bien qu\'il eût lu le texte, il ne comprit rien."', answer: 'eût lu = subjonctif plus-que-parfait (imparfait du subjonctif d\'avoir + participe passé)', hint: 'eût = avoir au subjonctif imparfait; used in formal writing after a past main verb' },
-            { sentence: 'Réécrivez au passé simple: "Il a fait, elle a dit, ils sont partis."', answer: 'Il fit, elle dit, ils partirent.', hint: 'faire → fit; dire → dit; partir → partirent (like -re verbs)' },
+            { sentence: "Votre réponse n'est ___.", answer: "pas entièrement satisfaisante", hint: "Expression étudiée : Your answer is not entirely satisfactory" },
+            { sentence: "Il n'est ___ qu'une erreur se soit glissée.", answer: "pas impossible", hint: "Expression étudiée : It is not impossible an error slipped in" },
+            { sentence: "Je ne suis ___ par cette méthode.", answer: "guère convaincu", hint: "Expression étudiée : I am hardly convinced by this method" },
+            { sentence: "___, les chiffres diffèrent.", answer: "Sans vouloir vous contredire", hint: "Expression étudiée : Without wishing to contradict you, the figures differ" },
         ],
     },
     {
-        unit: 2,
-        id: 'oral-vs-written-divergence',
-        title: 'Oral vs Written French: Divergence and Bridging',
-        level: 'C2',
-        description: 'Master the systematic differences between spoken and written French, and move fluently between transcription and formalisation',
-        icon: '🎙️',
-        color: '#DC2626',
+        level: "C2", unit: 1, id: "c2-modalite-epistemique-et-engagement", title: "Modalité épistémique et engagement", description: "Apparemment, à en croire and il semblerait mark different relations to evidence.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Systematic Differences: Grammar and Syntax',
-                explanation: 'Spoken French systematically drops ne in negation (je sais pas, il vient pas), uses on for nous (on y va), uses tu instead of vous in many contexts, drops the subject in questions (T\'as vu ça ?), and uses c\'est rather than il est. Written French restores all these: je ne sais pas, nous allons, est-ce que vous avez vu cela ? At C2, you move between these registers without effort.',
-                examples: [
-                    { french: 'Oral: On a décidé de pas venir parce que c\'est loin.', english: 'We decided not to come because it\'s far.' },
-                    { french: 'Écrit courant: Nous avons décidé de ne pas venir car c\'est loin.', english: 'We decided not to come as it is far.' },
-                    { french: 'Écrit soutenu: Nous avons résolu de ne pas faire le déplacement, la distance étant considérable.', english: 'We resolved not to make the journey, the distance being considerable.' },
-                ],
-            },
-            {
-                title: 'Verlan and Argot: Recognizing Informal Codes',
-                explanation: 'Verlan is back-slang: syllables of a word are inverted. Examples: l\'envers (inverse) → verlan; l\'arabe → rebeu; une femme → meuf; un mec → un keum; bizarre → zarbi; l\'école → la kékolleche (rare). Argot (slang) has its own vocabulary: le fric (money), un flic (policeman), une bagnole (car), bosser (to work), kiffer (to like). C2 learners recognize and understand these without necessarily producing them.',
-                examples: [
-                    { french: 'Verlan: C\'est trop zarbi ce truc.', english: 'That thing is too weird. (zarbi = bizarre inverted)' },
-                    { french: 'Argot: Il bosse comme un fou pour avoir le fric.', english: 'He works like mad to get the money.' },
-                    { french: 'Mixte: Les meufs de la fac, elles kiffent grave ce prof.', english: 'The girls at uni really like that teacher.' },
-                ],
-            },
-            {
-                title: 'Discourse Markers in Spoken French',
-                explanation: 'Spoken French uses its own discourse markers: alors (well/so/then), du coup (as a result/so), genre (like/kind of), tu vois ? (you know? / you see?), en fait (actually/in fact), quoi (you know — sentence-final), bon (well). These are fillers and connectors that rarely appear in formal writing. The written equivalents are: ainsi/donc (alors), par conséquent (du coup), comme, effectivement (en fait).',
-                examples: [
-                    { french: 'Oral: Du coup, j\'ai rien dit, tu vois.', english: 'So I said nothing, you know.' },
-                    { french: 'Oral: C\'était genre super bizarre, quoi.', english: 'It was like really weird, you know.' },
-                    { french: 'Écrit: En conséquence, je n\'ai rien dit. La situation était déconcertante.', english: 'As a result, I said nothing. The situation was disconcerting.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Apparemment, à en croire and il semblerait mark different relations to evidence.", examples: [
+                { french: "À en croire le rapport, tout serait réglé.", english: "According to the report, everything would be settled" },
+                { french: "La mesure semblerait efficace selon les chiffres.", english: "The measure appears effective according to the figures" },
+            ] },
+            { title: "Nuance and context", explanation: "Interpret the degree of commitment rather than treating all uncertainty expressions as interchangeable.", examples: [
+                { french: "Il est hautement improbable que cela suffise.", english: "It is highly unlikely that this will suffice" },
+                { french: "Sous toute réserve, les données concordent.", english: "With all due caution, the data agree" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Formalisez: "On a pas eu le temps de rien faire."', answer: 'Nous n\'avons pas eu le temps de faire quoi que ce soit.', hint: 'on→nous; ne restored; rien→quoi que ce soit (formal)' },
-            { sentence: 'Formalisez: "Du coup je sais pas trop quoi penser."', answer: 'Par conséquent, je ne sais pas vraiment quoi en penser.', hint: 'du coup → par conséquent; ne restored; trop → vraiment' },
-            { sentence: 'Qu\'est-ce que signifie "une bagnole" en argot ?', answer: 'une voiture / une automobile', hint: 'bagnole = voiture (familier/argot)' },
-            { sentence: 'Qu\'est-ce que "meuf" en verlan ?', answer: 'femme (les syllabes sont inversées: fem-me → meuf)', hint: 'verlan: inversion of syllables in "femme"' },
-            { sentence: 'Transcrivez à l\'oral familier: "Nous ne savons pas si elle viendra."', answer: 'On sait pas si elle va venir.', hint: 'nous → on; ne dropped; venir → aller + infinitif' },
-            { sentence: 'Identifiez le marqueur oral et son équivalent formel: "En fait, j\'avais tort."', answer: 'en fait (oral) → en réalité / à vrai dire (formel)', hint: 'en fait = actually; formal: en réalité, à vrai dire, il s\'avère que' },
+            { sentence: "___ le rapport, tout serait réglé.", answer: "À en croire", hint: "Expression étudiée : According to the report, everything would be settled" },
+            { sentence: "La mesure ___ efficace selon les chiffres.", answer: "semblerait", hint: "Expression étudiée : The measure appears effective according to the figures" },
+            { sentence: "Il est ___ que cela suffise.", answer: "hautement improbable", hint: "Expression étudiée : It is highly unlikely that this will suffice" },
+            { sentence: "___, les données concordent.", answer: "Sous toute réserve", hint: "Expression étudiée : With all due caution, the data agree" },
         ],
     },
     {
-        unit: 2,
-        id: 'discourse-markers-advanced',
-        title: 'Advanced Discourse Markers',
-        level: 'C2',
-        description: 'Command the full range of logical connectors, subordinating conjunctions, and discourse organizers that give French argumentation its distinctive architecture',
-        icon: '🔗',
-        color: '#DC2626',
+        level: "C2", unit: 2, id: "c2-le-passe-simple-et-sa-valeur-narrative", title: "Le passé simple et sa valeur narrative", description: "Recognize the passé simple as a literary foreground tense, not a required conversational past.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'Cause, Consequence, and Purpose',
-                explanation: 'Cause: car (formal, never in first position), parce que (neutral), puisque (shared knowledge), étant donné que (given that), vu que (considering that). Consequence: donc, alors, par conséquent, de ce fait, d\'où, c\'est pourquoi, c\'est la raison pour laquelle, si bien que. Purpose: pour que / afin que + subjonctif (different subjects), pour / afin de + infinitif (same subject).',
-                examples: [
-                    { french: 'Il ne peut pas venir, car son vol est retardé.', english: 'He cannot come, as his flight is delayed. (car = formal cause)' },
-                    { french: 'Il pleuvait ; c\'est pourquoi le match a été annulé.', english: 'It was raining; that is why the match was cancelled.' },
-                    { french: 'Je parle lentement afin que vous compreniez.', english: 'I speak slowly so that you understand.' },
-                ],
-            },
-            {
-                title: 'Opposition, Concession, and Condition',
-                explanation: 'Opposition: mais, or (introduces new, contradictory element), cependant, toutefois, néanmoins, pourtant, en revanche, au contraire. Concession: bien que, quoique, malgré + noun, même si, quand même, tout + participle (tout en sachant). Condition: si, à condition que + subj., pourvu que + subj., dans l\'hypothèse où + cond., à supposer que + subj.',
-                examples: [
-                    { french: 'Il est compétent ; or, il manque d\'expérience.', english: 'He is competent; however (but), he lacks experience. (or introduces the twist)' },
-                    { french: 'Bien qu\'elle soit fatiguée, elle continue à travailler.', english: 'Although she is tired, she continues to work.' },
-                    { french: 'Dans l\'hypothèse où il viendrait, nous le recevrions chaleureusement.', english: 'In the event that he came, we would welcome him warmly.' },
-                ],
-            },
-            {
-                title: 'Textual Organization and Rhythm',
-                explanation: 'French formal writing has a distinctive argumentative rhythm: D\'une part… d\'autre part, D\'abord… ensuite… enfin, En premier lieu… en second lieu… en dernier ressort, Certes… mais… cependant, Force est de constater que… Tout compte fait… En définitive / En somme / Pour conclure / Il résulte de tout ceci que. These phrases scaffold the argument and mark its stages.',
-                examples: [
-                    { french: 'Certes, les chiffres sont encourageants ; toutefois, il convient de rester prudent.', english: 'Admittedly, the figures are encouraging; however, caution is advisable.' },
-                    { french: 'En définitive, force est de constater que la situation ne s\'est guère améliorée.', english: 'Ultimately, one cannot help but note that the situation has scarcely improved.' },
-                    { french: 'D\'une part, les coûts sont élevés ; d\'autre part, les bénéfices sont réels.', english: 'On the one hand, the costs are high; on the other, the benefits are real.' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "Recognize the passé simple as a literary foreground tense, not a required conversational past.", examples: [
+                { french: "Il entra sans un mot.", english: "He entered without a word" },
+                { french: "Elle aperçut une lettre.", english: "She caught sight of a letter" },
+            ] },
+            { title: "Nuance and context", explanation: "Its abrupt sequence contrasts with descriptive imperfect and anterior pluperfect.", examples: [
+                { french: "Les témoins se turent.", english: "The witnesses fell silent" },
+                { french: "Le silence s'étendit sur la place.", english: "Silence spread across the square" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Choisissez: "Il est brillant, ___ il manque de méthode." (or/mais/car)', answer: 'or', hint: 'or introduces a new, contradictory element that reframes what preceded' },
-            { sentence: 'Quelle conjonction introduit un but avec deux sujets différents ?', answer: 'afin que / pour que + subjonctif', hint: 'même sujet: pour/afin de + infinitif; sujets différents: pour que/afin que + subjonctif' },
-            { sentence: 'Complétez: "___ il soit très doué, il n\'a pas réussi."', answer: 'Bien que', hint: 'bien que + subjonctif = although' },
-            { sentence: 'Quelle est la différence entre "car" et "parce que" ?', answer: 'car est plus formel, ne peut pas commencer une phrase, et introduit une cause expliquée; parce que est neutre et peut commencer une réponse', hint: 'Pourquoi est-il parti ? → Parce que... (not car...)' },
-            { sentence: 'Reliez en utilisant "si bien que": "Il a beaucoup travaillé. Il a réussi brillamment."', answer: 'Il a tellement travaillé si bien qu\'il a réussi brillamment.', hint: 'si bien que = to such a degree that; introduces consequence' },
-            { sentence: 'Organisez: transition pour introduire l\'argument contraire.', answer: 'Cependant / Toutefois / Néanmoins / Or', hint: 'these signal a shift or qualification; choose based on register' },
+            { sentence: "Il ___ sans un mot.", answer: "entra", hint: "Expression étudiée : He entered without a word" },
+            { sentence: "Elle ___ une lettre.", answer: "aperçut", hint: "Expression étudiée : She caught sight of a letter" },
+            { sentence: "Les témoins ___.", answer: "se turent", hint: "Expression étudiée : The witnesses fell silent" },
+            { sentence: "Le silence ___ sur la place.", answer: "s'étendit", hint: "Expression étudiée : Silence spread across the square" },
         ],
     },
     {
-        unit: 4,
-        id: 'translation-equivalence',
-        title: 'Translation & Equivalence',
-        level: 'C2',
-        description: 'Translate between French and English at near-professional level, navigating false cognates, register mismatches, and cultural untranslatability',
-        icon: '⚖️',
-        color: '#DC2626',
+        level: "C2", unit: 2, id: "c2-passe-anterieur-et-anteriorite-litteraire", title: "Passé antérieur et antériorité littéraire", description: "The passé antérieur occurs mainly in literary temporal clauses such as dès que and lorsque.", icon: "📖", color: "#2563EB",
         sections: [
-            {
-                title: 'False Cognates and Register Mismatches',
-                explanation: 'Many French-English cognates are false or register-mismatched. "Actual" ≠ actuel (current); "eventually" ≠ éventuellement (possibly); "sensible" ≠ sensible (sensitive); "sympathique" ≠ sympathetic (= likeable). Register mismatches: "get" is often translated by a more specific verb (obtenir, trouver, devenir, attraper). "Thing" becomes chose, truc (informal), or an abstract noun. Precision is the mark of the advanced translator.',
-                examples: [
-                    { french: 'Le problème actuel / the current problem (not: "the actual problem")', english: 'actuel = current; actual = réel/véritable' },
-                    { french: 'Il est très sensible / He is very sensitive (not: "sensible")', english: 'sensible (FR) = sensitive; sensible (EN) = raisonnable/judicieux' },
-                    { french: 'Éventuellement, je pourrais vous aider / I might possibly be able to help', english: 'éventuellement = possibly (not "eventually" = finalement/à terme)' },
-                ],
-            },
-            {
-                title: 'Idiomatic and Cultural Untranslatability',
-                explanation: 'Some expressions resist direct translation because they carry cultural meaning: débrouillard (resourceful in the French sense of making do), avoir le cafard (to feel down — lit. to have the cockroach), flâner (to wander without purpose — a Baudelairean concept), se retrouver (to find oneself together — implies reunion). The translator must decide: loan the term, paraphrase, or find a cultural equivalent.',
-                examples: [
-                    { french: 'Il est très débrouillard → He\'s very resourceful / good at getting by', english: 'débrouillard: no single English equivalent; resourceful + context needed' },
-                    { french: 'La flânerie baudelairienne → the Baudelairean practice of wandering / drift', english: 'flânerie: retained as loanword in English art criticism' },
-                    { french: 'L\'esprit de corps → group morale / team spirit (loanword retained)', english: 'esprit de corps: borrowed intact into English' },
-                ],
-            },
-            {
-                title: 'Translation Tasks: Strategies and Commentary',
-                explanation: 'Professional translation involves explicit choices: literal vs. free translation, foreignization (keeping foreignness) vs. domestication (adapting to target culture), and the rendering of tone and rhythm. A translation commentary explains why choices were made. At C2, you can both translate a complex text AND justify the choices in a meta-commentary — the DALF C2 translation task.',
-                examples: [
-                    { french: '"Madame Bovary, c\'est moi" (Flaubert) → "I am Madame Bovary" or "Madame Bovary is me"', english: 'The French is ambiguous (both readings possible). The translator must choose.' },
-                    { french: 'Un texte soutenu traduit en anglais informel → un écart de registre (register gap)', english: 'A formal French text rendered in informal English betrays the original register.' },
-                    { french: 'Le jeu de mots: "Je suis de tout cœur avec vous." → "I am wholeheartedly with you."', english: 'de tout cœur = wholeheartedly; a fixed expression with an English fixed equivalent' },
-                ],
-            },
+            { title: "Form and meaning", explanation: "The passé antérieur occurs mainly in literary temporal clauses such as dès que and lorsque.", examples: [
+                { french: "Dès qu'il eut fini, il partit.", english: "As soon as he had finished, he left" },
+                { french: "Lorsqu'elle fut arrivée, le silence tomba.", english: "When she had arrived, silence fell" },
+            ] },
+            { title: "Nuance and context", explanation: "In modern everyday French, a pluperfect or compound past more commonly conveys anteriority.", examples: [
+                { french: "Sitôt qu'ils eurent compris, ils se retirèrent.", english: "As soon as they had understood, they withdrew" },
+                { french: "Après qu'il eut parlé, personne ne répondit.", english: "After he had spoken, nobody replied" },
+            ] },
         ],
         exercises: [
-            { sentence: 'Traduisez: "The situation is actually quite serious."', answer: 'La situation est en réalité assez grave. (actual ≠ actuel)', hint: 'actually = en réalité / en fait / à vrai dire; not actuellement' },
-            { sentence: 'Traduisez: "She is very sensible about money."', answer: 'Elle est très raisonnable avec l\'argent.', hint: 'sensible (EN) = raisonnable/sage; sensible (FR) = sensitive' },
-            { sentence: 'Traduisez: "Il a éventuellement trouvé une solution."', answer: 'He possibly found a solution. (NOT "eventually")', hint: 'éventuellement = possibly/perhaps; eventually = finalement/à terme' },
-            { sentence: 'Quel est le problème de traduction dans: "She flânait sur les Champs-Élysées." ?', answer: 'flâner has no exact English equivalent; options: strolled aimlessly / wandered idly / drifted (but none captures the Baudelairean cultural charge)', hint: 'flânerie is a cultural concept; translator must footnote or paraphrase' },
-            { sentence: 'Traduisez en gardant le registre soutenu: "We deeply regret the inconvenience caused."', answer: 'Nous regrettons vivement les désagréments occasionnés.', hint: 'deeply regret → regrettons vivement; inconvenience → désagréments; caused → occasionnés' },
-            { sentence: 'Quel est le problème avec: "Il est sympathique" → "He is sympathetic" ?', answer: 'faux ami: sympathique = likeable/nice; sympathetic (EN) = compatissant/qui comprend', hint: 'sympathique = likeable; sympathetic = compatissant, compréhensif' },
+            { sentence: "Dès qu'il ___, il partit.", answer: "eut fini", hint: "Expression étudiée : As soon as he had finished, he left" },
+            { sentence: "Lorsqu'elle ___, le silence tomba.", answer: "fut arrivée", hint: "Expression étudiée : When she had arrived, silence fell" },
+            { sentence: "Sitôt qu'ils ___, ils se retirèrent.", answer: "eurent compris", hint: "Expression étudiée : As soon as they had understood, they withdrew" },
+            { sentence: "Après qu'il ___, personne ne répondit.", answer: "eut parlé", hint: "Expression étudiée : After he had spoken, nobody replied" },
+        ],
+    },
+    {
+        level: "C2", unit: 2, id: "c2-focalisation-et-voix-narrative", title: "Focalisation et voix narrative", description: "On, il and free indirect style shift proximity to the character’s viewpoint.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "On, il and free indirect style shift proximity to the character’s viewpoint.", examples: [
+                { french: "À ses yeux, la rue était hostile.", english: "In her eyes the street was hostile" },
+                { french: "Pourquoi fallait-il encore attendre ?", english: "Why did she still have to wait" },
+            ] },
+            { title: "Nuance and context", explanation: "Distinguish what a narrator asserts from a character’s perception or thought, even when there are no quotation marks.", examples: [
+                { french: "On eût dit que le temps s'arrêtait.", english: "One might have thought time was standing still" },
+                { french: "Sans doute ne reviendrait-il jamais.", english: "No doubt he would never return" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "___, la rue était hostile.", answer: "À ses yeux", hint: "Expression étudiée : In her eyes the street was hostile" },
+            { sentence: "Pourquoi fallait-il ___ attendre ?", answer: "encore", hint: "Expression étudiée : Why did she still have to wait" },
+            { sentence: "___ que le temps s'arrêtait.", answer: "On eût dit", hint: "Expression étudiée : One might have thought time was standing still" },
+            { sentence: "___ ne reviendrait-il jamais.", answer: "Sans doute", hint: "Expression étudiée : No doubt he would never return" },
+        ],
+    },
+    {
+        level: "C2", unit: 3, id: "c2-registre-historiographique-et-precaution", title: "Registre historiographique et précaution", description: "Historic writing uses hedging and source attributions to prevent claims from exceeding evidence.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Historic writing uses hedging and source attributions to prevent claims from exceeding evidence.", examples: [
+                { french: "Dans l'état actuel des sources, ce point reste incertain.", english: "At the current state of the sources this remains uncertain" },
+                { french: "Rien ne permet d'affirmer une telle intention.", english: "Nothing allows us to assert such an intention" },
+            ] },
+            { title: "Nuance and context", explanation: "Formulations such as dans l’état actuel des sources and rien ne permet de can define the limits of knowledge.", examples: [
+                { french: "Il ressort des archives que le projet fut abandonné.", english: "It emerges from the archives that the project was abandoned" },
+                { french: "Cette interprétation demeure sujette à caution.", english: "This interpretation remains questionable" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "___, ce point reste incertain.", answer: "Dans l'état actuel des sources", hint: "Expression étudiée : At the current state of the sources this remains uncertain" },
+            { sentence: "___ une telle intention.", answer: "Rien ne permet d'affirmer", hint: "Expression étudiée : Nothing allows us to assert such an intention" },
+            { sentence: "___ que le projet fut abandonné.", answer: "Il ressort des archives", hint: "Expression étudiée : It emerges from the archives that the project was abandoned" },
+            { sentence: "Cette interprétation demeure ___.", answer: "sujette à caution", hint: "Expression étudiée : This interpretation remains questionable" },
+        ],
+    },
+    {
+        level: "C2", unit: 3, id: "c2-subjonctif-imparfait-reconnaissance", title: "Subjonctif imparfait : reconnaissance", description: "Recognize literary imperfect subjunctive forms in older prose after past main clauses.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Recognize literary imperfect subjunctive forms in older prose after past main clauses.", examples: [
+                { french: "Il fallait qu'il vînt.", english: "He had to come" },
+                { french: "Elle souhaitait qu'on la crût.", english: "She wanted to be believed" },
+            ] },
+            { title: "Nuance and context", explanation: "They are not needed for contemporary spontaneous expression; the present subjunctive often replaces them.", examples: [
+                { french: "On exigeait qu'il fît silence.", english: "They demanded that he be silent" },
+                { french: "Il craignait qu'elle ne partît.", english: "He feared she might leave" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Il fallait qu'il ___.", answer: "vînt", hint: "Expression étudiée : He had to come" },
+            { sentence: "Elle souhaitait qu'on la ___.", answer: "crût", hint: "Expression étudiée : She wanted to be believed" },
+            { sentence: "On exigeait qu'il ___ silence.", answer: "fît", hint: "Expression étudiée : They demanded that he be silent" },
+            { sentence: "Il craignait qu'elle ne ___.", answer: "partît", hint: "Expression étudiée : He feared she might leave" },
+        ],
+    },
+    {
+        level: "C2", unit: 3, id: "c2-enoncer-la-reserve-sans-relativisme", title: "Énoncer la réserve sans relativisme", description: "Use si tant est que, pour autant and encore faudrait-il to separate proven facts from interpretative leaps.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Use si tant est que, pour autant and encore faudrait-il to separate proven facts from interpretative leaps.", examples: [
+                { french: "Si tant est que cette thèse soit exacte, elle reste partielle.", english: "If this thesis is even correct, it remains partial" },
+                { french: "Le document est authentique. Pour autant, sa portée est limitée.", english: "The document is authentic. Nevertheless its scope is limited" },
+            ] },
+            { title: "Nuance and context", explanation: "Qualified statements need not deny the possibility of well-founded conclusions.", examples: [
+                { french: "Encore faudrait-il établir la chronologie.", english: "We would still need to establish the chronology" },
+                { french: "Cette conclusion est loin d'être acquise.", english: "This conclusion is far from established" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "___ cette thèse soit exacte, elle reste partielle.", answer: "Si tant est que", hint: "Expression étudiée : If this thesis is even correct, it remains partial" },
+            { sentence: "Le document est authentique. ___, sa portée est limitée.", answer: "Pour autant", hint: "Expression étudiée : The document is authentic. Nevertheless its scope is limited" },
+            { sentence: "___ établir la chronologie.", answer: "Encore faudrait-il", hint: "Expression étudiée : We would still need to establish the chronology" },
+            { sentence: "Cette conclusion est ___.", answer: "loin d'être acquise", hint: "Expression étudiée : This conclusion is far from established" },
+        ],
+    },
+    {
+        level: "C2", unit: 4, id: "c2-hypothese-contrefactuelle-et-irreel-du-passe", title: "Hypothèse contrefactuelle et irréel du passé", description: "Si + plus-que-parfait with past conditional expresses unreal past alternatives.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Si + plus-que-parfait with past conditional expresses unreal past alternatives.", examples: [
+                { french: "Si l'on avait su, on aurait agi autrement.", english: "Had we known, we would have acted differently" },
+                { french: "Si elle avait accepté, tout serait différent aujourd'hui.", english: "Had she agreed, everything would be different today" },
+            ] },
+            { title: "Nuance and context", explanation: "The past conditional can be followed by a present conditional to express a lasting consequence of an unreal past cause.", examples: [
+                { french: "Sans cette aide, le projet aurait échoué.", english: "Without this help the project would have failed" },
+                { french: "À supposer qu'il eût su, aurait-il changé d'avis ?", english: "Even assuming he had known, would he have changed his mind" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Si l'on avait su, on ___ autrement.", answer: "aurait agi", hint: "Expression étudiée : Had we known, we would have acted differently" },
+            { sentence: "Si elle avait accepté, tout ___ différent aujourd'hui.", answer: "serait", hint: "Expression étudiée : Had she agreed, everything would be different today" },
+            { sentence: "Sans cette aide, le projet ___.", answer: "aurait échoué", hint: "Expression étudiée : Without this help the project would have failed" },
+            { sentence: "___, aurait-il changé d'avis ?", answer: "À supposer qu'il eût su", hint: "Expression étudiée : Even assuming he had known, would he have changed his mind" },
+        ],
+    },
+    {
+        level: "C2", unit: 4, id: "c2-concession-paradoxale-et-refutation", title: "Concession paradoxale et réfutation", description: "Constructions with tout... que, certes... néanmoins and quand bien même allow concessions without yielding a conclusion.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Constructions with tout... que, certes... néanmoins and quand bien même allow concessions without yielding a conclusion.", examples: [
+                { french: "Quand bien même il aurait raison, le problème resterait entier.", english: "Even if he were right, the problem would remain" },
+                { french: "Certes l'intention est louable, néanmoins l'effet inquiète.", english: "Admittedly the intention is good, yet the effect worries" },
+            ] },
+            { title: "Nuance and context", explanation: "Their argumentative force depends on which premise is granted and which inference is rejected.", examples: [
+                { french: "Si convaincant soit-il, cet argument ne suffit pas.", english: "However convincing it is, that argument is insufficient" },
+                { french: "Tout utile qu'il soit, ce critère reste limité.", english: "However useful this criterion may be, it remains limited" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "___ il aurait raison, le problème resterait entier.", answer: "Quand bien même", hint: "Expression étudiée : Even if he were right, the problem would remain" },
+            { sentence: "___ l'intention est louable, néanmoins l'effet inquiète.", answer: "Certes", hint: "Expression étudiée : Admittedly the intention is good, yet the effect worries" },
+            { sentence: "___, cet argument ne suffit pas.", answer: "Si convaincant soit-il", hint: "Expression étudiée : However convincing it is, that argument is insufficient" },
+            { sentence: "___, ce critère reste limité.", answer: "Tout utile qu'il soit", hint: "Expression étudiée : However useful this criterion may be, it remains limited" },
+        ],
+    },
+    {
+        level: "C2", unit: 5, id: "c2-conditionnel-dinformation-et-de-conjecture", title: "Conditionnel d’information et de conjecture", description: "The journalistic conditional distances the speaker from an unconfirmed assertion.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "The journalistic conditional distances the speaker from an unconfirmed assertion.", examples: [
+                { french: "L'accord aurait été conclu hier.", english: "The agreement is said to have been concluded yesterday" },
+                { french: "Le résultat s'expliquerait par plusieurs facteurs.", english: "The result might be explained by several factors" },
+            ] },
+            { title: "Nuance and context", explanation: "The conditional of conjecture can also frame an inference that remains uncertain, even when no source is cited.", examples: [
+                { french: "Le rapport ferait état de nouvelles difficultés.", english: "The report reportedly mentions new difficulties" },
+                { french: "Cette anomalie pourrait provenir du protocole.", english: "This anomaly could stem from the protocol" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "L'accord ___ hier.", answer: "aurait été conclu", hint: "Expression étudiée : The agreement is said to have been concluded yesterday" },
+            { sentence: "Le résultat ___ par plusieurs facteurs.", answer: "s'expliquerait", hint: "Expression étudiée : The result might be explained by several factors" },
+            { sentence: "Le rapport ___ de nouvelles difficultés.", answer: "ferait état", hint: "Expression étudiée : The report reportedly mentions new difficulties" },
+            { sentence: "Cette anomalie ___ du protocole.", answer: "pourrait provenir", hint: "Expression étudiée : This anomaly could stem from the protocol" },
+        ],
+    },
+    {
+        level: "C2", unit: 5, id: "c2-definition-restriction-et-portee-logique", title: "Définition, restriction et portée logique", description: "Only, some, all and necessarily have different logical scope and must be interpreted carefully.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Only, some, all and necessarily have different logical scope and must be interpreted carefully.", examples: [
+                { french: "Ce résultat ne concerne que certains groupes.", english: "This result concerns only some groups" },
+                { french: "Tous les cas ne sont pas identiques.", english: "Not all cases are identical" },
+            ] },
+            { title: "Nuance and context", explanation: "Syntactic position can shift whether a limitation applies to an agent, action or circumstance.", examples: [
+                { french: "Il n'est pas nécessairement responsable.", english: "He is not necessarily responsible" },
+                { french: "La mesure s'applique à la seule condition que le risque soit établi.", english: "The measure applies only if risk is established" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Ce résultat ne concerne ___ certains groupes.", answer: "que", hint: "Expression étudiée : This result concerns only some groups" },
+            { sentence: "___ les cas ne sont pas identiques.", answer: "Tous", hint: "Expression étudiée : Not all cases are identical" },
+            { sentence: "Il n'est ___ responsable.", answer: "pas nécessairement", hint: "Expression étudiée : He is not necessarily responsible" },
+            { sentence: "La mesure s'applique ___ le risque soit établi.", answer: "à la seule condition que", hint: "Expression étudiée : The measure applies only if risk is established" },
+        ],
+    },
+    {
+        level: "C2", unit: 5, id: "c2-refutation-dune-causalite-abusive", title: "Réfutation d’une causalité abusive", description: "Formulations with il ne s’ensuit pas que and corrélation n’implique pas causalité separate observation from inference.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Formulations with il ne s’ensuit pas que and corrélation n’implique pas causalité separate observation from inference.", examples: [
+                { french: "Il ne s'ensuit pas que la mesure soit inefficace.", english: "It does not follow that the measure is ineffective" },
+                { french: "Une corrélation n'implique pas une causalité.", english: "A correlation does not imply causation" },
+            ] },
+            { title: "Nuance and context", explanation: "Recognize the difference between a counterexample and a demonstration of a general rule.", examples: [
+                { french: "Ce cas ne suffit pas à généraliser.", english: "This case is insufficient to generalize" },
+                { french: "À lui seul, ce chiffre ne prouve rien.", english: "By itself this figure proves nothing" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "___ la mesure soit inefficace.", answer: "Il ne s'ensuit pas que", hint: "Expression étudiée : It does not follow that the measure is ineffective" },
+            { sentence: "Une corrélation ___ une causalité.", answer: "n'implique pas", hint: "Expression étudiée : A correlation does not imply causation" },
+            { sentence: "Ce cas ___ généraliser.", answer: "ne suffit pas à", hint: "Expression étudiée : This case is insufficient to generalize" },
+            { sentence: "___, ce chiffre ne prouve rien.", answer: "À lui seul", hint: "Expression étudiée : By itself this figure proves nothing" },
+        ],
+    },
+    {
+        level: "C2", unit: 6, id: "c2-variation-norme-et-registre", title: "Variation, norme et registre", description: "Appropriate register depends on genre, audience and situation, not on a universal hierarchy of correctness.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Appropriate register depends on genre, audience and situation, not on a universal hierarchy of correctness.", examples: [
+                { french: "Je vous saurais gré de répondre.", english: "I would be grateful if you replied" },
+                { french: "Ça me va pour mardi.", english: "Tuesday works for me" },
+            ] },
+            { title: "Nuance and context", explanation: "Contrast formal phrasing with familiar alternatives and identify pragmatic effects.", examples: [
+                { french: "Nous vous prions de bien vouloir patienter.", english: "We kindly request you to wait" },
+                { french: "Pas de souci, je m'en occupe.", english: "No worries, I will handle it" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Je vous ___ de répondre.", answer: "saurais gré", hint: "Expression étudiée : I would be grateful if you replied" },
+            { sentence: "___ pour mardi.", answer: "Ça me va", hint: "Expression étudiée : Tuesday works for me" },
+            { sentence: "Nous vous ___ patienter.", answer: "prions de bien vouloir", hint: "Expression étudiée : We kindly request you to wait" },
+            { sentence: "___, je m'en occupe.", answer: "Pas de souci", hint: "Expression étudiée : No worries, I will handle it" },
+        ],
+    },
+    {
+        level: "C2", unit: 6, id: "c2-ambiguite-syntaxique-et-reinterpretation", title: "Ambiguïté syntaxique et réinterprétation", description: "Attachment ambiguities can produce two grammatical readings of the same sequence.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Attachment ambiguities can produce two grammatical readings of the same sequence.", examples: [
+                { french: "J'ai vu le professeur avec des jumelles.", english: "I saw the teacher with binoculars" },
+                { french: "Seuls les invités pourront entrer.", english: "Only guests will be allowed in" },
+            ] },
+            { title: "Nuance and context", explanation: "Advanced comprehension uses context, punctuation and reformulation to disambiguate without assuming a single automatic parse.", examples: [
+                { french: "Nous avons discuté de la décision du conseil.", english: "We discussed the council's decision" },
+                { french: "Elle a rencontré la sœur de l'éditeur.", english: "She met the editor's sister" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "J'ai vu le professeur ___.", answer: "avec des jumelles", hint: "Expression étudiée : I saw the teacher with binoculars" },
+            { sentence: "___ les invités pourront entrer.", answer: "Seuls", hint: "Expression étudiée : Only guests will be allowed in" },
+            { sentence: "Nous avons discuté ___.", answer: "de la décision du conseil", hint: "Expression étudiée : We discussed the council's decision" },
+            { sentence: "Elle a rencontré ___.", answer: "la sœur de l'éditeur", hint: "Expression étudiée : She met the editor's sister" },
+        ],
+    },
+    {
+        level: "C2", unit: 7, id: "c2-polyphonie-et-attribution-des-voix", title: "Polyphonie et attribution des voix", description: "Reported speech, quotation marks and distancing expressions embed multiple voices within one text.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Reported speech, quotation marks and distancing expressions embed multiple voices within one text.", examples: [
+                { french: "La mesure serait, selon ses défenseurs, indispensable.", english: "According to its supporters, the measure is essential" },
+                { french: "Le rapport évoque une prétendue amélioration.", english: "The report mentions an alleged improvement" },
+            ] },
+            { title: "Nuance and context", explanation: "Identify who owns a proposition before evaluating whether the narrator endorses it.", examples: [
+                { french: "Pour reprendre leur formule, le risque serait nul.", english: "To use their wording, the risk would be zero" },
+                { french: "L'auteur se dit « surpris » par les critiques.", english: "The author says he is surprised by the criticism" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "La mesure serait, ___, indispensable.", answer: "selon ses défenseurs", hint: "Expression étudiée : According to its supporters, the measure is essential" },
+            { sentence: "Le rapport évoque une ___ amélioration.", answer: "prétendue", hint: "Expression étudiée : The report mentions an alleged improvement" },
+            { sentence: "___, le risque serait nul.", answer: "Pour reprendre leur formule", hint: "Expression étudiée : To use their wording, the risk would be zero" },
+            { sentence: "L'auteur se dit ___ par les critiques.", answer: "« surpris »", hint: "Expression étudiée : The author says he is surprised by the criticism" },
+        ],
+    },
+    {
+        level: "C2", unit: 7, id: "c2-argumentation-par-concession-strategique", title: "Argumentation par concession stratégique", description: "A strong concession grants a plausible premise before limiting its inferential scope.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "A strong concession grants a plausible premise before limiting its inferential scope.", examples: [
+                { french: "Quand bien même cette hypothèse serait exacte, la conclusion ne suivrait pas.", english: "Even if the hypothesis were true, the conclusion would not follow" },
+                { french: "J'admets volontiers que le coût augmente.", english: "I readily admit that costs rise" },
+            ] },
+            { title: "Nuance and context", explanation: "Avoid erasing the conceded point in the refutation; demonstrate why it does not entail the opposing conclusion.", examples: [
+                { french: "Cela ne saurait toutefois signifier que la mesure échoue.", english: "That cannot however mean the measure fails" },
+                { french: "Reste à savoir si le bénéfice est durable.", english: "It remains to be seen whether the benefit lasts" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "___ cette hypothèse serait exacte, la conclusion ne suivrait pas.", answer: "Quand bien même", hint: "Expression étudiée : Even if the hypothesis were true, the conclusion would not follow" },
+            { sentence: "___ le coût augmente.", answer: "J'admets volontiers que", hint: "Expression étudiée : I readily admit that costs rise" },
+            { sentence: "___ que la mesure échoue.", answer: "Cela ne saurait toutefois signifier", hint: "Expression étudiée : That cannot however mean the measure fails" },
+            { sentence: "___ le bénéfice est durable.", answer: "Reste à savoir si", hint: "Expression étudiée : It remains to be seen whether the benefit lasts" },
+        ],
+    },
+    {
+        level: "C2", unit: 7, id: "c2-clore-sans-feindre-lunanimite", title: "Clore sans feindre l’unanimité", description: "Effective advanced conclusions summarize common ground while preserving unresolved disagreement.", icon: "📖", color: "#2563EB",
+        sections: [
+            { title: "Form and meaning", explanation: "Effective advanced conclusions summarize common ground while preserving unresolved disagreement.", examples: [
+                { french: "Nous nous accordons sur la méthode, non sur le calendrier.", english: "We agree on the method, not the timetable" },
+                { french: "Les deux parties reconnaissent néanmoins plusieurs enjeux communs.", english: "Both parties nonetheless acknowledge common issues" },
+            ] },
+            { title: "Nuance and context", explanation: "Conditional formulations prevent tentative commitments from being represented as firm promises.", examples: [
+                { french: "La question demeure ouverte quant aux moyens.", english: "The question remains open as to the means" },
+                { french: "Sous cette réserve, une coopération semble possible.", english: "Subject to that caveat, cooperation seems possible" },
+            ] },
+        ],
+        exercises: [
+            { sentence: "Nous ___ la méthode, non sur le calendrier.", answer: "nous accordons sur", hint: "Expression étudiée : We agree on the method, not the timetable" },
+            { sentence: "Les deux parties ___ plusieurs enjeux communs.", answer: "reconnaissent néanmoins", hint: "Expression étudiée : Both parties nonetheless acknowledge common issues" },
+            { sentence: "La question ___ quant aux moyens.", answer: "demeure ouverte", hint: "Expression étudiée : The question remains open as to the means" },
+            { sentence: "___, une coopération semble possible.", answer: "Sous cette réserve", hint: "Expression étudiée : Subject to that caveat, cooperation seems possible" },
         ],
     },
 ];

@@ -56,3 +56,33 @@ Existing learner data is retained. New module IDs start fresh; the unchanged
 voir/dire/partir identities retain any existing verb practice history. Removed
 lesson bookmarks may no longer resolve. English and other French levels retain
 their content. This is a course practice assessment, not DELF certification.
+
+## French B1–C2 replacement
+
+The supplied `French_B1_to_C2_Complete` content replaces the four advanced French
+levels. Each level has seven teaching units plus its final exam (114 steps),
+28 short readings, 42 vocabulary modules, 19 grammar lessons, seven phrase
+categories, ten verb tables, seven writing activities and seven speaking activities.
+There are 122 practice exam questions per level. Readings immediately precede
+their corresponding vocabulary modules; every unit ends with its exam.
+
+Imported content IDs are level-prefixed to avoid collisions and reuse of earlier
+quiz completions. Stored progress is retained; replaced modules start fresh and
+old bookmarks may stop resolving. French A1/A2 and English content are preserved.
+Writing and speaking remain accessible through their overview pages rather than
+roadmap steps. Speaking pronunciation assessment remains unavailable.
+
+Integration fixes the cedillas in `nuancer`, clarifies expression-recall questions,
+and supplies meaning cues from lesson examples. Reading-comprehension exam items
+use multiple choice with interpretations from the unit's four texts, avoiding
+exact-match grading of open paraphrases. The same source texts are available in
+collapsible writing-task references and included in the evaluator's trusted
+lesson data. Two writing tasks were reframed to analyze the supplied materials
+rather than unavailable headline/translation pairs. C1/C2 submissions allow up to
+12,000 characters; all other levels retain the 6,000-character limit.
+
+These are short guided practice texts and activities. Their level labels and
+advanced topics do not establish full CEFR coverage or official DELF/DALF
+assessment equivalence. Linguistic review checked conjugation patterns and
+sampled examples, prompts and answer keys; independent teacher review is still
+useful for difficulty calibration and alternative interpretations.

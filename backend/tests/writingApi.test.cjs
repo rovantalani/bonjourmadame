@@ -64,3 +64,16 @@ test('guest review requires no authentication cookie, JWT secret or database', a
         assert.deepEqual(calls.map(c=>c[0]),['reserve','evaluate','finish']);
     } finally { process.env.JWT_SECRET = previous; }
 });
+
+test('advanced writing admits longer essays within a fixed bound; A1 retains its limit', async () => {
+    reset();
+    const text = 'Un argument développé. '.repeat(400);
+    assert.ok(text.length > 6000 && text.length <= 12000);
+    const response = await request({ text, feedbackLanguage: 'en' }, 'fr', 'c2-writing-1', false);
+    assert.equal(response.status, 200);
+    assert.ok(calls.some(call => call[0] === 'evaluate'));
+    reset();
+    assert.equal((await request({ text: 'x'.repeat(12001), feedbackLanguage: 'en' }, 'fr', 'c2-writing-1', false)).status, 400);
+    assert.equal(calls.length, 0);
+    assert.equal((await request({ text, feedbackLanguage: 'en' }, 'fr', 'fr-writing-preview', false)).status, 400);
+});
