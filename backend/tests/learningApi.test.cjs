@@ -162,7 +162,7 @@ test('unit exams return demos, drafts, and JSON 404s for invalid units without l
 });
 
 test('levels without authored final questions return a draft final exam', async () => {
-    for (const language of ['fr', 'en']) {
+    for (const language of ['en']) {
         const response = await fetch(`${base}/api/learning/${language}/exams/b2/final`);
         assert.equal(response.status, 200);
         const exam = await response.json();

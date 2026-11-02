@@ -14,7 +14,7 @@ export function createWritingRouter(deps = { evaluateWriting, reserveWriting, fi
         const lesson = writingLessons[language].find(item => item.id === req.params.lessonId);
         if (!lesson) { res.status(404).json({ code: 'lesson_not_found' }); return; }
         const body = req.body;
-        if (!body || typeof body.text !== 'string' || !body.text.trim() || body.text.length > 6000 || !['fr','en'].includes(body.feedbackLanguage) || Object.keys(body).some(key => !['text', 'feedbackLanguage'].includes(key))) { res.status(400).json({ code: 'invalid_submission' }); return; }
+        if (!body || typeof body.text !== 'string' || !body.text.trim() || body.text.length > (['C1', 'C2'].includes(lesson.level) ? 12000 : 6000) || !['fr','en'].includes(body.feedbackLanguage) || Object.keys(body).some(key => !['text', 'feedbackLanguage'].includes(key))) { res.status(400).json({ code: 'invalid_submission' }); return; }
         if (!deps.writingConfigured()) { res.status(503).json({ code: 'not_configured' }); return; }
         let id: string | undefined;
         try {

@@ -96,6 +96,10 @@ function WritingExercise({ lesson, sampleReview, back }: { lesson: WritingLesson
                 <span className="writing-word-target">{lesson.suggestedWords.min}–{lesson.suggestedWords.max} {fr ? 'mots conseillés' : 'suggested words'}</span>
             </div>
             <h2 id="writing-prompt-title">{lesson.prompt}</h2>
+            {!!lesson.sources?.length && <details className="writing-sources">
+                <summary>{fr ? 'Textes de référence' : 'Reference texts'} · {lesson.sources.length}</summary>
+                {lesson.sources.map(source => <article key={source.title} lang={language}><h3>{source.title}</h3><p>{source.text}</p></article>)}
+            </details>}
             <div className="writing-prompt-focus">
                 <p>{fr ? 'À inclure' : 'Focus on'}</p>
                 <ul>{lesson.learningObjectives.map(objective => <li key={objective}>{objective}</li>)}</ul>
@@ -103,7 +107,7 @@ function WritingExercise({ lesson, sampleReview, back }: { lesson: WritingLesson
         </section>
         {!reviewing ? <section className="writing-paper">
             <div className="writing-section-heading"><label htmlFor="writing-draft">{fr ? 'Votre texte' : 'Your text'}</label><span>{words} {fr ? 'mots' : 'words'}</span></div>
-            <textarea ref={editor} id="writing-draft" lang={language} maxLength={6000} disabled={busy} value={draft} onChange={event => setDraft(event.target.value)} spellCheck={false} aria-describedby="writing-sample-help" />
+            <textarea ref={editor} id="writing-draft" lang={language} maxLength={['C1', 'C2'].includes(lesson.level) ? 12000 : 6000} disabled={busy} value={draft} onChange={event => setDraft(event.target.value)} spellCheck={false} aria-describedby="writing-sample-help" />
             <p id="writing-sample-help" className="writing-help">{fr ? 'Votre texte est envoyé à OpenAI pour correction. Les retours sont générés par une IA. Votre brouillon reste sur cette page.' : 'Your text is sent to OpenAI for feedback. Corrections are AI-generated. Your draft stays on this page.'}</p>
             {error && <p className="writing-error" role="alert">{error}</p>}
             <div className="writing-actions"><button className="writing-primary" disabled={busy || !draft.trim()} onClick={submit}>{busy ? (fr ? 'Correction en cours…' : 'Reviewing…') : error ? (fr ? 'Réessayer' : 'Retry feedback') : (fr ? 'Corriger mon texte' : 'Get feedback')}</button>

@@ -2,87 +2,227 @@ import type { ReadingPassage } from '../../../types/lectures/reading';
 
 export const readingB1: ReadingPassage[] = [
     {
-        level: 'B1', unit: 1,
-        moduleId: 'b1-une-histoire-de-famille',
-        title: 'Une Histoire de Famille',
-        source: 'Texte original — niveau B1',
+        level: 'B1', unit: 1, moduleId: "b1-changer-de-ville-pour-recommencer", title: "Changer de ville pour recommencer", source: "Texte original — niveau B1",
         paragraphs: [
-            'Ma grand-mère, Hélène, était née en 1932 dans un petit village de Normandie. Elle m\'avait souvent raconté que son enfance avait été simple mais heureuse, malgré les difficultés de l\'époque. Son père était agriculteur et travaillait la terre du matin au soir. Sa mère, elle, s\'occupait de la maison et des cinq enfants.',
-            'Quand la guerre avait éclaté, Hélène n\'avait que sept ans. Elle se souvenait des soldats qui traversaient le village, de l\'absence de son père parti au front, et des longues nuits où sa mère la serrait dans ses bras pour la rassurer. Après la guerre, la famille avait déménagé à Rouen pour que les enfants puissent aller au lycée.',
-            'C\'est là qu\'Hélène avait rencontré mon grand-père, Pierre. Ils s\'étaient croisés dans une librairie — lui cherchait un roman de Zola, elle feuilletait un recueil de poèmes de Prévert. Ils s\'étaient mariés en 1955 et avaient eu trois enfants, dont mon père.',
-            'Hélène est décédée il y a cinq ans, à l\'âge de quatre-vingt-huit ans. Jusqu\'à la fin, elle racontait ces histoires avec les yeux brillants. « Ce qui compte, disait-elle, ce n\'est pas ce que tu as possédé, c\'est ce que tu as vécu avec les gens que tu aimes. » Cette phrase, je la porte avec moi chaque jour.',
+            "Après avoir terminé ses études, Manon a quitté Limoges pour s'installer à Grenoble. Elle connaissait peu de monde et redoutait de devoir reconstruire toute sa vie sociale. Pourtant, son nouvel emploi dans une association lui a rapidement permis de rencontrer des personnes de son âge.",
+            "Au début, elle comparait sans cesse les deux villes. À Limoges, tout lui semblait familier ; à Grenoble, même prendre le tramway lui demandait un effort. Six mois plus tard, elle apprécie les montagnes et les activités qu'elle n'aurait pas découvertes en restant chez elle.",
+            "Manon n'affirme pas que ce déménagement a réglé tous ses problèmes. Elle a surtout appris qu'un changement important exige de la patience et quelques initiatives personnelles.",
         ],
     },
     {
-        level: 'B1', unit: 2,
-        moduleId: 'b1-le-travail-a-distance',
-        title: 'Le Travail à Distance : Révolution ou Illusion ?',
-        source: 'Texte original — niveau B1',
+        level: 'B1', unit: 1, moduleId: "b1-un-an-sans-voiture", title: "Un an sans voiture", source: "Texte original — niveau B1",
         paragraphs: [
-            'Depuis la pandémie de 2020, le télétravail s\'est imposé dans de nombreuses entreprises françaises. Ce qui n\'était qu\'une exception est devenu, pour des millions de salariés, une nouvelle normalité. Mais plusieurs années après cette transformation, la question se pose : le travail à distance est-il vraiment une révolution ou n\'est-il qu\'une illusion de liberté ?',
-            'Les partisans du télétravail mettent en avant les avantages évidents : suppression des transports en commun souvent épuisants, meilleure organisation personnelle, et gains de productivité mesurés dans plusieurs études. Pour beaucoup de parents, c\'est aussi la possibilité d\'être plus présents pour leurs enfants sans sacrifier leur carrière.',
-            'Pourtant, les critiques ne manquent pas. Certains employés se plaignent d\'un isolement croissant et d\'un effacement des frontières entre vie professionnelle et vie personnelle. « Je n\'arrête jamais vraiment de travailler », confie Nathalie, comptable dans une PME parisienne. « Mon bureau est dans mon salon et je consulte mes mails le week-end. »',
-            'Les entreprises, de leur côté, cherchent un équilibre. Le modèle hybride — deux ou trois jours au bureau, le reste à domicile — semble s\'imposer comme solution de compromis. Il reste cependant une inégalité fondamentale : le télétravail est réservé aux métiers intellectuels. Caissières, livreurs, infirmières — eux ne peuvent pas travailler depuis chez eux. Cette fracture entre télétravailleurs et non-télétravailleurs est peut-être le véritable enjeu de cette révolution.',
+            "Il y a un an, Damien a vendu sa voiture. Ses proches pensaient qu'il aurait rapidement des difficultés, surtout pour rendre visite à sa famille qui vit à la campagne. Il a pourtant choisi de tester les transports en commun et le vélo pendant douze mois.",
+            "Pour les déplacements quotidiens, l'expérience s'est révélée plus simple que prévu. Il économise de l'argent et profite du trajet en train pour lire. En revanche, lorsqu'un train est supprimé, il doit modifier ses plans au dernier moment.",
+            "Damien envisage maintenant de louer un véhicule pour les voyages exceptionnels. Selon lui, réduire l'usage de la voiture est possible, à condition d'organiser certains déplacements à l'avance.",
         ],
     },
     {
-        level: 'B1', unit: 3,
-        moduleId: 'b1-voyage-en-provence',
-        title: 'Carnet de Voyage : La Provence en Juillet',
-        source: 'Texte original — niveau B1',
+        level: 'B1', unit: 1, moduleId: "b1-le-choix-dune-annee-de-pause", title: "Le choix d’une année de pause", source: "Texte original — niveau B1",
         paragraphs: [
-            'Je n\'avais jamais vu autant de lavande de ma vie. En descendant de la voiture à Valensole, le plateau s\'étendait devant nous comme une mer violette à perte de vue. L\'odeur était enivrante — douce, légèrement camphrée, mêlée à la chaleur sèche du mistral. Ma compagne a sorti son appareil photo et n\'a plus dit un mot pendant vingt minutes.',
-            'Nous avions loué une vieille bergerie rénovée à quelques kilomètres du village. La propriétaire, Mme Bouchard, nous avait préparé un panier de bienvenue : fromage de chèvre local, tapenade, lavande séchée et une bouteille de rosé du domaine voisin. « Vous avez de la chance, nous a-t-elle dit. La lavande est à son pic cette semaine. Dans dix jours, ce sera fini. »',
-            'Le lendemain, nous avons visité le marché d\'Apt. C\'est l\'un des plus beaux marchés de Provence — une centaine d\'exposants qui vendent des fruits confits, des épices, des herbes aromatiques et des tissus aux couleurs vives. J\'ai acheté un mélange de herbes de Provence et une confiture de figues qui sentait le soleil.',
-            'Le soir, nous avons dîné en terrasse dans un petit restaurant du village. J\'ai commandé une daube provençale — un bœuf mijoté au vin rouge avec des olives et des carottes. C\'était lent, fondant, parfumé. Le patron nous a offert une carafe de vin maison en guise de bienvenue. En rentrant à la bergerie sous le ciel étoilé, j\'ai pensé : voilà ce que c\'est, voyager lentement.',
+            "À vingt-deux ans, Léo a interrompu sa formation pour travailler dans une ferme biologique. Ses parents auraient préféré qu'il obtienne immédiatement son diplôme, mais il voulait réfléchir à son avenir avant de choisir une spécialisation.",
+            "Dans la ferme, il a découvert des tâches qu'il ne connaissait pas : préparer les semis, accueillir les clients et tenir les comptes. Les journées étaient exigeantes, et il regrettait parfois le confort de sa vie étudiante. Il a néanmoins développé des compétences pratiques.",
+            "De retour à l'université, Léo étudie désormais l'agronomie. Il estime que cette année lui a donné une meilleure idée des problèmes qu'il souhaite résoudre dans son futur métier.",
         ],
     },
     {
-        level: 'B1', unit: 4,
-        moduleId: 'b1-interview-artiste',
-        title: 'Rencontre avec une Artiste',
-        source: 'Texte original — niveau B1',
+        level: 'B1', unit: 1, moduleId: "b1-faire-du-benevolat-le-samedi", title: "Faire du bénévolat le samedi", source: "Texte original — niveau B1",
         paragraphs: [
-            'Camille Arnaud, vingt-neuf ans, expose ses tableaux pour la première fois dans une galerie parisienne du Marais. Ses toiles mêlent photographie et peinture à l\'huile pour créer des portraits d\'une étrange familiarité. Nous l\'avons rencontrée dans son atelier de Belleville, parmi les tubes de peinture et les châssis en bois.',
-            '— Comment avez-vous commencé à peindre ?\n— J\'ai grandi dans une famille sans artistes. Mes parents sont ingénieurs tous les deux. Mais à quinze ans, j\'ai trouvé une vieille boîte de peinture dans le grenier de ma grand-mère et je n\'ai plus jamais arrêté. J\'ai fait les Beaux-Arts à Lyon, puis je suis montée à Paris il y a quatre ans.',
-            '— Qu\'est-ce qui vous inspire ?\n— Les gens ordinaires dans des moments ordinaires. Une femme qui attend le bus. Un homme qui lit son journal dans le métro. Je cherche à capter cette espèce d\'attention flottante qu\'on a quand on n\'est pas vraiment là. C\'est ce que j\'appelle « l\'absent présent ».',
-            '— Quel conseil donneriez-vous à de jeunes artistes ?\n— Ne cherchez pas à plaire. Cherchez à être honnête. L\'art qui me touche le plus, c\'est celui qui dit quelque chose de vrai, même si c\'est dérangeant. Et puis, travailler. Travailler tous les jours. L\'inspiration, ça vient en faisant, pas en attendant.',
+            "Chaque samedi, Amina participe à la distribution de repas organisée par une association de quartier. Elle a commencé après avoir découvert une annonce sur un panneau municipal. Au départ, elle craignait de manquer d'expérience pour aider efficacement.",
+            "Les premières semaines, elle préparait simplement les sacs. Puis elle a appris à accueillir les personnes, à orienter les nouveaux bénévoles et à répondre aux demandes particulières. Elle apprécie surtout le travail d'équipe, même lorsque les journées sont fatigantes.",
+            "Amina reconnaît que quelques heures ne suffisent pas à résoudre la pauvreté. Elle considère néanmoins que cette activité lui permet de mieux comprendre son quartier et de participer à un effort collectif.",
         ],
     },
     {
-        level: 'B1', unit: 5,
-        moduleId: 'b1-une-lettre-a-ami',
-        title: 'Lettre à un Ami',
-        source: 'Texte original — niveau B1',
+        level: 'B1', unit: 2, moduleId: "b1-une-fete-de-voisins-reussie", title: "Une fête de voisins réussie", source: "Texte original — niveau B1",
         paragraphs: [
-            'Paris, le 3 octobre\n\nCher Julien,\n\nCela fait maintenant deux mois que tu es parti t\'installer à Berlin et je dois l\'avouer : Paris me semble un peu moins vivant sans toi. J\'aurais dû t\'écrire plus tôt, mais tu me connais — entre le boulot et les soirées improvisées, le temps file.',
-            'Ici, les choses ont changé. La librairie du bas de la rue a fermé, remplacée par une boutique de smoothies que personne ne fréquente vraiment. Mathieu a enfin trouvé un appartement en colocation à République — après six mois de galère. Et moi, j\'ai commencé une formation en photographie le samedi matin. C\'est épuisant mais j\'adore ça.',
-            'Je voulais surtout te dire que j\'ai l\'intention de venir te rendre visite en décembre. Ça te conviendrait ? Je rêve de voir Berlin sous la neige, de manger des bratwurst et de boire de la bière brune dans un Kneipe. Et surtout, de te retrouver, évidemment.',
-            'En attendant, donne-moi de tes nouvelles. Tu t\'es fait des amis ? Tu parles allemand couramment, toi qui maîtrisais l\'espagnol et l\'anglais en quelques mois ? J\'imagine que oui. Prends soin de toi, et à très bientôt j\'espère.\n\nAvec toute mon amitié,\nAntoine',
+            "Dans l'immeuble de Paul, les habitants se croisaient rarement. Une résidente a proposé d'organiser un repas dans la cour pour créer davantage de liens. Certains voisins hésitaient, car ils ne voulaient pas imposer leur présence aux autres.",
+            "L'organisatrice a placé une affiche près des boîtes aux lettres et a demandé à chacun d'apporter quelque chose. Le jour prévu, une trentaine de personnes se sont retrouvées autour de grandes tables. Les enfants ont préparé des jeux, tandis que les adultes échangeaient des recettes.",
+            "Depuis cette soirée, les habitants se saluent plus souvent. Ils ont même créé un groupe pour s'entraider lorsqu'un colis doit être récupéré ou qu'une personne âgée a besoin d'un service.",
         ],
     },
     {
-        level: 'B1', unit: 5,
-        moduleId: 'b1-article-jeunesse',
-        title: 'La Jeunesse Française Aujourd\'hui',
-        source: 'Texte original — niveau B1',
+        level: 'B1', unit: 2, moduleId: "b1-quand-un-message-est-mal-compris", title: "Quand un message est mal compris", source: "Texte original — niveau B1",
         paragraphs: [
-            'Qui sont les jeunes Français d\'aujourd\'hui ? Selon le dernier rapport de l\'Institut national de la jeunesse et de l\'éducation populaire (INJEP), les 15-30 ans en France représentent environ 11 millions de personnes. Leurs valeurs, leurs préoccupations et leurs modes de vie ont profondément changé par rapport aux générations précédentes.',
-            'L\'une des grandes évolutions concerne le rapport au travail. Si leurs aînés valorisaient la stabilité et la carrière à long terme dans une même entreprise, les jeunes d\'aujourd\'hui privilégient davantage l\'épanouissement personnel, la flexibilité et le sens de leur mission. Le nombre de créateurs d\'entreprise de moins de trente ans n\'a jamais été aussi élevé.',
-            'Sur le plan environnemental, la jeunesse française est parmi les plus sensibilisées d\'Europe. Sept jeunes sur dix déclarent que le changement climatique est leur principale inquiétude. Cette préoccupation se traduit dans leurs choix de consommation : moins de viande, plus de vélo, achats en seconde main, refus de l\'avion pour les courts trajets.',
-            'Mais la jeunesse française est aussi une jeunesse fragilisée. Le coût du logement dans les grandes villes, la précarité de l\'emploi et la pression des réseaux sociaux pèsent lourdement sur leur moral. « On nous dit que tout est possible, mais le marché du travail nous dit le contraire », confie Léa, vingt-trois ans, diplômée en sciences sociales et toujours sans emploi fixe six mois après son master.',
+            "Camille a écrit à son ami Hugo pour lui proposer de dîner : « On se voit quand tu peux. » Hugo a répondu deux jours plus tard. Comme elle attendait une réaction plus rapide, Camille a cru qu'il ne souhaitait plus la rencontrer.",
+            "Lorsqu'ils se sont enfin parlé au téléphone, Hugo lui a expliqué qu'il travaillait de nuit et qu'il consultait rarement ses messages. Camille a compris qu'elle avait interprété son silence comme un refus, sans connaître les circonstances.",
+            "Ils ont décidé de préciser davantage leurs disponibilités. Cette petite dispute leur a rappelé qu'un message écrit ne transmet ni le ton de la voix ni toutes les intentions de celui qui l'envoie.",
         ],
     },
     {
-        level: 'B1', unit: 5,
-        moduleId: 'b1-temoignage-expatrie',
-        title: 'Témoignage d\'un Expatrié',
-        source: 'Texte original — niveau B1',
+        level: 'B1', unit: 2, moduleId: "b1-un-club-pour-les-nouveaux-arrivants", title: "Un club pour les nouveaux arrivants", source: "Texte original — niveau B1",
         paragraphs: [
-            'Ça fait trois ans que je vis à Montréal. Quand on m\'a proposé un poste dans une startup québécoise spécialisée en intelligence artificielle, j\'ai accepté sans vraiment réfléchir. J\'avais vingt-huit ans, aucune attache, et l\'envie d\'ailleurs. Je ne savais pas que « l\'ailleurs » allait devenir « chez moi ».',
-            'Le premier hiver a failli me briser. Moins trente degrés en février. Le vent qui coupe le visage comme un couteau. Les journées qui se finissent à seize heures dans un noir complet. Je me souviens d\'avoir appelé ma mère en pleurant un soir de janvier en lui disant que je voulais rentrer. Elle m\'a dit : « Tiens encore jusqu\'au printemps. » J\'ai tenu.',
-            'Ce qui m\'a sauvé, c\'est la communauté. Les Québécois ont une chaleur humaine extraordinaire — plus directe que les Parisiens, moins formelle. Mon voisin, Denis, m\'a invité à son chalet pour la cabane à sucre en mars. C\'était ma première fois. On a mangé des oreilles de crisse et de la tire sur la neige. J\'ai pleuré de rire, cette fois.',
-            'Aujourd\'hui, je me sens ni tout à fait français ni tout à fait québécois. Je dis « char » pour voiture et « magasiner » pour faire du shopping, mais je commande encore mon café « serré » au lieu de « fort ». Cette identité flottante, au début elle m\'inquiétait. Maintenant, je la considère comme une richesse. Vivre entre deux cultures, c\'est avoir deux façons de voir le monde.',
+            "La médiathèque de Tours propose désormais un club destiné aux habitants récemment installés. Chaque mois, les participants présentent une tradition, un lieu ou une recette de leur région d'origine. L'idée est née après une enquête municipale montrant que de nombreuses personnes se sentaient isolées.",
+            "Le club n'impose aucune inscription payante. Les rencontres commencent par une activité courte, puis les participants discutent librement. La bibliothèque fournit du matériel et aide ceux qui souhaitent préparer une présentation.",
+            "Selon la responsable, le succès ne se mesure pas seulement au nombre de visiteurs. Elle se réjouit surtout lorsque les membres continuent à se voir en dehors des réunions.",
+        ],
+    },
+    {
+        level: 'B1', unit: 2, moduleId: "b1-prendre-soin-dun-parent", title: "Prendre soin d’un parent", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Depuis l'accident de sa mère, Julien lui rend visite trois soirs par semaine. Elle peut toujours vivre seule, mais certains gestes sont devenus difficiles. Julien l'aide à faire ses courses et à préparer les rendez-vous médicaux.",
+            "Au début, il voulait tout faire lui-même et s'est rapidement épuisé. Sa sœur lui a alors proposé de répartir les tâches. Ils ont aussi contacté un service local qui accompagne les personnes âgées à domicile.",
+            "Julien a compris que demander de l'aide n'était pas un échec. Il essaie maintenant de préserver du temps pour son travail et sa vie personnelle, tout en restant présent auprès de sa mère.",
+        ],
+    },
+    {
+        level: 'B1', unit: 3, moduleId: "b1-un-stage-qui-change-les-idees", title: "Un stage qui change les idées", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Pour valider son diplôme, Salomé a effectué un stage dans une petite entreprise de réparation de vélos. Elle imaginait surtout répondre au téléphone et classer des documents. Dès la première semaine, son responsable lui a proposé d'observer les mécaniciens.",
+            "Elle a découvert que l'atelier collaborait avec des écoles pour apprendre aux enfants à entretenir leurs vélos. Salomé a préparé une affiche pour annoncer une journée ouverte au public et a aidé à organiser les inscriptions.",
+            "Cette expérience lui a donné envie de travailler dans la communication associative. Elle recommande aux étudiants de poser des questions et de ne pas limiter leurs ambitions aux tâches prévues au départ.",
+        ],
+    },
+    {
+        level: 'B1', unit: 3, moduleId: "b1-reprendre-des-etudes-a-quarante-ans", title: "Reprendre des études à quarante ans", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Après quinze années dans la vente, Noura a décidé de suivre une formation de comptabilité. Elle appréciait ses collègues, mais elle souhaitait un métier offrant des horaires plus réguliers. Son principal obstacle était la peur de retourner en classe.",
+            "Le premier mois a été compliqué : elle devait apprendre à utiliser de nouveaux logiciels tout en s'occupant de ses enfants. Heureusement, un groupe d'étudiants s'est organisé pour partager des notes et préparer les examens.",
+            "Aujourd'hui, Noura effectue un stage dans une entreprise locale. Elle explique qu'il n'est pas nécessaire de tout savoir avant de commencer, mais qu'il faut accepter de progresser étape par étape.",
+        ],
+    },
+    {
+        level: 'B1', unit: 3, moduleId: "b1-une-reunion-qui-derape", title: "Une réunion qui dérape", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Dans une entreprise de livraison, l'équipe de Nora discutait d'un nouveau planning. Deux collègues voulaient commencer plus tôt, alors que les autres préféraient conserver les horaires actuels. Très vite, chacun a défendu son point de vue sans écouter les arguments opposés.",
+            "Nora a proposé de noter les besoins de chaque personne. Elle a demandé quelles tâches exigeaient réellement une présence matinale et si certains horaires pouvaient être alternés. Peu à peu, le ton est devenu plus calme.",
+            "Finalement, l'équipe a décidé de tester deux plannings pendant un mois. La solution n'a pas satisfait tout le monde, mais chacun a eu le sentiment d'avoir été entendu.",
+        ],
+    },
+    {
+        level: 'B1', unit: 3, moduleId: "b1-une-candidature-bien-preparee", title: "Une candidature bien préparée", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Mehdi souhaitait travailler dans un centre culturel. Il a trouvé une annonce pour un poste d'accueil, mais ne possédait pas toute l'expérience demandée. Au lieu de renoncer, il a cherché quelles compétences acquises dans ses emplois précédents pourraient être utiles.",
+            "Dans sa lettre, il a décrit son travail dans un restaurant, où il avait appris à recevoir le public et à résoudre des problèmes rapidement. Il a également demandé à une amie de relire son curriculum vitae.",
+            "Quelques jours plus tard, il a été invité à un entretien. Même s'il ne connaît pas encore le résultat, Mehdi estime que préparer cette candidature l'a aidé à mieux présenter ses capacités.",
+        ],
+    },
+    {
+        level: 'B1', unit: 4, moduleId: "b1-une-correspondance-manquee", title: "Une correspondance manquée", source: "Texte original — niveau B1",
+        paragraphs: [
+            "À cause d'un retard sur la première ligne, Valérie a manqué sa correspondance à Dijon. Elle devait arriver à Besançon avant dix-huit heures pour retrouver des amis. Au guichet, un agent lui a expliqué qu'un autre train partait quarante minutes plus tard.",
+            "Valérie a demandé si son billet restait valable. L'agent lui a confirmé qu'elle n'avait rien à payer, car le retard provenait de la compagnie ferroviaire. Elle a alors envoyé un message à ses amis pour prévenir de son arrivée tardive.",
+            "Le voyage a duré plus longtemps que prévu, mais Valérie a apprécié de recevoir des informations précises. Elle a compris qu'en cas de problème, mieux vaut demander immédiatement quelles solutions sont possibles.",
+        ],
+    },
+    {
+        level: 'B1', unit: 4, moduleId: "b1-chez-une-famille-daccueil", title: "Chez une famille d’accueil", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Pendant son séjour linguistique à Nantes, Pedro a vécu chez une famille française. Au dîner, chacun racontait sa journée, ce qui lui donnait l'occasion de pratiquer la langue dans une situation naturelle. Les premières semaines, il demandait souvent de répéter les expressions inconnues.",
+            "Un dimanche, sa famille d'accueil l'a invité à une fête de village. Pedro a découvert des spécialités régionales et a discuté avec des habitants. Il a compris que les coutumes varient selon les régions, même à l'intérieur d'un même pays.",
+            "De retour chez lui, il continue à échanger des messages avec la famille. Pour lui, le souvenir le plus marquant n'est pas une visite touristique, mais l'accueil reçu au quotidien.",
+        ],
+    },
+    {
+        level: 'B1', unit: 4, moduleId: "b1-un-voyage-organise-autrement", title: "Un voyage organisé autrement", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Avant de partir en Italie, Léna et ses amis ont décidé de limiter leurs déplacements en avion. Ils ont comparé plusieurs itinéraires ferroviaires et réservé des hébergements proches des gares. Le trajet devait durer plus longtemps, mais ils souhaitaient découvrir des villes moins connues.",
+            "À Turin, ils ont rencontré un guide qui leur a conseillé un marché couvert. À Bologne, une habitante leur a indiqué une promenade au bord d'un canal. Ces recommandations ont modifié leur programme initial.",
+            "Léna reconnaît que ce type de voyage demande davantage de préparation. En échange, le groupe a découvert des lieux qu'il n'aurait probablement pas visités lors d'un séjour plus rapide.",
+        ],
+    },
+    {
+        level: 'B1', unit: 4, moduleId: "b1-la-visite-dun-musee-inattendu", title: "La visite d’un musée inattendu", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Pendant des vacances à Lille, Éric est entré dans un musée consacré aux objets du quotidien. Il pensait n'y passer qu'une demi-heure. Une exposition sur les anciennes machines à écrire l'a pourtant retenu beaucoup plus longtemps.",
+            "Le parcours présentait des témoignages de secrétaires et de journalistes qui utilisaient ces machines. Éric a remarqué que leurs conditions de travail étaient très différentes des siennes. Il a aussi essayé de taper quelques lignes sur un modèle ancien.",
+            "À la sortie, il a recommandé le musée à sa sœur. Cette visite lui a montré qu'un objet apparemment banal peut raconter l'histoire d'une époque entière.",
+        ],
+    },
+    {
+        level: 'B1', unit: 5, moduleId: "b1-une-semaine-sans-reseaux-sociaux", title: "Une semaine sans réseaux sociaux", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Ana utilisait son téléphone dès le réveil et consultait les réseaux sociaux plusieurs fois par heure. Pour comprendre cette habitude, elle s'est fixé un défi : ne pas ouvrir ses applications pendant sept jours, sauf pour répondre à des messages indispensables.",
+            "Les deux premiers jours, elle a eu du mal à se concentrer. Puis elle a retrouvé du temps pour lire et faire du sport. Elle a également remarqué qu'elle manquait parfois des informations pratiques diffusées uniquement en ligne.",
+            "À la fin de la semaine, Ana n'a pas supprimé tous ses comptes. Elle a choisi de désactiver certaines notifications et de réserver des moments précis aux réseaux sociaux.",
+        ],
+    },
+    {
+        level: 'B1', unit: 5, moduleId: "b1-une-information-trop-belle-pour-etre-vraie", title: "Une information trop belle pour être vraie", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Un message partagé dans le groupe familial d'Adrien annonçait qu'une grande entreprise offrait gratuitement des ordinateurs aux étudiants. Plusieurs personnes voulaient remplir le formulaire indiqué par le lien. Adrien a trouvé cette offre suspecte.",
+            "Il a vérifié l'adresse du site et cherché un communiqué officiel. Aucun résultat sérieux ne confirmait l'annonce. Il a également découvert que le formulaire demandait des renseignements personnels sans expliquer leur utilisation.",
+            "Adrien a averti sa famille avant que quelqu'un communique ses données. Depuis, les membres du groupe se demandent davantage qui publie une information et si elle peut être confirmée ailleurs.",
+        ],
+    },
+    {
+        level: 'B1', unit: 5, moduleId: "b1-le-podcast-de-notre-quartier", title: "Le podcast de notre quartier", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Trois lycéens ont créé un podcast pour présenter les personnes qui font vivre leur quartier. Leur première émission était consacrée à une libraire, la deuxième à un entraîneur de basket et la troisième à une bénévole d'une association.",
+            "Avant chaque enregistrement, ils préparent des questions ouvertes afin que les invités puissent raconter leurs expériences. Ils ont vite découvert qu'il fallait aussi apprendre à couper les passages trop longs sans déformer les propos.",
+            "Leur objectif n'est pas de devenir célèbres, mais de montrer que des histoires intéressantes existent près de chez soi. Plusieurs habitants leur ont déjà proposé de nouveaux sujets.",
+        ],
+    },
+    {
+        level: 'B1', unit: 5, moduleId: "b1-quand-les-ecrans-rapprochent", title: "Quand les écrans rapprochent", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Depuis que ses grands-parents ont déménagé, Eva les voit moins souvent. Elle leur a montré comment utiliser un service d'appel vidéo. Au début, ils hésitaient à manipuler la tablette, mais ils ont rapidement pris confiance.",
+            "Chaque dimanche, la famille organise maintenant un appel collectif. Eva raconte ses études, ses grands-parents montrent leur jardin et les cousins participent depuis différentes villes. La conversation est parfois interrompue par un problème de connexion, ce qui fait rire tout le monde.",
+            "Eva sait qu'un écran ne remplace pas une visite. Cependant, elle trouve que ces appels permettent de maintenir des liens entre deux rencontres.",
+        ],
+    },
+    {
+        level: 'B1', unit: 6, moduleId: "b1-le-marche-des-producteurs", title: "Le marché des producteurs", source: "Texte original — niveau B1",
+        paragraphs: [
+            "La commune de Chloé a ouvert un marché réservé aux producteurs situés à moins de cinquante kilomètres. Les habitants y trouvent des fruits, des légumes, du pain et du fromage. Les prix sont parfois plus élevés, mais plusieurs clients apprécient de savoir d'où viennent leurs achats.",
+            "Chaque vendeur affiche des informations sur son exploitation et sur les saisons de production. Chloé a découvert que certains légumes ne sont pas disponibles toute l'année, contrairement à ce qu'elle pensait.",
+            "Elle continue à faire une partie de ses courses au supermarché, mais elle privilégie désormais les produits locaux pour certains repas. Elle considère que ce changement doit rester compatible avec son budget.",
+        ],
+    },
+    {
+        level: 'B1', unit: 6, moduleId: "b1-reparer-plutot-que-remplacer", title: "Réparer plutôt que remplacer", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Le lave-linge de Samuel est tombé en panne après six années d'utilisation. Le vendeur lui a conseillé d'acheter un modèle neuf, mais Samuel a demandé un devis de réparation avant de prendre une décision.",
+            "Le technicien a identifié une pièce abîmée dont le remplacement coûtait beaucoup moins cher qu'une nouvelle machine. La réparation a pris quelques jours. Samuel a profité de cette expérience pour se renseigner sur les ateliers qui aident les habitants à réparer leurs appareils.",
+            "Il estime que prolonger la durée de vie des objets permet parfois d'économiser de l'argent et de produire moins de déchets. Il reconnaît cependant que la réparation n'est pas toujours possible.",
+        ],
+    },
+    {
+        level: 'B1', unit: 6, moduleId: "b1-un-jardin-partage-en-ville", title: "Un jardin partagé en ville", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Dans un quartier dense, un terrain inutilisé a été transformé en jardin partagé. Les habitants peuvent y cultiver des légumes et des fleurs, à condition de participer à l'entretien collectif. Une association organise également des ateliers pour les débutants.",
+            "Au printemps, plusieurs familles ont planté des tomates, mais une période très sèche a compliqué leur croissance. Les bénévoles ont alors installé un système pour récupérer l'eau de pluie et ont choisi des plantes moins exigeantes.",
+            "Le jardin est devenu un lieu de rencontre autant qu'un espace vert. Les participants espèrent maintenant accueillir des classes pour expliquer aux enfants comment poussent les aliments.",
+        ],
+    },
+    {
+        level: 'B1', unit: 6, moduleId: "b1-choisir-un-abonnement-plus-juste", title: "Choisir un abonnement plus juste", source: "Texte original — niveau B1",
+        paragraphs: [
+            "En comparant ses dépenses, Zoé a découvert qu'elle payait trois abonnements de vidéo alors qu'elle utilisait presque toujours la même plateforme. Elle a décidé d'annuler deux contrats et de mieux suivre son budget mensuel.",
+            "Avant de résilier, elle a lu les conditions de chaque service. L'un permettait un arrêt immédiat, tandis qu'un autre exigeait une demande écrite quinze jours avant la prochaine facture. Elle a donc préparé les démarches nécessaires.",
+            "Zoé a compris que le prix affiché n'est pas toujours le seul élément à comparer : la durée d'engagement et les modalités de résiliation comptent aussi.",
+        ],
+    },
+    {
+        level: 'B1', unit: 7, moduleId: "b1-le-cinema-en-plein-air", title: "Le cinéma en plein air", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Chaque été, une association de quartier organise des projections de films dans un parc. Cette année, les bénévoles ont demandé aux habitants de voter pour les œuvres qu'ils souhaitaient voir. Le choix a été difficile, car les générations n'avaient pas toutes les mêmes goûts.",
+            "Le comité a finalement retenu un film familial, une comédie et un documentaire. Après chaque séance, les spectateurs pourront discuter avec un animateur. Les organisateurs espèrent ainsi encourager les échanges plutôt que proposer seulement un divertissement.",
+            "La première projection est gratuite, mais chacun doit réserver sa place. Si la météo est mauvaise, la séance sera déplacée dans la salle municipale.",
+        ],
+    },
+    {
+        level: 'B1', unit: 7, moduleId: "b1-une-exposition-sur-la-memoire-locale", title: "Une exposition sur la mémoire locale", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Dans une ancienne gare, une exposition présente la vie des habitants pendant les années 1960. Les organisateurs ont recueilli des photographies, des lettres et des témoignages de personnes qui avaient travaillé dans les usines voisines.",
+            "Les visiteurs découvrent les loisirs, les transports et les métiers de l'époque. Une partie de l'exposition est consacrée aux transformations du quartier. Plusieurs bâtiments ont disparu, mais certaines rues ont conservé leur aspect d'origine.",
+            "La responsable souhaite que les jeunes générations comprennent l'histoire de leur ville. Elle invite aussi les visiteurs à enregistrer leurs propres souvenirs pour enrichir les archives locales.",
+        ],
+    },
+    {
+        level: 'B1', unit: 7, moduleId: "b1-les-jeunes-prennent-la-parole", title: "Les jeunes prennent la parole", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Un conseil municipal a invité des lycéens à proposer des améliorations pour leur quartier. Pendant trois réunions, ils ont discuté des pistes cyclables, des horaires de la bibliothèque et des espaces réservés aux jeunes.",
+            "Chaque groupe a préparé une présentation de cinq minutes. Les élus ont posé des questions sur le coût des propositions et sur les personnes qui pourraient en bénéficier. Les élèves ont découvert qu'une bonne idée doit aussi être réalisable.",
+            "Le conseil n'a pas accepté toutes les demandes, mais il a décidé de tester une ouverture plus tardive de la bibliothèque le vendredi. Les jeunes suivront les résultats de cette expérience.",
+        ],
+    },
+    {
+        level: 'B1', unit: 7, moduleId: "b1-un-festival-aux-cultures-multiples", title: "Un festival aux cultures multiples", source: "Texte original — niveau B1",
+        paragraphs: [
+            "Dans une ville universitaire, un festival réunit chaque année des associations culturelles. On y trouve des ateliers de musique, des spectacles et des stands de cuisine. Cette fois, les organisateurs ont demandé aux participants de présenter une tradition en expliquant son origine.",
+            "Au cours d'une discussion, plusieurs visiteurs ont remarqué que les traditions changent aussi lorsqu'elles voyagent. Une danse peut prendre une nouvelle forme dans un autre pays, tandis qu'une recette familiale s'adapte aux ingrédients disponibles.",
+            "Les bénévoles souhaitent éviter les présentations trop simples d'une culture. Pour eux, le festival doit donner envie de rencontrer des personnes, de poser des questions et de découvrir des parcours différents.",
         ],
     },
 ];

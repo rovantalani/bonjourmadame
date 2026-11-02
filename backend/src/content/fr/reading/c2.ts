@@ -2,123 +2,199 @@ import type { ReadingPassage } from '../../../types/lectures/reading';
 
 export const readingC2: ReadingPassage[] = [
     {
-        level: 'C2', unit: 1,
-        moduleId: 'c2-proust-extract',
-        title: 'La Madeleine — Du côté de chez Swann (extrait adapté)',
-        source: 'Marcel Proust, Du côté de chez Swann (1913) — extrait adapté, niveau C2',
+        level: 'C2', unit: 1, moduleId: "c2-leloge-qui-nen-est-pas-un", title: "L’éloge qui n’en est pas un", source: "Texte original — niveau C2",
         paragraphs: [
-            'Il y avait déjà bien des années que, de Combray, tout ce qui n\'était pas le théâtre et le drame de mon coucher n\'existait plus pour moi, quand un jour d\'hiver, comme je rentrais à la maison, ma mère, voyant que j\'avais froid, me proposa de me faire prendre, contre mon habitude, un peu de thé. Je refusai d\'abord, et je ne sais pourquoi, je me ravisai. Elle envoya chercher un de ces gâteaux courts et dodus appelés Petites Madeleines qui semblent avoir été moulés dans la valve rainurée d\'une coquille de Saint-Jacques.',
-            'Et bientôt, machinalement, accablé par la morne journée et la perspective d\'un triste lendemain, je portai à mes lèvres une cuillerée du thé où j\'avais laissé s\'amollir un morceau de madeleine. Mais à l\'instant même où la gorgée mêlée des miettes du gâteau toucha mon palais, je tressaillis, attentif à ce qui se passait d\'extraordinaire en moi.',
-            'Un plaisir délicieux m\'avait envahi, isolé, sans la notion de sa cause. Il m\'avait aussitôt rendu les vicissitudes de la vie indifférentes, ses désastres inoffensifs, sa brièveté illusoire, de la même façon qu\'opère l\'amour, en me remplissant d\'une essence précieuse : ou plutôt cette essence n\'était pas en moi, elle était moi. J\'avais cessé de me sentir médiocre, contingent, mortel.',
-            'Ce passage illustre ce que Proust appelle la « mémoire involontaire » : un souvenir surgit non par l\'effort de la volonté, mais par le hasard d\'une sensation — un goût, une odeur, un son. Contrairement à la mémoire volontaire, qui ne restitue que des images plates et froides, la mémoire involontaire redonne le passé dans sa fraîcheur et son épaisseur d\'autrefois. C\'est le fondement de toute l\'entreprise de La Recherche du temps perdu.',
+            "Le chroniqueur commence par féliciter une administration pour « l'audace remarquable » avec laquelle elle a remplacé un formulaire de quatre pages par un document de six pages. Il s'attarde ensuite sur les trois signatures supplémentaires exigées, preuve selon lui d'un « souci exemplaire de simplification ». La répétition de compliments disproportionnés transforme progressivement l'éloge apparent en critique mordante.",
+            "Ce procédé ne se réduit pas à dire le contraire de ce que l'on pense. Le lecteur doit identifier un décalage entre le vocabulaire laudatif et les faits décrits, puis reconstruire la position implicite de l'auteur. L'ironie suppose donc une complicité interprétative : elle laisse une part du jugement à celui qui lit. Sa force peut pourtant devenir sa faiblesse lorsque des lecteurs étrangers au contexte prennent les formules au premier degré.",
         ],
     },
     {
-        level: 'C2', unit: 3,
-        moduleId: 'c2-hugo-les-miserables',
-        title: 'Les Chandelliers de l\'Évêque — Les Misérables (extrait adapté)',
-        source: 'Victor Hugo, Les Misérables (1862) — extrait adapté, niveau C2',
+        level: 'C2', unit: 1, moduleId: "c2-les-precautions-qui-accusent", title: "Les précautions qui accusent", source: "Texte original — niveau C2",
         paragraphs: [
-            'Jean Valjean avait passé dix-neuf ans au bagne. Il avait été condamné pour avoir volé un pain afin de nourrir les enfants de sa sœur affamée. Libéré, il errait sur les routes, partout rejeté, partout chassé, jusqu\'à ce qu\'il frappe à la porte de Monseigneur Bienvenu, évêque de Digne.',
-            'L\'évêque le reçut comme un hôte. Il l\'invita à sa table, lui offrit un lit, le traita avec la même dignité qu\'il réservait à ses invités les plus distingués. Mais cette nuit-là, Valjean, incapable de dormir, cédait à une tentation : il prit les couverts en argent de l\'évêque et s\'enfuit dans la nuit.',
-            'Il fut arrêté le lendemain matin par des gendarmes qui l\'amenèrent devant l\'évêque. Et là se produisit quelque chose d\'inouï. L\'évêque sourit et dit : « Ah ! vous voilà ! Je suis aise de vous voir. Eh bien, mais ! je vous avais donné les chandeliers aussi, qui sont en argent comme le reste et dont vous pourrez bien avoir deux cents francs. Pourquoi ne les avez-vous pas emportés avec vos couverts ? »',
-            'Ce geste de grâce bouleversa Valjean. En refusant de le dénoncer, en lui offrant de surcroît les chandeliers, l\'évêque lui rendait sa dignité d\'homme. Hugo fait de ce moment le pivot du roman : ce n\'est pas la loi, mais la bonté, qui rachète un être humain. Les chandeliers deviendront pour Valjean le symbole de sa transformation intérieure et de sa nouvelle vie.',
+            "« Sans vouloir mettre en doute votre compétence », écrit le directeur avant d'énumérer, sur trois pages, les erreurs imputées à son interlocuteur. Le préambule, conçu pour adoucir l'attaque, finit paradoxalement par la souligner. Plus la formule insiste sur sa bienveillance, plus le reproche devient perceptible.",
+            "Dans les échanges professionnels, les précautions oratoires remplissent plusieurs fonctions : préserver la relation, permettre une critique ou ménager une issue honorable. Mais elles peuvent aussi produire un effet inverse lorsque leur caractère ritualisé paraît trop évident. Le destinataire d'un message ne décode pas seulement ses propositions explicites ; il interprète les écarts entre l'intention affichée, le rapport hiérarchique et la violence réelle des mots choisis. La politesse, loin d'être une couche extérieure au sens, participe alors pleinement de l'argumentation.",
         ],
     },
     {
-        level: 'C2', unit: 3,
-        moduleId: 'c2-beauvoir-deuxieme-sexe',
-        title: 'On ne naît pas femme — Le Deuxième Sexe (extrait adapté)',
-        source: 'Simone de Beauvoir, Le Deuxième Sexe (1949) — extrait adapté, niveau C2',
+        level: 'C2', unit: 1, moduleId: "c2-le-sous-entendu-au-cur-de-la-negociation", title: "Le sous-entendu au cœur de la négociation", source: "Texte original — niveau C2",
         paragraphs: [
-            'On ne naît pas femme : on le devient. Aucun destin biologique, psychique, économique ne définit la figure que revêt au sein de la société la femelle humaine ; c\'est l\'ensemble de la civilisation qui élabore ce produit intermédiaire entre le mâle et le castrat qu\'on qualifie de féminin. Seule la médiation d\'autrui peut constituer un individu comme un Autre.',
-            'Cette phrase, l\'une des plus célèbres de la philosophie du XX° siècle, pose le fondement de l\'analyse de Beauvoir : la féminité n\'est pas une donnée naturelle, mais une construction sociale et culturelle. Ce que l\'on nomme « la femme » est le résultat d\'une longue éducation, d\'une série d\'injonctions, de représentations, de contraintes qui façonnent les comportements, les désirs et l\'image de soi.',
-            'Beauvoir s\'inscrit dans la tradition existentialiste : l\'existence précède l\'essence. L\'être humain n\'a pas de nature figée ; il se définit par ses choix et ses actes. Si la femme a longtemps semblé définie par sa biologie, c\'est que les conditions sociales et historiques l\'ont enfermée dans ce rôle. La libération ne consiste pas à nier les différences, mais à refuser qu\'elles déterminent les possibilités de vie.',
-            'Le Deuxième Sexe est un texte fondateur du féminisme moderne. Il a introduit des concepts — l\'altérité, la construction du genre, l\'immanence vs la transcendance — qui structurent encore aujourd\'hui les sciences humaines. Lire Beauvoir, c\'est apprendre à voir comment les évidences culturelles peuvent masquer des rapports de pouvoir profondément enracinés.',
+            "À la question « Ce calendrier vous paraît-il réaliste ? », une négociatrice répond : « Disons qu'il est ambitieux. » Ni mensonge ni approbation, cette réponse déplace l'évaluation vers un terme suffisamment positif pour préserver la discussion, suffisamment ambigu pour signaler la réserve. L'interlocuteur comprend qu'un refus frontal a été évité, non que l'objection a disparu.",
+            "Dans une négociation complexe, l'implicite permet parfois de maintenir des options ouvertes. Il peut néanmoins devenir une source d'incompréhension si les participants n'attribuent pas les mêmes valeurs aux euphémismes. Un médiateur compétent ne se contente pas de traduire les mots prononcés ; il explicite, avec prudence, la marge d'incertitude qu'ils laissent. La fidélité à l'échange suppose alors de ne pas transformer une hésitation stratégique en engagement ferme.",
         ],
     },
     {
-        level: 'C2', unit: 3,
-        moduleId: 'c2-sartre-huis-clos',
-        title: 'L\'Enfer, c\'est les autres — Huis Clos (extrait adapté)',
-        source: 'Jean-Paul Sartre, Huis Clos (1944) — extrait adapté, niveau C2',
+        level: 'C2', unit: 1, moduleId: "c2-lautorite-dune-voix-hesitante", title: "L’autorité d’une voix hésitante", source: "Texte original — niveau C2",
         paragraphs: [
-            'Huis Clos met en scène trois personnages — Garcin, Inès, et Estelle — enfermés pour l\'éternité dans un salon Second Empire. Pas de fenêtres, pas de miroirs, pas de nuit. La lumière crue ne s\'éteint jamais. Il n\'y a pas de bourreau : les trois personnages sont leur propre torture.',
-            'La pièce s\'achève sur une réplique qui est devenue l\'une des formules les plus citées de la philosophie du XX° siècle : « L\'enfer, c\'est les autres. » Mais cette formule est souvent mal comprise. Sartre ne dit pas que les autres sont mauvais. Il dit quelque chose de plus précis : c\'est par le regard d\'autrui que nous prenons conscience de nous-mêmes — et ce regard nous fige, nous transforme en objet, nous dépossède de notre liberté.',
-            'Garcin ne peut pas se prouver qu\'il n\'est pas un lâche, parce qu\'il est mort avant d\'avoir pu agir autrement. Il a besoin du regard d\'Inès pour se définir, mais Inès le condamne. C\'est cette dépendance impossible — avoir besoin d\'autrui pour exister tout en étant aliéné par lui — qui constitue l\'enfer de Sartre.',
-            'La pièce est aussi une réflexion sur la mauvaise foi : Estelle refuse de voir ce qu\'elle a fait, Garcin refuse d\'admettre sa lâcheté, Inès seule se juge lucidement — mais cette lucidité ne la sauve pas. La leçon existentialiste de Huis Clos est que la liberté est une responsabilité dont on ne peut se décharger, ni dans la mort, ni dans l\'illusion.',
+            "Dans un entretien radiophonique, une chercheuse répond avec de nombreuses nuances : « À ce stade, les données suggèrent… », « sous certaines hypothèses… », « nous ne pouvons pas exclure… ». Son contradicteur, plus catégorique, paraît d'abord plus convaincant. Pourtant, la précision de ses affirmations ne repose sur aucun élément supplémentaire.",
+            "L'exemple rappelle que l'assurance rhétorique et la solidité épistémique ne coïncident pas nécessairement. La prudence d'une experte peut signaler une maîtrise fine de son domaine plutôt qu'une fragilité de sa conclusion. Le problème est que l'espace médiatique récompense souvent les propositions tranchées. Comprendre un discours avancé suppose de distinguer l'intensité de l'énonciation du degré de preuve mobilisé, sans convertir l'incertitude scientifique en relativisme généralisé.",
         ],
     },
     {
-        level: 'C2', unit: 3,
-        moduleId: 'c2-balzac-goriot',
-        title: 'Le Père Goriot — Portrait d\'un Paris impitoyable (extrait adapté)',
-        source: 'Honoré de Balzac, Le Père Goriot (1835) — extrait adapté, niveau C2',
+        level: 'C2', unit: 2, moduleId: "c2-la-ville-comme-personnage", title: "La ville comme personnage", source: "Texte original — niveau C2",
         paragraphs: [
-            'La Maison Vauquer est une pension bourgeoise dont l\'atmosphère reflète fidèlement, selon Balzac, l\'état moral de ses habitants. Tout y est à la fois mesquin et sordide : les meubles mangés par l\'usage, les odeurs de cuisine rance et de moisi, la propriétaire elle-même, dont la robe de chambre résume, dit Balzac, « tout le séjour, l\'atmosphère et la vie de la pension ».',
-            'Le père Goriot est l\'un des pensionnaires. Ancien vermicellier enrichi, il a tout donné à ses deux filles pour qu\'elles épousent des hommes titrés et entrent dans le monde. Ses filles l\'ont oublié. Il vit dans une chambre de plus en plus misérable, vend ses derniers biens pour régler leurs dettes et payer leurs caprices, sans que l\'une ni l\'autre ne vienne le voir.',
-            'Balzac fait du père Goriot une figure christique : comme le Christ, il souffre par amour, il se sacrifie pour des ingrats, et il meurt abandonné. Mais contrairement au Christ, il n\'y a pas de résurrection. La société parisienne que dépeint La Comédie humaine est régie par une loi unique : l\'argent. L\'amour paternel n\'est pas une valeur — c\'est une faiblesse que les filles de Goriot exploitent froidement.',
-            'Rastignac, le jeune étudiant provincial qui observe cette tragédie, tire la leçon. Devant Paris illuminé depuis le cimetière du Père-Lachaise, où il vient d\'enterrer Goriot seul, il lance : « À nous deux maintenant ! » C\'est la formule de l\'ambition sans illusions, du jeune homme qui choisit de jouer le jeu de la société plutôt que d\'en être la victime.',
+            "Dans le roman, la ville n'est jamais décrite de face. Elle apparaît par fragments : un escalier humide, une vitrine éteinte, la rumeur indistincte d'un boulevard. À mesure que le narrateur traverse ces lieux, leur disposition semble reproduire son hésitation intérieure. Le quartier devient presque un interlocuteur silencieux, sans jamais recevoir de parole propre.",
+            "Une lecture strictement documentaire manquerait cette fonction du décor. Les détails matériels ne servent pas seulement à situer l'action ; ils imposent un rythme, une tonalité et un réseau d'échos qui organisent la perception du personnage. Le texte refuse pourtant l'allégorie trop transparente : la pluie ne « signifie » pas automatiquement la tristesse. La puissance esthétique naît de cette correspondance inachevée entre espace urbain et expérience intime.",
         ],
     },
     {
-        level: 'C2', unit: 4,
-        moduleId: 'c2-flaubert-bovary',
-        title: 'Emma Bovary — Style Indirect Libre (extrait adapté)',
-        source: 'Gustave Flaubert, Madame Bovary (1857) — extrait adapté, niveau C2',
+        level: 'C2', unit: 2, moduleId: "c2-le-narrateur-qui-se-contredit", title: "Le narrateur qui se contredit", source: "Texte original — niveau C2",
         paragraphs: [
-            'Emma Bovary est une jeune femme élevée dans un couvent, nourrie de romans sentimentaux et de rêves romanesques. Elle épouse Charles Bovary, médecin de campagne, et découvre très vite que la vie réelle ne ressemble pas aux livres qu\'elle a lus. L\'ennui s\'installe — ce que Flaubert nomme parfois le « bovarysme » : l\'écart irréductible entre ce que l\'on rêve et ce que l\'on vit.',
-            'Le génie stylistique de Flaubert réside dans l\'utilisation du style indirect libre. Contrairement au discours direct (« Je suis malheureuse », dit Emma) ou au discours indirect (Emma dit qu\'elle était malheureuse), le style indirect libre fond la voix du narrateur et celle du personnage en une seule : « Pourquoi, mon Dieu, s\'était-elle mariée ? » Le lecteur ne sait plus si c\'est le narrateur ou Emma qui pense — et c\'est voulu.',
-            'Cette technique permet à Flaubert d\'être simultanément à l\'intérieur et à l\'extérieur de son personnage : il épouse le flux de conscience d\'Emma tout en maintenant une distance ironique. Quand Emma s\'emballe pour un rêve romantique, la prose de Flaubert imite cet emballement — phrases longues, images lyriques — mais la chute qui suit est toujours sobre, clinique, désenchantée.',
-            'Flaubert a mis cinq ans à écrire Madame Bovary, travaillant chaque phrase jusqu\'à l\'épuisement. Il cherchait ce qu\'il appelait « le mot juste » — l\'unique mot qui convient, qui ne peut être remplacé par aucun autre. Cette exigence stylistique a transformé le roman français et influencé des générations d\'écrivains, de Maupassant à Proust, et au-delà.',
+            "Au début du récit, le narrateur affirme n'avoir jamais regretté son départ. Quelques pages plus loin, il détaille avec une précision presque douloureuse les gestes ordinaires qu'il ne retrouvera plus. Aucune confession explicite ne vient résoudre cette contradiction. Le lecteur doit décider si l'homme se trompe lui-même, cherche à convaincre son destinataire ou refuse simplement de nommer sa nostalgie.",
+            "La fiabilité narrative ne se mesure pas ici à l'exactitude factuelle de chaque souvenir. Elle dépend du rapport instable entre ce que la voix prétend savoir et ce que son récit révèle malgré elle. En maintenant cette tension, l'auteur empêche une interprétation univoque. L'incohérence devient un principe de construction du personnage, non une erreur que le lecteur devrait corriger.",
         ],
     },
     {
-        level: 'C2', unit: 2,
-        moduleId: 'c2-poesie-symboliste',
-        title: 'Correspondances — Baudelaire (extrait et analyse)',
-        source: 'Charles Baudelaire, Les Fleurs du Mal (1857) — texte et analyse, niveau C2',
+        level: 'C2', unit: 2, moduleId: "c2-le-silence-apres-la-derniere-phrase", title: "Le silence après la dernière phrase", source: "Texte original — niveau C2",
         paragraphs: [
-            'La Nature est un temple où de vivants piliers / Laissent parfois sortir de confuses paroles ; / L\'Homme y passe à travers des forêts de symboles / Qui l\'observent avec des regards familiers. // Comme de longs échos qui de loin se confondent / Dans une ténébreuse et profonde unité, / Vaste comme la nuit et comme la clarté, / Les parfums, les couleurs et les sons se répondent.',
-            '"Correspondances" est le poème programme du symbolisme baudelairien. L\'idée centrale est que la nature n\'est pas un simple décor, mais un langage — un système de signes que le poète doit apprendre à déchiffrer. Les sens — l\'ouïe, la vue, l\'odorat — se répondent mutuellement (c\'est ce qu\'on appelle la synesthésie) et pointent vers une unité cachée derrière le monde visible.',
-            'La structure du sonnet est classique : deux quatrains, deux tercets. Mais le contenu est révolutionnaire. Baudelaire substitue à la nature romantique (refuge, consolation, harmonie) une nature ambiguë et inquiétante. Les piliers sont "vivants", les symboles "observent" l\'homme — c\'est lui qui est regardé, pas l\'inverse. La nature est active, mystérieuse, peut-être menaçante.',
-            'Ce poème a eu une influence considérable sur la poésie française et mondiale. Mallarmé, Verlaine, Rimbaud s\'en sont nourris. La notion de "correspondances" — entre les arts, entre les sens, entre le visible et l\'invisible — est devenue une clef de lecture non seulement de la poésie, mais de toute l\'esthétique moderne.',
+            "Une nouvelle s'achève au moment où son héroïne ouvre une lettre. Le contenu n'est pas dévoilé. Une lecture impatiente y voit une intrigue interrompue, alors que la dernière page a soigneusement préparé l'incertitude : les personnages ont formulé des hypothèses incompatibles, chacune plausible, sans que l'une puisse être confirmée.",
+            "Cette fin ouverte ne relève pas d'un simple refus de conclure. Elle déplace l'attention du fait manquant vers la manière dont les protagonistes vivent dans l'attente d'une réponse. L'information dissimulée aurait réduit le champ des interprétations ; son absence transforme rétrospectivement les scènes précédentes. Le lecteur n'est donc pas invité à inventer arbitrairement la suite, mais à mesurer les limites d'un savoir que le récit a rendu désirable sans jamais le promettre.",
         ],
     },
     {
-        level: 'C2', unit: 4,
-        moduleId: 'c2-essay-contemporary',
-        title: 'L\'Ennui au XX° siècle — Essai (texte original)',
-        source: 'Texte original — niveau C2',
+        level: 'C2', unit: 2, moduleId: "c2-imiter-pour-inventer", title: "Imiter pour inventer", source: "Texte original — niveau C2",
         paragraphs: [
-            'Peut-on s\'ennuyer au XXI° siècle ? La question peut sembler absurde à l\'heure des notifications permanentes, des flux d\'information ininterrompus, et des offres de divertissement illimitées. Pourtant, les études psychologiques récentes suggèrent que l\'ennui n\'a pas disparu — il s\'est transformé. Et cette transformation dit quelque chose d\'important sur notre rapport au temps et à nous-mêmes.',
-            'L\'ennui classique, celui que décrivait Pascal en évoquant la condition humaine incapable de rester en repos dans une chambre, était un vide — une absence de stimulation qui forçait le sujet à se retrouver face à lui-même. C\'était inconfortable, parfois douloureux, mais potentiellement fécond : c\'est dans l\'ennui que naissent la rêverie, la méditation, et parfois la création.',
-            'L\'ennui contemporain est différent. Il ne naît pas du silence, mais du bruit. C\'est un ennui de saturation : trop d\'écrans, trop d\'images, trop de sollicitations, et au bout du compte, une sensation de vide encore plus profonde. Le philosophe coréen Byung-Chul Han parle de « société de la fatigue » : une société dans laquelle l\'individu s\'épuise à produire, à consommer, à performer — sans jamais trouver le repos ni le sens.',
-            'Ce que nous avons perdu, suggère-t-il, c\'est la capacité à l\'inactivité contemplative — ce que les Anciens appelaient l\'otium, par opposition au negotium (l\'affairement). L\'otium n\'est pas la paresse ; c\'est un temps de non-faire actif, de présence à soi-même, propice à la pensée profonde. Le retrouver dans un monde hyperconnecté est peut-être l\'un des défis les plus urgents de notre époque.',
+            "Un écrivain contemporain adopte délibérément les longues périodes et les inversions d'un auteur du dix-neuvième siècle. Certains critiques dénoncent une imitation stérile. D'autres observent que ces tournures anciennes, placées au milieu d'objets et de situations modernes, produisent un décalage humoristique qui modifie leur fonction initiale.",
+            "Le pastiche ne se définit donc pas uniquement par la ressemblance formelle. Il suppose que le lecteur reconnaisse un modèle tout en percevant ce que le déplacement lui fait subir. L'imitation peut devenir une enquête sur la mémoire des styles : ce qui était autrefois une convention sérieuse apparaît désormais comme un procédé, éventuellement comique. La création ne naît pas toujours de la rupture ; elle peut surgir de la reprise consciente d'une langue héritée.",
         ],
     },
     {
-        level: 'C2', unit: 5,
-        moduleId: 'c2-discours-academique',
-        title: 'L\'Université et la Société — Leçon inaugurale (extrait adapté)',
-        source: 'Texte original inspiré du Collège de France — niveau C2',
+        level: 'C2', unit: 3, moduleId: "c2-le-monument-et-le-recit-national", title: "Le monument et le récit national", source: "Texte original — niveau C2",
         paragraphs: [
-            'Permettez-moi, en ouvrant ce cours, de vous proposer quelques réflexions sur la nature même de ce que nous allons entreprendre ensemble. Qu\'est-ce qu\'une leçon ? Qu\'est-ce qu\'un savoir transmis ? Et dans quel rapport l\'université entretient-elle avec la société dont elle est issue et qu\'elle est censée servir ?',
-            'L\'université, dans sa forme médiévale originelle, était un lieu de dispute — de confrontation réglée des arguments, d\'épreuve rigoureuse des thèses. Ce qui l\'opposait au simple enseignement de la tradition, c\'était précisément cette capacité à mettre en doute, à questionner les évidences reçues, à ne pas tenir pour acquis ce que la coutume avait simplement imposé. En ce sens, l\'université était, et doit rester, une institution fondamentalement critique.',
-            'Mais critique ne signifie pas destructeur. L\'esprit critique n\'est pas le scepticisme paresseux qui refuse tout engagement. C\'est au contraire une exigence : celle de ne pas accepter une affirmation sans en examiner les fondements, les présupposés, les implications. C\'est un travail lent, patient, souvent ingrat — mais sans lequel la connaissance se pétrifie en dogme.',
-            'Le paradoxe de l\'université contemporaine est qu\'elle est de plus en plus pressée de produire des résultats mesurables, des compétences certifiées, des diplômés employables — pendant que la société a de plus en plus besoin, précisément, de ce que l\'université seule peut fournir : du temps long, de la profondeur, de la pensée qui résiste à l\'urgence. Ce cours sera une tentative modeste de tenir ces deux exigences ensemble.',
+            "Une statue commémorative semble matérialiser un passé stable. Pourtant, la signification qu'on lui attribue varie avec les époques : hommage consensuel un jour, objet de contestation le lendemain. Ce qui change n'est pas nécessairement le savoir historique disponible, mais la manière dont une société négocie ce qu'elle souhaite rendre visible dans l'espace public.",
+            "Face à une polémique, certains réclament le retrait immédiat du monument ; d'autres craignent qu'une telle décision efface la possibilité de débattre du passé. Une commission propose d'ajouter des dispositifs explicatifs et de conserver les archives des controverses elles-mêmes. La démarche ne cherche pas à neutraliser toute lecture politique. Elle reconnaît au contraire que la mémoire publique est toujours une construction située, dont les choix doivent pouvoir être discutés.",
         ],
     },
     {
-        level: 'C2', unit: 5,
-        moduleId: 'c2-news-analysis',
-        title: 'Comment lire un éditorial — Analyse de presse',
-        source: 'Texte original — niveau C2',
+        level: 'C2', unit: 3, moduleId: "c2-les-archives-parlent-elles-delles-memes", title: "Les archives parlent-elles d’elles-mêmes ?", source: "Texte original — niveau C2",
         paragraphs: [
-            'Un éditorial n\'est pas un article de presse comme les autres. Là où le reportage s\'efforce de décrire les faits, l\'éditorial les interprète. Là où la chronique peut se permettre le ton personnel et familier, l\'éditorial engage la ligne éditoriale du journal — c\'est-à-dire sa position institutionnelle sur un sujet donné. Lire un éditorial, c\'est donc apprendre à lire un texte à plusieurs niveaux en même temps.',
-            'Le premier niveau est thématique : quel est le sujet ? Le deuxième niveau est argumentatif : quelle est la thèse défendue ? Par quels arguments, quels exemples, quelles concessions ? Le troisième niveau est rhétorique : quels procédés stylistiques le journaliste utilise-t-il pour convaincre — l\'ironie, l\'apostrophe, la question rhétorique, l\'accumulation, le chiasme ? Le quatrième niveau, enfin, est idéologique : quelles valeurs, quels présupposés, quelle vision du monde transparaissent derrière le texte ?',
-            'Ce dernier niveau est le plus difficile à saisir, précisément parce qu\'il est le moins explicite. Tout texte est ancré dans un point de vue — mais les bons journalistes savent rendre ce point de vue invisible, le naturaliser, le faire passer pour du bon sens. La lecture critique consiste à rendre visible cet ancrage : d\'où parle cet auteur ? Pour qui ? Avec quels intérêts ? En faveur de quelle vision du monde ?',
-            'Ce n\'est pas là un exercice de méfiance systématique, mais de lucidité. La presse est un bien public essentiel dans une démocratie. Savoir la lire — pas seulement la consommer — est une compétence civique fondamentale. Et c\'est une compétence qui s\'apprend, qui se travaille, qui exige de la pratique. Le français de haut niveau n\'est pas seulement une langue : c\'est aussi un outil de pensée critique.',
+            "Un dossier administratif daté de 1912 mentionne avec précision les déplacements d'ouvriers recrutés pour un chantier. L'historienne qui l'étudie constate toutefois que les voix des travailleurs n'apparaissent presque jamais : l'administration décrit leurs trajets, leurs salaires et leurs absences, mais non leurs attentes.",
+            "L'archive vaut donc à la fois comme source et comme trace d'un rapport de pouvoir. La traiter comme un miroir transparent du réel reviendrait à oublier les conditions de sa production. L'historienne croise ces documents avec des lettres privées et des témoignages ultérieurs, sans prétendre restaurer intégralement les expériences perdues. Sa méthode repose sur une exigence paradoxale : tirer parti des preuves disponibles tout en rendant visibles les silences qui les traversent.",
+        ],
+    },
+    {
+        level: 'C2', unit: 3, moduleId: "c2-la-nostalgie-des-epoques-inconnues", title: "La nostalgie des époques inconnues", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Une publicité promet de retrouver « l'authenticité » d'un village tel qu'il aurait été autrefois. Les images montrent une place sans voitures, des façades intactes et des habitants souriants. Rien ne rappelle les difficultés économiques, les conflits ou les inégalités qui traversaient pourtant cette période.",
+            "L'historien interrogé ne méprise pas le désir de continuité que ces représentations expriment. Il observe seulement que la nostalgie sélectionne des fragments du passé pour répondre à des inquiétudes présentes. Elle peut nourrir une curiosité féconde à condition de ne pas se substituer à l'enquête. Le paradoxe de cette mémoire idéalisée est qu'elle affirme vouloir préserver la complexité d'un monde disparu tout en effaçant précisément ce qui le rendrait historiquement intelligible.",
+        ],
+    },
+    {
+        level: 'C2', unit: 3, moduleId: "c2-la-commemoration-et-les-generations", title: "La commémoration et les générations", source: "Texte original — niveau C2",
+        paragraphs: [
+            "À l'occasion d'un anniversaire historique, une municipalité organise une cérémonie solennelle et une série de rencontres avec des lycéens. Les anciens combattants souhaitent préserver les formes héritées de l'hommage ; les élèves préféreraient interroger les choix, les hésitations et parfois les erreurs de leurs prédécesseurs.",
+            "Le désaccord ne recouvre pas simplement une opposition entre respect et irrévérence. Il révèle deux fonctions de la commémoration : maintenir une continuité symbolique et ouvrir un travail critique sur le passé. La coordinatrice propose que les témoignages soient suivis d'ateliers où les jeunes puissent questionner les sources. Le cérémonial ne disparaît pas, mais il cesse de prétendre constituer à lui seul une transmission complète. Une mémoire partagée peut ainsi demeurer commune sans imposer l'unanimité des interprétations.",
+        ],
+    },
+    {
+        level: 'C2', unit: 4, moduleId: "c2-le-dilemme-sans-solution-pure", title: "Le dilemme sans solution pure", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Un hôpital dispose d'un équipement rare et doit déterminer comment répartir son accès. L'égalité de traitement inviterait à suivre l'ordre des demandes ; la recherche du bénéfice médical maximal pourrait conduire à privilégier certains patients. Chacun de ces principes répond à une exigence défendable, mais leur application simultanée se révèle impossible dans toutes les situations.",
+            "Le comité d'éthique refuse d'habiller son arbitrage d'une évidence factice. Il énonce les valeurs en tension, décrit les conséquences probables et prévoit une possibilité de réexamen. Cette prudence ne supprime pas la responsabilité de choisir. Au contraire, elle rappelle que certaines décisions exigent de reconnaître explicitement ce qu'elles sacrifient. La délibération éthique ne garantit pas l'innocence du résultat ; elle cherche à rendre la justification partageable.",
+        ],
+    },
+    {
+        level: 'C2', unit: 4, moduleId: "c2-la-sincerite-suffit-elle", title: "La sincérité suffit-elle ?", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Dans un entretien, une responsable affirme avoir pris une décision « en toute sincérité ». L'argument paraît moralement rassurant : elle n'aurait pas cherché à tromper. Mais la sincérité d'une conviction ne garantit ni sa justesse ni son absence de conséquences néfastes.",
+            "Le philosophe invité distingue alors deux exigences que le débat confond souvent : l'authenticité de l'intention et la qualité de la justification. On peut agir de bonne foi sur la base d'informations insuffisantes ; on peut aussi présenter des raisons solides sans éprouver l'émotion attendue. Juger une action suppose donc d'examiner ses motifs, ses moyens et ses effets. La sincérité mérite d'être prise en compte, mais elle ne saurait servir de dispense universelle de responsabilité.",
+        ],
+    },
+    {
+        level: 'C2', unit: 4, moduleId: "c2-luniversel-et-les-situations-singulieres", title: "L’universel et les situations singulières", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Une règle générale promet une certaine impartialité : elle ne dépend pas de la personne qui doit l'appliquer. Pourtant, son usage mécanique peut produire des injustices si elle ignore des circonstances décisives. À l'inverse, multiplier les exceptions risque de rendre les décisions imprévisibles et de favoriser l'arbitraire.",
+            "La difficulté consiste à articuler deux exigences qui paraissent antagonistes. L'universel fournit un principe de comparaison ; l'attention aux cas particuliers empêche de confondre égalité et uniformité. Dans un séminaire d'éthique, les participants ont découvert qu'aucune formule ne dispensait d'expliquer les raisons d'une exception. Une décision juste n'est pas nécessairement celle qui efface toute singularité, mais celle qui peut rendre compte publiquement de la pertinence des différences retenues.",
+        ],
+    },
+    {
+        level: 'C2', unit: 4, moduleId: "c2-la-responsabilite-des-consequences-lointaines", title: "La responsabilité des conséquences lointaines", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Une décision prise aujourd'hui peut produire des effets qui ne se manifesteront que dans plusieurs décennies. Les personnes concernées ne participent évidemment pas aux délibérations présentes. Cette absence soulève une difficulté politique : comment tenir compte d'intérêts qui ne peuvent être directement exprimés ?",
+            "Certains théoriciens proposent de représenter institutionnellement les générations futures. Leurs critiques craignent qu'un tel porte-parole prétende connaître des préférences impossibles à établir. Une position plus prudente consiste à fixer des obligations de justification pour les décisions irréversibles. L'objectif n'est pas d'inventer une volonté unanime du futur, mais de reconnaître une asymétrie : ceux qui décident disposent d'un pouvoir dont ils ne supporteront peut-être jamais les conséquences les plus lourdes.",
+        ],
+    },
+    {
+        level: 'C2', unit: 5, moduleId: "c2-la-technologie-comme-promesse-politique", title: "La technologie comme promesse politique", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Dans les discours sur l'innovation, chaque nouveau dispositif semble devoir résoudre simultanément des problèmes économiques, sociaux et environnementaux. Le vocabulaire de la « solution » confère à la technique une évidence qui dispense parfois d'interroger les intérêts qu'elle sert.",
+            "Un historien des techniques rappelle qu'aucun outil ne détermine à lui seul ses usages. Les infrastructures, les règles et la distribution des ressources façonnent ce qu'il devient possible d'en faire. Critiquer une promesse technologique ne revient donc pas à rejeter l'innovation. Cela consiste à demander qui définit le problème, qui choisit les critères de réussite et qui assume les conséquences d'un échec. Derrière l'apparente neutralité des objets se cachent souvent des arbitrages collectifs que le discours du progrès rend peu visibles.",
+        ],
+    },
+    {
+        level: 'C2', unit: 5, moduleId: "c2-le-chiffre-et-son-prestige", title: "Le chiffre et son prestige", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Un responsable présente un résultat accompagné de trois décimales. Le public y voit spontanément la marque d'une mesure rigoureuse. Pourtant, la précision affichée peut être supérieure à celle de la méthode qui a produit la donnée. L'élégance du nombre dissimule alors des hypothèses fragiles.",
+            "Un statisticien propose de publier des intervalles d'incertitude et des informations sur l'origine des chiffres. Il sait que cette présentation paraît moins spectaculaire, mais elle permet d'éviter une confusion entre exactitude arithmétique et validité scientifique. Le prestige du calcul ne doit pas se substituer à l'examen des conditions de production. Au fond, ce n'est pas la présence de nombres qui garantit l'objectivité d'un raisonnement, mais la possibilité d'en discuter les présupposés.",
+        ],
+    },
+    {
+        level: 'C2', unit: 5, moduleId: "c2-predire-nest-pas-decider", title: "Prédire n’est pas décider", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Un modèle informatique estime la probabilité qu'une panne survienne sur un réseau électrique. Sa performance technique peut être excellente, mais la décision de remplacer immédiatement un équipement dépend d'autres facteurs : coûts, risques, disponibilité des équipes et conséquences pour les usagers.",
+            "Le responsable du réseau distingue donc la prédiction de la prescription. La première fournit une information conditionnelle ; la seconde suppose de choisir entre des valeurs et des objectifs parfois incompatibles. Confondre les deux reviendrait à attribuer à un calcul une autorité politique qu'il n'a pas. Les modèles peuvent éclairer une décision, non en éliminer le caractère normatif. Plus ils deviennent sophistiqués, plus il importe de rendre explicites les critères humains qui transforment leurs résultats en actes.",
+        ],
+    },
+    {
+        level: 'C2', unit: 5, moduleId: "c2-le-progres-et-ses-effets-rebonds", title: "Le progrès et ses effets rebonds", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Une nouvelle technologie promet de consommer deux fois moins d'énergie pour une opération donnée. Cette efficacité paraît annoncer une baisse automatique de la consommation totale. Pourtant, si le service devient moins coûteux, son usage peut se multiplier au point d'annuler une partie du gain initial.",
+            "Ce mécanisme, appelé effet rebond, ne condamne pas les améliorations techniques. Il rappelle qu'une performance mesurée à l'échelle d'un appareil n'équivaut pas à un résultat global. Une politique cohérente doit donc examiner les comportements induits et les conditions économiques qui les favorisent. La question pertinente n'est pas seulement « combien économise cet outil ? », mais « que devient l'ensemble du système lorsque cet outil se diffuse ? ». Le paradoxe oblige à penser l'innovation au-delà de ses performances isolées.",
+        ],
+    },
+    {
+        level: 'C2', unit: 6, moduleId: "c2-une-langue-nest-pas-un-musee", title: "Une langue n’est pas un musée", source: "Texte original — niveau C2",
+        paragraphs: [
+            "À chaque génération, certains déplorent que la langue se « dégrade » sous l'effet des usages nouveaux. Ils prennent pour preuve des emprunts, des raccourcis ou des tournures qui ne figuraient pas dans leurs manuels scolaires. Pourtant, l'histoire des langues montre que la variation constitue moins une anomalie qu'une condition ordinaire de leur vitalité.",
+            "Le linguiste invité à une conférence refuse cependant l'opposition simpliste entre conservateurs et modernistes. Des normes communes facilitent la compréhension et jouent un rôle institutionnel réel. Le problème surgit lorsque l'on confond ces conventions avec une essence intemporelle de la langue. Reconnaître les registres, les changements et les contextes d'usage permet d'apprécier la précision d'une expression sans disqualifier d'emblée ceux qui parlent autrement.",
+        ],
+    },
+    {
+        level: 'C2', unit: 6, moduleId: "c2-lintraduisible-une-frontiere-mouvante", title: "L’intraduisible, une frontière mouvante", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Certains mots sont présentés comme « intraduisibles », comme si leur sens demeurait prisonnier de la langue qui les a façonnés. Or l'impossibilité de trouver un équivalent immédiat ne signifie pas qu'aucune traduction soit concevable. Elle oblige souvent à répartir sur plusieurs expressions des nuances concentrées dans un seul terme.",
+            "Une traductrice raconte avoir préféré une périphrase là où un emprunt direct aurait créé une impression d'exotisme artificiel. Son choix ne supprimait pas toutes les pertes ; il révélait simplement que la traduction procède par hiérarchisation d'effets. Dire qu'un mot est intraduisible peut nourrir la curiosité linguistique, mais aussi figer les cultures dans une altérité prétendument insurmontable. La question la plus féconde est moins « peut-on traduire ? » que « que choisit-on de préserver ? ».",
+        ],
+    },
+    {
+        level: 'C2', unit: 6, moduleId: "c2-le-plurilinguisme-au-quotidien", title: "Le plurilinguisme au quotidien", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Dans une famille, les membres passent du français à l'arabe et à l'espagnol au cours d'un même repas. Les choix ne suivent aucune règle écrite : une plaisanterie revient dans la langue d'enfance, une question administrative se formule en français, un souvenir se raconte plus facilement dans une autre langue.",
+            "Ce va-et-vient n'indique pas une incapacité à « bien parler » chacune des langues. Il révèle un répertoire souple dans lequel les ressources linguistiques répondent à des fonctions affectives et sociales différentes. Une chercheuse souligne néanmoins que ce plurilinguisme n'est pas toujours reconnu à l'école ou au travail, où l'on exige souvent des frontières linguistiques strictes. L'enjeu n'est pas de nier la nécessité de normes communes, mais de ne pas confondre la pluralité des pratiques avec un déficit de compétence.",
+        ],
+    },
+    {
+        level: 'C2', unit: 6, moduleId: "c2-laccent-ce-jugement-deguise", title: "L’accent, ce jugement déguisé", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Une candidate possède toutes les compétences exigées par un poste, mais un recruteur note qu'elle « manque de naturel » lorsqu'elle s'exprime. Interrogé sur cette impression, il évoque surtout son accent. Aucun élément ne montre pourtant que celui-ci gênerait la communication avec les clients.",
+            "Le cas illustre un mécanisme de discrimination particulièrement insidieux : une norme sociale se présente comme une exigence professionnelle objective. La voix devient alors un indice supposé de compétence, de crédibilité ou d'appartenance. Sensibiliser les recruteurs ne consiste pas à nier que la clarté puisse parfois être nécessaire ; il s'agit de distinguer les besoins réels du poste des préférences tacites pour certaines façons de parler. L'argument du « naturel » mérite d'autant plus d'être interrogé qu'il paraît aller de soi.",
+        ],
+    },
+    {
+        level: 'C2', unit: 7, moduleId: "c2-la-synthese-qui-trahit-par-exces-de-clarte", title: "La synthèse qui trahit par excès de clarté", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Chargée de résumer trois rapports contradictoires, une analyste rédige une note d'une limpidité séduisante : les experts « s'accordent » sur une solution unique. Or cet accord n'existait qu'à condition d'ignorer les réserves méthodologiques et les objectifs divergents qui structuraient les textes d'origine.",
+            "Le problème n'était pas l'inexactitude d'une citation, mais la réorganisation des informations. En gommant les zones d'incertitude, la synthèse transformait des compatibilités partielles en consensus général. Une révision plus fidèle distinguera ce qui relève du constat partagé, de la projection conditionnelle et du désaccord de valeurs. La compétence du médiateur ne se mesure pas à l'élégance d'une conclusion unifiée, mais à sa capacité à préserver les différences qui restent décisives pour agir.",
+        ],
+    },
+    {
+        level: 'C2', unit: 7, moduleId: "c2-refuter-sans-humilier", title: "Réfuter sans humilier", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Au cours d'une discussion scientifique, une participante expose une hypothèse que les données disponibles rendent peu probable. Son contradicteur pourrait souligner brutalement l'erreur et emporter l'adhésion immédiate du public. Il choisit pourtant de reformuler d'abord ce que l'argument cherche légitimement à expliquer.",
+            "Cette stratégie ne relève pas d'une politesse décorative. Elle permet d'isoler le point contestable sans attribuer à l'autre une ignorance générale. La réfutation devient plus précise, car elle porte sur la validité d'une inférence plutôt que sur la valeur d'une personne. Le débat gagne ainsi en exigence intellectuelle tout en préservant la possibilité d'une révision commune. Faire place à l'interlocuteur n'oblige pas à affaiblir sa critique ; cela peut au contraire en renforcer l'efficacité argumentative.",
+        ],
+    },
+    {
+        level: 'C2', unit: 7, moduleId: "c2-lobjection-decisive-et-ses-limites", title: "L’objection décisive et ses limites", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Dans une tribune, l'auteur annonce avoir découvert « l'objection définitive » à une politique publique. Son exemple est réel et embarrassant, mais il concerne une situation exceptionnelle. Le texte laisse entendre qu'un cas problématique suffit à invalider l'ensemble du dispositif.",
+            "Une réponse rigoureuse devrait reconnaître la gravité de ce cas sans accepter automatiquement la généralisation. Elle demanderait si la difficulté découle du principe même de la politique ou de conditions particulières de mise en œuvre. Cette distinction n'escamote pas le dommage subi ; elle situe correctement sa portée argumentative. L'esprit critique consiste parfois à refuser aussi bien la minimisation d'une objection sérieuse que son élévation hâtive au rang de réfutation universelle.",
+        ],
+    },
+    {
+        level: 'C2', unit: 7, moduleId: "c2-un-accord-qui-ne-gomme-pas-les-divergences", title: "Un accord qui ne gomme pas les divergences", source: "Texte original — niveau C2",
+        paragraphs: [
+            "Après plusieurs réunions, deux organisations publient une déclaration commune. Le texte paraît équilibré : il affirme des objectifs partagés tout en mentionnant les points sur lesquels aucun consensus n'a été trouvé. Certains commentateurs regrettent cette absence de conclusion tranchée, qu'ils interprètent comme un aveu d'échec.",
+            "Les négociateurs soutiennent au contraire que la précision des désaccords constitue déjà un progrès. En distinguant les engagements immédiats des questions encore ouvertes, ils évitent de promettre ce qu'ils ne pourraient tenir. L'accord devient alors un instrument de coopération plutôt qu'une fiction d'unanimité. Sa solidité dépend moins de la disparition des divergences que de la confiance créée par leur formulation explicite et par les procédures prévues pour les traiter ultérieurement.",
         ],
     },
 ];

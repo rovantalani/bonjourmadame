@@ -1,5 +1,6 @@
 /** Authored curriculum content. Target language is independent of feedback language. */
 export interface WritingLesson {
+    sources?: { title: string; text: string }[];
     id: string;
     targetLanguage: 'fr' | 'en';
     level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';

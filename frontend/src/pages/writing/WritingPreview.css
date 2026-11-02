@@ -78,3 +78,9 @@
 .writing-general-feedback h3 { font-size: .85rem; }
 
 .writing-error { color: var(--error); margin-top: 12px; font-size: .85rem; }
+
+.writing-sources { margin: 16px 0; font-size: .8rem; line-height: 1.8; }
+.writing-sources summary { cursor: pointer; color: var(--accent-text); padding: 8px 0; }
+.writing-sources article { padding: 16px 0; border-top: 1px dashed var(--border); }
+.writing-sources h3 { font-size: .85rem; font-weight: 500; margin-bottom: 8px; }
+.writing-sources article p { white-space: pre-line; color: var(--text-2); }

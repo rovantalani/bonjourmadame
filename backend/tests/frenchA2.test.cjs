@@ -34,8 +34,8 @@ test('French content IDs remain unique across levels and verb lookups keep their
     const all = Object.values(verbsData).flat();
     assert.equal(new Set(all.map(verb => verb.id)).size, all.length);
     for (const verb of verbsA2) assert.equal(verbById[verb.id].level, 'A2');
-    assert.equal(verbById.savoir.level, 'B1');
-    assert.equal(verbById.offrir.level, 'C1');
+    assert.equal(verbById['a2-savoir'].level, 'A2');
+    assert.equal(verbById['a2-offrir'].level, 'A2');
 });
 
 test('French A2 writing and speaking are registered alongside A1 with unique IDs', () => {
