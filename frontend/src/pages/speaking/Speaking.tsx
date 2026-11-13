@@ -22,14 +22,14 @@ export default function Speaking() {
         <p className="speaking-overview-note">{fr ? 'Écoute et enregistrement disponibles · Évaluation de la prononciation à venir' : 'Listening and recording available · Pronunciation assessment coming soon'}</p>
         {loading && <p role="status">{fr ? 'Chargement…' : 'Loading…'}</p>}
         {failed && <p role="alert">{fr ? 'Impossible de charger les exercices.' : 'Could not load exercises.'} <button className="speaking-button" onClick={reload}>{fr ? 'Réessayer' : 'Retry'}</button></p>}
-        {[...new Set(lessons.map(item => item.unit))].map(unit => <section className="speaking-unit" key={unit}>
+        {[...new Set(lessons.map(item => item.unit))].sort((a, b) => a - b).map(unit => <section className="speaking-unit" key={unit}>
             <h2><span>{String(unit).padStart(2, '0')}</span>{course?.units?.find(item => item.number === unit)?.title ?? `${fr ? 'Unité' : 'Unit'} ${unit}`}</h2>
             <div className="notebook-grid">{lessons.filter(item => item.unit === unit).map((lesson, index) => <Link className="notebook-card" key={lesson.id} to={learningPath(language, `/courses/${level}/speaking/${lesson.id}`)}>
                 <span className="notebook-tab">{String(index + 1).padStart(2, '0')}</span>
                 <span className="notebook-illustration"><MicIcon size={30} aria-hidden="true" /></span>
                 <h3 className="notebook-title">{lesson.title}</h3>
                 <p className="notebook-description">{lesson.description}</p>
-                <span className="notebook-footer"><span>{lesson.phrases.length} phrases</span><span>{fr ? 'Parler' : 'Speak'}</span><span aria-hidden="true">↗</span></span>
+                <span className="notebook-footer"><span>{lesson.listeningQuestions ? `${lesson.listeningQuestions.length} questions` : `${lesson.phrases.length} phrases`}</span><span>{lesson.listeningQuestions ? (fr ? 'Écouter' : 'Listen') : (fr ? 'Parler' : 'Speak')}</span><span aria-hidden="true">↗</span></span>
             </Link>)}</div>
         </section>)}
         {!loading && !failed && !lessons.length && <p className="speaking-overview-note">{fr ? 'Les exercices de ce niveau arrivent bientôt.' : 'Speaking exercises for this level are coming soon.'}</p>}

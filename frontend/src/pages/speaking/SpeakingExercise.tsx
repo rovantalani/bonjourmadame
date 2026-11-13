@@ -96,6 +96,23 @@ function PhrasePractice({ lesson, index, fr, onMove }: { lesson: SpeakingLesson;
     </div>;
 }
 
+function ListeningPractice({ lesson }: { lesson: SpeakingLesson }) {
+    const speech = useSpeech();
+    return <section className="speaking-paper">
+        <p style={{ whiteSpace: 'pre-line' }}>{lesson.description}</p>
+        <button className="speaking-button" disabled={!speech.supported} onClick={() => {
+            if (speech.speaking) speech.stop(); else speech.speak(lesson.phrases[0].text, 'en-GB', 0.8);
+        }}>{speech.speaking ? 'Arrêter' : 'Écouter le dialogue'}</button>
+        {!speech.supported && <p role="status">Lecture vocale indisponible dans ce navigateur. Vous pouvez lire le script ci-dessous.</p>}
+        <p>Écoutez, répondez à voix haute ou sur papier, puis vérifiez vos réponses.</p>
+        <ol>{lesson.listeningQuestions?.map(question => <li key={question.prompt}>
+            <p>{question.prompt}</p>
+            <details><summary>Voir la réponse</summary><p>{question.answers.join(' / ')}</p></details>
+        </li>)}</ol>
+        <details><summary>Lire le script</summary><p lang="en">{lesson.phrases[0].text}</p></details>
+    </section>;
+}
+
 export default function SpeakingExercise() {
     const { level, exerciseId } = useParams();
     const { language } = useLearning();
@@ -105,6 +122,6 @@ export default function SpeakingExercise() {
     const lesson = lessons.find(item => item.id === exerciseId && item.level.toLowerCase() === level);
     return <main className="speaking-page">
         <Link className="speaking-back" to={learningPath(language, `/courses/${level}/speaking`)}>← {fr ? 'Tous les exercices' : 'All speaking exercises'}</Link>
-        {loading ? <p role="status">{fr ? 'Chargement…' : 'Loading…'}</p> : failed ? <p role="alert">{fr ? 'Impossible de charger cet exercice.' : 'Could not load this exercise.'} <button className="speaking-button" onClick={reload}>{fr ? 'Réessayer' : 'Retry'}</button></p> : lesson ? <><header className="speaking-header"><span className="speaking-label">{lesson.level} / {fr ? 'EXPRESSION ORALE' : 'SPEAKING'}</span><h1>{lesson.title}</h1></header><PhrasePractice key={`${language}-${lesson.id}-${index}`} lesson={lesson} index={index} fr={fr} onMove={setIndex} /></> : <h1>{fr ? 'Exercice introuvable' : 'Exercise not found'}</h1>}
+        {loading ? <p role="status">{fr ? 'Chargement…' : 'Loading…'}</p> : failed ? <p role="alert">{fr ? 'Impossible de charger cet exercice.' : 'Could not load this exercise.'} <button className="speaking-button" onClick={reload}>{fr ? 'Réessayer' : 'Retry'}</button></p> : lesson ? <><header className="speaking-header"><span className="speaking-label">{lesson.level} / {lesson.listeningQuestions ? (fr ? 'COMPRÉHENSION ORALE' : 'LISTENING') : (fr ? 'EXPRESSION ORALE' : 'SPEAKING')}</span><h1>{lesson.title}</h1></header><p style={{ whiteSpace: 'pre-line' }}>{!lesson.listeningQuestions && lesson.description}</p>{lesson.listeningQuestions ? <ListeningPractice key={`${language}-${lesson.id}`} lesson={lesson} /> : <PhrasePractice key={`${language}-${lesson.id}-${index}`} lesson={lesson} index={index} fr={fr} onMove={setIndex} />}</> : <h1>{fr ? 'Exercice introuvable' : 'Exercise not found'}</h1>}
     </main>;
 }

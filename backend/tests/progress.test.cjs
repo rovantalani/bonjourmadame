@@ -5,6 +5,9 @@ const express = require('express');
 const { pool } = require('../dist/db/client');
 const auth = require('../dist/middleware/auth');
 let server, base;
+// Deliberately share an ID to test language isolation independently of curriculum changes.
+const { learningContent } = require('../dist/services/learningContent');
+learningContent.en.vocabulary['greetings-basics'] = learningContent.en.vocabulary['a1en-vocab-01'];
 const saved = new Map();
 const sessions = [];
 auth.requireAuth = (req, _res, next) => { req.userId = Number(req.headers['x-test-user'] || 1); next(); };

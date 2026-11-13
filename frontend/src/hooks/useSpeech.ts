@@ -56,13 +56,14 @@ export function useSpeech() {
         };
     }, [stop]);
 
-    const speak = useCallback((text: string, lang = 'fr-FR') => {
+    const speak = useCallback((text: string, lang = 'fr-FR', rate = 1) => {
         const synth = window.speechSynthesis;
         if (!synth || typeof SpeechSynthesisUtterance === 'undefined') return;
         stopCurrentSpeech?.();
         const utterance = new SpeechSynthesisUtterance(text);
         const voice = selectVoice(synth.getVoices().length ? synth.getVoices() : voices.current, lang);
         utterance.lang = voice?.lang ?? lang;
+        utterance.rate = rate;
         if (voice) utterance.voice = voice;
         activeUtterance.current = utterance;
         stopCurrentSpeech = stop;
