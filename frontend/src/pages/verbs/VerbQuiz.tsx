@@ -96,7 +96,7 @@ export default function VerbQuiz() {
 
     // Which tenses to quiz: if review verb → only new tenses for this level; if new verb → all cumulative tenses
     const available = (TENSES_BY_LEVEL[levelKey] ?? []).filter(tense =>
-        tense.quizzable && verb.rows.every(row => !!row[tense.key]));
+        tense.quizzable && verb.rows.every(row => !!row[tense.key] && !/^[—–-]/.test(String(row[tense.key]))));
     const previousKeys = new Set((TENSES_BY_LEVEL[CEFR_ORDER[currentLevelIdx - 1]] ?? []).map(tense => tense.key));
     const newTenses = available.filter(tense => !previousKeys.has(tense.key));
     const TENSES = isReviewVerb && newTenses.length ? newTenses : available;

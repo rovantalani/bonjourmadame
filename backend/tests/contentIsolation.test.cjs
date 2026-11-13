@@ -96,7 +96,7 @@ test('editing English vocabulary, module labels or phrases cannot mutate French 
         const fr = content('fr', name);
         const en = content('en', name);
         const before = JSON.stringify(fr);
-        const entry = name === 'vocabulary' ? en['greetings-basics'][0] : en[0];
+        const entry = name === 'vocabulary' ? en[Object.keys(en)[0]][0] : en[0];
         const field = name === 'vocabulary' ? 'english' : 'title';
         const previous = entry[field];
         try {

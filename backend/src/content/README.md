@@ -86,3 +86,31 @@ advanced topics do not establish full CEFR coverage or official DELF/DALF
 assessment equivalence. Linguistic review checked conjugation patterns and
 sampled examples, prompts and answer keys; independent teacher review is still
 useful for difficulty calibration and alternative interpretations.
+
+## English A1 replacement
+
+English A1 integrates the supplied `english_a1_REBUILT_v3_VERIFIED` archive:
+seven teaching units and a final exam, 28 paired readings/vocabulary quizzes,
+43 vocabulary modules (413 entries), 20 supplied grammar lessons, seven complete
+verb tables, seven phrase lessons, five writing tasks and five speaking tasks.
+Unit exams contain 84 questions, with another 35 in the final exam.
+
+The roadmap has 114 supported steps. An added alphabet/numbers lesson exposes
+the supplied foundation supplement, and verb usage notes appear in grammar.
+Writing and speaking use their existing overview pages, as with the French
+courses. Seven listening sets are available in the speaking overview, with slow
+browser speech playback, initially collapsed scripts and self-check answers.
+Speech availability/voice depends on the browser; these are synthesized dialogues.
+Speaking task instructions and criteria are now visible above phrase practice.
+Directions and scene prompts include textual stimuli; the first writing task
+includes its registration-form source.
+
+Integration adapts filenames, typed schemas, exports and verb routes. Replaced
+grammar/verb IDs are A1-prefixed to avoid collisions and stale completion;
+new vocabulary/reading/phrase IDs come from the supplied archive. Existing stored
+progress is retained, but replaced lessons start fresh and old bookmarks can stop
+resolving. Exam routes and content IDs follow the app's stable conventions, with
+new step IDs. The first exam question accepts both pen and notebook, and stative
+verb placeholders are excluded from conjugation quizzes. Other levels and French
+content are preserved. Writing feedback and speaking assessment retain their
+existing service availability; this import does not enable a new provider.
