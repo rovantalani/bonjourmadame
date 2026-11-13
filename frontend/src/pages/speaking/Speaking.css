@@ -68,3 +68,10 @@
     .speaking-header { margin-bottom: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { .speaking-repeat > span { transition: none; } }
+
+.speaking-mode-controls { margin: 18px 0; flex-wrap: wrap; }
+.speaking-mode-controls [aria-pressed="true"] { background: var(--accent-light); border-color: var(--accent); color: var(--accent-text); }
+.speaking-task-practice { padding: clamp(18px, 3vw, 28px); display: grid; gap: 16px; line-height: 1.7; }
+.speaking-task-practice > h2, .speaking-task-practice > p { margin: 0; }
+.speaking-task-practice > button { justify-self: start; }
+.speaking-task-practice audio { width: 100%; }

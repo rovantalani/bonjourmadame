@@ -96,9 +96,40 @@ function PhrasePractice({ lesson, index, fr, onMove }: { lesson: SpeakingLesson;
     </div>;
 }
 
+function TaskPractice({ seconds }: { seconds: number }) {
+    const [recording, setRecording] = useState<RecordingState>({ status: 'idle', seconds: 0 });
+    const [recorder] = useState(() => new Recorder(setRecording, seconds));
+    useEffect(() => () => recorder.dispose(), [recorder]);
+    const busy = recording.status === 'recording' || recording.status === 'requesting';
+    return <section className="speaking-paper speaking-task-practice">
+        <h2>À vous de parler</h2>
+        <p>Répondez librement à la consigne ci-dessus, puis réécoutez-vous. Durée maximale : {Math.floor(seconds / 60)} minutes.</p>
+        <p>Votre enregistrement reste sur cet appareil et est effacé lorsque vous quittez l’exercice ou changez de mode. Aucune note automatique n’est attribuée.</p>
+        <button className="speaking-button" onClick={() => {
+            if (recording.status === 'recording') recorder.stop();
+            else if (recording.status === 'requesting') recorder.reset();
+            else { window.speechSynthesis?.cancel(); void recorder.start(); }
+        }}>{recording.status === 'recording' ? 'Terminer' : recording.status === 'requesting' ? 'Annuler' : recording.url ? 'Réessayer la tâche' : 'Enregistrer ma réponse'}</button>
+        {busy && <span role="status">{recording.status === 'requesting' ? 'Autorisez le microphone…' : `${Math.floor(recording.seconds / 60)}:${String(recording.seconds % 60).padStart(2, '0')}`}</span>}
+        {recording.url && <audio controls src={recording.url} aria-label="Votre réponse complète" />}
+        {recording.error && <p role="alert">{recording.error === 'permission' ? 'Autorisez le microphone, puis réessayez.' : recording.error === 'unsupported' ? 'Enregistrement indisponible dans ce navigateur.' : 'Enregistrement impossible. Vérifiez votre microphone et réessayez.'}</p>}
+    </section>;
+}
+
+function SpeakingPractice({ lesson, index, fr, onMove }: { lesson: SpeakingLesson; index: number; fr: boolean; onMove: (index: number) => void }) {
+    const [task, setTask] = useState(!!lesson.taskRecordingSeconds);
+    return <>
+        {lesson.taskRecordingSeconds && <div className="speaking-controls speaking-mode-controls">
+            <button className="speaking-button" aria-pressed={!task} onClick={() => setTask(false)}>Phrases modèles</button>
+            <button className="speaking-button" aria-pressed={task} onClick={() => setTask(true)}>Réponse libre</button>
+        </div>}
+        {task && lesson.taskRecordingSeconds ? <TaskPractice seconds={lesson.taskRecordingSeconds} /> : <PhrasePractice key={index} lesson={lesson} index={index} fr={fr} onMove={onMove} />}
+    </>;
+}
+
 function ListeningPractice({ lesson }: { lesson: SpeakingLesson }) {
     const speech = useSpeech();
-    return <section className="speaking-paper">
+    return <section className="speaking-paper speaking-task-practice">
         <p style={{ whiteSpace: 'pre-line' }}>{lesson.description}</p>
         <button className="speaking-button" disabled={!speech.supported} onClick={() => {
             if (speech.speaking) speech.stop(); else speech.speak(lesson.phrases[0].text, 'en-GB', 0.8);
@@ -122,6 +153,6 @@ export default function SpeakingExercise() {
     const lesson = lessons.find(item => item.id === exerciseId && item.level.toLowerCase() === level);
     return <main className="speaking-page">
         <Link className="speaking-back" to={learningPath(language, `/courses/${level}/speaking`)}>← {fr ? 'Tous les exercices' : 'All speaking exercises'}</Link>
-        {loading ? <p role="status">{fr ? 'Chargement…' : 'Loading…'}</p> : failed ? <p role="alert">{fr ? 'Impossible de charger cet exercice.' : 'Could not load this exercise.'} <button className="speaking-button" onClick={reload}>{fr ? 'Réessayer' : 'Retry'}</button></p> : lesson ? <><header className="speaking-header"><span className="speaking-label">{lesson.level} / {lesson.listeningQuestions ? (fr ? 'COMPRÉHENSION ORALE' : 'LISTENING') : (fr ? 'EXPRESSION ORALE' : 'SPEAKING')}</span><h1>{lesson.title}</h1></header><p style={{ whiteSpace: 'pre-line' }}>{!lesson.listeningQuestions && lesson.description}</p>{lesson.listeningQuestions ? <ListeningPractice key={`${language}-${lesson.id}`} lesson={lesson} /> : <PhrasePractice key={`${language}-${lesson.id}-${index}`} lesson={lesson} index={index} fr={fr} onMove={setIndex} />}</> : <h1>{fr ? 'Exercice introuvable' : 'Exercise not found'}</h1>}
+        {loading ? <p role="status">{fr ? 'Chargement…' : 'Loading…'}</p> : failed ? <p role="alert">{fr ? 'Impossible de charger cet exercice.' : 'Could not load this exercise.'} <button className="speaking-button" onClick={reload}>{fr ? 'Réessayer' : 'Retry'}</button></p> : lesson ? <><header className="speaking-header"><span className="speaking-label">{lesson.level} / {lesson.listeningQuestions ? (fr ? 'COMPRÉHENSION ORALE' : 'LISTENING') : (fr ? 'EXPRESSION ORALE' : 'SPEAKING')}</span><h1>{lesson.title}</h1></header><p style={{ whiteSpace: 'pre-line' }}>{!lesson.listeningQuestions && lesson.description}</p>{lesson.listeningQuestions ? <ListeningPractice key={`${language}-${lesson.id}`} lesson={lesson} /> : <SpeakingPractice key={`${language}-${lesson.id}`} lesson={lesson} index={index} fr={fr} onMove={setIndex} />}</> : <h1>{fr ? 'Exercice introuvable' : 'Exercise not found'}</h1>}
     </main>;
 }
