@@ -4,6 +4,7 @@ export interface SpeakingLesson {
     description: string;
     level: string;
     unit: number;
+    taskRecordingSeconds?: number;
     listeningQuestions?: { prompt: string; answers: string[] }[];
     phrases: { text: string; translation: string }[];
 }
