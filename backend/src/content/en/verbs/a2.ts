@@ -1,49 +1,445 @@
 import type { HelperVerbEN, VerbEntry, VerbGroup } from '../../../types/verbs';
 
 export const verbGroupA2: VerbGroup = {
-        id: 'a2',
-        title: "A2 — L'Anglais du Quotidien",
-        titleFR: "A2 — L'Anglais du Quotidien",
-        description: 'Expand your verb range for real-world situations',
-        descriptionFR: 'Élargissez votre répertoire pour les situations réelles',
-        icon: '📗',
-        color: '#059669',
-    };
+  "id": "a2",
+  "title": "A2 — More Fluent English",
+  "titleFR": "A2 — Anglais plus autonome",
+  "description": "Seven high-frequency verbs in practical contexts",
+  "descriptionFR": "Sept verbes fréquents dans des contextes authentiques",
+  "icon": "📗",
+  "color": "#2563EB"
+};
 
 export const verbsA2: VerbEntry[] = [
-        { level: 'A2', unit: 3,  id: 'dance',  infinitive: 'dance',  translation: 'danser',           type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'dance',   passeCompose: 'danced',    imparfait: 'am dancing',    futurSimple: 'will dance'   }, { sujet: 'he/she/it', present: 'dances',     passeCompose: 'danced',    imparfait: 'is dancing',    futurSimple: 'will dance'   }] },
-        { level: 'A2', unit: 3,  id: 'swim',   infinitive: 'swim',   translation: 'nager',            type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'swim',    passeCompose: 'swam',      imparfait: 'am swimming',   futurSimple: 'will swim'    }, { sujet: 'he/she/it', present: 'swims',      passeCompose: 'swam',      imparfait: 'is swimming',   futurSimple: 'will swim'    }] },
-        { level: 'A2', unit: 3,  id: 'travel', infinitive: 'travel', translation: 'voyager',          type: 'Regular',   color: '#059669', rows: [{ sujet: 'I', present: 'travel',  passeCompose: 'travelled', imparfait: 'am travelling', futurSimple: 'will travel'  }, { sujet: 'he/she/it', present: 'travels',    passeCompose: 'travelled', imparfait: 'is travelling', futurSimple: 'will travel'  }] },
-        { level: 'A2', unit: 3,  id: 'know',   infinitive: 'know',   translation: 'savoir / connaître', type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'know',   passeCompose: 'knew',      imparfait: 'am knowing',    futurSimple: 'will know'    }, { sujet: 'he/she/it', present: 'knows',      passeCompose: 'knew',      imparfait: 'is knowing',    futurSimple: 'will know'    }] },
-        { level: 'A2', unit: 3,  id: 'think',  infinitive: 'think',  translation: 'penser',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'think',   passeCompose: 'thought',   imparfait: 'am thinking',   futurSimple: 'will think'   }, { sujet: 'he/she/it', present: 'thinks',     passeCompose: 'thought',   imparfait: 'is thinking',   futurSimple: 'will think'   }] },
-        { level: 'A2', unit: 3,  id: 'find',   infinitive: 'find',   translation: 'trouver',          type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'find',    passeCompose: 'found',     imparfait: 'am finding',    futurSimple: 'will find'    }, { sujet: 'he/she/it', present: 'finds',      passeCompose: 'found',     imparfait: 'is finding',    futurSimple: 'will find'    }] },
-        { level: 'A2', unit: 3,  id: 'tell',   infinitive: 'tell',   translation: 'dire / raconter',  type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'tell',    passeCompose: 'told',      imparfait: 'am telling',    futurSimple: 'will tell'    }, { sujet: 'he/she/it', present: 'tells',      passeCompose: 'told',      imparfait: 'is telling',    futurSimple: 'will tell'    }] },
-        { level: 'A2', unit: 3,  id: 'leave',  infinitive: 'leave',  translation: 'partir / laisser', type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'leave',   passeCompose: 'left',      imparfait: 'am leaving',    futurSimple: 'will leave'   }, { sujet: 'he/she/it', present: 'leaves',     passeCompose: 'left',      imparfait: 'is leaving',    futurSimple: 'will leave'   }] },
-        { level: 'A2', unit: 3,  id: 'buy',    infinitive: 'buy',    translation: 'acheter',          type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'buy',     passeCompose: 'bought',    imparfait: 'am buying',     futurSimple: 'will buy'     }, { sujet: 'he/she/it', present: 'buys',       passeCompose: 'bought',    imparfait: 'is buying',     futurSimple: 'will buy'     }] },
-        { level: 'A2', unit: 3,  id: 'bring',  infinitive: 'bring',  translation: 'apporter / amener', type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'bring',  passeCompose: 'brought',   imparfait: 'am bringing',   futurSimple: 'will bring'   }, { sujet: 'he/she/it', present: 'brings',     passeCompose: 'brought',   imparfait: 'is bringing',   futurSimple: 'will bring'   }] },
-        { level: 'A2', unit: 3,  id: 'write',  infinitive: 'write',  translation: 'écrire',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'write',   passeCompose: 'wrote',     imparfait: 'am writing',    futurSimple: 'will write'   }, { sujet: 'he/she/it', present: 'writes',     passeCompose: 'wrote',     imparfait: 'is writing',    futurSimple: 'will write'   }] },
-        { level: 'A2', unit: 3,  id: 'read',   infinitive: 'read',   translation: 'lire',             type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'read',    passeCompose: 'read',      imparfait: 'am reading',    futurSimple: 'will read'    }, { sujet: 'he/she/it', present: 'reads',      passeCompose: 'read',      imparfait: 'is reading',    futurSimple: 'will read'    }] },
-        { level: 'A2', unit: 3,  id: 'speak',  infinitive: 'speak',  translation: 'parler',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'speak',   passeCompose: 'spoke',     imparfait: 'am speaking',   futurSimple: 'will speak'   }, { sujet: 'he/she/it', present: 'speaks',     passeCompose: 'spoke',     imparfait: 'is speaking',   futurSimple: 'will speak'   }] },
-        { level: 'A2', unit: 3,  id: 'meet',   infinitive: 'meet',   translation: 'rencontrer',       type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'meet',    passeCompose: 'met',       imparfait: 'am meeting',    futurSimple: 'will meet'    }, { sujet: 'he/she/it', present: 'meets',      passeCompose: 'met',       imparfait: 'is meeting',    futurSimple: 'will meet'    }] },
-        { level: 'A2', unit: 3,  id: 'feel',   infinitive: 'feel',   translation: 'ressentir',        type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'feel',    passeCompose: 'felt',      imparfait: 'am feeling',    futurSimple: 'will feel'    }, { sujet: 'he/she/it', present: 'feels',      passeCompose: 'felt',      imparfait: 'is feeling',    futurSimple: 'will feel'    }] },
-        { level: 'A2', unit: 3,  id: 'lose',   infinitive: 'lose',   translation: 'perdre',           type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'lose',    passeCompose: 'lost',      imparfait: 'am losing',     futurSimple: 'will lose'    }, { sujet: 'he/she/it', present: 'loses',      passeCompose: 'lost',      imparfait: 'is losing',     futurSimple: 'will lose'    }] },
-        { level: 'A2', unit: 3,  id: 'pay',    infinitive: 'pay',    translation: 'payer',            type: 'Irregular', color: '#DC2626', rows: [{ sujet: 'I', present: 'pay',     passeCompose: 'paid',      imparfait: 'am paying',     futurSimple: 'will pay'     }, { sujet: 'he/she/it', present: 'pays',       passeCompose: 'paid',      imparfait: 'is paying',     futurSimple: 'will pay'     }] },
-    ];
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-get",
+    "infinitive": "get",
+    "translation": "obtenir / devenir / arriver",
+    "type": "Irregular",
+    "color": "#2563EB",
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "get",
+        "passeCompose": "got",
+        "imparfait": "am getting",
+        "futurSimple": "will get"
+      },
+      {
+        "sujet": "you",
+        "present": "get",
+        "passeCompose": "got",
+        "imparfait": "are getting",
+        "futurSimple": "will get"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "gets",
+        "passeCompose": "got",
+        "imparfait": "is getting",
+        "futurSimple": "will get"
+      },
+      {
+        "sujet": "we",
+        "present": "get",
+        "passeCompose": "got",
+        "imparfait": "are getting",
+        "futurSimple": "will get"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "get",
+        "passeCompose": "got",
+        "imparfait": "are getting",
+        "futurSimple": "will get"
+      },
+      {
+        "sujet": "they",
+        "present": "get",
+        "passeCompose": "got",
+        "imparfait": "are getting",
+        "futurSimple": "will get"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-take",
+    "infinitive": "take",
+    "translation": "prendre / emporter",
+    "type": "Irregular",
+    "color": "#2563EB",
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "take",
+        "passeCompose": "took",
+        "imparfait": "am taking",
+        "futurSimple": "will take"
+      },
+      {
+        "sujet": "you",
+        "present": "take",
+        "passeCompose": "took",
+        "imparfait": "are taking",
+        "futurSimple": "will take"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "takes",
+        "passeCompose": "took",
+        "imparfait": "is taking",
+        "futurSimple": "will take"
+      },
+      {
+        "sujet": "we",
+        "present": "take",
+        "passeCompose": "took",
+        "imparfait": "are taking",
+        "futurSimple": "will take"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "take",
+        "passeCompose": "took",
+        "imparfait": "are taking",
+        "futurSimple": "will take"
+      },
+      {
+        "sujet": "they",
+        "present": "take",
+        "passeCompose": "took",
+        "imparfait": "are taking",
+        "futurSimple": "will take"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-make",
+    "infinitive": "make",
+    "translation": "faire / fabriquer",
+    "type": "Irregular",
+    "color": "#2563EB",
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "make",
+        "passeCompose": "made",
+        "imparfait": "am making",
+        "futurSimple": "will make"
+      },
+      {
+        "sujet": "you",
+        "present": "make",
+        "passeCompose": "made",
+        "imparfait": "are making",
+        "futurSimple": "will make"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "makes",
+        "passeCompose": "made",
+        "imparfait": "is making",
+        "futurSimple": "will make"
+      },
+      {
+        "sujet": "we",
+        "present": "make",
+        "passeCompose": "made",
+        "imparfait": "are making",
+        "futurSimple": "will make"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "make",
+        "passeCompose": "made",
+        "imparfait": "are making",
+        "futurSimple": "will make"
+      },
+      {
+        "sujet": "they",
+        "present": "make",
+        "passeCompose": "made",
+        "imparfait": "are making",
+        "futurSimple": "will make"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-feel",
+    "infinitive": "feel",
+    "translation": "se sentir / ressentir",
+    "type": "Irregular",
+    "color": "#2563EB",
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "feel",
+        "passeCompose": "felt",
+        "imparfait": "am feeling",
+        "futurSimple": "will feel"
+      },
+      {
+        "sujet": "you",
+        "present": "feel",
+        "passeCompose": "felt",
+        "imparfait": "are feeling",
+        "futurSimple": "will feel"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "feels",
+        "passeCompose": "felt",
+        "imparfait": "is feeling",
+        "futurSimple": "will feel"
+      },
+      {
+        "sujet": "we",
+        "present": "feel",
+        "passeCompose": "felt",
+        "imparfait": "are feeling",
+        "futurSimple": "will feel"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "feel",
+        "passeCompose": "felt",
+        "imparfait": "are feeling",
+        "futurSimple": "will feel"
+      },
+      {
+        "sujet": "they",
+        "present": "feel",
+        "passeCompose": "felt",
+        "imparfait": "are feeling",
+        "futurSimple": "will feel"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-come",
+    "infinitive": "come",
+    "translation": "venir",
+    "type": "Irregular",
+    "color": "#2563EB",
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "am coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "you",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "comes",
+        "passeCompose": "came",
+        "imparfait": "is coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "we",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "they",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-find",
+    "infinitive": "find",
+    "translation": "trouver",
+    "type": "Irregular",
+    "color": "#2563EB",
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "find",
+        "passeCompose": "found",
+        "imparfait": "am finding",
+        "futurSimple": "will find"
+      },
+      {
+        "sujet": "you",
+        "present": "find",
+        "passeCompose": "found",
+        "imparfait": "are finding",
+        "futurSimple": "will find"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "finds",
+        "passeCompose": "found",
+        "imparfait": "is finding",
+        "futurSimple": "will find"
+      },
+      {
+        "sujet": "we",
+        "present": "find",
+        "passeCompose": "found",
+        "imparfait": "are finding",
+        "futurSimple": "will find"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "find",
+        "passeCompose": "found",
+        "imparfait": "are finding",
+        "futurSimple": "will find"
+      },
+      {
+        "sujet": "they",
+        "present": "find",
+        "passeCompose": "found",
+        "imparfait": "are finding",
+        "futurSimple": "will find"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-tell",
+    "infinitive": "tell",
+    "translation": "raconter / dire à quelqu’un",
+    "type": "Irregular",
+    "color": "#2563EB",
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "tell",
+        "passeCompose": "told",
+        "imparfait": "am telling",
+        "futurSimple": "will tell"
+      },
+      {
+        "sujet": "you",
+        "present": "tell",
+        "passeCompose": "told",
+        "imparfait": "are telling",
+        "futurSimple": "will tell"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "tells",
+        "passeCompose": "told",
+        "imparfait": "is telling",
+        "futurSimple": "will tell"
+      },
+      {
+        "sujet": "we",
+        "present": "tell",
+        "passeCompose": "told",
+        "imparfait": "are telling",
+        "futurSimple": "will tell"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "tell",
+        "passeCompose": "told",
+        "imparfait": "are telling",
+        "futurSimple": "will tell"
+      },
+      {
+        "sujet": "they",
+        "present": "tell",
+        "passeCompose": "told",
+        "imparfait": "are telling",
+        "futurSimple": "will tell"
+      }
+    ]
+  }
+];
 
 export const helpersA2: Record<string, HelperVerbEN> = {
-    'to-do': {
-        level: 'A2', unit: 2,
-        title: 'To Do',
-        translation: 'faire',
-        color: '#EA580C',
-        columns: ['Present Simple', 'Past Simple', 'Present Continuous', 'Future (will)'],
-        rows: [
-            { sujet: 'I',          present: 'do',   passeCompose: 'did', imparfait: 'am doing',   futurSimple: 'will do' },
-            { sujet: 'you',        present: 'do',   passeCompose: 'did', imparfait: 'are doing',  futurSimple: 'will do' },
-            { sujet: 'he/she/it',  present: 'does', passeCompose: 'did', imparfait: 'is doing',   futurSimple: 'will do' },
-            { sujet: 'we',         present: 'do',   passeCompose: 'did', imparfait: 'are doing',  futurSimple: 'will do' },
-            { sujet: 'you (pl.)',  present: 'do',   passeCompose: 'did', imparfait: 'are doing',  futurSimple: 'will do' },
-            { sujet: 'they',       present: 'do',   passeCompose: 'did', imparfait: 'are doing',  futurSimple: 'will do' },
-        ],
-    },
+  "a2en-to-come": {
+    "level": "A2",
+    "unit": 5,
+    "title": "To Come",
+    "translation": "venir",
+    "color": "#2563EB",
+    "columns": [
+      "Present Simple",
+      "Past Simple",
+      "Present Continuous",
+      "Future (will)"
+    ],
+    "rows": [
+      {
+        "sujet": "I",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "am coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "you",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "he/she/it",
+        "present": "comes",
+        "passeCompose": "came",
+        "imparfait": "is coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "we",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "you (pl.)",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      },
+      {
+        "sujet": "they",
+        "present": "come",
+        "passeCompose": "came",
+        "imparfait": "are coming",
+        "futurSimple": "will come"
+      }
+    ]
+  }
 };
