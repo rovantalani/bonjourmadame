@@ -15,7 +15,7 @@ export const TENSES_BY_LEVEL: Record<string, TenseDef[]> = {
 export const HELPERS: HelperCard[] = [
     { id: 'a1en-to-be',   title: 'To Be',   translation: 'être',  icon: 'user' },
     { id: 'a1en-to-have', title: 'To Have', translation: 'avoir', icon: 'tag' },
-    { id: 'to-do',   title: 'To Do',   translation: 'faire', icon: 'pen' },
-    { id: 'to-go',   title: 'To Go',   translation: 'aller', icon: 'right' },
-    { id: 'to-come', title: 'To Come', translation: 'venir', icon: 'left' },
+    { id: 'a1en-to-do',   title: 'To Do',   translation: 'faire', icon: 'pen' },
+    { id: 'a1en-to-go',   title: 'To Go',   translation: 'aller', icon: 'right' },
+    { id: 'a2en-to-come', title: 'To Come', translation: 'venir', icon: 'left' },
 ];

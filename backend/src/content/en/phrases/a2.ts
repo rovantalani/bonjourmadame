@@ -1,247 +1,515 @@
 import type { PhraseCategory } from '../../../types/lectures/phrases';
 
 export const phrasesA2: PhraseCategory[] = [
-    {
-        level: 'A2', unit: 3,
-        id: 'expressing-feelings',
-        title: 'Expressing Feelings',
-        titleFR: 'Exprimer ses émotions',
-        description: 'Describe your emotions and inner states in nuanced French',
-        descriptionFR: 'Décrivez vos émotions et états intérieurs en français nuancé',
-        icon: '💛',
-        color: '#0891B2',
-        phrases: [
-            { id: 1,  french: 'Je me sens…',                             english: 'I feel…' },
-            { id: 2,  french: 'Ça m\'a beaucoup touché(e).',             english: 'It really moved / touched me.' },
-            { id: 3,  french: 'Je suis bouleversé(e).',                  english: 'I\'m overwhelmed / deeply affected.' },
-            { id: 4,  french: 'J\'ai du mal à expliquer ce que je ressens.', english: 'I\'m finding it hard to explain what I\'m feeling.' },
-            { id: 5,  french: 'Je suis soulagé(e).',                     english: 'I\'m relieved.' },
-            { id: 6,  french: 'Ça m\'a rendu(e) triste.',               english: 'It made me sad.' },
-            { id: 7,  french: 'Je suis fier / fière de…',               english: 'I\'m proud of…' },
-            { id: 8,  french: 'Je ne m\'y attendais pas.',              english: 'I wasn\'t expecting that.' },
-            { id: 9,  french: 'Ça m\'a surpris(e).',                    english: 'It surprised me.' },
-            { id: 10, french: 'J\'en suis ravi(e).',                    english: 'I\'m delighted about it.' },
-            { id: 11, french: 'Je regrette de…',                        english: 'I regret…' },
-            { id: 12, french: 'Je suis déçu(e) par…',                  english: 'I\'m disappointed by…' },
-            { id: 13, french: 'Ça m\'a mis(e) en colère.',             english: 'It made me angry.' },
-            { id: 14, french: 'Je me sens mieux maintenant.',           english: 'I feel better now.' },
-            { id: 15, french: 'C\'était une expérience inoubliable.',   english: 'It was an unforgettable experience.' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'expressing-disagreement',
-        title: 'Expressing Disagreement',
-        titleFR: 'Exprimer son désaccord',
-        description: 'Disagree politely and constructively in French',
-        descriptionFR: 'Exprimer son désaccord de manière polie et constructive',
-        icon: '⚖️',
-        color: '#0891B2',
-        phrases: [
-            { id: 1,  french: 'Je ne suis pas d\'accord.',                        english: 'I don\'t agree.' },
-            { id: 2,  french: 'Je comprends votre point de vue, mais…',           english: 'I understand your point of view, but…' },
-            { id: 3,  french: 'À mon avis, c\'est différent.',                    english: 'In my opinion, it\'s different.' },
-            { id: 4,  french: 'Permettez-moi de nuancer.',                        english: 'Allow me to add some nuance.' },
-            { id: 5,  french: 'Ce n\'est pas tout à fait exact.',                 english: 'That\'s not quite right.' },
-            { id: 6,  french: 'Vous avez raison sur ce point, cependant…',       english: 'You\'re right on that point, however…' },
-            { id: 7,  french: 'D\'un autre côté…',                               english: 'On the other hand…' },
-            { id: 8,  french: 'Il faut prendre en compte que…',                  english: 'We need to take into account that…' },
-            { id: 9,  french: 'C\'est plus compliqué que ça.',                   english: 'It\'s more complicated than that.' },
-            { id: 10, french: 'Je vois les choses autrement.',                   english: 'I see things differently.' },
-            { id: 11, french: 'C\'est discutable.',                              english: 'That\'s debatable.' },
-            { id: 12, french: 'En revanche…',                                    english: 'On the other hand… / By contrast…' },
-            { id: 13, french: 'Tout dépend de…',                                 english: 'It all depends on…' },
-            { id: 14, french: 'La réalité est plus nuancée.',                    english: 'The reality is more nuanced.' },
-            { id: 15, french: 'Je maintiens ma position.',                       english: 'I stand by my position.' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'at-the-hotel',
-        title: 'At the Hotel',
-        titleFR: 'À l\'hôtel',
-        description: 'Check in, report problems, and manage your hotel stay',
-        descriptionFR: 'S\'enregistrer, signaler un problème et gérer son séjour',
-        icon: '🏨',
-        color: '#0891B2',
-        phrases: [
-            { id: 1,  french: 'J\'ai une réservation au nom de…',     english: 'I have a booking under the name of…' },
-            { id: 2,  french: 'Une chambre pour deux personnes, s\'il vous plaît.', english: 'A room for two people, please.' },
-            { id: 3,  french: 'Avec salle de bains privée, s\'il vous plaît.', english: 'With a private bathroom, please.' },
-            { id: 4,  french: 'Le petit-déjeuner est inclus ?',        english: 'Is breakfast included?' },
-            { id: 5,  french: 'À quelle heure est le check-out ?',     english: 'What time is check-out?' },
-            { id: 6,  french: 'Avez-vous le wifi ?',                   english: 'Do you have wifi?', note: 'Pronounced "wee-fee" in French' },
-            { id: 7,  french: 'Ma chambre n\'est pas encore prête.',   english: 'My room isn\'t ready yet.' },
-            { id: 8,  french: 'Il y a un problème dans ma chambre.',   english: 'There\'s a problem in my room.' },
-            { id: 9,  french: 'Pouvez-vous m\'appeler un taxi ?',      english: 'Could you call me a taxi?' },
-            { id: 10, french: 'La clé de ma chambre, s\'il vous plaît.', english: 'My room key, please.' },
-            { id: 11, french: 'Est-ce qu\'il y a un parking ?',        english: 'Is there a car park?' },
-            { id: 12, french: 'Je voudrais prolonger mon séjour.',     english: 'I\'d like to extend my stay.' },
-            { id: 13, french: 'C\'est trop bruyant.',                  english: 'It\'s too noisy.' },
-            { id: 14, french: 'Merci pour tout, c\'était parfait.',    english: 'Thank you for everything, it was perfect.' },
-            { id: 15, french: 'Je reviendrai avec plaisir.',           english: 'I\'ll be back with pleasure.' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'at-the-doctor',
-        title: 'At the Doctor\'s',
-        titleFR: 'Chez le médecin',
-        description: 'Describe symptoms, get a prescription, and manage a medical visit',
-        descriptionFR: 'Décrire des symptômes, obtenir une ordonnance et gérer une visite médicale',
-        icon: '🩺',
-        color: '#DC2626',
-        phrases: [
-            { id: 1,  french: 'J\'ai mal à la gorge depuis trois jours.', english: 'I\'ve had a sore throat for three days.', note: 'depuis + present tense for ongoing symptom' },
-            { id: 2,  french: 'J\'ai de la fièvre depuis hier.',          english: 'I\'ve had a fever since yesterday.' },
-            { id: 3,  french: 'Depuis quand avez-vous ces symptômes ?',   english: 'How long have you had these symptoms?' },
-            { id: 4,  french: 'Je suis allergique à la pénicilline.',     english: 'I\'m allergic to penicillin.' },
-            { id: 5,  french: 'Je prends ces médicaments en ce moment.',  english: 'I\'m currently taking this medication.' },
-            { id: 6,  french: 'C\'est urgent ?',                          english: 'Is it urgent?' },
-            { id: 7,  french: 'Pouvez-vous me faire une ordonnance ?',    english: 'Could you write me a prescription?' },
-            { id: 8,  french: 'Je n\'ai pas d\'appétit.',                 english: 'I have no appetite.' },
-            { id: 9,  french: 'J\'ai du mal à dormir.',                   english: 'I\'m having trouble sleeping.' },
-            { id: 10, french: 'Est-ce grave ?',                           english: 'Is it serious?' },
-            { id: 11, french: 'Combien de fois par jour ?',               english: 'How many times a day?' },
-            { id: 12, french: 'À jeun ou après les repas ?',              english: 'On an empty stomach or after meals?' },
-            { id: 13, french: 'Je me sens mieux depuis ce matin.',        english: 'I\'ve been feeling better since this morning.' },
-            { id: 14, french: 'Quand dois-je revenir vous voir ?',        english: 'When should I come back to see you?' },
-            { id: 15, french: 'Avez-vous votre carte Vitale ?',           english: 'Do you have your health card?', note: 'The Carte Vitale is the French social security health card' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'making-plans',
-        title: 'Making Plans',
-        titleFR: 'Faire des projets',
-        description: 'Invite friends, agree on plans, and handle cancellations',
-        descriptionFR: 'Inviter des amis, convenir de plans et gérer les annulations',
-        icon: '📆',
-        color: '#7C3AED',
-        phrases: [
-            { id: 1,  french: 'Tu es libre ce week-end ?',             english: 'Are you free this weekend?' },
-            { id: 2,  french: 'On pourrait aller au cinéma.',          english: 'We could go to the cinema.', note: 'On pourrait = we could (conditional)' },
-            { id: 3,  french: 'Ça te dirait d\'aller dîner ?',         english: 'Would you fancy going for dinner?' },
-            { id: 4,  french: 'J\'ai très envie de voir cette expo.',  english: 'I really want to see that exhibition.' },
-            { id: 5,  french: 'Rendez-vous à vingt heures devant le cinéma.', english: 'Let\'s meet at 8pm in front of the cinema.' },
-            { id: 6,  french: 'Je passerai te chercher à sept heures.', english: 'I\'ll come and pick you up at seven.' },
-            { id: 7,  french: 'C\'est annulé, désolé(e).',             english: 'It\'s cancelled, sorry.' },
-            { id: 8,  french: 'Je suis désolé(e), je ne peux pas.',   english: 'I\'m sorry, I can\'t make it.' },
-            { id: 9,  french: 'Une autre fois peut-être ?',            english: 'Another time maybe?' },
-            { id: 10, french: 'C\'était une excellente idée !',        english: 'That was an excellent idea!' },
-            { id: 11, french: 'On recommence quand ?',                 english: 'When shall we do it again?' },
-            { id: 12, french: 'Je te rappelle ce soir.',               english: 'I\'ll call you back tonight.' },
-            { id: 13, french: 'C\'est noté !',                        english: 'Got it! / Noted!' },
-            { id: 14, french: 'On se retrouve où exactement ?',        english: 'Where exactly shall we meet?' },
-            { id: 15, french: 'À tout à l\'heure !',                  english: 'See you later!' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'on-the-phone',
-        title: 'On the Phone',
-        titleFR: 'Au téléphone',
-        description: 'Make and receive phone calls, leave messages, and handle common phone situations in French',
-        descriptionFR: 'Passer et recevoir des appels, laisser des messages et gérer des situations téléphoniques courantes',
-        icon: '📞',
-        color: '#2563EB',
-        phrases: [
-            { id: 1,  french: 'Allô ?',                                              english: 'Hello? (on the phone)' },
-            { id: 2,  french: 'C\'est de la part de qui ?',                         english: 'Who is calling?' },
-            { id: 3,  french: 'Ne quittez pas.',                                     english: 'Hold on. / Please hold.' },
-            { id: 4,  french: 'Je voudrais parler à M. / Mme…',                     english: 'I would like to speak to Mr. / Mrs. …' },
-            { id: 5,  french: 'Pouvez-vous rappeler plus tard ?',                    english: 'Can you call back later?' },
-            { id: 6,  french: 'Je peux laisser un message ?',                        english: 'Can I leave a message?' },
-            { id: 7,  french: 'La ligne est occupée.',                               english: 'The line is busy.' },
-            { id: 8,  french: 'Vous avez fait un faux numéro.',                      english: 'You have the wrong number.' },
-            { id: 9,  french: 'Je vous entends mal.',                                english: 'I can\'t hear you well.' },
-            { id: 10, french: 'Pouvez-vous parler plus lentement ?',                 english: 'Can you speak more slowly?' },
-            { id: 11, french: 'Je vous rappelle dès que possible.',                  english: 'I will call you back as soon as possible.' },
-            { id: 12, french: 'Il n\'est pas disponible pour le moment.',            english: 'He / She is not available at the moment.' },
-            { id: 13, french: 'Quel est votre numéro de téléphone ?',               english: 'What is your phone number?' },
-            { id: 14, french: 'J\'ai reçu votre message.',                           english: 'I received your message.' },
-            { id: 15, french: 'À bientôt. Au revoir !',                             english: 'Talk soon. Goodbye!' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'at-the-market',
-        title: 'At the Market',
-        titleFR: 'Au marché',
-        description: 'Buy fresh produce, ask about prices, and chat with vendors',
-        descriptionFR: 'Acheter des produits frais, demander les prix et discuter avec les vendeurs',
-        icon: '🥦',
-        color: '#059669',
-        phrases: [
-            { id: 1,  french: 'C\'est combien le kilo ?',              english: 'How much is it per kilo?' },
-            { id: 2,  french: 'Je voudrais cinq cents grammes de…',   english: 'I\'d like five hundred grams of…' },
-            { id: 3,  french: 'Vous avez des tomates bien mûres ?',   english: 'Do you have some ripe tomatoes?' },
-            { id: 4,  french: 'C\'est de la région ?',                 english: 'Is it local / from the region?' },
-            { id: 5,  french: 'Je prends ça, s\'il vous plaît.',       english: 'I\'ll take this one, please.' },
-            { id: 6,  french: 'Donnez-m\'en un peu plus.',             english: 'Give me a bit more.' },
-            { id: 7,  french: 'C\'est pour aujourd\'hui ?',            english: 'Is it for today?' },
-            { id: 8,  french: 'Avez-vous autre chose à me conseiller ?', english: 'Do you have anything else to recommend?' },
-            { id: 9,  french: 'C\'est un peu trop mûr.',               english: 'It\'s a bit too ripe.' },
-            { id: 10, french: 'Je cherche des herbes fraîches.',       english: 'I\'m looking for fresh herbs.' },
-            { id: 11, french: 'Ça sent bon !',                        english: 'That smells good!' },
-            { id: 12, french: 'Le marché ferme à quelle heure ?',     english: 'What time does the market close?' },
-            { id: 13, french: 'Vous êtes là tous les samedis ?',      english: 'Are you here every Saturday?' },
-            { id: 14, french: 'C\'est fait maison ?',                  english: 'Is it home-made?' },
-            { id: 15, french: 'Merci, bonne journée !',               english: 'Thank you, have a good day!' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'writing-a-postcard',
-        title: 'Writing a Postcard',
-        titleFR: 'Écrire une carte postale',
-        description: 'Write a postcard to a French friend while on holiday',
-        descriptionFR: 'Écrire une carte postale à un ami français pendant les vacances',
-        icon: '✉️',
-        color: '#D97706',
-        phrases: [
-            { id: 1,  french: 'Je t\'écris de Barcelone.',              english: 'I\'m writing to you from Barcelona.' },
-            { id: 2,  french: 'Il fait très beau ici.',                 english: 'The weather is lovely here.' },
-            { id: 3,  french: 'Je suis en vacances depuis une semaine.', english: 'I\'ve been on holiday for a week.' },
-            { id: 4,  french: 'J\'ai visité le musée Picasso hier.',    english: 'I visited the Picasso museum yesterday.' },
-            { id: 5,  french: 'J\'ai mangé des spécialités locales.',  english: 'I\'ve eaten local specialities.' },
-            { id: 6,  french: 'Les gens sont très accueillants.',       english: 'The people are very welcoming.' },
-            { id: 7,  french: 'Le voyage s\'est bien passé.',           english: 'The journey went well.' },
-            { id: 8,  french: 'Je rentre le quinze août.',              english: 'I\'m coming back on the fifteenth of August.' },
-            { id: 9,  french: 'Tu me manques !',                        english: 'I miss you!', note: 'tu me manques = you are missing to me (structure reversed vs. English)' },
-            { id: 10, french: 'Je pense souvent à toi.',               english: 'I often think of you.' },
-            { id: 11, french: 'Grosses bises !',                        english: 'Lots of love! / Big kisses!' },
-            { id: 12, french: 'À bientôt !',                           english: 'See you soon!' },
-            { id: 13, french: 'La ville est magnifique.',               english: 'The city is magnificent.' },
-            { id: 14, french: 'Je t\'enverrai des photos.',             english: 'I\'ll send you some photos.' },
-            { id: 15, french: 'Prends soin de toi.',                   english: 'Take care of yourself.' },
-        ],
-    },
-    {
-        level: 'A2', unit: 3,
-        id: 'talking-about-health',
-        title: 'Talking About Health',
-        titleFR: 'Parler de sa santé',
-        description: 'Describe symptoms, find a pharmacy, and say how you feel',
-        descriptionFR: 'Décrire des symptômes, trouver une pharmacie et dire comment on se sent',
-        icon: '🏥',
-        color: '#DC2626',
-        phrases: [
-            { id: 1,  french: 'J\'ai mal à la tête.',              english: 'I have a headache.',                   note: 'avoir mal à = to have pain in; à la for fem., au for masc.' },
-            { id: 2,  french: 'Je suis fatigué(e).',              english: 'I am tired.',                          note: 'Add -e if you are female: fatiguée' },
-            { id: 3,  french: 'Je suis malade.',                   english: 'I am sick / ill.' },
-            { id: 4,  french: 'J\'ai de la fièvre.',              english: 'I have a fever.' },
-            { id: 5,  french: 'Je tousse.',                        english: 'I am coughing.',                       note: 'tousser = to cough; je tousse (regular -er)' },
-            { id: 6,  french: 'J\'ai le rhume.',                  english: 'I have a cold.',                       note: 'avoir le rhume = to have a cold (not un rhume)' },
-            { id: 7,  french: 'Je me sens bien.',                  english: 'I feel well.',                         note: 'se sentir = to feel; reflexive verb' },
-            { id: 8,  french: 'Je suis en bonne santé.',          english: 'I am in good health.' },
-            { id: 9,  french: 'J\'ai besoin d\'un médecin.',      english: 'I need a doctor.' },
-            { id: 10, french: 'Où est la pharmacie ?',             english: 'Where is the pharmacy?',               note: 'Pharmacies are marked by a green cross in France' },
-            { id: 11, french: 'J\'ai mal au ventre.',             english: 'I have a stomachache.',                note: 'au ventre = in the stomach (ventre is masculine)' },
-            { id: 12, french: 'Je suis allergique à…',            english: 'I am allergic to…' },
-            { id: 13, french: 'Ça fait mal.',                      english: 'It hurts.',                            note: 'faire mal = to hurt; Où est-ce que ça fait mal ? = Where does it hurt?' },
-            { id: 14, french: 'J\'ai besoin de médicaments.',     english: 'I need medicine / medication.' },
-            { id: 15, french: 'Je vais mieux, merci.',            english: 'I\'m feeling better, thank you.' },
-        ],
-    },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-phrases-01",
+    "title": "Raconter des nouvelles et demander des détails",
+    "titleFR": "Raconter des nouvelles et demander des détails",
+    "description": "Expressions anglaises naturelles pour : raconter des nouvelles et demander des détails.",
+    "descriptionFR": "Expressions naturelles pour : raconter des nouvelles et demander des détails.",
+    "icon": "💬",
+    "color": "#2563EB",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Ça fait longtemps qu’on ne s’est pas vus.",
+        "english": "We haven’t seen each other for ages."
+      },
+      {
+        "id": 2,
+        "french": "Qu’est-ce qui s’est passé ensuite ?",
+        "english": "What happened next?"
+      },
+      {
+        "id": 3,
+        "french": "Comment s’est passé ton entretien ?",
+        "english": "How did your interview go?"
+      },
+      {
+        "id": 4,
+        "french": "J’ai changé de travail le mois dernier.",
+        "english": "I changed jobs last month."
+      },
+      {
+        "id": 5,
+        "french": "Je ne m’y attendais pas du tout.",
+        "english": "I didn’t expect that at all."
+      },
+      {
+        "id": 6,
+        "french": "Quelle surprise !",
+        "english": "What a surprise!"
+      },
+      {
+        "id": 7,
+        "french": "Je suis vraiment content pour toi.",
+        "english": "I’m really pleased for you."
+      },
+      {
+        "id": 8,
+        "french": "Je suis désolé de l’apprendre.",
+        "english": "I’m sorry to hear that."
+      },
+      {
+        "id": 9,
+        "french": "Ça me rappelle nos vacances.",
+        "english": "That reminds me of our holiday."
+      },
+      {
+        "id": 10,
+        "french": "Tu te souviens de ce jour-là ?",
+        "english": "Do you remember that day?"
+      },
+      {
+        "id": 11,
+        "french": "C’était une expérience intéressante.",
+        "english": "It was an interesting experience."
+      },
+      {
+        "id": 12,
+        "french": "Raconte-moi tout !",
+        "english": "Tell me everything!"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-phrases-02",
+    "title": "Signaler un problème de voyage",
+    "titleFR": "Signaler un problème de voyage",
+    "description": "Expressions anglaises naturelles pour : signaler un problème de voyage.",
+    "descriptionFR": "Expressions naturelles pour : signaler un problème de voyage.",
+    "icon": "💬",
+    "color": "#2563EB",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Mon train a été annulé.",
+        "english": "My train was cancelled."
+      },
+      {
+        "id": 2,
+        "french": "Nous attendions sur le quai.",
+        "english": "We were waiting on the platform."
+      },
+      {
+        "id": 3,
+        "french": "J’ai raté ma correspondance.",
+        "english": "I missed my connection."
+      },
+      {
+        "id": 4,
+        "french": "Pourriez-vous vérifier ma réservation ?",
+        "english": "Could you check my booking?"
+      },
+      {
+        "id": 5,
+        "french": "Y a-t-il un autre itinéraire ?",
+        "english": "Is there another route?"
+      },
+      {
+        "id": 6,
+        "french": "Où dois-je récupérer mes bagages ?",
+        "english": "Where do I collect my luggage?"
+      },
+      {
+        "id": 7,
+        "french": "J’ai perdu mon sac à dos.",
+        "english": "I’ve lost my backpack."
+      },
+      {
+        "id": 8,
+        "french": "Quand part le prochain car ?",
+        "english": "When does the next coach leave?"
+      },
+      {
+        "id": 9,
+        "french": "Combien de temps dure le retard ?",
+        "english": "How long is the delay?"
+      },
+      {
+        "id": 10,
+        "french": "Pouvez-vous écrire le numéro de dossier ?",
+        "english": "Could you write down the reference number?"
+      },
+      {
+        "id": 11,
+        "french": "Merci de votre aide.",
+        "english": "Thank you for your help."
+      },
+      {
+        "id": 12,
+        "french": "Nous sommes finalement arrivés à bon port.",
+        "english": "We finally arrived safely."
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-phrases-03",
+    "title": "Comparer des logements et des quartiers",
+    "titleFR": "Comparer des logements et des quartiers",
+    "description": "Expressions anglaises naturelles pour : comparer des logements et des quartiers.",
+    "descriptionFR": "Expressions naturelles pour : comparer des logements et des quartiers.",
+    "icon": "💬",
+    "color": "#2563EB",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Cet appartement est plus lumineux.",
+        "english": "This flat is brighter."
+      },
+      {
+        "id": 2,
+        "french": "Le loyer est trop élevé pour nous.",
+        "english": "The rent is too high for us."
+      },
+      {
+        "id": 3,
+        "french": "Le quartier est-il sûr le soir ?",
+        "english": "Is the area safe in the evening?"
+      },
+      {
+        "id": 4,
+        "french": "Quelle option est la moins chère ?",
+        "english": "Which option is the cheapest?"
+      },
+      {
+        "id": 5,
+        "french": "Il est plus près du travail.",
+        "english": "It is closer to work."
+      },
+      {
+        "id": 6,
+        "french": "La cuisine n’est pas assez grande.",
+        "english": "The kitchen isn’t big enough."
+      },
+      {
+        "id": 7,
+        "french": "Peut-on organiser une visite ?",
+        "english": "Can we arrange a viewing?"
+      },
+      {
+        "id": 8,
+        "french": "Les charges sont-elles comprises ?",
+        "english": "Are the bills included?"
+      },
+      {
+        "id": 9,
+        "french": "J’aime mieux la deuxième option.",
+        "english": "I prefer the second option."
+      },
+      {
+        "id": 10,
+        "french": "Il y a un local à vélos ?",
+        "english": "Is there bicycle storage?"
+      },
+      {
+        "id": 11,
+        "french": "C’est un quartier plutôt calme.",
+        "english": "It’s a fairly peaceful neighbourhood."
+      },
+      {
+        "id": 12,
+        "french": "Je vais comparer les avantages.",
+        "english": "I’m going to compare the advantages."
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-phrases-04",
+    "title": "Demander conseil et parler de sa santé",
+    "titleFR": "Demander conseil et parler de sa santé",
+    "description": "Expressions anglaises naturelles pour : demander conseil et parler de sa santé.",
+    "descriptionFR": "Expressions naturelles pour : demander conseil et parler de sa santé.",
+    "icon": "💬",
+    "color": "#2563EB",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Je ne me sens pas très bien.",
+        "english": "I don’t feel very well."
+      },
+      {
+        "id": 2,
+        "french": "J’ai mal à la gorge.",
+        "english": "I’ve got a sore throat."
+      },
+      {
+        "id": 3,
+        "french": "Depuis quand avez-vous ces symptômes ?",
+        "english": "How long have you had these symptoms?"
+      },
+      {
+        "id": 4,
+        "french": "Vous devriez vous reposer.",
+        "english": "You should get some rest."
+      },
+      {
+        "id": 5,
+        "french": "Vous ne devriez pas sauter les repas.",
+        "english": "You shouldn’t skip meals."
+      },
+      {
+        "id": 6,
+        "french": "Est-ce que je dois prendre rendez-vous ?",
+        "english": "Do I have to make an appointment?"
+      },
+      {
+        "id": 7,
+        "french": "Ce n’est pas obligatoire.",
+        "english": "You don’t have to."
+      },
+      {
+        "id": 8,
+        "french": "Il est interdit de fumer ici.",
+        "english": "You mustn’t smoke here."
+      },
+      {
+        "id": 9,
+        "french": "Je suis allergique aux noix.",
+        "english": "I’m allergic to nuts."
+      },
+      {
+        "id": 10,
+        "french": "Puis-je voir la liste des ingrédients ?",
+        "english": "Could I see the ingredient list?"
+      },
+      {
+        "id": 11,
+        "french": "Buvez beaucoup d’eau.",
+        "english": "Drink plenty of water."
+      },
+      {
+        "id": 12,
+        "french": "J’espère que vous irez mieux bientôt.",
+        "english": "I hope you feel better soon."
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-phrases-05",
+    "title": "Organiser une sortie et gérer les imprévus",
+    "titleFR": "Organiser une sortie et gérer les imprévus",
+    "description": "Expressions anglaises naturelles pour : organiser une sortie et gérer les imprévus.",
+    "descriptionFR": "Expressions naturelles pour : organiser une sortie et gérer les imprévus.",
+    "icon": "💬",
+    "color": "#2563EB",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Tu fais quelque chose samedi ?",
+        "english": "Are you doing anything on Saturday?"
+      },
+      {
+        "id": 2,
+        "french": "On va visiter l’exposition.",
+        "english": "We’re going to visit the exhibition."
+      },
+      {
+        "id": 3,
+        "french": "Je retrouve Zoé à midi.",
+        "english": "I’m meeting Zoé at midday."
+      },
+      {
+        "id": 4,
+        "french": "Est-ce qu’on doit réserver ?",
+        "english": "Do we need to book?"
+      },
+      {
+        "id": 5,
+        "french": "Je vais vérifier les horaires.",
+        "english": "I’ll check the opening times."
+      },
+      {
+        "id": 6,
+        "french": "On se retrouve devant l’entrée.",
+        "english": "Let’s meet outside the entrance."
+      },
+      {
+        "id": 7,
+        "french": "Et s’il pleut ?",
+        "english": "What if it rains?"
+      },
+      {
+        "id": 8,
+        "french": "Si le temps est mauvais, on restera à l’intérieur.",
+        "english": "If the weather is bad, we’ll stay inside."
+      },
+      {
+        "id": 9,
+        "french": "Ça te convient ?",
+        "english": "Does that work for you?"
+      },
+      {
+        "id": 10,
+        "french": "Je peux apporter quelque chose ?",
+        "english": "Shall I bring anything?"
+      },
+      {
+        "id": 11,
+        "french": "Désolé, j’ai un empêchement.",
+        "english": "Sorry, something has come up."
+      },
+      {
+        "id": 12,
+        "french": "On peut remettre ça à la semaine prochaine.",
+        "english": "We can put it off until next week."
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-phrases-06",
+    "title": "Parler d’expériences et donner des nouvelles",
+    "titleFR": "Parler d’expériences et donner des nouvelles",
+    "description": "Expressions anglaises naturelles pour : parler d’expériences et donner des nouvelles.",
+    "descriptionFR": "Expressions naturelles pour : parler d’expériences et donner des nouvelles.",
+    "icon": "💬",
+    "color": "#2563EB",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Tu as déjà essayé ça ?",
+        "english": "Have you ever tried that?"
+      },
+      {
+        "id": 2,
+        "french": "Je n’y suis jamais allé.",
+        "english": "I’ve never been there."
+      },
+      {
+        "id": 3,
+        "french": "Je viens de recevoir ton message.",
+        "english": "I’ve just received your message."
+      },
+      {
+        "id": 4,
+        "french": "Tu as déjà terminé ?",
+        "english": "Have you finished yet?"
+      },
+      {
+        "id": 5,
+        "french": "Je n’ai pas encore reçu le colis.",
+        "english": "I haven’t received the parcel yet."
+      },
+      {
+        "id": 6,
+        "french": "Je l’ai fait l’année dernière.",
+        "english": "I did it last year."
+      },
+      {
+        "id": 7,
+        "french": "C’était la première fois.",
+        "english": "It was my first time."
+      },
+      {
+        "id": 8,
+        "french": "Depuis combien de temps habites-tu ici ?",
+        "english": "How long have you lived here?"
+      },
+      {
+        "id": 9,
+        "french": "J’habite ici depuis trois ans.",
+        "english": "I’ve lived here for three years."
+      },
+      {
+        "id": 10,
+        "french": "Qu’as-tu appris ?",
+        "english": "What have you learned?"
+      },
+      {
+        "id": 11,
+        "french": "Ça en valait la peine.",
+        "english": "It was worth it."
+      },
+      {
+        "id": 12,
+        "french": "J’aimerais recommencer un jour.",
+        "english": "I’d like to do it again one day."
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-phrases-07",
+    "title": "Exprimer un avis et justifier un choix",
+    "titleFR": "Exprimer un avis et justifier un choix",
+    "description": "Expressions anglaises naturelles pour : exprimer un avis et justifier un choix.",
+    "descriptionFR": "Expressions naturelles pour : exprimer un avis et justifier un choix.",
+    "icon": "💬",
+    "color": "#2563EB",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "À mon avis, c’est une bonne idée.",
+        "english": "In my opinion, it’s a good idea."
+      },
+      {
+        "id": 2,
+        "french": "Je suis plutôt d’accord.",
+        "english": "I mostly agree."
+      },
+      {
+        "id": 3,
+        "french": "Je ne suis pas tout à fait d’accord.",
+        "english": "I don’t quite agree."
+      },
+      {
+        "id": 4,
+        "french": "C’est une personne qui aide les nouveaux arrivants.",
+        "english": "It’s someone who helps newcomers."
+      },
+      {
+        "id": 5,
+        "french": "Je le recommande parce qu’il est pratique.",
+        "english": "I recommend it because it’s practical."
+      },
+      {
+        "id": 6,
+        "french": "C’est cher, donc je vais attendre.",
+        "english": "It’s expensive, so I’ll wait."
+      },
+      {
+        "id": 7,
+        "french": "Même si c’est difficile, je veux essayer.",
+        "english": "Although it’s difficult, I want to try."
+      },
+      {
+        "id": 8,
+        "french": "J’ai décidé de postuler.",
+        "english": "I’ve decided to apply."
+      },
+      {
+        "id": 9,
+        "french": "J’aime découvrir de nouvelles choses.",
+        "english": "I enjoy discovering new things."
+      },
+      {
+        "id": 10,
+        "french": "Peux-tu expliquer ton choix ?",
+        "english": "Can you explain your choice?"
+      },
+      {
+        "id": 11,
+        "french": "Quels sont les avantages ?",
+        "english": "What are the advantages?"
+      },
+      {
+        "id": 12,
+        "french": "C’est ce que je cherchais.",
+        "english": "That’s what I was looking for."
+      }
+    ]
+  }
 ];
