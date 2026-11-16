@@ -1,527 +1,3110 @@
 import type { VocabularyModule, VocabularyData, VocabularyWord } from '../../../types/vocabulary';
 
 export const modulesA2: (VocabularyModule & { words: VocabularyWord[] })[] = [
-    { level: 'A2', unit: 1, "id":"work-professions","title":"Travail & Professions","titleFR":"Travail & Professions","description":"Naviguer le monde du travail en français","descriptionFR":"Naviguer le monde du travail en français","icon":"💼","color":"#F97316","wordCount":0, words: [
-        { id: 1, english: 'a trade / occupation / job', french: 'un métier' },
-        { id: 2, english: 'a job / employment', french: 'un emploi' },
-        { id: 3, english: 'a position / post (at a company)', french: 'un poste' },
-        { id: 4, english: 'a salary / wage', french: 'un salaire' },
-        { id: 5, english: 'a job application', french: 'une candidature' },
-        { id: 6, english: 'an interview (job)', french: 'un entretien' },
-        { id: 7, english: 'a boss / employer', french: 'un(e) patron(ne)' },
-        { id: 8, english: 'an employee', french: 'un(e) employé(e)' },
-        { id: 9, english: 'to be unemployed', french: 'être au chômage' },
-        { id: 10, english: 'a permanent contract', french: 'un contrat à durée indéterminée (CDI)' },
-        { id: 11, english: 'a fixed-term contract', french: 'un contrat à durée déterminée (CDD)' },
-        { id: 12, english: 'paid holiday / paid leave', french: 'les congés payés' },
-        { id: 13, english: 'a promotion', french: 'une promotion' },
-        { id: 14, english: 'to resign', french: 'démissionner' },
-        { id: 15, english: 'to dismiss / to lay off', french: 'licencier' },
-        { id: 16, english: 'a trade union', french: 'un syndicat' },
-        { id: 17, english: 'overtime', french: 'les heures supplémentaires' },
-        { id: 18, english: 'part-time', french: 'à mi-temps' },
-        { id: 19, english: 'full-time', french: 'à plein temps' },
-        { id: 20, english: 'remote work / working from home', french: 'télétravail' },
-    ] },
-    { level: 'A2', unit: 1, "id":"weather-nature","title":"Météo & Nature","titleFR":"Météo & Nature","description":"Décrire le monde qui vous entoure","descriptionFR":"Décrire le monde qui vous entoure","icon":"🌿","color":"#14B8A6","wordCount":0, words: [
-        { id: 1, english: 'the weather is nice / it\'s sunny', french: 'il fait beau' },
-        { id: 2, english: 'it\'s raining', french: 'il pleut' },
-        { id: 3, english: 'it\'s snowing', french: 'il neige' },
-        { id: 4, english: 'a storm / thunderstorm', french: 'un orage' },
-        { id: 5, english: 'a heatwave', french: 'la canicule' },
-        { id: 6, english: 'drought', french: 'la sécheresse' },
-        { id: 7, english: 'a flood', french: 'une inondation' },
-        { id: 8, english: 'fog / mist', french: 'le brouillard' },
-        { id: 9, english: 'a cold spell / cold wave', french: 'une vague de froid' },
-        { id: 10, english: 'sunny / bright', french: 'ensoleillé(e)' },
-        { id: 11, english: 'cloudy / overcast', french: 'nuageux(-euse)' },
-        { id: 12, english: 'a forest', french: 'une forêt' },
-        { id: 13, english: 'a mountain', french: 'une montagne' },
-        { id: 14, english: 'a major river (flowing to the sea)', french: 'un fleuve' },
-        { id: 15, english: 'a river / stream (tributary)', french: 'une rivière' },
-        { id: 16, english: 'wildlife / fauna', french: 'la faune' },
-        { id: 17, english: 'plant life / flora', french: 'la flore' },
-        { id: 18, english: 'global warming / climate change', french: 'le réchauffement climatique' },
-        { id: 19, english: 'sustainable', french: 'durable' },
-        { id: 20, english: 'to protect the environment', french: 'protéger l\'environnement' },
-    ] },
-    { level: 'A2', unit: 1, "id":"sports-hobbies","title":"Sports & Loisirs","titleFR":"Sports & Loisirs","description":"Parler de ce que vous aimez faire","descriptionFR":"Parler de ce que vous aimez faire","icon":"⚽","color":"#8B5CF6","wordCount":0, words: [
-        { id: 1, english: 'to do sport / exercise', french: 'faire du sport' },
-        { id: 2, english: 'to train / to practise', french: 's\'entraîner' },
-        { id: 3, english: 'a match / game', french: 'un match' },
-        { id: 4, english: 'to score a goal', french: 'marquer un but' },
-        { id: 5, english: 'a tournament', french: 'un tournoi' },
-        { id: 6, english: 'swimming', french: 'la natation' },
-        { id: 7, english: 'hiking / trekking', french: 'la randonnée' },
-        { id: 8, english: 'cycling', french: 'le cyclisme' },
-        { id: 9, english: 'horse riding', french: 'l\'équitation' },
-        { id: 10, english: 'martial arts', french: 'les arts martiaux' },
-        { id: 11, english: 'a hobby / pastime', french: 'un passe-temps' },
-        { id: 12, english: 'painting', french: 'la peinture' },
-        { id: 13, english: 'photography', french: 'la photographie' },
-        { id: 14, english: 'to volunteer', french: 'faire du bénévolat' },
-        { id: 15, english: 'to play an instrument', french: 'jouer d\'un instrument' },
-        { id: 16, english: 'to attend (an event)', french: 'assister à' },
-        { id: 17, english: 'a competition', french: 'une compétition' },
-        { id: 18, english: 'a champion', french: 'un champion / une championne' },
-        { id: 19, english: 'to be a fan of', french: 'être fan de' },
-        { id: 20, english: 'leisure activities / free-time pursuits', french: 'les loisirs' },
-    ] },
-    { level: 'A2', unit: 1, "id":"school-education","title":"École & Éducation","titleFR":"École & Éducation","description":"Vocabulaire académique et scolaire","descriptionFR":"Vocabulaire académique et scolaire","icon":"📚","color":"#0EA5E9","wordCount":0, words: [
-        { id: 1, english: 'a school / educational establishment', french: 'un établissement scolaire' },
-        { id: 2, english: 'a secondary school (ages 15-18)', french: 'un lycée' },
-        { id: 3, english: 'a university', french: 'une université' },
-        { id: 4, english: 'a school subject', french: 'une matière' },
-        { id: 5, english: 'mathematics', french: 'les mathématiques' },
-        { id: 6, english: 'science', french: 'les sciences' },
-        { id: 7, english: 'history', french: 'l\'histoire' },
-        { id: 8, english: 'modern foreign languages', french: 'les langues vivantes' },
-        { id: 9, english: 'a lecture', french: 'un cours magistral' },
-        { id: 10, english: 'a presentation / oral report', french: 'un exposé' },
-        { id: 11, english: 'homework / an assignment', french: 'un devoir' },
-        { id: 12, english: 'to write up / to draft (an essay, report)', french: 'rédiger' },
-        { id: 13, english: 'to research / to gather information', french: 'se documenter' },
-        { id: 14, english: 'to revise / to review (for an exam)', french: 'réviser' },
-        { id: 15, english: 'to sit / take an exam', french: 'passer un examen' },
-        { id: 16, english: 'to pass an exam', french: 'réussir un examen' },
-        { id: 17, english: 'to fail an exam', french: 'échouer à un examen' },
-        { id: 18, english: 'a degree / qualification / diploma', french: 'un diplôme' },
-        { id: 19, english: 'a scholarship / study grant', french: 'une bourse d\'études' },
-        { id: 20, english: 'learning / apprenticeship', french: 'l\'apprentissage' },
-    ] },
-    { level: 'A2', unit: 3, "id":"shopping-money","title":"Shopping & Argent","titleFR":"Shopping & Argent","description":"Acheter, vendre et gérer ses finances","descriptionFR":"Acheter, vendre et gérer ses finances","icon":"🛍️","color":"#F43F5E","wordCount":0, words: [
-        { id: 1, english: 'to go shopping (for groceries)', french: 'faire des courses' },
-        { id: 2, english: 'to go shopping (for clothes/fun)', french: 'faire du shopping' },
-        { id: 3, english: 'a shop / store', french: 'un magasin' },
-        { id: 4, english: 'a shop window / display', french: 'une vitrine' },
-        { id: 5, english: 'the sales (seasonal discounts)', french: 'les soldes' },
-        { id: 6, english: 'a special offer / deal', french: 'une promotion' },
-        { id: 7, english: 'the price', french: 'le prix' },
-        { id: 8, english: 'expensive', french: 'cher / chère' },
-        { id: 9, english: 'cheap / inexpensive', french: 'bon marché' },
-        { id: 10, english: 'to reimburse / to refund', french: 'rembourser' },
-        { id: 11, english: 'a receipt', french: 'un reçu' },
-        { id: 12, english: 'to pay in cash', french: 'payer en espèces' },
-        { id: 13, english: 'to pay by card', french: 'payer par carte' },
-        { id: 14, english: 'to save (money)', french: 'économiser' },
-        { id: 15, english: 'to spend (money)', french: 'dépenser' },
-        { id: 16, english: 'a budget', french: 'un budget' },
-        { id: 17, english: 'indebtedness / debt', french: 'endettement' },
-        { id: 18, english: 'a bank transfer', french: 'un virement bancaire' },
-        { id: 19, english: 'the exchange rate', french: 'le taux de change' },
-        { id: 20, english: 'on credit / on hire purchase', french: 'à crédit' },
-    ] },
-    { level: 'A2', unit: 3, "id":"animals","title":"Animaux","titleFR":"Animaux","description":"Faune, animaux domestiques et règne animal","descriptionFR":"Faune, animaux domestiques et règne animal","icon":"🐾","color":"#10B981","wordCount":0, words: [
-        { id: 1,  english: 'a dog',                  french: 'un chien' },
-        { id: 2,  english: 'a cat',                  french: 'un chat' },
-        { id: 3,  english: 'a rabbit',               french: 'un lapin' },
-        { id: 4,  english: 'a hamster',              french: 'un hamster' },
-        { id: 5,  english: 'a (pet) fish',           french: 'un poisson' },
-        { id: 6,  english: 'a bird',                 french: 'un oiseau' },
-        { id: 7,  english: 'a cow',                  french: 'une vache' },
-        { id: 8,  english: 'a horse',                french: 'un cheval' },
-        { id: 9,  english: 'a pig',                  french: 'un cochon' },
-        { id: 10, english: 'a sheep',                french: 'un mouton' },
-        { id: 11, english: 'a hen / chicken',        french: 'une poule' },
-        { id: 12, english: 'a lion',                 french: 'un lion' },
-        { id: 13, english: 'a tiger',                french: 'un tigre' },
-        { id: 14, english: 'an elephant',            french: 'un éléphant' },
-        { id: 15, english: 'a monkey',               french: 'un singe' },
-        { id: 16, english: 'a snake',                french: 'un serpent' },
-        { id: 17, english: 'a bear',                 french: 'un ours' },
-        { id: 18, english: 'a wolf',                 french: 'un loup' },
-        { id: 19, english: 'a bee',                  french: 'une abeille' },
-        { id: 20, english: 'a butterfly',            french: 'un papillon' },
-    ] },
-    { level: 'A2', unit: 1, "id":"celebrations-events","title":"Célébrations & Événements","titleFR":"Célébrations & Événements","description":"Fêtes, cérémonies et occasions spéciales","descriptionFR":"Fêtes, cérémonies et occasions spéciales","icon":"🎉","color":"#F59E0B","wordCount":0, words: [
-        { id: 1,  english: 'a birthday',              french: 'un anniversaire' },
-        { id: 2,  english: 'a wedding',               french: 'un mariage' },
-        { id: 3,  english: 'a party / celebration',   french: 'une fête' },
-        { id: 4,  english: 'a gift / present',        french: 'un cadeau' },
-        { id: 5,  english: 'an invitation',           french: 'une invitation' },
-        { id: 6,  english: 'a ceremony',              french: 'une cérémonie' },
-        { id: 7,  english: 'a meeting / gathering',   french: 'une réunion' },
-        { id: 8,  english: 'a concert',               french: 'un concert' },
-        { id: 9,  english: 'an exhibition',           french: 'une exposition' },
-        { id: 10, english: 'a show / performance',    french: 'un spectacle' },
-        { id: 11, english: 'a ticket (event)',        french: 'un billet' },
-        { id: 12, english: 'congratulations',         french: 'félicitations' },
-        { id: 13, english: 'a guest',                 french: 'un(e) invité(e)' },
-        { id: 14, english: 'a host',                  french: 'un(e) hôte' },
-        { id: 15, english: 'a banquet / feast',       french: 'un banquet' },
-        { id: 16, english: 'a toast (speech)',        french: 'un toast' },
-        { id: 17, english: 'champagne',               french: 'le champagne' },
-        { id: 18, english: 'a souvenir / memory',     french: 'un souvenir' },
-        { id: 19, english: 'a tradition',             french: 'une tradition' },
-        { id: 20, english: 'a programme',             french: 'un programme' },
-    ] },
-    { level: 'A2', unit: 1, "id":"food-culture","title":"Culture culinaire","titleFR":"Culture culinaire","description":"Gastronomie, cuisine et traditions alimentaires françaises","descriptionFR":"Gastronomie, cuisine et traditions alimentaires françaises","icon":"🥗","color":"#EF4444","wordCount":0, words: [
-        { id: 1,  english: 'a bakery',                      french: 'une boulangerie' },
-        { id: 2,  english: 'a cake shop / patisserie',      french: 'une pâtisserie' },
-        { id: 3,  english: 'a delicatessen',                french: 'une charcuterie' },
-        { id: 4,  english: 'a cheese shop',                 french: 'une fromagerie' },
-        { id: 5,  english: 'a grocer\'s / small food shop', french: 'une épicerie' },
-        { id: 6,  english: 'a market',                      french: 'un marché' },
-        { id: 7,  english: 'a recipe',                      french: 'une recette' },
-        { id: 8,  english: 'an ingredient',                 french: 'un ingrédient' },
-        { id: 9,  english: 'to cook',                       french: 'cuisiner' },
-        { id: 10, english: 'pre-dinner drinks / aperitif',  french: 'l\'apéritif' },
-        { id: 11, english: 'a starter / appetiser',         french: 'une entrée' },
-        { id: 12, english: 'a main course',                 french: 'un plat principal' },
-        { id: 13, english: 'dessert',                       french: 'le dessert' },
-        { id: 14, english: 'a set menu',                    french: 'un menu' },
-        { id: 15, english: 'a (à la carte) menu',           french: 'la carte' },
-        { id: 16, english: 'a portion / serving',           french: 'une portion' },
-        { id: 17, english: 'vegetarian',                    french: 'végétarien(ne)' },
-        { id: 18, english: 'a regional speciality',         french: 'une spécialité' },
-        { id: 19, english: 'terroir (local land and produce)', french: 'le terroir' },
-        { id: 20, english: 'home-made',                     french: 'fait(e) maison' },
-    ] },
-    { level: 'A2', unit: 3, "id":"health-doctor","title":"Santé & Médecin","titleFR":"Santé & Médecin","description":"Vocabulaire médical et consultations chez le médecin","descriptionFR":"Vocabulaire médical et consultations chez le médecin","icon":"🩺","color":"#DC2626","wordCount":0, words: [
-        { id: 1,  english: 'a doctor / GP',                 french: 'un médecin' },
-        { id: 2,  english: 'a prescription',                french: 'une ordonnance' },
-        { id: 3,  english: 'a medication / medicine',       french: 'un médicament' },
-        { id: 4,  english: 'pain / an ache',                french: 'une douleur' },
-        { id: 5,  english: 'a fever',                       french: 'la fièvre' },
-        { id: 6,  english: 'a cold',                        french: 'un rhume' },
-        { id: 7,  english: 'the flu / influenza',           french: 'la grippe' },
-        { id: 8,  english: 'an allergy',                    french: 'une allergie' },
-        { id: 9,  english: 'an injury / a wound',           french: 'une blessure' },
-        { id: 10, english: 'A&E / emergency room',          french: 'les urgences' },
-        { id: 11, english: 'a nurse',                       french: 'un(e) infirmier(-ière)' },
-        { id: 12, english: 'an appointment',                french: 'un rendez-vous' },
-        { id: 13, english: 'a symptom',                     french: 'un symptôme' },
-        { id: 14, english: 'treatment',                     french: 'un traitement' },
-        { id: 15, english: 'a tablet / pill',               french: 'un comprimé' },
-        { id: 16, english: 'syrup / liquid medicine',       french: 'un sirop' },
-        { id: 17, english: 'a plaster / bandage',           french: 'un pansement' },
-        { id: 18, english: 'blood pressure',                french: 'la tension' },
-        { id: 19, english: 'an X-ray / scan',               french: 'une radio' },
-        { id: 20, english: 'an examination / check-up',     french: 'un examen' },
-    ] },
-    { level: 'A2', unit: 1, "id":"personality-character","title":"Personnalité & Caractère","titleFR":"Personnalité & Caractère","description":"Décrire les traits de personnalité et le caractère","descriptionFR":"Décrire les traits de personnalité et le caractère","icon":"🧑","color":"#F97316","wordCount":0, words: [
-        { id: 1,  english: 'generous',     french: 'généreux(-euse)' },
-        { id: 2,  english: 'shy / timid',  french: 'timide' },
-        { id: 3,  english: 'brave / courageous', french: 'courageux(-euse)' },
-        { id: 4,  english: 'patient',      french: 'patient(e)' },
-        { id: 5,  english: 'curious',      french: 'curieux(-euse)' },
-        { id: 6,  english: 'honest',       french: 'honnête' },
-        { id: 7,  english: 'funny / amusing', french: 'drôle' },
-        { id: 8,  english: 'serious',      french: 'sérieux(-euse)' },
-        { id: 9,  english: 'creative',     french: 'créatif(-ive)' },
-        { id: 10, english: 'ambitious',    french: 'ambitieux(-euse)' },
-        { id: 11, english: 'lazy',         french: 'paresseux(-euse)' },
-        { id: 12, english: 'chatty / talkative', french: 'bavard(e)' },
-        { id: 13, english: 'discreet / reserved', french: 'discret(-ète)' },
-        { id: 14, english: 'stubborn',     french: 'têtu(e)' },
-        { id: 15, english: 'optimistic',   french: 'optimiste' },
-        { id: 16, english: 'pessimistic',  french: 'pessimiste' },
-        { id: 17, english: 'sociable',     french: 'sociable' },
-        { id: 18, english: 'independent',  french: 'indépendant(e)' },
-        { id: 19, english: 'sensitive',    french: 'sensible' },
-        { id: 20, english: 'reliable / trustworthy', french: 'fiable' },
-    ] },
-    { level: 'A2', unit: 1, "id":"seasons-activities","title":"Saisons & Activités","titleFR":"Saisons & Activités","description":"Vocabulaire saisonnier et activités de loisirs","descriptionFR":"Vocabulaire saisonnier et activités de loisirs","icon":"🍂","color":"#D97706","wordCount":0, words: [
-        { id: 1,  english: 'skiing',                        french: 'le ski' },
-        { id: 2,  english: 'the beach',                     french: 'la plage' },
-        { id: 3,  english: 'gardening',                     french: 'le jardinage' },
-        { id: 4,  english: 'hiking / a hike',               french: 'la randonnée' },
-        { id: 5,  english: 'a picnic',                      french: 'un pique-nique' },
-        { id: 6,  english: 'swimming',                      french: 'la natation' },
-        { id: 7,  english: 'cycling',                       french: 'le vélo' },
-        { id: 8,  english: 'camping',                       french: 'le camping' },
-        { id: 9,  english: 'Bastille Day (14 July)',         french: 'la fête nationale' },
-        { id: 10, english: 'Christmas',                     french: 'Noël' },
-        { id: 11, english: 'Easter',                        french: 'Pâques' },
-        { id: 12, english: 'the grape harvest / vendanges', french: 'les vendanges' },
-        { id: 13, english: 'back to school / September',    french: 'la rentrée' },
-        { id: 14, english: 'school holidays',               french: 'les vacances scolaires' },
-        { id: 15, english: 'a long weekend / bridge',       french: 'un pont' },
-        { id: 16, english: 'a public holiday',              french: 'un jour férié' },
-        { id: 17, english: 'the sales',                     french: 'les soldes' },
-        { id: 18, english: 'a carnival',                    french: 'un carnaval' },
-        { id: 19, english: 'Valentine\'s Day',              french: 'la Saint-Valentin' },
-        { id: 20, english: 'Mother\'s Day',                 french: 'la fête des mères' },
-    ] },
-    { level: 'A2', unit: 3, "id":"transport-travel","title":"Transport & Voyage","titleFR":"Transport & Voyage","description":"Voyages longue distance, aéroports et réservations","descriptionFR":"Voyages longue distance, aéroports et réservations","icon":"✈️","color":"#2563EB","wordCount":0, words: [
-        { id: 1,  english: 'a ticket (train / plane)',       french: 'un billet' },
-        { id: 2,  english: 'a booking / a reservation',      french: 'une réservation' },
-        { id: 3,  english: 'a timetable / schedule',         french: 'un horaire' },
-        { id: 4,  english: 'departure',                      french: 'le départ' },
-        { id: 5,  english: 'arrival',                        french: 'l\'arrivée' },
-        { id: 6,  english: 'a connection / transfer',        french: 'une correspondance' },
-        { id: 7,  english: 'a delay',                        french: 'un retard' },
-        { id: 8,  english: 'first class',                    french: 'la première classe' },
-        { id: 9,  english: 'luggage / baggage',              french: 'les bagages' },
-        { id: 10, english: 'a suitcase',                     french: 'une valise' },
-        { id: 11, english: 'a passport',                     french: 'un passeport' },
-        { id: 12, english: 'customs',                        french: 'la douane' },
-        { id: 13, english: 'a flight',                       french: 'un vol' },
-        { id: 14, english: 'boarding',                       french: 'l\'embarquement' },
-        { id: 15, english: 'a stopover / layover',           french: 'une escale' },
-        { id: 16, english: 'a seat',                         french: 'un siège' },
-        { id: 17, english: 'a (train) carriage / car',       french: 'un wagon' },
-        { id: 18, english: 'a ticket inspector / conductor', french: 'un contrôleur' },
-        { id: 19, english: 'a cancellation',                 french: 'une annulation' },
-        { id: 20, english: 'a refund',                       french: 'un remboursement' },
-    ] },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-vocab-01",
+    "title": "Événements et étapes de vie",
+    "titleFR": "Événements et étapes de vie",
+    "description": "Étudier des expressions utiles en contexte pour événements et étapes de vie.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : événements et étapes de vie.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "achievement",
+        "french": "réussite"
+      },
+      {
+        "id": 2,
+        "english": "retirement",
+        "french": "retraite"
+      },
+      {
+        "id": 3,
+        "english": "promotion",
+        "french": "promotion professionnelle"
+      },
+      {
+        "id": 4,
+        "english": "graduation",
+        "french": "remise de diplôme"
+      },
+      {
+        "id": 5,
+        "english": "celebration",
+        "french": "fête / célébration"
+      },
+      {
+        "id": 6,
+        "english": "reunion",
+        "french": "retrouvailles"
+      },
+      {
+        "id": 7,
+        "english": "anniversary",
+        "french": "anniversaire d’un événement"
+      },
+      {
+        "id": 8,
+        "english": "childhood",
+        "french": "enfance"
+      },
+      {
+        "id": 9,
+        "english": "adulthood",
+        "french": "âge adulte"
+      },
+      {
+        "id": 10,
+        "english": "milestone",
+        "french": "étape importante"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-reading-vocab-01",
+    "title": "Vocabulaire : The Day the Shop Closed",
+    "titleFR": "Vocabulaire : The Day the Shop Closed",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "closed its doors",
+        "french": "a fermé définitivement"
+      },
+      {
+        "id": 2,
+        "english": "counter",
+        "french": "comptoir"
+      },
+      {
+        "id": 3,
+        "english": "thank-you card",
+        "french": "carte de remerciement"
+      },
+      {
+        "id": 4,
+        "english": "photographer",
+        "french": "photographe"
+      },
+      {
+        "id": 5,
+        "english": "wooden sign",
+        "french": "enseigne en bois"
+      },
+      {
+        "id": 6,
+        "english": "memories",
+        "french": "souvenirs"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-reading-vocab-02",
+    "title": "Vocabulaire : The Unexpected Birthday",
+    "titleFR": "Vocabulaire : The Unexpected Birthday",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "surprise dinner",
+        "french": "dîner surprise"
+      },
+      {
+        "id": 2,
+        "english": "lights were off",
+        "french": "les lumières étaient éteintes"
+      },
+      {
+        "id": 3,
+        "english": "shouted",
+        "french": "ont crié"
+      },
+      {
+        "id": 4,
+        "english": "portions",
+        "french": "portions"
+      },
+      {
+        "id": 5,
+        "english": "homemade",
+        "french": "fait maison"
+      },
+      {
+        "id": 6,
+        "english": "shift",
+        "french": "service de travail"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-vocab-02",
+    "title": "Souvenirs, émotions et réactions",
+    "titleFR": "Souvenirs, émotions et réactions",
+    "description": "Étudier des expressions utiles en contexte pour souvenirs, émotions et réactions.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : souvenirs, émotions et réactions.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 9,
+    "words": [
+      {
+        "id": 1,
+        "english": "relieved",
+        "french": "soulagé"
+      },
+      {
+        "id": 2,
+        "english": "disappointed",
+        "french": "déçu"
+      },
+      {
+        "id": 3,
+        "english": "proud",
+        "french": "fier"
+      },
+      {
+        "id": 4,
+        "english": "embarrassed",
+        "french": "gêné / embarrassé"
+      },
+      {
+        "id": 5,
+        "english": "curious",
+        "french": "curieux"
+      },
+      {
+        "id": 6,
+        "english": "frustrated",
+        "french": "frustré"
+      },
+      {
+        "id": 7,
+        "english": "grateful",
+        "french": "reconnaissant"
+      },
+      {
+        "id": 8,
+        "english": "astonished",
+        "french": "étonné"
+      },
+      {
+        "id": 9,
+        "english": "confused",
+        "french": "perplexe"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-reading-vocab-03",
+    "title": "Vocabulaire : Whose Story Is This?",
+    "titleFR": "Vocabulaire : Whose Story Is This?",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 4,
+    "words": [
+      {
+        "id": 1,
+        "english": "sailor",
+        "french": "marin"
+      },
+      {
+        "id": 2,
+        "english": "crossed the Atlantic",
+        "french": "a traversé l’Atlantique"
+      },
+      {
+        "id": 3,
+        "english": "compass",
+        "french": "boussole"
+      },
+      {
+        "id": 4,
+        "english": "protecting",
+        "french": "protéger"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-vocab-03",
+    "title": "Relations et descriptions nuancées",
+    "titleFR": "Relations et descriptions nuancées",
+    "description": "Étudier des expressions utiles en contexte pour relations et descriptions nuancées.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : relations et descriptions nuancées.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "supportive",
+        "french": "qui apporte du soutien"
+      },
+      {
+        "id": 2,
+        "english": "reliable friend",
+        "french": "ami fiable"
+      },
+      {
+        "id": 3,
+        "english": "generous",
+        "french": "généreux"
+      },
+      {
+        "id": 4,
+        "english": "patient",
+        "french": "patient"
+      },
+      {
+        "id": 5,
+        "english": "thoughtful",
+        "french": "attentionné"
+      },
+      {
+        "id": 6,
+        "english": "independent",
+        "french": "indépendant"
+      },
+      {
+        "id": 7,
+        "english": "honest",
+        "french": "honnête"
+      },
+      {
+        "id": 8,
+        "english": "shy",
+        "french": "timide"
+      },
+      {
+        "id": 9,
+        "english": "confident",
+        "french": "confiant en soi"
+      },
+      {
+        "id": 10,
+        "english": "respectful",
+        "french": "respectueux"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 1,
+    "id": "a2en-reading-vocab-04",
+    "title": "Vocabulaire : A Message from an Old Friend",
+    "titleFR": "Vocabulaire : A Message from an Old Friend",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "manager",
+        "french": "responsable"
+      },
+      {
+        "id": 2,
+        "english": "mechanic",
+        "french": "mécanicien"
+      },
+      {
+        "id": 3,
+        "english": "repair workshop",
+        "french": "atelier de réparation"
+      },
+      {
+        "id": 4,
+        "english": "business was slow",
+        "french": "les affaires démarraient lentement"
+      },
+      {
+        "id": 5,
+        "english": "recommend",
+        "french": "recommandent"
+      },
+      {
+        "id": 6,
+        "english": "free tickets",
+        "french": "billets gratuits"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-vocab-04",
+    "title": "Problèmes de voyage",
+    "titleFR": "Problèmes de voyage",
+    "description": "Étudier des expressions utiles en contexte pour problèmes de voyage.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : problèmes de voyage.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "disruption",
+        "french": "perturbation"
+      },
+      {
+        "id": 2,
+        "english": "connection",
+        "french": "correspondance"
+      },
+      {
+        "id": 3,
+        "english": "cancellation",
+        "french": "annulation"
+      },
+      {
+        "id": 4,
+        "english": "detour",
+        "french": "détour"
+      },
+      {
+        "id": 5,
+        "english": "traffic jam",
+        "french": "embouteillage"
+      },
+      {
+        "id": 6,
+        "english": "diversion",
+        "french": "itinéraire de déviation"
+      },
+      {
+        "id": 7,
+        "english": "lost luggage",
+        "french": "bagages perdus"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-reading-vocab-05",
+    "title": "Vocabulaire : Rain at the Station",
+    "titleFR": "Vocabulaire : Rain at the Station",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "information screen",
+        "french": "écran d’information"
+      },
+      {
+        "id": 2,
+        "english": "announcement",
+        "french": "annonce sonore"
+      },
+      {
+        "id": 3,
+        "english": "speakers",
+        "french": "haut-parleurs"
+      },
+      {
+        "id": 4,
+        "english": "railway line",
+        "french": "ligne ferroviaire"
+      },
+      {
+        "id": 5,
+        "english": "flooding",
+        "french": "inondation"
+      },
+      {
+        "id": 6,
+        "english": "safely",
+        "french": "en toute sécurité"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-reading-vocab-06",
+    "title": "Vocabulaire : A Wrong Turn in the Hills",
+    "titleFR": "Vocabulaire : A Wrong Turn in the Hills",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "narrow path",
+        "french": "sentier étroit"
+      },
+      {
+        "id": 2,
+        "english": "mist",
+        "french": "brume"
+      },
+      {
+        "id": 3,
+        "english": "valley",
+        "french": "vallée"
+      },
+      {
+        "id": 4,
+        "english": "slope",
+        "french": "pente"
+      },
+      {
+        "id": 5,
+        "english": "snacks",
+        "french": "en-cas"
+      },
+      {
+        "id": 6,
+        "english": "cleared",
+        "french": "s’est dissipé"
+      },
+      {
+        "id": 7,
+        "english": "car park",
+        "french": "parking"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-vocab-05",
+    "title": "Paysages et souvenirs de voyage",
+    "titleFR": "Paysages et souvenirs de voyage",
+    "description": "Étudier des expressions utiles en contexte pour paysages et souvenirs de voyage.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : paysages et souvenirs de voyage.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 9,
+    "words": [
+      {
+        "id": 1,
+        "english": "waterfall",
+        "french": "cascade"
+      },
+      {
+        "id": 2,
+        "english": "cliff",
+        "french": "falaise"
+      },
+      {
+        "id": 3,
+        "english": "shore",
+        "french": "rivage"
+      },
+      {
+        "id": 4,
+        "english": "countryside",
+        "french": "campagne"
+      },
+      {
+        "id": 5,
+        "english": "footpath",
+        "french": "sentier pédestre"
+      },
+      {
+        "id": 6,
+        "english": "wildlife",
+        "french": "faune sauvage"
+      },
+      {
+        "id": 7,
+        "english": "sunset",
+        "french": "coucher de soleil"
+      },
+      {
+        "id": 8,
+        "english": "coastal",
+        "french": "côtier"
+      },
+      {
+        "id": 9,
+        "english": "summit",
+        "french": "sommet"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-reading-vocab-07",
+    "title": "Vocabulaire : Could You Help with My Booking?",
+    "titleFR": "Vocabulaire : Could You Help with My Booking?",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 5,
+    "words": [
+      {
+        "id": 1,
+        "english": "confirmation",
+        "french": "confirmation"
+      },
+      {
+        "id": 2,
+        "english": "shared room",
+        "french": "chambre partagée"
+      },
+      {
+        "id": 3,
+        "english": "booking number",
+        "french": "numéro de réservation"
+      },
+      {
+        "id": 4,
+        "english": "away from the lift",
+        "french": "loin de l’ascenseur"
+      },
+      {
+        "id": 5,
+        "english": "checking out",
+        "french": "départ de l’hôtel"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 2,
+    "id": "a2en-reading-vocab-08",
+    "title": "Vocabulaire : Lost and Found at the Airport",
+    "titleFR": "Vocabulaire : Lost and Found at the Airport",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "backpack",
+        "french": "sac à dos"
+      },
+      {
+        "id": 2,
+        "english": "ribbon",
+        "french": "ruban"
+      },
+      {
+        "id": 3,
+        "english": "handle",
+        "french": "poignée"
+      },
+      {
+        "id": 4,
+        "english": "headphones",
+        "french": "casque audio"
+      },
+      {
+        "id": 5,
+        "english": "paperback novel",
+        "french": "roman de poche"
+      },
+      {
+        "id": 6,
+        "english": "boarding announcement",
+        "french": "annonce d’embarquement"
+      },
+      {
+        "id": 7,
+        "english": "reference number",
+        "french": "numéro de dossier"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-vocab-06",
+    "title": "Qualités d’un logement",
+    "titleFR": "Qualités d’un logement",
+    "description": "Étudier des expressions utiles en contexte pour qualités d’un logement.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : qualités d’un logement.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "spacious",
+        "french": "spacieux"
+      },
+      {
+        "id": 2,
+        "english": "compact",
+        "french": "compact"
+      },
+      {
+        "id": 3,
+        "english": "affordable",
+        "french": "abordable"
+      },
+      {
+        "id": 4,
+        "english": "peaceful",
+        "french": "paisible"
+      },
+      {
+        "id": 5,
+        "english": "convenient",
+        "french": "pratique"
+      },
+      {
+        "id": 6,
+        "english": "overcrowded",
+        "french": "surpeuplé"
+      },
+      {
+        "id": 7,
+        "english": "well-equipped",
+        "french": "bien équipé"
+      },
+      {
+        "id": 8,
+        "english": "insulated",
+        "french": "isolé"
+      },
+      {
+        "id": 9,
+        "english": "accessible",
+        "french": "accessible"
+      },
+      {
+        "id": 10,
+        "english": "unfurnished",
+        "french": "non meublé"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-reading-vocab-09",
+    "title": "Vocabulaire : Our Two Neighbourhoods",
+    "titleFR": "Vocabulaire : Our Two Neighbourhoods",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "reliable",
+        "french": "fiable"
+      },
+      {
+        "id": 2,
+        "english": "farther away",
+        "french": "plus éloigné"
+      },
+      {
+        "id": 3,
+        "english": "opposite change",
+        "french": "changement inverse"
+      },
+      {
+        "id": 4,
+        "english": "studio flat",
+        "french": "studio"
+      },
+      {
+        "id": 5,
+        "english": "pavement",
+        "french": "trottoir"
+      },
+      {
+        "id": 6,
+        "english": "on foot",
+        "french": "à pied"
+      },
+      {
+        "id": 7,
+        "english": "advantages",
+        "french": "avantages"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-reading-vocab-10",
+    "title": "Vocabulaire : Choosing the Best Flat",
+    "titleFR": "Vocabulaire : Choosing the Best Flat",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "cheapest",
+        "french": "le moins cher"
+      },
+      {
+        "id": 2,
+        "english": "campus",
+        "french": "campus"
+      },
+      {
+        "id": 3,
+        "english": "shared living area",
+        "french": "espace de vie commun"
+      },
+      {
+        "id": 4,
+        "english": "bicycle storage",
+        "french": "local à vélos"
+      },
+      {
+        "id": 5,
+        "english": "public transport",
+        "french": "transports en commun"
+      },
+      {
+        "id": 6,
+        "english": "deposit",
+        "french": "caution"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-vocab-07",
+    "title": "Vie de quartier et services",
+    "titleFR": "Vie de quartier et services",
+    "description": "Étudier des expressions utiles en contexte pour vie de quartier et services.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : vie de quartier et services.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "recycling point",
+        "french": "point de collecte"
+      },
+      {
+        "id": 2,
+        "english": "pedestrian area",
+        "french": "zone piétonne"
+      },
+      {
+        "id": 3,
+        "english": "community centre",
+        "french": "centre socioculturel"
+      },
+      {
+        "id": 4,
+        "english": "bike lane",
+        "french": "piste cyclable"
+      },
+      {
+        "id": 5,
+        "english": "public square",
+        "french": "place publique"
+      },
+      {
+        "id": 6,
+        "english": "street market",
+        "french": "marché de rue"
+      },
+      {
+        "id": 7,
+        "english": "resident permit",
+        "french": "autorisation résidentielle"
+      },
+      {
+        "id": 8,
+        "english": "local council",
+        "french": "collectivité locale"
+      },
+      {
+        "id": 9,
+        "english": "public garden",
+        "french": "jardin public"
+      },
+      {
+        "id": 10,
+        "english": "neighbourhood association",
+        "french": "association de quartier"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-reading-vocab-11",
+    "title": "Vocabulaire : Small Room, Better Ideas",
+    "titleFR": "Vocabulaire : Small Room, Better Ideas",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 5,
+    "words": [
+      {
+        "id": 1,
+        "english": "folding chair",
+        "french": "chaise pliante"
+      },
+      {
+        "id": 2,
+        "english": "fits",
+        "french": "tient / rentre"
+      },
+      {
+        "id": 3,
+        "english": "reading lamp",
+        "french": "lampe de lecture"
+      },
+      {
+        "id": 4,
+        "english": "tidy",
+        "french": "rangé"
+      },
+      {
+        "id": 5,
+        "english": "space",
+        "french": "espace"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 3,
+    "id": "a2en-reading-vocab-12",
+    "title": "Vocabulaire : The Street That Changed",
+    "titleFR": "Vocabulaire : The Street That Changed",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "community garden",
+        "french": "jardin partagé"
+      },
+      {
+        "id": 2,
+        "english": "repair café",
+        "french": "atelier de réparation participatif"
+      },
+      {
+        "id": 3,
+        "english": "volunteers",
+        "french": "bénévoles"
+      },
+      {
+        "id": 4,
+        "english": "council",
+        "french": "conseil municipal"
+      },
+      {
+        "id": 5,
+        "english": "survey",
+        "french": "sondage"
+      },
+      {
+        "id": 6,
+        "english": "crossings",
+        "french": "passages piétons"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-vocab-08",
+    "title": "Symptômes et bien-être",
+    "titleFR": "Symptômes et bien-être",
+    "description": "Étudier des expressions utiles en contexte pour symptômes et bien-être.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : symptômes et bien-être.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "sore throat",
+        "french": "mal de gorge"
+      },
+      {
+        "id": 2,
+        "english": "cough",
+        "french": "toux"
+      },
+      {
+        "id": 3,
+        "english": "dizziness",
+        "french": "vertiges"
+      },
+      {
+        "id": 4,
+        "english": "rash",
+        "french": "éruption cutanée"
+      },
+      {
+        "id": 5,
+        "english": "stomach ache",
+        "french": "mal de ventre"
+      },
+      {
+        "id": 6,
+        "english": "sleeplessness",
+        "french": "insomnie"
+      },
+      {
+        "id": 7,
+        "english": "stress level",
+        "french": "niveau de stress"
+      },
+      {
+        "id": 8,
+        "english": "recovery",
+        "french": "rétablissement"
+      },
+      {
+        "id": 9,
+        "english": "appointment reminder",
+        "french": "rappel de rendez-vous"
+      },
+      {
+        "id": 10,
+        "english": "physical activity",
+        "french": "activité physique"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-reading-vocab-13",
+    "title": "Vocabulaire : What Is in the Lunchbox?",
+    "titleFR": "Vocabulaire : What Is in the Lunchbox?",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "lunchbox",
+        "french": "boîte-repas"
+      },
+      {
+        "id": 2,
+        "english": "vegetarian choices",
+        "french": "options végétariennes"
+      },
+      {
+        "id": 3,
+        "english": "nut allergies",
+        "french": "allergies aux fruits à coque"
+      },
+      {
+        "id": 4,
+        "english": "ingredient list",
+        "french": "liste des ingrédients"
+      },
+      {
+        "id": 5,
+        "english": "balanced meal",
+        "french": "repas équilibré"
+      },
+      {
+        "id": 6,
+        "english": "packet of sweets",
+        "french": "paquet de bonbons"
+      },
+      {
+        "id": 7,
+        "english": "orders",
+        "french": "commandes"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-reading-vocab-14",
+    "title": "Vocabulaire : An Email after a Check-up",
+    "titleFR": "Vocabulaire : An Email after a Check-up",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "keep a diary",
+        "french": "tenir un journal"
+      },
+      {
+        "id": 2,
+        "english": "headaches",
+        "french": "maux de tête"
+      },
+      {
+        "id": 3,
+        "english": "blood pressure",
+        "french": "tension artérielle"
+      },
+      {
+        "id": 4,
+        "english": "skip lunch",
+        "french": "sauter le déjeuner"
+      },
+      {
+        "id": 5,
+        "english": "position",
+        "french": "position"
+      },
+      {
+        "id": 6,
+        "english": "reusable bottle",
+        "french": "gourde réutilisable"
+      },
+      {
+        "id": 7,
+        "english": "routine",
+        "french": "routine"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-vocab-09",
+    "title": "Repas équilibrés et cuisine",
+    "titleFR": "Repas équilibrés et cuisine",
+    "description": "Étudier des expressions utiles en contexte pour repas équilibrés et cuisine.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : repas équilibrés et cuisine.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "wholegrain",
+        "french": "complet (céréales)"
+      },
+      {
+        "id": 2,
+        "english": "portion size",
+        "french": "taille de portion"
+      },
+      {
+        "id": 3,
+        "english": "protein",
+        "french": "protéines"
+      },
+      {
+        "id": 4,
+        "english": "fibre",
+        "french": "fibres"
+      },
+      {
+        "id": 5,
+        "english": "vegetarian dish",
+        "french": "plat végétarien"
+      },
+      {
+        "id": 6,
+        "english": "leftovers",
+        "french": "restes (d’un repas)"
+      },
+      {
+        "id": 7,
+        "english": "recipe",
+        "french": "recette"
+      },
+      {
+        "id": 8,
+        "english": "boil",
+        "french": "faire bouillir"
+      },
+      {
+        "id": 9,
+        "english": "roast",
+        "french": "faire rôtir"
+      },
+      {
+        "id": 10,
+        "english": "seasoning",
+        "french": "assaisonnement"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-reading-vocab-15",
+    "title": "Vocabulaire : Rules at the Community Kitchen",
+    "titleFR": "Vocabulaire : Rules at the Community Kitchen",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 5,
+    "words": [
+      {
+        "id": 1,
+        "english": "closed shoes",
+        "french": "chaussures fermées"
+      },
+      {
+        "id": 2,
+        "english": "apron",
+        "french": "tablier"
+      },
+      {
+        "id": 3,
+        "english": "coordinator",
+        "french": "coordinateur"
+      },
+      {
+        "id": 4,
+        "english": "equipment",
+        "french": "matériel"
+      },
+      {
+        "id": 5,
+        "english": "session",
+        "french": "séance"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 4,
+    "id": "a2en-reading-vocab-16",
+    "title": "Vocabulaire : The Dentist Is Running Late",
+    "titleFR": "Vocabulaire : The Dentist Is Running Late",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 4,
+    "words": [
+      {
+        "id": 1,
+        "english": "dental",
+        "french": "dentaire"
+      },
+      {
+        "id": 2,
+        "english": "running late",
+        "french": "en retard"
+      },
+      {
+        "id": 3,
+        "english": "emergency",
+        "french": "urgence"
+      },
+      {
+        "id": 4,
+        "english": "waiting room",
+        "french": "salle d’attente"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-vocab-10",
+    "title": "Organisation et projets",
+    "titleFR": "Organisation et projets",
+    "description": "Étudier des expressions utiles en contexte pour organisation et projets.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : organisation et projets.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "deadline",
+        "french": "date limite"
+      },
+      {
+        "id": 2,
+        "english": "availability",
+        "french": "disponibilité"
+      },
+      {
+        "id": 3,
+        "english": "arrangement",
+        "french": "organisation / accord"
+      },
+      {
+        "id": 4,
+        "english": "schedule change",
+        "french": "changement de programme"
+      },
+      {
+        "id": 5,
+        "english": "reservation fee",
+        "french": "frais de réservation"
+      },
+      {
+        "id": 6,
+        "english": "confirmation email",
+        "french": "courriel de confirmation"
+      },
+      {
+        "id": 7,
+        "english": "backup plan",
+        "french": "plan de secours"
+      },
+      {
+        "id": 8,
+        "english": "event organiser",
+        "french": "organisateur d’événement"
+      },
+      {
+        "id": 9,
+        "english": "reminder",
+        "french": "rappel"
+      },
+      {
+        "id": 10,
+        "english": "invitation card",
+        "french": "carte d’invitation"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-reading-vocab-17",
+    "title": "Vocabulaire : A Weekend to Look Forward To",
+    "titleFR": "Vocabulaire : A Weekend to Look Forward To",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "photography exhibition",
+        "french": "exposition de photographie"
+      },
+      {
+        "id": 2,
+        "english": "old factory",
+        "french": "ancienne usine"
+      },
+      {
+        "id": 3,
+        "english": "booked tickets",
+        "french": "billets réservés"
+      },
+      {
+        "id": 4,
+        "english": "midday",
+        "french": "midi"
+      },
+      {
+        "id": 5,
+        "english": "works better",
+        "french": "convient mieux"
+      },
+      {
+        "id": 6,
+        "english": "allowed",
+        "french": "autorisé"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-reading-vocab-18",
+    "title": "Vocabulaire : A Note from the Events Team",
+    "titleFR": "Vocabulaire : A Note from the Events Team",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "team picnic",
+        "french": "pique-nique d’équipe"
+      },
+      {
+        "id": 2,
+        "english": "exact location",
+        "french": "lieu exact"
+      },
+      {
+        "id": 3,
+        "english": "second floor",
+        "french": "deuxième étage"
+      },
+      {
+        "id": 4,
+        "english": "share",
+        "french": "partager"
+      },
+      {
+        "id": 5,
+        "english": "cups",
+        "french": "gobelets"
+      },
+      {
+        "id": 6,
+        "english": "plates",
+        "french": "assiettes"
+      },
+      {
+        "id": 7,
+        "english": "napkins",
+        "french": "serviettes en papier"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-vocab-11",
+    "title": "Prévisions et choix",
+    "titleFR": "Prévisions et choix",
+    "description": "Étudier des expressions utiles en contexte pour prévisions et choix.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : prévisions et choix.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "prediction",
+        "french": "prévision"
+      },
+      {
+        "id": 2,
+        "english": "chance of rain",
+        "french": "risque de pluie"
+      },
+      {
+        "id": 3,
+        "english": "likely",
+        "french": "probable"
+      },
+      {
+        "id": 4,
+        "english": "unlikely",
+        "french": "peu probable"
+      },
+      {
+        "id": 5,
+        "english": "alternative",
+        "french": "solution de rechange"
+      },
+      {
+        "id": 6,
+        "english": "decision",
+        "french": "décision"
+      },
+      {
+        "id": 7,
+        "english": "consequence",
+        "french": "conséquence"
+      },
+      {
+        "id": 8,
+        "english": "condition",
+        "french": "condition"
+      },
+      {
+        "id": 9,
+        "english": "possibility",
+        "french": "possibilité"
+      },
+      {
+        "id": 10,
+        "english": "risk",
+        "french": "risque"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-reading-vocab-19",
+    "title": "Vocabulaire : If You Miss the Last Bus",
+    "titleFR": "Vocabulaire : If You Miss the Last Bus",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "night train",
+        "french": "train de nuit"
+      },
+      {
+        "id": 2,
+        "english": "taxi rank",
+        "french": "station de taxis"
+      },
+      {
+        "id": 3,
+        "english": "available",
+        "french": "disponible"
+      },
+      {
+        "id": 4,
+        "english": "transport helpline",
+        "french": "assistance transports"
+      },
+      {
+        "id": 5,
+        "english": "operator",
+        "french": "exploitant"
+      },
+      {
+        "id": 6,
+        "english": "live timetable",
+        "french": "horaires en temps réel"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 5,
+    "id": "a2en-reading-vocab-20",
+    "title": "Vocabulaire : An Invitation with Two Plans",
+    "titleFR": "Vocabulaire : An Invitation with Two Plans",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "documentary",
+        "french": "documentaire"
+      },
+      {
+        "id": 2,
+        "english": "street artists",
+        "french": "artistes de rue"
+      },
+      {
+        "id": 3,
+        "english": "gallery",
+        "french": "galerie"
+      },
+      {
+        "id": 4,
+        "english": "screening",
+        "french": "projection"
+      },
+      {
+        "id": 5,
+        "english": "reserve a seat",
+        "french": "réserver une place"
+      },
+      {
+        "id": 6,
+        "english": "afterwards",
+        "french": "ensuite"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-vocab-12",
+    "title": "Expériences et réalisations",
+    "titleFR": "Expériences et réalisations",
+    "description": "Étudier des expressions utiles en contexte pour expériences et réalisations.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : expériences et réalisations.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "challenge",
+        "french": "défi"
+      },
+      {
+        "id": 2,
+        "english": "opportunity",
+        "french": "occasion"
+      },
+      {
+        "id": 3,
+        "english": "discovery",
+        "french": "découverte"
+      },
+      {
+        "id": 4,
+        "english": "experiment",
+        "french": "expérience scientifique"
+      },
+      {
+        "id": 5,
+        "english": "project result",
+        "french": "résultat du projet"
+      },
+      {
+        "id": 6,
+        "english": "success story",
+        "french": "histoire de réussite"
+      },
+      {
+        "id": 7,
+        "english": "first attempt",
+        "french": "première tentative"
+      },
+      {
+        "id": 8,
+        "english": "progress",
+        "french": "progrès"
+      },
+      {
+        "id": 9,
+        "english": "new skill",
+        "french": "nouvelle compétence"
+      },
+      {
+        "id": 10,
+        "english": "award",
+        "french": "récompense"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-reading-vocab-21",
+    "title": "Vocabulaire : Have You Ever Tried It?",
+    "titleFR": "Vocabulaire : Have You Ever Tried It?",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "food bank",
+        "french": "banque alimentaire"
+      },
+      {
+        "id": 2,
+        "english": "strangers",
+        "french": "inconnus"
+      },
+      {
+        "id": 3,
+        "english": "book exchange",
+        "french": "échange de livres"
+      },
+      {
+        "id": 4,
+        "english": "experiences",
+        "french": "expériences"
+      },
+      {
+        "id": 5,
+        "english": "in common",
+        "french": "en commun"
+      },
+      {
+        "id": 6,
+        "english": "charity",
+        "french": "association caritative"
+      },
+      {
+        "id": 7,
+        "english": "absolutely",
+        "french": "absolument"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-reading-vocab-22",
+    "title": "Vocabulaire : The Parcel Has Just Arrived",
+    "titleFR": "Vocabulaire : The Parcel Has Just Arrived",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "replacement kettle",
+        "french": "bouilloire de remplacement"
+      },
+      {
+        "id": 2,
+        "english": "parcel",
+        "french": "colis"
+      },
+      {
+        "id": 3,
+        "english": "courier",
+        "french": "livreur"
+      },
+      {
+        "id": 4,
+        "english": "warehouse",
+        "french": "entrepôt"
+      },
+      {
+        "id": 5,
+        "english": "label",
+        "french": "étiquette"
+      },
+      {
+        "id": 6,
+        "english": "outer box",
+        "french": "carton extérieur"
+      },
+      {
+        "id": 7,
+        "english": "response",
+        "french": "réponse"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-vocab-13",
+    "title": "Culture et découvertes",
+    "titleFR": "Culture et découvertes",
+    "description": "Étudier des expressions utiles en contexte pour culture et découvertes.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : culture et découvertes.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "exhibit",
+        "french": "objet exposé"
+      },
+      {
+        "id": 2,
+        "english": "heritage",
+        "french": "patrimoine"
+      },
+      {
+        "id": 3,
+        "english": "tradition",
+        "french": "tradition"
+      },
+      {
+        "id": 4,
+        "english": "historic site",
+        "french": "site historique"
+      },
+      {
+        "id": 5,
+        "english": "artwork",
+        "french": "œuvre d’art"
+      },
+      {
+        "id": 6,
+        "english": "guided tour",
+        "french": "visite guidée"
+      },
+      {
+        "id": 7,
+        "english": "local legend",
+        "french": "légende locale"
+      },
+      {
+        "id": 8,
+        "english": "scientific research",
+        "french": "recherche scientifique"
+      },
+      {
+        "id": 9,
+        "english": "collection",
+        "french": "collection"
+      },
+      {
+        "id": 10,
+        "english": "invention",
+        "french": "invention"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-reading-vocab-23",
+    "title": "Vocabulaire : The First Time I Saw Snow",
+    "titleFR": "Vocabulaire : The First Time I Saw Snow",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "mild",
+        "french": "doux (climat)"
+      },
+      {
+        "id": 2,
+        "english": "curtains",
+        "french": "rideaux"
+      },
+      {
+        "id": 3,
+        "english": "borrowed",
+        "french": "emprunté"
+      },
+      {
+        "id": 4,
+        "english": "snowman",
+        "french": "bonhomme de neige"
+      },
+      {
+        "id": 5,
+        "english": "snowflakes",
+        "french": "flocons de neige"
+      },
+      {
+        "id": 6,
+        "english": "mountains",
+        "french": "montagnes"
+      },
+      {
+        "id": 7,
+        "english": "completely wet",
+        "french": "complètement trempé"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 6,
+    "id": "a2en-reading-vocab-24",
+    "title": "Vocabulaire : A Small Science Discovery",
+    "titleFR": "Vocabulaire : A Small Science Discovery",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "device",
+        "french": "dispositif"
+      },
+      {
+        "id": 2,
+        "english": "rainwater",
+        "french": "eau de pluie"
+      },
+      {
+        "id": 3,
+        "english": "container",
+        "french": "récipient"
+      },
+      {
+        "id": 4,
+        "english": "filter",
+        "french": "filtre"
+      },
+      {
+        "id": 5,
+        "english": "tested",
+        "french": "testé"
+      },
+      {
+        "id": 6,
+        "english": "regional science fair",
+        "french": "salon scientifique régional"
+      },
+      {
+        "id": 7,
+        "english": "litres",
+        "french": "litres"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-vocab-14",
+    "title": "Travail et compétences",
+    "titleFR": "Travail et compétences",
+    "description": "Étudier des expressions utiles en contexte pour travail et compétences.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : travail et compétences.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "colleague support",
+        "french": "soutien entre collègues"
+      },
+      {
+        "id": 2,
+        "english": "job vacancy",
+        "french": "offre d’emploi"
+      },
+      {
+        "id": 3,
+        "english": "workload",
+        "french": "charge de travail"
+      },
+      {
+        "id": 4,
+        "english": "responsibility",
+        "french": "responsabilité"
+      },
+      {
+        "id": 5,
+        "english": "training course",
+        "french": "formation"
+      },
+      {
+        "id": 6,
+        "english": "teamwork",
+        "french": "travail d’équipe"
+      },
+      {
+        "id": 7,
+        "english": "interview question",
+        "french": "question d’entretien"
+      },
+      {
+        "id": 8,
+        "english": "work experience",
+        "french": "expérience professionnelle"
+      },
+      {
+        "id": 9,
+        "english": "application letter",
+        "french": "lettre de candidature"
+      },
+      {
+        "id": 10,
+        "english": "skill development",
+        "french": "développement de compétences"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-reading-vocab-25",
+    "title": "Vocabulaire : The People Who Make the Podcast",
+    "titleFR": "Vocabulaire : The People Who Make the Podcast",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "podcast",
+        "french": "balado / podcast"
+      },
+      {
+        "id": 2,
+        "english": "presenter",
+        "french": "animateur"
+      },
+      {
+        "id": 3,
+        "english": "technician",
+        "french": "technicien"
+      },
+      {
+        "id": 4,
+        "english": "microphones",
+        "french": "micros"
+      },
+      {
+        "id": 5,
+        "english": "episode",
+        "french": "épisode"
+      },
+      {
+        "id": 6,
+        "english": "listeners",
+        "french": "auditeurs"
+      },
+      {
+        "id": 7,
+        "english": "recordings",
+        "french": "enregistrements"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-reading-vocab-26",
+    "title": "Vocabulaire : Different Opinions on Working from Home",
+    "titleFR": "Vocabulaire : Different Opinions on Working from Home",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "concentrate",
+        "french": "se concentrer"
+      },
+      {
+        "id": 2,
+        "english": "employer",
+        "french": "employeur"
+      },
+      {
+        "id": 3,
+        "english": "colleagues",
+        "french": "collègues"
+      },
+      {
+        "id": 4,
+        "english": "kitchen table",
+        "french": "table de cuisine"
+      },
+      {
+        "id": 5,
+        "english": "team meetings",
+        "french": "réunions d’équipe"
+      },
+      {
+        "id": 6,
+        "english": "tasks",
+        "french": "tâches"
+      },
+      {
+        "id": 7,
+        "english": "suits everybody",
+        "french": "convient à tout le monde"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-vocab-15",
+    "title": "Médias, opinions et choix",
+    "titleFR": "Médias, opinions et choix",
+    "description": "Étudier des expressions utiles en contexte pour médias, opinions et choix.",
+    "descriptionFR": "Étudier des mots et expressions utiles en contexte : médias, opinions et choix.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "headline",
+        "french": "titre de presse"
+      },
+      {
+        "id": 2,
+        "english": "source",
+        "french": "source"
+      },
+      {
+        "id": 3,
+        "english": "reviewer",
+        "french": "critique / évaluateur"
+      },
+      {
+        "id": 4,
+        "english": "feedback",
+        "french": "retour / commentaire"
+      },
+      {
+        "id": 5,
+        "english": "recommendation",
+        "french": "recommandation"
+      },
+      {
+        "id": 6,
+        "english": "balanced view",
+        "french": "point de vue équilibré"
+      },
+      {
+        "id": 7,
+        "english": "evidence",
+        "french": "élément de preuve"
+      },
+      {
+        "id": 8,
+        "english": "advertisement",
+        "french": "publicité"
+      },
+      {
+        "id": 9,
+        "english": "subscription",
+        "french": "abonnement"
+      },
+      {
+        "id": 10,
+        "english": "privacy settings",
+        "french": "paramètres de confidentialité"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-reading-vocab-27",
+    "title": "Vocabulaire : Learning Something New at 60",
+    "titleFR": "Vocabulaire : Learning Something New at 60",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 5,
+    "words": [
+      {
+        "id": 1,
+        "english": "complicated",
+        "french": "compliqué"
+      },
+      {
+        "id": 2,
+        "english": "encouraged",
+        "french": "a encouragé"
+      },
+      {
+        "id": 3,
+        "english": "settings",
+        "french": "réglages"
+      },
+      {
+        "id": 4,
+        "english": "portrait",
+        "french": "portrait"
+      },
+      {
+        "id": 5,
+        "english": "stop trying",
+        "french": "cesser d’essayer"
+      }
+    ]
+  },
+  {
+    "level": "A2",
+    "unit": 7,
+    "id": "a2en-reading-vocab-28",
+    "title": "Vocabulaire : A Review of the New Library",
+    "titleFR": "Vocabulaire : A Review of the New Library",
+    "description": "Mots nouveaux présents dans cette lecture.",
+    "descriptionFR": "Mots nouveaux présents dans cette lecture.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "reading area",
+        "french": "espace de lecture"
+      },
+      {
+        "id": 2,
+        "english": "comfortable seats",
+        "french": "sièges confortables"
+      },
+      {
+        "id": 3,
+        "english": "borrow books",
+        "french": "emprunter des livres"
+      },
+      {
+        "id": 4,
+        "english": "queue",
+        "french": "file d’attente"
+      },
+      {
+        "id": 5,
+        "english": "storytelling session",
+        "french": "séance de contes"
+      },
+      {
+        "id": 6,
+        "english": "worth visiting",
+        "french": "qui vaut le détour"
+      }
+    ]
+  }
 ];
 
-// Word lists attached to readings that are not standalone vocabulary modules.
 export const readingWordsA2: VocabularyData = {
-    'a2-une-journee-typique': [
-        { id: 1, english: 'a student', french: 'une étudiante' },
-        { id: 2, english: 'as usual', french: 'comme d\'habitude' },
-        { id: 3, english: 'to take a shower', french: 'se doucher' },
-        { id: 4, english: 'quickly', french: 'rapidement' },
-        { id: 5, english: 'the news', french: 'les nouvelles' },
-        { id: 6, english: 'the tram', french: 'le tram' },
-        { id: 7, english: 'the university / faculty', french: 'la faculté' },
-        { id: 8, english: 'to last', french: 'durer' },
-        { id: 9, english: 'to explain', french: 'expliquer' },
-        { id: 10, english: 'to concentrate', french: 'se concentrer' },
-        { id: 11, english: 'to meet up with / to find again', french: 'retrouver' },
-        { id: 12, english: 'an evening party / get-together', french: 'une soirée' },
-        { id: 13, english: 'to invite', french: 'inviter' },
-        { id: 14, english: 'the library', french: 'la bibliothèque' },
-        { id: 15, english: 'a presentation / oral report', french: 'un exposé' },
-    ],
-    'a2-vacances-en-bretagne': [
-        { id: 1, english: 'last summer', french: 'l\'été dernier' },
-        { id: 2, english: 'to book / reserve', french: 'réserver' },
-        { id: 3, english: 'a holiday cottage / gîte', french: 'un gîte' },
-        { id: 4, english: 'the sea', french: 'la mer' },
-        { id: 5, english: 'the journey / trip', french: 'le trajet' },
-        { id: 6, english: 'to shine (the sun)', french: 'briller' },
-        { id: 7, english: 'the beach', french: 'la plage' },
-        { id: 8, english: 'to go for a swim / to bathe', french: 'se baigner' },
-        { id: 9, english: 'the cliffs', french: 'les falaises' },
-        { id: 10, english: 'the rocks', french: 'les rochers' },
-        { id: 11, english: 'the fishing boats', french: 'des bateaux de pêche' },
-        { id: 12, english: 'the crossing (by boat)', french: 'la traversée' },
-        { id: 13, english: 'to rent / hire', french: 'louer' },
-        { id: 14, english: 'hidden coves', french: 'des criques cachées' },
-        { id: 15, english: 'seafood', french: 'les fruits de mer' },
-    ],
-    'a2-le-marche': [
-        { id: 1, english: 'to go (to a place)', french: 'se rendre' },
-        { id: 2, english: 'fresh produce', french: 'des produits frais' },
-        { id: 3, english: 'local producers', french: 'les producteurs locaux' },
-        { id: 4, english: 'to plan / to intend', french: 'prévoir' },
-        { id: 5, english: 'seasonal vegetables', french: 'des légumes de saison' },
-        { id: 6, english: 'the greengrocer / market gardener', french: 'le maraîcher' },
-        { id: 7, english: 'the courgettes / zucchini', french: 'des courgettes' },
-        { id: 8, english: 'the aubergines / eggplants', french: 'des aubergines' },
-        { id: 9, english: 'the (bell) peppers', french: 'des poivrons' },
-        { id: 10, english: 'the farm', french: 'la ferme' },
-        { id: 11, english: 'organic', french: 'bio' },
-        { id: 12, english: 'to pick / to harvest', french: 'cueillir' },
-        { id: 13, english: 'olive oil', french: 'l\'huile d\'olive' },
-        { id: 14, english: 'fresh herbs', french: 'des herbes fraîches' },
-        { id: 15, english: 'a neighbour', french: 'une voisine' },
-    ],
-    'a2-une-lettre-damitie': [
-        { id: 1, english: 'dear (to a woman)', french: 'chère' },
-        { id: 2, english: 'I miss you', french: 'tu me manques' },
-        { id: 3, english: 'since your departure', french: 'depuis ton départ' },
-        { id: 4, english: 'a job / position', french: 'un poste' },
-        { id: 5, english: 'to learn', french: 'apprendre' },
-        { id: 6, english: 'the colleagues', french: 'les collègues' },
-        { id: 7, english: 'the atmosphere / mood', french: 'l\'ambiance' },
-        { id: 8, english: 'the city centre', french: 'le centre-ville' },
-        { id: 9, english: 'an exhibition', french: 'une exposition' },
-        { id: 10, english: 'to remind / to recall', french: 'rappeler' },
-        { id: 11, english: 'to have a drink', french: 'prendre un verre' },
-        { id: 12, english: 'a piece of news', french: 'une nouvelle' },
-        { id: 13, english: 'then / next', french: 'puis' },
-        { id: 14, english: 'to visit (someone)', french: 'rendre visite' },
-        { id: 15, english: 'lots of love (closing)', french: 'grosses bises' },
-    ],
-    'a2-recette-francaise': [
-        { id: 1, english: 'the apple tart', french: 'la tarte aux pommes' },
-        { id: 2, english: 'appreciated / liked', french: 'apprécié' },
-        { id: 3, english: 'the recipe', french: 'la recette' },
-        { id: 4, english: 'to prepare / make', french: 'préparer' },
-        { id: 5, english: 'the shortcrust pastry', french: 'la pâte brisée' },
-        { id: 6, english: 'a tablespoon', french: 'une cuillère à soupe' },
-        { id: 7, english: 'the sugar', french: 'le sucre' },
-        { id: 8, english: 'the cinnamon', french: 'la cannelle' },
-        { id: 9, english: 'the butter', french: 'le beurre' },
-        { id: 10, english: 'to preheat', french: 'préchauffer' },
-        { id: 11, english: 'the oven', french: 'le four' },
-        { id: 12, english: 'to peel', french: 'éplucher' },
-        { id: 13, english: 'thin slices', french: 'des fines lamelles' },
-        { id: 14, english: 'a mould / baking tin', french: 'un moule' },
-        { id: 15, english: 'to bake / cook', french: 'faire cuire' },
-    ],
-    'a2en-weekend-trip': [
-        { id: 1, english: 'weekend', french: 'le week-end' },
-        { id: 2, english: 'to travel by train', french: 'voyager en train' },
-        { id: 3, english: 'sights', french: 'les sites touristiques' },
-        { id: 4, english: 'to arrive', french: 'arriver' },
-        { id: 5, english: 'to queue', french: 'faire la queue' },
-        { id: 6, english: 'worth it', french: 'qui en vaut la peine' },
-        { id: 7, english: 'spectacular', french: 'spectaculaire' },
-        { id: 8, english: 'bridge', french: 'le pont' },
-        { id: 9, english: 'hungry', french: 'avoir faim' },
-        { id: 10, english: 'art gallery', french: 'la galerie d\'art' },
-        { id: 11, english: 'boat trip', french: 'la promenade en bateau' },
-        { id: 12, english: 'to set (sun)', french: 'se coucher' },
-        { id: 13, english: 'to explore', french: 'explorer' },
-        { id: 14, english: 'a jar of honey', french: 'un pot de miel' },
-        { id: 15, english: 'to agree', french: 'être d\'accord' },
-    ],
-    'a2en-job-interview': [
-        { id: 1, english: 'to look for a job', french: 'chercher un emploi' },
-        { id: 2, english: 'marketing company', french: 'l\'entreprise de marketing' },
-        { id: 3, english: 'to invite', french: 'inviter / convier' },
-        { id: 4, english: 'interview', french: 'l\'entretien' },
-        { id: 5, english: 'excited', french: 'enthousiaste / excité(e)' },
-        { id: 6, english: 'nervous', french: 'nerveux / nerveuse' },
-        { id: 7, english: 'to prepare', french: 'se préparer' },
-        { id: 8, english: 'suit', french: 'le costume / le tailleur' },
-        { id: 9, english: 'to practise', french: 's\'entraîner' },
-        { id: 10, english: 'rested', french: 'reposé(e)' },
-        { id: 11, english: 'manager', french: 'le / la responsable' },
-        { id: 12, english: 'experience', french: 'l\'expérience' },
-        { id: 13, english: 'strengths', french: 'les points forts' },
-        { id: 14, english: 'to offer (a job)', french: 'proposer / offrir' },
-        { id: 15, english: 'challenge', french: 'le défi' },
-    ],
-    'a2en-shopping-trip': [
-        { id: 1, english: 'to go shopping', french: 'faire des courses / du shopping' },
-        { id: 2, english: 'clothes', french: 'les vêtements' },
-        { id: 3, english: 'busy', french: 'animé(e) / bondé(e)' },
-        { id: 4, english: 'sale', french: 'les soldes' },
-        { id: 5, english: 'cheaper', french: 'moins cher' },
-        { id: 6, english: 'to try on', french: 'essayer' },
-        { id: 7, english: 'dress', french: 'la robe' },
-        { id: 8, english: 'expensive', french: 'cher / chère' },
-        { id: 9, english: 'to fit', french: 'aller (à quelqu\'un)' },
-        { id: 10, english: 'a pair of jeans', french: 'un jean' },
-        { id: 11, english: 'to order', french: 'commander' },
-        { id: 12, english: 'orange juice', french: 'le jus d\'orange' },
-        { id: 13, english: 'holidays', french: 'les vacances' },
-        { id: 14, english: 'to spend (money)', french: 'dépenser' },
-        { id: 15, english: 'to laugh', french: 'rire' },
-    ],
-    'a2en-holiday-plans': [
-        { id: 1, english: 'to plan', french: 'planifier / organiser' },
-        { id: 2, english: 'to relax', french: 'se détendre' },
-        { id: 3, english: 'quiet', french: 'calme / tranquille' },
-        { id: 4, english: 'to decide', french: 'décider' },
-        { id: 5, english: 'website', french: 'le site web' },
-        { id: 6, english: 'mountains', french: 'les montagnes' },
-        { id: 7, english: 'fresh air', french: 'l\'air frais' },
-        { id: 8, english: 'beach', french: 'la plage' },
-        { id: 9, english: 'to swim', french: 'nager' },
-        { id: 10, english: 'village', french: 'le village' },
-        { id: 11, english: 'coast', french: 'la côte' },
-        { id: 12, english: 'walking paths', french: 'les sentiers de randonnée' },
-        { id: 13, english: 'reviews', french: 'les avis / les critiques' },
-        { id: 14, english: 'to book', french: 'réserver' },
-        { id: 15, english: 'to pack', french: 'faire ses valises' },
-    ],
-    'a2en-new-flatmate': [
-        { id: 1, english: 'to move', french: 'déménager' },
-        { id: 2, english: 'university', french: 'l\'université' },
-        { id: 3, english: 'student halls', french: 'la résidence universitaire' },
-        { id: 4, english: 'expensive', french: 'cher / chère' },
-        { id: 5, english: 'to share a flat', french: 'partager un appartement' },
-        { id: 6, english: 'advert', french: 'l\'annonce' },
-        { id: 7, english: 'campus', french: 'le campus' },
-        { id: 8, english: 'to arrange', french: 'organiser / convenir de' },
-        { id: 9, english: 'bright', french: 'lumineux / lumineuse' },
-        { id: 10, english: 'comfortable', french: 'confortable' },
-        { id: 11, english: 'flatmates', french: 'les colocataires' },
-        { id: 12, english: 'engineering', french: 'l\'ingénierie' },
-        { id: 13, english: 'welcoming', french: 'accueillant(e)' },
-        { id: 14, english: 'shy', french: 'timide' },
-        { id: 15, english: 'glad', french: 'content(e) / ravi(e)' },
-    ],
-    'a2en-lost-in-town': [
-        { id: 1, english: 'worried', french: 'inquiet / inquiète' },
-        { id: 2, english: 'battery', french: 'la batterie' },
-        { id: 3, english: 'to die (battery)', french: 'se décharger / tomber en panne' },
-        { id: 4, english: 'to ask for help', french: 'demander de l\'aide' },
-        { id: 5, english: 'bench', french: 'le banc' },
-        { id: 6, english: 'newspaper', french: 'le journal' },
-        { id: 7, english: 'Excuse me', french: 'Excusez-moi' },
-        { id: 8, english: 'to go straight on', french: 'aller tout droit' },
-        { id: 9, english: 'to turn left', french: 'tourner à gauche' },
-        { id: 10, english: 'traffic light', french: 'le feu de circulation' },
-        { id: 11, english: 'directions', french: 'les indications' },
-        { id: 12, english: 'corner', french: 'le coin' },
-        { id: 13, english: 'relieved', french: 'soulagé(e)' },
-        { id: 14, english: 'strangers', french: 'les inconnus' },
-        { id: 15, english: 'to discover', french: 'découvrir' },
-    ],
-    'a2en-cooking-dinner': [
-        { id: 1, english: 'to invite', french: 'inviter' },
-        { id: 2, english: 'to cook', french: 'cuisiner' },
-        { id: 3, english: 'meal', french: 'le repas' },
-        { id: 4, english: 'recipes', french: 'les recettes' },
-        { id: 5, english: 'tomato sauce', french: 'la sauce tomate' },
-        { id: 6, english: 'salad', french: 'la salade' },
-        { id: 7, english: 'ingredients', french: 'les ingrédients' },
-        { id: 8, english: 'garlic', french: 'l\'ail' },
-        { id: 9, english: 'onions', french: 'les oignons' },
-        { id: 10, english: 'guests', french: 'les invités' },
-        { id: 11, english: 'to burn', french: 'brûler' },
-        { id: 12, english: 'to taste', french: 'goûter' },
-        { id: 13, english: 'to smell wonderful', french: 'sentir merveilleusement bon' },
-        { id: 14, english: 'proud', french: 'fier / fière' },
-        { id: 15, english: 'success', french: 'le succès / la réussite' },
-    ],
-    'a2en-the-concert': [
-        { id: 1, english: 'band', french: 'le groupe (de musique)' },
-        { id: 2, english: 'ticket', french: 'le billet' },
-        { id: 3, english: 'stage', french: 'la scène' },
-        { id: 4, english: 'stadium', french: 'le stade' },
-        { id: 5, english: 'enormous', french: 'énorme' },
-        { id: 6, english: 'atmosphere', french: 'l\'ambiance' },
-        { id: 7, english: 'electric (atmosphere)', french: 'électrique / survolté(e)' },
-        { id: 8, english: 'crowd', french: 'la foule' },
-        { id: 9, english: 'to cheer', french: 'acclamer' },
-        { id: 10, english: 'to sing along', french: 'chanter en chœur' },
-        { id: 11, english: 'unforgettable', french: 'inoubliable' },
-        { id: 12, english: 'fan', french: 'le / la fan' },
-        { id: 13, english: 'to hum', french: 'fredonner' },
-        { id: 14, english: 'to remember', french: 'se souvenir' },
-        { id: 15, english: 'to enjoy', french: 'apprécier / aimer' },
-    ],
-    'a2en-moving-house': [
-        { id: 1, english: 'to move house', french: 'déménager' },
-        { id: 2, english: 'flat', french: 'l\'appartement' },
-        { id: 3, english: 'to grow older', french: 'grandir / vieillir' },
-        { id: 4, english: 'neighbourhood', french: 'le quartier' },
-        { id: 5, english: 'to pack', french: 'emballer / faire les cartons' },
-        { id: 6, english: 'belongings', french: 'les affaires / les biens' },
-        { id: 7, english: 'boxes', french: 'les cartons' },
-        { id: 8, english: 'removal van', french: 'le camion de déménagement' },
-        { id: 9, english: 'furniture', french: 'les meubles' },
-        { id: 10, english: 'to unpack', french: 'déballer' },
-        { id: 11, english: 'neighbours', french: 'les voisins' },
-        { id: 12, english: 'homemade', french: 'fait(e) maison' },
-        { id: 13, english: 'laughter', french: 'les rires' },
-        { id: 14, english: 'memories', french: 'les souvenirs' },
-        { id: 15, english: 'decision', french: 'la décision' },
-    ],
-    'a2en-summer-job': [
-        { id: 1, english: 'summer holidays', french: 'les vacances d\'été' },
-        { id: 2, english: 'to earn money', french: 'gagner de l\'argent' },
-        { id: 3, english: 'to gain experience', french: 'acquérir de l\'expérience' },
-        { id: 4, english: 'waiter', french: 'le serveur' },
-        { id: 5, english: 'orders', french: 'les commandes' },
-        { id: 6, english: 'trays', french: 'les plateaux' },
-        { id: 7, english: 'polite', french: 'poli(e)' },
-        { id: 8, english: 'rude', french: 'impoli(e) / grossier(-ière)' },
-        { id: 9, english: 'embarrassed', french: 'gêné(e) / embarrassé(e)' },
-        { id: 10, english: 'patient', french: 'patient(e)' },
-        { id: 11, english: 'confident', french: 'sûr(e) de soi / confiant(e)' },
-        { id: 12, english: 'under pressure', french: 'sous pression' },
-        { id: 13, english: 'colleagues', french: 'les collègues' },
-        { id: 14, english: 'teamwork', french: 'le travail d\'équipe' },
-        { id: 15, english: 'pride', french: 'la fierté' },
-    ],
+  "a2en-reading-01": [
+    {
+      "id": 1,
+      "english": "closed its doors",
+      "french": "a fermé définitivement"
+    },
+    {
+      "id": 2,
+      "english": "counter",
+      "french": "comptoir"
+    },
+    {
+      "id": 3,
+      "english": "thank-you card",
+      "french": "carte de remerciement"
+    },
+    {
+      "id": 4,
+      "english": "photographer",
+      "french": "photographe"
+    },
+    {
+      "id": 5,
+      "english": "wooden sign",
+      "french": "enseigne en bois"
+    },
+    {
+      "id": 6,
+      "english": "memories",
+      "french": "souvenirs"
+    }
+  ],
+  "a2en-reading-02": [
+    {
+      "id": 1,
+      "english": "surprise dinner",
+      "french": "dîner surprise"
+    },
+    {
+      "id": 2,
+      "english": "lights were off",
+      "french": "les lumières étaient éteintes"
+    },
+    {
+      "id": 3,
+      "english": "shouted",
+      "french": "ont crié"
+    },
+    {
+      "id": 4,
+      "english": "portions",
+      "french": "portions"
+    },
+    {
+      "id": 5,
+      "english": "homemade",
+      "french": "fait maison"
+    },
+    {
+      "id": 6,
+      "english": "shift",
+      "french": "service de travail"
+    }
+  ],
+  "a2en-reading-03": [
+    {
+      "id": 1,
+      "english": "sailor",
+      "french": "marin"
+    },
+    {
+      "id": 2,
+      "english": "crossed the Atlantic",
+      "french": "a traversé l’Atlantique"
+    },
+    {
+      "id": 3,
+      "english": "compass",
+      "french": "boussole"
+    },
+    {
+      "id": 4,
+      "english": "protecting",
+      "french": "protéger"
+    }
+  ],
+  "a2en-reading-04": [
+    {
+      "id": 1,
+      "english": "manager",
+      "french": "responsable"
+    },
+    {
+      "id": 2,
+      "english": "mechanic",
+      "french": "mécanicien"
+    },
+    {
+      "id": 3,
+      "english": "repair workshop",
+      "french": "atelier de réparation"
+    },
+    {
+      "id": 4,
+      "english": "business was slow",
+      "french": "les affaires démarraient lentement"
+    },
+    {
+      "id": 5,
+      "english": "recommend",
+      "french": "recommandent"
+    },
+    {
+      "id": 6,
+      "english": "free tickets",
+      "french": "billets gratuits"
+    }
+  ],
+  "a2en-reading-05": [
+    {
+      "id": 1,
+      "english": "information screen",
+      "french": "écran d’information"
+    },
+    {
+      "id": 2,
+      "english": "announcement",
+      "french": "annonce sonore"
+    },
+    {
+      "id": 3,
+      "english": "speakers",
+      "french": "haut-parleurs"
+    },
+    {
+      "id": 4,
+      "english": "railway line",
+      "french": "ligne ferroviaire"
+    },
+    {
+      "id": 5,
+      "english": "flooding",
+      "french": "inondation"
+    },
+    {
+      "id": 6,
+      "english": "safely",
+      "french": "en toute sécurité"
+    }
+  ],
+  "a2en-reading-06": [
+    {
+      "id": 1,
+      "english": "narrow path",
+      "french": "sentier étroit"
+    },
+    {
+      "id": 2,
+      "english": "mist",
+      "french": "brume"
+    },
+    {
+      "id": 3,
+      "english": "valley",
+      "french": "vallée"
+    },
+    {
+      "id": 4,
+      "english": "slope",
+      "french": "pente"
+    },
+    {
+      "id": 5,
+      "english": "snacks",
+      "french": "en-cas"
+    },
+    {
+      "id": 6,
+      "english": "cleared",
+      "french": "s’est dissipé"
+    },
+    {
+      "id": 7,
+      "english": "car park",
+      "french": "parking"
+    }
+  ],
+  "a2en-reading-07": [
+    {
+      "id": 1,
+      "english": "confirmation",
+      "french": "confirmation"
+    },
+    {
+      "id": 2,
+      "english": "shared room",
+      "french": "chambre partagée"
+    },
+    {
+      "id": 3,
+      "english": "booking number",
+      "french": "numéro de réservation"
+    },
+    {
+      "id": 4,
+      "english": "away from the lift",
+      "french": "loin de l’ascenseur"
+    },
+    {
+      "id": 5,
+      "english": "checking out",
+      "french": "départ de l’hôtel"
+    }
+  ],
+  "a2en-reading-08": [
+    {
+      "id": 1,
+      "english": "backpack",
+      "french": "sac à dos"
+    },
+    {
+      "id": 2,
+      "english": "ribbon",
+      "french": "ruban"
+    },
+    {
+      "id": 3,
+      "english": "handle",
+      "french": "poignée"
+    },
+    {
+      "id": 4,
+      "english": "headphones",
+      "french": "casque audio"
+    },
+    {
+      "id": 5,
+      "english": "paperback novel",
+      "french": "roman de poche"
+    },
+    {
+      "id": 6,
+      "english": "boarding announcement",
+      "french": "annonce d’embarquement"
+    },
+    {
+      "id": 7,
+      "english": "reference number",
+      "french": "numéro de dossier"
+    }
+  ],
+  "a2en-reading-09": [
+    {
+      "id": 1,
+      "english": "reliable",
+      "french": "fiable"
+    },
+    {
+      "id": 2,
+      "english": "farther away",
+      "french": "plus éloigné"
+    },
+    {
+      "id": 3,
+      "english": "opposite change",
+      "french": "changement inverse"
+    },
+    {
+      "id": 4,
+      "english": "studio flat",
+      "french": "studio"
+    },
+    {
+      "id": 5,
+      "english": "pavement",
+      "french": "trottoir"
+    },
+    {
+      "id": 6,
+      "english": "on foot",
+      "french": "à pied"
+    },
+    {
+      "id": 7,
+      "english": "advantages",
+      "french": "avantages"
+    }
+  ],
+  "a2en-reading-10": [
+    {
+      "id": 1,
+      "english": "cheapest",
+      "french": "le moins cher"
+    },
+    {
+      "id": 2,
+      "english": "campus",
+      "french": "campus"
+    },
+    {
+      "id": 3,
+      "english": "shared living area",
+      "french": "espace de vie commun"
+    },
+    {
+      "id": 4,
+      "english": "bicycle storage",
+      "french": "local à vélos"
+    },
+    {
+      "id": 5,
+      "english": "public transport",
+      "french": "transports en commun"
+    },
+    {
+      "id": 6,
+      "english": "deposit",
+      "french": "caution"
+    }
+  ],
+  "a2en-reading-11": [
+    {
+      "id": 1,
+      "english": "folding chair",
+      "french": "chaise pliante"
+    },
+    {
+      "id": 2,
+      "english": "fits",
+      "french": "tient / rentre"
+    },
+    {
+      "id": 3,
+      "english": "reading lamp",
+      "french": "lampe de lecture"
+    },
+    {
+      "id": 4,
+      "english": "tidy",
+      "french": "rangé"
+    },
+    {
+      "id": 5,
+      "english": "space",
+      "french": "espace"
+    }
+  ],
+  "a2en-reading-12": [
+    {
+      "id": 1,
+      "english": "community garden",
+      "french": "jardin partagé"
+    },
+    {
+      "id": 2,
+      "english": "repair café",
+      "french": "atelier de réparation participatif"
+    },
+    {
+      "id": 3,
+      "english": "volunteers",
+      "french": "bénévoles"
+    },
+    {
+      "id": 4,
+      "english": "council",
+      "french": "conseil municipal"
+    },
+    {
+      "id": 5,
+      "english": "survey",
+      "french": "sondage"
+    },
+    {
+      "id": 6,
+      "english": "crossings",
+      "french": "passages piétons"
+    }
+  ],
+  "a2en-reading-13": [
+    {
+      "id": 1,
+      "english": "lunchbox",
+      "french": "boîte-repas"
+    },
+    {
+      "id": 2,
+      "english": "vegetarian choices",
+      "french": "options végétariennes"
+    },
+    {
+      "id": 3,
+      "english": "nut allergies",
+      "french": "allergies aux fruits à coque"
+    },
+    {
+      "id": 4,
+      "english": "ingredient list",
+      "french": "liste des ingrédients"
+    },
+    {
+      "id": 5,
+      "english": "balanced meal",
+      "french": "repas équilibré"
+    },
+    {
+      "id": 6,
+      "english": "packet of sweets",
+      "french": "paquet de bonbons"
+    },
+    {
+      "id": 7,
+      "english": "orders",
+      "french": "commandes"
+    }
+  ],
+  "a2en-reading-14": [
+    {
+      "id": 1,
+      "english": "keep a diary",
+      "french": "tenir un journal"
+    },
+    {
+      "id": 2,
+      "english": "headaches",
+      "french": "maux de tête"
+    },
+    {
+      "id": 3,
+      "english": "blood pressure",
+      "french": "tension artérielle"
+    },
+    {
+      "id": 4,
+      "english": "skip lunch",
+      "french": "sauter le déjeuner"
+    },
+    {
+      "id": 5,
+      "english": "position",
+      "french": "position"
+    },
+    {
+      "id": 6,
+      "english": "reusable bottle",
+      "french": "gourde réutilisable"
+    },
+    {
+      "id": 7,
+      "english": "routine",
+      "french": "routine"
+    }
+  ],
+  "a2en-reading-15": [
+    {
+      "id": 1,
+      "english": "closed shoes",
+      "french": "chaussures fermées"
+    },
+    {
+      "id": 2,
+      "english": "apron",
+      "french": "tablier"
+    },
+    {
+      "id": 3,
+      "english": "coordinator",
+      "french": "coordinateur"
+    },
+    {
+      "id": 4,
+      "english": "equipment",
+      "french": "matériel"
+    },
+    {
+      "id": 5,
+      "english": "session",
+      "french": "séance"
+    }
+  ],
+  "a2en-reading-16": [
+    {
+      "id": 1,
+      "english": "dental",
+      "french": "dentaire"
+    },
+    {
+      "id": 2,
+      "english": "running late",
+      "french": "en retard"
+    },
+    {
+      "id": 3,
+      "english": "emergency",
+      "french": "urgence"
+    },
+    {
+      "id": 4,
+      "english": "waiting room",
+      "french": "salle d’attente"
+    }
+  ],
+  "a2en-reading-17": [
+    {
+      "id": 1,
+      "english": "photography exhibition",
+      "french": "exposition de photographie"
+    },
+    {
+      "id": 2,
+      "english": "old factory",
+      "french": "ancienne usine"
+    },
+    {
+      "id": 3,
+      "english": "booked tickets",
+      "french": "billets réservés"
+    },
+    {
+      "id": 4,
+      "english": "midday",
+      "french": "midi"
+    },
+    {
+      "id": 5,
+      "english": "works better",
+      "french": "convient mieux"
+    },
+    {
+      "id": 6,
+      "english": "allowed",
+      "french": "autorisé"
+    }
+  ],
+  "a2en-reading-18": [
+    {
+      "id": 1,
+      "english": "team picnic",
+      "french": "pique-nique d’équipe"
+    },
+    {
+      "id": 2,
+      "english": "exact location",
+      "french": "lieu exact"
+    },
+    {
+      "id": 3,
+      "english": "second floor",
+      "french": "deuxième étage"
+    },
+    {
+      "id": 4,
+      "english": "share",
+      "french": "partager"
+    },
+    {
+      "id": 5,
+      "english": "cups",
+      "french": "gobelets"
+    },
+    {
+      "id": 6,
+      "english": "plates",
+      "french": "assiettes"
+    },
+    {
+      "id": 7,
+      "english": "napkins",
+      "french": "serviettes en papier"
+    }
+  ],
+  "a2en-reading-19": [
+    {
+      "id": 1,
+      "english": "night train",
+      "french": "train de nuit"
+    },
+    {
+      "id": 2,
+      "english": "taxi rank",
+      "french": "station de taxis"
+    },
+    {
+      "id": 3,
+      "english": "available",
+      "french": "disponible"
+    },
+    {
+      "id": 4,
+      "english": "transport helpline",
+      "french": "assistance transports"
+    },
+    {
+      "id": 5,
+      "english": "operator",
+      "french": "exploitant"
+    },
+    {
+      "id": 6,
+      "english": "live timetable",
+      "french": "horaires en temps réel"
+    }
+  ],
+  "a2en-reading-20": [
+    {
+      "id": 1,
+      "english": "documentary",
+      "french": "documentaire"
+    },
+    {
+      "id": 2,
+      "english": "street artists",
+      "french": "artistes de rue"
+    },
+    {
+      "id": 3,
+      "english": "gallery",
+      "french": "galerie"
+    },
+    {
+      "id": 4,
+      "english": "screening",
+      "french": "projection"
+    },
+    {
+      "id": 5,
+      "english": "reserve a seat",
+      "french": "réserver une place"
+    },
+    {
+      "id": 6,
+      "english": "afterwards",
+      "french": "ensuite"
+    }
+  ],
+  "a2en-reading-21": [
+    {
+      "id": 1,
+      "english": "food bank",
+      "french": "banque alimentaire"
+    },
+    {
+      "id": 2,
+      "english": "strangers",
+      "french": "inconnus"
+    },
+    {
+      "id": 3,
+      "english": "book exchange",
+      "french": "échange de livres"
+    },
+    {
+      "id": 4,
+      "english": "experiences",
+      "french": "expériences"
+    },
+    {
+      "id": 5,
+      "english": "in common",
+      "french": "en commun"
+    },
+    {
+      "id": 6,
+      "english": "charity",
+      "french": "association caritative"
+    },
+    {
+      "id": 7,
+      "english": "absolutely",
+      "french": "absolument"
+    }
+  ],
+  "a2en-reading-22": [
+    {
+      "id": 1,
+      "english": "replacement kettle",
+      "french": "bouilloire de remplacement"
+    },
+    {
+      "id": 2,
+      "english": "parcel",
+      "french": "colis"
+    },
+    {
+      "id": 3,
+      "english": "courier",
+      "french": "livreur"
+    },
+    {
+      "id": 4,
+      "english": "warehouse",
+      "french": "entrepôt"
+    },
+    {
+      "id": 5,
+      "english": "label",
+      "french": "étiquette"
+    },
+    {
+      "id": 6,
+      "english": "outer box",
+      "french": "carton extérieur"
+    },
+    {
+      "id": 7,
+      "english": "response",
+      "french": "réponse"
+    }
+  ],
+  "a2en-reading-23": [
+    {
+      "id": 1,
+      "english": "mild",
+      "french": "doux (climat)"
+    },
+    {
+      "id": 2,
+      "english": "curtains",
+      "french": "rideaux"
+    },
+    {
+      "id": 3,
+      "english": "borrowed",
+      "french": "emprunté"
+    },
+    {
+      "id": 4,
+      "english": "snowman",
+      "french": "bonhomme de neige"
+    },
+    {
+      "id": 5,
+      "english": "snowflakes",
+      "french": "flocons de neige"
+    },
+    {
+      "id": 6,
+      "english": "mountains",
+      "french": "montagnes"
+    },
+    {
+      "id": 7,
+      "english": "completely wet",
+      "french": "complètement trempé"
+    }
+  ],
+  "a2en-reading-24": [
+    {
+      "id": 1,
+      "english": "device",
+      "french": "dispositif"
+    },
+    {
+      "id": 2,
+      "english": "rainwater",
+      "french": "eau de pluie"
+    },
+    {
+      "id": 3,
+      "english": "container",
+      "french": "récipient"
+    },
+    {
+      "id": 4,
+      "english": "filter",
+      "french": "filtre"
+    },
+    {
+      "id": 5,
+      "english": "tested",
+      "french": "testé"
+    },
+    {
+      "id": 6,
+      "english": "regional science fair",
+      "french": "salon scientifique régional"
+    },
+    {
+      "id": 7,
+      "english": "litres",
+      "french": "litres"
+    }
+  ],
+  "a2en-reading-25": [
+    {
+      "id": 1,
+      "english": "podcast",
+      "french": "balado / podcast"
+    },
+    {
+      "id": 2,
+      "english": "presenter",
+      "french": "animateur"
+    },
+    {
+      "id": 3,
+      "english": "technician",
+      "french": "technicien"
+    },
+    {
+      "id": 4,
+      "english": "microphones",
+      "french": "micros"
+    },
+    {
+      "id": 5,
+      "english": "episode",
+      "french": "épisode"
+    },
+    {
+      "id": 6,
+      "english": "listeners",
+      "french": "auditeurs"
+    },
+    {
+      "id": 7,
+      "english": "recordings",
+      "french": "enregistrements"
+    }
+  ],
+  "a2en-reading-26": [
+    {
+      "id": 1,
+      "english": "concentrate",
+      "french": "se concentrer"
+    },
+    {
+      "id": 2,
+      "english": "employer",
+      "french": "employeur"
+    },
+    {
+      "id": 3,
+      "english": "colleagues",
+      "french": "collègues"
+    },
+    {
+      "id": 4,
+      "english": "kitchen table",
+      "french": "table de cuisine"
+    },
+    {
+      "id": 5,
+      "english": "team meetings",
+      "french": "réunions d’équipe"
+    },
+    {
+      "id": 6,
+      "english": "tasks",
+      "french": "tâches"
+    },
+    {
+      "id": 7,
+      "english": "suits everybody",
+      "french": "convient à tout le monde"
+    }
+  ],
+  "a2en-reading-27": [
+    {
+      "id": 1,
+      "english": "complicated",
+      "french": "compliqué"
+    },
+    {
+      "id": 2,
+      "english": "encouraged",
+      "french": "a encouragé"
+    },
+    {
+      "id": 3,
+      "english": "settings",
+      "french": "réglages"
+    },
+    {
+      "id": 4,
+      "english": "portrait",
+      "french": "portrait"
+    },
+    {
+      "id": 5,
+      "english": "stop trying",
+      "french": "cesser d’essayer"
+    }
+  ],
+  "a2en-reading-28": [
+    {
+      "id": 1,
+      "english": "reading area",
+      "french": "espace de lecture"
+    },
+    {
+      "id": 2,
+      "english": "comfortable seats",
+      "french": "sièges confortables"
+    },
+    {
+      "id": 3,
+      "english": "borrow books",
+      "french": "emprunter des livres"
+    },
+    {
+      "id": 4,
+      "english": "queue",
+      "french": "file d’attente"
+    },
+    {
+      "id": 5,
+      "english": "storytelling session",
+      "french": "séance de contes"
+    },
+    {
+      "id": 6,
+      "english": "worth visiting",
+      "french": "qui vaut le détour"
+    }
+  ]
 };

@@ -114,3 +114,27 @@ new step IDs. The first exam question accepts both pen and notebook, and stative
 verb placeholders are excluded from conjugation quizzes. Other levels and French
 content are preserved. Writing feedback and speaking assessment retain their
 existing service availability; this import does not enable a new provider.
+
+## English A2 replacement
+
+English A2 integrates `english_a2_COMPLETE_VERIFIED.zip` using the same flows as
+English A1: seven teaching units and a final exam, 114 supported roadmap steps,
+28 readings immediately followed by their vocabulary quizzes, 43 vocabulary
+modules (317 entries), 21 grammar lessons, seven complete verb tables, seven
+phrase lessons and 119 practice exam questions (84 unit and 35 final).
+
+Five writing and five speaking tasks are available through their existing overview
+pages. Seven listening sets reuse slower browser speech playback, collapsed scripts
+and self-check questions. Verb usage notes are visible in grammar; housing tasks
+include reference texts, and the health reply task includes a message to answer.
+Speaking assessment and writing feedback keep their existing provider availability.
+
+The import adapts typed task schemas, filenames, exports and exam conventions.
+A2 verb IDs are prefixed to prevent cross-level collisions; roadmap verbs link to
+conjugation learning pages rather than helper-only table endpoints. Shared helper
+cards resolve to the complete imported A1 do/go tables and A2 come table. Existing
+stored progress is retained, while replaced lessons use new identities and removed
+bookmarks may stop resolving. The A2 vocabulary audit checks the actual integrated
+A1/A2 quiz entries; 317 A2 entries are distinct from A1 after basic normalization.
+A1 content, other English levels and French content are preserved. The supplied
+ZIP remains unchanged.
