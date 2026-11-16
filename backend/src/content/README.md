@@ -138,3 +138,49 @@ bookmarks may stop resolving. The A2 vocabulary audit checks the actual integrat
 A1/A2 quiz entries; 317 A2 entries are distinct from A1 after basic normalization.
 A1 content, other English levels and French content are preserved. The supplied
 ZIP remains unchanged.
+
+## English B1 replacement and content review
+
+The supplied `english_b1_COMPLETE_VERIFIED.zip` was reviewed before integration.
+The review covered all 28 readings, 21 grammar lessons, vocabulary/phrase lists,
+productive tasks, listening supplements and 119 assessment questions. Connected
+narratives, familiar work/travel situations, reported information and reasoned
+opinions broadly fit the Council of Europe's [B1 global descriptors](https://www.coe.int/en/web/common-european-framework-reference-languages/table-%201-cefr-3.3-common-reference-levels-global-scale).
+The verdict was suitable for integration after targeted editorial/assessment
+corrections, rather than an independently certified or learner-piloted syllabus.
+Some readings contain incidental structures beyond the main teaching targets.
+
+An independent data audit confirmed 43 vocabulary modules, 337 distinct B1 quiz
+entries with no normalized overlap against the integrated A1/A2 quizzes, valid
+lesson/exam references, reading-vocabulary adjacency and complete six-person verb
+tables. Normalization checks entries rather than establishing global semantic or
+inflectional uniqueness across every level. The archive's PASS label alone was
+not used as the quality verdict.
+
+The app receives seven teaching units plus a final exam and 114 roadmap steps,
+seven verb tables, seven phrase lessons, five writing tasks, five speaking tasks
+and seven listening sets. Writing/speaking use their existing overview pages.
+Listening reuses browser speech synthesis, collapsed scripts and self-check
+answers; recordings are not supplied by the archive. B1 speaking tasks offer
+separate phrase-model and free-response modes. Free responses allow up to three
+minutes, enabling the requested two-minute output; switching modes or leaving
+releases recording resources. Recordings remain on the device and no automatic
+speaking score is assigned. Existing shorter phrase limits remain unchanged.
+
+Editorial corrections distinguish misinformation from intentional disinformation,
+fix a college translation and might pronunciation guidance, reconcile writing
+word counts with their instructions, and supply optional trusted example texts.
+Grammar practice accepts taught alternative forms or specifies the intended verb
+and tense. Unit reading comprehension and selected final inference questions use
+multiple choice to avoid exact-match grading of valid paraphrases. Correct option
+positions remain balanced. The website-editing question now describes overlapping
+work without falsely stating both people edited the timetable; the exchange-plan
+answer includes both reports and a presentation. Verb assessment prompts are
+English sentences with explicit past-simple instructions. Past-participle usage
+notes are visible alongside grammar.
+
+The import adapts typed schemas, exports, filename conventions, exam identities
+and real conjugation routes. B1 verb IDs are level-prefixed to avoid collisions.
+Stored progress is retained; replaced lessons start fresh and removed bookmarks
+may stop resolving. Source ZIP, A1/A2 content, other English levels and French
+content are unchanged. Existing assessment-provider availability is preserved.

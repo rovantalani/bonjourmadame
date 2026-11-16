@@ -35,7 +35,7 @@ function setup(options = {}) {
         URL: { createObjectURL: () => 'blob:test', revokeObjectURL: url => revoked.push(url) },
         setInterval: fn => { tick = fn; return 1; }, clearInterval: () => { tick = undefined; },
     });
-    return { recorder: new exports.Recorder(state => states.push(state)), states, tracks, revoked, recorders, stream,
+    return { recorder: new exports.Recorder(state => states.push(state), options.maxSeconds), states, tracks, revoked, recorders, stream,
         advance: seconds => { now += seconds * 1000; tick?.(); } };
 }
 const flush = () => new Promise(resolve => setImmediate(resolve));
@@ -87,4 +87,19 @@ test('unmount while recording prevents late playback updates', async () => {
 test('unsupported browsers get an explicit error', async () => {
     const s = setup({ unsupported: true }); await s.recorder.start();
     assert.equal(s.states.at(-1).error, 'unsupported');
+});
+
+
+test('connected speaking task records beyond twenty seconds and stops at its configured limit', async () => {
+    const s = setup({ maxSeconds: 180 });
+    await s.recorder.start();
+    s.advance(120); await flush();
+    assert.equal(s.states.at(-1).status, 'recording');
+    assert.equal(s.states.at(-1).seconds, 120);
+    s.advance(60); await flush();
+    assert.equal(s.states.at(-1).status, 'ready');
+    assert.equal(s.states.at(-1).seconds, 180);
+    assert.ok(s.tracks.every(track => track.stopped));
+    s.recorder.dispose();
+    assert.deepEqual(s.revoked, ['blob:test']);
 });
