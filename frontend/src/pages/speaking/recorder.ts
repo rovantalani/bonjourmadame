@@ -9,8 +9,9 @@ export class Recorder {
     private timer?: ReturnType<typeof setInterval>;
     private url?: string;
     private seconds = 0;
+    private maxSeconds: number;
     private update: (state: RecordingState) => void;
-    constructor(update: (state: RecordingState) => void) { this.update = update; }
+    constructor(update: (state: RecordingState) => void, maxSeconds = MAX_SECONDS) { this.update = update; this.maxSeconds = maxSeconds; }
     private release() {
         clearInterval(this.timer);
         if (this.recorder) {
@@ -67,9 +68,9 @@ export class Recorder {
             const started = Date.now();
             this.update({ status: 'recording', seconds: 0 });
             this.timer = setInterval(() => {
-                this.seconds = Math.min(MAX_SECONDS, Math.floor((Date.now() - started) / 1000));
+                this.seconds = Math.min(this.maxSeconds, Math.floor((Date.now() - started) / 1000));
                 this.update({ status: 'recording', seconds: this.seconds });
-                if (this.seconds >= MAX_SECONDS) this.stop();
+                if (this.seconds >= this.maxSeconds) this.stop();
             }, 250);
         } catch (error) {
             if (generation !== this.generation) return;

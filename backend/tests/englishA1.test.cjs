@@ -1,8 +1,10 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { learningContent } = require('../dist/services/learningContent');
-const { englishWritingLessons } = require('../dist/content/en/writing');
-const { speakingLessons } = require('../dist/content/en/speaking');
+const { englishWritingLessons: allWritingLessons } = require('../dist/content/en/writing');
+const englishWritingLessons = allWritingLessons.filter(x => x.level === 'A1');
+const { speakingLessons: allSpeakingLessons } = require('../dist/content/en/speaking');
+const speakingLessons = allSpeakingLessons.filter(x => x.level === 'A1');
 const c = learningContent.en;
 const course = c.courses.find(x => x.level === 'A1');
 test('English A1 readings immediately precede their matching vocabulary quiz', () => {

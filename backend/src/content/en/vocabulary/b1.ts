@@ -1,485 +1,3220 @@
 import type { VocabularyModule, VocabularyData, VocabularyWord } from '../../../types/vocabulary';
 
 export const modulesB1: (VocabularyModule & { words: VocabularyWord[] })[] = [
-    { level: 'B1', unit: 3, "id":"daily-life-advanced","title":"Vie quotidienne avancée","titleFR":"Vie quotidienne avancée","description":"Le français du quotidien à un niveau avancé","descriptionFR":"Le français du quotidien à un niveau avancé","icon":"🏠","color":"#059669","wordCount":0, words: [
-        { id: 1, english: 'to complain / to gripe (about)', french: 'se plaindre (de)' },
-        { id: 2, english: 'a misunderstanding / a mix-up', french: 'un quiproquo' },
-        { id: 3, english: 'to manage / to get by on one\'s own', french: 'se débrouiller' },
-        { id: 4, english: 'a lifestyle / a way of life', french: 'un mode de vie' },
-        { id: 5, english: 'a habit / a routine (established over time)', french: 'une habitude' },
-        { id: 6, english: 'a chore / an unwanted task', french: 'une corvée' },
-        { id: 7, english: 'to get along well (with someone)', french: 's\'entendre (avec)' },
-        { id: 8, english: 'to make ends meet / to get by financially', french: 'joindre les deux bouts' },
-        { id: 9, english: 'to take advantage of / to make the most of', french: 'profiter de' },
-        { id: 10, english: 'a setback / an unexpected hiccup', french: 'un contretemps' },
-        { id: 11, english: 'a schedule / a timetable', french: 'un emploi du temps' },
-        { id: 12, english: 'to sort out / to deal with (a matter)', french: 'régler' },
-        { id: 13, english: 'an obligation / a commitment', french: 'une obligation' },
-        { id: 14, english: 'frugal / thrifty', french: 'économe' },
-        { id: 15, english: 'a household / a home (as a unit)', french: 'un foyer' },
-        { id: 16, english: 'to fit in / to adapt to a new place', french: 's\'intégrer' },
-        { id: 17, english: 'to put off / to postpone (a task)', french: 'remettre à plus tard' },
-        { id: 18, english: 'a neighbourhood / a district', french: 'un quartier' },
-        { id: 19, english: 'self-sufficient / autonomous', french: 'autonome' },
-        { id: 20, english: 'to run errands / to do administrative tasks', french: 'faire des démarches' },
-    ] },
-    { level: 'B1', unit: 3, "id":"emotions-psychology","title":"Émotions & Psychologie","titleFR":"Émotions & Psychologie","description":"Exprimer ses émotions et états mentaux","descriptionFR":"Exprimer ses émotions et états mentaux","icon":"💭","color":"#DC2626","wordCount":0, words: [
-        { id: 1, english: 'distrust / mistrust', french: 'la méfiance' },
-        { id: 2, english: 'anguish / deep anxiety', french: 'l\'angoisse' },
-        { id: 3, english: 'remorse / guilt after wrongdoing', french: 'le remords' },
-        { id: 4, english: 'to mope / to brood / to languish', french: 'se morfondre' },
-        { id: 5, english: 'fulfilled / flourishing (person)', french: 'épanoui(e)' },
-        { id: 6, english: 'resentful / grudge-holding', french: 'rancunier(-ière)' },
-        { id: 7, english: 'to overcome / to get over (a difficulty)', french: 'surmonter' },
-        { id: 8, english: 'a grudge / a lasting resentment', french: 'une rancune' },
-        { id: 9, english: 'empathy', french: 'l\'empathie' },
-        { id: 10, english: 'overwhelmed / crushed (by grief or work)', french: 'accablé(e)' },
-        { id: 11, english: 'to envy / to be jealous of', french: 'envier' },
-        { id: 12, english: 'to reassure / to put someone\'s mind at ease', french: 'rassurer' },
-        { id: 13, english: 'bitterness (emotional)', french: 'l\'amertume' },
-        { id: 14, english: 'to be ashamed (of)', french: 'avoir honte (de)' },
-        { id: 15, english: 'relief (from worry or pain)', french: 'le soulagement' },
-        { id: 16, english: 'conflicted / torn (between two things)', french: 'tiraillé(e)' },
-        { id: 17, english: 'to suppress / to repress (an emotion)', french: 'refouler' },
-        { id: 18, english: 'melancholy / wistfulness', french: 'la mélancolie' },
-        { id: 19, english: 'self-confidence / self-esteem', french: 'la confiance en soi' },
-        { id: 20, english: 'vulnerable / emotionally fragile', french: 'vulnérable' },
-    ] },
-    { level: 'B1', unit: 1, "id":"technology-media","title":"Technologie & Médias","titleFR":"Technologie & Médias","description":"Le monde numérique en français","descriptionFR":"Le monde numérique en français","icon":"💻","color":"#A855F7","wordCount":0, words: [
-        { id: 1, english: 'a device / appliance', french: 'un appareil' },
-        { id: 2, english: 'to download', french: 'télécharger' },
-        { id: 3, english: 'to update (software)', french: 'mettre à jour' },
-        { id: 4, english: 'an app / application', french: 'une application' },
-        { id: 5, english: 'a social network', french: 'un réseau social' },
-        { id: 6, english: 'a platform', french: 'une plateforme' },
-        { id: 7, english: 'viral', french: 'viral(e)' },
-        { id: 8, english: 'a notification', french: 'une notification' },
-        { id: 9, english: 'cybersecurity', french: 'la cybersécurité' },
-        { id: 10, english: 'a password', french: 'un mot de passe' },
-        { id: 11, english: 'personal data', french: 'les données personnelles' },
-        { id: 12, english: 'digital / the digital sphere', french: 'le numérique' },
-        { id: 13, english: 'to stream live', french: 'diffuser en direct' },
-        { id: 14, english: 'artificial intelligence', french: 'l\'intelligence artificielle' },
-        { id: 15, english: 'automation', french: 'l\'automatisation' },
-        { id: 16, english: 'an algorithm', french: 'un algorithme' },
-        { id: 17, english: 'the cloud (computing)', french: 'le cloud' },
-        { id: 18, english: 'a start-up', french: 'une start-up' },
-        { id: 19, english: 'innovation', french: 'l\'innovation' },
-        { id: 20, english: 'obsolete / outdated', french: 'obsolète' },
-    ] },
-    { level: 'B1', unit: 1, "id":"art-culture","title":"Art & Culture","titleFR":"Art & Culture","description":"Explorer l'art et la vie culturelle française","descriptionFR":"Explorer l'art et la vie culturelle française","icon":"🎨","color":"#EC4899","wordCount":0, words: [
-        { id: 1,  english: 'a museum',                             french: 'un musée' },
-        { id: 2,  english: 'an exhibition',                        french: 'une exposition' },
-        { id: 3,  english: 'a painting / picture',                 french: 'un tableau' },
-        { id: 4,  english: 'a sculpture',                          french: 'une sculpture' },
-        { id: 5,  english: 'painting (as an art form)',            french: 'la peinture' },
-        { id: 6,  english: 'an artist',                            french: 'un(e) artiste' },
-        { id: 7,  english: 'a masterpiece',                        french: 'un chef-d\'œuvre' },
-        { id: 8,  english: 'an art gallery',                       french: 'une galerie' },
-        { id: 9,  english: 'a private view / opening night',       french: 'un vernissage' },
-        { id: 10, english: 'a critic / review',                    french: 'une critique' },
-        { id: 11, english: 'an artistic movement / style',         french: 'un courant artistique' },
-        { id: 12, english: 'heritage / cultural legacy',           french: 'le patrimoine' },
-        { id: 13, english: 'cinema / film',                        french: 'le cinéma' },
-        { id: 14, english: 'a film director',                      french: 'un réalisateur / une réalisatrice' },
-        { id: 15, english: 'a screenplay / script',                french: 'un scénario' },
-        { id: 16, english: 'direction / staging (of a play)',      french: 'une mise en scène' },
-        { id: 17, english: 'a festival',                           french: 'un festival' },
-        { id: 18, english: 'a prize / award',                      french: 'un prix' },
-        { id: 19, english: 'a concert',                            french: 'un concert' },
-        { id: 20, english: 'a stage / performance space',          french: 'une scène' },
-    ] },
-    { level: 'B1', unit: 1, "id":"environment-ecology","title":"Environnement & Écologie","titleFR":"Environnement & Écologie","description":"Nature, écologie et enjeux environnementaux","descriptionFR":"Nature, écologie et enjeux environnementaux","icon":"🌍","color":"#059669","wordCount":0, words: [
-        { id: 1,  english: 'climate change',                      french: 'le réchauffement climatique' },
-        { id: 2,  english: 'pollution',                            french: 'la pollution' },
-        { id: 3,  english: 'renewable energy',                     french: 'l\'énergie renouvelable' },
-        { id: 4,  english: 'biodiversity',                         french: 'la biodiversité' },
-        { id: 5,  english: 'deforestation',                        french: 'la déforestation' },
-        { id: 6,  english: 'recycling',                            french: 'le recyclage' },
-        { id: 7,  english: 'carbon footprint',                     french: 'l\'empreinte carbone' },
-        { id: 8,  english: 'sustainable development',              french: 'le développement durable' },
-        { id: 9,  english: 'ecosystem',                            french: 'un écosystème' },
-        { id: 10, english: 'endangered species',                   french: 'une espèce menacée' },
-        { id: 11, english: 'the greenhouse effect',                french: 'l\'effet de serre' },
-        { id: 12, english: 'fossil fuels',                         french: 'les énergies fossiles' },
-        { id: 13, english: 'an oil spill',                         french: 'une marée noire' },
-        { id: 14, english: 'waste / rubbish',                      french: 'les déchets' },
-        { id: 15, english: 'composting',                           french: 'le compostage' },
-        { id: 16, english: 'organic farming',                      french: 'l\'agriculture bio' },
-        { id: 17, english: 'an NGO / non-governmental organisation', french: 'une ONG' },
-        { id: 18, english: 'a demonstration / protest march',      french: 'une manifestation' },
-        { id: 19, english: 'carbon balance / carbon accounting',   french: 'un bilan carbone' },
-        { id: 20, english: 'energy transition',                    french: 'la transition énergétique' },
-    ] },
-    { level: 'B1', unit: 3, "id":"health-lifestyle","title":"Santé & Mode de vie","titleFR":"Santé & Mode de vie","description":"Bien-être, forme physique et vie saine","descriptionFR":"Bien-être, forme physique et vie saine","icon":"🏃","color":"#16A34A","wordCount":0, words: [
-        { id: 1,  english: 'a balanced diet',                      french: 'une alimentation équilibrée' },
-        { id: 2,  english: 'physical exercise',                    french: 'l\'exercice physique' },
-        { id: 3,  english: 'sleep',                                french: 'le sommeil' },
-        { id: 4,  english: 'stress',                               french: 'le stress' },
-        { id: 5,  english: 'well-being / wellness',                french: 'le bien-être' },
-        { id: 6,  english: 'meditation',                           french: 'la méditation' },
-        { id: 7,  english: 'yoga',                                 french: 'le yoga' },
-        { id: 8,  english: 'a sedentary lifestyle',                french: 'la sédentarité' },
-        { id: 9,  english: 'addiction',                            french: 'une addiction' },
-        { id: 10, english: 'prevention (of illness)',              french: 'la prévention' },
-        { id: 11, english: 'hygiene',                              french: 'l\'hygiène' },
-        { id: 12, english: 'screening / check-up',                 french: 'un dépistage' },
-        { id: 13, english: 'vaccination',                          french: 'la vaccination' },
-        { id: 14, english: 'a chronic illness',                    french: 'une maladie chronique' },
-        { id: 15, english: 'remission (of a disease)',             french: 'une rémission' },
-        { id: 16, english: 'recovery / cure',                      french: 'la guérison' },
-        { id: 17, english: 'convalescence',                        french: 'la convalescence' },
-        { id: 18, english: 'a diet / dietary regimen',             french: 'un régime' },
-        { id: 19, english: 'smoking / tobacco use',                french: 'le tabagisme' },
-        { id: 20, english: 'obesity',                              french: 'l\'obésité' },
-    ] },
-    { level: 'B1', unit: 1, "id":"housing-urban","title":"Logement & Vie urbaine","titleFR":"Logement & Vie urbaine","description":"Logement, appartements et vie en ville","descriptionFR":"Logement, appartements et vie en ville","icon":"🏘️","color":"#84CC16","wordCount":0, words: [
-        { id: 1,  english: 'rent',                                 french: 'le loyer' },
-        { id: 2,  english: 'a landlord / owner',                   french: 'un propriétaire' },
-        { id: 3,  english: 'a tenant',                             french: 'un locataire' },
-        { id: 4,  english: 'flat-sharing / house-sharing',         french: 'la colocation' },
-        { id: 5,  english: 'service charges / utilities',          french: 'les charges' },
-        { id: 6,  english: 'a neighbourhood / area',               french: 'un quartier' },
-        { id: 7,  english: 'the suburbs',                          french: 'la banlieue' },
-        { id: 8,  english: 'the city centre / downtown',           french: 'le centre-ville' },
-        { id: 9,  english: 'social / council housing',             french: 'un logement social' },
-        { id: 10, english: 'renovation / refurbishment',           french: 'une rénovation' },
-        { id: 11, english: 'a residents\' association / building manager', french: 'un syndic' },
-        { id: 12, english: 'a neighbourhood / neighbours (collective)', french: 'le voisinage' },
-        { id: 13, english: 'noise',                                french: 'le bruit' },
-        { id: 14, english: 'a lift / elevator',                    french: 'un ascenseur' },
-        { id: 15, english: 'a cellar / basement',                  french: 'une cave' },
-        { id: 16, english: 'an attic / loft',                      french: 'un grenier' },
-        { id: 17, english: 'a car park / parking space',           french: 'un parking' },
-        { id: 18, english: 'interior design / layout',             french: 'l\'aménagement' },
-        { id: 19, english: 'moving house',                         french: 'un déménagement' },
-        { id: 20, english: 'a property inventory / inspection report', french: 'un état des lieux' },
-    ] },
-    { level: 'B1', unit: 1, "id":"media-news","title":"Médias & Actualités","titleFR":"Médias & Actualités","description":"Actualités et vocabulaire des médias d'information","descriptionFR":"Actualités et vocabulaire des médias d'information","icon":"📡","color":"#0369A1","wordCount":0, words: [
-        { id: 1,  english: 'a newspaper',                          french: 'un journal' },
-        { id: 2,  english: 'a (TV / radio) programme',             french: 'une émission' },
-        { id: 3,  english: 'a (TV) channel',                       french: 'une chaîne' },
-        { id: 4,  english: 'a presenter / host',                   french: 'un présentateur / une présentatrice' },
-        { id: 5,  english: 'a news report / documentary',          french: 'un reportage' },
-        { id: 6,  english: 'an interview',                         french: 'une interview' },
-        { id: 7,  english: 'a poll / survey',                      french: 'un sondage' },
-        { id: 8,  english: 'an article',                           french: 'un article' },
-        { id: 9,  english: 'a section / column (in a paper)',      french: 'une rubrique' },
-        { id: 10, english: 'a headline / title',                   french: 'un titre' },
-        { id: 11, english: 'the front page',                       french: 'la une' },
-        { id: 12, english: 'a news wire / dispatch',               french: 'une dépêche' },
-        { id: 13, english: 'a press release',                      french: 'un communiqué de presse' },
-        { id: 14, english: 'fake news / misinformation',           french: 'les fake news' },
-        { id: 15, english: 'social media',                         french: 'les réseaux sociaux' },
-        { id: 16, english: 'going viral',                          french: 'la viralité' },
-        { id: 17, english: 'censorship',                           french: 'la censure' },
-        { id: 18, english: 'freedom of the press',                 french: 'la liberté de la presse' },
-        { id: 19, english: 'an editor / journalist',               french: 'un rédacteur / une rédactrice' },
-        { id: 20, english: 'a subscription',                       french: 'un abonnement' },
-    ] },
-    { level: 'B1', unit: 1, "id":"relationships-social","title":"Relations & Vie sociale","titleFR":"Relations & Vie sociale","description":"Liens sociaux, amitiés et relations","descriptionFR":"Liens sociaux, amitiés et relations","icon":"🤝","color":"#10B981","wordCount":0, words: [
-        { id: 1,  english: 'friendship',                           french: 'l\'amitié' },
-        { id: 2,  english: 'trust',                                french: 'la confiance' },
-        { id: 3,  english: 'a betrayal',                           french: 'une trahison' },
-        { id: 4,  english: 'a reconciliation',                     french: 'une réconciliation' },
-        { id: 5,  english: 'an argument / quarrel',                french: 'une dispute' },
-        { id: 6,  english: 'support / backing',                    french: 'le soutien' },
-        { id: 7,  english: 'jealousy',                             french: 'la jalousie' },
-        { id: 8,  english: 'admiration',                           french: 'l\'admiration' },
-        { id: 9,  english: 'respect',                              french: 'le respect' },
-        { id: 10, english: 'closeness / complicity (between friends)', french: 'la complicité' },
-        { id: 11, english: 'neighbourliness / being a good neighbour', french: 'le voisinage' },
-        { id: 12, english: 'mutual aid / helping each other',      french: 'l\'entraide' },
-        { id: 13, english: 'volunteering',                         french: 'le bénévolat' },
-        { id: 14, english: 'a community',                          french: 'une communauté' },
-        { id: 15, english: 'integration (into a community)',       french: 'l\'intégration' },
-        { id: 16, english: 'diversity',                            french: 'la diversité' },
-        { id: 17, english: 'a prejudice / bias',                   french: 'un préjugé' },
-        { id: 18, english: 'solidarity',                           french: 'la solidarité' },
-        { id: 19, english: 'empathy',                              french: 'l\'empathie' },
-        { id: 20, english: 'tolerance',                            french: 'la tolérance' },
-    ] },
+  {
+    "level": "B1",
+    "unit": 1,
+    "id": "b1en-vocab-01",
+    "title": "Étapes de vie et décisions",
+    "titleFR": "Étapes de vie et décisions",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "turning point",
+        "french": "tournant décisif"
+      },
+      {
+        "id": 2,
+        "english": "setback",
+        "french": "revers"
+      },
+      {
+        "id": 3,
+        "english": "commitment",
+        "french": "engagement"
+      },
+      {
+        "id": 4,
+        "english": "to settle in",
+        "french": "s’installer"
+      },
+      {
+        "id": 5,
+        "english": "to reconsider",
+        "french": "reconsidérer"
+      },
+      {
+        "id": 6,
+        "english": "to overcome",
+        "french": "surmonter"
+      },
+      {
+        "id": 7,
+        "english": "to take a risk",
+        "french": "prendre un risque"
+      },
+      {
+        "id": 8,
+        "english": "to make progress",
+        "french": "progresser"
+      },
+      {
+        "id": 9,
+        "english": "to regret",
+        "french": "regretter"
+      },
+      {
+        "id": 10,
+        "english": "to adapt",
+        "french": "s’adapter"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 1,
+    "id": "b1en-reading-vocab-01",
+    "title": "Vocabulaire de lecture : A Ticket from the Old Theatre",
+    "titleFR": "Vocabulaire de lecture : A Ticket from the Old Theatre",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "former staff",
+        "french": "ancien personnel"
+      },
+      {
+        "id": 2,
+        "english": "behind the curtain",
+        "french": "en coulisses"
+      },
+      {
+        "id": 3,
+        "english": "sold-out concert",
+        "french": "concert à guichets fermés"
+      },
+      {
+        "id": 4,
+        "english": "heating broke down",
+        "french": "chauffage est tombé en panne"
+      },
+      {
+        "id": 5,
+        "english": "donate",
+        "french": "faire don de"
+      },
+      {
+        "id": 6,
+        "english": "entrance hall",
+        "french": "hall d’entrée"
+      },
+      {
+        "id": 7,
+        "english": "performers",
+        "french": "artistes sur scène"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 1,
+    "id": "b1en-vocab-02",
+    "title": "Souvenirs et patrimoine",
+    "titleFR": "Souvenirs et patrimoine",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 9,
+    "words": [
+      {
+        "id": 1,
+        "english": "historical record",
+        "french": "document historique"
+      },
+      {
+        "id": 2,
+        "english": "to preserve",
+        "french": "préserver"
+      },
+      {
+        "id": 3,
+        "english": "restoration",
+        "french": "restauration"
+      },
+      {
+        "id": 4,
+        "english": "generation",
+        "french": "génération"
+      },
+      {
+        "id": 5,
+        "english": "remembrance",
+        "french": "souvenir collectif"
+      },
+      {
+        "id": 6,
+        "english": "oral history",
+        "french": "histoire orale"
+      },
+      {
+        "id": 7,
+        "english": "to pass down",
+        "french": "transmettre"
+      },
+      {
+        "id": 8,
+        "english": "witness",
+        "french": "témoin"
+      },
+      {
+        "id": 9,
+        "english": "timeline",
+        "french": "chronologie"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 1,
+    "id": "b1en-reading-vocab-02",
+    "title": "Vocabulaire de lecture : The Photograph I Nearly Deleted",
+    "titleFR": "Vocabulaire de lecture : The Photograph I Nearly Deleted",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "blurred image",
+        "french": "image floue"
+      },
+      {
+        "id": 2,
+        "english": "missed the last tram",
+        "french": "raté le dernier tramway"
+      },
+      {
+        "id": 3,
+        "english": "directions",
+        "french": "indications"
+      },
+      {
+        "id": 4,
+        "english": "family recipes",
+        "french": "recettes familiales"
+      },
+      {
+        "id": 5,
+        "english": "deleting",
+        "french": "suppression"
+      },
+      {
+        "id": 6,
+        "english": "quality",
+        "french": "qualité"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 1,
+    "id": "b1en-vocab-03",
+    "title": "Émotions et réactions",
+    "titleFR": "Émotions et réactions",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "overwhelmed",
+        "french": "débordé"
+      },
+      {
+        "id": 2,
+        "english": "proud of",
+        "french": "fier de"
+      },
+      {
+        "id": 3,
+        "english": "uncertain",
+        "french": "incertain"
+      },
+      {
+        "id": 4,
+        "english": "inspired",
+        "french": "inspiré"
+      },
+      {
+        "id": 5,
+        "english": "to hesitate",
+        "french": "hésiter"
+      },
+      {
+        "id": 6,
+        "english": "to feel at ease",
+        "french": "se sentir à l’aise"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 1,
+    "id": "b1en-reading-vocab-03",
+    "title": "Vocabulaire de lecture : From Factory Floor to Community Garden",
+    "titleFR": "Vocabulaire de lecture : From Factory Floor to Community Garden",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 5,
+    "words": [
+      {
+        "id": 1,
+        "english": "furniture factory",
+        "french": "usine de meubles"
+      },
+      {
+        "id": 2,
+        "english": "site became an empty space",
+        "french": "site est devenu un terrain vide"
+      },
+      {
+        "id": 3,
+        "english": "permission",
+        "french": "autorisation"
+      },
+      {
+        "id": 4,
+        "english": "old fence",
+        "french": "vieille clôture"
+      },
+      {
+        "id": 5,
+        "english": "wooden beds",
+        "french": "bacs de jardinage en bois"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 1,
+    "id": "b1en-reading-vocab-04",
+    "title": "Vocabulaire de lecture : A Letter to My Younger Self",
+    "titleFR": "Vocabulaire de lecture : A Letter to My Younger Self",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "career",
+        "french": "carrière"
+      },
+      {
+        "id": 2,
+        "english": "change your mind",
+        "french": "changer d’avis"
+      },
+      {
+        "id": 3,
+        "english": "sign-language interpreter",
+        "french": "interprète en langue des signes"
+      },
+      {
+        "id": 4,
+        "english": "pretend",
+        "french": "faire semblant"
+      },
+      {
+        "id": 5,
+        "english": "changing direction",
+        "french": "changer de voie"
+      },
+      {
+        "id": 6,
+        "english": "comparing",
+        "french": "comparer"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 2,
+    "id": "b1en-vocab-04",
+    "title": "Organisation du travail",
+    "titleFR": "Organisation du travail",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 8,
+    "words": [
+      {
+        "id": 1,
+        "english": "flexible hours",
+        "french": "horaires flexibles"
+      },
+      {
+        "id": 2,
+        "english": "colleague feedback",
+        "french": "retour des collègues"
+      },
+      {
+        "id": 3,
+        "english": "remote position",
+        "french": "poste à distance"
+      },
+      {
+        "id": 4,
+        "english": "to delegate",
+        "french": "déléguer"
+      },
+      {
+        "id": 5,
+        "english": "to prioritise",
+        "french": "hiérarchiser les priorités"
+      },
+      {
+        "id": 6,
+        "english": "to negotiate",
+        "french": "négocier"
+      },
+      {
+        "id": 7,
+        "english": "work-life balance",
+        "french": "équilibre vie pro/vie perso"
+      },
+      {
+        "id": 8,
+        "english": "contract renewal",
+        "french": "renouvellement de contrat"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 2,
+    "id": "b1en-reading-vocab-05",
+    "title": "Vocabulaire de lecture : The Office That Shares Its Desks",
+    "titleFR": "Vocabulaire de lecture : The Office That Shares Its Desks",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "four-day working week",
+        "french": "semaine de travail de quatre jours"
+      },
+      {
+        "id": 2,
+        "english": "salary",
+        "french": "salaire"
+      },
+      {
+        "id": 3,
+        "english": "rethink",
+        "french": "repenser"
+      },
+      {
+        "id": 4,
+        "english": "project manager",
+        "french": "cheffe de projet"
+      },
+      {
+        "id": 5,
+        "english": "short updates",
+        "french": "courtes mises à jour"
+      },
+      {
+        "id": 6,
+        "english": "spontaneous questions",
+        "french": "questions spontanées"
+      },
+      {
+        "id": 7,
+        "english": "trial",
+        "french": "période d’essai"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 2,
+    "id": "b1en-reading-vocab-06",
+    "title": "Vocabulaire de lecture : Three Months in the Repair Workshop",
+    "titleFR": "Vocabulaire de lecture : Three Months in the Repair Workshop",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "brakes",
+        "french": "freins"
+      },
+      {
+        "id": 2,
+        "english": "replace a tyre",
+        "french": "remplacer un pneu"
+      },
+      {
+        "id": 3,
+        "english": "supervisor",
+        "french": "tutrice de stage"
+      },
+      {
+        "id": 4,
+        "english": "accuracy",
+        "french": "précision"
+      },
+      {
+        "id": 5,
+        "english": "gears",
+        "french": "vitesses mécaniques"
+      },
+      {
+        "id": 6,
+        "english": "apprenticeship",
+        "french": "apprentissage"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 2,
+    "id": "b1en-vocab-05",
+    "title": "Apprentissage et évolution",
+    "titleFR": "Apprentissage et évolution",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "qualification",
+        "french": "qualification"
+      },
+      {
+        "id": 2,
+        "english": "mentor",
+        "french": "mentor"
+      },
+      {
+        "id": 3,
+        "english": "internship",
+        "french": "stage"
+      },
+      {
+        "id": 4,
+        "english": "training session",
+        "french": "séance de formation"
+      },
+      {
+        "id": 5,
+        "english": "to gain experience",
+        "french": "acquérir de l’expérience"
+      },
+      {
+        "id": 6,
+        "english": "to develop a skill",
+        "french": "développer une compétence"
+      },
+      {
+        "id": 7,
+        "english": "assessment criteria",
+        "french": "critères d’évaluation"
+      },
+      {
+        "id": 8,
+        "english": "learning outcome",
+        "french": "objectif d’apprentissage"
+      },
+      {
+        "id": 9,
+        "english": "to improve steadily",
+        "french": "s’améliorer régulièrement"
+      },
+      {
+        "id": 10,
+        "english": "independent study",
+        "french": "travail en autonomie"
+      },
+      {
+        "id": 11,
+        "english": "practical exercise",
+        "french": "exercice pratique"
+      },
+      {
+        "id": 12,
+        "english": "professional development",
+        "french": "évolution professionnelle"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 2,
+    "id": "b1en-reading-vocab-07",
+    "title": "Vocabulaire de lecture : Before You Join the Course",
+    "titleFR": "Vocabulaire de lecture : Before You Join the Course",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 5,
+    "words": [
+      {
+        "id": 1,
+        "english": "daytime lessons",
+        "french": "cours en journée"
+      },
+      {
+        "id": 2,
+        "english": "step-free access",
+        "french": "accès sans marche"
+      },
+      {
+        "id": 3,
+        "english": "enrolling",
+        "french": "inscription"
+      },
+      {
+        "id": 4,
+        "english": "lending library",
+        "french": "service de prêt"
+      },
+      {
+        "id": 5,
+        "english": "without charge",
+        "french": "sans frais"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 2,
+    "id": "b1en-reading-vocab-08",
+    "title": "Vocabulaire de lecture : The Conversation We Needed",
+    "titleFR": "Vocabulaire de lecture : The Conversation We Needed",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "event pages",
+        "french": "pages d’événements"
+      },
+      {
+        "id": 2,
+        "english": "sounded impatient",
+        "french": "semblé impatient"
+      },
+      {
+        "id": 3,
+        "english": "pointed it out",
+        "french": "l’a signalé"
+      },
+      {
+        "id": 4,
+        "english": "approve",
+        "french": "valider"
+      },
+      {
+        "id": 5,
+        "english": "shared checklist",
+        "french": "liste de vérification commune"
+      },
+      {
+        "id": 6,
+        "english": "concerns",
+        "french": "préoccupations"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 3,
+    "id": "b1en-vocab-06",
+    "title": "Imprévus et réclamations",
+    "titleFR": "Imprévus et réclamations",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "travel disruption",
+        "french": "perturbation du voyage"
+      },
+      {
+        "id": 2,
+        "english": "cancellation fee",
+        "french": "frais d’annulation"
+      },
+      {
+        "id": 3,
+        "english": "missed connection",
+        "french": "correspondance manquée"
+      },
+      {
+        "id": 4,
+        "english": "delayed departure",
+        "french": "départ retardé"
+      },
+      {
+        "id": 5,
+        "english": "refund request",
+        "french": "demande de remboursement"
+      },
+      {
+        "id": 6,
+        "english": "customer complaint",
+        "french": "réclamation client"
+      },
+      {
+        "id": 7,
+        "english": "booking confirmation",
+        "french": "confirmation de réservation"
+      },
+      {
+        "id": 8,
+        "english": "replacement service",
+        "french": "service de remplacement"
+      },
+      {
+        "id": 9,
+        "english": "unavoidable delay",
+        "french": "retard inévitable"
+      },
+      {
+        "id": 10,
+        "english": "to reschedule",
+        "french": "reprogrammer"
+      },
+      {
+        "id": 11,
+        "english": "to reimburse",
+        "french": "rembourser"
+      },
+      {
+        "id": 12,
+        "english": "to resolve a dispute",
+        "french": "résoudre un litige"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 3,
+    "id": "b1en-reading-vocab-09",
+    "title": "Vocabulaire de lecture : A Ferry That May Not Sail",
+    "titleFR": "Vocabulaire de lecture : A Ferry That May Not Sail",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "strong winds",
+        "french": "vents forts"
+      },
+      {
+        "id": 2,
+        "english": "waiting area",
+        "french": "salle d’attente"
+      },
+      {
+        "id": 3,
+        "english": "connecting train",
+        "french": "correspondance ferroviaire"
+      },
+      {
+        "id": 4,
+        "english": "refund",
+        "french": "remboursement"
+      },
+      {
+        "id": 5,
+        "english": "proof of purchase",
+        "french": "preuve d’achat"
+      },
+      {
+        "id": 6,
+        "english": "pier",
+        "french": "embarcadère"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 3,
+    "id": "b1en-reading-vocab-10",
+    "title": "Vocabulaire de lecture : The Hostel Kitchen Rules",
+    "titleFR": "Vocabulaire de lecture : The Hostel Kitchen Rules",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "label food",
+        "french": "étiqueter la nourriture"
+      },
+      {
+        "id": 2,
+        "english": "unlabelled containers",
+        "french": "boîtes sans étiquette"
+      },
+      {
+        "id": 3,
+        "english": "doorway",
+        "french": "embrasure de porte"
+      },
+      {
+        "id": 4,
+        "english": "remain clear",
+        "french": "rester dégagé"
+      },
+      {
+        "id": 5,
+        "english": "noise low",
+        "french": "faible niveau sonore"
+      },
+      {
+        "id": 6,
+        "english": "personal items",
+        "french": "effets personnels"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 3,
+    "id": "b1en-vocab-07",
+    "title": "Sécurité et itinéraires",
+    "titleFR": "Sécurité et itinéraires",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "hazard",
+        "french": "danger"
+      },
+      {
+        "id": 2,
+        "english": "precaution",
+        "french": "précaution"
+      },
+      {
+        "id": 3,
+        "english": "warning sign",
+        "french": "panneau d’avertissement"
+      },
+      {
+        "id": 4,
+        "english": "emergency contact",
+        "french": "contact d’urgence"
+      },
+      {
+        "id": 5,
+        "english": "steep descent",
+        "french": "descente abrupte"
+      },
+      {
+        "id": 6,
+        "english": "slippery surface",
+        "french": "surface glissante"
+      },
+      {
+        "id": 7,
+        "english": "safety equipment",
+        "french": "équipement de sécurité"
+      },
+      {
+        "id": 8,
+        "english": "to assess a risk",
+        "french": "évaluer un risque"
+      },
+      {
+        "id": 9,
+        "english": "sheltered path",
+        "french": "chemin abrité"
+      },
+      {
+        "id": 10,
+        "english": "reliable map",
+        "french": "carte fiable"
+      },
+      {
+        "id": 11,
+        "english": "route change",
+        "french": "changement d’itinéraire"
+      },
+      {
+        "id": 12,
+        "english": "protective clothing",
+        "french": "vêtement de protection"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 3,
+    "id": "b1en-reading-vocab-11",
+    "title": "Vocabulaire de lecture : The Climb We Almost Abandoned",
+    "titleFR": "Vocabulaire de lecture : The Climb We Almost Abandoned",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "at dawn",
+        "french": "à l’aube"
+      },
+      {
+        "id": 2,
+        "english": "narrow trail",
+        "french": "sentier étroit"
+      },
+      {
+        "id": 3,
+        "english": "too steep",
+        "french": "trop abrupt"
+      },
+      {
+        "id": 4,
+        "english": "abandon the walk",
+        "french": "abandonner la randonnée"
+      },
+      {
+        "id": 5,
+        "english": "local ranger",
+        "french": "garde forestier"
+      },
+      {
+        "id": 6,
+        "english": "alternative route",
+        "french": "itinéraire alternatif"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 3,
+    "id": "b1en-reading-vocab-12",
+    "title": "Vocabulaire de lecture : Complaint About a Delayed Connection",
+    "titleFR": "Vocabulaire de lecture : Complaint About a Delayed Connection",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "replacement ticket",
+        "french": "billet de remplacement"
+      },
+      {
+        "id": 2,
+        "english": "booking reference",
+        "french": "référence de réservation"
+      },
+      {
+        "id": 3,
+        "english": "inspector",
+        "french": "contrôleur"
+      },
+      {
+        "id": 4,
+        "english": "delay notice",
+        "french": "avis de retard"
+      },
+      {
+        "id": 5,
+        "english": "entitled to compensation",
+        "french": "droit à une indemnisation"
+      },
+      {
+        "id": 6,
+        "english": "travel insurance claim",
+        "french": "demande à l’assurance voyage"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 4,
+    "id": "b1en-vocab-08",
+    "title": "Presse et fiabilité",
+    "titleFR": "Presse et fiabilité",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 11,
+    "words": [
+      {
+        "id": 1,
+        "english": "news outlet",
+        "french": "média d’information"
+      },
+      {
+        "id": 2,
+        "english": "editorial decision",
+        "french": "choix éditorial"
+      },
+      {
+        "id": 3,
+        "english": "fact-checking",
+        "french": "vérification des faits"
+      },
+      {
+        "id": 4,
+        "english": "credible source",
+        "french": "source crédible"
+      },
+      {
+        "id": 5,
+        "english": "misinformation",
+        "french": "information erronée"
+      },
+      {
+        "id": 6,
+        "english": "eyewitness account",
+        "french": "témoignage oculaire"
+      },
+      {
+        "id": 7,
+        "english": "to verify a claim",
+        "french": "vérifier une affirmation"
+      },
+      {
+        "id": 8,
+        "english": "to publish a correction",
+        "french": "publier un rectificatif"
+      },
+      {
+        "id": 9,
+        "english": "public interest",
+        "french": "intérêt public"
+      },
+      {
+        "id": 10,
+        "english": "misleading impression",
+        "french": "impression trompeuse"
+      },
+      {
+        "id": 11,
+        "english": "independent reporter",
+        "french": "journaliste indépendant"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 4,
+    "id": "b1en-reading-vocab-13",
+    "title": "Vocabulaire de lecture : When a Rumour Travels Faster Than the Facts",
+    "titleFR": "Vocabulaire de lecture : When a Rumour Travels Faster Than the Facts",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "claimed",
+        "french": "affirmait"
+      },
+      {
+        "id": 2,
+        "english": "shared hundreds of times",
+        "french": "partagé des centaines de fois"
+      },
+      {
+        "id": 3,
+        "english": "building repairs",
+        "french": "travaux dans le bâtiment"
+      },
+      {
+        "id": 4,
+        "english": "misleading photograph",
+        "french": "photo trompeuse"
+      },
+      {
+        "id": 5,
+        "english": "accurate",
+        "french": "exact"
+      },
+      {
+        "id": 6,
+        "english": "at the source",
+        "french": "à la source"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 4,
+    "id": "b1en-reading-vocab-14",
+    "title": "Vocabulaire de lecture : A Podcast About Digital Privacy",
+    "titleFR": "Vocabulaire de lecture : A Podcast About Digital Privacy",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "location sharing",
+        "french": "partage de position"
+      },
+      {
+        "id": 2,
+        "english": "exact position",
+        "french": "position exacte"
+      },
+      {
+        "id": 3,
+        "english": "created pressure",
+        "french": "a créé une pression"
+      },
+      {
+        "id": 4,
+        "english": "participants",
+        "french": "participants"
+      },
+      {
+        "id": 5,
+        "english": "privacy notice",
+        "french": "notice de confidentialité"
+      },
+      {
+        "id": 6,
+        "english": "tracking",
+        "french": "suivi de localisation"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 4,
+    "id": "b1en-vocab-09",
+    "title": "Technologie et vie privée",
+    "titleFR": "Technologie et vie privée",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "personal data",
+        "french": "données personnelles"
+      },
+      {
+        "id": 2,
+        "english": "privacy controls",
+        "french": "contrôles de confidentialité"
+      },
+      {
+        "id": 3,
+        "english": "device update",
+        "french": "mise à jour d’appareil"
+      },
+      {
+        "id": 4,
+        "english": "password manager",
+        "french": "gestionnaire de mots de passe"
+      },
+      {
+        "id": 5,
+        "english": "digital footprint",
+        "french": "empreinte numérique"
+      },
+      {
+        "id": 6,
+        "english": "consent",
+        "french": "consentement"
+      },
+      {
+        "id": 7,
+        "english": "to share access",
+        "french": "partager un accès"
+      },
+      {
+        "id": 8,
+        "english": "to restrict permissions",
+        "french": "limiter les autorisations"
+      },
+      {
+        "id": 9,
+        "english": "account security",
+        "french": "sécurité du compte"
+      },
+      {
+        "id": 10,
+        "english": "screen time",
+        "french": "temps d’écran"
+      },
+      {
+        "id": 11,
+        "english": "notification overload",
+        "french": "excès de notifications"
+      },
+      {
+        "id": 12,
+        "english": "online identity",
+        "french": "identité numérique"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 4,
+    "id": "b1en-reading-vocab-15",
+    "title": "Vocabulaire de lecture : How the Town Radio Station Was Built",
+    "titleFR": "Vocabulaire de lecture : How the Town Radio Station Was Built",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "founded",
+        "french": "fondée"
+      },
+      {
+        "id": 2,
+        "english": "broadcasts",
+        "french": "émissions"
+      },
+      {
+        "id": 3,
+        "english": "reduce the echo",
+        "french": "réduire l’écho"
+      },
+      {
+        "id": 4,
+        "english": "handwritten notes",
+        "french": "notes manuscrites"
+      },
+      {
+        "id": 5,
+        "english": "run by volunteers",
+        "french": "gérée par des bénévoles"
+      },
+      {
+        "id": 6,
+        "english": "archive",
+        "french": "archives"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 4,
+    "id": "b1en-reading-vocab-16",
+    "title": "Vocabulaire de lecture : Why I Stopped Reading Only Headlines",
+    "titleFR": "Vocabulaire de lecture : Why I Stopped Reading Only Headlines",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "scrolling",
+        "french": "faire défiler"
+      },
+      {
+        "id": 2,
+        "english": "well informed",
+        "french": "bien informé"
+      },
+      {
+        "id": 3,
+        "english": "turned out to be wrong",
+        "french": "s’est révélé faux"
+      },
+      {
+        "id": 4,
+        "english": "screenshot",
+        "french": "capture d’écran"
+      },
+      {
+        "id": 5,
+        "english": "supported by evidence",
+        "french": "étayé par des preuves"
+      },
+      {
+        "id": 6,
+        "english": "strong claim",
+        "french": "affirmation catégorique"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 5,
+    "id": "b1en-vocab-10",
+    "title": "Écologie quotidienne",
+    "titleFR": "Écologie quotidienne",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "carbon footprint",
+        "french": "empreinte carbone"
+      },
+      {
+        "id": 2,
+        "english": "waste reduction",
+        "french": "réduction des déchets"
+      },
+      {
+        "id": 3,
+        "english": "reusable container",
+        "french": "récipient réutilisable"
+      },
+      {
+        "id": 4,
+        "english": "energy efficient",
+        "french": "économe en énergie"
+      },
+      {
+        "id": 5,
+        "english": "local supply",
+        "french": "approvisionnement local"
+      },
+      {
+        "id": 6,
+        "english": "environmental impact",
+        "french": "impact environnemental"
+      },
+      {
+        "id": 7,
+        "english": "to conserve resources",
+        "french": "préserver les ressources"
+      },
+      {
+        "id": 8,
+        "english": "to sort waste",
+        "french": "trier les déchets"
+      },
+      {
+        "id": 9,
+        "english": "sustainable choice",
+        "french": "choix durable"
+      },
+      {
+        "id": 10,
+        "english": "public consultation",
+        "french": "concertation publique"
+      },
+      {
+        "id": 11,
+        "english": "air quality",
+        "french": "qualité de l’air"
+      },
+      {
+        "id": 12,
+        "english": "community planting",
+        "french": "plantation collective"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 5,
+    "id": "b1en-reading-vocab-17",
+    "title": "Vocabulaire de lecture : If Our Street Had More Trees",
+    "titleFR": "Vocabulaire de lecture : If Our Street Had More Trees",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "shade",
+        "french": "ombre"
+      },
+      {
+        "id": 2,
+        "english": "planted a row",
+        "french": "plantaient une rangée"
+      },
+      {
+        "id": 3,
+        "english": "regular care",
+        "french": "entretien régulier"
+      },
+      {
+        "id": 4,
+        "english": "maintain young trees",
+        "french": "entretenir de jeunes arbres"
+      },
+      {
+        "id": 5,
+        "english": "existing shelter",
+        "french": "abri existant"
+      },
+      {
+        "id": 6,
+        "english": "survey of residents",
+        "french": "enquête auprès des habitants"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 5,
+    "id": "b1en-reading-vocab-18",
+    "title": "Vocabulaire de lecture : The Mystery of the Missing Lunches",
+    "titleFR": "Vocabulaire de lecture : The Mystery of the Missing Lunches",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "packed lunches",
+        "french": "repas apportés de chez soi"
+      },
+      {
+        "id": 2,
+        "english": "blamed",
+        "french": "ont accusé"
+      },
+      {
+        "id": 3,
+        "english": "make accusations",
+        "french": "porter des accusations"
+      },
+      {
+        "id": 4,
+        "english": "overnight",
+        "french": "pendant la nuit"
+      },
+      {
+        "id": 5,
+        "english": "assumptions",
+        "french": "suppositions"
+      },
+      {
+        "id": 6,
+        "english": "stealing",
+        "french": "voler"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 5,
+    "id": "b1en-vocab-11",
+    "title": "Santé et habitudes",
+    "titleFR": "Santé et habitudes",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 11,
+    "words": [
+      {
+        "id": 1,
+        "english": "balanced routine",
+        "french": "routine équilibrée"
+      },
+      {
+        "id": 2,
+        "english": "mental wellbeing",
+        "french": "bien-être mental"
+      },
+      {
+        "id": 3,
+        "english": "healthy boundary",
+        "french": "limite saine"
+      },
+      {
+        "id": 4,
+        "english": "to recover energy",
+        "french": "récupérer de l’énergie"
+      },
+      {
+        "id": 5,
+        "english": "rest day",
+        "french": "jour de repos"
+      },
+      {
+        "id": 6,
+        "english": "sleep pattern",
+        "french": "rythme de sommeil"
+      },
+      {
+        "id": 7,
+        "english": "gentle exercise",
+        "french": "exercice doux"
+      },
+      {
+        "id": 8,
+        "english": "to manage stress",
+        "french": "gérer le stress"
+      },
+      {
+        "id": 9,
+        "english": "to seek advice",
+        "french": "demander conseil"
+      },
+      {
+        "id": 10,
+        "english": "personal limit",
+        "french": "limite personnelle"
+      },
+      {
+        "id": 11,
+        "english": "realistic goal",
+        "french": "objectif réaliste"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 5,
+    "id": "b1en-reading-vocab-19",
+    "title": "Vocabulaire de lecture : A Meal Made from Leftovers",
+    "titleFR": "Vocabulaire de lecture : A Meal Made from Leftovers",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "bruised tomatoes",
+        "french": "tomates abîmées"
+      },
+      {
+        "id": 2,
+        "english": "very ripe pears",
+        "french": "poires très mûres"
+      },
+      {
+        "id": 3,
+        "english": "savoury pudding",
+        "french": "pudding salé"
+      },
+      {
+        "id": 4,
+        "english": "donate what they wished",
+        "french": "donner ce qu’ils souhaitaient"
+      },
+      {
+        "id": 5,
+        "english": "produce food",
+        "french": "produire des aliments"
+      },
+      {
+        "id": 6,
+        "english": "edible",
+        "french": "comestible"
+      },
+      {
+        "id": 7,
+        "english": "recipe card",
+        "french": "fiche recette"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 5,
+    "id": "b1en-reading-vocab-20",
+    "title": "Vocabulaire de lecture : Choosing a Fitness Class Without Pressure",
+    "titleFR": "Vocabulaire de lecture : Choosing a Fitness Class Without Pressure",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "trained runner",
+        "french": "coureur entraîné"
+      },
+      {
+        "id": 2,
+        "english": "build up gradually",
+        "french": "augmenter progressivement"
+      },
+      {
+        "id": 3,
+        "english": "instructor",
+        "french": "moniteur"
+      },
+      {
+        "id": 4,
+        "english": "demanding",
+        "french": "exigeant"
+      },
+      {
+        "id": 5,
+        "english": "trial session",
+        "french": "séance d’essai"
+      },
+      {
+        "id": 6,
+        "english": "unrealistic target",
+        "french": "objectif irréaliste"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 6,
+    "id": "b1en-vocab-12",
+    "title": "Relations et communication",
+    "titleFR": "Relations et communication",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "misunderstanding",
+        "french": "malentendu"
+      },
+      {
+        "id": 2,
+        "english": "mutual respect",
+        "french": "respect mutuel"
+      },
+      {
+        "id": 3,
+        "english": "to compromise",
+        "french": "faire un compromis"
+      },
+      {
+        "id": 4,
+        "english": "to apologise sincerely",
+        "french": "présenter des excuses sincères"
+      },
+      {
+        "id": 5,
+        "english": "to listen actively",
+        "french": "écouter activement"
+      },
+      {
+        "id": 6,
+        "english": "to rebuild trust",
+        "french": "rétablir la confiance"
+      },
+      {
+        "id": 7,
+        "english": "to set boundaries",
+        "french": "poser des limites"
+      },
+      {
+        "id": 8,
+        "english": "shared responsibility",
+        "french": "responsabilité partagée"
+      },
+      {
+        "id": 9,
+        "english": "to avoid conflict",
+        "french": "éviter un conflit"
+      },
+      {
+        "id": 10,
+        "english": "to disagree politely",
+        "french": "exprimer poliment son désaccord"
+      },
+      {
+        "id": 11,
+        "english": "support network",
+        "french": "réseau de soutien"
+      },
+      {
+        "id": 12,
+        "english": "sensitive topic",
+        "french": "sujet délicat"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 6,
+    "id": "b1en-reading-vocab-21",
+    "title": "Vocabulaire de lecture : The Bench That Became a Meeting Place",
+    "titleFR": "Vocabulaire de lecture : The Bench That Became a Meeting Place",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "grocery shop",
+        "french": "épicerie"
+      },
+      {
+        "id": 2,
+        "english": "carrying heavy bags",
+        "french": "porter des sacs lourds"
+      },
+      {
+        "id": 3,
+        "english": "wheelchairs",
+        "french": "fauteuils roulants"
+      },
+      {
+        "id": 4,
+        "english": "shelf",
+        "french": "étagère"
+      },
+      {
+        "id": 5,
+        "english": "newcomers",
+        "french": "nouveaux arrivants"
+      },
+      {
+        "id": 6,
+        "english": "need a favour",
+        "french": "avoir besoin d’un service"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 6,
+    "id": "b1en-reading-vocab-22",
+    "title": "Vocabulaire de lecture : A Conversation Between Two Siblings",
+    "titleFR": "Vocabulaire de lecture : A Conversation Between Two Siblings",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "upset you",
+        "french": "t’ai blessé"
+      },
+      {
+        "id": 2,
+        "english": "annoyed",
+        "french": "agacé"
+      },
+      {
+        "id": 3,
+        "english": "consult each other",
+        "french": "se consulter"
+      },
+      {
+        "id": 4,
+        "english": "assumed",
+        "french": "supposé"
+      },
+      {
+        "id": 5,
+        "english": "instead of disappearing",
+        "french": "au lieu de disparaître"
+      },
+      {
+        "id": 6,
+        "english": "deal",
+        "french": "marché conclu"
+      },
+      {
+        "id": 7,
+        "english": "felt heard",
+        "french": "se sont sentis écoutés"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 6,
+    "id": "b1en-vocab-13",
+    "title": "Vie associative et coopération",
+    "titleFR": "Vie associative et coopération",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "community initiative",
+        "french": "initiative citoyenne"
+      },
+      {
+        "id": 2,
+        "english": "volunteer coordinator",
+        "french": "coordinateur de bénévoles"
+      },
+      {
+        "id": 3,
+        "english": "fundraising event",
+        "french": "événement de collecte de fonds"
+      },
+      {
+        "id": 4,
+        "english": "local partnership",
+        "french": "partenariat local"
+      },
+      {
+        "id": 5,
+        "english": "public meeting",
+        "french": "réunion publique"
+      },
+      {
+        "id": 6,
+        "english": "collective decision",
+        "french": "décision collective"
+      },
+      {
+        "id": 7,
+        "english": "neighbourhood project",
+        "french": "projet de quartier"
+      },
+      {
+        "id": 8,
+        "english": "to gather feedback",
+        "french": "recueillir des avis"
+      },
+      {
+        "id": 9,
+        "english": "inclusive space",
+        "french": "espace inclusif"
+      },
+      {
+        "id": 10,
+        "english": "shared resources",
+        "french": "ressources partagées"
+      },
+      {
+        "id": 11,
+        "english": "to reach agreement",
+        "french": "parvenir à un accord"
+      },
+      {
+        "id": 12,
+        "english": "public noticeboard",
+        "french": "panneau d’affichage public"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 6,
+    "id": "b1en-reading-vocab-23",
+    "title": "Vocabulaire de lecture : How Our Reading Group Welcomes New Members",
+    "titleFR": "Vocabulaire de lecture : How Our Reading Group Welcomes New Members",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "waiting list",
+        "french": "liste d’attente"
+      },
+      {
+        "id": 2,
+        "english": "famous novels",
+        "french": "romans célèbres"
+      },
+      {
+        "id": 3,
+        "english": "collection of short stories",
+        "french": "recueil de nouvelles"
+      },
+      {
+        "id": 4,
+        "english": "local authors",
+        "french": "auteurs locaux"
+      },
+      {
+        "id": 5,
+        "english": "in advance",
+        "french": "à l’avance"
+      },
+      {
+        "id": 6,
+        "english": "make space for",
+        "french": "faire une place à"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 6,
+    "id": "b1en-reading-vocab-24",
+    "title": "Vocabulaire de lecture : The Neighbourhood Agreement",
+    "titleFR": "Vocabulaire de lecture : The Neighbourhood Agreement",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "complaints about noise",
+        "french": "plaintes pour bruit"
+      },
+      {
+        "id": 2,
+        "english": "local mediator",
+        "french": "médiateur local"
+      },
+      {
+        "id": 3,
+        "english": "delivery drivers",
+        "french": "livreurs"
+      },
+      {
+        "id": 4,
+        "english": "engines running",
+        "french": "moteurs allumés"
+      },
+      {
+        "id": 5,
+        "english": "back entrance",
+        "french": "entrée arrière"
+      },
+      {
+        "id": 6,
+        "english": "review the arrangement",
+        "french": "réexaminer l’accord"
+      },
+      {
+        "id": 7,
+        "english": "talking directly",
+        "french": "parler directement"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 7,
+    "id": "b1en-vocab-14",
+    "title": "Culture et critique",
+    "titleFR": "Culture et critique",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "film director",
+        "french": "réalisateur"
+      },
+      {
+        "id": 2,
+        "english": "performance review",
+        "french": "critique d’un spectacle"
+      },
+      {
+        "id": 3,
+        "english": "plot twist",
+        "french": "rebondissement"
+      },
+      {
+        "id": 4,
+        "english": "main character",
+        "french": "personnage principal"
+      },
+      {
+        "id": 5,
+        "english": "visual style",
+        "french": "style visuel"
+      },
+      {
+        "id": 6,
+        "english": "soundtrack",
+        "french": "bande originale"
+      },
+      {
+        "id": 7,
+        "english": "to recommend highly",
+        "french": "recommander vivement"
+      },
+      {
+        "id": 8,
+        "english": "critical reception",
+        "french": "accueil critique"
+      },
+      {
+        "id": 9,
+        "english": "artistic choice",
+        "french": "choix artistique"
+      },
+      {
+        "id": 10,
+        "english": "audience reaction",
+        "french": "réaction du public"
+      },
+      {
+        "id": 11,
+        "english": "cultural event",
+        "french": "événement culturel"
+      },
+      {
+        "id": 12,
+        "english": "overall impression",
+        "french": "impression générale"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 7,
+    "id": "b1en-reading-vocab-25",
+    "title": "Vocabulaire de lecture : A Film That Changed My Mind",
+    "titleFR": "Vocabulaire de lecture : A Film That Changed My Mind",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "predictable adventure",
+        "french": "aventure prévisible"
+      },
+      {
+        "id": 2,
+        "english": "opening scenes",
+        "french": "premières scènes"
+      },
+      {
+        "id": 3,
+        "english": "pace",
+        "french": "rythme"
+      },
+      {
+        "id": 4,
+        "english": "convincing",
+        "french": "convaincant"
+      },
+      {
+        "id": 5,
+        "english": "unsatisfying",
+        "french": "insatisfaisant"
+      },
+      {
+        "id": 6,
+        "english": "unanswered",
+        "french": "sans réponse"
+      },
+      {
+        "id": 7,
+        "english": "belonging",
+        "french": "sentiment d’appartenance"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 7,
+    "id": "b1en-reading-vocab-26",
+    "title": "Vocabulaire de lecture : The Debate over a New Music Venue",
+    "titleFR": "Vocabulaire de lecture : The Debate over a New Music Venue",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "music venue",
+        "french": "salle de concert"
+      },
+      {
+        "id": 2,
+        "english": "divided the neighbourhood",
+        "french": "divisé le quartier"
+      },
+      {
+        "id": 3,
+        "english": "renovated",
+        "french": "rénovés"
+      },
+      {
+        "id": 4,
+        "english": "demolished",
+        "french": "démolis"
+      },
+      {
+        "id": 5,
+        "english": "opponents",
+        "french": "opposants"
+      },
+      {
+        "id": 6,
+        "english": "specific measures",
+        "french": "mesures précises"
+      },
+      {
+        "id": 7,
+        "english": "push them apart",
+        "french": "les éloigner"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 7,
+    "id": "b1en-vocab-15",
+    "title": "Opinions, arguments et avenir",
+    "titleFR": "Opinions, arguments et avenir",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "📚",
+    "color": "#2563EB",
+    "wordCount": 12,
+    "words": [
+      {
+        "id": 1,
+        "english": "long-term ambition",
+        "french": "ambition à long terme"
+      },
+      {
+        "id": 2,
+        "english": "short-term priority",
+        "french": "priorité à court terme"
+      },
+      {
+        "id": 3,
+        "english": "possible outcome",
+        "french": "résultat possible"
+      },
+      {
+        "id": 4,
+        "english": "to weigh the options",
+        "french": "peser le pour et le contre"
+      },
+      {
+        "id": 5,
+        "english": "convincing argument",
+        "french": "argument convaincant"
+      },
+      {
+        "id": 6,
+        "english": "drawback",
+        "french": "inconvénient"
+      },
+      {
+        "id": 7,
+        "english": "benefit",
+        "french": "avantage"
+      },
+      {
+        "id": 8,
+        "english": "to justify a view",
+        "french": "justifier un point de vue"
+      },
+      {
+        "id": 9,
+        "english": "to put forward a proposal",
+        "french": "présenter une proposition"
+      },
+      {
+        "id": 10,
+        "english": "to reach a conclusion",
+        "french": "arriver à une conclusion"
+      },
+      {
+        "id": 11,
+        "english": "likely consequence",
+        "french": "conséquence probable"
+      },
+      {
+        "id": 12,
+        "english": "personal objective",
+        "french": "objectif personnel"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 7,
+    "id": "b1en-reading-vocab-27",
+    "title": "Vocabulaire de lecture : A Festival That Works for Everyone",
+    "titleFR": "Vocabulaire de lecture : A Festival That Works for Everyone",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 7,
+    "words": [
+      {
+        "id": 1,
+        "english": "central stage",
+        "french": "scène centrale"
+      },
+      {
+        "id": 2,
+        "english": "captioned performances",
+        "french": "spectacles surtitrés"
+      },
+      {
+        "id": 3,
+        "english": "plain-language guide",
+        "french": "guide en langage clair"
+      },
+      {
+        "id": 4,
+        "english": "local sponsors",
+        "french": "sponsors locaux"
+      },
+      {
+        "id": 5,
+        "english": "begin earlier",
+        "french": "commencer plus tôt"
+      },
+      {
+        "id": 6,
+        "english": "new art form",
+        "french": "nouvelle forme artistique"
+      },
+      {
+        "id": 7,
+        "english": "feedback forms",
+        "french": "formulaires de retour"
+      }
+    ]
+  },
+  {
+    "level": "B1",
+    "unit": 7,
+    "id": "b1en-reading-vocab-28",
+    "title": "Vocabulaire de lecture : Why I Applied for the Exchange",
+    "titleFR": "Vocabulaire de lecture : Why I Applied for the Exchange",
+    "description": "Lexique nouveau et traduction française contextualisée.",
+    "descriptionFR": "Mots et expressions nouveaux à étudier en contexte.",
+    "icon": "🔎",
+    "color": "#059669",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "selection committee",
+        "french": "comité de sélection"
+      },
+      {
+        "id": 2,
+        "english": "community exchange",
+        "french": "échange communautaire"
+      },
+      {
+        "id": 3,
+        "english": "different approaches",
+        "french": "approches différentes"
+      },
+      {
+        "id": 4,
+        "english": "reduce waste",
+        "french": "réduire les déchets"
+      },
+      {
+        "id": 5,
+        "english": "limited experience abroad",
+        "french": "expérience limitée à l’étranger"
+      },
+      {
+        "id": 6,
+        "english": "considering my application",
+        "french": "examen de ma candidature"
+      }
+    ]
+  }
 ];
 
-// Word lists attached to readings that are not standalone vocabulary modules.
 export const readingWordsB1: VocabularyData = {
-    'b1-une-histoire-de-famille': [
-        { id: 1, english: 'a village', french: 'un village' },
-        { id: 2, english: 'childhood', french: 'l\'enfance' },
-        { id: 3, english: 'despite / in spite of', french: 'malgré' },
-        { id: 4, english: 'a farmer', french: 'un agriculteur' },
-        { id: 5, english: 'to work the land', french: 'travailler la terre' },
-        { id: 6, english: 'the war', french: 'la guerre' },
-        { id: 7, english: 'to break out (war)', french: 'éclater' },
-        { id: 8, english: 'to remember', french: 'se souvenir' },
-        { id: 9, english: 'the soldiers', french: 'les soldats' },
-        { id: 10, english: 'gone to the front', french: 'parti au front' },
-        { id: 11, english: 'to reassure', french: 'rassurer' },
-        { id: 12, english: 'to move house', french: 'déménager' },
-        { id: 13, english: 'a bookshop', french: 'une librairie' },
-        { id: 14, english: 'to leaf through', french: 'feuilleter' },
-        { id: 15, english: 'to pass away / to die', french: 'décéder' },
-    ],
-    'b1-le-travail-a-distance': [
-        { id: 1, english: 'remote work / working from home', french: 'le télétravail' },
-        { id: 2, english: 'to take hold / to establish itself', french: 's\'imposer' },
-        { id: 3, english: 'companies / firms', french: 'les entreprises' },
-        { id: 4, english: 'the employees', french: 'les salariés' },
-        { id: 5, english: 'the supporters / advocates', french: 'les partisans' },
-        { id: 6, english: 'to highlight / to emphasise', french: 'mettre en avant' },
-        { id: 7, english: 'public transport', french: 'les transports en commun' },
-        { id: 8, english: 'exhausting / tiring', french: 'épuisant' },
-        { id: 9, english: 'gains in productivity', french: 'des gains de productivité' },
-        { id: 10, english: 'to sacrifice', french: 'sacrifier' },
-        { id: 11, english: 'to complain', french: 'se plaindre' },
-        { id: 12, english: 'isolation', french: 'l\'isolement' },
-        { id: 13, english: 'the boundaries', french: 'les frontières' },
-        { id: 14, english: 'a balance', french: 'un équilibre' },
-        { id: 15, english: 'a divide / rift', french: 'une fracture' },
-    ],
-    'b1-voyage-en-provence': [
-        { id: 1, english: 'the lavender', french: 'la lavande' },
-        { id: 2, english: 'the plateau', french: 'le plateau' },
-        { id: 3, english: 'to stretch out / extend', french: 's\'étendre' },
-        { id: 4, english: 'as far as the eye can see', french: 'à perte de vue' },
-        { id: 5, english: 'intoxicating / heady', french: 'enivrant' },
-        { id: 6, english: 'the heat', french: 'la chaleur' },
-        { id: 7, english: 'a renovated sheepfold', french: 'une bergerie rénovée' },
-        { id: 8, english: 'the owner / landlady', french: 'la propriétaire' },
-        { id: 9, english: 'a welcome basket', french: 'un panier de bienvenue' },
-        { id: 10, english: 'goat\'s cheese', french: 'le fromage de chèvre' },
-        { id: 11, english: 'the (lavender at its) peak', french: 'le pic' },
-        { id: 12, english: 'candied fruits', french: 'des fruits confits' },
-        { id: 13, english: 'the spices', french: 'les épices' },
-        { id: 14, english: 'a stew (Provençal beef)', french: 'une daube' },
-        { id: 15, english: 'simmered / slow-cooked', french: 'mijoté' },
-    ],
-    'b1-interview-artiste': [
-        { id: 1, english: 'to exhibit / display', french: 'exposer' },
-        { id: 2, english: 'the paintings', french: 'les tableaux' },
-        { id: 3, english: 'a gallery', french: 'une galerie' },
-        { id: 4, english: 'the canvases', french: 'les toiles' },
-        { id: 5, english: 'to blend / mix', french: 'mêler' },
-        { id: 6, english: 'oil painting', french: 'la peinture à l\'huile' },
-        { id: 7, english: 'a portrait', french: 'un portrait' },
-        { id: 8, english: 'the studio / workshop', french: 'l\'atelier' },
-        { id: 9, english: 'to grow up', french: 'grandir' },
-        { id: 10, english: 'the attic / loft', french: 'le grenier' },
-        { id: 11, english: 'to inspire', french: 'inspirer' },
-        { id: 12, english: 'to capture / catch', french: 'capter' },
-        { id: 13, english: 'a piece of advice', french: 'un conseil' },
-        { id: 14, english: 'to please / to be liked', french: 'plaire' },
-        { id: 15, english: 'disturbing / unsettling', french: 'dérangeant' },
-    ],
-    'b1-une-lettre-a-ami': [
-        { id: 1, english: 'dear (to a man)', french: 'cher' },
-        { id: 2, english: 'to settle / to move in', french: 's\'installer' },
-        { id: 3, english: 'to confess / to admit', french: 'avouer' },
-        { id: 4, english: 'lively / full of life', french: 'vivant' },
-        { id: 5, english: 'time flies', french: 'le temps file' },
-        { id: 6, english: 'to close down (a shop)', french: 'fermer' },
-        { id: 7, english: 'to replace', french: 'remplacer' },
-        { id: 8, english: 'to frequent / to go to often', french: 'fréquenter' },
-        { id: 9, english: 'a flat-share / house-share', french: 'une colocation' },
-        { id: 10, english: 'a hassle / a struggle', french: 'une galère' },
-        { id: 11, english: 'a training course', french: 'une formation' },
-        { id: 12, english: 'exhausting / tiring', french: 'épuisant' },
-        { id: 13, english: 'the intention', french: 'l\'intention' },
-        { id: 14, english: 'to suit / to be convenient', french: 'convenir' },
-        { id: 15, english: 'fluently', french: 'couramment' },
-    ],
-    'b1-article-jeunesse': [
-        { id: 1, english: 'the youth / young people', french: 'la jeunesse' },
-        { id: 2, english: 'a report (document)', french: 'un rapport' },
-        { id: 3, english: 'the values', french: 'les valeurs' },
-        { id: 4, english: 'the concerns / worries', french: 'les préoccupations' },
-        { id: 5, english: 'deeply / profoundly', french: 'profondément' },
-        { id: 6, english: 'the relationship to work', french: 'le rapport au travail' },
-        { id: 7, english: 'their elders', french: 'leurs aînés' },
-        { id: 8, english: 'to value / to prize', french: 'valoriser' },
-        { id: 9, english: 'personal fulfilment', french: 'l\'épanouissement personnel' },
-        { id: 10, english: 'flexibility', french: 'la flexibilité' },
-        { id: 11, english: 'aware / sensitised', french: 'sensibilisé' },
-        { id: 12, english: 'climate change', french: 'le changement climatique' },
-        { id: 13, english: 'consumer choices', french: 'des choix de consommation' },
-        { id: 14, english: 'weakened / made fragile', french: 'fragilisé' },
-        { id: 15, english: 'job insecurity / precariousness', french: 'la précarité' },
-    ],
-    'b1-temoignage-expatrie': [
-        { id: 1, english: 'an attachment / a tie', french: 'une attache' },
-        { id: 2, english: 'the desire for elsewhere', french: 'l\'envie d\'ailleurs' },
-        { id: 3, english: 'to break / to crush', french: 'briser' },
-        { id: 4, english: 'the wind', french: 'le vent' },
-        { id: 5, english: 'a knife', french: 'un couteau' },
-        { id: 6, english: 'crying / in tears', french: 'en pleurant' },
-        { id: 7, english: 'to hold on / to endure', french: 'tenir' },
-        { id: 8, english: 'the spring', french: 'le printemps' },
-        { id: 9, english: 'human warmth', french: 'la chaleur humaine' },
-        { id: 10, english: 'a country cottage / chalet', french: 'un chalet' },
-        { id: 11, english: 'to laugh', french: 'rire' },
-        { id: 12, english: 'a floating / shifting identity', french: 'une identité flottante' },
-        { id: 13, english: 'to worry (someone)', french: 'inquiéter' },
-        { id: 14, english: 'a richness / an asset', french: 'une richesse' },
-        { id: 15, english: 'to live between two cultures', french: 'vivre entre deux cultures' },
-    ],
-    'b1en-social-media': [
-        { id: 1, english: 'social media', french: 'les réseaux sociaux' },
-        { id: 2, english: 'platforms', french: 'les plateformes' },
-        { id: 3, english: 'to stay in touch', french: 'rester en contact' },
-        { id: 4, english: 'to express oneself', french: 's\'exprimer' },
-        { id: 5, english: 'concerns', french: 'les préoccupations / les inquiétudes' },
-        { id: 6, english: 'mental health', french: 'la santé mentale' },
-        { id: 7, english: 'anxiety', french: 'l\'anxiété' },
-        { id: 8, english: 'self-esteem', french: 'l\'estime de soi' },
-        { id: 9, english: 'pressure', french: 'la pression' },
-        { id: 10, english: 'isolated', french: 'isolé(e)' },
-        { id: 11, english: 'to raise awareness', french: 'sensibiliser' },
-        { id: 12, english: 'content creators', french: 'les créateurs de contenu' },
-        { id: 13, english: 'to set time limits', french: 'fixer des limites de temps' },
-        { id: 14, english: 'digital habits', french: 'les habitudes numériques' },
-    ],
-    'b1en-green-city': [
-        { id: 1, english: 'urban', french: 'urbain(e)' },
-        { id: 2, english: 'carbon emissions', french: 'les émissions de carbone' },
-        { id: 3, english: 'residents', french: 'les habitants / les résidents' },
-        { id: 4, english: 'sustainable', french: 'durable' },
-        { id: 5, english: 'public transport', french: 'les transports en commun' },
-        { id: 6, english: 'air pollution', french: 'la pollution de l\'air' },
-        { id: 7, english: 'cycle lane', french: 'la piste cyclable' },
-        { id: 8, english: 'green spaces', french: 'les espaces verts' },
-        { id: 9, english: 'biodiversity', french: 'la biodiversité' },
-        { id: 10, english: 'rooftops', french: 'les toits' },
-        { id: 11, english: 'heatwaves', french: 'les canicules' },
-        { id: 12, english: 'renewable energy', french: 'les énergies renouvelables' },
-        { id: 13, english: 'solar panels', french: 'les panneaux solaires' },
-        { id: 14, english: 'to consume', french: 'consommer' },
-    ],
-    'b1en-remote-work': [
-        { id: 1, english: 'remote work', french: 'le télétravail' },
-        { id: 2, english: 'office', french: 'le bureau' },
-        { id: 3, english: 'employees', french: 'les employés / les salariés' },
-        { id: 4, english: 'pandemic', french: 'la pandémie' },
-        { id: 5, english: 'advantages', french: 'les avantages' },
-        { id: 6, english: 'to save (time/money)', french: 'économiser' },
-        { id: 7, english: 'balance', french: 'l\'équilibre' },
-        { id: 8, english: 'productive', french: 'productif / productive' },
-        { id: 9, english: 'lonely', french: 'seul(e) / isolé(e)' },
-        { id: 10, english: 'colleagues', french: 'les collègues' },
-        { id: 11, english: 'to concentrate', french: 'se concentrer' },
-        { id: 12, english: 'to switch off', french: 'déconnecter' },
-        { id: 13, english: 'hybrid', french: 'hybride' },
-        { id: 14, english: 'flexibility', french: 'la flexibilité' },
-    ],
-    'b1en-healthy-living': [
-        { id: 1, english: 'healthier', french: 'plus sain(e)' },
-        { id: 2, english: 'busy schedules', french: 'les emplois du temps chargés' },
-        { id: 3, english: 'stress', french: 'le stress' },
-        { id: 4, english: 'habits', french: 'les habitudes' },
-        { id: 5, english: 'balanced diet', french: 'une alimentation équilibrée' },
-        { id: 6, english: 'to reduce', french: 'réduire' },
-        { id: 7, english: 'processed food', french: 'les aliments transformés' },
-        { id: 8, english: 'essential', french: 'essentiel(le)' },
-        { id: 9, english: 'exercise', french: 'l\'exercice' },
-        { id: 10, english: 'to stay fit', french: 'rester en forme' },
-        { id: 11, english: 'mood', french: 'l\'humeur' },
-        { id: 12, english: 'wellbeing', french: 'le bien-être' },
-        { id: 13, english: 'to relax', french: 'se détendre' },
-        { id: 14, english: 'balance', french: 'l\'équilibre' },
-    ],
-    'b1en-trip-to-remember': [
-        { id: 1, english: 'trip', french: 'le voyage' },
-        { id: 2, english: 'hostels', french: 'les auberges de jeunesse' },
-        { id: 3, english: 'landscapes', french: 'les paysages' },
-        { id: 4, english: 'journey', french: 'le trajet / le voyage' },
-        { id: 5, english: 'soaked', french: 'trempé(e)' },
-        { id: 6, english: 'to miss (a bus)', french: 'rater / manquer' },
-        { id: 7, english: 'memories', french: 'les souvenirs' },
-        { id: 8, english: 'highlight', french: 'le point fort / le moment fort' },
-        { id: 9, english: 'breathtaking', french: 'à couper le souffle' },
-        { id: 10, english: 'scenery', french: 'le paysage' },
-        { id: 11, english: 'castles', french: 'les châteaux' },
-        { id: 12, english: 'kindness', french: 'la gentillesse' },
-        { id: 13, english: 'independent', french: 'indépendant(e)' },
-        { id: 14, english: 'to treasure', french: 'chérir' },
-    ],
-    'b1en-volunteering': [
-        { id: 1, english: 'to volunteer', french: 'faire du bénévolat' },
-        { id: 2, english: 'to be paid', french: 'être payé(e)' },
-        { id: 3, english: 'animal shelters', french: 'les refuges pour animaux' },
-        { id: 4, english: 'community centres', french: 'les centres communautaires' },
-        { id: 5, english: 'to make a difference', french: 'faire la différence' },
-        { id: 6, english: 'less fortunate', french: 'moins chanceux / défavorisé(e)' },
-        { id: 7, english: 'sense of purpose', french: 'le sentiment d\'utilité' },
-        { id: 8, english: 'satisfaction', french: 'la satisfaction' },
-        { id: 9, english: 'benefits', french: 'les avantages / les bienfaits' },
-        { id: 10, english: 'values', french: 'les valeurs' },
-        { id: 11, english: 'skills', french: 'les compétences' },
-        { id: 12, english: 'commitment', french: 'l\'engagement' },
-        { id: 13, english: 'impact', french: 'l\'impact' },
-        { id: 14, english: 'experienced', french: 'expérimenté(e)' },
-    ],
-    'b1en-learning-language': [
-        { id: 1, english: 'rewarding', french: 'gratifiant(e) / enrichissant(e)' },
-        { id: 2, english: 'to give up', french: 'abandonner / renoncer' },
-        { id: 3, english: 'patience', french: 'la patience' },
-        { id: 4, english: 'approach', french: 'l\'approche / la méthode' },
-        { id: 5, english: 'benefits', french: 'les avantages / les bienfaits' },
-        { id: 6, english: 'memory', french: 'la mémoire' },
-        { id: 7, english: 'concentration', french: 'la concentration' },
-        { id: 8, english: 'to delay', french: 'retarder' },
-        { id: 9, english: 'bilingual', french: 'bilingue' },
-        { id: 10, english: 'to solve problems', french: 'résoudre des problèmes' },
-        { id: 11, english: 'culture', french: 'la culture' },
-        { id: 12, english: 'effort', french: 'l\'effort' },
-        { id: 13, english: 'to make mistakes', french: 'faire des erreurs' },
-        { id: 14, english: 'fluency', french: 'la maîtrise / l\'aisance' },
-    ],
-    'b1en-future-of-food': [
-        { id: 1, english: 'to produce', french: 'produire' },
-        { id: 2, english: 'population', french: 'la population' },
-        { id: 3, english: 'environment', french: 'l\'environnement' },
-        { id: 4, english: 'to feed', french: 'nourrir' },
-        { id: 5, english: 'plant-based diet', french: 'le régime à base de plantes' },
-        { id: 6, english: 'meat', french: 'la viande' },
-        { id: 7, english: 'impact', french: 'l\'impact' },
-        { id: 8, english: 'vegetarian', french: 'végétarien(ne)' },
-        { id: 9, english: 'agriculture', french: 'l\'agriculture' },
-        { id: 10, english: 'crops', french: 'les cultures' },
-        { id: 11, english: 'laboratories', french: 'les laboratoires' },
-        { id: 12, english: 'artificial', french: 'artificiel(le)' },
-        { id: 13, english: 'climate change', french: 'le changement climatique' },
-        { id: 14, english: 'unavoidable', french: 'inévitable' },
-    ],
-    'b1en-city-vs-country': [
-        { id: 1, english: 'countryside', french: 'la campagne' },
-        { id: 2, english: 'advantages', french: 'les avantages' },
-        { id: 3, english: 'disadvantages', french: 'les inconvénients' },
-        { id: 4, english: 'personality', french: 'la personnalité' },
-        { id: 5, english: 'opportunity', french: 'l\'opportunité' },
-        { id: 6, english: 'cultural events', french: 'les événements culturels' },
-        { id: 7, english: 'backgrounds', french: 'les origines / les milieux' },
-        { id: 8, english: 'noisy', french: 'bruyant(e)' },
-        { id: 9, english: 'stressful', french: 'stressant(e)' },
-        { id: 10, english: 'peace', french: 'le calme / la paix' },
-        { id: 11, english: 'pace of life', french: 'le rythme de vie' },
-        { id: 12, english: 'isolation', french: 'l\'isolement' },
-        { id: 13, english: 'remote work', french: 'le télétravail' },
-        { id: 14, english: 'to blur', french: 'estomper / brouiller' },
-    ],
-    'b1en-power-of-music': [
-        { id: 1, english: 'culture', french: 'la culture' },
-        { id: 2, english: 'to express feelings', french: 'exprimer des sentiments' },
-        { id: 3, english: 'to celebrate', french: 'célébrer / fêter' },
-        { id: 4, english: 'powerful', french: 'puissant(e)' },
-        { id: 5, english: 'brain', french: 'le cerveau' },
-        { id: 6, english: 'to release (chemicals)', french: 'libérer' },
-        { id: 7, english: 'to reduce stress', french: 'réduire le stress' },
-        { id: 8, english: 'to ease pain', french: 'soulager la douleur' },
-        { id: 9, english: 'operation', french: 'l\'opération' },
-        { id: 10, english: 'memory', french: 'la mémoire / le souvenir' },
-        { id: 11, english: 'illnesses', french: 'les maladies' },
-        { id: 12, english: 'sense of belonging', french: 'le sentiment d\'appartenance' },
-        { id: 13, english: 'choirs', french: 'les chorales' },
-        { id: 14, english: 'divided', french: 'divisé(e)' },
-    ],
+  "b1en-reading-01": [
+    {
+      "id": 1,
+      "english": "former staff",
+      "french": "ancien personnel"
+    },
+    {
+      "id": 2,
+      "english": "behind the curtain",
+      "french": "en coulisses"
+    },
+    {
+      "id": 3,
+      "english": "sold-out concert",
+      "french": "concert à guichets fermés"
+    },
+    {
+      "id": 4,
+      "english": "heating broke down",
+      "french": "chauffage est tombé en panne"
+    },
+    {
+      "id": 5,
+      "english": "donate",
+      "french": "faire don de"
+    },
+    {
+      "id": 6,
+      "english": "entrance hall",
+      "french": "hall d’entrée"
+    },
+    {
+      "id": 7,
+      "english": "performers",
+      "french": "artistes sur scène"
+    }
+  ],
+  "b1en-reading-02": [
+    {
+      "id": 1,
+      "english": "blurred image",
+      "french": "image floue"
+    },
+    {
+      "id": 2,
+      "english": "missed the last tram",
+      "french": "raté le dernier tramway"
+    },
+    {
+      "id": 3,
+      "english": "directions",
+      "french": "indications"
+    },
+    {
+      "id": 4,
+      "english": "family recipes",
+      "french": "recettes familiales"
+    },
+    {
+      "id": 5,
+      "english": "deleting",
+      "french": "suppression"
+    },
+    {
+      "id": 6,
+      "english": "quality",
+      "french": "qualité"
+    }
+  ],
+  "b1en-reading-03": [
+    {
+      "id": 1,
+      "english": "furniture factory",
+      "french": "usine de meubles"
+    },
+    {
+      "id": 2,
+      "english": "site became an empty space",
+      "french": "site est devenu un terrain vide"
+    },
+    {
+      "id": 3,
+      "english": "permission",
+      "french": "autorisation"
+    },
+    {
+      "id": 4,
+      "english": "old fence",
+      "french": "vieille clôture"
+    },
+    {
+      "id": 5,
+      "english": "wooden beds",
+      "french": "bacs de jardinage en bois"
+    }
+  ],
+  "b1en-reading-04": [
+    {
+      "id": 1,
+      "english": "career",
+      "french": "carrière"
+    },
+    {
+      "id": 2,
+      "english": "change your mind",
+      "french": "changer d’avis"
+    },
+    {
+      "id": 3,
+      "english": "sign-language interpreter",
+      "french": "interprète en langue des signes"
+    },
+    {
+      "id": 4,
+      "english": "pretend",
+      "french": "faire semblant"
+    },
+    {
+      "id": 5,
+      "english": "changing direction",
+      "french": "changer de voie"
+    },
+    {
+      "id": 6,
+      "english": "comparing",
+      "french": "comparer"
+    }
+  ],
+  "b1en-reading-05": [
+    {
+      "id": 1,
+      "english": "four-day working week",
+      "french": "semaine de travail de quatre jours"
+    },
+    {
+      "id": 2,
+      "english": "salary",
+      "french": "salaire"
+    },
+    {
+      "id": 3,
+      "english": "rethink",
+      "french": "repenser"
+    },
+    {
+      "id": 4,
+      "english": "project manager",
+      "french": "cheffe de projet"
+    },
+    {
+      "id": 5,
+      "english": "short updates",
+      "french": "courtes mises à jour"
+    },
+    {
+      "id": 6,
+      "english": "spontaneous questions",
+      "french": "questions spontanées"
+    },
+    {
+      "id": 7,
+      "english": "trial",
+      "french": "période d’essai"
+    }
+  ],
+  "b1en-reading-06": [
+    {
+      "id": 1,
+      "english": "brakes",
+      "french": "freins"
+    },
+    {
+      "id": 2,
+      "english": "replace a tyre",
+      "french": "remplacer un pneu"
+    },
+    {
+      "id": 3,
+      "english": "supervisor",
+      "french": "tutrice de stage"
+    },
+    {
+      "id": 4,
+      "english": "accuracy",
+      "french": "précision"
+    },
+    {
+      "id": 5,
+      "english": "gears",
+      "french": "vitesses mécaniques"
+    },
+    {
+      "id": 6,
+      "english": "apprenticeship",
+      "french": "apprentissage"
+    }
+  ],
+  "b1en-reading-07": [
+    {
+      "id": 1,
+      "english": "daytime lessons",
+      "french": "cours en journée"
+    },
+    {
+      "id": 2,
+      "english": "step-free access",
+      "french": "accès sans marche"
+    },
+    {
+      "id": 3,
+      "english": "enrolling",
+      "french": "inscription"
+    },
+    {
+      "id": 4,
+      "english": "lending library",
+      "french": "service de prêt"
+    },
+    {
+      "id": 5,
+      "english": "without charge",
+      "french": "sans frais"
+    }
+  ],
+  "b1en-reading-08": [
+    {
+      "id": 1,
+      "english": "event pages",
+      "french": "pages d’événements"
+    },
+    {
+      "id": 2,
+      "english": "sounded impatient",
+      "french": "semblé impatient"
+    },
+    {
+      "id": 3,
+      "english": "pointed it out",
+      "french": "l’a signalé"
+    },
+    {
+      "id": 4,
+      "english": "approve",
+      "french": "valider"
+    },
+    {
+      "id": 5,
+      "english": "shared checklist",
+      "french": "liste de vérification commune"
+    },
+    {
+      "id": 6,
+      "english": "concerns",
+      "french": "préoccupations"
+    }
+  ],
+  "b1en-reading-09": [
+    {
+      "id": 1,
+      "english": "strong winds",
+      "french": "vents forts"
+    },
+    {
+      "id": 2,
+      "english": "waiting area",
+      "french": "salle d’attente"
+    },
+    {
+      "id": 3,
+      "english": "connecting train",
+      "french": "correspondance ferroviaire"
+    },
+    {
+      "id": 4,
+      "english": "refund",
+      "french": "remboursement"
+    },
+    {
+      "id": 5,
+      "english": "proof of purchase",
+      "french": "preuve d’achat"
+    },
+    {
+      "id": 6,
+      "english": "pier",
+      "french": "embarcadère"
+    }
+  ],
+  "b1en-reading-10": [
+    {
+      "id": 1,
+      "english": "label food",
+      "french": "étiqueter la nourriture"
+    },
+    {
+      "id": 2,
+      "english": "unlabelled containers",
+      "french": "boîtes sans étiquette"
+    },
+    {
+      "id": 3,
+      "english": "doorway",
+      "french": "embrasure de porte"
+    },
+    {
+      "id": 4,
+      "english": "remain clear",
+      "french": "rester dégagé"
+    },
+    {
+      "id": 5,
+      "english": "noise low",
+      "french": "faible niveau sonore"
+    },
+    {
+      "id": 6,
+      "english": "personal items",
+      "french": "effets personnels"
+    }
+  ],
+  "b1en-reading-11": [
+    {
+      "id": 1,
+      "english": "at dawn",
+      "french": "à l’aube"
+    },
+    {
+      "id": 2,
+      "english": "narrow trail",
+      "french": "sentier étroit"
+    },
+    {
+      "id": 3,
+      "english": "too steep",
+      "french": "trop abrupt"
+    },
+    {
+      "id": 4,
+      "english": "abandon the walk",
+      "french": "abandonner la randonnée"
+    },
+    {
+      "id": 5,
+      "english": "local ranger",
+      "french": "garde forestier"
+    },
+    {
+      "id": 6,
+      "english": "alternative route",
+      "french": "itinéraire alternatif"
+    }
+  ],
+  "b1en-reading-12": [
+    {
+      "id": 1,
+      "english": "replacement ticket",
+      "french": "billet de remplacement"
+    },
+    {
+      "id": 2,
+      "english": "booking reference",
+      "french": "référence de réservation"
+    },
+    {
+      "id": 3,
+      "english": "inspector",
+      "french": "contrôleur"
+    },
+    {
+      "id": 4,
+      "english": "delay notice",
+      "french": "avis de retard"
+    },
+    {
+      "id": 5,
+      "english": "entitled to compensation",
+      "french": "droit à une indemnisation"
+    },
+    {
+      "id": 6,
+      "english": "travel insurance claim",
+      "french": "demande à l’assurance voyage"
+    }
+  ],
+  "b1en-reading-13": [
+    {
+      "id": 1,
+      "english": "claimed",
+      "french": "affirmait"
+    },
+    {
+      "id": 2,
+      "english": "shared hundreds of times",
+      "french": "partagé des centaines de fois"
+    },
+    {
+      "id": 3,
+      "english": "building repairs",
+      "french": "travaux dans le bâtiment"
+    },
+    {
+      "id": 4,
+      "english": "misleading photograph",
+      "french": "photo trompeuse"
+    },
+    {
+      "id": 5,
+      "english": "accurate",
+      "french": "exact"
+    },
+    {
+      "id": 6,
+      "english": "at the source",
+      "french": "à la source"
+    }
+  ],
+  "b1en-reading-14": [
+    {
+      "id": 1,
+      "english": "location sharing",
+      "french": "partage de position"
+    },
+    {
+      "id": 2,
+      "english": "exact position",
+      "french": "position exacte"
+    },
+    {
+      "id": 3,
+      "english": "created pressure",
+      "french": "a créé une pression"
+    },
+    {
+      "id": 4,
+      "english": "participants",
+      "french": "participants"
+    },
+    {
+      "id": 5,
+      "english": "privacy notice",
+      "french": "notice de confidentialité"
+    },
+    {
+      "id": 6,
+      "english": "tracking",
+      "french": "suivi de localisation"
+    }
+  ],
+  "b1en-reading-15": [
+    {
+      "id": 1,
+      "english": "founded",
+      "french": "fondée"
+    },
+    {
+      "id": 2,
+      "english": "broadcasts",
+      "french": "émissions"
+    },
+    {
+      "id": 3,
+      "english": "reduce the echo",
+      "french": "réduire l’écho"
+    },
+    {
+      "id": 4,
+      "english": "handwritten notes",
+      "french": "notes manuscrites"
+    },
+    {
+      "id": 5,
+      "english": "run by volunteers",
+      "french": "gérée par des bénévoles"
+    },
+    {
+      "id": 6,
+      "english": "archive",
+      "french": "archives"
+    }
+  ],
+  "b1en-reading-16": [
+    {
+      "id": 1,
+      "english": "scrolling",
+      "french": "faire défiler"
+    },
+    {
+      "id": 2,
+      "english": "well informed",
+      "french": "bien informé"
+    },
+    {
+      "id": 3,
+      "english": "turned out to be wrong",
+      "french": "s’est révélé faux"
+    },
+    {
+      "id": 4,
+      "english": "screenshot",
+      "french": "capture d’écran"
+    },
+    {
+      "id": 5,
+      "english": "supported by evidence",
+      "french": "étayé par des preuves"
+    },
+    {
+      "id": 6,
+      "english": "strong claim",
+      "french": "affirmation catégorique"
+    }
+  ],
+  "b1en-reading-17": [
+    {
+      "id": 1,
+      "english": "shade",
+      "french": "ombre"
+    },
+    {
+      "id": 2,
+      "english": "planted a row",
+      "french": "plantaient une rangée"
+    },
+    {
+      "id": 3,
+      "english": "regular care",
+      "french": "entretien régulier"
+    },
+    {
+      "id": 4,
+      "english": "maintain young trees",
+      "french": "entretenir de jeunes arbres"
+    },
+    {
+      "id": 5,
+      "english": "existing shelter",
+      "french": "abri existant"
+    },
+    {
+      "id": 6,
+      "english": "survey of residents",
+      "french": "enquête auprès des habitants"
+    }
+  ],
+  "b1en-reading-18": [
+    {
+      "id": 1,
+      "english": "packed lunches",
+      "french": "repas apportés de chez soi"
+    },
+    {
+      "id": 2,
+      "english": "blamed",
+      "french": "ont accusé"
+    },
+    {
+      "id": 3,
+      "english": "make accusations",
+      "french": "porter des accusations"
+    },
+    {
+      "id": 4,
+      "english": "overnight",
+      "french": "pendant la nuit"
+    },
+    {
+      "id": 5,
+      "english": "assumptions",
+      "french": "suppositions"
+    },
+    {
+      "id": 6,
+      "english": "stealing",
+      "french": "voler"
+    }
+  ],
+  "b1en-reading-19": [
+    {
+      "id": 1,
+      "english": "bruised tomatoes",
+      "french": "tomates abîmées"
+    },
+    {
+      "id": 2,
+      "english": "very ripe pears",
+      "french": "poires très mûres"
+    },
+    {
+      "id": 3,
+      "english": "savoury pudding",
+      "french": "pudding salé"
+    },
+    {
+      "id": 4,
+      "english": "donate what they wished",
+      "french": "donner ce qu’ils souhaitaient"
+    },
+    {
+      "id": 5,
+      "english": "produce food",
+      "french": "produire des aliments"
+    },
+    {
+      "id": 6,
+      "english": "edible",
+      "french": "comestible"
+    },
+    {
+      "id": 7,
+      "english": "recipe card",
+      "french": "fiche recette"
+    }
+  ],
+  "b1en-reading-20": [
+    {
+      "id": 1,
+      "english": "trained runner",
+      "french": "coureur entraîné"
+    },
+    {
+      "id": 2,
+      "english": "build up gradually",
+      "french": "augmenter progressivement"
+    },
+    {
+      "id": 3,
+      "english": "instructor",
+      "french": "moniteur"
+    },
+    {
+      "id": 4,
+      "english": "demanding",
+      "french": "exigeant"
+    },
+    {
+      "id": 5,
+      "english": "trial session",
+      "french": "séance d’essai"
+    },
+    {
+      "id": 6,
+      "english": "unrealistic target",
+      "french": "objectif irréaliste"
+    }
+  ],
+  "b1en-reading-21": [
+    {
+      "id": 1,
+      "english": "grocery shop",
+      "french": "épicerie"
+    },
+    {
+      "id": 2,
+      "english": "carrying heavy bags",
+      "french": "porter des sacs lourds"
+    },
+    {
+      "id": 3,
+      "english": "wheelchairs",
+      "french": "fauteuils roulants"
+    },
+    {
+      "id": 4,
+      "english": "shelf",
+      "french": "étagère"
+    },
+    {
+      "id": 5,
+      "english": "newcomers",
+      "french": "nouveaux arrivants"
+    },
+    {
+      "id": 6,
+      "english": "need a favour",
+      "french": "avoir besoin d’un service"
+    }
+  ],
+  "b1en-reading-22": [
+    {
+      "id": 1,
+      "english": "upset you",
+      "french": "t’ai blessé"
+    },
+    {
+      "id": 2,
+      "english": "annoyed",
+      "french": "agacé"
+    },
+    {
+      "id": 3,
+      "english": "consult each other",
+      "french": "se consulter"
+    },
+    {
+      "id": 4,
+      "english": "assumed",
+      "french": "supposé"
+    },
+    {
+      "id": 5,
+      "english": "instead of disappearing",
+      "french": "au lieu de disparaître"
+    },
+    {
+      "id": 6,
+      "english": "deal",
+      "french": "marché conclu"
+    },
+    {
+      "id": 7,
+      "english": "felt heard",
+      "french": "se sont sentis écoutés"
+    }
+  ],
+  "b1en-reading-23": [
+    {
+      "id": 1,
+      "english": "waiting list",
+      "french": "liste d’attente"
+    },
+    {
+      "id": 2,
+      "english": "famous novels",
+      "french": "romans célèbres"
+    },
+    {
+      "id": 3,
+      "english": "collection of short stories",
+      "french": "recueil de nouvelles"
+    },
+    {
+      "id": 4,
+      "english": "local authors",
+      "french": "auteurs locaux"
+    },
+    {
+      "id": 5,
+      "english": "in advance",
+      "french": "à l’avance"
+    },
+    {
+      "id": 6,
+      "english": "make space for",
+      "french": "faire une place à"
+    }
+  ],
+  "b1en-reading-24": [
+    {
+      "id": 1,
+      "english": "complaints about noise",
+      "french": "plaintes pour bruit"
+    },
+    {
+      "id": 2,
+      "english": "local mediator",
+      "french": "médiateur local"
+    },
+    {
+      "id": 3,
+      "english": "delivery drivers",
+      "french": "livreurs"
+    },
+    {
+      "id": 4,
+      "english": "engines running",
+      "french": "moteurs allumés"
+    },
+    {
+      "id": 5,
+      "english": "back entrance",
+      "french": "entrée arrière"
+    },
+    {
+      "id": 6,
+      "english": "review the arrangement",
+      "french": "réexaminer l’accord"
+    },
+    {
+      "id": 7,
+      "english": "talking directly",
+      "french": "parler directement"
+    }
+  ],
+  "b1en-reading-25": [
+    {
+      "id": 1,
+      "english": "predictable adventure",
+      "french": "aventure prévisible"
+    },
+    {
+      "id": 2,
+      "english": "opening scenes",
+      "french": "premières scènes"
+    },
+    {
+      "id": 3,
+      "english": "pace",
+      "french": "rythme"
+    },
+    {
+      "id": 4,
+      "english": "convincing",
+      "french": "convaincant"
+    },
+    {
+      "id": 5,
+      "english": "unsatisfying",
+      "french": "insatisfaisant"
+    },
+    {
+      "id": 6,
+      "english": "unanswered",
+      "french": "sans réponse"
+    },
+    {
+      "id": 7,
+      "english": "belonging",
+      "french": "sentiment d’appartenance"
+    }
+  ],
+  "b1en-reading-26": [
+    {
+      "id": 1,
+      "english": "music venue",
+      "french": "salle de concert"
+    },
+    {
+      "id": 2,
+      "english": "divided the neighbourhood",
+      "french": "divisé le quartier"
+    },
+    {
+      "id": 3,
+      "english": "renovated",
+      "french": "rénovés"
+    },
+    {
+      "id": 4,
+      "english": "demolished",
+      "french": "démolis"
+    },
+    {
+      "id": 5,
+      "english": "opponents",
+      "french": "opposants"
+    },
+    {
+      "id": 6,
+      "english": "specific measures",
+      "french": "mesures précises"
+    },
+    {
+      "id": 7,
+      "english": "push them apart",
+      "french": "les éloigner"
+    }
+  ],
+  "b1en-reading-27": [
+    {
+      "id": 1,
+      "english": "central stage",
+      "french": "scène centrale"
+    },
+    {
+      "id": 2,
+      "english": "captioned performances",
+      "french": "spectacles surtitrés"
+    },
+    {
+      "id": 3,
+      "english": "plain-language guide",
+      "french": "guide en langage clair"
+    },
+    {
+      "id": 4,
+      "english": "local sponsors",
+      "french": "sponsors locaux"
+    },
+    {
+      "id": 5,
+      "english": "begin earlier",
+      "french": "commencer plus tôt"
+    },
+    {
+      "id": 6,
+      "english": "new art form",
+      "french": "nouvelle forme artistique"
+    },
+    {
+      "id": 7,
+      "english": "feedback forms",
+      "french": "formulaires de retour"
+    }
+  ],
+  "b1en-reading-28": [
+    {
+      "id": 1,
+      "english": "selection committee",
+      "french": "comité de sélection"
+    },
+    {
+      "id": 2,
+      "english": "community exchange",
+      "french": "échange communautaire"
+    },
+    {
+      "id": 3,
+      "english": "different approaches",
+      "french": "approches différentes"
+    },
+    {
+      "id": 4,
+      "english": "reduce waste",
+      "french": "réduire les déchets"
+    },
+    {
+      "id": 5,
+      "english": "limited experience abroad",
+      "french": "expérience limitée à l’étranger"
+    },
+    {
+      "id": 6,
+      "english": "considering my application",
+      "french": "examen de ma candidature"
+    }
+  ]
 };
