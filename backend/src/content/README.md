@@ -227,3 +227,47 @@ task schemas. C1 verbs have level-specific IDs to avoid collisions and stale
 completion. Existing progress is retained; replaced lessons start fresh and old
 bookmarks may stop resolving. Source archives, French content and other English
 levels are unchanged. Existing assessment-provider availability is unchanged.
+
+## English C2 replacement and content review
+
+`english_c2_COMPLETE_VERIFIED.zip` was reviewed before app changes: all 28 readings,
+21 grammar/usage lessons, vocabulary and phrases, productive-task sources,
+listening scripts and 119 exam questions. Verdict: suitable guided C2 practice
+after targeted corrections. Synthesis, implied meaning and precise reformulation
+fit [CEFR C2 descriptors](https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-%20cefr-3.3-common-reference-levels-global-scale).
+The readings are extended guided texts (originally 318–402 words), but themes
+remain largely institutional, ethical and academic; short formative quizzes do not
+establish comprehensive C2 proficiency or certification equivalence.
+
+Independent checks confirmed seven teaching units plus the final exam, 124 supplied
+steps (114 supported roadmap steps after placing writing/speaking in their existing
+activity pages), 43 vocabulary modules and 318 distinct new entries against actual
+integrated A1/A2/B1/C1 quizzes. This task does not import a revised B2 course, and
+uniqueness across such a course remains unverified. Basic normalization does not
+establish semantic uniqueness across the curriculum.
+
+The import includes seven complete verb tables, seven phrase lessons, five writing
+tasks, five speaking tasks and seven listening sets. Writing retains every supplied
+source passage and its 240–280 or 280–320-word target. The recycling report brief
+adds explicitly invented delivered/accepted quantities and a separate projection,
+so the denominator and the 60% relative increase can actually be evaluated.
+These figures are distinct from the reading's separate 30%-to-60% scenario.
+The final speaking task supplies two invented studies plus testimony, with explicit
+sampling and comparison limits. Reference documents and six-minute local recordings
+support the speaking tasks. Listening defaults to normal speed, has a slower option,
+retains self-check explanations, and includes contrastive-pronunciation practice.
+Browser speech remains synthetic; spontaneous multi-speaker interaction and natural
+prosody are not independently assessed.
+
+Editorial corrections restore first-person voice in the translator, minority-opinion
+and personal-letter texts. Reading-exam contexts use those corrected passages.
+The apology question now compares the first and third versions rather than falsely
+claiming the second assigns no responsibility. Lexical cues and accepted alternatives
+avoid guessing/rejecting valid phrasing, and several French explanations/translations
+are clarified. Verb usage supplements show forms/collocations rather than historical
+backend field names. Exam answer positions stay balanced without a fixed unit pattern.
+
+Typed schemas, exports, exam conventions and conjugation routes are adapted to the
+app. C2 verb identities are level-specific. Stored progress is retained; replaced
+content starts fresh and removed bookmarks may stop resolving. Source ZIP, other
+course levels and French content are unchanged. No new assessment provider is enabled.

@@ -129,7 +129,7 @@ function SpeakingPractice({ lesson, index, fr, onMove }: { lesson: SpeakingLesso
 
 function ListeningPractice({ lesson }: { lesson: SpeakingLesson }) {
     const speech = useSpeech();
-    const [rate, setRate] = useState(lesson.level === 'C1' ? 1 : 0.8);
+    const [rate, setRate] = useState(['C1', 'C2'].includes(lesson.level) ? 1 : 0.8);
     return <section className="speaking-paper speaking-task-practice">
         <p style={{ whiteSpace: 'pre-line' }}>{lesson.description}</p>
         <button className="speaking-button" disabled={!speech.supported} onClick={() => {
@@ -143,7 +143,7 @@ function ListeningPractice({ lesson }: { lesson: SpeakingLesson }) {
         <ol>{lesson.listeningQuestions?.map(question => <li key={question.prompt}>
             <p>{question.prompt}</p>
             {question.options && <ul>{question.options.map(option => <li key={option}>{option}</li>)}</ul>}
-            <details><summary>Voir la réponse</summary><p>{question.answers.join(' / ')}</p></details>
+            <details><summary>Voir la réponse</summary><p>{question.answers.join(' / ')}</p>{question.explanation && <p>{question.explanation}</p>}</details>
         </li>)}</ol>
         <details><summary>Lire le script</summary><p lang="en">{lesson.phrases[0].text}</p></details>
         {lesson.pronunciationPractice && <details><summary>Prononciation et accent contrastif</summary>
