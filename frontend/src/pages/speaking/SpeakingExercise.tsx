@@ -129,18 +129,29 @@ function SpeakingPractice({ lesson, index, fr, onMove }: { lesson: SpeakingLesso
 
 function ListeningPractice({ lesson }: { lesson: SpeakingLesson }) {
     const speech = useSpeech();
+    const [rate, setRate] = useState(lesson.level === 'C1' ? 1 : 0.8);
     return <section className="speaking-paper speaking-task-practice">
         <p style={{ whiteSpace: 'pre-line' }}>{lesson.description}</p>
         <button className="speaking-button" disabled={!speech.supported} onClick={() => {
-            if (speech.speaking) speech.stop(); else speech.speak(lesson.phrases[0].text, 'en-GB', 0.8);
+            if (speech.speaking) speech.stop(); else speech.speak(lesson.phrases[0].text, 'en-GB', rate);
         }}>{speech.speaking ? 'Arrêter' : 'Écouter le dialogue'}</button>
         {!speech.supported && <p role="status">Lecture vocale indisponible dans ce navigateur. Vous pouvez lire le script ci-dessous.</p>}
+        <label>Vitesse de lecture <select value={rate} onChange={event => { speech.stop(); setRate(Number(event.target.value)); }}>
+            <option value={1}>Normale</option><option value={0.8}>Ralentie</option>
+        </select></label>
         <p>Écoutez, répondez à voix haute ou sur papier, puis vérifiez vos réponses.</p>
         <ol>{lesson.listeningQuestions?.map(question => <li key={question.prompt}>
             <p>{question.prompt}</p>
+            {question.options && <ul>{question.options.map(option => <li key={option}>{option}</li>)}</ul>}
             <details><summary>Voir la réponse</summary><p>{question.answers.join(' / ')}</p></details>
         </li>)}</ol>
         <details><summary>Lire le script</summary><p lang="en">{lesson.phrases[0].text}</p></details>
+        {lesson.pronunciationPractice && <details><summary>Prononciation et accent contrastif</summary>
+            <p>Les majuscules signalent les mots à mettre en relief. Écoutez, puis répétez en variant l’accent de phrase.</p>
+            <ul>{lesson.pronunciationPractice.map(text => <li key={text}><p lang="en">{text}</p>
+                <button className="speaking-button" disabled={!speech.supported} onClick={() => speech.speak(text.toLowerCase(), 'en-GB', rate)}>Écouter le modèle</button>
+            </li>)}</ul>
+        </details>}
     </section>;
 }
 
@@ -153,6 +164,6 @@ export default function SpeakingExercise() {
     const lesson = lessons.find(item => item.id === exerciseId && item.level.toLowerCase() === level);
     return <main className="speaking-page">
         <Link className="speaking-back" to={learningPath(language, `/courses/${level}/speaking`)}>← {fr ? 'Tous les exercices' : 'All speaking exercises'}</Link>
-        {loading ? <p role="status">{fr ? 'Chargement…' : 'Loading…'}</p> : failed ? <p role="alert">{fr ? 'Impossible de charger cet exercice.' : 'Could not load this exercise.'} <button className="speaking-button" onClick={reload}>{fr ? 'Réessayer' : 'Retry'}</button></p> : lesson ? <><header className="speaking-header"><span className="speaking-label">{lesson.level} / {lesson.listeningQuestions ? (fr ? 'COMPRÉHENSION ORALE' : 'LISTENING') : (fr ? 'EXPRESSION ORALE' : 'SPEAKING')}</span><h1>{lesson.title}</h1></header><p style={{ whiteSpace: 'pre-line' }}>{!lesson.listeningQuestions && lesson.description}</p>{lesson.listeningQuestions ? <ListeningPractice key={`${language}-${lesson.id}`} lesson={lesson} /> : <SpeakingPractice key={`${language}-${lesson.id}`} lesson={lesson} index={index} fr={fr} onMove={setIndex} />}</> : <h1>{fr ? 'Exercice introuvable' : 'Exercise not found'}</h1>}
+        {loading ? <p role="status">{fr ? 'Chargement…' : 'Loading…'}</p> : failed ? <p role="alert">{fr ? 'Impossible de charger cet exercice.' : 'Could not load this exercise.'} <button className="speaking-button" onClick={reload}>{fr ? 'Réessayer' : 'Retry'}</button></p> : lesson ? <><header className="speaking-header"><span className="speaking-label">{lesson.level} / {lesson.listeningQuestions ? (fr ? 'COMPRÉHENSION ORALE' : 'LISTENING') : (fr ? 'EXPRESSION ORALE' : 'SPEAKING')}</span><h1>{lesson.title}</h1></header><p style={{ whiteSpace: 'pre-line' }}>{!lesson.listeningQuestions && lesson.description}</p>{lesson.sources && <section className="speaking-paper speaking-task-practice speaking-sources"><h2>Documents de référence</h2>{lesson.sources.map(source => <details key={source.title}><summary>{source.title}</summary><p lang={language} style={{ whiteSpace: 'pre-line' }}>{source.text}</p></details>)}</section>}{lesson.listeningQuestions ? <ListeningPractice key={`${language}-${lesson.id}`} lesson={lesson} /> : <SpeakingPractice key={`${language}-${lesson.id}`} lesson={lesson} index={index} fr={fr} onMove={setIndex} />}</> : <h1>{fr ? 'Exercice introuvable' : 'Exercise not found'}</h1>}
     </main>;
 }

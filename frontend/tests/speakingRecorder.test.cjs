@@ -103,3 +103,18 @@ test('connected speaking task records beyond twenty seconds and stops at its con
     s.recorder.dispose();
     assert.deepEqual(s.revoked, ['blob:test']);
 });
+
+
+test('C1 deliberation can run for five minutes and releases the microphone at six minutes', async () => {
+    const s = setup({ maxSeconds: 360 });
+    await s.recorder.start();
+    s.advance(300); await flush();
+    assert.equal(s.states.at(-1).status, 'recording');
+    assert.equal(s.states.at(-1).seconds, 300);
+    s.advance(60); await flush();
+    assert.equal(s.states.at(-1).status, 'ready');
+    assert.equal(s.states.at(-1).seconds, 360);
+    assert.ok(s.tracks.every(track => track.stopped));
+    s.recorder.dispose();
+    assert.deepEqual(s.revoked, ['blob:test']);
+});

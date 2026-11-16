@@ -1,534 +1,3095 @@
 import type { VocabularyModule, VocabularyData, VocabularyWord } from '../../../types/vocabulary';
 
 export const modulesC1: (VocabularyModule & { words: VocabularyWord[] })[] = [
-    { level: 'C1', unit: 1, "id":"idioms-expressions","title":"Idiomes & Expressions","titleFR":"Idiomes & Expressions","description":"Le français figuré qui ne se traduit pas littéralement","descriptionFR":"Le français figuré qui ne se traduit pas littéralement","icon":"🎭","color":"#9333EA","wordCount":0, words: [
-        { id: 1, english: 'to feel down / to be blue', french: 'avoir le cafard' },
-        { id: 2, english: 'to stand someone up', french: 'poser un lapin (à quelqu\'un)' },
-        { id: 3, english: 'to get on someone\'s nerves / to be a pain', french: 'casser les pieds (à quelqu\'un)' },
-        { id: 4, english: 'to fall in love at first sight', french: 'avoir le coup de foudre' },
-        { id: 5, english: 'to put one\'s foot in it / to blunder', french: 'mettre les pieds dans le plat' },
-        { id: 6, english: 'to faint / to pass out', french: 'tomber dans les pommes' },
-        { id: 7, english: 'to have bigger fish to fry (lit: other cats to whip)', french: 'avoir d\'autres chats à fouetter' },
-        { id: 8, english: 'to grab a quick bite / to eat on the go', french: 'manger sur le pouce' },
-        { id: 9, english: 'to have a lie-in / to sleep late', french: 'faire la grasse matinée' },
-        { id: 10, english: 'to dodge the issue / to muddy the waters', french: 'noyer le poisson' },
-        { id: 11, english: 'to beat around the bush', french: 'tourner autour du pot' },
-        { id: 12, english: 'to have a lot on one\'s plate / a lot of work ahead', french: 'avoir du pain sur la planche' },
-        { id: 13, english: 'to make ends meet more comfortably / to supplement one\'s income', french: 'mettre du beurre dans les épinards' },
-        { id: 14, english: 'to worm something out of someone', french: 'tirer les vers du nez (à quelqu\'un)' },
-        { id: 15, english: 'to have connections / to have pull', french: 'avoir le bras long' },
-        { id: 16, english: 'to use every means available / to make the most of what one has', french: 'faire feu de tout bois' },
-        { id: 17, english: 'to make a run for it / to scarper', french: 'prendre la poudre d\'escampette' },
-        { id: 18, english: 'to have a quick tongue / to never be at a loss for words', french: 'ne pas avoir la langue dans sa poche' },
-        { id: 19, english: 'don\'t count your chickens before they hatch', french: 'il ne faut pas vendre la peau de l\'ours avant de l\'avoir tué' },
-        { id: 20, english: 'to have eyes bigger than one\'s stomach', french: 'avoir les yeux plus grands que le ventre' },
-    ] },
-    { level: 'C1', unit: 3, "id":"faux-amis","title":"Faux Amis","titleFR":"Faux Amis","description":"Mots qui ressemblent à l'anglais mais ne le sont pas","descriptionFR":"Mots qui ressemblent à l'anglais mais ne le sont pas","icon":"⚠️","color":"#DC2626","wordCount":0, words: [
-        { id: 1, english: 'currently / at the moment (NOT "actually")', french: 'actuellement' },
-        { id: 2, english: 'possibly / if need be (NOT "eventually")', french: 'éventuellement' },
-        { id: 3, english: 'sensitive / delicate (NOT "sensible")', french: 'sensible' },
-        { id: 4, english: 'to claim / to assert (NOT "to pretend")', french: 'prétendre' },
-        { id: 5, english: 'to be unaware of / not to know (NOT "to ignore deliberately")', french: 'ignorer' },
-        { id: 6, english: 'to attend / to be present at (NOT "to assist")', french: 'assister à' },
-        { id: 7, english: 'to disappoint (NOT "to deceive")', french: 'décevoir' },
-        { id: 8, english: 'nice / friendly / likeable (NOT "sympathetic")', french: 'sympathique' },
-        { id: 9, english: 'change / currency / coins (NOT "money" in general)', french: 'la monnaie' },
-        { id: 10, english: 'a diary / planner (NOT "an agenda/plan")', french: 'un agenda' },
-        { id: 11, english: 'an opportunity / a bargain (NOT just "an occasion")', french: 'une occasion' },
-        { id: 12, english: 'a nickname (NOT "a surname")', french: 'un surnom' },
-        { id: 13, english: 'reading (NOT "a lecture")', french: 'la lecture' },
-        { id: 14, english: 'wide / broad (NOT "large")', french: 'large' },
-        { id: 15, english: 'the cellar / basement (NOT "a cave")', french: 'la cave' },
-        { id: 16, english: 'to injure / to hurt / to wound (NOT "to bless")', french: 'blesser' },
-        { id: 17, english: 'a coach / long-distance bus (NOT "a car")', french: 'un car' },
-        { id: 18, english: 'to stay / to remain (NOT "to rest")', french: 'rester' },
-        { id: 19, english: 'a bookshop / bookstore (NOT "a library")', french: 'une librairie' },
-        { id: 20, english: 'uninhabitable / unfit to live in (NOT "habitable" — a trap for English speakers!)', french: 'inhabitable' },
-    ] },
-    { level: 'C1', unit: 3, "id":"literary-abstract","title":"Littéraire & Abstrait","titleFR":"Littéraire & Abstrait","description":"Vocabulaire littéraire et du discours soutenu","descriptionFR":"Vocabulaire littéraire et du discours soutenu","icon":"📜","color":"#6366F1","wordCount":0, words: [
-        { id: 1, english: 'the unspeakable / what cannot be put into words', french: 'l\'indicible' },
-        { id: 2, english: 'chimerical / fantastical / illusory', french: 'chimérique' },
-        { id: 3, english: 'ineffable / inexpressible (beyond words)', french: 'ineffable' },
-        { id: 4, english: 'cryptic / sibylline / deliberately obscure', french: 'sibyllin(e)' },
-        { id: 5, english: 'the quintessence / the purest essence', french: 'la quintessence' },
-        { id: 6, english: 'irresolute / full of half-formed intentions / lacking follow-through', french: 'velléitaire' },
-        { id: 7, english: 'the ephemeral / what is fleeting or short-lived', french: 'l\'éphémère' },
-        { id: 8, english: 'unfathomable / bottomless / impenetrable', french: 'insondable' },
-        { id: 9, english: 'incomplete / full of gaps / fragmentary', french: 'lacunaire' },
-        { id: 10, english: 'dichotomy / a split into two opposing parts', french: 'la dichotomie' },
-        { id: 11, english: 'harmful / deleterious / having a damaging effect', french: 'délétère' },
-        { id: 12, english: 'striking / vivid / loaded with meaning', french: 'prégnant(e)' },
-        { id: 13, english: 'incandescent / blazing / glowing with passion or emotion', french: 'incandescent(e)' },
-        { id: 14, english: 'to blossom / to flourish / to come into one\'s own', french: 's\'épanouir' },
-        { id: 15, english: 'ambivalence / having conflicting feelings simultaneously', french: 'l\'ambivalence' },
-        { id: 16, english: 'deeply distressing / harrowing / fraught with anxiety', french: 'angoissant(e)' },
-        { id: 17, english: 'perishable / transient / not lasting', french: 'périssable' },
-        { id: 18, english: 'hubris / overweening pride leading to downfall', french: 'l\'hubris' },
-        { id: 19, english: 'introspection / the examination of one\'s own thoughts and feelings', french: 'l\'introspection' },
-        { id: 20, english: 'ostentatious / showy / done for effect', french: 'ostentatoire' },
-    ] },
-    { level: 'C1', unit: 5, "id":"nuanced-adjectives","title":"Adjectifs nuancés","titleFR":"Adjectifs nuancés","description":"Adjectifs précis pour le caractère et la description","descriptionFR":"Adjectifs précis pour le caractère et la description","icon":"🎯","color":"#0891B2","wordCount":0, words: [
-        { id: 1, english: 'trivial / harmless / innocuous / run-of-the-mill', french: 'anodin(e)' },
-        { id: 2, english: 'ambiguous / equivocal / open to two interpretations', french: 'équivoque' },
-        { id: 3, english: 'fallacious / specious / misleading', french: 'fallacieux(-euse)' },
-        { id: 4, english: 'acerbic / sharp / cutting (of remarks or tone)', french: 'acerbe' },
-        { id: 5, english: 'laconic / terse / using very few words', french: 'laconique' },
-        { id: 6, english: 'vehement / impassioned / forceful', french: 'véhément(e)' },
-        { id: 7, english: 'sly / underhand / devious', french: 'sournois(e)' },
-        { id: 8, english: 'naive / guileless / innocently trusting', french: 'candide' },
-        { id: 9, english: 'convoluted / over-elaborate / unnecessarily complex', french: 'alambiqué(e)' },
-        { id: 10, english: 'prolix / verbose / excessively wordy', french: 'prolixe' },
-        { id: 11, english: 'perspicacious / shrewd / having keen insight', french: 'perspicace' },
-        { id: 12, english: 'circumspect / cautious / wary', french: 'circonspect(e)' },
-        { id: 13, english: 'inept / absurd / utterly foolish', french: 'inepte' },
-        { id: 14, english: 'fiery / impetuous / full of ardour', french: 'fougueux(-euse)' },
-        { id: 15, english: 'fierce / wild / (also) intensely shy or unsociable', french: 'farouche' },
-        { id: 16, english: 'unflappable / imperturbable / calmly unmoved', french: 'imperturbable' },
-        { id: 17, english: 'quick to take offence / prickly / touchy', french: 'ombrageux(-euse)' },
-        { id: 18, english: 'perfidious / treacherous / falsely loyal', french: 'perfide' },
-        { id: 19, english: 'clear-headed / lucid / unsentimental about reality', french: 'lucide' },
-        { id: 20, english: 'uncompromising / intransigent / unwilling to concede', french: 'intransigeant(e)' },
-    ] },
-    { level: 'C1', unit: 2, "id":"law-administration","title":"Droit & Administration","titleFR":"Droit & Administration","description":"Vocabulaire juridique et administratif","descriptionFR":"Vocabulaire juridique et administratif","icon":"⚖️","color":"#475569","wordCount":0, words: [
-        { id: 1, english: 'a decree / an executive order', french: 'un décret' },
-        { id: 2, english: 'an ordinance / a court order (also: a prescription)', french: 'une ordonnance' },
-        { id: 3, english: 'case law / jurisprudence / legal precedent', french: 'la jurisprudence' },
-        { id: 4, english: 'an appeal / a recourse / a legal remedy', french: 'un recours' },
-        { id: 5, english: 'an official order / a by-law / an administrative decision', french: 'un arrêté' },
-        { id: 6, english: 'a formal notice / a letter before action', french: 'la mise en demeure' },
-        { id: 7, english: 'guardianship / trusteeship / (state) supervision', french: 'la tutelle' },
-        { id: 8, english: 'to promulgate / to enact (a law)', french: 'promulguer' },
-        { id: 9, english: 'an exemption / a waiver / a special dispensation', french: 'une dérogation' },
-        { id: 10, english: 'contentious / disputed / subject to litigation', french: 'litigieux(-euse)' },
-        { id: 11, english: 'harm / prejudice / loss or damage (legal)', french: 'un préjudice' },
-        { id: 12, english: 'to plead / to argue (a case in court)', french: 'plaider' },
-        { id: 13, english: 'a plea / the closing argument (in court)', french: 'la plaidoirie' },
-        { id: 14, english: 'to reoffend / to relapse into criminal behaviour', french: 'récidiver' },
-        { id: 15, english: 'an acquittal / a not-guilty verdict', french: 'un acquittement' },
-        { id: 16, english: 'inadmissible / not admissible (evidence, claim)', french: 'irrecevable' },
-        { id: 17, english: 'contentious / of or relating to legal disputes; (n.) disputes department', french: 'contentieux(-euse)' },
-        { id: 18, english: 'the presumption of innocence', french: 'la présomption d\'innocence' },
-        { id: 19, english: 'an injunction', french: 'une injonction' },
-        { id: 20, english: 'customary law / common law', french: 'le droit coutumier' },
-    ] },
-    { level: 'C1', unit: 5, "id":"human-condition","title":"La Condition humaine","titleFR":"La Condition humaine","description":"Philosophie, éthique et langage des idées","descriptionFR":"Philosophie, éthique et langage des idées","icon":"🧠","color":"#4F46E5","wordCount":0, words: [
-        { id: 1, english: 'alienation / a sense of estrangement from oneself or society', french: 'l\'aliénation' },
-        { id: 2, english: 'contingency / the fact that things could have been otherwise', french: 'la contingence' },
-        { id: 3, english: 'free will', french: 'le libre arbitre' },
-        { id: 4, english: 'determinism / the view that all events are causally determined', french: 'le déterminisme' },
-        { id: 5, english: 'authenticity / being true to oneself', french: 'l\'authenticité' },
-        { id: 6, english: 'transcendence / going beyond ordinary limits', french: 'la transcendance' },
-        { id: 7, english: 'paradox / an apparently contradictory truth', french: 'le paradoxe' },
-        { id: 8, english: 'ideology / a system of ideas underpinning a political stance', french: 'l\'idéologie' },
-        { id: 9, english: 'the search for meaning / the quest for purpose', french: 'la quête de sens' },
-        { id: 10, english: 'the absurd / the conflict between human need for meaning and a silent universe', french: 'l\'absurde' },
-        { id: 11, english: 'to question oneself / to challenge one\'s own assumptions', french: 'se remettre en question' },
-        { id: 12, english: 'the human condition', french: 'la condition humaine' },
-        { id: 13, english: 'altruism / selfless concern for others', french: 'l\'altruisme' },
-        { id: 14, english: 'duality / the state of having two opposite parts', french: 'la dualité' },
-        { id: 15, english: 'relativism / the view that truth is not absolute', french: 'le relativisme' },
-        { id: 16, english: 'epistemology / the branch of philosophy concerned with knowledge', french: 'l\'épistémologie' },
-        { id: 17, english: 'phenomenology / the study of conscious experience', french: 'la phénoménologie' },
-        { id: 18, english: 'nihilism / the rejection of all meaning and moral principles', french: 'le nihilisme' },
-        { id: 19, english: 'immanence / existing within rather than beyond the world', french: 'l\'immanence' },
-        { id: 20, english: 'existentialism / the philosophy emphasising individual freedom and responsibility', french: 'l\'existentialisme' },
-    ] },
-    { level: 'C1', unit: 4, "id":"aesthetics-criticism","title":"Esthétique & Critique","titleFR":"Esthétique & Critique","description":"Langage du goût artistique et de l'analyse critique","descriptionFR":"Langage du goût artistique et de l'analyse critique","icon":"🖼️","color":"#9333EA","wordCount":0, words: [
-        { id: 1,  english: 'aesthetics',                                 french: 'l\'esthétique' },
-        { id: 2,  english: 'a critique / a critical review',             french: 'une critique' },
-        { id: 3,  english: 'a style / a register',                       french: 'un style' },
-        { id: 4,  english: 'harmonious',                                 french: 'harmonieux(-euse)' },
-        { id: 5,  english: 'to interpret / to construe',                 french: 'interpréter' },
-        { id: 6,  english: 'sublime',                                    french: 'sublime' },
-        { id: 7,  english: 'a motif / a recurring theme',                french: 'un motif' },
-        { id: 8,  english: 'to depict / to portray',                     french: 'dépeindre' },
-        { id: 9,  english: 'an allegory',                                french: 'une allégorie' },
-        { id: 10, english: 'avant-garde',                                french: 'avant-gardiste' },
-        { id: 11, english: 'to evoke / to conjure up',                   french: 'évoquer' },
-        { id: 12, english: 'an oeuvre / a body of work',                 french: 'une œuvre' },
-        { id: 13, english: 'to symbolize',                               french: 'symboliser' },
-        { id: 14, english: 'austere / stark',                            french: 'austère' },
-        { id: 15, english: 'a composition / an arrangement',             french: 'une composition' },
-        { id: 16, english: 'to transcend / to go beyond',                french: 'transcender' },
-        { id: 17, english: 'an artifact / a cultural object',            french: 'un artefact' },
-        { id: 18, english: 'minimalist',                                 french: 'minimaliste' },
-        { id: 19, english: 'to convey / to express (an idea)',           french: 'transmettre' },
-        { id: 20, english: 'a paradigm / a model',                       french: 'un paradigme' },
-    ] },
-    { level: 'C1', unit: 4, "id":"history-civilisation","title":"Histoire & Civilisation","titleFR":"Histoire & Civilisation","description":"Vocabulaire clé pour les sujets historiques et civilisationnels","descriptionFR":"Vocabulaire clé pour les sujets historiques et civilisationnels","icon":"🏛️","color":"#78716C","wordCount":0, words: [
-        { id: 1,  english: 'civilization',                               french: 'la civilisation' },
-        { id: 2,  english: 'an era / an age',                            french: 'une ère' },
-        { id: 3,  english: 'an empire',                                  french: 'un empire' },
-        { id: 4,  english: 'a dynasty',                                  french: 'une dynastie' },
-        { id: 5,  english: 'a conquest',                                 french: 'une conquête' },
-        { id: 6,  english: 'a revolution',                               french: 'une révolution' },
-        { id: 7,  english: 'to colonize',                                french: 'coloniser' },
-        { id: 8,  english: 'a legacy / an inheritance',                  french: 'un héritage' },
-        { id: 9,  english: 'a chronicle / an account',                   french: 'une chronique' },
-        { id: 10, english: 'feudal',                                     french: 'féodal(e)' },
-        { id: 11, english: 'an archetype / a founding figure',           french: 'un archétype' },
-        { id: 12, english: 'to decline / to fall into decay',            french: 'décliner' },
-        { id: 13, english: 'sovereignty',                                french: 'la souveraineté' },
-        { id: 14, english: 'an alliance',                                french: 'une alliance' },
-        { id: 15, english: 'a schism / a split',                         french: 'un schisme' },
-        { id: 16, english: 'a renaissance / a rebirth',                  french: 'une renaissance' },
-        { id: 17, english: 'a treaty',                                   french: 'un traité' },
-        { id: 18, english: 'to commemorate',                             french: 'commémorer' },
-        { id: 19, english: 'an epoch / a period',                        french: 'une époque' },
-        { id: 20, english: 'a monument / a landmark',                    french: 'un monument' },
-    ] },
-    { level: 'C1', unit: 1, "id":"rhetoric-argumentation","title":"Rhétorique & Argumentation","titleFR":"Rhétorique & Argumentation","description":"L'art de la persuasion et de l'argumentation structurée","descriptionFR":"L'art de la persuasion et de l'argumentation structurée","icon":"🗣️","color":"#B45309","wordCount":0, words: [
-        { id: 1,  english: 'rhetoric',                                   french: 'la rhétorique' },
-        { id: 2,  english: 'to argue / to make a case',                  french: 'argumenter' },
-        { id: 3,  english: 'a thesis',                                   french: 'une thèse' },
-        { id: 4,  english: 'a counter-argument',                         french: 'un contre-argument' },
-        { id: 5,  english: 'persuasion',                                 french: 'la persuasion' },
-        { id: 6,  english: 'a premise',                                  french: 'une prémisse' },
-        { id: 7,  english: 'to refute / to disprove',                    french: 'réfuter' },
-        { id: 8,  english: 'a fallacy / a sophism',                      french: 'un sophisme' },
-        { id: 9,  english: 'concise',                                    french: 'concis(e)' },
-        { id: 10, english: 'to assert / to claim',                       french: 'affirmer' },
-        { id: 11, english: 'a nuance',                                   french: 'une nuance' },
-        { id: 12, english: 'to elaborate / to develop (an idea)',         french: 'développer' },
-        { id: 13, english: 'a stance / a position',                      french: 'une position' },
-        { id: 14, english: 'to qualify / to nuance (a statement)',        french: 'nuancer' },
-        { id: 15, english: 'irony',                                      french: 'l\'ironie' },
-        { id: 16, english: 'an analogy',                                 french: 'une analogie' },
-        { id: 17, english: 'to undermine / to weaken (an argument)',      french: 'saper' },
-        { id: 18, english: 'coherent / consistent',                      french: 'cohérent(e)' },
-        { id: 19, english: 'a postulate / an axiom',                     french: 'un postulat' },
-        { id: 20, english: 'to demonstrate / to prove',                  french: 'démontrer' },
-    ] },
-    { level: 'C1', unit: 2, "id":"science-philosophy","title":"Philosophie des sciences","titleFR":"Philosophie des sciences","description":"Épistémologie et langage de la pensée scientifique","descriptionFR":"Épistémologie et langage de la pensée scientifique","icon":"🔬","color":"#0F766E","wordCount":0, words: [
-        { id: 1,  english: 'epistemology / the theory of knowledge',     french: 'l\'épistémologie' },
-        { id: 2,  english: 'empirical / based on observation',           french: 'empirique' },
-        { id: 3,  english: 'a hypothesis',                               french: 'une hypothèse' },
-        { id: 4,  english: 'to theorize / to formulate a theory',        french: 'théoriser' },
-        { id: 5,  english: 'a paradox',                                  french: 'un paradoxe' },
-        { id: 6,  english: 'consciousness / awareness',                  french: 'la conscience' },
-        { id: 7,  english: 'ontology / the study of being',              french: 'l\'ontologie' },
-        { id: 8,  english: 'pragmatic / practical',                      french: 'pragmatique' },
-        { id: 9,  english: 'dialectic / a dialectical debate',           french: 'la dialectique' },
-        { id: 10, english: 'rationalism',                                french: 'le rationalisme' },
-        { id: 11, english: 'to falsify / to disprove (a theory)',        french: 'falsifier' },
-        { id: 12, english: 'empiricism',                                 french: 'l\'empirisme' },
-        { id: 13, english: 'a dogma',                                    french: 'un dogme' },
-        { id: 14, english: 'phenomenology',                              french: 'la phénoménologie' },
-        { id: 15, english: 'subjective',                                 french: 'subjectif(-ive)' },
-        { id: 16, english: 'to abstract / to think abstractly',          french: 'abstraire' },
-        { id: 17, english: 'a theorem',                                  french: 'un théorème' },
-        { id: 18, english: 'axiomatic / self-evident',                   french: 'axiomatique' },
-        { id: 19, english: 'determinism',                                french: 'le déterminisme' },
-        { id: 20, english: 'a conjecture / an educated guess',           french: 'une conjecture' },
-    ] },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-vocab-01",
+    "title": "Rhétorique et cadrage",
+    "titleFR": "Rhétorique et cadrage",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "to cast doubt on",
+        "french": "mettre en doute"
+      },
+      {
+        "id": 2,
+        "english": "to take issue with",
+        "french": "contester"
+      },
+      {
+        "id": 3,
+        "english": "to foreground",
+        "french": "mettre au premier plan"
+      },
+      {
+        "id": 4,
+        "english": "an underlying assumption",
+        "french": "une hypothèse sous-jacente"
+      },
+      {
+        "id": 5,
+        "english": "a loaded term",
+        "french": "un terme chargé de connotations"
+      },
+      {
+        "id": 6,
+        "english": "to frame the debate",
+        "french": "cadrer le débat"
+      },
+      {
+        "id": 7,
+        "english": "to gloss over",
+        "french": "passer rapidement sur un problème"
+      },
+      {
+        "id": 8,
+        "english": "to amplify a voice",
+        "french": "donner plus de portée à une voix"
+      },
+      {
+        "id": 9,
+        "english": "to lend weight to",
+        "french": "donner du poids à"
+      },
+      {
+        "id": 10,
+        "english": "a contested narrative",
+        "french": "un récit contesté"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-vocab-02",
+    "title": "Mémoire et pouvoir institutionnel",
+    "titleFR": "Mémoire et pouvoir institutionnel",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "archival omission",
+        "french": "omission archivistique"
+      },
+      {
+        "id": 2,
+        "english": "curatorial decision",
+        "french": "décision curatoriale"
+      },
+      {
+        "id": 3,
+        "english": "historical accountability",
+        "french": "responsabilité envers l’histoire"
+      },
+      {
+        "id": 4,
+        "english": "to redress an imbalance",
+        "french": "corriger un déséquilibre"
+      },
+      {
+        "id": 5,
+        "english": "an official account",
+        "french": "une version officielle"
+      },
+      {
+        "id": 6,
+        "english": "a marginalised perspective",
+        "french": "un point de vue marginalisé"
+      },
+      {
+        "id": 7,
+        "english": "collective memory",
+        "french": "mémoire collective"
+      },
+      {
+        "id": 8,
+        "english": "to challenge orthodoxy",
+        "french": "remettre en question une doctrine dominante"
+      },
+      {
+        "id": 9,
+        "english": "symbolic recognition",
+        "french": "reconnaissance symbolique"
+      },
+      {
+        "id": 10,
+        "english": "a selective record",
+        "french": "des archives sélectives"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-vocab-03",
+    "title": "Prudence et prise de position",
+    "titleFR": "Prudence et prise de position",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "to qualify a statement",
+        "french": "nuancer une déclaration"
+      },
+      {
+        "id": 2,
+        "english": "to signal uncertainty",
+        "french": "signaler une incertitude"
+      },
+      {
+        "id": 3,
+        "english": "a tentative inference",
+        "french": "une déduction provisoire"
+      },
+      {
+        "id": 4,
+        "english": "circumstantial evidence",
+        "french": "preuves indirectes"
+      },
+      {
+        "id": 5,
+        "english": "to overstate the case",
+        "french": "exagérer la portée d’un argument"
+      },
+      {
+        "id": 6,
+        "english": "a plausible interpretation",
+        "french": "une interprétation plausible"
+      },
+      {
+        "id": 7,
+        "english": "to nuance a claim",
+        "french": "nuancer une affirmation"
+      },
+      {
+        "id": 8,
+        "english": "the burden of proof",
+        "french": "la charge de la preuve"
+      },
+      {
+        "id": 9,
+        "english": "a qualified endorsement",
+        "french": "un soutien assorti de réserves"
+      },
+      {
+        "id": 10,
+        "english": "to acknowledge a limitation",
+        "french": "reconnaître une limite"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 2,
+    "id": "c1en-vocab-04",
+    "title": "Gouvernance des projets",
+    "titleFR": "Gouvernance des projets",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "decision bottleneck",
+        "french": "goulot d’étranglement décisionnel"
+      },
+      {
+        "id": 2,
+        "english": "implementation gap",
+        "french": "écart entre décision et mise en œuvre"
+      },
+      {
+        "id": 3,
+        "english": "formal oversight",
+        "french": "contrôle institutionnel"
+      },
+      {
+        "id": 4,
+        "english": "contingency planning",
+        "french": "planification des imprévus"
+      },
+      {
+        "id": 5,
+        "english": "risk exposure",
+        "french": "exposition au risque"
+      },
+      {
+        "id": 6,
+        "english": "stakeholder alignment",
+        "french": "alignement des parties prenantes"
+      },
+      {
+        "id": 7,
+        "english": "an operational constraint",
+        "french": "une contrainte opérationnelle"
+      },
+      {
+        "id": 8,
+        "english": "accountability framework",
+        "french": "cadre de responsabilisation"
+      },
+      {
+        "id": 9,
+        "english": "to escalate a concern",
+        "french": "faire remonter une inquiétude"
+      },
+      {
+        "id": 10,
+        "english": "a measurable target",
+        "french": "un objectif mesurable"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 2,
+    "id": "c1en-vocab-05",
+    "title": "Collaboration et responsabilité",
+    "titleFR": "Collaboration et responsabilité",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "to challenge a brief",
+        "french": "remettre en cause un cahier des charges"
+      },
+      {
+        "id": 2,
+        "english": "cross-functional team",
+        "french": "équipe interfonctionnelle"
+      },
+      {
+        "id": 3,
+        "english": "institutional inertia",
+        "french": "inertie institutionnelle"
+      },
+      {
+        "id": 4,
+        "english": "a robust safeguard",
+        "french": "une protection solide"
+      },
+      {
+        "id": 5,
+        "english": "unforeseen consequence",
+        "french": "conséquence imprévue"
+      },
+      {
+        "id": 6,
+        "english": "a conflict resolution process",
+        "french": "procédure de résolution des conflits"
+      },
+      {
+        "id": 7,
+        "english": "an evidence threshold",
+        "french": "seuil de preuves requis"
+      },
+      {
+        "id": 8,
+        "english": "workload redistribution",
+        "french": "redistribution de la charge de travail"
+      },
+      {
+        "id": 9,
+        "english": "to document a trade-off",
+        "french": "consigner un compromis"
+      },
+      {
+        "id": 10,
+        "english": "a binding commitment",
+        "french": "engagement contraignant"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 3,
+    "id": "c1en-vocab-06",
+    "title": "Écriture et responsabilité journalistiques",
+    "titleFR": "Écriture et responsabilité journalistiques",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "editorial judgement",
+        "french": "jugement éditorial"
+      },
+      {
+        "id": 2,
+        "english": "a misleading implication",
+        "french": "une implication trompeuse"
+      },
+      {
+        "id": 3,
+        "english": "misattributed quotation",
+        "french": "citation attribuée à tort"
+      },
+      {
+        "id": 4,
+        "english": "a primary source",
+        "french": "une source primaire"
+      },
+      {
+        "id": 5,
+        "english": "selective omission",
+        "french": "omission sélective"
+      },
+      {
+        "id": 6,
+        "english": "to retract an allegation",
+        "french": "retirer une accusation"
+      },
+      {
+        "id": 7,
+        "english": "an unverified account",
+        "french": "un récit non vérifié"
+      },
+      {
+        "id": 8,
+        "english": "to contextualise figures",
+        "french": "contextualiser les chiffres"
+      },
+      {
+        "id": 9,
+        "english": "a distorted framing",
+        "french": "un cadrage déformant"
+      },
+      {
+        "id": 10,
+        "english": "a correction notice",
+        "french": "avis de rectification"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 3,
+    "id": "c1en-vocab-07",
+    "title": "Crédibilité de l’information numérique",
+    "titleFR": "Crédibilité de l’information numérique",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "algorithmic amplification",
+        "french": "amplification algorithmique"
+      },
+      {
+        "id": 2,
+        "english": "an echo chamber",
+        "french": "une chambre d’écho"
+      },
+      {
+        "id": 3,
+        "english": "verification protocol",
+        "french": "protocole de vérification"
+      },
+      {
+        "id": 4,
+        "english": "a deceptive caption",
+        "french": "une légende trompeuse"
+      },
+      {
+        "id": 5,
+        "english": "to corroborate a claim",
+        "french": "corroborer une affirmation"
+      },
+      {
+        "id": 6,
+        "english": "viral circulation",
+        "french": "diffusion virale"
+      },
+      {
+        "id": 7,
+        "english": "an anonymous source",
+        "french": "une source anonyme"
+      },
+      {
+        "id": 8,
+        "english": "a speculative reading",
+        "french": "une interprétation spéculative"
+      },
+      {
+        "id": 9,
+        "english": "a credibility gap",
+        "french": "déficit de crédibilité"
+      },
+      {
+        "id": 10,
+        "english": "to trace provenance",
+        "french": "retracer la provenance"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 4,
+    "id": "c1en-vocab-08",
+    "title": "Justice et responsabilité",
+    "titleFR": "Justice et responsabilité",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "procedural legitimacy",
+        "french": "légitimité procédurale"
+      },
+      {
+        "id": 2,
+        "english": "a disproportionate sanction",
+        "french": "une sanction disproportionnée"
+      },
+      {
+        "id": 3,
+        "english": "conflicting obligations",
+        "french": "obligations contradictoires"
+      },
+      {
+        "id": 4,
+        "english": "a defensible compromise",
+        "french": "un compromis défendable"
+      },
+      {
+        "id": 5,
+        "english": "an unintended harm",
+        "french": "un préjudice involontaire"
+      },
+      {
+        "id": 6,
+        "english": "the presumption of innocence",
+        "french": "présomption d’innocence"
+      },
+      {
+        "id": 7,
+        "english": "to remedy an injustice",
+        "french": "réparer une injustice"
+      },
+      {
+        "id": 8,
+        "english": "due process",
+        "french": "procédure régulière"
+      },
+      {
+        "id": 9,
+        "english": "a conflicting duty",
+        "french": "un devoir contradictoire"
+      },
+      {
+        "id": 10,
+        "english": "an equitable outcome",
+        "french": "une issue équitable"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 4,
+    "id": "c1en-vocab-09",
+    "title": "Délibération et désaccord",
+    "titleFR": "Délibération et désaccord",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "to interrogate a premise",
+        "french": "interroger une prémisse"
+      },
+      {
+        "id": 2,
+        "english": "to concede a point",
+        "french": "concéder un point"
+      },
+      {
+        "id": 3,
+        "english": "a principled objection",
+        "french": "une objection de principe"
+      },
+      {
+        "id": 4,
+        "english": "a false dilemma",
+        "french": "un faux dilemme"
+      },
+      {
+        "id": 5,
+        "english": "moral agency",
+        "french": "capacité d’action morale"
+      },
+      {
+        "id": 6,
+        "english": "a competing interest",
+        "french": "un intérêt concurrent"
+      },
+      {
+        "id": 7,
+        "english": "reasonable dissent",
+        "french": "désaccord raisonnable"
+      },
+      {
+        "id": 8,
+        "english": "to weigh competing claims",
+        "french": "mettre en balance des revendications concurrentes"
+      },
+      {
+        "id": 9,
+        "english": "a legitimate grievance",
+        "french": "un grief légitime"
+      },
+      {
+        "id": 10,
+        "english": "a negotiated settlement",
+        "french": "un accord négocié"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 5,
+    "id": "c1en-vocab-10",
+    "title": "Transition et aménagement",
+    "titleFR": "Transition et aménagement",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "climate adaptation",
+        "french": "adaptation au changement climatique"
+      },
+      {
+        "id": 2,
+        "english": "urban heat island",
+        "french": "îlot de chaleur urbain"
+      },
+      {
+        "id": 3,
+        "english": "resilient infrastructure",
+        "french": "infrastructure résiliente"
+      },
+      {
+        "id": 4,
+        "english": "a nature-based solution",
+        "french": "une solution fondée sur la nature"
+      },
+      {
+        "id": 5,
+        "english": "surface runoff",
+        "french": "ruissellement de surface"
+      },
+      {
+        "id": 6,
+        "english": "a maintenance burden",
+        "french": "charge d’entretien"
+      },
+      {
+        "id": 7,
+        "english": "a flood defence",
+        "french": "ouvrage de protection contre les crues"
+      },
+      {
+        "id": 8,
+        "english": "to retrofit a building",
+        "french": "moderniser un bâtiment existant"
+      },
+      {
+        "id": 9,
+        "english": "a planning constraint",
+        "french": "une contrainte d’aménagement"
+      },
+      {
+        "id": 10,
+        "english": "equitable access",
+        "french": "accès équitable"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 5,
+    "id": "c1en-vocab-11",
+    "title": "Évaluation des politiques",
+    "titleFR": "Évaluation des politiques",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "a policy lever",
+        "french": "un levier d’action publique"
+      },
+      {
+        "id": 2,
+        "english": "a cost-benefit analysis",
+        "french": "analyse coûts-avantages"
+      },
+      {
+        "id": 3,
+        "english": "distributional justice",
+        "french": "justice distributive"
+      },
+      {
+        "id": 4,
+        "english": "a pilot evaluation",
+        "french": "évaluation d’un projet pilote"
+      },
+      {
+        "id": 5,
+        "english": "a long-term liability",
+        "french": "obligation financière à long terme"
+      },
+      {
+        "id": 6,
+        "english": "to phase in",
+        "french": "introduire progressivement"
+      },
+      {
+        "id": 7,
+        "english": "to scale up responsibly",
+        "french": "déployer à grande échelle de manière responsable"
+      },
+      {
+        "id": 8,
+        "english": "a consultation response",
+        "french": "contribution à une consultation"
+      },
+      {
+        "id": 9,
+        "english": "public procurement",
+        "french": "marchés publics"
+      },
+      {
+        "id": 10,
+        "english": "a funding mechanism",
+        "french": "mécanisme de financement"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 6,
+    "id": "c1en-vocab-12",
+    "title": "Analyse littéraire et artistique",
+    "titleFR": "Analyse littéraire et artistique",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "narrative voice",
+        "french": "voix narrative"
+      },
+      {
+        "id": 2,
+        "english": "an unreliable narrator",
+        "french": "un narrateur peu fiable"
+      },
+      {
+        "id": 3,
+        "english": "temporal dislocation",
+        "french": "dislocation temporelle"
+      },
+      {
+        "id": 4,
+        "english": "a recurring motif",
+        "french": "un motif récurrent"
+      },
+      {
+        "id": 5,
+        "english": "an understated performance",
+        "french": "une interprétation sobre"
+      },
+      {
+        "id": 6,
+        "english": "narrative restraint",
+        "french": "retenue narrative"
+      },
+      {
+        "id": 7,
+        "english": "an interpretative gap",
+        "french": "une zone d’incertitude interprétative"
+      },
+      {
+        "id": 8,
+        "english": "aesthetic judgement",
+        "french": "jugement esthétique"
+      },
+      {
+        "id": 9,
+        "english": "subtext",
+        "french": "sous-texte"
+      },
+      {
+        "id": 10,
+        "english": "an unresolved tension",
+        "french": "une tension non résolue"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 6,
+    "id": "c1en-vocab-13",
+    "title": "Traduction et sens",
+    "titleFR": "Traduction et sens",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "a register shift",
+        "french": "un changement de registre"
+      },
+      {
+        "id": 2,
+        "english": "pragmatic meaning",
+        "french": "sens pragmatique"
+      },
+      {
+        "id": 3,
+        "english": "lexical ambiguity",
+        "french": "ambiguïté lexicale"
+      },
+      {
+        "id": 4,
+        "english": "to preserve a nuance",
+        "french": "préserver une nuance"
+      },
+      {
+        "id": 5,
+        "english": "a literal rendition",
+        "french": "une traduction littérale"
+      },
+      {
+        "id": 6,
+        "english": "intertextual reference",
+        "french": "référence intertextuelle"
+      },
+      {
+        "id": 7,
+        "english": "cultural specificity",
+        "french": "particularité culturelle"
+      },
+      {
+        "id": 8,
+        "english": "stylistic coherence",
+        "french": "cohérence stylistique"
+      },
+      {
+        "id": 9,
+        "english": "to domesticate a text",
+        "french": "adapter un texte à la culture cible"
+      },
+      {
+        "id": 10,
+        "english": "a translator’s intervention",
+        "french": "une intervention du traducteur"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 7,
+    "id": "c1en-vocab-14",
+    "title": "Rigueur de la recherche",
+    "titleFR": "Rigueur de la recherche",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "methodological limitation",
+        "french": "limite méthodologique"
+      },
+      {
+        "id": 2,
+        "english": "sampling bias",
+        "french": "biais d’échantillonnage"
+      },
+      {
+        "id": 3,
+        "english": "statistical significance",
+        "french": "significativité statistique"
+      },
+      {
+        "id": 4,
+        "english": "causal inference",
+        "french": "inférence causale"
+      },
+      {
+        "id": 5,
+        "english": "replicability",
+        "french": "reproductibilité"
+      },
+      {
+        "id": 6,
+        "english": "a pre-registered outcome",
+        "french": "un résultat défini avant l’étude"
+      },
+      {
+        "id": 7,
+        "english": "an outlier",
+        "french": "une valeur aberrante"
+      },
+      {
+        "id": 8,
+        "english": "to disclose uncertainty",
+        "french": "rendre l’incertitude explicite"
+      },
+      {
+        "id": 9,
+        "english": "confidence interval",
+        "french": "intervalle de confiance"
+      },
+      {
+        "id": 10,
+        "english": "an ethical review",
+        "french": "une évaluation éthique"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 7,
+    "id": "c1en-vocab-15",
+    "title": "Décision collective et révision",
+    "titleFR": "Décision collective et révision",
+    "description": "Lexique avancé dans son contexte argumentatif.",
+    "descriptionFR": "Expressions nouvelles et distinctions de sens pour le niveau C1.",
+    "icon": "📚",
+    "color": "#4338CA",
+    "wordCount": 10,
+    "words": [
+      {
+        "id": 1,
+        "english": "a provisional recommendation",
+        "french": "une recommandation provisoire"
+      },
+      {
+        "id": 2,
+        "english": "adaptive governance",
+        "french": "gouvernance adaptative"
+      },
+      {
+        "id": 3,
+        "english": "deliberative process",
+        "french": "processus délibératif"
+      },
+      {
+        "id": 4,
+        "english": "a transparent rationale",
+        "french": "un raisonnement transparent"
+      },
+      {
+        "id": 5,
+        "english": "collective responsibility",
+        "french": "responsabilité collective"
+      },
+      {
+        "id": 6,
+        "english": "a revision clause",
+        "french": "clause de révision"
+      },
+      {
+        "id": 7,
+        "english": "evidence-led policy",
+        "french": "politique guidée par les preuves"
+      },
+      {
+        "id": 8,
+        "english": "an enforceable condition",
+        "french": "une condition exécutoire"
+      },
+      {
+        "id": 9,
+        "english": "decision transparency",
+        "french": "transparence décisionnelle"
+      },
+      {
+        "id": 10,
+        "english": "a mechanism for appeal",
+        "french": "une voie de recours"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-reading-vocab-01",
+    "title": "Vocabulaire de lecture : The Names on a Museum Wall",
+    "titleFR": "Lexique du texte : The Names on a Museum Wall",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "dominated by",
+        "french": "dominé par"
+      },
+      {
+        "id": 2,
+        "english": "industrial heritage",
+        "french": "patrimoine industriel"
+      },
+      {
+        "id": 3,
+        "english": "reluctant families",
+        "french": "familles réticentes"
+      },
+      {
+        "id": 4,
+        "english": "finite resource",
+        "french": "ressource limitée"
+      },
+      {
+        "id": 5,
+        "english": "overdue recognition",
+        "french": "reconnaissance tardive"
+      },
+      {
+        "id": 6,
+        "english": "confers authority",
+        "french": "confère de l’autorité"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-reading-vocab-02",
+    "title": "Vocabulaire de lecture : When the Archive Went Silent",
+    "titleFR": "Lexique du texte : When the Archive Went Silent",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "oral-history project",
+        "french": "projet d’histoire orale"
+      },
+      {
+        "id": 2,
+        "english": "testimony",
+        "french": "témoignage"
+      },
+      {
+        "id": 3,
+        "english": "withholding recordings",
+        "french": "rétention des enregistrements"
+      },
+      {
+        "id": 4,
+        "english": "public access",
+        "french": "accès public"
+      },
+      {
+        "id": 5,
+        "english": "act of agency",
+        "french": "acte d’autonomie"
+      },
+      {
+        "id": 6,
+        "english": "definitive",
+        "french": "définitif"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-reading-vocab-03",
+    "title": "Vocabulaire de lecture : A City That Calls Itself Creative",
+    "titleFR": "Lexique du texte : A City That Calls Itself Creative",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "appealing slogan",
+        "french": "slogan séduisant"
+      },
+      {
+        "id": 2,
+        "english": "investment presentations",
+        "french": "présentations destinées aux investisseurs"
+      },
+      {
+        "id": 3,
+        "english": "rehearsal rooms",
+        "french": "salles de répétition"
+      },
+      {
+        "id": 4,
+        "english": "published results",
+        "french": "résultats publiés"
+      },
+      {
+        "id": 5,
+        "english": "enthusiastic agreement",
+        "french": "adhésion enthousiaste"
+      },
+      {
+        "id": 6,
+        "english": "irreversible",
+        "french": "irréversible"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-reading-vocab-04",
+    "title": "Vocabulaire de lecture : The Translator’s Margin",
+    "titleFR": "Lexique du texte : The Translator’s Margin",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "unfamiliar word",
+        "french": "mot inconnu"
+      },
+      {
+        "id": 2,
+        "english": "family gathering",
+        "french": "réunion familiale"
+      },
+      {
+        "id": 3,
+        "english": "witnessed a reconciliation",
+        "french": "assisté à une réconciliation"
+      },
+      {
+        "id": 4,
+        "english": "proofreader",
+        "french": "correcteur d’épreuves"
+      },
+      {
+        "id": 5,
+        "english": "calculated risk",
+        "french": "risque calculé"
+      },
+      {
+        "id": 6,
+        "english": "convenient fiction",
+        "french": "fiction commode"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 2,
+    "id": "c1en-reading-vocab-05",
+    "title": "Vocabulaire de lecture : The Prototype That Missed Its Deadline",
+    "titleFR": "Lexique du texte : The Prototype That Missed Its Deadline",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "coastal-monitoring prototype",
+        "french": "prototype de surveillance côtière"
+      },
+      {
+        "id": 2,
+        "english": "storm simulation",
+        "french": "simulation de tempête"
+      },
+      {
+        "id": 3,
+        "english": "external laboratory",
+        "french": "laboratoire extérieur"
+      },
+      {
+        "id": 4,
+        "english": "damaged components",
+        "french": "composants endommagés"
+      },
+      {
+        "id": 5,
+        "english": "testing allowance",
+        "french": "marge prévue pour les essais"
+      },
+      {
+        "id": 6,
+        "english": "outrunning the evidence",
+        "french": "dépassant ce que les preuves permettaient"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 2,
+    "id": "c1en-reading-vocab-06",
+    "title": "Vocabulaire de lecture : Notes from an Independent Audit",
+    "titleFR": "Lexique du texte : Notes from an Independent Audit",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "procurement procedures",
+        "french": "procédures d’achat"
+      },
+      {
+        "id": 2,
+        "english": "opaque selection criteria",
+        "french": "critères de sélection opaques"
+      },
+      {
+        "id": 3,
+        "english": "published guidance",
+        "french": "consignes publiées"
+      },
+      {
+        "id": 4,
+        "english": "weighted scoring matrix",
+        "french": "grille de notation pondérée"
+      },
+      {
+        "id": 5,
+        "english": "conflicts of interest",
+        "french": "conflits d’intérêts"
+      },
+      {
+        "id": 6,
+        "english": "escalated",
+        "french": "transmis à un niveau hiérarchique supérieur"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 2,
+    "id": "c1en-reading-vocab-07",
+    "title": "Vocabulaire de lecture : The Cost of a Shorter Meeting",
+    "titleFR": "Lexique du texte : The Cost of a Shorter Meeting",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "reallocation of decision-making work",
+        "french": "redistribution du travail de décision"
+      },
+      {
+        "id": 2,
+        "english": "private messages",
+        "french": "messages privés"
+      },
+      {
+        "id": 3,
+        "english": "standardisation of agendas",
+        "french": "normalisation des ordres du jour"
+      },
+      {
+        "id": 4,
+        "english": "informal discussion",
+        "french": "discussion informelle"
+      },
+      {
+        "id": 5,
+        "english": "unresolved issues",
+        "french": "questions non résolues"
+      },
+      {
+        "id": 6,
+        "english": "displacement of work",
+        "french": "déplacement du travail"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 2,
+    "id": "c1en-reading-vocab-08",
+    "title": "Vocabulaire de lecture : Who Owns the Suggestion?",
+    "titleFR": "Lexique du texte : Who Owns the Suggestion?",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "caption-control option",
+        "french": "option de réglage des sous-titres"
+      },
+      {
+        "id": 2,
+        "english": "release notes",
+        "french": "notes de version"
+      },
+      {
+        "id": 3,
+        "english": "acknowledge their contribution",
+        "french": "reconnaître leur contribution"
+      },
+      {
+        "id": 4,
+        "english": "alternative layouts",
+        "french": "dispositions alternatives"
+      },
+      {
+        "id": 5,
+        "english": "misrepresent the process",
+        "french": "déformer le déroulement du travail"
+      },
+      {
+        "id": 6,
+        "english": "updated wording",
+        "french": "nouvelle formulation"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 3,
+    "id": "c1en-reading-vocab-09",
+    "title": "Vocabulaire de lecture : What the Headline Left Out",
+    "titleFR": "Lexique du texte : What the Headline Left Out",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "underlying paper",
+        "french": "article scientifique sous-jacent"
+      },
+      {
+        "id": 2,
+        "english": "street width",
+        "french": "largeur des rues"
+      },
+      {
+        "id": 3,
+        "english": "too compressed",
+        "french": "trop condensé"
+      },
+      {
+        "id": 4,
+        "english": "categorical claim",
+        "french": "affirmation catégorique"
+      },
+      {
+        "id": 5,
+        "english": "technically defensible",
+        "french": "techniquement défendable"
+      },
+      {
+        "id": 6,
+        "english": "published a clarification",
+        "french": "publié une mise au point"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 3,
+    "id": "c1en-reading-vocab-10",
+    "title": "Vocabulaire de lecture : The Photograph Without a Date",
+    "titleFR": "Lexique du texte : The Photograph Without a Date",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "transport strike",
+        "french": "grève des transports"
+      },
+      {
+        "id": 2,
+        "english": "deserted platform",
+        "french": "quai désert"
+      },
+      {
+        "id": 3,
+        "english": "taken out of context",
+        "french": "sortie de son contexte"
+      },
+      {
+        "id": 4,
+        "english": "station canopy",
+        "french": "auvent de la gare"
+      },
+      {
+        "id": 5,
+        "english": "archived timetables",
+        "french": "horaires archivés"
+      },
+      {
+        "id": 6,
+        "english": "busy concourse",
+        "french": "hall très fréquenté"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 3,
+    "id": "c1en-reading-vocab-11",
+    "title": "Vocabulaire de lecture : A Correction Nobody Shared",
+    "titleFR": "Lexique du texte : A Correction Nobody Shared",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "bold claim",
+        "french": "affirmation péremptoire"
+      },
+      {
+        "id": 2,
+        "english": "original impression",
+        "french": "impression initiale"
+      },
+      {
+        "id": 3,
+        "english": "distribution",
+        "french": "diffusion"
+      },
+      {
+        "id": 4,
+        "english": "dramatic reversal",
+        "french": "revirement spectaculaire"
+      },
+      {
+        "id": 5,
+        "english": "imply liability",
+        "french": "impliquer une responsabilité juridique"
+      },
+      {
+        "id": 6,
+        "english": "restore everyone's trust",
+        "french": "rétablir la confiance de tous"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 3,
+    "id": "c1en-reading-vocab-12",
+    "title": "Vocabulaire de lecture : When a Statistic Becomes a Story",
+    "titleFR": "Lexique du texte : When a Statistic Becomes a Story",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "annual report",
+        "french": "rapport annuel"
+      },
+      {
+        "id": 2,
+        "english": "roadworks",
+        "french": "travaux de voirie"
+      },
+      {
+        "id": 3,
+        "english": "selective narrative",
+        "french": "récit sélectif"
+      },
+      {
+        "id": 4,
+        "english": "straightforward progress",
+        "french": "progrès sans équivoque"
+      },
+      {
+        "id": 5,
+        "english": "a verdict",
+        "french": "un verdict"
+      },
+      {
+        "id": 6,
+        "english": "accessible pavements",
+        "french": "trottoirs accessibles"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 4,
+    "id": "c1en-reading-vocab-13",
+    "title": "Vocabulaire de lecture : The Scholarship That Might Have Been",
+    "titleFR": "Lexique du texte : The Scholarship That Might Have Been",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "unpaid internships",
+        "french": "stages non rémunérés"
+      },
+      {
+        "id": 2,
+        "english": "living costs",
+        "french": "frais de subsistance"
+      },
+      {
+        "id": 3,
+        "english": "repaying debts",
+        "french": "rembourser des dettes"
+      },
+      {
+        "id": 4,
+        "english": "maintenance allowance",
+        "french": "allocation d’entretien"
+      },
+      {
+        "id": 5,
+        "english": "recruitment campaigns",
+        "french": "campagnes de recrutement"
+      },
+      {
+        "id": 6,
+        "english": "emergency grants",
+        "french": "aides d’urgence"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 4,
+    "id": "c1en-reading-vocab-14",
+    "title": "Vocabulaire de lecture : A Public Apology with Missing Words",
+    "titleFR": "Lexique du texte : A Public Apology with Missing Words",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "visiting performer",
+        "french": "artiste invitée"
+      },
+      {
+        "id": 2,
+        "english": "passive wording",
+        "french": "formulation passive"
+      },
+      {
+        "id": 3,
+        "english": "access arrangements",
+        "french": "dispositifs d’accessibilité"
+      },
+      {
+        "id": 4,
+        "english": "broken lift",
+        "french": "ascenseur en panne"
+      },
+      {
+        "id": 5,
+        "english": "remedial plan",
+        "french": "plan correctif"
+      },
+      {
+        "id": 6,
+        "english": "follow-through",
+        "french": "mise en œuvre effective"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 4,
+    "id": "c1en-reading-vocab-15",
+    "title": "Vocabulaire de lecture : Had the Panel Heard the Whole Recording",
+    "titleFR": "Lexique du texte : Had the Panel Heard the Whole Recording",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "disciplinary panel",
+        "french": "commission disciplinaire"
+      },
+      {
+        "id": 2,
+        "english": "blunt refusal",
+        "french": "refus catégorique"
+      },
+      {
+        "id": 3,
+        "english": "omitted the question",
+        "french": "omis la question"
+      },
+      {
+        "id": 4,
+        "english": "written schedule",
+        "french": "calendrier officiel"
+      },
+      {
+        "id": 5,
+        "english": "procedural fairness",
+        "french": "équité procédurale"
+      },
+      {
+        "id": 6,
+        "english": "edited without disclosure",
+        "french": "modifié sans signalement"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 4,
+    "id": "c1en-reading-vocab-16",
+    "title": "Vocabulaire de lecture : A Community Board Divided",
+    "titleFR": "Lexique du texte : A Community Board Divided",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "late-night opening hours",
+        "french": "horaires d’ouverture tardifs"
+      },
+      {
+        "id": 2,
+        "english": "supervised places",
+        "french": "lieux encadrés"
+      },
+      {
+        "id": 3,
+        "english": "quieter entrance",
+        "french": "entrée moins bruyante"
+      },
+      {
+        "id": 4,
+        "english": "closing procedures",
+        "french": "procédures de fermeture"
+      },
+      {
+        "id": 5,
+        "english": "noise levels",
+        "french": "niveaux sonores"
+      },
+      {
+        "id": 6,
+        "english": "limited agreement",
+        "french": "accord limité"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 5,
+    "id": "c1en-reading-vocab-17",
+    "title": "Vocabulaire de lecture : A River Returns to the Street",
+    "titleFR": "Lexique du texte : A River Returns to the Street",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "river-restoration project",
+        "french": "projet de restauration d’une rivière"
+      },
+      {
+        "id": 2,
+        "english": "concrete channel",
+        "french": "canal bétonné"
+      },
+      {
+        "id": 3,
+        "english": "winding stream",
+        "french": "cours d’eau sinueux"
+      },
+      {
+        "id": 4,
+        "english": "ecological gains",
+        "french": "gains écologiques"
+      },
+      {
+        "id": 5,
+        "english": "flood management",
+        "french": "gestion des inondations"
+      },
+      {
+        "id": 6,
+        "english": "monitoring data",
+        "french": "données de suivi"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 5,
+    "id": "c1en-reading-vocab-18",
+    "title": "Vocabulaire de lecture : After the Roof Gardens",
+    "titleFR": "Lexique du texte : After the Roof Gardens",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "roof gardens",
+        "french": "jardins de toiture"
+      },
+      {
+        "id": 2,
+        "english": "temperature sensors",
+        "french": "capteurs de température"
+      },
+      {
+        "id": 3,
+        "english": "changes in occupancy",
+        "french": "variations d’occupation"
+      },
+      {
+        "id": 4,
+        "english": "running costs",
+        "french": "coûts de fonctionnement"
+      },
+      {
+        "id": 5,
+        "english": "fragile structures",
+        "french": "structures fragiles"
+      },
+      {
+        "id": 6,
+        "english": "thermal comfort",
+        "french": "confort thermique"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 5,
+    "id": "c1en-reading-vocab-19",
+    "title": "Vocabulaire de lecture : The Neighbourhood That Cools Itself",
+    "titleFR": "Lexique du texte : The Neighbourhood That Cools Itself",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "shaded streets",
+        "french": "rues ombragées"
+      },
+      {
+        "id": 2,
+        "english": "empty lot",
+        "french": "terrain vague"
+      },
+      {
+        "id": 3,
+        "english": "reflective roofs",
+        "french": "toitures réfléchissantes"
+      },
+      {
+        "id": 4,
+        "english": "tenant association",
+        "french": "association de locataires"
+      },
+      {
+        "id": 5,
+        "english": "loading space",
+        "french": "espace de livraison"
+      },
+      {
+        "id": 6,
+        "english": "distributional effects",
+        "french": "effets distributifs"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 5,
+    "id": "c1en-reading-vocab-20",
+    "title": "Vocabulaire de lecture : A Letter from the Floodplain",
+    "titleFR": "Lexique du texte : A Letter from the Floodplain",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "flood-risk committee",
+        "french": "commission des risques d’inondation"
+      },
+      {
+        "id": 2,
+        "english": "river barriers",
+        "french": "barrières fluviales"
+      },
+      {
+        "id": 3,
+        "english": "future-proof",
+        "french": "conçu pour résister aux évolutions futures"
+      },
+      {
+        "id": 4,
+        "english": "projected water levels",
+        "french": "niveaux d’eau prévus"
+      },
+      {
+        "id": 5,
+        "english": "protected zone",
+        "french": "zone protégée"
+      },
+      {
+        "id": 6,
+        "english": "remaining risk",
+        "french": "risque résiduel"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 6,
+    "id": "c1en-reading-vocab-21",
+    "title": "Vocabulaire de lecture : The Last Scene Comes First",
+    "titleFR": "Lexique du texte : The Last Scene Comes First",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "so arresting",
+        "french": "si saisissant"
+      },
+      {
+        "id": 2,
+        "english": "motionless",
+        "french": "immobile"
+      },
+      {
+        "id": 3,
+        "english": "reversal",
+        "french": "renversement"
+      },
+      {
+        "id": 4,
+        "english": "a betrayal",
+        "french": "une trahison"
+      },
+      {
+        "id": 5,
+        "english": "the burden of a promise",
+        "french": "le poids d’une promesse"
+      },
+      {
+        "id": 6,
+        "english": "restraint",
+        "french": "retenue"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 6,
+    "id": "c1en-reading-vocab-22",
+    "title": "Vocabulaire de lecture : A Pronoun in the Wrong Place",
+    "titleFR": "Lexique du texte : A Pronoun in the Wrong Place",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "copyeditor",
+        "french": "réviseur éditorial"
+      },
+      {
+        "id": 2,
+        "english": "harmless-looking sentence",
+        "french": "phrase d’apparence anodine"
+      },
+      {
+        "id": 3,
+        "english": "ambiguity",
+        "french": "ambiguïté"
+      },
+      {
+        "id": 4,
+        "english": "impeccably clear",
+        "french": "parfaitement clair"
+      },
+      {
+        "id": 5,
+        "english": "painfully repetitive",
+        "french": "péniblement répétitif"
+      },
+      {
+        "id": 6,
+        "english": "referent",
+        "french": "référent"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 6,
+    "id": "c1en-reading-vocab-23",
+    "title": "Vocabulaire de lecture : A Translation That Refused to Be Elegant",
+    "titleFR": "Lexique du texte : A Translation That Refused to Be Elegant",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "deliberately awkward",
+        "french": "délibérément maladroit"
+      },
+      {
+        "id": 2,
+        "english": "fidelity",
+        "french": "fidélité (en traduction)"
+      },
+      {
+        "id": 3,
+        "english": "smoother English voice",
+        "french": "voix anglaise plus fluide"
+      },
+      {
+        "id": 4,
+        "english": "iron out the friction",
+        "french": "gommer la tension"
+      },
+      {
+        "id": 5,
+        "english": "for the sake of rhythm",
+        "french": "pour préserver le rythme"
+      },
+      {
+        "id": 6,
+        "english": "word-for-word equation",
+        "french": "équivalence mot à mot"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 6,
+    "id": "c1en-reading-vocab-24",
+    "title": "Vocabulaire de lecture : Silence in the Gallery",
+    "titleFR": "Lexique du texte : Silence in the Gallery",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "narrow room",
+        "french": "salle étroite"
+      },
+      {
+        "id": 2,
+        "english": "displaced by demolition",
+        "french": "déplacés par une démolition"
+      },
+      {
+        "id": 3,
+        "english": "withholding identities",
+        "french": "ne pas révéler les identités"
+      },
+      {
+        "id": 4,
+        "english": "private grief",
+        "french": "chagrin intime"
+      },
+      {
+        "id": 5,
+        "english": "comforting conclusion",
+        "french": "conclusion rassurante"
+      },
+      {
+        "id": 6,
+        "english": "faint hum",
+        "french": "bourdonnement léger"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 7,
+    "id": "c1en-reading-vocab-25",
+    "title": "Vocabulaire de lecture : Before the Trial Ends",
+    "titleFR": "Lexique du texte : Before the Trial Ends",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "air-quality measurements",
+        "french": "mesures de qualité de l’air"
+      },
+      {
+        "id": 2,
+        "english": "road closure",
+        "french": "fermeture de route"
+      },
+      {
+        "id": 3,
+        "english": "recurring patterns",
+        "french": "tendances récurrentes"
+      },
+      {
+        "id": 4,
+        "english": "source of bias",
+        "french": "source de biais"
+      },
+      {
+        "id": 5,
+        "english": "preliminary findings",
+        "french": "résultats préliminaires"
+      },
+      {
+        "id": 6,
+        "english": "central estimates",
+        "french": "estimations centrales"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 7,
+    "id": "c1en-reading-vocab-26",
+    "title": "Vocabulaire de lecture : If Only We Had Asked Earlier",
+    "titleFR": "Lexique du texte : If Only We Had Asked Earlier",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "registration process",
+        "french": "procédure d’inscription"
+      },
+      {
+        "id": 2,
+        "english": "confusing parts",
+        "french": "passages déroutants"
+      },
+      {
+        "id": 3,
+        "english": "dashboard",
+        "french": "tableau de bord"
+      },
+      {
+        "id": 4,
+        "english": "untested assumption",
+        "french": "hypothèse non vérifiée"
+      },
+      {
+        "id": 5,
+        "english": "intermittent connections",
+        "french": "connexions intermittentes"
+      },
+      {
+        "id": 6,
+        "english": "assisted registration",
+        "french": "inscription accompagnée"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 7,
+    "id": "c1en-reading-vocab-27",
+    "title": "Vocabulaire de lecture : That Every Participant Be Heard",
+    "titleFR": "Lexique du texte : That Every Participant Be Heard",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "meaningful opportunity",
+        "french": "possibilité réelle"
+      },
+      {
+        "id": 2,
+        "english": "accessible digital channels",
+        "french": "canaux numériques accessibles"
+      },
+      {
+        "id": 3,
+        "english": "personal circumstances",
+        "french": "circonstances personnelles"
+      },
+      {
+        "id": 4,
+        "english": "additional fortnight",
+        "french": "quinzaine supplémentaire"
+      },
+      {
+        "id": 5,
+        "english": "dissenting views",
+        "french": "opinions dissidentes"
+      },
+      {
+        "id": 6,
+        "english": "alternatives considered",
+        "french": "solutions de rechange envisagées"
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 7,
+    "id": "c1en-reading-vocab-28",
+    "title": "Vocabulaire de lecture : The Case for an Unfinished Answer",
+    "titleFR": "Lexique du texte : The Case for an Unfinished Answer",
+    "description": "Expressions nouvelles relevées dans le texte.",
+    "descriptionFR": "Expressions nouvelles tirées de la lecture précédente.",
+    "icon": "🔎",
+    "color": "#047857",
+    "wordCount": 6,
+    "words": [
+      {
+        "id": 1,
+        "english": "policymakers",
+        "french": "responsables des politiques publiques"
+      },
+      {
+        "id": 2,
+        "english": "average outcomes",
+        "french": "résultats moyens"
+      },
+      {
+        "id": 3,
+        "english": "test of fairness",
+        "french": "critère d’équité"
+      },
+      {
+        "id": 4,
+        "english": "apparently confident conclusions",
+        "french": "conclusions apparemment assurées"
+      },
+      {
+        "id": 5,
+        "english": "allocate resources",
+        "french": "allouer des ressources"
+      },
+      {
+        "id": 6,
+        "english": "deliberately provisional",
+        "french": "délibérément provisoire"
+      }
+    ]
+  }
 ];
 
-// Word lists attached to readings that are not standalone vocabulary modules.
 export const readingWordsC1: VocabularyData = {
-    'c1-discours-politique': [
-        { id: 1, english: 'at a crossroads', french: 'à la croisée des chemins' },
-        { id: 2, english: 'born from the ashes', french: 'né des cendres' },
-        { id: 3, english: 'to embody', french: 'incarner' },
-        { id: 4, english: 'lasting peace', french: 'une paix durable' },
-        { id: 5, english: 'to lay bare / expose', french: 'mettre à nu' },
-        { id: 6, english: 'structural tensions', french: 'les tensions structurelles' },
-        { id: 7, english: 'supranational', french: 'supranational' },
-        { id: 8, english: 'the rise of populisms', french: 'la montée des populismes' },
-        { id: 9, english: 'distrust / mistrust', french: 'la défiance' },
-        { id: 10, english: 'technocratic', french: 'technocratique' },
-        { id: 11, english: 'disconnected / out of touch', french: 'déconnecté' },
-        { id: 12, english: 'globalisation', french: 'la mondialisation' },
-        { id: 13, english: 'a rift / fracture', french: 'une fracture' },
-        { id: 14, english: 'to deepen (integration)', french: 'l\'approfondissement' },
-        { id: 15, english: 'stagnation / immobility', french: 'l\'immobilisme' },
-    ],
-    'c1-article-philosophique': [
-        { id: 1, english: 'human freedom', french: 'la liberté humaine' },
-        { id: 2, english: 'determinisms', french: 'des déterminismes' },
-        { id: 3, english: 'to escape (us) / to elude', french: 'échapper' },
-        { id: 4, english: 'the foundations', french: 'les fondements' },
-        { id: 5, english: 'morality', french: 'la morale' },
-        { id: 6, english: 'individual responsibility', french: 'la responsabilité individuelle' },
-        { id: 7, english: 'a causal chain', french: 'une chaîne causale' },
-        { id: 8, english: 'unbroken / uninterrupted', french: 'ininterrompu' },
-        { id: 9, english: 'irremediably', french: 'irrémédiablement' },
-        { id: 10, english: 'a consoling fiction', french: 'une fiction consolatrice' },
-        { id: 11, english: 'to deliberate', french: 'délibérer' },
-        { id: 12, english: 'to hesitate', french: 'hésiter' },
-        { id: 13, english: 'condemned to be free', french: 'condamné à être libre' },
-        { id: 14, english: 'compatibilist', french: 'compatibiliste' },
-        { id: 15, english: 'an external constraint', french: 'une contrainte extérieure' },
-    ],
-    'c1-moliere-extract': [
-        { id: 1, english: 'enamoured of / deeply fond of', french: 'épris de' },
-        { id: 2, english: 'sincerity', french: 'la sincérité' },
-        { id: 3, english: 'accommodating / easy-going', french: 'accommodant' },
-        { id: 4, english: 'to reproach / to criticise', french: 'reprocher' },
-        { id: 5, english: 'to greet warmly', french: 'saluer chaleureusement' },
-        { id: 6, english: 'to lavish / bestow', french: 'prodiguer' },
-        { id: 7, english: 'social hypocrisy', french: 'l\'hypocrisie sociale' },
-        { id: 8, english: 'moral corruption', french: 'la corruption morale' },
-        { id: 9, english: 'propriety / decorum', french: 'la bienséance' },
-        { id: 10, english: 'to disguise', french: 'déguiser' },
-        { id: 11, english: 'cowardice', french: 'la lâcheté' },
-        { id: 12, english: 'compromise / collusion', french: 'la compromission' },
-        { id: 13, english: 'to settle / to decide (an issue)', french: 'trancher' },
-        { id: 14, english: 'moral rigour', french: 'la rigueur morale' },
-        { id: 15, english: 'unbearable', french: 'insupportable' },
-    ],
-    'c1-camus-etranger': [
-        { id: 1, english: 'a telegram', french: 'un télégramme' },
-        { id: 2, english: 'the care home / asylum', french: 'l\'asile' },
-        { id: 3, english: 'deceased', french: 'décédée' },
-        { id: 4, english: 'the burial / funeral', french: 'l\'enterrement' },
-        { id: 5, english: 'the opening lines / incipit', french: 'l\'incipit' },
-        { id: 6, english: 'a radical strangeness', french: 'une étrangeté radicale' },
-        { id: 7, english: 'indifference', french: 'l\'indifférence' },
-        { id: 8, english: 'cruelty', french: 'la cruauté' },
-        { id: 9, english: 'an inability', french: 'une incapacité' },
-        { id: 10, english: 'to assign (a role)', french: 'assigner' },
-        { id: 11, english: 'sensory precision', french: 'une précision sensorielle' },
-        { id: 12, english: 'blinding (light)', french: 'aveuglant' },
-        { id: 13, english: 'cut off from', french: 'coupé de' },
-        { id: 14, english: 'the dissociation', french: 'la dissociation' },
-        { id: 15, english: 'the absurd', french: 'l\'absurde' },
-    ],
-    'c1-voltaire-candide': [
-        { id: 1, english: 'naivety / innocence', french: 'la naïveté' },
-        { id: 2, english: 'raised / brought up', french: 'élevé' },
-        { id: 3, english: 'the castle', french: 'le château' },
-        { id: 4, english: 'the tutor / preceptor', french: 'le précepteur' },
-        { id: 5, english: 'the best of all possible worlds', french: 'le meilleur des mondes possibles' },
-        { id: 6, english: 'a conviction / belief', french: 'une conviction' },
-        { id: 7, english: 'a satire', french: 'une satire' },
-        { id: 8, english: 'to be put to the test', french: 'être mis à l\'épreuve' },
-        { id: 9, english: 'a philosophical tale', french: 'un conte philosophique' },
-        { id: 10, english: 'far-fetched / fantastical', french: 'rocambolesque' },
-        { id: 11, english: 'scathing / virulent', french: 'virulent' },
-        { id: 12, english: 'slavery', french: 'l\'esclavage' },
-        { id: 13, english: 'divine providence', french: 'la providence divine' },
-        { id: 14, english: 'to cultivate one\'s garden', french: 'cultiver son jardin' },
-        { id: 15, english: 'a resigned retreat', french: 'un repli résigné' },
-    ],
-    'c1-roman-contemporain': [
-        { id: 1, english: 'memories of photos', french: 'des souvenirs de photos' },
-        { id: 2, english: 'mental images', french: 'des images mentales' },
-        { id: 3, english: 'to bring forth / to call up', french: 'faire surgir' },
-        { id: 4, english: 'a procedure / technique', french: 'un procédé' },
-        { id: 5, english: 'the very nature', french: 'la nature même' },
-        { id: 6, english: 'fragmentary', french: 'fragmentaire' },
-        { id: 7, english: 'the third person', french: 'la troisième personne' },
-        { id: 8, english: 'to substitute', french: 'substituer' },
-        { id: 9, english: 'modesty', french: 'la modestie' },
-        { id: 10, english: 'an ambition', french: 'une ambition' },
-        { id: 11, english: 'the mirror', french: 'le miroir' },
-        { id: 12, english: 'an entire generation', french: 'une génération entière' },
-        { id: 13, english: 'set phrases / fixed expressions', french: 'des formules figées' },
-        { id: 14, english: 'a historical document', french: 'un document historique' },
-        { id: 15, english: 'without daring to', french: 'sans oser' },
-    ],
-    'c1-essai-identite': [
-        { id: 1, english: 'the identity', french: 'l\'identité' },
-        { id: 2, english: 'the origins', french: 'les origines' },
-        { id: 3, english: 'received identity', french: 'l\'identité reçue' },
-        { id: 4, english: 'constructed identity', french: 'l\'identité construite' },
-        { id: 5, english: 'to run through / to pervade', french: 'traverser' },
-        { id: 6, english: 'essentialist', french: 'essentialiste' },
-        { id: 7, english: 'a stable essence', french: 'une essence stable' },
-        { id: 8, english: 'belonging / membership', french: 'l\'appartenance' },
-        { id: 9, english: 'to fuel / to feed', french: 'alimenter' },
-        { id: 10, english: 'solidarity', french: 'la solidarité' },
-        { id: 11, english: 'dynamic and relational', french: 'dynamique et relationnelle' },
-        { id: 12, english: 'to remain faithful to', french: 'rester fidèle à' },
-        { id: 13, english: 'a commitment / promise', french: 'un engagement' },
-        { id: 14, english: 'a given / a fixed fact', french: 'un donné' },
-        { id: 15, english: 'to inhabit a history', french: 'habiter une histoire' },
-    ],
-    'c1-reportage-social': [
-        { id: 1, english: 'a township / municipality', french: 'une commune' },
-        { id: 2, english: 'a GP / general practitioner', french: 'un médecin généraliste' },
-        { id: 3, english: 'to retire', french: 'prendre sa retraite' },
-        { id: 4, english: 'to give up / forgo (care)', french: 'renoncer' },
-        { id: 5, english: 'a medical desert', french: 'un désert médical' },
-        { id: 6, english: 'rural areas', french: 'les zones rurales' },
-        { id: 7, english: 'working-class suburbs', french: 'les banlieues populaires' },
-        { id: 8, english: 'to worsen considerably', french: 's\'aggraver' },
-        { id: 9, english: 'graduates', french: 'les diplômés' },
-        { id: 10, english: 'a vocation / calling', french: 'une vocation' },
-        { id: 11, english: 'the incentives', french: 'les incitations' },
-        { id: 12, english: 'an underserved area', french: 'une zone sous-dotée' },
-        { id: 13, english: 'a delay in diagnosis', french: 'un retard au diagnostic' },
-        { id: 14, english: 'a territorial divide', french: 'une fracture territoriale' },
-        { id: 15, english: 'telemedicine', french: 'la télémédecine' },
-    ],
-    'c1-article-presse-specialisee': [
-        { id: 1, english: 'a ruling / a court decision', french: 'un arrêt' },
-        { id: 2, english: 'to de-list / to de-reference', french: 'déréférencer' },
-        { id: 3, english: 'the right to be forgotten', french: 'le droit à l\'oubli' },
-        { id: 4, english: 'to open a Pandora\'s box', french: 'ouvrir une boîte de Pandore' },
-        { id: 5, english: 'the implications', french: 'les implications' },
-        { id: 6, english: 'an intuition', french: 'une intuition' },
-        { id: 7, english: 'to define (someone) indefinitely', french: 'définir indéfiniment' },
-        { id: 8, english: 'youthful mistakes', french: 'des erreurs de jeunesse' },
-        { id: 9, english: 'search engines', french: 'les moteurs de recherche' },
-        { id: 10, english: 'freedom of information', french: 'la liberté d\'information' },
-        { id: 11, english: 'collective memory', french: 'la mémoire collective' },
-        { id: 12, english: 'democratic transparency', french: 'la transparence démocratique' },
-        { id: 13, english: 'to come into force', french: 'entrer en vigueur' },
-        { id: 14, english: 'the erasure / deletion', french: 'l\'effacement' },
-        { id: 15, english: 'a fragile balance', french: 'un équilibre fragile' },
-    ],
-    'c1en-europe': [
-        { id: 1, english: 'ambitious', french: 'ambitieux / ambitieuse' },
-        { id: 2, english: 'contested', french: 'contesté(e)' },
-        { id: 3, english: 'in the aftermath of', french: 'au lendemain de' },
-        { id: 4, english: 'pragmatic', french: 'pragmatique' },
-        { id: 5, english: 'to bind together', french: 'unir / lier' },
-        { id: 6, english: 'currency', french: 'la monnaie' },
-        { id: 7, english: 'common destiny', french: 'un destin commun' },
-        { id: 8, english: 'to exert influence', french: 'exercer une influence' },
-        { id: 9, english: 'member states', french: 'les États membres' },
-        { id: 10, english: 'sovereignty', french: 'la souveraineté' },
-        { id: 11, english: 'democratic deficit', french: 'le déficit démocratique' },
-        { id: 12, english: 'populist', french: 'populiste' },
-        { id: 13, english: 'unease', french: 'le malaise' },
-        { id: 14, english: 'to reconcile', french: 'concilier' },
-        { id: 15, english: 'solidarity', french: 'la solidarité' },
-    ],
-    'c1en-freedom': [
-        { id: 1, english: 'to animate', french: 'animer / inspirer' },
-        { id: 2, english: 'to invoke', french: 'invoquer' },
-        { id: 3, english: 'free will', french: 'le libre arbitre' },
-        { id: 4, english: 'consensus', french: 'le consensus' },
-        { id: 5, english: 'to dissolve', french: 'se dissoudre / s\'évanouir' },
-        { id: 6, english: 'negative liberty', french: 'la liberté négative' },
-        { id: 7, english: 'positive liberty', french: 'la liberté positive' },
-        { id: 8, english: 'constraint', french: 'la contrainte' },
-        { id: 9, english: 'self-mastery', french: 'la maîtrise de soi' },
-        { id: 10, english: 'impulse', french: 'l\'impulsion / la pulsion' },
-        { id: 11, english: 'to coerce', french: 'contraindre' },
-        { id: 12, english: 'to interfere', french: 'interférer / s\'immiscer' },
-        { id: 13, english: 'tyranny', french: 'la tyrannie' },
-        { id: 14, english: 'arbitrary', french: 'arbitraire' },
-        { id: 15, english: 'a gilded cage', french: 'une cage dorée' },
-    ],
-    'c1en-identity': [
-        { id: 1, english: 'over time', french: 'au fil du temps' },
-        { id: 2, english: 'to inhabit (a body)', french: 'habiter / occuper' },
-        { id: 3, english: 'beliefs', french: 'les croyances' },
-        { id: 4, english: 'to locate', french: 'situer / localiser' },
-        { id: 5, english: 'recollection', french: 'le souvenir / la mémoire' },
-        { id: 6, english: 'unreliable', french: 'peu fiable' },
-        { id: 7, english: 'to revise', french: 'réviser / corriger' },
-        { id: 8, english: 'dissolution', french: 'la dissolution' },
-        { id: 9, english: 'essence', french: 'l\'essence' },
-        { id: 10, english: 'narrative', french: 'le récit' },
-        { id: 11, english: 'coherent', french: 'cohérent(e)' },
-        { id: 12, english: 'interpretation', french: 'l\'interprétation' },
-        { id: 13, english: 'social mobility', french: 'la mobilité sociale' },
-        { id: 14, english: 'vanity', french: 'la vanité' },
-        { id: 15, english: 'to deceive oneself', french: 'se tromper soi-même' },
-    ],
-    'c1en-healthcare': [
-        { id: 1, english: 'to unfold', french: 'se dérouler' },
-        { id: 2, english: 'thriving', french: 'prospère / florissant(e)' },
-        { id: 3, english: 'to retain', french: 'retenir / fidéliser' },
-        { id: 4, english: 'medical deserts', french: 'les déserts médicaux' },
-        { id: 5, english: 'mounting', french: 'croissant(e)' },
-        { id: 6, english: 'burdened with debt', french: 'accablé(e) de dettes' },
-        { id: 7, english: 'reluctant', french: 'réticent(e)' },
-        { id: 8, english: 'remote', french: 'éloigné(e) / isolé(e)' },
-        { id: 9, english: 'overworked', french: 'surmené(e)' },
-        { id: 10, english: 'vicious circle', french: 'le cercle vicieux' },
-        { id: 11, english: 'vulnerable', french: 'vulnérable' },
-        { id: 12, english: 'chronic conditions', french: 'les maladies chroniques' },
-        { id: 13, english: 'panacea', french: 'la panacée' },
-        { id: 14, english: 'telemedicine', french: 'la télémédecine' },
-        { id: 15, english: 'incentives', french: 'les incitations' },
-    ],
-    'c1en-shakespeare': [
-        { id: 1, english: 'to overstate', french: 'exagérer / surestimer' },
-        { id: 2, english: 'influence', french: 'l\'influence' },
-        { id: 3, english: 'tongue (language)', french: 'la langue' },
-        { id: 4, english: 'to forge', french: 'forger / façonner' },
-        { id: 5, english: 'achievement', french: 'l\'accomplissement / la réussite' },
-        { id: 6, english: 'woven into', french: 'tissé(e) dans / intégré(e) à' },
-        { id: 7, english: 'to popularise', french: 'populariser / répandre' },
-        { id: 8, english: 'currency (of a word)', french: 'l\'usage courant' },
-        { id: 9, english: 'coinages', french: 'les néologismes' },
-        { id: 10, english: 'genius', french: 'le génie' },
-        { id: 11, english: 'unrivalled', french: 'inégalé(e) / sans rival' },
-        { id: 12, english: 'psychological depth', french: 'la profondeur psychologique' },
-        { id: 13, english: 'archaic', french: 'archaïque' },
-        { id: 14, english: 'allusions', french: 'les allusions' },
-        { id: 15, english: 'verse', french: 'les vers' },
-    ],
-    'c1en-orwell': [
-        { id: 1, english: 'pen name', french: 'le pseudonyme / le nom de plume' },
-        { id: 2, english: 'dystopian', french: 'dystopique' },
-        { id: 3, english: 'fable', french: 'la fable' },
-        { id: 4, english: 'essayist', french: 'l\'essayiste' },
-        { id: 5, english: 'clarity', french: 'la clarté' },
-        { id: 6, english: 'conviction', french: 'la conviction' },
-        { id: 7, english: 'corruption', french: 'la corruption' },
-        { id: 8, english: 'to defend the indefensible', french: 'défendre l\'indéfendable' },
-        { id: 9, english: 'euphemism', french: 'l\'euphémisme' },
-        { id: 10, english: 'abstraction', french: 'l\'abstraction' },
-        { id: 11, english: 'atrocity', french: 'l\'atrocité' },
-        { id: 12, english: 'moral imperatives', french: 'les impératifs moraux' },
-        { id: 13, english: 'deception', french: 'la tromperie' },
-        { id: 14, english: 'prescience', french: 'la prescience / la clairvoyance' },
-        { id: 15, english: 'authoritarian', french: 'autoritaire' },
-    ],
-    'c1en-austen': [
-        { id: 1, english: 'anonymously', french: 'anonymement' },
-        { id: 2, english: 'to attribute', french: 'attribuer' },
-        { id: 3, english: 'byword', french: 'le symbole / la référence' },
-        { id: 4, english: 'wit', french: 'l\'esprit / la finesse' },
-        { id: 5, english: 'devastating', french: 'dévastateur / cinglant(e)' },
-        { id: 6, english: 'gentry', french: 'la petite noblesse' },
-        { id: 7, english: 'courtship', french: 'la cour (amoureuse)' },
-        { id: 8, english: 'canvas (subject)', french: 'la toile / le champ' },
-        { id: 9, english: 'self-deception', french: 'l\'aveuglement sur soi' },
-        { id: 10, english: 'irony', french: 'l\'ironie' },
-        { id: 11, english: 'mock solemnity', french: 'la fausse solennité' },
-        { id: 12, english: 'prejudice', french: 'le préjugé' },
-        { id: 13, english: 'satire', french: 'la satire' },
-        { id: 14, english: 'moral seriousness', french: 'le sérieux moral' },
-        { id: 15, english: 'enduring appeal', french: 'l\'attrait durable' },
-    ],
-    'c1en-dickens': [
-        { id: 1, english: 'fog-bound', french: 'noyé(e) dans le brouillard' },
-        { id: 2, english: 'teeming', french: 'grouillant(e)' },
-        { id: 3, english: 'magnificent', french: 'magnifique' },
-        { id: 4, english: 'monstrous', french: 'monstrueux / monstrueuse' },
-        { id: 5, english: 'poverty', french: 'la pauvreté' },
-        { id: 6, english: 'humiliation', french: 'l\'humiliation' },
-        { id: 7, english: 'imprisoned for debt', french: 'emprisonné(e) pour dettes' },
-        { id: 8, english: 'indignation', french: 'l\'indignation' },
-        { id: 9, english: 'instalments', french: 'les épisodes / les livraisons' },
-        { id: 10, english: 'cliffhangers', french: 'les fins en suspens' },
-        { id: 11, english: 'hallmarks', french: 'les caractéristiques / les marques' },
-        { id: 12, english: 'hypocrisies', french: 'les hypocrisies' },
-        { id: 13, english: 'workhouses', french: 'les hospices / les ateliers de pauvres' },
-        { id: 14, english: 'conscience', french: 'la conscience' },
-        { id: 15, english: 'grotesque', french: 'grotesque' },
-    ],
-    'c1en-privacy': [
-        { id: 1, english: 'indiscretion', french: 'l\'indiscrétion / l\'écart' },
-        { id: 2, english: 'dispute', french: 'le litige / le différend' },
-        { id: 3, english: 'to linger', french: 'persister / subsister' },
-        { id: 4, english: 'search engine', french: 'le moteur de recherche' },
-        { id: 5, english: 'prospective employer', french: 'l\'employeur potentiel' },
-        { id: 6, english: 'permanence', french: 'la permanence' },
-        { id: 7, english: 'the right to be forgotten', french: 'le droit à l\'oubli' },
-        { id: 8, english: 'outdated', french: 'obsolète / dépassé(e)' },
-        { id: 9, english: 'landmark ruling', french: 'l\'arrêt historique' },
-        { id: 10, english: 'to delist', french: 'déréférencer' },
-        { id: 11, english: 'dignity', french: 'la dignité' },
-        { id: 12, english: 'redemption', french: 'la rédemption' },
-        { id: 13, english: 'reinvention', french: 'la réinvention' },
-        { id: 14, english: 'unscrupulous', french: 'sans scrupules' },
-        { id: 15, english: 'scrutiny', french: 'l\'examen / la surveillance' },
-    ],
+  "c1en-reading-01": [
+    {
+      "id": 1,
+      "english": "dominated by",
+      "french": "dominé par"
+    },
+    {
+      "id": 2,
+      "english": "industrial heritage",
+      "french": "patrimoine industriel"
+    },
+    {
+      "id": 3,
+      "english": "reluctant families",
+      "french": "familles réticentes"
+    },
+    {
+      "id": 4,
+      "english": "finite resource",
+      "french": "ressource limitée"
+    },
+    {
+      "id": 5,
+      "english": "overdue recognition",
+      "french": "reconnaissance tardive"
+    },
+    {
+      "id": 6,
+      "english": "confers authority",
+      "french": "confère de l’autorité"
+    }
+  ],
+  "c1en-reading-02": [
+    {
+      "id": 1,
+      "english": "oral-history project",
+      "french": "projet d’histoire orale"
+    },
+    {
+      "id": 2,
+      "english": "testimony",
+      "french": "témoignage"
+    },
+    {
+      "id": 3,
+      "english": "withholding recordings",
+      "french": "rétention des enregistrements"
+    },
+    {
+      "id": 4,
+      "english": "public access",
+      "french": "accès public"
+    },
+    {
+      "id": 5,
+      "english": "act of agency",
+      "french": "acte d’autonomie"
+    },
+    {
+      "id": 6,
+      "english": "definitive",
+      "french": "définitif"
+    }
+  ],
+  "c1en-reading-03": [
+    {
+      "id": 1,
+      "english": "appealing slogan",
+      "french": "slogan séduisant"
+    },
+    {
+      "id": 2,
+      "english": "investment presentations",
+      "french": "présentations destinées aux investisseurs"
+    },
+    {
+      "id": 3,
+      "english": "rehearsal rooms",
+      "french": "salles de répétition"
+    },
+    {
+      "id": 4,
+      "english": "published results",
+      "french": "résultats publiés"
+    },
+    {
+      "id": 5,
+      "english": "enthusiastic agreement",
+      "french": "adhésion enthousiaste"
+    },
+    {
+      "id": 6,
+      "english": "irreversible",
+      "french": "irréversible"
+    }
+  ],
+  "c1en-reading-04": [
+    {
+      "id": 1,
+      "english": "unfamiliar word",
+      "french": "mot inconnu"
+    },
+    {
+      "id": 2,
+      "english": "family gathering",
+      "french": "réunion familiale"
+    },
+    {
+      "id": 3,
+      "english": "witnessed a reconciliation",
+      "french": "assisté à une réconciliation"
+    },
+    {
+      "id": 4,
+      "english": "proofreader",
+      "french": "correcteur d’épreuves"
+    },
+    {
+      "id": 5,
+      "english": "calculated risk",
+      "french": "risque calculé"
+    },
+    {
+      "id": 6,
+      "english": "convenient fiction",
+      "french": "fiction commode"
+    }
+  ],
+  "c1en-reading-05": [
+    {
+      "id": 1,
+      "english": "coastal-monitoring prototype",
+      "french": "prototype de surveillance côtière"
+    },
+    {
+      "id": 2,
+      "english": "storm simulation",
+      "french": "simulation de tempête"
+    },
+    {
+      "id": 3,
+      "english": "external laboratory",
+      "french": "laboratoire extérieur"
+    },
+    {
+      "id": 4,
+      "english": "damaged components",
+      "french": "composants endommagés"
+    },
+    {
+      "id": 5,
+      "english": "testing allowance",
+      "french": "marge prévue pour les essais"
+    },
+    {
+      "id": 6,
+      "english": "outrunning the evidence",
+      "french": "dépassant ce que les preuves permettaient"
+    }
+  ],
+  "c1en-reading-06": [
+    {
+      "id": 1,
+      "english": "procurement procedures",
+      "french": "procédures d’achat"
+    },
+    {
+      "id": 2,
+      "english": "opaque selection criteria",
+      "french": "critères de sélection opaques"
+    },
+    {
+      "id": 3,
+      "english": "published guidance",
+      "french": "consignes publiées"
+    },
+    {
+      "id": 4,
+      "english": "weighted scoring matrix",
+      "french": "grille de notation pondérée"
+    },
+    {
+      "id": 5,
+      "english": "conflicts of interest",
+      "french": "conflits d’intérêts"
+    },
+    {
+      "id": 6,
+      "english": "escalated",
+      "french": "transmis à un niveau hiérarchique supérieur"
+    }
+  ],
+  "c1en-reading-07": [
+    {
+      "id": 1,
+      "english": "reallocation of decision-making work",
+      "french": "redistribution du travail de décision"
+    },
+    {
+      "id": 2,
+      "english": "private messages",
+      "french": "messages privés"
+    },
+    {
+      "id": 3,
+      "english": "standardisation of agendas",
+      "french": "normalisation des ordres du jour"
+    },
+    {
+      "id": 4,
+      "english": "informal discussion",
+      "french": "discussion informelle"
+    },
+    {
+      "id": 5,
+      "english": "unresolved issues",
+      "french": "questions non résolues"
+    },
+    {
+      "id": 6,
+      "english": "displacement of work",
+      "french": "déplacement du travail"
+    }
+  ],
+  "c1en-reading-08": [
+    {
+      "id": 1,
+      "english": "caption-control option",
+      "french": "option de réglage des sous-titres"
+    },
+    {
+      "id": 2,
+      "english": "release notes",
+      "french": "notes de version"
+    },
+    {
+      "id": 3,
+      "english": "acknowledge their contribution",
+      "french": "reconnaître leur contribution"
+    },
+    {
+      "id": 4,
+      "english": "alternative layouts",
+      "french": "dispositions alternatives"
+    },
+    {
+      "id": 5,
+      "english": "misrepresent the process",
+      "french": "déformer le déroulement du travail"
+    },
+    {
+      "id": 6,
+      "english": "updated wording",
+      "french": "nouvelle formulation"
+    }
+  ],
+  "c1en-reading-09": [
+    {
+      "id": 1,
+      "english": "underlying paper",
+      "french": "article scientifique sous-jacent"
+    },
+    {
+      "id": 2,
+      "english": "street width",
+      "french": "largeur des rues"
+    },
+    {
+      "id": 3,
+      "english": "too compressed",
+      "french": "trop condensé"
+    },
+    {
+      "id": 4,
+      "english": "categorical claim",
+      "french": "affirmation catégorique"
+    },
+    {
+      "id": 5,
+      "english": "technically defensible",
+      "french": "techniquement défendable"
+    },
+    {
+      "id": 6,
+      "english": "published a clarification",
+      "french": "publié une mise au point"
+    }
+  ],
+  "c1en-reading-10": [
+    {
+      "id": 1,
+      "english": "transport strike",
+      "french": "grève des transports"
+    },
+    {
+      "id": 2,
+      "english": "deserted platform",
+      "french": "quai désert"
+    },
+    {
+      "id": 3,
+      "english": "taken out of context",
+      "french": "sortie de son contexte"
+    },
+    {
+      "id": 4,
+      "english": "station canopy",
+      "french": "auvent de la gare"
+    },
+    {
+      "id": 5,
+      "english": "archived timetables",
+      "french": "horaires archivés"
+    },
+    {
+      "id": 6,
+      "english": "busy concourse",
+      "french": "hall très fréquenté"
+    }
+  ],
+  "c1en-reading-11": [
+    {
+      "id": 1,
+      "english": "bold claim",
+      "french": "affirmation péremptoire"
+    },
+    {
+      "id": 2,
+      "english": "original impression",
+      "french": "impression initiale"
+    },
+    {
+      "id": 3,
+      "english": "distribution",
+      "french": "diffusion"
+    },
+    {
+      "id": 4,
+      "english": "dramatic reversal",
+      "french": "revirement spectaculaire"
+    },
+    {
+      "id": 5,
+      "english": "imply liability",
+      "french": "impliquer une responsabilité juridique"
+    },
+    {
+      "id": 6,
+      "english": "restore everyone's trust",
+      "french": "rétablir la confiance de tous"
+    }
+  ],
+  "c1en-reading-12": [
+    {
+      "id": 1,
+      "english": "annual report",
+      "french": "rapport annuel"
+    },
+    {
+      "id": 2,
+      "english": "roadworks",
+      "french": "travaux de voirie"
+    },
+    {
+      "id": 3,
+      "english": "selective narrative",
+      "french": "récit sélectif"
+    },
+    {
+      "id": 4,
+      "english": "straightforward progress",
+      "french": "progrès sans équivoque"
+    },
+    {
+      "id": 5,
+      "english": "a verdict",
+      "french": "un verdict"
+    },
+    {
+      "id": 6,
+      "english": "accessible pavements",
+      "french": "trottoirs accessibles"
+    }
+  ],
+  "c1en-reading-13": [
+    {
+      "id": 1,
+      "english": "unpaid internships",
+      "french": "stages non rémunérés"
+    },
+    {
+      "id": 2,
+      "english": "living costs",
+      "french": "frais de subsistance"
+    },
+    {
+      "id": 3,
+      "english": "repaying debts",
+      "french": "rembourser des dettes"
+    },
+    {
+      "id": 4,
+      "english": "maintenance allowance",
+      "french": "allocation d’entretien"
+    },
+    {
+      "id": 5,
+      "english": "recruitment campaigns",
+      "french": "campagnes de recrutement"
+    },
+    {
+      "id": 6,
+      "english": "emergency grants",
+      "french": "aides d’urgence"
+    }
+  ],
+  "c1en-reading-14": [
+    {
+      "id": 1,
+      "english": "visiting performer",
+      "french": "artiste invitée"
+    },
+    {
+      "id": 2,
+      "english": "passive wording",
+      "french": "formulation passive"
+    },
+    {
+      "id": 3,
+      "english": "access arrangements",
+      "french": "dispositifs d’accessibilité"
+    },
+    {
+      "id": 4,
+      "english": "broken lift",
+      "french": "ascenseur en panne"
+    },
+    {
+      "id": 5,
+      "english": "remedial plan",
+      "french": "plan correctif"
+    },
+    {
+      "id": 6,
+      "english": "follow-through",
+      "french": "mise en œuvre effective"
+    }
+  ],
+  "c1en-reading-15": [
+    {
+      "id": 1,
+      "english": "disciplinary panel",
+      "french": "commission disciplinaire"
+    },
+    {
+      "id": 2,
+      "english": "blunt refusal",
+      "french": "refus catégorique"
+    },
+    {
+      "id": 3,
+      "english": "omitted the question",
+      "french": "omis la question"
+    },
+    {
+      "id": 4,
+      "english": "written schedule",
+      "french": "calendrier officiel"
+    },
+    {
+      "id": 5,
+      "english": "procedural fairness",
+      "french": "équité procédurale"
+    },
+    {
+      "id": 6,
+      "english": "edited without disclosure",
+      "french": "modifié sans signalement"
+    }
+  ],
+  "c1en-reading-16": [
+    {
+      "id": 1,
+      "english": "late-night opening hours",
+      "french": "horaires d’ouverture tardifs"
+    },
+    {
+      "id": 2,
+      "english": "supervised places",
+      "french": "lieux encadrés"
+    },
+    {
+      "id": 3,
+      "english": "quieter entrance",
+      "french": "entrée moins bruyante"
+    },
+    {
+      "id": 4,
+      "english": "closing procedures",
+      "french": "procédures de fermeture"
+    },
+    {
+      "id": 5,
+      "english": "noise levels",
+      "french": "niveaux sonores"
+    },
+    {
+      "id": 6,
+      "english": "limited agreement",
+      "french": "accord limité"
+    }
+  ],
+  "c1en-reading-17": [
+    {
+      "id": 1,
+      "english": "river-restoration project",
+      "french": "projet de restauration d’une rivière"
+    },
+    {
+      "id": 2,
+      "english": "concrete channel",
+      "french": "canal bétonné"
+    },
+    {
+      "id": 3,
+      "english": "winding stream",
+      "french": "cours d’eau sinueux"
+    },
+    {
+      "id": 4,
+      "english": "ecological gains",
+      "french": "gains écologiques"
+    },
+    {
+      "id": 5,
+      "english": "flood management",
+      "french": "gestion des inondations"
+    },
+    {
+      "id": 6,
+      "english": "monitoring data",
+      "french": "données de suivi"
+    }
+  ],
+  "c1en-reading-18": [
+    {
+      "id": 1,
+      "english": "roof gardens",
+      "french": "jardins de toiture"
+    },
+    {
+      "id": 2,
+      "english": "temperature sensors",
+      "french": "capteurs de température"
+    },
+    {
+      "id": 3,
+      "english": "changes in occupancy",
+      "french": "variations d’occupation"
+    },
+    {
+      "id": 4,
+      "english": "running costs",
+      "french": "coûts de fonctionnement"
+    },
+    {
+      "id": 5,
+      "english": "fragile structures",
+      "french": "structures fragiles"
+    },
+    {
+      "id": 6,
+      "english": "thermal comfort",
+      "french": "confort thermique"
+    }
+  ],
+  "c1en-reading-19": [
+    {
+      "id": 1,
+      "english": "shaded streets",
+      "french": "rues ombragées"
+    },
+    {
+      "id": 2,
+      "english": "empty lot",
+      "french": "terrain vague"
+    },
+    {
+      "id": 3,
+      "english": "reflective roofs",
+      "french": "toitures réfléchissantes"
+    },
+    {
+      "id": 4,
+      "english": "tenant association",
+      "french": "association de locataires"
+    },
+    {
+      "id": 5,
+      "english": "loading space",
+      "french": "espace de livraison"
+    },
+    {
+      "id": 6,
+      "english": "distributional effects",
+      "french": "effets distributifs"
+    }
+  ],
+  "c1en-reading-20": [
+    {
+      "id": 1,
+      "english": "flood-risk committee",
+      "french": "commission des risques d’inondation"
+    },
+    {
+      "id": 2,
+      "english": "river barriers",
+      "french": "barrières fluviales"
+    },
+    {
+      "id": 3,
+      "english": "future-proof",
+      "french": "conçu pour résister aux évolutions futures"
+    },
+    {
+      "id": 4,
+      "english": "projected water levels",
+      "french": "niveaux d’eau prévus"
+    },
+    {
+      "id": 5,
+      "english": "protected zone",
+      "french": "zone protégée"
+    },
+    {
+      "id": 6,
+      "english": "remaining risk",
+      "french": "risque résiduel"
+    }
+  ],
+  "c1en-reading-21": [
+    {
+      "id": 1,
+      "english": "so arresting",
+      "french": "si saisissant"
+    },
+    {
+      "id": 2,
+      "english": "motionless",
+      "french": "immobile"
+    },
+    {
+      "id": 3,
+      "english": "reversal",
+      "french": "renversement"
+    },
+    {
+      "id": 4,
+      "english": "a betrayal",
+      "french": "une trahison"
+    },
+    {
+      "id": 5,
+      "english": "the burden of a promise",
+      "french": "le poids d’une promesse"
+    },
+    {
+      "id": 6,
+      "english": "restraint",
+      "french": "retenue"
+    }
+  ],
+  "c1en-reading-22": [
+    {
+      "id": 1,
+      "english": "copyeditor",
+      "french": "réviseur éditorial"
+    },
+    {
+      "id": 2,
+      "english": "harmless-looking sentence",
+      "french": "phrase d’apparence anodine"
+    },
+    {
+      "id": 3,
+      "english": "ambiguity",
+      "french": "ambiguïté"
+    },
+    {
+      "id": 4,
+      "english": "impeccably clear",
+      "french": "parfaitement clair"
+    },
+    {
+      "id": 5,
+      "english": "painfully repetitive",
+      "french": "péniblement répétitif"
+    },
+    {
+      "id": 6,
+      "english": "referent",
+      "french": "référent"
+    }
+  ],
+  "c1en-reading-23": [
+    {
+      "id": 1,
+      "english": "deliberately awkward",
+      "french": "délibérément maladroit"
+    },
+    {
+      "id": 2,
+      "english": "fidelity",
+      "french": "fidélité (en traduction)"
+    },
+    {
+      "id": 3,
+      "english": "smoother English voice",
+      "french": "voix anglaise plus fluide"
+    },
+    {
+      "id": 4,
+      "english": "iron out the friction",
+      "french": "gommer la tension"
+    },
+    {
+      "id": 5,
+      "english": "for the sake of rhythm",
+      "french": "pour préserver le rythme"
+    },
+    {
+      "id": 6,
+      "english": "word-for-word equation",
+      "french": "équivalence mot à mot"
+    }
+  ],
+  "c1en-reading-24": [
+    {
+      "id": 1,
+      "english": "narrow room",
+      "french": "salle étroite"
+    },
+    {
+      "id": 2,
+      "english": "displaced by demolition",
+      "french": "déplacés par une démolition"
+    },
+    {
+      "id": 3,
+      "english": "withholding identities",
+      "french": "ne pas révéler les identités"
+    },
+    {
+      "id": 4,
+      "english": "private grief",
+      "french": "chagrin intime"
+    },
+    {
+      "id": 5,
+      "english": "comforting conclusion",
+      "french": "conclusion rassurante"
+    },
+    {
+      "id": 6,
+      "english": "faint hum",
+      "french": "bourdonnement léger"
+    }
+  ],
+  "c1en-reading-25": [
+    {
+      "id": 1,
+      "english": "air-quality measurements",
+      "french": "mesures de qualité de l’air"
+    },
+    {
+      "id": 2,
+      "english": "road closure",
+      "french": "fermeture de route"
+    },
+    {
+      "id": 3,
+      "english": "recurring patterns",
+      "french": "tendances récurrentes"
+    },
+    {
+      "id": 4,
+      "english": "source of bias",
+      "french": "source de biais"
+    },
+    {
+      "id": 5,
+      "english": "preliminary findings",
+      "french": "résultats préliminaires"
+    },
+    {
+      "id": 6,
+      "english": "central estimates",
+      "french": "estimations centrales"
+    }
+  ],
+  "c1en-reading-26": [
+    {
+      "id": 1,
+      "english": "registration process",
+      "french": "procédure d’inscription"
+    },
+    {
+      "id": 2,
+      "english": "confusing parts",
+      "french": "passages déroutants"
+    },
+    {
+      "id": 3,
+      "english": "dashboard",
+      "french": "tableau de bord"
+    },
+    {
+      "id": 4,
+      "english": "untested assumption",
+      "french": "hypothèse non vérifiée"
+    },
+    {
+      "id": 5,
+      "english": "intermittent connections",
+      "french": "connexions intermittentes"
+    },
+    {
+      "id": 6,
+      "english": "assisted registration",
+      "french": "inscription accompagnée"
+    }
+  ],
+  "c1en-reading-27": [
+    {
+      "id": 1,
+      "english": "meaningful opportunity",
+      "french": "possibilité réelle"
+    },
+    {
+      "id": 2,
+      "english": "accessible digital channels",
+      "french": "canaux numériques accessibles"
+    },
+    {
+      "id": 3,
+      "english": "personal circumstances",
+      "french": "circonstances personnelles"
+    },
+    {
+      "id": 4,
+      "english": "additional fortnight",
+      "french": "quinzaine supplémentaire"
+    },
+    {
+      "id": 5,
+      "english": "dissenting views",
+      "french": "opinions dissidentes"
+    },
+    {
+      "id": 6,
+      "english": "alternatives considered",
+      "french": "solutions de rechange envisagées"
+    }
+  ],
+  "c1en-reading-28": [
+    {
+      "id": 1,
+      "english": "policymakers",
+      "french": "responsables des politiques publiques"
+    },
+    {
+      "id": 2,
+      "english": "average outcomes",
+      "french": "résultats moyens"
+    },
+    {
+      "id": 3,
+      "english": "test of fairness",
+      "french": "critère d’équité"
+    },
+    {
+      "id": 4,
+      "english": "apparently confident conclusions",
+      "french": "conclusions apparemment assurées"
+    },
+    {
+      "id": 5,
+      "english": "allocate resources",
+      "french": "allouer des ressources"
+    },
+    {
+      "id": 6,
+      "english": "deliberately provisional",
+      "french": "délibérément provisoire"
+    }
+  ]
 };

@@ -1,166 +1,515 @@
 import type { PhraseCategory } from '../../../types/lectures/phrases';
 
 export const phrasesC1: PhraseCategory[] = [
-    {
-        level: 'C1', unit: 1,
-        id: 'academic-discourse',
-        title: 'Academic Discourse',
-        titleFR: 'Discours académique',
-        description: 'Essential phrases for academic writing, seminars, and intellectual discussion',
-        descriptionFR: 'Expressions essentielles pour l\'écrit académique, les séminaires et la discussion intellectuelle',
-        icon: '🎓',
-        color: '#7C3AED',
-        phrases: [
-            { id: 1,  french: 'Il convient de souligner que…',                    english: 'It is worth emphasizing that…' },
-            { id: 2,  french: 'Force est de constater que…',                      english: 'One cannot help but note that…' },
-            { id: 3,  french: 'On peut légitimement se demander si…',             english: 'One may legitimately ask whether…' },
-            { id: 4,  french: 'Cette hypothèse mérite d\'être examinée.',         english: 'This hypothesis deserves examination.' },
-            { id: 5,  french: 'À cet égard, il y a lieu de préciser que…',       english: 'In this regard, it should be noted that…' },
-            { id: 6,  french: 'L\'analyse des données révèle que…',               english: 'The analysis of the data reveals that…' },
-            { id: 7,  french: 'Plusieurs facteurs entrent en jeu.',               english: 'Several factors come into play.' },
-            { id: 8,  french: 'Il importe de distinguer entre… et…',             english: 'It is important to distinguish between… and…' },
-            { id: 9,  french: 'Ce phénomène s\'explique par…',                   english: 'This phenomenon is explained by…' },
-            { id: 10, french: 'En définitive, on peut affirmer que…',            english: 'Ultimately, one can assert that…' },
-            { id: 11, french: 'Cette thèse se heurte à plusieurs objections.',   english: 'This thesis faces several objections.' },
-            { id: 12, french: 'Dans la perspective de…',                         english: 'From the perspective of…' },
-            { id: 13, french: 'Les recherches récentes ont mis en évidence…',    english: 'Recent research has brought to light…' },
-            { id: 14, french: 'Il convient maintenant de conclure en disant…',   english: 'It is now appropriate to conclude by saying…' },
-            { id: 15, french: 'Cette question soulève des enjeux fondamentaux.', english: 'This question raises fundamental issues.' },
-        ],
-    },
-    {
-        level: 'C1', unit: 4,
-        id: 'cultural-commentary',
-        title: 'Cultural Commentary',
-        titleFR: 'Commentaire culturel',
-        description: 'Phrases for discussing art, literature, cinema, and cultural trends in French',
-        descriptionFR: 'Expressions pour parler d\'art, de littérature, de cinéma et de tendances culturelles',
-        icon: '🎭',
-        color: '#7C3AED',
-        phrases: [
-            { id: 1,  french: 'Cette œuvre marque une rupture avec…',                  english: 'This work marks a break with…' },
-            { id: 2,  french: 'Le roman reflète les tensions de son époque.',           english: 'The novel reflects the tensions of its era.' },
-            { id: 3,  french: 'On retrouve dans ce film les thèmes récurrents de…',    english: 'In this film we find the recurring themes of…' },
-            { id: 4,  french: 'L\'auteur cherche à interroger le lecteur sur…',        english: 'The author seeks to question the reader about…' },
-            { id: 5,  french: 'Cette mise en scène privilégie l\'épure.',              english: 'This staging favours minimalism.' },
-            { id: 6,  french: 'Le style est à la fois sobre et évocateur.',            english: 'The style is at once sober and evocative.' },
-            { id: 7,  french: 'Cette exposition remet en question nos certitudes.',    english: 'This exhibition calls our certainties into question.' },
-            { id: 8,  french: 'La bande originale contribue à l\'atmosphère générale.', english: 'The soundtrack contributes to the overall atmosphere.' },
-            { id: 9,  french: 'Ce texte s\'inscrit dans la tradition de…',             english: 'This text is part of the tradition of…' },
-            { id: 10, french: 'L\'ironie est omniprésente dans cette œuvre.',         english: 'Irony is omnipresent in this work.' },
-            { id: 11, french: 'Le personnage incarne les contradictions de…',          english: 'The character embodies the contradictions of…' },
-            { id: 12, french: 'On peut y lire une critique implicite de…',            english: 'One can read in it an implicit critique of…' },
-            { id: 13, french: 'Le réalisateur joue avec les codes du genre.',         english: 'The director plays with the codes of the genre.' },
-            { id: 14, french: 'Cette œuvre a profondément marqué son époque.',        english: 'This work profoundly marked its era.' },
-            { id: 15, french: 'Le registre oscille entre le tragique et le comique.', english: 'The register oscillates between the tragic and the comic.' },
-        ],
-    },
-    {
-        level: 'C1', unit: 2,
-        id: 'intellectual-debate',
-        title: 'Intellectual Debate',
-        titleFR: 'Débat intellectuel',
-        description: 'Phrases for debating ideas, presenting theses, and refuting arguments at an advanced level',
-        descriptionFR: 'Expressions pour débattre d\'idées, présenter des thèses et réfuter des arguments à un niveau avancé',
-        icon: '⚖️',
-        color: '#7C3AED',
-        phrases: [
-            { id: 1,  french: 'Je me permets de remettre en question cette affirmation.',  english: 'I take the liberty of calling this assertion into question.' },
-            { id: 2,  french: 'Cette position, pour séduisante qu\'elle soit, reste…',      english: 'This position, as attractive as it may be, remains…' },
-            { id: 3,  french: 'Il faut se garder de tout réductionnisme.',                  english: 'One must avoid all reductionism.' },
-            { id: 4,  french: 'Votre argument repose sur un présupposé discutable.',        english: 'Your argument rests on a questionable assumption.' },
-            { id: 5,  french: 'Permettez-moi de nuancer ce point de vue.',                 english: 'Allow me to qualify this viewpoint.' },
-            { id: 6,  french: 'La réalité est plus complexe qu\'il n\'y paraît.',           english: 'The reality is more complex than it appears.' },
-            { id: 7,  french: 'On pourrait objecter que…',                                  english: 'One could object that…' },
-            { id: 8,  french: 'Ce raisonnement est circulaire.',                            english: 'This reasoning is circular.' },
-            { id: 9,  french: 'Au-delà de l\'apparence, la question de fond est…',         english: 'Beyond the surface, the underlying question is…' },
-            { id: 10, french: 'Votre analyse, bien que pertinente, omet un point crucial.', english: 'Your analysis, though pertinent, omits a crucial point.' },
-            { id: 11, french: 'Il convient de distinguer la forme du fond.',               english: 'One must distinguish form from substance.' },
-            { id: 12, french: 'L\'enjeu dépasse le cadre de ce débat.',                    english: 'The issue goes beyond the scope of this debate.' },
-            { id: 13, french: 'Je suis en mesure de démontrer que…',                       english: 'I am in a position to demonstrate that…' },
-            { id: 14, french: 'Prenons un contre-exemple pour illustrer…',                 english: 'Let us take a counter-example to illustrate…' },
-            { id: 15, french: 'En fin de compte, tout dépend de ce qu\'on entend par…',   english: 'In the end, it all depends on what we mean by…' },
-        ],
-    },
-    {
-        level: 'C1', unit: 3,
-        id: 'expressing-emotion-subtly',
-        title: 'Expressing Emotion Subtly',
-        titleFR: 'Exprimer les émotions avec subtilité',
-        description: 'Nuanced phrases for expressing complex emotional states in formal and literary French',
-        descriptionFR: 'Expressions nuancées pour exprimer des états émotionnels complexes en français formel et littéraire',
-        icon: '💎',
-        color: '#7C3AED',
-        phrases: [
-            { id: 1,  french: 'Je ne puis m\'empêcher d\'éprouver une certaine mélancolie.',   english: 'I cannot help but feel a certain melancholy.' },
-            { id: 2,  french: 'Cette nouvelle m\'a laissé un sentiment d\'amertume.',           english: 'This news left me with a feeling of bitterness.' },
-            { id: 3,  french: 'Je mesure tout le poids de cette décision.',                     english: 'I fully appreciate the weight of this decision.' },
-            { id: 4,  french: 'Cela me touche profondément.',                                   english: 'This touches me deeply.' },
-            { id: 5,  french: 'Je suis partagé(e) entre la joie et l\'inquiétude.',            english: 'I am torn between joy and anxiety.' },
-            { id: 6,  french: 'Il m\'est difficile de rester indifférent(e) à…',               english: 'It is difficult for me to remain indifferent to…' },
-            { id: 7,  french: 'Cette situation me plonge dans un profond embarras.',            english: 'This situation plunges me into deep embarrassment.' },
-            { id: 8,  french: 'J\'ai du mal à cacher mon étonnement.',                         english: 'I find it hard to hide my astonishment.' },
-            { id: 9,  french: 'Je ressens une vive admiration pour…',                          english: 'I feel a deep admiration for…' },
-            { id: 10, french: 'Cette rencontre m\'a laissé une impression durable.',           english: 'This encounter left a lasting impression on me.' },
-            { id: 11, french: 'Je ne saurais exprimer à quel point cela compte pour moi.',    english: 'I could not express how much this means to me.' },
-            { id: 12, french: 'Cela suscite en moi des sentiments contradictoires.',           english: 'This arouses contradictory feelings in me.' },
-            { id: 13, french: 'Je reste attaché(e) à cette époque avec nostalgie.',            english: 'I remain attached to that period with nostalgia.' },
-            { id: 14, french: 'Cette perspective me réconforte quelque peu.',                  english: 'This prospect comforts me somewhat.' },
-            { id: 15, french: 'Je suis ému(e) d\'une façon que les mots peinent à décrire.', english: 'I am moved in a way that words struggle to describe.' },
-        ],
-    },
-    {
-        level: 'C1', unit: 5,
-        id: 'proverbs-sayings',
-        title: 'Proverbs & Sayings',
-        titleFR: 'Proverbes & Expressions',
-        description: 'Classic French proverbs every educated speaker knows',
-        descriptionFR: 'Proverbes français classiques que tout locuteur cultivé connaît',
-        icon: '📜',
-        color: '#6366F1',
-        phrases: [
-            { id: 1, french: 'Qui vivra verra.', english: 'Time will tell.', note: 'Lit: He who lives shall see' },
-            { id: 2, french: 'Les absents ont toujours tort.', english: 'The absent are always wrong.', note: 'The French equivalent of \'out of sight, out of mind\' in a more blaming sense' },
-            { id: 3, french: 'Mieux vaut tard que jamais.', english: 'Better late than never.' },
-            { id: 4, french: 'Vouloir c\'est pouvoir.', english: 'Where there\'s a will, there\'s a way.', note: 'Lit: to want is to be able' },
-            { id: 5, french: 'Tout ce qui brille n\'est pas or.', english: 'All that glitters is not gold.' },
-            { id: 6, french: 'Il n\'y a pas de fumée sans feu.', english: 'There\'s no smoke without fire.' },
-            { id: 7, french: 'L\'habit ne fait pas le moine.', english: 'Don\'t judge a book by its cover.', note: 'Lit: the habit does not make the monk' },
-            { id: 8, french: 'Quand on parle du loup, on en voit la queue.', english: 'Speak of the devil.', note: 'Lit: when you speak of the wolf, you see his tail' },
-            { id: 9, french: 'Après la pluie, le beau temps.', english: 'Every cloud has a silver lining.', note: 'Lit: after the rain, fine weather' },
-            { id: 10, french: 'Il faut battre le fer pendant qu\'il est chaud.', english: 'Strike while the iron is hot.' },
-            { id: 11, french: 'On n\'attrape pas les mouches avec du vinaigre.', english: 'You catch more flies with honey than vinegar.', note: 'Lit: you don\'t catch flies with vinegar' },
-            { id: 12, french: 'Les chiens aboient, la caravane passe.', english: 'Let the world say what it will.', note: 'Lit: the dogs bark but the caravan moves on — used to say that criticism won\'t stop you' },
-            { id: 13, french: 'À quelque chose malheur est bon.', english: 'Every cloud has a silver lining.', note: 'More precisely: misfortune is good for something' },
-            { id: 14, french: 'Tel est pris qui croyait prendre.', english: 'The biter is bit.', note: 'He who thought to catch others was caught himself' },
-            { id: 15, french: 'Il ne faut pas mettre tous ses œufs dans le même panier.', english: 'Don\'t put all your eggs in one basket.' },
-        ],
-    },
-    {
-        level: 'C1', unit: 5,
-        id: 'formal-argumentation',
-        title: 'Formal Argumentation',
-        titleFR: 'Argumentation formelle',
-        description: 'The language of essays, debates and intellectual discourse',
-        descriptionFR: 'Le langage des dissertations, débats et discours intellectuels',
-        icon: '🎓',
-        color: '#1A1A2E',
-        phrases: [
-            { id: 1, french: 'Dans un premier temps... dans un second temps...', english: 'Firstly... secondly...', note: 'Standard essay structure marker' },
-            { id: 2, french: 'Force est de constater que...', english: 'One cannot help but notice that... / It is undeniable that...' },
-            { id: 3, french: 'Il convient de distinguer... de...', english: 'We must distinguish... from...' },
-            { id: 4, french: 'Or, il s\'avère que...', english: 'Yet, it turns out that... / However, it appears that...' },
-            { id: 5, french: 'En définitive, il ressort que...', english: 'Ultimately, what emerges is that...' },
-            { id: 6, french: 'Il serait réducteur de penser que...', english: 'It would be an oversimplification to think that...' },
-            { id: 7, french: 'Dans cette optique...', english: 'From this perspective... / With this in mind...' },
-            { id: 8, french: 'À l\'aune de...', english: 'In the light of... / By the yardstick of...', note: 'Elevated register; very common in formal essays' },
-            { id: 9, french: 'Tout porte à croire que...', english: 'Everything suggests that... / There is every reason to believe that...' },
-            { id: 10, french: 'Sans aller jusqu\'à dire que...', english: 'Without going so far as to say that...' },
-            { id: 11, french: 'Il n\'en demeure pas moins que...', english: 'It remains the case that... / That said, it is still true that...' },
-            { id: 12, french: 'On ne saurait nier que...', english: 'One cannot deny that...', note: 'ne saurait is a formal/literary use of savoir' },
-            { id: 13, french: 'Dans la mesure où...', english: 'Insofar as... / To the extent that...' },
-            { id: 14, french: 'Quoi qu\'il en soit...', english: 'Be that as it may... / Whatever the case...' },
-            { id: 15, french: 'En filigrane de cette analyse...', english: 'Running through this analysis... / Underlying this...', note: 'Very elevated; lit: as a watermark' },
-        ],
-    },
+  {
+    "level": "C1",
+    "unit": 1,
+    "id": "c1en-phrases-01",
+    "title": "Nuancer une interprétation et faire une réserve",
+    "titleFR": "Nuancer une interprétation et faire une réserve",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Je ne conteste pas les faits, mais leur interprétation.",
+        "english": "I take issue not with the facts but with their interpretation."
+      },
+      {
+        "id": 2,
+        "french": "Il faut distinguer visibilité et reconnaissance.",
+        "english": "We need to distinguish visibility from recognition."
+      },
+      {
+        "id": 3,
+        "french": "Je serais prudent avant de tirer cette conclusion.",
+        "english": "I would be cautious about drawing that conclusion."
+      },
+      {
+        "id": 4,
+        "french": "Ce n’est qu’une partie de l’histoire.",
+        "english": "That is only part of the story."
+      },
+      {
+        "id": 5,
+        "french": "Cette formule risque d’occulter une autre réalité.",
+        "english": "That wording risks obscuring another reality."
+      },
+      {
+        "id": 6,
+        "french": "Cela dépend de ce que l’on entend par « équitable ».",
+        "english": "That depends on what we mean by “fair”."
+      },
+      {
+        "id": 7,
+        "french": "Il convient de replacer cette citation dans son contexte.",
+        "english": "That quotation needs to be put in context."
+      },
+      {
+        "id": 8,
+        "french": "Je reconnais le bien-fondé de votre remarque.",
+        "english": "I take your point."
+      },
+      {
+        "id": 9,
+        "french": "Je ne suis pas entièrement convaincu par cette lecture.",
+        "english": "I am not entirely persuaded by that reading."
+      },
+      {
+        "id": 10,
+        "french": "Ce qui me frappe, c’est l’absence de certaines voix.",
+        "english": "What strikes me is whose voices are missing."
+      },
+      {
+        "id": 11,
+        "french": "Nous devrions éviter de réduire le problème à une seule personne.",
+        "english": "We should avoid reducing the issue to one individual."
+      },
+      {
+        "id": 12,
+        "french": "Le bilan est plus ambigu qu’il n’y paraît.",
+        "english": "The picture is more ambiguous than it first appears."
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 2,
+    "id": "c1en-phrases-02",
+    "title": "Débattre d’une décision professionnelle",
+    "titleFR": "Débattre d’une décision professionnelle",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Sur quelles hypothèses repose cette échéance ?",
+        "english": "What assumptions is this deadline based on?"
+      },
+      {
+        "id": 2,
+        "french": "Je préférerais que nous explicitions les compromis.",
+        "english": "I would rather we made the trade-offs explicit."
+      },
+      {
+        "id": 3,
+        "french": "Nous ne pouvons pas tenir cette date sans sacrifier les tests.",
+        "english": "We cannot meet that date without compromising the testing."
+      },
+      {
+        "id": 4,
+        "french": "Cela mérite une vérification indépendante.",
+        "english": "That warrants an independent review."
+      },
+      {
+        "id": 5,
+        "french": "Que faudrait-il pour revoir cette décision ?",
+        "english": "What would it take to revisit that decision?"
+      },
+      {
+        "id": 6,
+        "french": "Il faut désigner un responsable pour chaque mesure.",
+        "english": "We need to assign an owner to each action."
+      },
+      {
+        "id": 7,
+        "french": "Je suis favorable au principe, sous certaines réserves.",
+        "english": "I support the principle, subject to certain reservations."
+      },
+      {
+        "id": 8,
+        "french": "Nous risquons de déplacer le problème, pas de le résoudre.",
+        "english": "We risk shifting the problem rather than solving it."
+      },
+      {
+        "id": 9,
+        "french": "Pouvez-vous préciser ce qui relève de notre équipe ?",
+        "english": "Could you clarify what falls within our team’s remit?"
+      },
+      {
+        "id": 10,
+        "french": "Je souhaite que cette objection figure au procès-verbal.",
+        "english": "I would like that objection recorded in the minutes."
+      },
+      {
+        "id": 11,
+        "french": "C’est une responsabilité partagée, mais pas indistincte.",
+        "english": "Responsibility is shared, but it is not anonymous."
+      },
+      {
+        "id": 12,
+        "french": "Nous devons convenir de critères de réussite vérifiables.",
+        "english": "We need to agree on verifiable success criteria."
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 3,
+    "id": "c1en-phrases-03",
+    "title": "Vérifier une affirmation et réagir à un rectificatif",
+    "titleFR": "Vérifier une affirmation et réagir à un rectificatif",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "La source ne dit pas exactement cela.",
+        "english": "That is not quite what the source says."
+      },
+      {
+        "id": 2,
+        "french": "La citation a été isolée de son contexte.",
+        "english": "The quotation was taken out of context."
+      },
+      {
+        "id": 3,
+        "french": "L’affirmation va plus loin que les données.",
+        "english": "The claim goes beyond the evidence."
+      },
+      {
+        "id": 4,
+        "french": "Avez-vous consulté le document original ?",
+        "english": "Have you checked the original document?"
+      },
+      {
+        "id": 5,
+        "french": "Il faut distinguer corrélation et causalité.",
+        "english": "We need to distinguish correlation from causation."
+      },
+      {
+        "id": 6,
+        "french": "La légende crée une impression trompeuse.",
+        "english": "The caption creates a misleading impression."
+      },
+      {
+        "id": 7,
+        "french": "Il serait abusif d’en déduire que tout est faux.",
+        "english": "It would be a stretch to infer that everything is false."
+      },
+      {
+        "id": 8,
+        "french": "La correction mérite la même visibilité.",
+        "english": "The correction deserves comparable visibility."
+      },
+      {
+        "id": 9,
+        "french": "Je retire cette formulation, mais pas l’argument principal.",
+        "english": "I withdraw that wording, but not the central argument."
+      },
+      {
+        "id": 10,
+        "french": "Pourriez-vous indiquer la période de référence ?",
+        "english": "Could you specify the reference period?"
+      },
+      {
+        "id": 11,
+        "french": "Ce chiffre ne permet pas à lui seul de conclure.",
+        "english": "That figure cannot settle the question on its own."
+      },
+      {
+        "id": 12,
+        "french": "Je préfère réserver mon jugement jusqu’à vérification.",
+        "english": "I would rather withhold judgement until it has been checked."
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 4,
+    "id": "c1en-phrases-04",
+    "title": "Débattre sans effacer les objections",
+    "titleFR": "Débattre sans effacer les objections",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "C’est une objection sérieuse, pas un détail.",
+        "english": "That is a substantive objection, not a minor point."
+      },
+      {
+        "id": 2,
+        "french": "Je comprends le principe, mais pas sa mise en œuvre.",
+        "english": "I understand the principle, but not how it has been applied."
+      },
+      {
+        "id": 3,
+        "french": "Il ne faut pas confondre procédure et justice.",
+        "english": "We must not confuse procedure with justice."
+      },
+      {
+        "id": 4,
+        "french": "Vous soulevez une question de responsabilité.",
+        "english": "You are raising a question of accountability."
+      },
+      {
+        "id": 5,
+        "french": "Je suis prêt à reconsidérer ma position si...",
+        "english": "I am willing to reconsider my position if..."
+      },
+      {
+        "id": 6,
+        "french": "La décision aurait pu être différente avec toutes les pièces.",
+        "english": "The decision might have been different with the full record."
+      },
+      {
+        "id": 7,
+        "french": "Cela présuppose que les deux options sont incompatibles.",
+        "english": "That assumes the two options are mutually exclusive."
+      },
+      {
+        "id": 8,
+        "french": "Pouvez-vous expliquer sur quels faits repose votre jugement ?",
+        "english": "Could you explain what evidence your judgement rests on?"
+      },
+      {
+        "id": 9,
+        "french": "Le compromis ne devrait pas faire disparaître le désaccord.",
+        "english": "The compromise should not erase the disagreement."
+      },
+      {
+        "id": 10,
+        "french": "Nous devons rendre visibles les conséquences pour chacun.",
+        "english": "We need to make the consequences for each group visible."
+      },
+      {
+        "id": 11,
+        "french": "Cette proposition protège une valeur mais en compromet une autre.",
+        "english": "That proposal protects one value while compromising another."
+      },
+      {
+        "id": 12,
+        "french": "Je soutiens un essai limité assorti d’une évaluation.",
+        "english": "I support a limited trial with a formal review."
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 5,
+    "id": "c1en-phrases-05",
+    "title": "Présenter une proposition de politique locale",
+    "titleFR": "Présenter une proposition de politique locale",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Les bénéfices ne seront pas répartis uniformément.",
+        "english": "The benefits will not be evenly distributed."
+      },
+      {
+        "id": 2,
+        "french": "Ce résultat doit être mis en regard des coûts d’entretien.",
+        "english": "That outcome must be weighed against maintenance costs."
+      },
+      {
+        "id": 3,
+        "french": "Je propose un déploiement progressif.",
+        "english": "I propose a phased rollout."
+      },
+      {
+        "id": 4,
+        "french": "La mesure ne suffira pas à elle seule.",
+        "english": "The measure will not be sufficient on its own."
+      },
+      {
+        "id": 5,
+        "french": "Il faut rendre explicite le risque résiduel.",
+        "english": "The remaining risk needs to be made explicit."
+      },
+      {
+        "id": 6,
+        "french": "Cette option est attrayante, mais sa portée est limitée.",
+        "english": "That option is attractive, albeit limited in scope."
+      },
+      {
+        "id": 7,
+        "french": "Le dispositif dépend d’accords qui ne sont pas encore signés.",
+        "english": "The scheme depends on agreements that have yet to be signed."
+      },
+      {
+        "id": 8,
+        "french": "À qui incombera l’entretien à long terme ?",
+        "english": "Who will be responsible for long-term maintenance?"
+      },
+      {
+        "id": 9,
+        "french": "Nous devrions définir des indicateurs au préalable.",
+        "english": "We should agree on indicators in advance."
+      },
+      {
+        "id": 10,
+        "french": "Cette recommandation est conditionnée à une évaluation.",
+        "english": "This recommendation is contingent on a review."
+      },
+      {
+        "id": 11,
+        "french": "La consultation révèle des intérêts divergents.",
+        "english": "The consultation reveals competing interests."
+      },
+      {
+        "id": 12,
+        "french": "Je préfère une mesure révisable à une promesse absolue.",
+        "english": "I would favour a revisable measure over an absolute promise."
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 6,
+    "id": "c1en-phrases-06",
+    "title": "Commenter une œuvre et interpréter un choix stylistique",
+    "titleFR": "Commenter une œuvre et interpréter un choix stylistique",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "L’effet tient moins à l’intrigue qu’au rythme.",
+        "english": "The effect owes less to the plot than to the rhythm."
+      },
+      {
+        "id": 2,
+        "french": "La mise en scène refuse toute explication facile.",
+        "english": "The staging resists any easy explanation."
+      },
+      {
+        "id": 3,
+        "french": "Le silence porte autant de sens que les paroles.",
+        "english": "The silence is as meaningful as the dialogue."
+      },
+      {
+        "id": 4,
+        "french": "Cette lecture me paraît plausible mais non exclusive.",
+        "english": "That reading seems plausible, though not definitive."
+      },
+      {
+        "id": 5,
+        "french": "Le narrateur ne nous donne pas directement accès à ses propres motivations.",
+        "english": "The narrator gives us no direct access to their motives."
+      },
+      {
+        "id": 6,
+        "french": "Le motif prend un sens différent à la fin.",
+        "english": "The motif acquires a different meaning at the end."
+      },
+      {
+        "id": 7,
+        "french": "La traduction conserve délibérément une forme d’étrangeté.",
+        "english": "The translation deliberately preserves a sense of strangeness."
+      },
+      {
+        "id": 8,
+        "french": "La fluidité ne devrait pas effacer l’ambiguïté.",
+        "english": "Fluency should not come at the expense of ambiguity."
+      },
+      {
+        "id": 9,
+        "french": "Cette image appelle plusieurs interprétations.",
+        "english": "The image invites more than one interpretation."
+      },
+      {
+        "id": 10,
+        "french": "Je trouve le jeu retenu plutôt que froid.",
+        "english": "I find the performance restrained rather than cold."
+      },
+      {
+        "id": 11,
+        "french": "La critique pourrait distinguer intention et effet.",
+        "english": "The review could distinguish intention from effect."
+      },
+      {
+        "id": 12,
+        "french": "C’est précisément cette hésitation qui rend le texte fort.",
+        "english": "It is precisely that hesitation that gives the text its force."
+      }
+    ]
+  },
+  {
+    "level": "C1",
+    "unit": 7,
+    "id": "c1en-phrases-07",
+    "title": "Soutenir une recommandation fondée sur des preuves",
+    "titleFR": "Soutenir une recommandation fondée sur des preuves",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Ces résultats doivent être interprétés avec prudence.",
+        "english": "These findings should be interpreted with caution."
+      },
+      {
+        "id": 2,
+        "french": "L’échantillon ne permet pas de généraliser sans réserve.",
+        "english": "The sample does not warrant unqualified generalisation."
+      },
+      {
+        "id": 3,
+        "french": "Quels résultats étaient prévus avant l’étude ?",
+        "english": "Which outcomes were specified before the study?"
+      },
+      {
+        "id": 4,
+        "french": "Il est essentiel que les objections soient consignées.",
+        "english": "It is essential that the objections be recorded."
+      },
+      {
+        "id": 5,
+        "french": "Une absence de preuve n’est pas une preuve d’absence.",
+        "english": "Absence of evidence is not evidence of absence."
+      },
+      {
+        "id": 6,
+        "french": "Notre proposition reste ouverte à une révision.",
+        "english": "Our proposal remains open to revision."
+      },
+      {
+        "id": 7,
+        "french": "La recommandation repose sur des hypothèses explicites.",
+        "english": "The recommendation rests on explicit assumptions."
+      },
+      {
+        "id": 8,
+        "french": "Nous devons distinguer l’incertitude de l’inaction.",
+        "english": "We must distinguish uncertainty from inaction."
+      },
+      {
+        "id": 9,
+        "french": "Cette conclusion est valable sous certaines conditions.",
+        "english": "That conclusion holds under certain conditions."
+      },
+      {
+        "id": 10,
+        "french": "Je propose un réexamen après six mois.",
+        "english": "I propose a review after six months."
+      },
+      {
+        "id": 11,
+        "french": "Les voix minoritaires méritent d’être documentées.",
+        "english": "Minority views deserve to be documented."
+      },
+      {
+        "id": 12,
+        "french": "Nous pouvons agir sans prétendre tout savoir.",
+        "english": "We can act without pretending to know everything."
+      }
+    ]
+  }
 ];
