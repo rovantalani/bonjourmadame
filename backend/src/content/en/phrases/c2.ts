@@ -1,112 +1,515 @@
 import type { PhraseCategory } from '../../../types/lectures/phrases';
 
 export const phrasesC2: PhraseCategory[] = [
-    {
-        level: 'C2', unit: 2,
-        id: 'literary-analysis',
-        title: 'Literary Analysis',
-        titleFR: 'Analyse littéraire',
-        description: 'Essential phrases for writing and speaking literary commentary in French',
-        descriptionFR: 'Expressions essentielles pour rédiger et présenter une analyse littéraire en français',
-        icon: '📚',
-        color: '#DC2626',
-        phrases: [
-            { id: 1,  french: 'Ce texte appartient au registre…',                   english: 'This text belongs to the… register.' },
-            { id: 2,  french: 'On peut identifier plusieurs niveaux de lecture.',    english: 'Several levels of reading can be identified.' },
-            { id: 3,  french: 'L\'auteur joue sur l\'ambiguïté de…',               english: 'The author plays on the ambiguity of…' },
-            { id: 4,  french: 'La structure du texte reflète…',                     english: 'The structure of the text reflects…' },
-            { id: 5,  french: 'Ce passage est révélateur de…',                      english: 'This passage is revealing of…' },
-            { id: 6,  french: 'Le narrateur adopte un point de vue…',               english: 'The narrator adopts a… point of view.' },
-            { id: 7,  french: 'La polyphonie du texte permet de…',                  english: 'The polyphony of the text allows… to…' },
-            { id: 8,  french: 'On note une tension entre le dit et le non-dit.',    english: 'One notes a tension between what is said and what is left unsaid.' },
-            { id: 9,  french: 'Cette métaphore illustre…',                          english: 'This metaphor illustrates…' },
-            { id: 10, french: 'Le lecteur implicite est…',                          english: 'The implied reader is…' },
-            { id: 11, french: 'L\'ironie fonctionne ici comme…',                    english: 'Irony operates here as…' },
-            { id: 12, french: 'La clôture du texte laisse…',                        english: 'The closure of the text leaves…' },
-            { id: 13, french: 'L\'intertextualité avec… est manifeste.',             english: 'The intertextuality with… is evident.' },
-            { id: 14, french: 'Ce choix stylistique produit un effet de…',          english: 'This stylistic choice produces an effect of…' },
-            { id: 15, french: 'L\'écriture se fait ici performative.',              english: 'The writing here becomes performative.' },
-        ],
-    },
-    {
-        level: 'C2', unit: 3,
-        id: 'high-register-speech',
-        title: 'High-Register Speech',
-        titleFR: 'Expression soutenue',
-        description: 'Formal and elevated expressions for high-level discourse and academic speech',
-        descriptionFR: 'Expressions formelles et élevées pour le discours de haut niveau et la communication académique',
-        icon: '🎩',
-        color: '#DC2626',
-        phrases: [
-            { id: 1,  french: 'Permettez-moi d\'aborder cette question sous un angle différent.', english: 'Allow me to approach this question from a different angle.' },
-            { id: 2,  french: 'Je souscris pleinement à cette analyse.',             english: 'I fully subscribe to this analysis.' },
-            { id: 3,  french: 'Il me semble opportun de souligner que…',            english: 'It seems appropriate to emphasize that…' },
-            { id: 4,  french: 'La pertinence de cette remarque n\'échappera à personne.', english: 'The relevance of this remark will not escape anyone.' },
-            { id: 5,  french: 'On ne saurait trop insister sur…',                   english: 'One cannot emphasize… enough.' },
-            { id: 6,  french: 'Cette position mérite d\'être examinée avec rigueur.', english: 'This position deserves to be examined with rigour.' },
-            { id: 7,  french: 'Il serait vain de nier que…',                        english: 'It would be futile to deny that…' },
-            { id: 8,  french: 'Loin de moi l\'idée de…',                           english: 'Far be it from me to…' },
-            { id: 9,  french: 'Je me garderai bien de trancher.',                   english: 'I will take care not to pass judgment.' },
-            { id: 10, french: 'À cet égard, il importe de préciser que…',          english: 'In this regard, it is important to specify that…' },
-            { id: 11, french: 'Le mérite de cette thèse est de…',                  english: 'The merit of this thesis is to…' },
-            { id: 12, french: 'Je ne partage pas entièrement ce point de vue, bien que…', english: 'I do not entirely share this view, although…' },
-            { id: 13, french: 'Voilà qui mérite réflexion.',                        english: 'That is worthy of reflection.' },
-            { id: 14, french: 'Ce n\'est pas là un mince paradoxe.',               english: 'That is no small paradox.' },
-            { id: 15, french: 'Je ne suis pas loin de penser que…',               english: 'I am not far from thinking that…' },
-        ],
-    },
-    {
-        level: 'C2', unit: 5,
-        id: 'debating-at-length',
-        title: 'Debating at Length',
-        titleFR: 'Débattre en profondeur',
-        description: 'Phrases for structuring, developing, and concluding extended arguments in formal debate and essay',
-        descriptionFR: 'Expressions pour structurer, développer et conclure des arguments étendus dans le débat formel et l\'essai',
-        icon: '⚖️',
-        color: '#DC2626',
-        phrases: [
-            { id: 1,  french: 'Reprenons le fil de l\'argumentation.',              english: 'Let us pick up the thread of the argument.' },
-            { id: 2,  french: 'La démonstration est convaincante sur ce point, mais…', english: 'The demonstration is convincing on this point, but…' },
-            { id: 3,  french: 'On aurait pu s\'attendre à…',                       english: 'One might have expected…' },
-            { id: 4,  french: 'C\'est précisément là que le bât blesse.',          english: 'That is precisely where the problem lies.' },
-            { id: 5,  french: 'Cette objection n\'est pas sans fondement.',        english: 'This objection is not without foundation.' },
-            { id: 6,  french: 'Pour autant, on ne peut se satisfaire de…',        english: 'Even so, one cannot be satisfied with…' },
-            { id: 7,  french: 'Revenons à la question initiale…',                  english: 'Let us return to the initial question…' },
-            { id: 8,  french: 'Ce point étant établi, passons à…',                english: 'This point being established, let us move on to…' },
-            { id: 9,  french: 'La conclusion s\'impose d\'elle-même.',             english: 'The conclusion speaks for itself.' },
-            { id: 10, french: 'On ne saurait clore ce débat sans mentionner…',    english: 'One could not close this debate without mentioning…' },
-            { id: 11, french: 'Voilà une piste de réflexion féconde.',            english: 'That is a fruitful line of inquiry.' },
-            { id: 12, french: 'J\'ajouterai un dernier argument.',                english: 'I will add a final argument.' },
-            { id: 13, french: 'Pour conclure sur une note…',                      english: 'To conclude on a… note…' },
-            { id: 14, french: 'Cette question appelle des recherches ultérieures.', english: 'This question calls for further research.' },
-            { id: 15, french: 'Le débat reste ouvert.',                            english: 'The debate remains open.' },
-        ],
-    },
-    {
-        level: 'C2', unit: 4,
-        id: 'translation-commentary',
-        title: 'Translation Commentary',
-        titleFR: 'Commentaire de traduction',
-        description: 'Phrases for discussing translation choices, equivalences, and the limits of translatability',
-        descriptionFR: 'Expressions pour commenter les choix de traduction, les équivalences et les limites de la traductibilité',
-        icon: '🔄',
-        color: '#DC2626',
-        phrases: [
-            { id: 1,  french: 'Le terme français n\'a pas d\'équivalent exact en anglais.',  english: 'The French term has no exact equivalent in English.' },
-            { id: 2,  french: 'Cette expression est intraduisible littéralement.',            english: 'This expression cannot be translated literally.' },
-            { id: 3,  french: 'La nuance se perd dans la traduction.',                       english: 'The nuance is lost in translation.' },
-            { id: 4,  french: 'Le contexte culturel est essentiel ici.',                     english: 'The cultural context is essential here.' },
-            { id: 5,  french: 'On pourrait rendre cela par…',                               english: 'One could render this as…' },
-            { id: 6,  french: 'Une traduction plus libre donnerait…',                        english: 'A freer translation would give…' },
-            { id: 7,  french: 'Le registre original est…',                                  english: 'The original register is…' },
-            { id: 8,  french: 'La connotation de ce mot est…',                              english: 'The connotation of this word is…' },
-            { id: 9,  french: 'En anglais, l\'équivalent le plus proche serait…',           english: 'In English, the closest equivalent would be…' },
-            { id: 10, french: 'Le jeu de mots repose sur…',                                 english: 'The wordplay relies on…' },
-            { id: 11, french: 'La traduction trahit forcément quelque chose.',               english: 'Translation inevitably betrays something.' },
-            { id: 12, french: 'L\'original a une cadence que la traduction ne peut capturer.', english: 'The original has a rhythm that translation cannot capture.' },
-            { id: 13, french: 'Fidèle ou belle — rarement les deux.',                       english: 'Faithful or beautiful — rarely both.' },
-            { id: 14, french: 'Cette formulation est proprement française.',                 english: 'This formulation is distinctively French.' },
-            { id: 15, french: 'La version anglaise doit compenser par…',                    english: 'The English version must compensate with…' },
-        ],
-    },
+  {
+    "level": "C2",
+    "unit": 1,
+    "id": "c2en-phrases-01",
+    "title": "Contester une lecture sans caricaturer",
+    "titleFR": "Contester une lecture sans caricaturer",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Je distinguerais ce qui est admis de ce qui reste contesté.",
+        "english": "I would separate what has been conceded from what remains in dispute."
+      },
+      {
+        "id": 2,
+        "french": "L’absence de preuve ne doit pas être comblée par une supposition.",
+        "english": "The evidential gap should not be filled by conjecture."
+      },
+      {
+        "id": 3,
+        "french": "La phrase suggère davantage qu’elle n’affirme.",
+        "english": "The sentence implies more than it explicitly asserts."
+      },
+      {
+        "id": 4,
+        "french": "Cette formulation laisse l’agent dans l’ombre.",
+        "english": "That wording leaves the agent in the shadows."
+      },
+      {
+        "id": 5,
+        "french": "Ce jugement appartient au personnage, non au narrateur.",
+        "english": "That judgement belongs to the character, not the narrator."
+      },
+      {
+        "id": 6,
+        "french": "Il n’est pas acquis que cette conclusion suive.",
+        "english": "It is by no means clear that the conclusion follows."
+      },
+      {
+        "id": 7,
+        "french": "Je reconnais la force de l’objection, mais pas sa portée totale.",
+        "english": "I acknowledge the force of the objection, though not its full reach."
+      },
+      {
+        "id": 8,
+        "french": "Pouvons-nous expliciter l’hypothèse sous-jacente ?",
+        "english": "Could we make the underlying assumption explicit?"
+      },
+      {
+        "id": 9,
+        "french": "Le point décisif est ce que le texte ne précise pas.",
+        "english": "The crucial issue is what the text leaves unspecified."
+      },
+      {
+        "id": 10,
+        "french": "Je ne voudrais pas confondre prudence et dérobade.",
+        "english": "I would not want to confuse caution with evasion."
+      },
+      {
+        "id": 11,
+        "french": "Cela revient-il à attribuer une intention ?",
+        "english": "Does that amount to imputing an intention?"
+      },
+      {
+        "id": 12,
+        "french": "La distinction a des conséquences pratiques.",
+        "english": "The distinction has practical consequences."
+      }
+    ]
+  },
+  {
+    "level": "C2",
+    "unit": 2,
+    "id": "c2en-phrases-02",
+    "title": "Négocier les conditions et les responsabilités",
+    "titleFR": "Négocier les conditions et les responsabilités",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "La portée de cette exception doit être clarifiée.",
+        "english": "The scope of that exception needs to be clarified."
+      },
+      {
+        "id": 2,
+        "french": "Cette formulation ne vaut pas reconnaissance de responsabilité.",
+        "english": "That formulation does not constitute an admission of liability."
+      },
+      {
+        "id": 3,
+        "french": "Nous pouvons coopérer sans renoncer à notre position.",
+        "english": "We can cooperate without abandoning our position."
+      },
+      {
+        "id": 4,
+        "french": "Précisons le fait vérifiable qui déclenchera la révision.",
+        "english": "Let us specify the observable event that will trigger review."
+      },
+      {
+        "id": 5,
+        "french": "Votre question présuppose un accord qui n’a pas été donné.",
+        "english": "Your question presupposes an agreement that was never given."
+      },
+      {
+        "id": 6,
+        "french": "Je préférerais une clause à portée plus étroite.",
+        "english": "I would favour a more narrowly drawn clause."
+      },
+      {
+        "id": 7,
+        "french": "Quelles obligations subsistent en cas d’exception ?",
+        "english": "Which obligations survive if the exception applies?"
+      },
+      {
+        "id": 8,
+        "french": "Nous pouvons convenir de la méthode sans trancher le fond.",
+        "english": "We can agree on the method without settling the underlying issue."
+      },
+      {
+        "id": 9,
+        "french": "Je vous accorde la date, pas la qualification juridique.",
+        "english": "I accept the date, not the legal characterisation."
+      },
+      {
+        "id": 10,
+        "french": "Cette réserve ne doit pas annuler l’engagement principal.",
+        "english": "That reservation must not hollow out the main undertaking."
+      },
+      {
+        "id": 11,
+        "french": "Je propose un calendrier dont les étapes peuvent être vérifiées indépendamment.",
+        "english": "I propose an independently verifiable timetable."
+      },
+      {
+        "id": 12,
+        "french": "L’annonce publique devrait refléter cet accord limité.",
+        "english": "The public statement should reflect the limited nature of that agreement."
+      }
+    ]
+  },
+  {
+    "level": "C2",
+    "unit": 3,
+    "id": "c2en-phrases-03",
+    "title": "Présenter une preuve avec sa portée",
+    "titleFR": "Présenter une preuve avec sa portée",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Le chiffre dépend du scénario de référence.",
+        "english": "The figure depends on the chosen baseline."
+      },
+      {
+        "id": 2,
+        "french": "Ce résultat ne se généralise pas automatiquement.",
+        "english": "This result cannot simply be extrapolated."
+      },
+      {
+        "id": 3,
+        "french": "L’agent derrière la décision n’est pas nommé.",
+        "english": "The person responsible for the decision is not identified."
+      },
+      {
+        "id": 4,
+        "french": "La réplication a testé une hypothèse plus large.",
+        "english": "The replication tested a broader hypothesis."
+      },
+      {
+        "id": 5,
+        "french": "Quel est le dénominateur de cette comparaison ?",
+        "english": "What is the denominator in that comparison?"
+      },
+      {
+        "id": 6,
+        "french": "Il faut distinguer association et causalité.",
+        "english": "We need to distinguish association from causation."
+      },
+      {
+        "id": 7,
+        "french": "Cette réserve ne rend pas l’étude inutile.",
+        "english": "That qualification does not render the study worthless."
+      },
+      {
+        "id": 8,
+        "french": "La source ne justifie pas ce degré de certitude.",
+        "english": "The source does not warrant that degree of certainty."
+      },
+      {
+        "id": 9,
+        "french": "La correction doit rester traçable.",
+        "english": "The correction must remain traceable."
+      },
+      {
+        "id": 10,
+        "french": "Cette conclusion repose sur deux hypothèses contestables.",
+        "english": "That conclusion rests on two contestable assumptions."
+      },
+      {
+        "id": 11,
+        "french": "Une estimation ne doit pas passer pour une observation.",
+        "english": "An estimate should not be passed off as an observation."
+      },
+      {
+        "id": 12,
+        "french": "Les limites doivent figurer dans le résumé.",
+        "english": "The limitations belong in the summary."
+      }
+    ]
+  },
+  {
+    "level": "C2",
+    "unit": 4,
+    "id": "c2en-phrases-04",
+    "title": "Critiquer l’effet sans simplifier l’œuvre",
+    "titleFR": "Critiquer l’effet sans simplifier l’œuvre",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Le texte déplace discrètement le point de vue.",
+        "english": "The text subtly shifts the focal point."
+      },
+      {
+        "id": 2,
+        "french": "Cette certitude semble appartenir au moi plus jeune.",
+        "english": "That certainty appears to belong to the younger self."
+      },
+      {
+        "id": 3,
+        "french": "Le silence produit une conséquence dramatique.",
+        "english": "The silence carries dramatic consequences."
+      },
+      {
+        "id": 4,
+        "french": "Cette traduction préserve une aspérité nécessaire.",
+        "english": "This translation preserves a necessary rough edge."
+      },
+      {
+        "id": 5,
+        "french": "Le motif ne se laisse pas réduire à une seule lecture.",
+        "english": "The motif resists any single reading."
+      },
+      {
+        "id": 6,
+        "french": "La critique confond peut-être intention et effet.",
+        "english": "The review may be conflating intention with effect."
+      },
+      {
+        "id": 7,
+        "french": "Je vois pourquoi cette interprétation séduit.",
+        "english": "I can see why that interpretation is appealing."
+      },
+      {
+        "id": 8,
+        "french": "Elle n’explique toutefois pas la construction sonore.",
+        "english": "It does not, however, account for the sound design."
+      },
+      {
+        "id": 9,
+        "french": "Le dernier geste modifie rétroactivement l’ensemble.",
+        "english": "The final gesture retrospectively reframes the whole work."
+      },
+      {
+        "id": 10,
+        "french": "L’absence de clôture est une décision esthétique.",
+        "english": "The lack of closure is an aesthetic decision."
+      },
+      {
+        "id": 11,
+        "french": "L’œuvre demande au public de participer au sens.",
+        "english": "The work asks its audience to participate in meaning-making."
+      },
+      {
+        "id": 12,
+        "french": "Il faudrait citer le passage qui soutient cette lecture.",
+        "english": "We should identify the passage that supports that reading."
+      }
+    ]
+  },
+  {
+    "level": "C2",
+    "unit": 5,
+    "id": "c2en-phrases-05",
+    "title": "Arbitrer équité et incertitude",
+    "titleFR": "Arbitrer équité et incertitude",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Un bénéfice global peut masquer des charges inégales.",
+        "english": "An aggregate benefit may conceal unequal burdens."
+      },
+      {
+        "id": 2,
+        "french": "L’hypothèse ne prouve pas la conséquence.",
+        "english": "The counterfactual does not prove the consequence."
+      },
+      {
+        "id": 3,
+        "french": "La consultation était participative en apparence seulement.",
+        "english": "The consultation was participatory in appearance only."
+      },
+      {
+        "id": 4,
+        "french": "Cette objection mérite d’être évaluée sur le fond.",
+        "english": "That objection deserves substantive consideration."
+      },
+      {
+        "id": 5,
+        "french": "Le critère de révision doit être défini d’avance.",
+        "english": "The review criterion must be fixed in advance."
+      },
+      {
+        "id": 6,
+        "french": "Nous ne pouvons pas présumer l’accord des personnes concernées.",
+        "english": "We cannot presume the agreement of those affected."
+      },
+      {
+        "id": 7,
+        "french": "La mesure doit rester réversible.",
+        "english": "The intervention must remain reversible."
+      },
+      {
+        "id": 8,
+        "french": "Qui supportera les coûts déplacés ?",
+        "english": "Who will bear the displaced costs?"
+      },
+      {
+        "id": 9,
+        "french": "Une opinion minoritaire peut révéler un angle mort.",
+        "english": "A dissenting view can expose a blind spot."
+      },
+      {
+        "id": 10,
+        "french": "L’incertitude doit être rendue publique, non dissimulée.",
+        "english": "Uncertainty should be disclosed rather than concealed."
+      },
+      {
+        "id": 11,
+        "french": "Ce compromis exige des garanties procédurales.",
+        "english": "That compromise requires procedural safeguards."
+      },
+      {
+        "id": 12,
+        "french": "Je soutiens une expérimentation à durée limitée.",
+        "english": "I support a time-limited trial."
+      }
+    ]
+  },
+  {
+    "level": "C2",
+    "unit": 6,
+    "id": "c2en-phrases-06",
+    "title": "Réparer un malentendu délicat",
+    "titleFR": "Réparer un malentendu délicat",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Je crains que ma formulation ait été ambiguë.",
+        "english": "I am concerned that my wording may have been ambiguous."
+      },
+      {
+        "id": 2,
+        "french": "J’avais compris que nous devions examiner, non exécuter.",
+        "english": "I understood us to be reviewing the proposal, not implementing it."
+      },
+      {
+        "id": 3,
+        "french": "Puis-je vérifier que mon explication était claire ?",
+        "english": "May I check whether my explanation was clear?"
+      },
+      {
+        "id": 4,
+        "french": "Vous pouvez prendre le temps de réfléchir.",
+        "english": "You are welcome to take time to consider it."
+      },
+      {
+        "id": 5,
+        "french": "Je reconnais l’effet produit même si ce n’était pas mon intention.",
+        "english": "I acknowledge the effect, even though it was not my intention."
+      },
+      {
+        "id": 6,
+        "french": "Je ne vous demande pas de me rassurer.",
+        "english": "I am not asking you to reassure me."
+      },
+      {
+        "id": 7,
+        "french": "Nous devons distinguer politesse et assentiment.",
+        "english": "We need to distinguish politeness from assent."
+      },
+      {
+        "id": 8,
+        "french": "Cela n’autorise pas encore la mise en œuvre.",
+        "english": "That does not yet authorise implementation."
+      },
+      {
+        "id": 9,
+        "french": "Je préférerais consigner les points encore ouverts.",
+        "english": "I would rather record the issues still outstanding."
+      },
+      {
+        "id": 10,
+        "french": "Cette réserve préserve les droits de chaque partie.",
+        "english": "That reservation preserves each party’s rights."
+      },
+      {
+        "id": 11,
+        "french": "Vous êtes libre de refuser sans justification.",
+        "english": "You are free to decline without giving a reason."
+      },
+      {
+        "id": 12,
+        "french": "Proposons une reformulation qui ne préjuge pas de votre réponse.",
+        "english": "Let us try wording that does not prejudge your answer."
+      }
+    ]
+  },
+  {
+    "level": "C2",
+    "unit": 7,
+    "id": "c2en-phrases-07",
+    "title": "Synthétiser et recommander sous conditions",
+    "titleFR": "Synthétiser et recommander sous conditions",
+    "description": "Formulations nuancées pour échanges de niveau avancé.",
+    "descriptionFR": "Exemples d’anglais idiomatique et registre adapté.",
+    "icon": "💬",
+    "color": "#4338CA",
+    "phrases": [
+      {
+        "id": 1,
+        "french": "Les deux sources ne parlent pas exactement du même événement.",
+        "english": "The two sources do not refer to quite the same event."
+      },
+      {
+        "id": 2,
+        "french": "Ce constat est solide, mais son explication reste ouverte.",
+        "english": "The finding is robust, but its explanation remains open."
+      },
+      {
+        "id": 3,
+        "french": "L’indicateur était utile avant de devenir un objectif.",
+        "english": "The indicator was useful before it became a target."
+      },
+      {
+        "id": 4,
+        "french": "Nous ne devons pas moyenner des témoignages incompatibles.",
+        "english": "We should not average incompatible testimonies."
+      },
+      {
+        "id": 5,
+        "french": "Il faut rendre visibles les hypothèses de départ.",
+        "english": "The initial assumptions need to be made explicit."
+      },
+      {
+        "id": 6,
+        "french": "La recommandation est limitée par les garanties suivantes.",
+        "english": "The recommendation is bounded by the following safeguards."
+      },
+      {
+        "id": 7,
+        "french": "Quelle observation nous conduirait à changer d’avis ?",
+        "english": "What observation would cause us to revise our view?"
+      },
+      {
+        "id": 8,
+        "french": "L’absence du procès-verbal n’établit pas que la réunion n’a pas eu lieu.",
+        "english": "The missing minutes do not establish that the meeting never took place."
+      },
+      {
+        "id": 9,
+        "french": "Nous recommandons un essai assorti de conditions d’arrêt.",
+        "english": "We recommend a trial with predetermined stopping conditions."
+      },
+      {
+        "id": 10,
+        "french": "Ce désaccord permet de mieux cibler les recherches suivantes.",
+        "english": "The disagreement helps identify what should be investigated next."
+      },
+      {
+        "id": 11,
+        "french": "Notre conclusion est provisoire, mais pas arbitraire.",
+        "english": "Our conclusion is provisional, not arbitrary."
+      },
+      {
+        "id": 12,
+        "french": "Nous acceptons d’être évalués selon les critères publiés.",
+        "english": "We accept being judged against the published criteria."
+      }
+    ]
+  }
 ];

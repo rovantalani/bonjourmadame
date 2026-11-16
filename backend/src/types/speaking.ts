@@ -7,6 +7,6 @@ export interface SpeakingLesson {
     sources?: { title: string; text: string }[];
     pronunciationPractice?: string[];
     taskRecordingSeconds?: number;
-    listeningQuestions?: { prompt: string; answers: string[]; options?: string[] }[];
+    listeningQuestions?: { prompt: string; answers: string[]; options?: string[]; explanation?: string }[];
     phrases: { text: string; translation: string }[];
 }
