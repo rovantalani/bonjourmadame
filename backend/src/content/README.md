@@ -184,3 +184,46 @@ and real conjugation routes. B1 verb IDs are level-prefixed to avoid collisions.
 Stored progress is retained; replaced lessons start fresh and removed bookmarks
 may stop resolving. Source ZIP, A1/A2 content, other English levels and French
 content are unchanged. Existing assessment-provider availability is preserved.
+
+## English C1 replacement and content review
+
+The byte-identical `english_c1_COMPLETE_VERIFIED.zip` and duplicate `(1).zip` were
+reviewed before app changes. The review covered all 28 readings, 21 grammar
+lessons, vocabulary/phrases, productive tasks, listening scripts and 119 exam
+questions. Verdict: suitable guided C1 practice after targeted corrections.
+The texts address implicit meaning, register, complex argument and qualified
+claims in line with [CEFR C1 descriptors](https://www.coe.int/en/web/common-european-framework-reference-languages/table-%201-cefr-3.3-common-reference-levels-global-scale).
+They are short advanced texts (243–287 words), largely institutional/academic;
+this package alone does not establish a comprehensive C1 syllabus, long-text
+reading stamina or certification equivalence. Some distractors remain easy.
+
+Independent structural checks verified seven teaching units plus the final exam,
+28 reading/quiz pairs, 43 vocabulary modules, 318 distinct new entries against
+integrated A1/A2/B1, complete six-person paradigms and valid exam references.
+No revised B2 package was supplied, so uniqueness across a completed B2 course
+is not claimed. Basic normalization does not establish semantic uniqueness.
+
+The app has 114 supported roadmap steps, 21 grammar lessons, seven verb/phrase
+lessons, five writing tasks, five speaking tasks and seven listening sets.
+Typed writing tasks include trusted reference texts, consistent 220–260-word
+guidance, and an explicitly invented comparison dataset for synthesis. Speaking
+uses the same reference documents and a six-minute local recording limit, so the
+requested five-minute deliberation fits. Model-phrase practice keeps its short
+limit. Listening retains all three multiple-choice questions per set and all
+contrastive-pronunciation prompts; playback defaults to normal speed for C1 with
+a slower option. Browser speech is synthetic and does not reproduce the overlap,
+accents or nuanced prosody of a recorded multi-speaker discussion.
+
+Corrections clarify lexical/tense cues in grammar, accept taught alternatives
+(including who/that and British should-subjunctive forms), repair the memoir/novel
+example and an English/French conditional mismatch, and make active/present verb
+subjects explicit for undertake and offset. Final transformations accept valid
+variants including bare despite and denied having altered. Exam option positions
+are balanced without a fixed per-unit pattern. Usage supplements teach verb forms
+and collocations rather than exposing backend field names to learners.
+
+The import adapts exports, exam conventions, real conjugation routes and provisional
+task schemas. C1 verbs have level-specific IDs to avoid collisions and stale
+completion. Existing progress is retained; replaced lessons start fresh and old
+bookmarks may stop resolving. Source archives, French content and other English
+levels are unchanged. Existing assessment-provider availability is unchanged.

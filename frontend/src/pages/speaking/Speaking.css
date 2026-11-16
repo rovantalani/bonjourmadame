@@ -75,3 +75,6 @@
 .speaking-task-practice > h2, .speaking-task-practice > p { margin: 0; }
 .speaking-task-practice > button { justify-self: start; }
 .speaking-task-practice audio { width: 100%; }
+
+.speaking-sources { margin: 20px 0; }
+.speaking-task-practice summary { cursor: pointer; }
